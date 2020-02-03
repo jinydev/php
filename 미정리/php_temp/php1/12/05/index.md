@@ -1,0 +1,26 @@
+---
+layout: default
+title: PHP BOOK
+subtitle: numphp
+
+tree: /php
+---
+
+## 12.5 슈퍼변수
+앞 절에서 약간의 슈퍼변수 $GLOBALS에 대해서 설명을 했습니다. $GLOBAL 변수는 PHP 언어에서 지원하는 다수의 슈퍼변수 중 하나입니다. 
+PHP언어는 $GLOBALS 이외에여러 개의 슈퍼변수를 다음과 같이 제공합니다.
+
+PHP 슈퍼 글로벌변수들
+
+* $GLOBALS
+* $_SERVER
+* $_REQUEST
+* $_POST
+* $_GET
+* $_FILES
+* $_ENV
+* $_COOKIE
+* $_SESSION
+
+이러한 슈퍼변수의 개념은 PHP 4.1.0에서 도입된 기능입니다.
+슈퍼변수는PHP에서 미리 정의된 내장변수입니다. 또한 예약된 변수명입니다. 슈퍼변수는 PHP 소스의 특정 위치에 상관이 없이 함수, 클래스 내에서도 언제든지 사용할 수 있습니다.
