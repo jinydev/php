@@ -1,0 +1,33 @@
+---
+layout: default
+--- 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        {%- for breadcrumb in page.breadcrumb -%}
+        <li class="breadcrumb-item active"><a href="#">{{ breadcrumb }}</a></li>
+        {%- endfor -%}
+    </ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <!-- Title -->
+            <h1 class="mt-4">{{ page.title }}</h1>
+            <hr>
+            {{ content }}
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            {%- include menu.html -%}
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->

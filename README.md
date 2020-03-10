@@ -1,1 +1,1 @@
-# PHP 스터디
+# jiny PHP 
