@@ -1,3 +1,6 @@
+---
+layout: home
+---
 # winsdows PHP 설치
 PHP는 윈도우 운영체제에서도 쉽게 설치를 하여 사용할 수 있습니다.
 

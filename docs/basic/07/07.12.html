@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PHP</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <img src="/img/num1.jpg">
+        </div>
+        <div class="col-lg-9">
+          <h1 class="display-3">PHP</h1>
+          <p>PHP는 웹사이트 개발을 위한 서버사이드 언어 입니다.</p>
+     
+      </p>
+      <p>
+        <a class="btn btn-secondary btn-sm" href="http://www.yes24.com/Product/Goods/58072924?scode=032&OzSrank=20" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+      </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="712-오류-제어-연산자">7.12 오류 제어 연산자</h2>
+<p>PHP는 오류제어 연산자 <code class="highlighter-rouge">@</code>를 지원합니다.</p>
+
+<p>오류 제어 연산자를 코드 앞에 붙여서 사용하면 발생된 오류 메시지를 무시하게 됩니다. 오류 메시지를 숨기는 이유는 접속자에게 오류 코드를 감추어 보안의 유효성을 높이는 효과가 있습니다.</p>
+
+<p>예제 파일 opr-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// php.ini의 수정 없이 화면에 에러 발생 시 출력할 수 있습니다.</span>
+	<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+	<span class="nb">ini_set</span><span class="p">(</span><span class="s2">"display_errors"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+	<span class="c1">// test.php는 실제 존재하지 않는 파일입니다.  </span>
+	<span class="o">@</span><span class="k">include</span><span class="p">(</span><span class="s1">'test.php'</span><span class="p">);</span> 
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>화면 출력</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<p>위의 예제는 실제 존재하지 않는 파일을 include하는 예제입니다. 실행 시 파일에 대한 오류 메시지를 출력합니다.</p>
+
+<p>@include(‘test.php’); 형태로 @를 앞에 붙여서 실행하면 오류가 발생해도 화면에 출력하지 않습니다.</p>
+
+<p>@ 연산자를 사용할 때는 주의해야 합니다. 만일, 잘못된 사용으로 인해 오류가 출력하지 않을 때 프로그램의 문제를 해결하기란 매우 어렵습니다.</p>
+
+<p>@로 인하여 오류가 발생한 경우는 별도로 오류 메시지를 $php_errormsg 변수에 저장해 놓습니다.</p>
+
+<p>예제 파일 opr-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// php.ini의 수정 없이 화면에 에러 발생 시 출력할 수 있습니다.</span>
+	<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+	<span class="nb">ini_set</span><span class="p">(</span><span class="s2">"display_errors"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+	<span class="nv">$my_file</span> <span class="o">=</span> <span class="o">@</span><span class="nb">file</span> <span class="p">(</span><span class="s1">'testing.txt'</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="nv">$php_errormsg</span><span class="o">.</span><span class="s2">" = 오류를 출력합니다."</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Notice: Undefined variable: php_errormsg in C:\php-7.1.4-Win32-VC14-x86\jinyphp\opr-02.php on line 6
+= 오류를 출력합니다.
+</code></pre></div></div>
+
+<p>오류 발생 시 $php_errormsg 변수는 바로 사용해야 합니다. 만일 여러 번의 오류가 발생할 경우  $php_errormsgs는 새로운 오류 메시지로 덮어쓰게 됩니다.</p>
+
+<p>$php_errormsgs를 사용하기 위해서는 PHP의 환경 설정 php.ini 에서</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>track_error = on
+</code></pre></div></div>
+
+<p>상태일 때만 가능합니다.</p>
+
+<p>지금까지 다양한 연산자와 예제를 통해 알아봤습니다. 연산자는 프로그램을 만드는 가장 기본적인 문법과 기능입니다.</p>
+
+<p>연산자를 잘 구분하고, 문법을 습득하는 것은 앞으로 프로그램 코딩을 하면서 문법적인 오류를 줄이는 중요한 기초가 됩니다. 차근차근 기초부터 학습을 하면 좀 더 향상된 코드를 만들 수 있을 것입니다.</p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/function">함수</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        
+
+    </body>
+
+</html>

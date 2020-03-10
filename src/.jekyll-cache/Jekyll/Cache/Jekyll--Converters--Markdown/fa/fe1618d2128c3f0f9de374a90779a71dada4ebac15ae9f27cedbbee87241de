@@ -1,0 +1,70 @@
+I"�<h2 id="79-문자열-연산">7.9 문자열 연산</h2>
+<p>지금까지 많은 예제 중에서 화면 출력 시 점(.) 기호를 많이 봤을 것입니다. PHP에서는 두 개의 문자열을 결합할 수 있는 연산자를 지원합니다. 다른 언어에서는 좀 더 직관적인 덧셈(+) 기호를 쓰기도 하지만 PHP에서는 점(.) 연산자를 사용합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$text</span> <span class="o">=</span> <span class="nv">$txt1</span> <span class="o">.</span> <span class="nv">$txt2</span> 
+</code></pre></div></div>
+
+<p>점은 두 개의 문자열을 연결하는 기능을 합니다.</p>
+
+<p>예제 파일 string-06.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$a</span> <span class="o">=</span> <span class="s2">"hello"</span><span class="p">;</span>
+	<span class="nv">$b</span> <span class="o">=</span> <span class="s2">"world!"</span><span class="p">;</span>
+
+	<span class="c1">// 문자열을 바로 결합니다.</span>
+	<span class="k">echo</span> <span class="s2">"hello "</span> <span class="o">.</span> <span class="s2">"world!"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 변수와 문자열을 결합합니다.</span>
+	<span class="k">echo</span> <span class="nv">$a</span> <span class="o">.</span> <span class="s2">" world!"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	
+	<span class="c1">// 변수와 변수를 결합합니다.</span>
+	<span class="k">echo</span> <span class="nv">$a</span> <span class="o">.</span> <span class="nv">$b</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world!
+hello world!
+helloworld!
+</code></pre></div></div>
+
+<p>점 연산자는 문자열 데이터를 바로 연결할 수도 있으며, 변수와 같이 혼용하여 연결할 수도 있습니다.</p>
+
+<p>또한 이전에 복합 연산 방식과 비슷하게 <code class="highlighter-rouge">.=</code> 방식으로 기존의 문자열에 새로운 문자열을 결합할 수도 있습니다. 새로운 문자열은 기존 문자열 맨 뒤에 추가로 연결됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$text</span> <span class="o">.=</span>  <span class="nv">$txt2</span> 
+</code></pre></div></div>
+
+<p>예제 파일 string-07.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>	
+	<span class="nv">$a</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+
+	<span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nv">$string</span> <span class="o">.=</span> <span class="nv">$a</span><span class="o">++</span><span class="p">;</span>
+		<span class="k">echo</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a
+ab
+abc
+abcd
+abcde
+abcdef
+abcdefg
+abcdefgh
+abcdefghi
+abcdefghij
+</code></pre></div></div>
+
+<p>위의 예를 보면 $string 변수에 알파벳을 하나씩 늘려가면서 추가하는 예제입니다. 
+<code class="highlighter-rouge">.=</code> 연산자를 통해 알파벳 한 글자 한 글자를 결합하면서 화면에 출력합니다.</p>
+
+:ET

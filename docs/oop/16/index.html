@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PHP</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <img src="/img/num1.jpg">
+        </div>
+        <div class="col-lg-9">
+          <h1 class="display-3">PHP</h1>
+          <p>PHP는 웹사이트 개발을 위한 서버사이드 언어 입니다.</p>
+     
+      </p>
+      <p>
+        <a class="btn btn-secondary btn-sm" href="http://www.yes24.com/Product/Goods/58072924?scode=032&OzSrank=20" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+      </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <ol>
+  <li>클로저</li>
+</ol>
+
+<p>클로저를 이야기할 때 항상 같이 설명하는 부분이 익명 함수입니다. 클로저는 익명 함수와 같이 PHP 5.3으로 업그레이드되면서 적용된 기능입니다.</p>
+
+<p>클로저는 PHP 5.4로 업그레이드되면서 객체화 및 몇 개의 메서드를 지원함으로써 세부적인 작업이 가능하게 되었습니다.</p>
+
+<p>16.1 클로저란?</p>
+
+<p>익명 함수와 클로저는 이론적으로 다르지만 PHP는 ‘익명 함수 = 클로저’로 두 개는 같은 의미로 보고 있습니다. Closure 클래스는 PHP의 익명 함수를 만들 때 사용되는 클래스입니다.</p>
+
+<p>클로저 클래스 구조
+Closure {
+	/* 메서드 */
+	private __construct ( void )</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static Closure bind ( Closure $closure , object $newthis [, mixed $newscope = "static" ] )
+
+public Closure bindTo ( object $newthis [, mixed $newscope = "static" ] )
+
+public mixed call ( object $newthis [, mixed $... ] ) }
+</code></pre></div></div>
+
+<p>클로저가 일반적인 함수와 다른 점은 호출 실행 후 실행된 함수의 접근이 가능한지 여부입니다. 일반적으로 함수가 호출되면 실행 제어점이 전달됨과 동시에 함수의 매개변수, 처리 로직이 실행됩니다.</p>
+
+<p>또한 실행이 완료되면 실행 제어점이 호출한 곳으로 다시 반환되고 함수와 관련된 모든 로컬변수의 값들은 자동 소멸하게 됩니다. 이러한 함수의 휘발성은 프로그램 처리와 메모리의 관리를 효율적으로 하기 위한 처리 기술입니다.</p>
+
+<p>클로저는 익명 함수 생성 시 자신 자체를 객체로 캡슐화합니다. 함수의 호출이 종료된 후에도 함수의 상태 및 내부 변수들의 상태 값은 유지하게 합니다. static 상태 처리와 유사할 수 있습니다.</p>
+
+<p>클로저를 사용하는 이유는 이러한 호출 전후에 특정한 동작이나 값을 처리할 수 있기 때문입니다.</p>
+
+<p>16.7.2 클로저 실습</p>
+
+<p>PHP언어의 클로저 기능은 익명 함수와 비슷한 문법으로 사용합니다.</p>
+
+<p>예제파일: closure-01.php
+&lt;?php
+// 익명 함수를 통해 변수에 대입합니다. 
+$closure = function ($name) {
+  echo “hello ” . $name;
+};</p>
+
+<p>// 변수명을 함수처럼 사용할 수 있습니다.
+echo $closure(“jiny”);
+?&gt;</p>
+
+<p>결과
+hello jiny</p>
+
+<p>위의 예제는 일반적인 익명 함수와 비슷합니다. 하지만 익명 함수를 변수($closure)에 대입할 때 클로저 클래스를 통해 인스턴스를 생성, 객체화하여 변수를 객체화합니다.</p>
+
+<p>실질적으로 클로저 클래스로 생성된 익명 함수 변수는 클래스의 인스턴스입니다. 따라서 클래스처럼 $this를 통해 클로저 내부에 접근하거나 매서드를 실행할 수 있습니다.</p>
+
+<p>16.7.3 클로저 호출</p>
+
+<p>클로저가 객체라고 하면 어떻게 실행이 될까요? 클래스의 인스턴스는 -&gt; 기호를 통해 프로퍼티, 메서드를 호출합니다.</p>
+
+<p>하지만 클로저의 호출은 일반적인 클래스 호출 방식이 아니라 익명 함수를 호출하는 것처럼 $변수명() 형태로 합니다.</p>
+
+<p>|문법|
+$변수명();</p>
+
+<p>클로저는 클로저 클래스로 생성된 인스턴스명 뒤에 함수 표시처럼 소괄호 “()”가 붙어서 호출하게 되면 특수 메서드인 __involke()를 호출하는 형태로 실행을 대체합니다.</p>
+
+<p>클로저는 콜백 함수와 매서드 용도로 많이 사용합니다. 콜백 기능이 필요한 array_map(), preg_replace_callback() 함수들은 클로저 기능이 매우 유용할 수 있을 것입니다.</p>
+
+<p>16.7.4 클로저 상태 등록</p>
+
+<p>클로저를 사용하는 목적은 호출하는 익명 함수의 상태를 감지하기 위해서입니다. 
+클로저로 상태를 감지하기 위해서는 use 키워드를 이용하여 수동으로 감지하고자 하는 상태를 등록해야 합니다.</p>
+
+<p>예제파일 : closure-02.php
+&lt;?php
+// 함수를 선언합니다.
+// memCustomer() 함수는 클로저(익명 함수)를 반환합니다. 
+function memCustomer($name){</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $name 변수를 둘러싼 클로저를 반환합니다.
+return function ($doCommand) use ($name){
+return echo “name=” . $name . “, Command=” . $doCommand; }
+</code></pre></div></div>
+
+<p>}</p>
+
+<p>// 함수의 인자 값으로 “hojin”을 전달합니다.
+// 리턴으로 클로저 인스턴스를 반환받습니다.
+$clousreTest = memCustomer(“hojin”);</p>
+
+<p>// 클로저 익명 함수를 호출합니다.
+echo $clousreTest(“jiny”); 
+?&gt;</p>
+
+<p>결과
+name = hojin , command = jiny</p>
+
+<p>위의 예제를 보면 클로저를 리턴하는 함수를 하나 선언합니다. 함수를 호출함으로써 $clousreTest 변수에는 클로저 인스턴스를 받게 됩니다. 이때, 함수는 종료하지만 use 키워드로 입력받은 $name 매개변수를 계속 가지고 있습니다.</p>
+
+<p>클로저 변수는 반환받은 익명 함수 값을 호출하게 됩니다. 익명 함수는 이전에 계속 갖고 있는 $name 값과 익명 함수의 인자 입력 값 두 개를 출력합니다.</p>
+
+<p>16.2 클로저 메서드</p>
+
+<p>클로저는 몇 개의 특수 메서드를 지원합니다. 클로저는  __invoke() 외 bindTo() 등 특수 메서드가 있습니다. 특수 메서드를 통해 클로저를 좀 더 세부적으로 설정 및 접근이 가능합니다.</p>
+
+<p>PHP 클로저는 다음과 같은 클래스 인터페이스를 지원합니다.</p>
+
+<ul>
+  <li>Traversable</li>
+  <li>Iterator</li>
+  <li>IteratorAggregate</li>
+  <li>Throwable</li>
+  <li>ArrayAccess</li>
+  <li>Serializable</li>
+  <li>Closure</li>
+  <li>Generator</li>
+</ul>
+
+<p>16.2.1 bindTo()</p>
+
+<p>새로운 바운드 객체와 클래스 범위로 클로저를 복제  합니다.</p>
+
+<p>bindTo() 메서드는 클로저 객체의 내부 상태를 다른 객체에 연결합니다. 연결되는 객체는 protected와 private 멤버 변수에 접근할 수 있습니다.</p>
+
+<p>예제파일 : closure-03.php
+&lt;?php</p>
+
+<p>class A {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function __construct($val) {
+    $this-&gt;val = $val;
+}
+
+function getClosure() {
+    // 클로저를 반환합니다.  // returns closure bound to this object and scope
+    return function() { return $this-&gt;val; };
+} }
+</code></pre></div></div>
+
+<p>// $obj1, $obj2 클래스 인스턴스를 생성합니다.
+$ob1 = new A(1);
+$ob2 = new A(2);</p>
+
+<p>// getClosure() 메서드를 호출하여 클로저를 반환받습니다.
+$closure = $ob1-&gt;getClosure();
+echo $closure(), “\n”;</p>
+
+<p>$closure = $closure-&gt;bindTo($ob2);
+echo $closure(), “\n”;</p>
+
+<p>?&gt;</p>
+
+<p>결과
+1
+2</p>
+
+<p>16.2.2 bind()
+특정 바인딩된 객체와 클래스 범위와 클로저를 복제합니다</p>
+
+<p>16.2.3 __construct
+생성자는 인스턴스를 허용하지 않습니다</p>
+
+<p>16.2.4 call
+Closure::call() 메서드는 php 7.x에서 업그레이드로 추가되었습니다. Closure::call()는 더 효율적입니다.</p>
+
+<p>예제파일 : closure-04.php
+&lt;?php
+class A {
+	private $x = 1;
+}</p>
+
+<p>// Pre PHP 7 code
+$getXCB = function() {
+	return $this-&gt;x;
+};</p>
+
+<p>// intermediate closure
+$getX = $getXCB-&gt;bindTo(new A, ‘A’); 
+echo $getX();</p>
+
+<p>// PHP 7+ code
+$getX = function() {
+	return $this-&gt;x;
+};
+echo $getX-&gt;call(new A);
+// 기존 bindTo를 사용하던 것을 call로 처리할 수 있다.</p>
+
+<p>?&gt;</p>
+
+<p>위의 예제를 실행을 하면 다음과 같이 출력됩니다.</p>
+
+<p>1
+1</p>
+
+<p>PSR-2 코딩 스타일: 클로저 
+클로저를 작성할 때는 PSR 코딩 스타일 권고로 작성을 하는 것이 다수의 개발자들과 소스를 공유할 때 매우 유용합니다</p>
+
+<p>클로저는 function 키워드 뒤의 공백과 use 키워드 앞뒤 공백으로 반드시 선언해야 합니다. 또한 본체의 시작하는 중괄호 { 기호는 같은 줄에 작성합니다. 본체의 끝을 표기하는 중괄호 닫기 } 기호는 반드시 다음 줄에 작성합니다.</p>
+
+<p>매개변수를 전달하는 소괄호를 사용합니다. 소괄호 시작 부분과 매개변수 사이에는 공백을 추가하지 않으며, 여러 매개변수를 사용하는 경우에 콤마(,) 다음에 하나의 공백을 두고 다음 변수를 적어 줍니다. 소괄호 마지막에는 매개변수와 소괄호 끝부분 사이에 공백을 추가하지 않습니다.</p>
+
+<p>클로저 선언은 다음과 같습니다. 괄호, 쉼표, 공백 및 중괄호의 배치에 유의해야 합니다. 다음은 PSR 공식 사이트의 예제입니다.</p>
+
+<p>&lt;?php
+$closureWithArgs = function ($arg1, $arg2) {
+    // body
+};</p>
+
+<p>$closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
+    // body
+};</p>
+
+<p>매개변수는 여러 줄로 나눠서 작성할 수 있습니다. 하지만 각각 한 줄에 한 개로 작성을 하며 들여쓰기를 합니다. 여러 줄로 매개변수를 나열할 때는 소괄호 시작 기호 ‘(’ 다음 줄에서 시작하며 끝낼 때의 종료 기호 ‘)’도 다음 줄에 작성합니다.</p>
+
+<p>다음 예제 표현은 다수의 줄로 매개변수를 표시하는 방법입니다. 다음은 PSR 공식 사이트의 예제입니다.</p>
+
+<p>&lt;?php
+$longArgs_noVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) {
+    // body
+};</p>
+
+<p>$noArgs_longVars = function () use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};</p>
+
+<p>$longArgs_longVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};</p>
+
+<p>$longArgs_shortVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use ($var1) {
+    // body
+};</p>
+
+<p>$shortArgs_longVars = function ($arg) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+    // body
+};</p>
+
+<p>PSR 형식 지정 및 규칙은 함수 또는 메서드 호출에서 클로저가 인수로 직접 사용될 때도 같이 적용됩니다. 다음은 PSR 공식 사이트의 예제입니다.</p>
+
+<p>&lt;?php
+$foo-&gt;bar(
+    $arg1,
+    function ($arg2) use ($var1) {
+        // body
+    },
+    $arg3
+);</p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/function">함수</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        
+
+    </body>
+
+</html>
