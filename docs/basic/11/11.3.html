@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="파일-경로">파일 경로</h2>
+<hr />
+
+<p>전처리기 명령 include 및 require은 삽입하고자 하는 파일의 위치가 매우 중요합니다. PHP의 include와 require명령은 현재 실행되고 있는 PHP 스크립트의 경로를 기준으로 결합하고자 하는 소스파일의 위치를 찾습니다.</p>
+
+<p>만일 실행하고 있는 스크립트와 동일한 폴더 경로에 있는 다른 소스를 사용할 때는 그냥 이름만 넣어도 됩니다. 하지만 다른 폴더나 하위 폴더에 있는 경우에는 상대 경로 또는 절대 경로 형태로 바르게 입력해야 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/text.php  
+/lib.php  
+</code></pre></div></div>
+
+<p>위처럼 1개의 실행 스크립트 소스파일이 같은 폴더 안에 있습니다. text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경로를 설정하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/text.php  
+/lib.php  
+</code></pre></div></div>
+
+<p>위처럼 실행하는 스크립트가 서브 폴더 안에 있습니다. text.php가 실행되면 기본 경로는 /dir1이 됩니다. 따라서 include(../lib.php);처럼 이동한 상위 폴더 경로로 설정해야 합니다.</p>
+
+<p>이처럼 실행 스크립트의 위치에 따라서 경로는 달라집니다. 만일 결합하고자 하는 소스의 파일 경로가 잘못된 경우 오류 메시지를 출력하거나 스크립트 실행이 중단될 수도 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1131-상대-경로">11.3.1 상대 경로</h3>
+<hr />
+
+<p>상대 경로란 현재 디렉터리를 기준으로 파일의 위치를 판별합니다.<br />
+자신의 하위 디렉터리에 있는 경우에는 현재 디렉터리(./)를 기준으로 작성하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./ 파일명 		→ 현재 디렉터리의 파일명  
+./폴더1/파일명 	→ 현재 디렉터리의 하부 폴더1 의 파일  
+</code></pre></div></div>
+
+<p>상위 폴더를 선택할 때는 <code class="highlighter-rouge">../</code>를 사용하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../파일명		→ 현재 디렉터리 상위 폴더의 파일명  
+../../파일명	→ 현재 디렉터리의 상위/상위 폴더의 파일명  
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">../</code>상위 폴더명/하부 폴더명/파일명 → 현재 디렉터리의 상위 폴더로 이동한 다음, 상위 폴더명의 하부 폴더명 안에 있는 파일명</p>
+
+<p><br /></p>
+
+<h3 id="1132-절대-경로">11.3.2 절대 경로</h3>
+<hr />
+
+<p>절대 경로란 컴퓨터 하드디스크의 첫 루트부터의 전체 경로를 의미합니다.</p>
+
+<p>윈도우의 경우,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\web\webdoc\test.php  
+</code></pre></div></div>
+
+<p>와 같이 드라이브명부터 시작합니다.</p>
+
+<p>리눅스의 경우,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\home\web\webdoc\test.php  
+</code></pre></div></div>
+
+<p>와 같이 루트()부터 시작합니다.</p>
+
+<p>절대 경로의 장점은 파일의 위치 오류를 방지할 수 있습니다. 하지만, 파일 위치가 변경될 때마다 프로그램 소스상에서 모두 바꿔야 하는 불편함이 있습니다. 또한 절대 경로를 사용하면 경로의 이름이 매우 긴 불편함이 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1133-dir">11.3.3 <strong>DIR</strong></h3>
+<hr />
+
+<p>PHP 는 현재 자신의 스크립트가 실행되는 경로를 출력해주는 특별한 상수명이 있습니다.<br />
+<code class="highlighter-rouge">__DIR__</code> 은 현재 실행되는 스크립트의 경로를 출력합니다. <code class="highlighter-rouge">__DIR__</code> 은 현재 실행되고 있는 스크립트의 서브 디렉터리 경로명까지 포함하여 출력합니다.</p>
+
+<p>예제 파일 path-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">echo</span> <span class="k">__DIR__</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp
+</code></pre></div></div>
+
+<p>위의 예에서 __DIR__은 현재 실행하고 있는 스크립트의 유효한 파일 경로를 출력합니다. <code class="highlighter-rouge">__DIR__</code> 상수를 통해 상태 경로를 계산하여 사용하면 유연하게 경로 계산을 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1134-documentroot">11.3.4 DocumentRoot</h3>
+<p>PHP는 슈퍼 글로벌 서버 변수를 통해 현재 PHP가 실행되는 절대 상위 폴더를 출력합니다.
+이전 <code class="highlighter-rouge">__DIR__</code>는 실행되는 서브 폴더까지 표시가 되지만, <code class="highlighter-rouge">$_SERVER['DOCUMENT_ROOT']</code>는 실행 폴더의 root만 표시됩니다.</p>
+
+<p>예제 파일 path-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'DOCUMENT_ROOT'</span><span class="p">];</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86
+</code></pre></div></div>
+
+<p>위의 예는 root 경로를 출력합니다. PHP의 내부 서버 실행의 문서 루트 경로, 아차피 웹 서버의 문서 루트 경로를 출력합니다.</p>
+
+<p><br /></p>
+
+<h3 id="1135-file">11.3.5 <strong>FILE</strong></h3>
+<hr />
+
+<p><code class="highlighter-rouge">__FILE__</code> 함수는 현재 실행하고 있는 스크립트의 소스 파일 정보를 출력합니다.</p>
+
+<p>예제 파일 path-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">echo</span> <span class="k">__FILE__</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// PHP 파일의 절대 서버 경로</span>
+	<span class="k">echo</span> <span class="nb">realpath</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// PHP 파일 이름</span>
+	<span class="k">echo</span> <span class="nb">basename</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\path-03.php
+C:\php-7.1.4-Win32-VC14-x86\jinyphp\path-03.php
+path-03.php
+</code></pre></div></div>
+
+<p>위의 예는 현재 실행하고 있는 스크립트의 소스 파일 정보를 알아낼 수 있습니다. 또한 realpath() 함수를 통해 절대 경로로 변경할 수 있습니다. 만일 경로를 제외한 현재의 실행 스크립트 파일명만 알고 싶다면 basename() 함수를 이용할 수도 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1136-dirname">11.3.6 dirname</h3>
+<hr />
+
+<p>dirname() 함수는 입력된 파일 경로에서 디렉터리 부분만 추출할 수 있습니다.<br />
+PHP 7.x부터는 입력된 path에서 디렉터리 경로를 추출할 때 경로  레벨을 선택해서 가지고 올 수도 있습니다.</p>
+
+<p>예제 파일 dirname.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$path</span> <span class="o">=</span> <span class="s2">"/dir1/dir2/dir3/3text.txt"</span><span class="p">;</span>
+	
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/dir2/dir3
+/dir1/dir2
+/dir1
+</code></pre></div></div>
+
+<p>위의 예는 입력한 <code class="highlighter-rouge">$path</code> 경로를 슬래시(/) 기호로 구분하여 각각 접근할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

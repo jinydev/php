@@ -1,0 +1,69 @@
+I"4<h2 id="자바스크립트-쿠키">자바스크립트 쿠키</h2>
+<hr />
+
+<p>앞서 설명한 것과 같이 쿠키는 접속한 사용자 브라우저에 저장되어 있는 매우 작은 데이터 파일 입니다. 접속자의 컴퓨터에 저장된 임시 데이터의 특성에 따라서 PHP 언어 이외에 클라이언트에서 실행 가능한 다른 언어로도 쿠키 값은 변경될 수 있습니다. 주로 가장 많이 사용하는 클라이언트 쿠키 조작 방법으로는 자바스크립트가 있습니다. 자바스크립트를 이용하여 쿠키 값을 설정, 변경, 삭제 등이 가능합니다.</p>
+
+<p>다음은 간단한 자바스크립트 쿠키 소스 예제 입니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>자바스크립트 쿠키 읽기
+// 쿠키 값 읽기
+function getCookie( cookieName ){
+    // @param cookieName 쿠키명
+    var search = cookieName + "=";
+    var cookie = document.cookie;
+
+    // 현재 쿠키가 존재할 경우
+    if( cookie.length &gt; 0 ){
+        // 해당 쿠키명이 존재하는지 검색한 후 존재하면 위치를 리턴.
+        startIndex = cookie.indexOf( cookieName );
+
+        // 만약 존재한다면
+        if( startIndex != -1 ){
+            // 값을 얻어내기 위해 시작 인덱스 조절
+            startIndex += cookieName.length;
+
+            // 값을 얻어내기 위해 종료 인덱스 추출
+            endIndex = cookie.indexOf( ";", startIndex );
+
+            // 만약 종료 인덱스를 못 찾게 되면 쿠키 전체 길이로 설정
+            if( endIndex == -1) endIndex = cookie.length;
+
+            // 쿠키 값을 추출하여 리턴
+            return unescape( cookie.substring( startIndex + 1, endIndex ) );
+        } else {
+            // 쿠키 내에 해당 쿠키가 존재하지 않을 경우
+            return false;
+        }
+    } else {
+        // 쿠키 자체가 없을 경우
+        return false;
+    }
+}
+
+
+자바스크립트 쿠키 설정
+// 쿠키를 설정합니다.
+function setCookie( cookieName, cookieValue, expireDate ){
+    // @param cookieName 쿠키명
+    // @param cookieValue 쿠키 값
+    // @param expireDay 쿠키 유효 날짜
+
+    var today = new Date();
+    today.setDate( today.getDate() + parseInt( expireDate ) );
+    document.cookie = cookieName + "=" + escape( cookieValue ) + "; path=/; expires=" + today.toGMTString() + ";";
+}
+
+
+자바스크립트 쿠키 삭제
+// 쿠키 삭제
+function deleteCookie( cookieName ){
+    // @param cookieName 삭제할 쿠키명
+
+    var expireDate = new Date();
+    //어제 날짜를 쿠키 소멸 날짜로 설정한다.
+    expireDate.setDate( expireDate.getDate() - 1 );
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + "; path=/";
+}
+</code></pre></div></div>
+
+<p><br /><br /></p>
+:ET

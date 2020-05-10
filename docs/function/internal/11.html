@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <ol>
+  <li>
+    <h1 id="통신">통신</h1>
+  </li>
+</ol>
+
+<h1 id="111-소켓통신">11.1 소켓통신</h1>
+
+<p>소켓 통신이란 네트워크 상에서 여러 다른 컴퓨터들의 프로세스간의 통신 채널을 말합니다.</p>
+
+<p>|내부함수|
+resource fsockopen ( string $hostname [, int $port = -1 [, int &amp;$errno [, string &amp;$errstr [, float $timeout = ini_get(“default_socket_timeout”) ]]]] )</p>
+
+<p>내부함수 fsockopen()는 유닉스/리눅스 기반의 도메인 소켓을 오픈합니다. 도메인 서버와 포트를 응용하여 파일포인트 형태로 반환을 합니다.또한 접속 타임아웃도 같이 설정을 할 수 있습니다.</p>
+
+<p>fsockopen() 함수릍 통하여 오픈한 포인터는 fgets(), fgetss(), fputs(), fclose(), feof() 등과 같이 파일처리하는 것과 유사하게 사용을 할 수 있습니다.</p>
+
+<p>예제) fsockopen.php
+&lt;?php
+    $fp = fsockopen(“www.example.com”, 80, $errno, $errstr, 30);
+    if (!$fp) {
+        echo “$errstr ($errno)<br />\n”;
+    } else {
+        $out = “GET / HTTP/1.1\r\n”;
+        $out .= “Host: www.example.com\r\n”;
+        $out .= “Connection: Close\r\n\r\n”;
+        fwrite($fp, $out);</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    while (!feof($fp)) {
+        echo fgets($fp, 128);
+    }
+    fclose($fp);
+} ?&gt;
+</code></pre></div></div>
+
+<p>|내부함수|
+resource pfsockopen ( string $hostname [, int $port = -1 [, int &amp;$errno [, string &amp;$errstr [, float $timeout = ini_get(“default_socket_timeout”) ]]]] )</p>
+
+<p>내부함수 pfsockopen()는 지속적인 인터넷 또는 Unix 도메인 소켓 연결 합니다.</p>
+
+<p>예제) pfsockopen.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+
+$host = 'www.example.com';
+$service_uri = '/cgi/proACT';
+$vars ='code=23&amp;act=TESTing';
+
+//# HTTP 요청해더 구성
+$header = "Host: $host\r\n";
+$header .= "User-Agent: PHP Script\r\n";
+$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+$header .= "Content-Length: ".strlen($vars)."\r\n";
+$header .= "Connection: close\r\n\r\n";
+
+$fp = pfsockopen("ssl://".$host, 443, $errno, $errstr);
+if (!$fp) {
+    echo "$errstr ($errno)&lt;br/&gt;\n";
+    echo $fp;
+} else {
+    fputs($fp, "POST $service_uri  HTTP/1.1\r\n");
+    fputs($fp, $header.$vars);
+    fwrite($fp, $out);
+
+    while (!feof($fp)) {
+        echo fgets($fp, 128);
+    }
+    fclose($fp);
+} 
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<h1 id="112-ajax">11.2 AJAX</h1>
+
+<p>AJAX는 Asynchronous JavaScript XML의 약자입니다. AJAX는 페이지의 재로딩 없이 비동기/동기 방식으로 페이지의 일부분을 갱신할 수 있는 웹기술입니다.</p>
+
+<p>보통 웹페이지는 url 주소에 따라 웹서버에서 페이지를 로딩하여 화면을 출력합니다. 특정한 페이지로 이동하거나, FROM 요소등을 통하여 데이터를 입력시 url 주소가 변경이 됩니다. 이때 브라우저는 페이지를 다시 로딩하여 화면을 재구성하게 됩니다.</p>
+
+<p>PHP와 같이 JAVASCRIPT의 AJAX 방식을 혼용하여 사용을 할 수 있습니다. url로 페이지 전체를 다시 로딩하는 방식이 아닌, 페이지 일부분만 로딩하여 내용을 변경할 수 있습니다.</p>
+
+<p>AJAX는 인터넷 표준을 기반을 따릅니다:
+	XMLHttpRequest object (서버와 비동기 방식으로 데이터를 교환합니다.)
+	JavaScript/DOM (정보표시 및 상호작용)
+	CSS 
+	XML</p>
+
+<h1 id="1121-javascript--jquery">11.2.1 Javascript &amp; JQUERY</h1>
+
+<p>AJAX를 사용하기 위해서는 Javascript의 XMLHttpRequest 기능을 사용해야 합니다. 자바스크립트의 XMLHttpRequest 코드들은 코드가 복잡하고 브라우저마다 상호 특성에 따라 다르게 동작을 할 수 있습니다.</p>
+
+<p>요즘들어 AJAX를 쉽게 처리하기 위해서 자바스크립트 라이브러리 등을 많이 이용하여 사용합니다. 대표적으로 JQuery가 인기가 높습니다. JQuery는 복잡한 자바스크립트의 코드들을 쉽게 처리할 수 있으며 AJAX 통신 코드 또한 포함되어 있습니다.</p>
+
+<p>JQuery는 https://jquery.com/ 사이트를 참조해 주십시요.</p>
+
+<p>또는 AJAX 용으로 간결하게 제작된 AXIOS 라는 라이브러리도 있습니다.</p>
+
+<h1 id="1122-javascript-예제">11.2.2 Javascript 예제</h1>
+
+<p>AJAX를 처리하기 위해서는 두개의 스크립트 파일이 필요로 합니다. 첫번째 스크립트는 브라우저 접속시 보여지는 기본 화면 입니다. 두번째 스크립트는 어떠한 동작이 있을 경우 AJAX로 처리되는 스크립트 입니다.</p>
+
+<p>예제파일) ajax.php</p>
+<html>
+<head>
+    <script>
+    function ajax(str) {
+        if (str.length == 0) { 
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "ajax_email.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <p><b>아래 이메일 주소를 입력해 주세요:</b></p>
+    <form> 
+        email: <input type="text" onkeyup="ajax(this.value)" />
+    </form>
+    <p>확인: <span id="txtHint"></span></p>
+</body>
+</html>
+
+<p>예제파일) ajax_email.php
+&lt;?php
+	$email = $_GET[‘q’];</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+		echo "$email 정상적인 이메일 주소 입니다.";
+} else {
+		echo "$email 는 잘못된 이메일 주소 입니다.";
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>출력화면)</p>
+
+<p>위의 예제는 전형적인 자바스크립트의 XMLHttpReques 함수를 이용한 AJAX 처리 입니다. 먼저 ajax.php 로 접속시 이메일 주소를 입력하는 폼이 하나 출력됩니다.</p>
+
+<p>input 필드에 키를 한글자씩 입력할때마다 ajax_email.php 파일을 비동기 AJAX 로 호출할여 이메일의 유효성을 체크합니다. 입력되는 이메일 문자는 GET 방식으로 전달을 합니다.</p>
+
+<p>출력된 문자열 메시지를  자바스크립트의</p>
+
+<p>document.getElementById(“txtHint”).innerHTML = this.responseText;</p>
+
+<p>처리로 DOM 내용을 갱신하여 출력합니다.</p>
+
+<h1 id="113-jquery-예제">11.3 JQuery 예제</h1>
+
+<p>JQuery 라이브러리를 이용하면 좀더 쉽게 AJAX를 처리할 수 있습니다. 아래 예제는 JQuery와 POST 방식의 전송처리 입니다.</p>
+
+<p>JQuery를 사용하기 위해서는 라이브러리 파일을 스크립트로 삽입을 해야 합니다. 여기서는 CDN 방식으로 삽입해 보도록 하겠습니다.</p>
+
+<p>예제파일) ajax2.php</p>
+<html>
+<head>
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#email").keydown( function(){
+                // AJAX 호출 
+                $.ajax({
+                    url:'ajax_post.php',
+                    type:'post',
+                    data:$('form').serialize(),
+                    success:function(data){
+                        $('#txtHint').html(data);
+                    }
+                }); 
+            });
+
+        }); 
+
+    </script>
+</head>
+
+<body>
+    <p><b>아래 이메일 주소를 입력해 주세요:</b></p>
+    <form name="login" method="post" enctype="multipart/form-data"> 
+        email: <input type="text" name="email" id="email" />
+    </form>
+    <p>확인: <span id="txtHint"></span></p>
+</body>
+</html>
+
+<p>예제파일) ajax_post.php
+&lt;?php
+	$email = $_POST[‘email’];</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+		echo "$email 정상적인 이메일 주소 입니다.";
+} else {
+		echo "$email 는 잘못된 이메일 주소 입니다.";
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

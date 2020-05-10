@@ -1,0 +1,77 @@
+I"�<h3 id="글로벌-배열">글로벌 배열</h3>
+<p><br /></p>
+
+<p>PHP내에서 생성된 모든 글로벌변수들은 내부에서 슈퍼 배열(supper array)형태로 저장됩니다. 글로벌변수는 이중으로 슈퍼배열과 연결이 되어 있습니다. 변수명을 통하여 접근도 가능하지만 배열로 해당 변수에 데이터를 접근할 수도 있습니다.</p>
+
+<p>$GLOBALS 예약 변수명은 배열 객체입니다. PHP에서 생성된 모든 글로벌변수들은 변수의 이름과 값이 배열 형태로 $GLOBAL 변수명에 이중으로 연결되어 있습니다.</p>
+
+<p>즉, <code class="highlighter-rouge">$aaa = 10;</code> 은 <code class="highlighter-rouge">$GLOBALS[‘aaa’];</code>로도 읽고 쓸 수 있습니다.</p>
+
+<p>예제 파일 scope-06.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="nv">$bbb</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+	<span class="nv">$ccc</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+
+	<span class="nb">print_r</span><span class="p">(</span><span class="nv">$GLOBALS</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( 
+	[_GET] =&gt; Array ( ) [_POST] =&gt; Array ( ) [_COOKIE] =&gt; Array ( ) [_FILES] =&gt; Array ( ) [GLOBALS] =&gt; Array *RECURSION* [aaa] =&gt; 10 [bbb] =&gt; 20 [ccc] =&gt; 30 
+) 
+</code></pre></div></div>
+
+<p>위의 예는 글로벌변수의 구조를 출력하는 예입니다. 위의 예는 세 개의 외부 변수를 선언했습니다. 그 후에 글로벌 배열변수의 값을 출력해 봅니다. 위의 예에서 생성한 세 개의 변수명과 값이 $GLOBAL 변수에 추가된 것을 확인할 수 있습니다.</p>
+
+<p>이러한 글로벌변수의 특성을 이용하여 PHP 내부에서 사용하는 외부변수들을 함수 내에서 global 키워드 대신  $GLOBALS[] 배열도 사용할 수 있습니다. 사용 방법은 $GLOBALS[‘변수명’]로 사용 하고자 하는 변수명을 기입을 하시면 됩니다.</p>
+
+<p>다음 예제는 글로벌변수의 접근입니다.</p>
+
+<p>예제 파일 scope-07.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nv">$y</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">global</span> <span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">;</span>
+    	<span class="nv">$y</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">test</span><span class="p">();</span>
+    <span class="k">echo</span> <span class="nv">$y</span><span class="p">;</span> <span class="c1">// outputs 15</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12
+</code></pre></div></div>
+
+<p>먼저 PHP 안에 외부변수 $x와 $y를 생성합니다. 함수 내에서 함수 밖에 미리 선언된 글로벌 변수 $x, $y를 사용할 수 있도록 global 키워드를 사용하여 정의합니다. 이처럼 글로벌 키워드를 정의된 외부변수는 함수 내에서도 외부에 있는 변수의 값을 직접 접근하여 사용할 수 있습니다.</p>
+
+<p>하지만 함수 내부에서 외부 변수들을 일일이 정의하고 사용하는 것은 불편한 점도 있을 것입니다. $GLOBAL 슈퍼변수를 통해 직접 접근하여 사용할 수도 있습니다. 다음 예는 위의 예와 기능은 같지만 변수 처리 접근 방법은 서로 다릅니다.</p>
+
+<p>예제 파일 scope-08.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nv">$y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">+</span> <span class="nv">$GLOBALS</span><span class="p">[</span><span class="s1">'y'</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="nx">test</span><span class="p">();</span>
+    <span class="k">echo</span> <span class="nv">$y</span><span class="p">;</span> <span class="c1">// outputs 15</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+</code></pre></div></div>
+
+<p>위의 예제는 global 키워드를 사용하지 않고 $GLOBALS 슈퍼변수를 사용하여 외부 $x, $y 값을 직접 사용을 할 수 있습니다.<br />
+슈퍼변수는 별도의 선언 없이 어디에 서든지 사용을 할 수 있습니다.</p>
+
+<p><br /><br /></p>
+:ET

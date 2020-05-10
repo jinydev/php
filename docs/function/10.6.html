@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h3 id="106-가변-함수">10.6 가변 함수</h3>
+<p>가변 함수란 PHP에서 함수를 호출할 때 동적으로 함수를 호출할 수 있는 기능입니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1061-문법">10.6.1 문법</h3>
+<p>지금까지 함수 선언 function 키워드를 통해 정의한 함수 이름을 사용하여 함수를 호출했습니다. 소스상에서 선언한 함수명을 기준으로 직접 함수명(); 형태로 적어서 함수를 호출하여 사용했습니다.</p>
+
+<p>|문법|
+$변수명 = “함수 이름”;
+$변수명();</p>
+
+<p>가변 함수는 변수명에 함수명을 대입하고 $변수명(); 형태로 함수를 호출할 수 있습니다.</p>
+
+<p>함수명을 임시변수에 문자열로 저장한 후에 저장된 문자열과 일치하는 함수를 호출하는 것입니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1062-가변-함수-호출">10.6.2 가변 함수 호출</h3>
+<p>가변 함수 호출은 동적으로 함수를 처리하여 호출할 때 매우 유용합니다. 가변 함수를 이용하면 프로그램 로직 또는 입력값을 분석하여 동적으로 함수를 실행할 수 있는 장점 등이 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($func=="aaa"){
+	aaa();
+} else if($func=="bbb"){
+	bbb();
+} else if($func=="ccc"){
+	ccc();
+}
+</code></pre></div></div>
+
+<p>위와 같이 조건에 따라서 각각 다르게 함수 호출을 처리해야 하는 경우에는 가변 함수 호출을 통해 쉽게 작성할 수 있습니다.</p>
+
+<p>기존 함수 호출 방식</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"hello() 함수입니다.&lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">hello</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>가변 함수 호출 방식<br />
+예제 파일 func-18.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+	<span class="k">function</span> <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">echo</span> <span class="s2">"hello() 함수입니다.&lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="nv">$func</span> <span class="o">=</span> <span class="s2">"hello"</span><span class="p">;</span>
+	<span class="nv">$func</span><span class="p">();</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello() 함수입니다.
+</code></pre></div></div>
+
+<p>위의 예제를 보면 $func 변수에는 함수명을 저장합니다. 저장된 변수의 함수명을 이용하여 함수를 호출합니다. 이처럼 변수를 이용하여 가변적으로 함수를 호출할 수 있는 방법이 가변 함수입니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1063-클래스-가변-메서드">10.6.3 클래스 가변 메서드</h3>
+<p>가변 함수 문법은 향후 설명할 클래스에서도 메서드를 호출할 때 비슷한 방법으로 호출할 수 있습니다. 여기서는 간단히 학습하겠습니다.</p>
+
+<p>클래스 &amp; 가변 함수<br />
+예제 파일 func-19.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">jiny</span>
+	<span class="p">{</span>
+    		<span class="k">function</span> <span class="nf">Variable</span><span class="p">()</span>
+    		<span class="p">{</span>
+        			<span class="nv">$name</span> <span class="o">=</span> <span class="s1">'Bar'</span><span class="p">;</span>
+        			<span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$name</span><span class="p">();</span> <span class="c1">// Bar() 메서드를 호출합니다.</span>
+    		<span class="p">}</span>
+    
+    		<span class="k">function</span> <span class="nf">Bar</span><span class="p">()</span>
+    		<span class="p">{</span>
+        			<span class="k">echo</span> <span class="s2">"This is Bar"</span><span class="p">;</span>
+    		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="nv">$jiny</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">jiny</span><span class="p">();</span>
+	<span class="nv">$funcname</span> <span class="o">=</span> <span class="s2">"Variable"</span><span class="p">;</span>
+	<span class="nv">$jiny</span><span class="o">-&gt;</span><span class="nv">$funcname</span><span class="p">();</span>  <span class="c1">// $jiny-&gt;Variable()를 호출합니다.</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is Bar
+</code></pre></div></div>
+
+<p>위의 예제처럼 클래스를 선언하고, 인스턴스를 생성한 후에 클래스에서 호출하는 메서드도 변수를 통해 가변 메서드 형태로 호출할 수도 있습니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

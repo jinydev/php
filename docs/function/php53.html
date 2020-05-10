@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <ol>
+  <li>
+    <h1 id="json">JSON</h1>
+  </li>
+</ol>
+
+<p>JSON 포맷은 더글라스 크록포드에 의해서 RFC7159와 ECMA-404 라는 표준에 의해서 정의된 기술입니다. ECMA-404는 표준문법만 제공하며, RFC7159는 보안적인 시맨틱 부분을 고려한 문법을 제공합니다.</p>
+
+<p>JSON이란 Javascript Object Notation의 약자로  XML과 비슷한 데이터의 집합의 텍스트 데이터 입니다. 주로 데이터 교환을 위하여 최근에 많이 사용하는 데이터 포맷의 일종입니다.</p>
+
+<p>최근 들어 비동기 통신 (AJAX)이 인기를 얻고 있는 가운데 간단한 데이터 값의 서로 전송을 위하여 JSON 규격의 문자열 데이터를 많이 사용합니다. JSON은 특히 인터넷에서 데이터를 주고 받는데 더욱더 유용합니다. 대부분의 웹 API 들은 JSON 방식의 데이터 처리와 교환을 위한 포맷으로 이용합니다.</p>
+
+<p>JSON 데이터는 C, C++, PHP등 프로그래머 들에게 친숙한 텍스트 규격 형태로 초보 개발자들도 쉽게 이해를 할 수 있습니다. JSON 파일을 처리하기 위해서는 복잡한 문자열 처리 루틴이 필요합니다. 하지만 최신 버전의 PHP는 최신 트렌드의 JSON 을 쉽게 처리 할 수 있는 내부함수를 제공합니다.</p>
+
+<h1 id="041-json-문법">04.1 JSON 문법</h1>
+
+<p>JSON은 다양한 형식의 데이터를 문자열을 이용하여 데이터 직렬화 처리를 합니다. 여러 개의 데이터를 하나의 문자열로 표현을 하는데 있어 약간의 규칙과 문법구조를 가지고 있습니다.</p>
+
+<h1 id="0411-문자열-표현">04.1.1 문자열 표현</h1>
+
+<p>JSON 에서 키와 데이터를 표현하는 문자열은 큰따옴표(“)로 묶어서 작성을 합니다. JSON 데이터를 PHP 소스내에서 사용을 할 때 큰따옴표(“)는 기존 문자열과 같이 처리하는데 충돌이 발생할 수 있습니다.</p>
+
+<p>PHP에서 JSON 데이터 문자열을 삽입할 때, JSON 안에 있는 큰따옴표는 백슬래시(\”)를 추가하여 사용을 합니다.</p>
+
+<h1 id="0412-데이터-표현">04.1.2 데이터 표현</h1>
+
+<p>JSON에서 데이터는 키/값 한쌍의 데이터로 표시를 합니다. collection 타입 표기라고도 합니다. 이러한 표기는 object, struct(구조체), 연상배열과 같은 문법표현에서 자주 사용을 합니다.</p>
+
+<p>|표현|
+“키”:”값”</p>
+
+<p>키 이름은 변수와 같으며, 값은 그 변수의 데이터 값과 같다고 합니다. JSON은 배열처럼 여러 개의 키/값 을 가지는 다수의 데이터로 구성할 수 있습니다. 즉 연상배열 처 럼 키와 값 형태의 한쌍으로 다수의 데이터를 처리할 수 있습니다.</p>
+
+<h1 id="0413-배열-표현">04.1.3 배열 표현</h1>
+
+<p>JOSN 데이터를 배열로 처리를 할 수 있습니다. 데이터는 키와 값형태로 묽어서 입력합니다. 그리고 대괄호 [] 를 이용하여 감싸 주면 됩니다.</p>
+
+<p>예제파일) json-01.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
+	[10, {\"a\":20}, [30,\"서른\"] ]
+";
+
+echo "=== JSON 문자열 ===&lt;br&gt;";
+echo $string;
+echo "&lt;br&gt;";
+
+echo "=== 배열처리 ===&lt;br&gt;";
+$arr = json_decode($string);
+print_r($arr);
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+=== JSON 문자열 ===
+[10, {“a”:20}, [30,”서른”] ]	
+=== 배열처리 ===
+Array ( [0] =&gt; 10 [1] =&gt; stdClass Object ( [a] =&gt; 20 ) [2] =&gt; Array ( [0] =&gt; 30 [1] =&gt; 서른 ) )</p>
+
+<h1 id="0414-객체-표현">04.1.4 객체 표현</h1>
+
+<p>JSON의 데이터를 객체로 표현할 수 있습니다. 각각의 데이터를 중괄호 { } 로 표기하면 됩니다.</p>
+
+<p>|표현|
+{
+	“키”:”값”, 
+	 “키”:”값”,
+	 “키”:”값”,
+	 “키”:”값”
+}</p>
+
+<p>예제파일) json-02.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
+	{\"name1\":10,\"name2\":\"안녕하세요\",\"name3\":true}
+";
+
+echo "=== JSON 문자열 ===&lt;br&gt;";
+echo $string;
+echo "&lt;br&gt;";
+
+echo "=== 배열처리 ===&lt;br&gt;";
+$arr = json_decode($string);
+print_r($arr);
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+=== JSON 문자열 ===
+{“name1”:10,”name2”:”안녕하세요”,”name3”:true}	
+=== 배열처리 ===
+stdClass Object ( [name1] =&gt; 10 [name2] =&gt; 안녕하세요 [name3] =&gt; 1 )</p>
+
+<p>JOSN 문자열은 비순서화된 데이터셋 입니다. 중괄호 { 와 } 안에 여러개의 데이터를 넣을 수 있기 때문 입니다. 여러개의 데이터를 묽을 때는 각각의 데이터를 콤마(,)로 구분을 하고 전체를 중괄호 { } 로 감싸 주시면 됩니다.</p>
+
+<h1 id="0414-객체-이중화-표현">04.1.4 객체 이중화 표현</h1>
+
+<p>하나의 그룹으로 만들어진 JSON 데이터를 이중으로 다시 묶을 수도 있습니다. JSON 객체 안에 또다른 JSON 객체를 가지는 형태입니다. 이중배열처럼 다중관계를 가지는 구조라고 이해할 수 있습니다.</p>
+
+<p>|표현|
+{
+	{
+	 	 “키”:”값”, 
+	 	 “키”:”값”,
+	 	 “키”:”값”,
+	 	 “키”:”값”
+	},
+	{
+	 	 “키”:”값”, 
+	 	 “키”:”값”,
+	 	 “키”:”값”,
+	 	 “키”:”값”
+	}
+}</p>
+
+<p>이때 또한 각각의 JSON 데이터를 콤마(,)로 구분하고 다시 전체를 중괄호 { } 를 이용하여 감싸 묽을 수 있습니다.</p>
+
+<h1 id="0415-객체-키-표현">04.1.5 객체 키 표현</h1>
+
+<p>JSON은 중괄호 { } 를 하나의 object, array로 인식을 합니다. 또한 각각의 데이터는 콤마(,)를 이용하여 구분 합니다. 또한 콜론(:) 앞은 키 이름으로 인식을 합니다.</p>
+
+<p>이중배열처럼 JSON 데이터의 키 값이 있을 경우에는 “키”:{} 형태로 지정할 수 있습니다.</p>
+
+<p>|표현|
+{
+	“1”:{
+		“FirstName”:”lee”,
+		“LastName”:”hojin”
+	}
+}</p>
+
+<p>여러 개의 이중 배열형태로 묽기 위해서는 대괄호 [ ] 를 사용할 수도 있습니다.</p>
+
+<p>쌍따옴표(”)로 둘러싸여진 키 와 쌍따옴표(”)로 둘러싸여진 값 을 콜론(:) 기호로 연결을 합니다. 또한 여러개의 데이터는 콤마(,)로 구분을 합니다.</p>
+
+<h1 id="0416-주석">04.1.6 주석</h1>
+
+<p>JSON 데이터는 띄어쓰기 나 탭을 통하여 보기 좋게 코드를 정리를 할 수는 있으나 주석과 같은 설명문은 넣을 수가 없습니다.</p>
+
+<h1 id="042-json-인코딩">04.2 JSON 인코딩</h1>
+
+<p>소스상의 있는 데이터, 배열을 JSON 형태의 문자열로 변환을 할 수 있습니다. 엔코딩은 디코딩의 반대말입니다. PHP는 JSON 인코딩을 쉽게 처리를 하기 위해서 전용 함수를 제공합니다.</p>
+
+<p>|내부함수|
+string json_encode ( mixed $value [, int $options = 0 [, int $depth = 512 ]] )</p>
+
+<p>내부함수 json_encode()를 통하여 간단하게 배열 데이터를 JSON 형태의 문자열로 직렬화 변환을 할 수 있습니다.</p>
+
+<p>예제파일) json-03.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
+$arr['LastName'] = "hojin";
+
+$json = json_encode($arr);
+echo $json;
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+{“FirstName”:”lee”,”LastName”:”hojin”}</p>
+
+<p>위의 실험을 보면 어레이 변수를 인코딩 함수를 이용하여 JSON 문자열로 변경이 됩니다. json으로 직렬화된 문자열을 출력합니다.</p>
+
+<p>예제파일) json-04.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
+$arr['LastName'] = "hojin";
+$user['1'] = $arr;
+
+$arr['FirstName'] = "jiny";
+$arr['LastName'] = "PHP";
+$user['2'] = $arr;
+
+$json = json_encode($user);
+echo $json;
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+{
+“1”:{
+“FirstName”:”lee”,
+“LastName”:”hojin”
+},
+“2”:{
+“FirstName”:”jiny”,
+“LastName”:”PHP”
+}
+}</p>
+
+<p>위의 실험은 다차원 배열의 데이터를 JSON으로 인코딩하는 예제 입니다. 배열에서 연상 키 값이 있으면 “키”:{} 형태로 변경이 되는 것을 확인할 수 있습니다. 또한 다차원 배열을  JSON 직렬화 하면서 증괄호 { } 를 계속 중첩하여 사용합니다. 다차원 적인 배열도 JSON 데이터 직렬화를 처리할 수 있습니다.</p>
+
+<h1 id="043-json-디코딩">04.3 JSON 디코딩</h1>
+
+<p>직렬화된 JSON은 데이터를 담고 있는 텍스트 문자열과 같습니다. 데이터를 직렬화 하여 처리하는 것은 이기종 간에 데이터를 전달을 할 때 매우 편리합니다. 직렬화 변환된 데이터를 저장하고, 다른 시스템으로 전송도 가능합니다.</p>
+
+<h1 id="0431-배열-디코딩">04.3.1 배열 디코딩</h1>
+
+<p>내부함수 json_decode()를 통하여 간단하게 직렬화된 JSON 문자열을 데이터로 변환을 할 수 있습니다. 디코딩은 인코딩의 반대말 입니다.</p>
+
+<p>PHP는 JSON 파일을 PHP에서 사용할 수 있는 데이터 형태로 쉽게 변환을 할 수 있도록 전용 함수를 제공합니다.</p>
+
+<p>|내부함수|
+mixed json_decode ( string $json [, bool $assoc = false [, int $depth = 512 [, int $options = 0 ]]] )</p>
+
+<p>예제파일) json-05.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
+$string = "
+{ 
+	\"Id\":\"01\", 
+	\"FirstName\": \"lee\", 
+	\"LastName\": \"hojin\", 
+	\"Country\": \"Korea\" 
+}
+";
+
+echo "=== JSON 문자열 ===&lt;br&gt;";
+echo $string;
+echo "&lt;br&gt;";
+
+echo "=== 배열처리 ===&lt;br&gt;";
+$arr = json_decode($string);
+
+while(list($key,$val) = each($arr)){
+	echo $key. "==&gt;" .$val. "&lt;br&gt;";
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+=== JSON 문자열 ===
+{ “Id”:”01”, “FirstName”: “lee”, “LastName”: “hojin”, “Country”: “Korea” }</p>
+
+<p>=== 배열처리 ===
+Id==&gt;01
+FirstName==&gt;lee
+LastName==&gt;hojin
+Country==&gt;Korea</p>
+
+<h1 id="0432-다중-배열-디코딩">04.3.2 다중 배열 디코딩</h1>
+
+<p>JSON은 1차원 데이터 이외에 다단계의 값을 가지는 다차원 배열 형태로 값을 지정할 수 있습니다.
+다차원 배열을 지정하기 위해서는 중괄호 이에외 대괄호 [ ] 를 사용합니다.</p>
+
+<p>|표현|
+[
+	{
+	 	 “키”:”값”, 
+	 	 “키”:”값”,
+	 	 “키”:”값”,
+	 	 “키”:”값”
+	},
+	{
+	 	 “키”:”값”, 
+	 	 “키”:”값”,
+	 	 “키”:”값”,
+	 	 “키”:”값”
+	}
+]</p>
+
+<p>대괄호는 배열안에 또다른 json 배열이 있다는 표기 입니다.</p>
+
+<p>예제파일) json-06.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
+$string = "
+
+	[
+		{ 
+			\"Id\":\"01\", 
+			\"FirstName\": \"lee\", 
+			\"LastName\": \"hojin\", 
+			\"Country\": \"Korea\" 
+		},
+		{ 
+			\"Id\":\"02\", 
+			\"FirstName\": \"jiny\", 
+			\"LastName\": \"PHP\", 
+			\"Country\": \"Korea\" 
+		}
+	]
+
+";
+
+echo "=== JSON 문자열 ===&lt;br&gt;";
+echo $string;
+echo "&lt;br&gt;";
+
+echo "=== 배열처리 ===&lt;br&gt;";
+$arr = json_decode($string);
+
+for ($i=0;$i&lt;count($arr);$i++){
+	echo "첫번재 배열 $i &lt;br&gt;";
+
+	while(list($key,$val) = each($arr[$i])){
+		echo $key. "==&gt;" .$val. "&lt;br&gt;";
+	}
+}	
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)</p>
+
+<p>=== JSON 문자열 ===
+[	
+{ “Id”:”01”, “FirstName”: “lee”, “LastName”: “hojin”, “Country”: “Korea” }, 
+{ “Id”:”02”,”FirstName”: “jiny”,	“LastName”: “PHP”, “Country”: “Korea” }
+]		
+=== 배열처리 ===
+첫번재 배열 0
+Id==&gt;01
+FirstName==&gt;lee
+LastName==&gt;hojin
+Country==&gt;Korea
+첫번재 배열 1
+Id==&gt;02
+FirstName==&gt;jiny
+LastName==&gt;PHP
+Country==&gt;Korea</p>
+
+<p>JSON 데이터를 소스상에서 직접 생성하여 처리를 할 수도 있지만, 외부 API 서비스를 접속하여 데이터를 수신한 후에 디코딩 하여 프로그램에서 적용할 수 있습니다.</p>
+
+<h1 id="044-객체-직렬화">04.4 객체 직렬화</h1>
+
+<p>JSON 방식 이외에도 PHP내에서 제공되는 함수를 통하여 객체를 직렬화 처리할 수 있습니다.  변환된 문자열은 파일등으로 출력하여 저장할 수도 있고, 저장된 파일을 읽어서 객체로 다시 복원할 수도 있습니다.</p>
+
+<p>|내부함수|
+string serialize ( mixed $value )</p>
+
+<p>내부함수 serialize()는 저장가능한 값에 대해서 바이트스트림 표현의 문자열로 변경을 합니다. 객체등을 변환하여 저장하거나 전단을 할때 매우 유용합니다.</p>
+
+<p>예제) serialize.php
+&lt;?php</p>
+
+<p>class A {
+      public $one = 1;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  public function show_one() {
+      echo $this-&gt;one;
+  }   }
+</code></pre></div></div>
+
+<p>$a = new A;</p>
+
+<p>// 클래스 인스턴스 객체를 직열화 하여 저장을 합니다. 
+  $serialObj = serialize($a);
+  file_put_contents(‘store’, $serialObj);</p>
+
+<p>echo $serialObj;</p>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+O:1:”A”:1:{s:3:”one”;i:1;}</p>
+
+<p>|내부함수|
+mixed unserialize ( string $str [, array $options ] )</p>
+
+<p>내부함수 unserialize()는 serialize()함수를 통하여 직렬화된 기능을 역직렬화 작업을 수행합니다. 역직렬화를 하기위 위해서는 직렬화된 문자열 만 가지고는 처리를 할 수 없습니다. 역직렬화를 위한 이전의 클래스 객체의 정의가 같이 필요로 합니다.</p>
+
+<p>예제) unserialize.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+	public $one = 1;
+
+	public function show_one() {
+    	echo $this-&gt;one;
+	}
+}
+  
+// 저장된 직열화 문자열 파일을 읽어서, 역직열화를 수행합니다.
+$s = file_get_contents('store');
+$a = unserialize($s);
+
+// $a 객체의 show_one() 함수를 호출합니다.
+$a-&gt;show_one();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+1</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

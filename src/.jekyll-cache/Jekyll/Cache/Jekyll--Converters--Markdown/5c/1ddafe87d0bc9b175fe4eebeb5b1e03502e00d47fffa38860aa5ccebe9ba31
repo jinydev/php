@@ -1,0 +1,600 @@
+I"�C<ol>
+  <li>
+    <h1 id="정보">정보</h1>
+  </li>
+</ol>
+
+<p>PHP는 내부함수들을 통하여 PHP의 버전 및 설정 상태등의 다양한 정보를 읽어서 처리할 수 있습니다.</p>
+
+<h1 id="191-시스템">19.1 시스템</h1>
+
+<p>내부함수 phpversion()는 현재 PHP 버전을 가져옵니다.</p>
+
+<p>|내부함수|
+string phpversion ([ string $extension ] )</p>
+
+<p>예제) phpversion.php
+<?php
+	echo phpversion();
+?></p>
+
+<p>화면출력)
+7.1.4</p>
+
+<p>|내부함수|
+mixed version_compare ( string $version1 , string $version2 [, string $operator ] )</p>
+
+<p>내부함수 version_compare()는 두 개의 PHP 버전 번호를 비교합니다.</p>
+
+<p>예제) version_compare.php
+&lt;?php
+if (version_compare(PHP_VERSION, ‘7.0.0’) &gt;= 0) {
+    echo ‘I am at least PHP version 7.0.0, my version: ‘ . PHP_VERSION . “<br />”;
+}</p>
+
+<p>if (version_compare(PHP_VERSION, ‘5.3.0’) &gt;= 0) {
+    echo ‘I am at least PHP version 5.3.0, my version: ‘ . PHP_VERSION . “<br />”;
+}</p>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+I am at least PHP version 7.0.0, my version: 7.1.4
+I am at least PHP version 5.3.0, my version: 7.1.4</p>
+
+<p>|내부함수|
+string zend_version ( void )</p>
+
+<p>내부함수 zend_version()는 Zend 엔진의 버전을 가져옵니다.</p>
+
+<p>예제) zend_version.php
+<?php
+	echo "Zend engine version: " . zend_version();
+?></p>
+
+<p>화면출력)
+Zend engine version: 3.1.0</p>
+
+<p>|내부함수|
+int zend_thread_id ( void )</p>
+
+<p>내부함수 zend_thread_id()는 현재 스레드의 고유 Id를 반환합니다. 이 함수는 PHP가 ZTS (Zend Thread Safety) 지원 및 디버그 모드 (–enable-debug)로 빌드 된 경우에만 사용할 수 있습니다.</p>
+
+<p>예제) zend_thread_id.php
+<?php
+	$thread_id = zend_thread_id();
+	echo 'Current thread id is: ' . $thread_id;
+?></p>
+
+<p>|내부함수|
+string php_uname ([ string $mode = “a” ] )</p>
+
+<p>내부함수 php_uname()는 PHP가 실행되는 운영 체제 정보를 반환합니다.</p>
+
+<p>예제) php_uname.php
+<?php
+	echo php_uname() ."<br>";
+	echo PHP_OS;
+?></p>
+
+<p>화면출력)
+Windows NT LAPTOP-M0820HEF 10.0 build 15063 (Windows 10) i586
+WINNT</p>
+
+<h1 id="192-정보함수">19.2 정보함수</h1>
+
+<p>PHP 환경설정과 정보들을 내부함수를 통하여 읽어올 수 있습니다.</p>
+
+<p>|내부함수|
+bool phpinfo ([ int $what = INFO_ALL ] )</p>
+
+<p>내부함수 phpinfo()는 PHP의 설정에 관한 정보 출력합니다 전반적인 PHP의 설치환경 정보를 웹페이지를 통하여 출력할 수 있습니다. 또는, 지정 모듈만 선택하여 출력을 할 수도 있습니다.</p>
+
+<p>	INFO_GENERAL
+	INFO_CREDITS
+	INFO_CONFIGURATION
+	INFO_MODULES
+	INFO_ENVIRONMENT
+	INFO_VARIABLES
+	INFO_LICENSE
+	INFO_ALL</p>
+
+<p>예제) phpinfo.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 전체 정보를 출력합니다.
+phpinfo();
+
+// 지정한 모듈 정보만 출력합니다.
+phpinfo(INFO_MODULES);
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>|내부함수|
+string get_cfg_var ( string $option )</p>
+
+<p>내부함수 get_cfg_var()는 PHP의 설정 옵션 값을 확인할 수 있습니다.</p>
+
+<p>get_cfg_var() 함수는 컴파일하여 PHP를 설치를 하였을 때 또는 아파치등의 웹서버에서 정보를 읽어 참조하였을 때는 값을 반환하지 않습니다.</p>
+
+<p>예제) get_cfg_var.php
+<?php
+	// php.ini 값을 확인 합니다.
+	echo "SMTP Server = ". get_cfg_var("SMTP") ."<br>";
+	echo "SMTP Server = ". get_cfg_var("smtp_port") ."<br>";
+?></p>
+
+<p>화면출력)
+SMTP Server = localhost
+SMTP Server = 25</p>
+
+<p>|내부함수|
+string getenv ( string $varname )</p>
+
+<p>내부함수 getenv()는 환경변수 값을 읽어 올 수 있습니다.</p>
+
+<p>예제) getenv.php
+&lt;?php
+	$ip = getenv(‘REMOTE_ADDR’);
+	echo “접속주소 : $ip <br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 글로벌 환경 변수 값을 통하여도 읽어 올 수 있습니다.
+$ipAddr = $_SERVER['REMOTE_ADDR'];
+echo "접속주소 : $ipAddr &lt;br&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>|내부함수|
+bool putenv ( string $setting )</p>
+
+<p>내부함수 putenv()는 환경변수 값을 설정합니다.</p>
+
+<p>예제) putenv.php
+&lt;?php
+	print “env is: “.$_ENV[“USER”].”<br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>putenv("USER=jiny");
+print "getenv is: ".getenv("USER")."&lt;br&gt;";
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+env is:
+getenv is: jiny</p>
+
+<h1 id="193-ini">19.3 ini</h1>
+
+<p>PHP의 환경 설정파일 ini에 대한 정보을 읽거나 설정을 할 수 있습니다. 이와 관련된 몇 개의 내부함수들을 제공합니다.</p>
+
+<p>|내부함수|
+string ini_get ( string $varname )</p>
+
+<p>내부함수 ini_get()는 구성 옵션의 값을 가져옵니다.</p>
+
+<p>예제) ini_get.php
+<?php
+	echo 'display_errors = ' . ini_get('display_errors') . "<br>";
+	echo 'register_globals = ' . ini_get('register_globals') . "<br>";
+	echo 'post_max_size = ' . ini_get('post_max_size') . "<br>";
+	echo 'post_max_size+1 = ' . (ini_get('post_max_size')+1) . "<br>";
+	echo 'post_max_size in bytes = ' . ini_get('post_max_size');
+?></p>
+
+<p>화면출력)
+display_errors =
+register_globals =
+post_max_size = 8M
+post_max_size+1 = 9
+post_max_size in bytes = 8M</p>
+
+<p>|내부함수|
+array ini_get_all ([ string $extension [, bool $details = true ]] )</p>
+
+<p>내부함수 ini_get_all()는 모든 구성 옵션을 가져옵니다.</p>
+
+<p>예제) ini_get_all.php
+<?php
+	print_r(ini_get_all("pcre"));
+	print_r(ini_get_all());
+?></p>
+
+<p>|내부함수|
+string ini_set ( string $varname , string $newvalue )</p>
+
+<p>내부함수 ini_set()는 구성 옵션의 값을 설정합니다.</p>
+
+<p>예제) ini_set.php
+&lt;?php
+	echo ini_get(‘display_errors’);</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!ini_get('display_errors')) {
+	ini_set('display_errors', '1');
+}
+
+echo ini_get('display_errors'); ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+1</p>
+
+<p>|내부함수|
+void ini_restore ( string $varname )</p>
+
+<p>내부함수 ini_restore()는 구성 옵션의 값을 복원합니다.</p>
+
+<p>예제) ini_restore.php
+&lt;?php
+	$setting = ‘y2k_compliance’;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'Current value for \'' . $setting . '\': ' . ini_get($setting), "&lt;br&gt;";
+
+ini_set($setting, ini_get($setting) ? 0 : 1);
+echo 'New value for \'' . $setting . '\': ' . ini_get($setting), "&lt;br&gt;";
+
+ini_restore($setting);
+echo 'Original value for \'' . $setting . '\': ' . ini_get($setting), "&lt;br&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+Current value for ‘y2k_compliance’:
+New value for ‘y2k_compliance’:
+Original value for ‘y2k_compliance’:</p>
+
+<p>|내부함수|
+string php_ini_loaded_file ( void )</p>
+
+<p>내부함수 php_ini_loaded_file()는 php.ini 파일의 경로 검색합니다.</p>
+
+<p>예제) php_ini_loaded_file.php
+&lt;?php
+	$inipath = php_ini_loaded_file();</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($inipath) {
+	echo 'Loaded php.ini: ' . $inipath;
+} else {
+	echo 'A php.ini file is not loaded';
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+Loaded php.ini: C:\php-7.1.4-Win32-VC14-x86\php.ini</p>
+
+<p>|내부함수|
+string php_ini_scanned_files ( void )</p>
+
+<p>내부함수 php_ini_scanned_files()는 ini 디렉토리에서 파싱 된 .ini 파일 목록을 반환합니다.</p>
+
+<h1 id="194-프로세스">19.4 프로세스</h1>
+<p>PHP가 동작되는 프로세스에 대한 정보와 처리를 할 수 있습니다. 이와 관련된 몇 개의 내부함수들을 제공합니다.</p>
+
+<p>|내부함수|
+string cli_get_process_title ( void )</p>
+
+<p>내부함수 cli_get_process_title()는 현재 프로세스 제목을 반환합니다.</p>
+
+<p>예제) cli_get_process_title.php
+<?php
+echo "Process title: " . cli_get_process_title() . "\n";
+?></p>
+
+<p>화면출력)
+Process title: 명령 프롬프트 - php -S localhost:8000</p>
+
+<p>|내부함수|
+bool cli_set_process_title ( string $title )</p>
+
+<p>내부함수 cli_set_process_title()는 프로세스 제목을 설정합니다.</p>
+
+<p>예제) cli_set_process_title.php
+&lt;?php
+	$title = “jiny PHP Script”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cli_set_process_title($title);
+echo "Process title: " . cli_get_process_title() . "\n"; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+Process title: jiny PHP Script</p>
+
+<p>|내부함수|
+int getmypid ( void )</p>
+
+<p>내부함수 getmypid()는 현재 PHP의 프로세스 ID를 확인할 수 있습니다.</p>
+
+<p>예제) getmypid.php
+<?php
+	echo getmypid();
+?></p>
+
+<p>화면출력)
+3868</p>
+
+<p>|내부함수|
+int getmyuid ( void )</p>
+
+<p>내부함수 getmyuid()는 현재 PHP의 UID를 확인할 수 있습니다.</p>
+
+<p>예제) getmyuid.php
+<?php
+	echo getmyuid();
+?></p>
+
+<p>|내부함수|
+int getmyinode ( void )</p>
+
+<p>내부함수 getmyinode()는 현재 스크립트의 inode값을 구합니다. inode는 유닉스 계통에서 사용하는 자료 구조 입니다. 각각의 파일은 1개의 inode값을 가지고 있습니다.</p>
+
+<p>예제) getmyinode.php
+<?php
+	echo getmyinode();
+?></p>
+
+<p>|내부함수|
+string uniqid ([ string $prefix = “” [, bool $more_entropy = false ]] )</p>
+
+<p>내부함수 uniqid()는 고유 ID를 생성합니다. 마이크로 세컨드 단위로 현재 시각에 따라 접두사를 포함한 식별자를 생성합니다.</p>
+
+<p>예제) uniqid.php
+&lt;?php
+	// 고유 ID값을 생성합니다.
+	printf(“uniqid(): %s <br />”, uniqid());</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 접두사를 붙여서 고유 ID값을 생성하빈다.
+$prefix = "php_";
+printf("uniqid('$prefix'): %s &lt;br&gt;", uniqid($prefix));
+
+// more_entropy
+printf("uniqid('', true): %s &lt;br&gt;", uniqid('', true)); ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+uniqid(): 599934c16f714
+uniqid(‘php_’): php_599934c16f71a
+uniqid(‘’, true): 599934c16f71b2.39586057</p>
+
+<h1 id="195-리소스">19.5 리소스</h1>
+
+<p>PHP 동작상태에 대한 메모리등 리소스등을 확인할 수 있습니다. 이와 관련된 몇 개의 내부함수를 제공합니다.</p>
+
+<p>|내부함수|
+array get_resources ([ string $type ] )</p>
+
+<p>내부함수 get_resources()는 활성화된 리소스를 반환합니다.</p>
+
+<p>예제) get_resources.php
+<?php
+	$fp = tmpfile();
+	var_dump(get_resources());
+?></p>
+
+<p>화면출력)
+array(1) { [2]=&gt; resource(2) of type (stream) }</p>
+
+<p>|내부함수|
+array getrusage ([ int $who = 0 ] )</p>
+
+<p>내부함수 getrusage()는 현재 리소스 사용량을 가지고 옵니다.</p>
+
+<p>예제) getrusage.php
+<?php
+	$dat = getrusage();
+	print_r($dat);
+?></p>
+
+<p>화면출력)
+Array ( [ru_majflt] =&gt; 3686 [ru_maxrss] =&gt; 12852 [ru_utime.tv_usec] =&gt; 31250 [ru_utime.tv_sec] =&gt; 0 [ru_stime.tv_usec] =&gt; 78125 [ru_stime.tv_sec] =&gt; 0 )</p>
+
+<p>|내부함수|
+int memory_get_usage ([ bool $real_usage = false ] )</p>
+
+<p>내부함수 memory_get_usage()는 PHP에 할당 된 메모리 양을 반환합니다.</p>
+
+<p>예제) memory_get_usage.php
+&lt;?php
+	// 시작전 메모리
+	echo memory_get_usage() . “<br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 메모리 할당 
+$a = str_repeat("Hello", 4242);
+echo memory_get_usage() . "&lt;br&gt;";
+
+// 메모리 해제
+unset($a);
+echo memory_get_usage() . "&lt;br&gt;";
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+344128
+368704
+344128</p>
+
+<p>|내부함수|
+int memory_get_peak_usage ([ bool $real_usage = false ] )</p>
+
+<p>내부함수 memory_get_peak_usage()는 PHP가 할당 한 메모리 피크치를 반환합니다.</p>
+
+<h1 id="196-include">19.6 include</h1>
+
+<p>내부함수 get_included_files()는 include 또는 require 파일의 이름을 가진 배열을 반환합니다.</p>
+
+<p>|내부함수|
+array get_included_files ( void )</p>
+
+<p>예제) get_included_files.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include 'test1.php';
+include_once 'test2.php';
+require 'test3.php';
+require_once 'test4.php';
+
+$included_files = get_included_files();
+
+foreach ($included_files as $filename) {
+	echo "$filename\n";
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>|내부함수|
+string set_include_path ( string $new_include_path )</p>
+
+<p>내부함수 set_include_path()는 include_path 구성 옵션을 설정합니다.</p>
+
+<p>예제) set_include_path.php
+&lt;?php
+	set_include_path(‘/usr/lib/pear’);</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 또는 ini_set()를 사용할 수도 있습니다.
+ini_set('include_path', '/usr/lib/pear'); ?&gt;
+</code></pre></div></div>
+
+<p>|내부함수|
+void restore_include_path ( void )</p>
+
+<p>내부함수 restore_include_path()는 include_path 구성 옵션의 값을 복원합니다.</p>
+
+<p>예제) restore_include_path.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo get_include_path();  
+set_include_path('/inc');
+
+echo get_include_path(); 
+restore_include_path();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>|내부함수|
+string get_include_path ( void )</p>
+
+<p>내부함수 get_include_path()는 현재 include_path 구성 옵션을 가져옵니다.</p>
+
+<p>예제) get_include_path.php
+<?php
+	echo get_include_path();
+	echo ini_get('include_path');
+?></p>
+
+<h1 id="197-extention">19.7 extention</h1>
+
+<p>내장함수 extension_loaded()를 확장 프로그램이 로드 되었는지 확인합니다. 콘솔상에서 php -m 옵션을 통하여 설치된 모든 확장 모듈을 확인해 볼 수 있습니다.</p>
+
+<p>|내부함수|
+bool extension_loaded ( string $name )</p>
+
+<p>예제) extension_loaded.php
+<?php
+	if (extension_loaded('curl')) {
+    	echo "모듈 설치됨";
+	} else {
+		echo "모듈이 설치되지 않았습니다.";
+	}
+?></p>
+
+<p>화면출력)
+모듈 설치됨</p>
+
+<p>|내부함수|
+array get_loaded_extensions ([ bool $zend_extensions = false ] )</p>
+
+<p>내부함수 get_loaded_extensions()를 컴파일된 모든 모듈명을 배열로 반환합니다.</p>
+
+<p>예제) get_loaded_extension.php
+<?php
+	print_r(get_loaded_extensions());
+?></p>
+
+<p>화면출력)
+Array ( [0] =&gt; Core [1] =&gt; bcmath [2] =&gt; calendar [3] =&gt; ctype [4] =&gt; date [5] =&gt; filter [6] =&gt; hash [7] =&gt; iconv [8] =&gt; json [9] =&gt; mcrypt [10] =&gt; SPL [11] =&gt; pcre [12] =&gt; readline [13] =&gt; Reflection [14] =&gt; session [15] =&gt; standard [16] =&gt; mysqlnd [17] =&gt; tokenizer [18] =&gt; zip [19] =&gt; zlib [20] =&gt; libxml [21] =&gt; dom [22] =&gt; PDO [23] =&gt; Phar [24] =&gt; SimpleXML [25] =&gt; xml [26] =&gt; wddx [27] =&gt; xmlreader [28] =&gt; xmlwriter [29] =&gt; cli_server [30] =&gt; curl )</p>
+
+<p>|내부함수|
+array get_extension_funcs ( string $module_name )</p>
+
+<p>내부함수 get_extension_funcs()는 모듈의 함수 이름을 가진 배열을 반환합니다.</p>
+
+<p>예제) get_extension_funcs.php
+<?php
+	print_r(get_extension_funcs("xml"));
+?></p>
+
+<h1 id="198-그외">19.8 그외</h1>
+
+<p>|내부함수|
+string php_sapi_name ( void )</p>
+
+<p>내부함수 php_sapi_name()는 웹 서버와 PHP 사이의 인터페이스 유형을 반환합니다.</p>
+
+<p>예제) php_sapi_name.php
+<?php
+	$sapi_type = php_sapi_name();
+	echo $sapi_type;
+?></p>
+
+<p>화면출력)
+cli-server</p>
+
+<p>|내부함수|
+array getopt ( string $options [, array $longopts [, int &amp;$optind ]] )</p>
+
+<p>내부함수 getopt ()는 콘솔상에서 명령 행 인수 목록 옵션을 가지고 옵니다. 콘솔모드를 이용한 응용프로그램을 개발할 때 인수 분석용으로 매우 유용합니다.</p>
+
+<p>예제) getopt.php
+<?php
+	$options = getopt("f:hp:");
+	var_dump($options);
+?></p>
+
+<p>출력)
+C:\php-7.1.4-Win32-VC14-x86&gt;php getopt.php -fvalue -h
+array(2) {
+  [“f”]=&gt;
+  string(5) “value”
+  [“h”]=&gt;
+  bool(false)
+}</p>
+
+<p>|내부함수|
+array get_defined_constants ([ bool $categorize = false ] )</p>
+
+<p>내부함수 get_defined_constants()는 정의된 모든 상수를 이름과 값을 가진 연관 배열 형태로 반환합니다.</p>
+
+<p>예제) get_defined_constants.php
+<?php
+	print_r(get_defined_constants());
+?></p>
+
+<p>|내부함수|
+bool get_magic_quotes_gpc ( void )</p>
+
+<p>내부함수 get_magic_quotes_gpc()는 자동 따옴표 기능 활성화 상태를 체크할 수 있습니다.</p>
+
+<p>예제) get_magic_quotes_gpc.php
+<?php
+	if(get_magic_quotes_gpc()){
+		echo "자동 따옴표 기능 활성화";
+	} else {
+		echo "자동 따옴표 기능 비활성화";
+	}
+?></p>
+
+<p>화면출력)
+자동 따옴표 기능 비활성화</p>
+
+<p>|내부함수|
+bool phpcredits ([ int $flag = CREDITS_ALL ] )</p>
+
+<p>내부함수 phpcredits()는 PHP에 대한 크레딧을 출력합니다.</p>
+
+<p>예제) phpcredits.php
+<?php
+	phpcredits(CREDITS_GENERAL);
+?></p>
+
+<p><br /><br /></p>
+:ET

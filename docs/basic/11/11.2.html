@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="파일-결합">파일 결합</h2>
+<hr />
+
+<p>include와 require와 같은 전처리기 명령은 PHP 소스 파일들을 읽어와서 서로 결합합니다.</p>
+
+<p>C 언어와 같은 스타일의 프로그램은 소스 실행 상단에 미리 정의를 합니다. C 언어의 해더 파일들은 대부분 함수나 클래스 등으로 구성하기 때문입니다. 하지만 PHP는 전처리기 명령의 위치를 자유롭게 지정하고 파일 결합 위치를 결정할 수 있습니다.</p>
+
+<p>PHP는 C 언어 해더 파일과 달리 함수와 소스 자체를 읽어와서 서로 결합할 수 있기 때문입니다. PHP는 소스 앞에서도 사용할 수 있고 소스 뒤에서도 사용할 수 있습니다. 심지어 소스 중간에서도 include를 통해 파일 삽입, 결합이 가능합니다.</p>
+
+<p>예제 파일 include-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">include</span> <span class="s2">"header.php"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+	
+	<span class="cp">&lt;?php</span>
+		<span class="k">include</span> <span class="s2">"index.php"</span><span class="p">;</span>
+	<span class="cp">?&gt;</span>
+
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+<span class="cp">&lt;?php</span>
+	<span class="k">include</span> <span class="s2">"footer.php"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>PHP에서 전처리 명령 include를 통해 소스파일을 삽입하면 전처리기 명령을 선언한 소스 그 자리 안에 지정한 파일의 소스가 삽입됩니다.</p>
+
+<p>어떤 특정한 기능의 파일들은 소스의 삽입 위치가 중요할 수 있습니다. PHP는 소스 자체를 읽어서 삽입을 하기 때문입니다. 하지만 클래스나 함수와 같은 라이브러리 타입의 소스들은 위치에 크게 영향을 받지 않습니다.</p>
+
+<p>대부분 소스파일 분리는 기능적인 부분을 엮어서 파일을 분리합니다(입출력, 파일, 데이터 등).</p>
+
+<p>하지만 워드프레스와 같은 CMS 프로그램은 include 기능을 구조적 레이아웃에 따라 소스를 분리하여 사용하기도 합니다.</p>
+
+<p>예<br />
+header.php <br />
+footer.php<br />
+index.php<br />
+layout.php</p>
+
+<p>이렇게 구조적으로 분리된 소스 파일들은 유지보수 등을 효율적으로 할 수 있도록 도와줍니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

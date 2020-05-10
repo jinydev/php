@@ -1,0 +1,278 @@
+I"�Y<h2 id="20-오토로딩">20. 오토로딩</h2>
+<hr />
+
+<p>PHP는 소스파일을 나누어 작성할 수 있습니다. 분리된 파일은 include / require 와 같은 전처리 명령을 통하여 소스를 삽입 결합 할 수 있습니다.</p>
+
+<p>소스의 파일을 분리하여 작성을 하는 방법들은 소스코드들을 간결화 하고, 기능별로 코드들을 분리할 수 있기 때문입니다. 비슷하게 분리된 파일들은 유지보수 및 재사용을 하는데 있어서 매우 유용합니다.</p>
+
+<p>분리된 파일들은 동작하는데 있어서 상호 의존관계가 발생됩니다. 예로, aaa.php 파일을 실행하는데 필요한 함수가 bbb.php 에 있다면, 두개 파일은 서로 의존하게 됩니다. 만일 aaa.php 파일이 의존관계에 있는 bbb.php 파일을 include하지 않으면 의존성 실패로 스크립트 파일은 오류를 발생합니다.</p>
+
+<p>파일을 분리하는 것은 의존성만 잘 관리를 한다면, 매우 유용한 소스관리 방법입니다. 하지만, 너무 많은 파일로 소스가 분리되어 있을 경우 모든 의존성을 체크하여 처리하는 것은 힘이 듭니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
+<span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
+<span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
+<span class="err">…</span><span class="o">.</span>
+<span class="err">…</span><span class="o">.</span>
+<span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
+<span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>소스 상단에 많은 include 문을 포함할 것입니다. 이러한 복잡한 의존관계를 쉽게 해결하기 위해서 PHP는 오토로드 라는 기능을 적용하였습니다. 오토로드는 PHP에서 의존성이 있는 소스를 실행할 때 먼저 실행되어 소스결합을 처리를 하게 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="201-클래스-의존성">20.1 클래스 의존성</h3>
+<hr />
+
+<p>클래스는 인스턴스를 생성하거나 정적으로 클래스를 사용하기 전에 반드시 클래스가 정의 되어 있어야 합니다. 또한, 클래스를 상속을 받을 때에도 상속되는 부모의 클래스는 반드시 사용전에 정의가 되어 있어야 합니다.</p>
+
+<p>이처럼 PHP가 클래스를 사용하기 전에 연관된 클래스의 관계를 클래스 의존성이라고 합니다. 프로그램의 커지고 클래스의 관계가 복잡할 수록 클래스의 의존성을 확인하는 것은 매우 중요합니다.</p>
+
+<p>Bascic.class.php 파일에</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">basic</span> <span class="p">{</span>
+		<span class="k">function</span> <span class="nf">show</span> <span class="p">(){</span>
+			<span class="k">return</span> <span class="err">“</span><span class="nx">클래스입니다</span><span class="o">.</span><span class="err">”</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>클래스를 생성한 후에</p>
+
+<p>Test.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 클래스파일을 삽입합니다.</span>
+	<span class="k">include</span> <span class="err">“</span><span class="nx">basic</span><span class="o">.</span><span class="k">class</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+	
+	<span class="nv">$basic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">basic</span><span class="p">;</span>
+	
+	<span class="k">echo</span> <span class="nv">$basic</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>파일에서 사전에 클래스 파일을 삽입을 합니다.</p>
+
+<p><br /></p>
+
+<h3 id="202-클래스-의존성-체크-함수">20.2 클래스 의존성 체크 함수</h3>
+<hr />
+
+<p>기존에는 클래스를 사용을 하면 모든 클래스 파일을 미리 사전에 inlcude 또는 require 하여 파일을 삽입을 하였습니다. 하지만, 작성한 모든 클래스들이 하나에 파일에 다 사용이 되지는 않습니다.</p>
+
+<p>PHP는 클래스의 인스턴스를 선언하거나 정적호출시 클래스의 의존성을 사전에 검사할 수 있는 함수를 제공합니다. 클래스 의존성을 체크할 수 있는 함수를 통하여 필요한 클래스 파일을 실시간으로 inlcude 또는 require 함으로서 메모리를 관리하고, 복잡한 의존성 관계를 쉽게 처리할 수 있습니다.</p>
+
+<p>이렇게 클래스 파일을 자동으로 확인해서 처리하는 기능을 오토로드 기능이라고 합니다.</p>
+
+<p><br /></p>
+
+<h3 id="203-클래스-파일-삽입">20.3 클래스 파일 삽입</h3>
+<hr />
+
+<p>Php5로 버전업이 되면서 php가 클래스 또는 인터페이스를 호출할 때, 자동으로 실행되는 함수가 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="nf">__autoload</span><span class="p">(</span><span class="nv">$className</span><span class="p">){</span>
+		<span class="k">include</span> <span class="nv">$className</span><span class="o">.</span><span class="err">”</span><span class="o">.</span><span class="k">class</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nv">$basic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Basic</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>__autoload() 함수는 위의 예처럼 new basic 형태로 클래스를 선언할 때, __autoload함수가 실행되고, 클래스 이름이 __autoload의 $className 으로 인자로 전달하게 됩니다. __autoload 함수는 전달된 클래스명 인자를 이용하여 클래스 파일을 include하여 정상적으로 클래스가 선언이 되도록 합니다.</p>
+
+<p>프로젝트가 커질수록 클래스를 관리하고, 무결성을 유지하면서 클래스파일을 include 하기란 쉽지 않습니다. 이런 자동 로딩기능을 이용하면, 클래스 기반으로 코딩하는데 매우 편리할 것입니다.</p>
+
+<p>PHP 5.1.2 로 업그레이드 되면서 기존 __autoload 는 spl_autoload_registrer()함수를 이용하여 보다 더 유연하게 오토로드 처리를 하실 수 있게 되었습니다.</p>
+
+<p>최근에는 spl_autoload_register() 함수를 더 많이 쓰는 것 같습니다. spl_autoload_register() 함수는 기존 __autoload 함수 사용법이 같습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">spl_autoload_register</span><span class="p">(</span><span class="nv">$className</span><span class="p">){</span>
+	<span class="k">include</span> <span class="nv">$className</span><span class="o">.</span><span class="err">”</span><span class="o">.</span><span class="k">class</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>형대로 동일하게 사용을 하면 됩니다.</p>
+
+<p>오토로드 기능을 매번 파일 상단에 선언해서 사용하기란 불편합니다. 또한 오토로드 코드들이 각각의 파일마다 중복이 될 것입니다. 이런경우,  autoload.php 형태로 별도의 오토로드 처리 파일을 만들어서 사용을 하시면 편리합니다.</p>
+
+<p>autoload.php 파일 생성</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?</span>
+	<span class="c1">// 오토로드 처리흘 위한 파일</span>
+
+	<span class="c1">// 클래스 파일을 구분하기 위한 사용자 정의 확장자를 사용하시면 , php 실행파일과 클래스파일 을 좀 더 쉽게 구분을 할 수 있습니다.</span>
+	<span class="nv">$classExt</span> <span class="o">=</span> <span class="s2">".class.php"</span><span class="p">;</span> 
+
+	<span class="c1">// 클래스를 호출하면 클래스명이 인자로 전달됩니다.</span>
+	<span class="k">function</span> <span class="nf">spl_autoload_register</span><span class="p">(</span><span class="nv">$className</span><span class="p">){</span>
+		<span class="nv">$classFilePath</span> <span class="o">=</span> <span class="k">__DIR__</span> <span class="o">.</span> <span class="s2">"/"</span> <span class="o">.</span> <span class="nv">$className</span> <span class="o">.</span> <span class="nv">$classExt</span><span class="p">;</span>
+
+		<span class="c1">// 클래스 파일이 존재하는지 검사를 합니다.</span>
+		<span class="c1">// 클래스 파일이 없는 상태에서 require 등을 통하여 삽입을 한다고 하면, 에러를 발생할 수 있습니다.</span>
+		<span class="k">if</span><span class="p">(</span><span class="nb">is_readable</span><span class="p">(</span><span class="nv">$classFilePath</span><span class="p">)){</span>
+
+			<span class="c1">// 클래스 파일을 불러옵니다.</span>
+			<span class="k">require</span> <span class="nv">$classFilePath</span><span class="p">;</span>
+		
+		<span class="p">}</span>
+		
+	<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>이렇게 미리 만들어 놓은 클래스 오토로드 처리 파일을 프로그램작성시 먼저 한번 불러오고, 클래스를 선언을 하여 사용하면 자동으로 php가 선언되지 않은 클래스를 파일을 찾아 불러오고 사용을 할 수 있도록 처리를 해줍니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+	<span class="c1">// 오토로드 처리를 위한 파일을 불러옵니다.</span>
+	<span class="k">require</span> <span class="nx">autoload</span><span class="o">.</span><span class="nx">php</span><span class="p">;</span>
+
+	<span class="c1">// 오토로드 파일을 통하여, jiny클래스가 정의된 클래스파일을 불러와 클래스를 오류없이 선언하여 사용을 할 수 있습니다.</span>
+	<span class="nv">$jiny</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">jiny</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="204-psr-4-autoloading">20.4 PSR-4 Autoloading</h3>
+<hr />
+
+<p>PHP Framework Interop Group(PHP-FIG)에서는 SPR-0 autoloading standard 를 제안하였습니다. 아래와 같은 규칙을 적용하여 오토로드를 처리하도록 권장하고 있습니다.</p>
+
+<ul>
+  <li>네임스페이스와 클래스명의 구조는 &lt;vender Name&gt;(<namespace>\)*<Classname> 형식을 따릅니다.</Classname></namespace></li>
+  <li>네임스페이스는 서브 네임스페이스를 포함할 수 있습니다.</li>
+  <li>네임스페이스 구분자는 파일을 불러오기 위한 디렉토리 구분자 입니다.</li>
+  <li>클래스명에 포함된 _글자는 디텍토리 구분자로 사용된다.</li>
+  <li>네임스페이스 와 클래스 파일을 불러올 때 .php 를 확장자로 불러 온다.</li>
+  <li>벤더, 네임스페이스, 클래스 는 대소문자를 구분한다.</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="nf">autoload</span><span class="p">(</span><span class="nv">$className</span><span class="p">)</span> <span class="p">{</span>
+		
+		<span class="nv">$className</span> <span class="o">=</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nv">$className</span><span class="p">,</span> <span class="s1">'\\'</span><span class="p">);</span>
+		<span class="nv">$fileName</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+ 		<span class="nv">$namespace</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$lastNsPos</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$className</span><span class="p">,</span> <span class="s1">'\\'</span><span class="p">))</span> <span class="p">{</span>
+			<span class="nv">$namespace</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$className</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$lastNsPos</span><span class="p">);</span>
+			<span class="nv">$className</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$className</span><span class="p">,</span> <span class="nv">$lastNsPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+			<span class="nv">$fileName</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">'\\'</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">,</span> <span class="nv">$namespace</span><span class="p">)</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="nv">$fileName</span> <span class="o">.=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">,</span> <span class="nv">$className</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'.php'</span><span class="p">;</span>
+		<span class="k">require</span> <span class="nv">$fileName</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="205-컴포저">20.5 컴포저</h1>
+
+<p>PHP의 컴포저(composer)는 오토로드와 의존성을 관리할 수 있는 도구 입니다. npm이나 apt, pip같은 것들과 유사합니다. 컴포저는 PSR-4 AutoLoader 제안과 PSR를 준수하여 페키지 의존성을 관리합니다.</p>
+
+<p>컴포저를 PHP에서 사용하기 위해서는 PHP 5.3.2 이상의 버전이 필요로 합니다. 또한 컴포저는 멀티플레폼을 지원함으로 windows, linux, osx 등에서도 사용이 가능합니다.</p>
+
+<h1 id="2051-컴포저-설치">20.5.1 컴포저 설치</h1>
+
+<p>컴포져는 https://getcomposer.org 에 접속하면 설치파일을 다운로드 할 수 있습니다. 컴포저는 무료로 다운로드 받아 설치할 수 있습니다.</p>
+
+<h1 id="2052-구성설정">20.5.2 구성설정</h1>
+
+<p>컴포저를 통하여 패키지들을 설치하면 자동적으로 의존성과 관련된 설정파일들이 생성되게 됩니다. 의존성 설정파일은 json 타입으로 작성되어 있습니다.</p>
+
+<p>composer.json 파일은 컴포저를 이용하여 의존성 및 설치된 패키지를 관리할 수 있는 설정 파일입니다. 컴포저를 통하여 패키지의 의존성이 설치가 되면 기존 conposer.json 파일과 별개로 composer.lock 파일이 추가로 생성이 됩니다.</p>
+
+<p>composer.lock 파일은 컴포넌트의 목록, 버전등 세부적인 정보들을 담고 있습니다.</p>
+
+<p>또한 composer.lock 파일은 컴포저가 패키지들의 최신버전과 별개로 composer.lock 에 명시된 버젼으로 다운로드 및 사용을 하게 됩니다. 이는 컴포저가 패키지를 최신버젼으로 업데이트하여 패키지의 버전의 차이로 인하여 발생할 수 있는 오류들을 줄여 줄 수 있습니다.</p>
+
+<h1 id="2053-컴포넌트">20.5.3 컴포넌트</h1>
+
+<p>기존의 PHP는 다양한 해결문제점들을 개발자들이 중복적으로 개발하느라 많은 시간을 보냈습니다. 그리고 이렇게 개발, 공개된 소스들은 자신의 홈페이지나 블로그에 공개하는 방식으로 다른 개발자들과 공유를 하였습니다.</p>
+
+<p>개발자들의 서로 다른 공개방식 및 사이트들을 검색하고 찾아서 자신의 프로젝트에 설치하는 것 또한 개발자로서는 힘든 과정중에 하나 이었습니다.</p>
+
+<p>PHP는 이러한 분산되어 있는 PHP소스들을 컴포저 의존성설치 툴과 더불어 패키지스트 라는 통합 관리 사이트를 통하여 체계적으로 공유된 소스들을 관리하고 설치를 할 수 있는 서비스가 출현하였습니다.</p>
+
+<p>PHP 개발자들은 공동의 인터페이스와 코드 스타일로 소스를 코딩하고, 패키지스트 사이트를 통하여 배포, 컴포저를 이용한 설치 과정을 한번에 할 수 있도록 체계화 되어 가고 있습니다. 이러한 공통된 규약과 작업등으로 지금까지 PHP는 다양한 컴포넌트를 찾아보고, 빠른 시간안에 문제점들을 해결할 수 있게 되었습니다.</p>
+
+<p>컴포넌트들은 작은 단위로 정확한 문제점을 해결과 작은 코드로 되어 있기 때문에 빠르고 안정적으로 테스트하면서 적용을 할 수 있습니다. 또한 프레임워크를 적용하여 사용하는데 확장성과 향후 유지보수를 편리하게 도와 줍니다</p>
+
+<h1 id="2054-페키지스트">20.5.4 페키지스트</h1>
+
+<p>패키지스트(https://packagist.org) 사이트는 PHP 컨포넌트를 등록 관리하는 사이트 입니다.  패키지스트에는 다양한 PHP 패키지들이 등록되어 있고, 검색하여 필요한 패키지를 컴포저를 통하여 설치 사용할 수 있습니다.</p>
+
+<p>컴포넌트는 대부분 배포하는 사람의 벤더명과 패키지명으로 구성합니다.</p>
+
+<p>벤더명/패키지명</p>
+
+<p>이러한 구조들은 서로 패키지들이 중첩되지 않고 각각의 관리를 하기 위함 입니다. 동일한</p>
+
+<p>패키지스트 사이트는 수많은 PHP 개발자들이 만들어 놓은 패키지 컴포넌트를 검색할 수 있는 것과 더불어 자기 자신도 새로운 패키지 컴포넌트를 생성하여 다른 개발자들과 공유를 할 수 있습니다.</p>
+
+<h1 id="2056-페키지-다운로드">20.5.6 페키지 다운로드</h1>
+
+<p>패키지 및 의존성관리 도구인 컴포저를 이용하면 패키지스트에 등록된 다양한  PHP 컴포넌트를 다운로드 및 설치할 수 있습니다.</p>
+
+<p>패키지스트 사이트에서 필요한 패키지를 검색해 봅니다. 검색창에서 키워드를 입력하면 관련된 다양한 패키지들을 찾을 수 있습니다.</p>
+
+<p>패키지를 검색을 하면 간략한 패키지 설명과 같이 옆에 다운로드수와 별점이 같이 표기가 됩니다. 다운로드수와 별점은 해당 패키지 컴포넌트가 얼마나 인기가 있고, 많은 사람들이 사용을 하는지 가늠해 볼 수 있습니다.</p>
+
+<p>하지만 이러한 평점들은 단순한 수치이고, 많은 테스트와 자신에게 맞는 패키지를 설치하여 사용을 하면 됩니다.</p>
+
+<p>필요한 패키지를 찾았으면 콘솔창에서 composer 명령을 통하여 패키지를 설치 할 수 있습니다.</p>
+
+<p>composer require jiny/routes</p>
+
+<p>패키지를 다운로드 하면 자동으로 최상의 디렉토리에 /vender 폴더가 하나 생성됩니다. /vender 폴더는 다운로드 받은 컨포넌트 패키지들을 저장 관리하는 폴더 입니다.</p>
+
+<p>/vander 폴더 아래에 각각의 컴포넌트의 벤더명으로 폴더를 생성하고, 패키지 명으로 폴더를 생성합니다.</p>
+
+<p>/vender / 페키지벤더명 / 패키지명
+또한 composer.json 과 composer.lock 파일을 생성하고 관리해 줍니다.</p>
+
+<h1 id="2057-사설-저장소">20.5.7 사설 저장소</h1>
+
+<p>모든 PHP의 컴포넌트를 위의 패키지리스트와 같은 서비스 사이트를 이용해야만 하는 것은 아닙니다. 자체적인 컴포넌트 저장소를 만들어서 개인적으로 제작한 사설 컴포넌트를 관리하고 컴포저를 통하여 설치를 할 수 있습니다.</p>
+
+<p>개인적인 내부서버를 통하여 컴포넌트를 관리하기 위해서는 컴포저에게 내부 서버명과 접속 정보를 같이 제공해야 합니다. 다음과 같은 형태로 접속정보를 auth.json 파일을 생성하여 관리할 수 있습니다. auth.json파일은 composer.json 과 같은 파일 위치에 있습니다.</p>
+
+<p>{
+	“페키지명”:{
+	“서버도메인”: {
+	“username”:”접속아이디”,
+	“password”:”접속패스워드”
+}
+}
+}</p>
+
+<p>또는 콘솔상에서 composer 명령을 입력할때 직접 입력을 하거나 –global 명령을 통하여 글로벌 정보로 저장할 수 있습니다.</p>
+
+<p>composer config 패키지명.도메인 아이디 페스워드
+또는</p>
+
+<p>composer config –global 패키지명.도메인 아이디 페스워드
+–global로 접속정보를 저장을 하면 ~/.composer/auth.json 파일에 저장이 됩니다.</p>
+
+<h1 id="2058-패키지-사용">20.5.8 패키지 사용</h1>
+
+<p>컴포저를 통하여 컴포넌트 패키지를 다운로드 하면 /vender 폴더에 자동적으로 저장이 됩니다. 컴포져는 모든 패키지들의 의존성과 호환이 되는 PSR-4 기준의 오토로더를 생성, 제공됩니다.</p>
+
+<p>자동적으로 제공되는 오토로더를 프로그램 상단에 require 명령을 통하여 삽입하여 패키지들을 사용하시면 됩니다.</p>
+
+<p>&lt;php
+require “vender/autoload.php”;</p>
+
+<p>설치된 패키지를 통하여 클래스의 인스턴스를 생성할때는 패키지의 벤더명과 네임스페이스를 같이 사용을 해 주셔야 합니다.</p>
+
+<p>만일 네임스페이스명이 길다고 하면 use 명령을 통하여 별칭 또는 현재의 네임스페이스 경로를 변경할 수도 있습니다.</p>
+
+<p>$obj = new \jiny\routes();</p>
+
+<p><br /><br /></p>
+:ET

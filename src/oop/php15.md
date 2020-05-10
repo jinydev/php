@@ -1,0 +1,1503 @@
+---
+layout: php
+title: "PHP"
+keyword: "jinyphp, php"
+---
+## 클래스 확장
+
+기본적인 클래스에 대해서 살펴봤습니다.  클래스는 변수(프로퍼티)와 함수(메서드)를 묽어서 객체화 하여 사용을 했습니다. 클래스의 객체지향 방식의 코딩은 프로그램의 보다 최적화 및 유지보수화하는 데 매우 유용합니다.이번 장에서는 최신 클래스 기반의 코딩 및 확장된 기능들에 대해서 살펴 보도록 하겠습니다. 클래스의 확장은 오픈소스 및 다양한 개발자들과 협업하는 데 필요한 코드 구현 기술입니다. 
+
+
+15.1 클래스 상속
+
+예를 들어 기존의 생성한 클래스가 하나 있습니다. 그리고 기존과 기능이 비슷하지만 몇 개의 기능이 추가된 또 다른 클래스 하나 더 만들려고 합니다.
+
+이렇게 기존에 만들어 놓은 클래스 소스를 같이 사용을 하면서, 새로운 추가 클래스를 만들 수 있는 방법은 없을까? 개발자라면 이런 고민을 해본 적이 있을 것입니다. 기존 클래스 코드를 유지하면서 새로운 클래스를 적용할 수 있는 방법이 상속입니다.
+
+상속은 말 그대로 부모의 클래스 자산을 이어받는 것입니다. 우리는 부모의 유전자를 기반으로 새로운 생명이 만들어졌고, 그 부모 또한 그렇습니다. 이처럼 상속은 기존의 것을 유지하면서 새로운 것을 만들 때 매우 유용합니다.
+
+상속을 받으면 부모의 기능들은 사용할 수도 있고 자신만의 새로운 기능들도 추가할 수 있습니다. 일거양득으로 소스의 코드들을 향상시킬 수 있습니다.
+
+
+
+
+
+15.1.1 상속 문법
+
+클래스를 상속하여 사용하는 것은 매우 간단합니다. 상속을 하고자 하는 클래스를 클래스 선언부 뒤쪽에 extends 키워드를 추가하여 상속하고자 하는 부모 클래스명을 적으면 됩니다.
+
+클래스 상속 문법
+class 기존 클래스 
+{
+
+}
+
+class 추가 클래스 extends 기존 클래스 {
+}
+
+class 추가 클래스2 extends 추가 클래스 {
+}
+
+위의 사용 문법을 보면 기존 클래스 하나가 선언되어 있습니다. 추가 클래스는 extends 키워드를 통하여 기존클래스를 상속한 새로운 클래스가 하나 더 생성을 했습니다.
+
+처음에 만든 기존 클래스는 상속받은 추가클래스의 또 다른 클래스 상속의 부모로 사용할 수 있습니다. 추가 클래스2는 추가클래스를 상속받은 새로운 객체 입니다.
+
+예제 파일 extends-01.php<?php
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+        public function hello($string)
+        {
+            echo "Hello = " . $string . "<br>";
+        }
+    }
+
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+        public function whatIs($string)
+        {
+            echo "myName is: " . $string . "<br>";
+        }
+    }
+
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
+
+    // 상속받은 부모의 메서드 함수를 사용할 수 있습니다.
+    $obj->hello("jiny");
+
+    // 새롭게 추가한 메서드 함수를 사용할 수 있습니다.
+    $obj->whatIs("hojinLee");
+
+?>
+
+결과
+Hello = jiny
+myName is: hojinLee
+
+위의 예는 클래스 상속의 예입니다. 클래스 a와 a를 상속한 새로운 클래스 b 두 개를 생성합니다. 상속은 extends 키워드를 이용하면 됩니다. $obj 클래스 객체는 상속받은 클래스 a의 매서드를 호출하여 사용할 수 있습니다.
+
+15.1.2 클래스의 계층화
+클래스 상속의 또 다른 의미는 무엇일까요? 바로 클래스가 계층화 된다는 것입니다. 조상의 역사를 기록한 족보처럼 클래스도 계속 상속을 하게 되면 족보처럼 단계별로 계층화됩니다.
+
+클래스 상속이 계속 되면서 개발자가 추가한 새로운 메서드와 프로퍼티가 추가되고 기능이 하나씩 늘어가는 것입니다. 이렇게 계층화되면서 코드는 더욱 더 고도화되고 커져 갑니다.
+
+ 
+
+또한 계층화된 구조를 쉽게 파악하기 위해서 별도의 계층도 같은 그림을 그려서 관리하기도 합니다.
+
+이러한 계층적 작업은 여러 사람들이 같이 코드를 작성하고 기능을 추가하는 데 매우 유연한 환경을 제공합니다. 내가 만들어 놓은 클래스를 응용하여 새로운 클래스를 다른 사람들이 만들어 사용할 수도 있을 것입니다. 클래스의 상속과 계층화는 마치 부품을 하나씩 조립하면서 또 다른 큰 부품을 만들고, 그 부품들을 조립하여 최종적인 결과물을 만들어내는 것과 유사합니다.
+
+
+15.1.3 부모 클래스
+
+extends로 상속받는 이전의 클래스를 부모 클래스라고 합니다.
+
+
+클래스 상속 시 부모의 메서드 및 프로퍼티를 별도의 특별한 표기 없이 쉽게 사용을할 수 있습니다. 하지만 부모 클래스의 프로퍼티와 메서드 기능을 꼭 선택해서 호출하고 싶을 때는 parent:: 키워드를 이용하여 부모 클래스를 호출할 수 있습니다.
+
+
+
+예제 파일 extends-02.php
+<?php
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+        public function isAdult($age)
+        {
+            if($age>=18) return true; else return false;
+        }
+
+    }
+
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+        public function whatIs($string,$age)
+        {
+            echo "myName is: " . $string . "<br>";
+
+            if (parent::isAdult($age)){
+                echo "성인입니다.<br>";
+            } else {
+                echo "미성년입니다.<br>";
+            }
+
+        }
+
+    }
+
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
+
+    // 새롭게 추가한 메서드 함수를 사용할 수 있습니다.
+    $obj->whatIs("hojinLee",18);
+
+    $obj->whatIs("jiny",17);
+?>
+
+
+결과
+myName is: hojinLee
+성인입니다.
+myName is: jiny
+미성년입니다.
+
+위의 예는 클래스 상속의 예입니다. 클래스 b는 클래스 a를 상속받은 클래스입니다. Parent:: 키워드를 이용하여 클래스 a의 메서드를 호출할 수 있습니다.
+
+15.1.4 자식 클래스  
+
+자식 클래스는 부모 클래스의 반대말입니다. 
+
+ 
+
+부모 클래스를 상속받아 새롭게 생성되는 클래스를 자식 클래스라고 합니다.
+
+15.2 오버라이딩
+
+클래스 상속은 부모의 기능을 이어받으면서 새로운 클래스를 생성합니다. 즉, 부모의 모든 메서드와 프로퍼티를 자식 클래스에게 사용 가능하도록 상속합니다.
+
+하지만, 상속받은 기능 하나를 변경고자 할 때는 어떻게 해야 할까요? 기능이 약간 변경이 되거나 새롭게 재정의를 할 수 있습니다. 클래스는 이런 경우를 위해서 기존의 기능을 다시 덮어써서 다시 선언할 수 있는 오버라이딩이라는 기능을 제공합니다.
+
+ 
+
+오버라이딩이란 상속받은 클래스의 메서드 중에서 특정 하나의 메서드의 함수를 다시 정의해서 사용을 하는 경우 입니다. 오버라이딩은 상속 전에 미리 구현해 놓은 메서드가 있을 때 상속받은 자식 클래스에서 다시 새로운 코드로 작성이 필요할 경우 매우 유용합니다.
+
+15.2.1 오버라이딩 예제
+
+그럼 상속받은 클래스를 오버라이딩을 통해 재정의하는 것을 예제를 통해서 학습해 보도록 하겠습니다. 오버라이딩 작성은 매우 간단합니다.
+
+예제 파일 override-01.php
+<?php
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+        public function isAdult($age)
+        {
+            if($age>=18) return true; else return false;
+        }
+
+    }
+
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+        // a의 메서드를 오버라이딩 다시 정의합니다.
+        public function isAdult($age)
+        {
+            if($age>=20) return true; else return false;
+        }
+
+        public function whatIs($string,$age)
+        {
+            echo "myName is: " . $string . "<br>";
+
+            if ($this->isAdult($age)){
+                echo "성인입니다.<br>";
+            } else {
+                echo "미성년입니다.<br>";
+            }
+
+        }
+
+        public function old18($string,$age)
+        {
+            echo "myName is: " . $string . "<br>";
+
+            if (parent::isAdult($age)){
+                echo "성인입니다.<br>";
+            } else {
+                echo "미성년입니다.<br>";
+            }
+
+        }
+
+    }
+
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
+
+    echo "오버라이딩한 클래스의 결과<br>";
+    // 새롭게 추가한 메서드 함수를 사용할 수 있습니다.
+    $obj->whatIs("hojinLee",18);
+    $obj->whatIs("jiny",17);
+
+    // 오버라이딩 이전의 메서드를 이용합니다.
+    // parent 키워드 이용
+    echo "===== <br>";
+    echo "오버라이딩 이전의 클래스의 결과<br>";
+    $obj->old18("hojinLee",18);
+    $obj->old18("jiny",17);
+?>
+
+결과
+오버라이딩한 클래스의 결과
+myName is: hojinLee
+미성년입니다.
+myName is: jiny
+미성년입니다.
+=====
+오버라이딩 이전의 클래스의 결과
+myName is: hojinLee
+성인입니다.
+myName is: jiny
+미성년입니다.
+
+위의 예는 클래스의 오버라이딩 예입니다. 클래스의 메서드를 오버라이드하는 별도의 문법적 키워드는 없습니다. 그냥 동일한 메서드명으로 다시 작성하면 자동으로 오버라이딩되어 처리됩니다.   
+
+클래스 a에는 isAdult() 메서드가 선언되어 있습니다. 클래스 b는 클래스 a를 상속받았지만 클래스 정의 내에서 클래스 a의 메서드와 동일한 이름의 isAdult() 메서드가 또 존재합니다.
+
+기존 부모 클래스의 메서드와 자식 클래스내에 동일한 이름의 메서드가 있을 경우 자식의 메서드를 우선으로 처리합니다. 즉, 동일한 이름으로 겹치게 되면 자동으로 오버라이딩된 것으로 처리합니다.
+
+만일 오버라이딩하기 전의 부모의 메서드를 사용하고 싶다면 parent:: 키워드를 사용하면 됩니다.
+ 
+
+15.2.2 final 키워드
+
+오버라이딩 기능은 부모의 메서드를 재정의 하여 사용할 수 있었습니다. 하지만 중요한 메서드의 경우 상속후에 재정의하여 사용할 경우 문제가 발생할 수도 있습니다. 이런 경우, 오버라이딩을 하지 못하게 할 필요성이 있습니다. 클래스에서는 상속을 받아도 오버라이딩이 되지 않도록 방지하는 final 키워드를 제공합니다.
+
+final로 선언된 메서드는 상속되어도 오버라이딩을 할 수 없습니다.
+
+예제 파일 final-01.php<?php
+    // php.ini의 수정 없이, 화면에 에러 발생 시 출력할 수 있습니다.
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+
+        final public function copyright (){
+            // 본 메서드 함수는 대체되지 않습니다.
+            echo "copyright all Right JinyPHP";
+        }
+
+    }
+
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+
+        public function copyright(){
+            // 본 메서드 함수는 대체되지 않습니다.
+            echo "copyright all Right ...";
+        }
+
+     
+    }
+
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
+
+    $obj->copyright();
+
+?>
+
+오류 메시지
+/jinyphp/final-01.php - Cannot override final method a::copyright() in C:\php-7.1.4-Win32-VC14-x86\jinyphp\final-01.php on line 27
+
+위의 예제는 클래스의 오버라이딩 방지에 대한 예입니다. final키워드로설정된 메서드는 상속후 다시 오버라이딩을 할 수 없습니다. 만일 final로 선언된 메서드를 오버라이딩을 할 경우 "cannot override final method" 오류가 표시됩니다.
+
+문법 
+final class users
+{
+}
+
+참고로, 만일 class 키워드 앞에 final 키워드를 입력하면 클래스 전체가 final로 설정됩니다.
+
+
+15.3 인터페이스
+
+클래스가 상속될 때 부모의 메서드나 프로퍼티는 자식 클래스에 전달됩니다. 또한 메서드가 변경된 경우 오버라이딩되어 다시 재정의 사용할 수 있었습니다.
+
+만일 어떤 메서드는 꼭 필요하지만 상속받은 자식 클래스마다 서로 달라 다르게 매번 오버라이딩을 해야 한다면 어떻게 해야 될까요? 이런 경우에 부모의 메서드를 만들어 놓는 것은 의미가 없을 수 있습니다.
+
+
+15.3.1 인터페이스 개념
+인터페이스는 다수의 사람들의 클래스를 설계할 때 서로 약속한 규약과 같습니다. 자신이 만든 클래스를 다른 사람들과 협업하여 개발을 할 때 클래스의 규칙을 정의하는 것입니다. 인터페이스는 이 클래스는 어떻게 만들어야 한다는 지시와 같습니다.
+
+이러한 클래스의 규칙들은 인터페이스 기능을 이용하여 매우 유용하게 사용할 수 있습니다. 
+
+인터페이스로 정의된 클래스의 메서드들은 부모에서 미리 선언을 합니다. 인터페이스를 적용한 자식 클래스에서는 부모에서 지시한 인터페이스 규칙을 따라 만들라고 지시하는 것과 같습니다.
+
+ 
+
+오픈소스 및 큰 규모의 프로젝트를 여러 사람이 함께 개발할 때 인터페이스는 매우 유용합니다. 또한 개발된 소스를 다수의 개발자들에게 배포할 경우 인터페이스 정의 기능은 불특정한 클래스의 오동작을 방지할 수 있습니다.
+
+인터페이스로 상속받으면 자식 클래스는 인터페이스 규약에 따라서 메서드와 프로퍼티를 반드시 만들어야 합니다. 만들지 않으면 오류를 발생합니다.
+
+15.3.2 인터페이스 문법
+
+인터페이스는 class 키워드 대신에 interface 키워드를 사용하면 됩니다. 그 외의 사용법은 클래스를 선언하는 것과 매우 비슷합니다.
+  
+인터페이스 문법
+interface pages 
+{
+
+  public function index();
+
+}
+
+위의 인터페이스 사용 문법예서 interface 키워드와 안에는 메서드 이름과 매개변수, 반환값 등만 정의된 것을 확인할 수 있습니다. 메서드 들의 실제적인 코드의 몸체 { }는 작성하지 않습니다. 인터페이스에서 정의된 코드의 몸체는 인터페이스를 적용한 자식 클래스에서 작성합니다.
+
+인터페이스 내부의 메서드는 반드시 public으로 속성을 설정합니다. public 속성을 지정하는 것은 interface 선언 및 방법에 대한 특성입니다. 
+
+15.3.3 클래스 사용
+
+이렇게 미리 설계된 인터페이스 규약은 클래스 상속과 유사한 문법으로 사용할 수 있습니다. 단지 클래스 생성 시 상속 키워드 extends 대신에 인터페이스 키워드 implements 를 사용하면 됩니다.
+예제 파일 interface-01.php
+<?php
+	interface pages
+	{
+
+		public function index();
+
+	}
+
+	class intro implements pages
+	{
+		public function index()
+		{
+			echo "인터페이스 소개 <br>";
+		}
+	}
+
+	$obj = new intro();
+	$obj->index();
+	
+?>
+
+결과
+인터페이스 소개 
+
+위의 예제는 클래스의 인터페이스에 대한 예입니다. 먼저 pages 라는 이름의 인터페이스 규약을 정의합니다. intro라는 클래스를 생성할 때 이전에 정의한 pages라는 인터페이스 규약을 따릅니다.
+
+pages 인터페이스를 따르는 클래스를 생성할 때 index()라는 메서드를 꼭 만들어 쓰라는 의미입니다. 
+
+예제 파일 interface-02.php
+<?php
+	interface pages
+	{
+
+		public function index();
+
+	}
+
+	class intro implements pages
+	{
+
+	}
+
+	$obj = new intro();
+	
+?>
+
+결과
+[Fri May 12 15:43:33 2017] ::1:51820 [500]: /jinyphp/interface-02.php - Class intro contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (pages::index) in C:\php-7.1.4-Win32-VC14-x86\jinyphp\interface-02.php on line 9
+
+두 번째 예제는 선언된 인터페이스를 구현하지 않은 경우입니다. 인터페이스를 적용하면서 인터페이스에서 규약한 방식대로 사용하지 않을 때 PHP는 에러를 출력하고 실행을 중단합니다. 
+
+15.3.4 인터페이스 확장
+인터페이스도 extends 키워드를 통해 상속 확장이 가능합니다. 다음 예는 인터페이스의 확장입니다.
+
+예제 파일 interface-03.php
+<?php
+	interface a
+	{
+    	public function foo();
+	}
+
+	// a 인터페이스를 상속 받습니다.
+	interface b extends a
+	{
+    	public function bar();
+	}
+
+	// 상속받은 b 인터페이스로 구현합니다.
+	class c implements b
+	{
+    	public function foo()
+    	{
+    		echo "method is foo <br>";
+    	}
+
+    	public function bar()
+    	{
+    		echo "method is bar <br>";
+    	}
+    	
+	}
+
+	$obj = new c;
+
+	// 인터페이스 a의 메서드입니다.
+	$obj->foo();
+
+	// 인터페이스 b의 메서드입니다.
+	$obj->bar();
+
+?>
+
+결과
+method is foo 
+method is bar
+
+위의 예는 인터페이스 상속에 대한 실험입니다. 인터페이스 b는 인터페이스 a를 상속을 받습니다.
+
+
+15.3.5 인터페이스 다중 상속
+다수의 인터페이스를 콤마(,)로 구분하여 한 번에 인터페이스를 상속받을 수 있습니다.
+
+예제 파일 interface-04.php
+<?php
+    interface a
+    {
+        public function foo();
+    }
+
+    interface b
+    {
+        public function bar();
+    }
+
+    interface c extends a, b
+    {
+        public function baz();
+    }
+
+    class d implements c
+    {
+        public function foo()
+        {
+            echo "method is foo <br>";
+        }
+
+        public function bar()
+        {
+            echo "method is bar <br>";
+        }
+
+        public function baz()
+        {
+            echo "method is baz <br>";
+        }
+    }
+
+    $obj = new d;
+
+    // 인터페이스 a의 메서드입니다.
+    $obj->foo();
+
+    // 인터페이스 b의 메서드입니다.
+    $obj->bar();
+
+    // 인터페이스 c의 메서드입니다.
+    $obj->baz();
+
+?>
+
+결과
+method is foo 
+method is bar 
+method is baz
+
+위의 예제는 인터페이스 상속에 대한 예입니다. 인터페이스 c는 인터페이스 a와 b를 직접 상속을 받습니다.
+
+
+15.3.6 인터페이스 와 상속
+기존 클래스의 상속과 인터페이스를 동시에 적용하여 새로운 클래스를 생성할 수 있습니다. 먼저 상속을 받고자 하는 클래스를 extends 키워드를 사용하여 상속을 합니다. 계속 같은 줄에서 이어서 implements 키워드를 통하여 적용하고자 하는 인터페이스를 지정할 수 있습니다.
+
+예제 파일 interface-05.php
+<?php
+	interface a
+	{
+    	public function foo();
+	}
+
+	// a 인터페이스를 상속 받습니다.
+	interface b extends a
+	{
+    	public function bar();
+	}
+
+	class Bird {
+		public function info() {
+			echo "I am a {$this->name} <br>";
+			echo "I am an bird <br>";
+		}
+	}
+
+	class Penguin extends Bird implements b {
+		var $name = "Penguin";
+		
+		public function foo()
+    	{
+    		echo "method is foo <br>";
+    	}
+
+    	public function bar()
+    	{
+    		echo "method is bar <br>";
+    	}
+
+	}
+
+	$obj = new Penguin;
+
+	// 상속 메서드입니다.
+	$obj->info();
+
+	// 인터페이스 a의 메서드입니다.
+	$obj->foo();
+
+	// 인터페이스 b의 메서드입니다.
+	$obj->bar();
+
+?>
+
+결과
+I am a Penguin 
+I am an bird 
+method is foo 
+method is bar
+
+위의 예는 인터페이스 상속에 대한 실험입니다. 인터페이스 적용과 클래스를 동시에 상속을 받아 클래스를 생성을 합니다.
+
+예제 파일 interface-06.php
+<?php
+	interface a
+	{
+    	public function foo();
+	}
+
+	interface b 
+	{
+    	public function bar();
+	}
+
+	class Bird {
+		public function info() {
+			echo "I am a {$this->name} <br>";
+			echo "I am an bird <br>";
+		}
+	}
+
+	class Penguin extends Bird implements a, b {
+		var $name = "Penguin";
+		
+		public function foo()
+    	{
+    		echo "method is foo <br>";
+    	}
+
+    	public function bar()
+    	{
+    		echo "method is bar <br>";
+    	}
+
+	}
+
+	$obj = new Penguin;
+
+	// 상속 메서드 입니다.
+	$obj->info();
+
+	// 인터페이스 a의 메서드 입니다.
+	$obj->foo();
+
+	// 인터페이스 b의 메서드 입니다.
+	$obj->bar();
+
+?>
+
+결과
+I am a Penguin 
+I am an bird 
+method is foo 
+method is bar
+
+위의 예제는 인터페이스 상속에 대한 예입니다. 위의 예제는 앞의 interface-05.php와 동일한 동작을 합니다. 인터페이스 a와 b를 콤마(,)로 구분하여 다중 적용하여 동작합니다.
+
+15.3.7 인터페이스 상수
+인터페이스 에서도 상수를 선언하여 사용할 수 있습니다.
+
+예제 파일 interface-07.php
+<?php
+
+	interface a{
+
+    	const name = "interface a const";
+	}
+
+	echo a::name;
+	echo "<br>";
+
+	class b implements a
+	{
+
+	}
+
+	class c extends b
+	{
+    	const age = 'Class c constant';
+	}
+
+	echo c::age;
+
+?>
+
+결과
+interface a const
+Class c constant
+
+15.4 추상화
+
+클래스의 상속과 오버라이딩, 인터페이스를 세 가지의 클래스 확장 기능을 배웠습니다. 하지만 이중 상속과 인터페이스 두 개는 함께 사용할 수 없습니다. 즉, 상속과 인터페이스 규약을 혼합하여 사용할 수 없습니다. 
+
+이 두 개를 서로 같이 사용할 수 없는 이유는 상속과 인터페이스는 문법이 서로 매우 비슷합니다. 클래스명과 키워드 그리고 상속, 인터페이스명입니다. 
+
+class 클래스명 extends 상속 클래스
+{
+}
+
+class 클래스명 implements 인터페이스
+{
+}
+
+두 개의 기능을 콤마(,)등을 이용하여 구분하거나 연장해서 사용할 수 없다는 것입니다.
+
+ 
+
+추상화는 이러한 문법적 유사점과 두 가지 기능을 유지하면서 두 개의 기능을 같이 사용하기 위한 것이 방법입니다. 즉, 추상화 = 상속 + 인터페이스 기능을 동시에 하고 싶을 때 사용되는 OOP 개념입니다.
+
+
+15.4.1 추상화 문법
+
+클래스에 추상화 사용법 또한 매우 간단합니다. 추상화 설정은  클래스명 또는 메서드 앞에 새로운 추상화 키워드 abstract를 같이 선언만 해주면 됩니다.
+
+|문법|
+abstract class 추상화 클래스
+{
+    // 추상화: 인터페이스
+    abstract public function 메서드();
+
+    // 공통 메서드
+    public function copyright() {
+        echo "copyright all Right JinyPHP";
+    }
+}
+
+class 클래스명 extends 추상화 클래스
+{
+    public function 메서드() {
+        return "abstract Method";
+    }
+}
+
+클래스를 정의할 때 abstract 키워드를 이용하여 추상화 클래스와 메서드 등을 생성합니다. 추상화로 선언한 메서드들은 인터페이스와 같이 자식 클래스에서 반드시 선언해야 합니다.
+
+추상화 클래스를 적용하는 방법은 상속과 같이 extends 키워드로 사용합니다.
+
+
+15.4.2 추상화 예제
+
+예제 파일 abstract-01.php
+<?php
+
+    // 추상화 클래스를 선언합니다.
+    abstract class a
+    {
+        // 확장 시 구현부가 필요한 메서드 정의
+        abstract public function isAdult($age);
+        
+        public function copyright ()
+        {
+            // 본 메서드 함수는 대체되지 않습니다.
+            echo "copyright all Right JinyPHP";
+        }
+    }
+
+    // 추상화 적용
+    class b extends a
+    {
+        // 추상화 인터페이스를 구현
+        public function isAdult($age)
+        {
+            if ($age>=18) return true; else return false;
+        }
+    }
+
+    $obj = new b();
+
+    // 추상화에 선언된 일반 메서드를 상속, 호출 가능합니다.
+    $obj->copyright();
+
+    if ($obj->isAdult(18)){
+        echo "성인입니다.";
+    } else {
+        echo "미성년입니다.";
+    }
+
+?>
+
+결과
+copyright all Right JinyPHP 성인입니다.
+
+위의 예제를 보면 추상화 클래스는 일반 클래스처럼 프로퍼티와 메서드 등을 구현할 수 있습니다. 또한 자식 클래스에서 다시 구현 처리해야 하는 인터페이스는 abstract 키워드를 추가하여 함께 선언합니다.
+
+추상화 클래스를 상속받은 자식 클래스는 부모의 메서드 기능도 같이 상속받아 호출 사용 가능합니다. 또한 abstract로 선언한 인터페이스 메서드를 같이 구현해야 합니다.
+
+추상화에서 선언된 인터페이스를 구현하지 않은 경우 PHP는 에러를 출력하고 PHP 코드를 더 이상 실행하지 않습니다. 이것은 인터페이스 규약을 따르지 않는 동작과 유사합니다.
+
+
+15.5 트레이트
+클래스의 상속 기능은 기존의 코드들을 재사용하면서 새로운 클래스를 생성하기 위한 코딩 방법론이었습니다. 하지만 상속이라는 개념은 클래스의 계층화로 항상 부모가 존재합니다. 
+
+클래스의 상속, 오버라이딩, 인터페이스, 추상화 등 객체들을 계층적으로 생성하고 정의하여 사용했습니다. 기존 방식과 같이 만일 클래스 A 기능과, 클래스 B의 기능을 가진 클래스 C를 만들고 한다면 어떻게 해야 할까요?
+
+class a {
+}
+
+class b extend b {
+}
+
+class c extend b {
+}
+
+형태로 계속 상속 형태로 들어가면서 계층화를 해야 합니다. 객체를 계층화한다는 것은 불필요한 기능적 유전자까지 모두 부모의 영향을 받게 됩니다.
+
+트레이트는 요즘 유전자 조작처럼 상속을 받지 않고 특정한 클래스들을 조합하는 것과 같습니다. 최신 PHP 코딩 방식에서는 이런 계층화적인 클래스 재사용 방식이 아니라 클래스 안에 새로운 또 다른 클래스를 삽입하는 개념의 트레이트를 방법을 제공합니다.
+
+트레이트는 PHP 5.4 업그레이드되면서 적용된 기능입니다. 
+
+ 
+
+
+15.5.1 트레이트 선언
+
+트레이트를 선언하는 방법은 클래스 선언 문법과 비슷합니다. class 키워드 대신에 trait 키워드를 사용해주면 됩니다.
+
+트레이트 문법
+trait 트레이트명 
+{
+// 트레이트 내용 구현
+}
+
+이렇게 선언한 트레이트 클래스는 다른 클래스에 use 키워드로 삽입할 수 있습니다.
+
+<?php
+class MyClass {
+
+  use myTrait; 
+
+  // 클래스 내용 구현
+}
+?>
+
+PHP언어의 전처리기 명령인 include와 require처럼 코드를 읽어서 결합하는 것과 비슷해 보입니다. 클래스의 결합이라고 이해하면 됩니다. 하지만, 상속과도 약간의 차이점이 있는 것을 알 수 있습니다.
+
+트래이트를 구현 시 현재의 메서드를 우선적으로 적용 후에 상속된 메서드를 재정의하는 우선순위를 가지고 있습니다.
+
+
+다음 예제는 트레이트를 생성 후에 클래스에 주입하여 사용하는 예제입니다.
+예제 파일 trait-01.php
+<?php
+
+	// 기존 클래스 작성하는 것과 같이 트레이트를 작성합니다.
+	trait geoLocation
+	{
+		public function getLatitude()
+		{
+    		echo "좌표  Latitude<br>";
+  		}
+
+ 		public function getLongtitude()
+ 		{
+			echo "좌표  Longtitude<br>";
+ 		}
+
+	}
+
+	// 지도 매핑 클래스를 생성합니다.
+	class mapping
+	{
+		// use키워드로 트레이드를 삽입합니다.
+  		use geoLocation;
+  		
+  		// 추가 클래스…. 구현
+  		public function copyright()
+        		{
+            		// 본 메서드 함수는 대체되지 않습니다.
+            		echo "copyright all Right JinyPHP";
+        		}
+
+	}
+
+	$obj = new mapping();
+
+	// 트레이트로 삽입한 메서드를 실행합니다.
+	$obj->getLatitude();
+	$obj->getLongtitude();
+
+	// 자체 선언 메서드를 출력합니다.
+	$obj->copyright();
+
+?>
+
+결과
+좌표 Latitude
+좌표 Longtitude
+copyright all Right JinyPHP
+
+위의 예를 보면 트레이트를 통해 지리 정보를 출력하는 간단한 트레이트를 생성합니다. 
+
+mapping 클래스는 geoLocation라는 클래스를 상속하는 것이 아니라 클래스 안에 트레이트로 삽입하는 것을 볼 수 있습니다.
+
+트레이트가 주입된 클래스는 일반적인 인스턴스 형태로 생성한 다음 -> 기호를 통해 트레이트에서 선언한 메서드를 실행할 수 있습니다.
+
+
+15.5.2 다중 트레이트
+트레이트는 콤마(,)를 통하여 다중 트레이트를 적용할 수 있습니다.
+
+|문법|
+use trait1, trait2;
+예제 파일 trait-02.php
+<?php
+
+	// 기존 클래스 작성하는 것 과 같이 트레이트를 작성합니다.
+	trait Latitude
+	{
+		public function getLatitude()
+		{
+    		echo "좌표  Latitude<br>";
+  		}
+
+	}
+
+	trait Longtitude
+	{
+		public function getLongtitude()
+ 		{
+			echo "좌표  Longtitude<br>";
+ 		}
+	}
+
+	// 지도 매핑 클래스를 생성합니다.
+	class mapping
+	{
+		// use키워드로 트레이드를 삽입합니다.
+		// 콤마로 구분하여 다중 트레이트를 구현합니다.
+  		use Latitude, Longtitude;
+  		
+  		// 추가 클래스…. 구현
+  		public function copyright()
+        		{
+            		// 본 매메서드 함수는 대체되지 않습니다.
+            		echo "copyright all Right JinyPHP";
+        		}
+
+	}
+
+	$obj = new mapping();
+
+	// 트레이트로 삽입한 매메소드메서드를 실행합니다.
+	$obj->getLatitude();
+	$obj->getLongtitude();
+
+	// 자체 선언 메소드메서드를 출력합니다.
+	$obj->copyright();
+
+?>
+
+결과
+좌표 Latitude
+좌표 Longtitude
+copyright all Right JinyPHP
+
+위의 예제는 다중 트레이트의 예입니다. 위의 trait-01.php 예제와 동일한 결과를 출력하지만, 트레이트를 두 개로 나눠서 다중 트레이트 방식으로 적용합니다.
+
+15.5.3 트레이트 충돌
+여러 개의 트레이트를 적용할 경우 메서드의 동일한 이름으로 인하여 충돌이 발생할 수도 있습니다. 트레이트는 오버라이딩처럼 재정의할 수가 없습니다. 이런 경우 insteadof 키워드를 통하여 충돌한 트레이트의 메서드를 직접 지정해야 합니다.
+예제 파일 trait-03.php
+<?php
+    trait a {
+        public function name() {
+            echo "trait A name<br>";
+        }
+
+        public function age() {
+            echo "trait A age<br>";
+        }
+    }
+
+    trait b {
+        public function name() {
+            echo "trait B name<br>";
+        }
+
+        public function age() {
+            echo "trait B age<br>";
+        }
+    }
+
+    class members {
+        use a, b {
+            b::name insteadof a;
+            a::age insteadof b;
+            b::name as name2;
+        }
+    }
+
+    $obj = new members;
+    $obj->name();
+    $obj->age();
+
+    // as 별칭 메서드
+    $obj->name2();
+
+?>
+
+결과
+trait B name
+trait A age
+trait B name
+
+위의 예제는 트레이트 충돌에 대한 예입니다. 트레이트 a와 b의 메서드는 서로 충돌합니다. 트레이트를 적용할 때 insteadof 키워드를 통하여 사용할 트레이트의 메서드를 직접 지정할 수 있습니다.
+
+또는 as 키워드를 통해 충돌되는 메서드를 다른 이름으로 별칭을 만들어 사용할 수도 있습니다.
+
+15.5.4 메서드 속성 변경
+트레이트를 적용할 때 as 키워드를 통하여 메서드의 속성을 변경할 수 있습니다. 
+
+예제 파일 trait-04.php
+<?php
+	trait HelloWorld {
+    		public function sayHello() {
+        			echo "Hello World!";
+    		}
+	}
+
+	// sayHello 속성을 변경
+	class MyClass1 {
+    		use HelloWorld { sayHello as protected; }
+
+    		public function hello(){
+    			echo "protect method call <br>";
+    			$this->sayHello();
+    		}
+	}
+
+	$obj = new MyClass1;
+	$obj->hello();
+
+?>
+
+결과
+protect method call 
+Hello World!
+
+위의 예제는 as 키워드를 통하여 메서드의 속성을 변경합니다. public 속성의 sayHello() 메서드를 as 키워드를 이용하여 protect 속성으로 변경합니다. hello() 메서드는 protect 속성으로 변경된 sayHello() 메서드를 호출합니다.
+
+
+15.5.5  트레이트 조합
+하나의 트레이트에서는 또 다른 트레이트를 연결하여 조합할 수 있습니다.
+
+예제 파일 trait-05.php
+<?php
+	trait a {
+    	public function foo() {
+        	echo "Trait Method foo!<br>";
+    	}
+	}
+
+	trait b {
+		
+		// 트레이트 a 를 조합
+		use a;
+
+    	public function bar() {
+        	echo "Trait Method bar!<br>";
+    	}
+	}
+
+	class myClass {
+		use b;
+	}
+
+	$obj = new myClass;
+	$obj->foo();
+	$obj->bar();
+
+?>
+
+결과
+Trait Method foo!
+Trait Method bar!
+
+15.5.6  트레이트 추상화
+트레이트 메서드를 선언할 때 abstract 키워드를 통하여 추상화 메서드도 같이 설정할 수 있습니다. abstract로 선언된 메서드는 use 키워드를 통해 트레이트 적용 후에 추상화 선언된 메서드를 생성해야 합니다.
+
+예제 파일 trait-06.php
+<?php
+	trait Hello {
+    		public function sayHelloWorld() {
+        			echo "Hello ".$this->getWorld();
+    		}
+
+    		abstract public function getWorld();
+	}
+
+	class MyHelloWorld {
+    		private $world;
+    	
+    		use Hello;
+    	
+    		public function getWorld() {
+        			return $this->world;
+    		}
+    
+    		public function setWorld($val) {
+        			$this->world = $val;
+    		}
+	}
+
+	$obj = new MyHelloWorld;
+	$obj->setWorld("jiny");
+
+	echo $obj->getWorld();
+	echo "<br>";
+	$obj->sayHelloWorld();
+
+?>
+
+결과
+jiny
+Hello jiny
+
+
+15.5.7  트레이트 정적 호출
+정적 static 키워드를 통해 선언된 트레이트 메서드는 더블콜론(::)을 이용하여 호출할 수 있습니다.
+
+예제 파일 trait-07.php
+<?php
+	trait Hello {
+    	public static function sayHelloWorld() {
+        	return "Hello World!";
+    	}
+	}
+
+	class MyHelloWorld {
+    	use Hello;
+	}
+
+	echo MyHelloWorld::sayHelloWorld();
+?>
+
+결과
+Hello World!
+
+15.5.8  트레이트 프로퍼티
+트레이트 안에서도 프로퍼티 변수를 선언할 수 있습니다. 트레이트 안에서 선언된 프로퍼티는 클래스 안에서 동일한 이름으로 프로퍼티를 정의할 수 없습니다.
+
+예제 파일 trait-08.php
+<?php
+	trait PropertiesTrait {
+    	public $x = 1;
+	}
+
+	class myClass {
+    	use PropertiesTrait;
+	}
+
+	$obj = new myClass;
+	echo $obj->x;
+?>
+
+결과
+1
+
+
+15.6 네임스페이스
+
+네임스페이스는 같은 유형의 클래스들을 그룹으로 묶어 관리할 수 있는 가상의 폴더와 같습니다. 다른 고급 언어에서는 네임스페이스 기능을 도입하여 클래스 패키지 방법을 제공했지만 PHP는 약간 늦게 지원된 감이 있습니다. 네임스페이스 기능은 PHP의 다양한 오픈소스 프로젝트를 통해 인기를 얻고 있는 기능입니다. 또한 PHP 패키지들을 만들 때 매우 중요하게 사용되는 개념이기도 합니다.
+
+네임스페이스 기능은 PHP 5.3부터 지원됩니다.
+
+
+15.6.1 네임스페이스의 개념
+
+PHP를 포함한 프로그램 언어는 동일한 이름의 클래스명의 중복을 허용하지 않습니다. 즉, 실행 스크립트 안에 클래스명은 유일한 한 개의 이름만 사용 가능합니다. 중복해서 사용할 수 없습니다.
+
+개발자에게 이름을 정의하는 것이란 쉽지 않습니다. 각각의 의미를 부여함과 동시에 실행 스크립트 안에서 동일한 이름이 중복되지 않아야 합니다. 이러한 이름의 규칙은 개발자 한 명일 때는 큰 영향이 없습니다. 만일 다수의 개발자들이 공동으로 대형 프로젝트를 제작할 때 클래스의 이름은 중복될 여지가 있습니다. 하지만 여러 개발자들이 함께 협업하여 만들거나, 공개된 소스들과 결합하기 위해서는 클래스 이름의 중복 문제가 자주 발생하곤 했습니다.
+
+특히 오픈소스 등 다수의 개발자들이 협업하여 만들 때 동일한 클래스 이름 중복으로 충돌이 발생할 가능성이 매우 많습니다. 매번 수많은 개발자들이 클래스 이름을 실시간으로 중복 여부를 확인할 수는 없습니다. 이러한 문제점을 해결하기 위해서 도입된 기능이 가상의 클래스 폴더인 네임스페이스가 있습니다.
+
+ 
+
+클래스들은 네임스페이스 형태로 그룹화되어 구분됩니다. 따라서 개발자 및 프로젝트별로 구분할 수 있는 네임스페이스를 각각 가지고 있습니다. 네임스페이스를 적용하면 같은 클래스 이름을 가지고 있다고 해도 서로 충돌하지 않습니다. 하지만 네임스페이스를 적용했다고 해서 실제적인 폴더를 가지거나 구분하지는 않습니다. 네임스페이스는 가상의 폴더 계층 형태로 나누어 관리하기 때문에 공동의 작업이나 소스가 공개된 오픈소스에 매우 유용한 클래스 관리 방법입니다.
+
+
+15.6.2 네임스페이스 문법
+
+네임스페이스를 적용하기 위해서는 PHP 스크립트 상단 <?php 다음에 작성합니다.
+
+|문법|
+<?php
+namespace 이름;
+
+namespace 키워드 다음에 이름을 적으면 됩니다. namespace 키워드 다음의 문장은 해당 네임스페이스 경로를 적용받습니다.
+
+네임스페이스는 여러 경로로 계층화할 수 있습니다. 마치 폴더 안에 또 다른 폴더를 만들 수 있는 것과 같습니다. 서브 네임스페이스를 구분하는 방법은 백슬래시 ‘\’를 사용하면 됩니다.
+
+하지만 통상적으로 네임스페이스를 계층적으로 사용할 때 첫 경로는 ‘벤더명’으로 사용하는 경우가 많습니다. 개발자 또는 소스를 개발한 회사의 이름을 벤더명으로 적을 때가 많습니다.
+
+네임스페이스는 물리적인 폴더 구조로 나누어지지 않기 때문에 실제적으로 1:1 매칭이 되지 않습니다. 하지만 PSR-4 및 오토로딩 도입으로 네임스페이스 클래스를 폴더를 만들어 관리하고 있는 추세로 바뀌고 있습니다.
+
+
+15.6.3 네임스페이스 적용
+
+기존 함수 방식의 코딩을 할 때 두 개 이상의 동일함 함수 이름을 중복하여 사용할 수 없습니다. 이러한 함수명 중복 문제를 해결하기 위한 대안이 클래스라고 할 수 있습니다. 클래스도 선언할 때 PHP 실행 파일 안에서 두 개 이상의 동일한 클래스 이름을 중복하여 사용할 수 없습니다.
+
+클래스의 중복 방지는 네임스페이스를 통해 할 수 있습니다. 네임스페이스가 적용된 클래스는 가상의 개념의 계층이 적용되어 동일한 클래스명도 서로 다르게 인식합니다. 하나의 PHP 실행 파일에서 네임스페이스로 구분된 동일한 클래스들을 동작시킬 수 있습니다.
+
+
+15.6.3.1 전역 네임스페이스
+네임스페이스를 적용하기 전에는 일반적으로 클래스를 작성할 때 클래스 키워드와 이름을 선언하고 바로 인스턴스를 생성하여 아래와 같이 사용했습니다.
+
+예제 파일 namespace-01.php
+<?php
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "회원ID = $id";
+		}
+	}
+
+	$obj = new members();
+	$obj->setUsers(123);
+?>
+
+결과
+회원ID = 123
+
+이처럼 별도의 네임스페이스를 사용하지 않고 클래스(members)를 선언하여 사용하는 것을 전역 네임스페이스로 정의되었다고 표현합니다.
+
+
+15.6.3.2 네임스페이스
+다음 소스는 위의 예제 앞에 네임스페이스 키워드를 추가했습니다.
+
+예제 파일 namespace-02.php
+<?php
+	namespace jiny;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "회원ID = $id";
+		}
+	}
+
+	// 네임스페이스 이름을 같이 적용
+	$obj = new \jiny\members();
+	$obj->setUsers(123);
+
+	echo "<br>";
+	// 현재 네임스페이스를 적용
+	$obj2 = new members();
+	$obj2->setUsers(123);
+
+?>
+
+결과
+회원ID = 123
+회원ID = 123
+
+상단에 네임스페이스가 선언되면 네임스페이스명으로 하나의 가상 계층이 생성됩니다. 위 예에서 jiny라는 가상의 계층이 생성되고, 네임스페이스 가상 계층 안에 members 클래스가 선언한다는 것입니다.
+
+동일한 네임스페이스 안에서 클래스 인스턴스를 생성하는 것은 기존 방법과 동일하게 사용할 수 있습니다.
+
+$obj = new members();
+
+즉 네임스페이스를 넣지 않는 경우 PHP는 이를 현재의 네임스페이스에 의존한다고 간주하는 것입니다.
+
+하지만 네임스페이스를 적용한 클래스에서 호출하기 위해서는 기존에 클래스명 앞에 네임스페이스명 도 같이 넣어야 합니다.
+
+$obj = new \jiny\members();
+
+new 키워드와 클래스명 사이에 네임스페이스명을 넣어줍니다. 만일 서브 네임스페이스를 가지고 있다고 하면 백슬래시(\)로 네임스페이스\클래스명으로 구분하면 됩니다.
+
+또는 전역으로 클래스를 설정을 하고자 할 때는 다음과 같은 형태로 클래스명 앞에 \를 넣으면 됩니다.
+$obj = new \members();
+
+즉 맨 앞에 \로 시작한다고 하면 루트 디렉터리처럼 전역을 선언하는 것과 같습니다.
+
+예전에 기존 네임스페이스가 도입되기 전에는 클래스명의 중복을 피하기 위해서 클래스명 앞에 접두사를 넣어서 쓰거나 밑줄(_)를 이용하여 구별하여 사용했습니다.
+
+기본 방식 => 	jiny_shop_currency   
+네임스페이스 => jiny/shop/currency 
+
+네임스페이스 기능을 통하여 좀더 계층적이고 익숙한 디렉터리 구조로 소스를 계층화합니다. 마치 폴더를 관리하는 것과 같은 백슬래시(\)를 이용하여 구분할 수 있습니다.
+
+예제 파일 namespace-03.php
+<?php
+	namespace jiny\site;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "회원ID = $id";
+		}
+	}
+
+	// 네임스페이스 이름을 같이 적용 
+	$obj = new \jiny\site\members();
+	$obj->setUsers(124);
+?>
+
+결과
+회원ID = 123
+
+예제 파일 namespace-04.php
+<?php
+	namespace jiny\aaa;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "회원ID = $id";
+		}
+	}
+
+	
+	namespace jiny\bbb;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "회원ID = $id";
+		}
+	}
+
+
+	// 네임스페이스 이름을 같이 적용 
+	echo "네임스페이스 \jiny\aaa\<br>";
+	$obj = new \jiny\aaa\members();
+	$obj->setUsers(126);
+
+	echo "<br>";
+
+	// 네임스페이스 이름을 같이 적용
+	echo "네임스페이스 \jiny\bbb\<br>";
+	$obj2 = new \jiny\bbb\members();
+	$obj2->setUsers(127);
+
+?>
+
+결과
+네임스페이스 \jiny\aaa\
+회원ID = 126
+네임스페이스 \jiny\bbb\
+회원ID = 127
+
+위의 예를 보면 동일 members 클래스를 네임스페이스를 통해 두 번 선언되어 있습니다. 또한 네임스페이스를 통해 클래스 인스턴스를 생성하여 호출합니다. 
+
+15.6.3 클래스 이름 확인
+PHP 5.5 이후 버전에서는 class 키워드를 통해 현재의 네임스페이스를 포함한 클래스 이름을 확인할 수 있습니다.
+
+예제 파일 namespace-05.php
+<?php
+	namespace jinyPHP;
+    
+    class MyClass {
+    }
+    
+    echo MyClass::class;
+	
+?>
+
+결과
+jinyPHP\MyClass
+15.7 use 키워드
+
+앞에서 학습한 네임스페이스를 이용했습니다. 만일 네임스페이스 명이 길다거나, 서브 네임스페이스명이 많을 때는 클래스 인스턴스 생성 시 길어진 이름으로 인하여 불편한 점이 있었습니다.    
+
+
+15.7.1 use 개념
+서브 네임스페이스로 인하여 길어진 이름은 매번 클래스의 인스턴스를 생성하는 데 많은 불편을 주었습니다. 또한 길어진 이름은 소스의 가독성을 떨어뜨리고, 오탈자를 많이 발생합니다. PHP 언어는 별칭 기능을 통해 길어진 네임스페이스명을 짧게 줄여서 사용할 수 있습니다. use 키워드는 길어진 네임스페이스를 별칭으로 치환하는 기능을 제공합니다.  
+
+
+15.7.2 use 문법
+use를 통해 네임스페이스 이름을 처리하는 방법으로 두 가지 형태를 제공합니다. 
+
+첫째는 현재 적용되고 있는 네임스페이스의 경로를 변경합니다.
+
+|문법|
+use 네임스페이스경로;
+
+use 명령은 클래스의 인스턴스 생성하기 전에 use 키워드를 통해 별칭을 선언 할 수 있습니다. 
+
+use 네임스페이스경로; 를 적용하면 클래스 인스턴스 선언 시 기존 네임스페이스의 모든 경로를 다 넣지 않아도 클래스의 인스턴스를 간단하게 생성할 수 있습니다.
+
+예제 파일 use-01.php 
+<?php
+	namespace jiny\aaa;
+
+	class Members1
+	{
+		public function setUsers($id)
+		{
+			echo "aaa 회원ID = $id";
+		}
+	}
+
+
+	namespace jiny2\bbb;
+
+	class Members
+	{
+		public function setUsers($id)
+		{
+			echo "bbb 회원ID = $id";
+		}
+	}
+
+
+	// 네임스페이스를 aaa로 변경
+	echo "네임스페이스를 aaa 변경<br>";
+	use jiny\aaa\Members1;
+
+	// 네임스페이스 이름을 같이 적용 
+	$obj = new Members1;
+	$obj->setUsers(1);
+?>
+
+결과
+네임스페이스를 aaa 변경
+aaa 회원ID = 1
+
+두 번째는 길어진 네임스페이스에 별명 명칭을 적어 사용하는 것입니다.
+
+|문법|
+use 네임스페이스경로 as 별칭;
+
+as 별칭으로 짧은 이름을 새롭게 부여할 수 있습니다. 
+
+ 
+
+as 키워드를 이용하면 개발자의 편의에 따라서 별칭을 사용자가 지정할 수 있다는 것이 매우 유용합니다.
+
+예제 파일 use-02.php
+<?php
+	namespace jiny\aaa;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "aaa 회원ID = $id";
+		}
+	}
+
+
+	namespace jiny\bbb;
+
+	class members
+	{
+		public function setUsers($id)
+		{
+			echo "bbb 회원ID = $id";
+		}
+	}
+
+	use jiny\aaa as aaa;
+	use jiny\bbb as bbb;
+
+	// 네임스페이스 이름을 같이 적용 
+	$obj = new aaa\members();
+	$obj->setUsers(1);
+
+	echo "<br>";
+
+	// 네임스페이스 이름을 같이 적용 
+	$obj = new bbb\members();
+	$obj->setUsers(2);
+?>
+
+
+결과
+aaa 회원ID = 1
+bbb 회원ID = 2
+
+위의 예제에서는 as 키워드를 통하여 jiny\aaa 를 aaa로 별칭을 변경합니다. 별칭으로 작성된 이름으로 클래스를 선언할 수 있습니다.
+
+15.7.3 다중 use
+여러 개의 네임스페이스를 한 번에 처리할 수 있습니다. 기본적으로 use 명령은 콤마(,)를 통해 다수의 네임스페이스를 하나의 use 명령을 처리할 수 있습니다. 
+
+|문법|
+use 네임스페이스1,
+ 네임스페이스2,
+ 네임스페이스3;
+
+하지만 콤마(,)를 이용한 다수의 처리는 코드의 가독성을 줄이고, 오류를 발행할 수 있는 상황을 만들 수 있습니다.
+
+이를 방지하기 위해 use 명령 하나당 네임스페이스 한 개를 적어주는 스타일을 추천합니다. 
+
+|문법|
+use 네임스페이스1;
+use 네임스페이스2;
+use 네임스페이스3;
+
+
+15.7.3 use 그룹화
+
+위와 같이 한 줄 단위로 use 별칭을 작성하는 것은 불편한 점이 있습니다. 네임스페이스의 클래스를 각각의 use 명령으로 재정의하는 것은 코드 작성에 있어 복잡한 부분이 있었습니다.
+
+<?php
+// 이전 코드에서는 비슷한 use 명령을 여러 줄을 통해 작성했습니다.
+	use some\namespace\ClassA;
+	use some\namespace\ClassB;
+	use some\namespace\ClassC as C;
+
+	use function some\namespace\fn_a;
+	use function some\namespace\fn_b;
+	use function some\namespace\fn_c;
+
+	use const some\namespace\ConstA;
+	use const some\namespace\ConstB;
+	use const some\namespace\ConstC;
+?>
+
+PHP 7.x로 업그레이드되면서 비슷한 유형끼리 그룹으로 설정할 수 있는 새로운 기능을 추가로 제공합니다.
+
+|문법|
+<?php
+// PHP 7+ code
+// PHP 7+ 버전에서는 같은 유형의 use 를 그룹화하여 처리를 할 수 있습니다.
+<?php
+
+	use some\namespace\{
+		ClassA, 
+		ClassB, 
+		ClassC as C
+	};
+	
+	use function some\namespace\{
+		fn_a, 
+		fn_b, 
+		fn_c
+	};
+	
+	use const some\namespace\{
+		ConstA, 
+		ConstB, 
+		ConstC
+	};
+?>
+
+같은 유형의 그룹은 위의 예처럼 중괄호를 이용하여 처리할 수 있습니다. 코드를 가독화하고 읽기 쉽게 만들어 사용할 수 있습니다.

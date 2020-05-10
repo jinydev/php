@@ -1,0 +1,223 @@
+I"�@<h2 id="쿠키">쿠키</h2>
+<hr />
+
+<p>예전부터 가장 많이 사용하는 데이터 임시 저장 방법으로는 쿠키 기능을 사용합니다. 쿠키(cookie)는 웹 사이트를 접속한 사용자 임시 데이터를 브라우저에 저장하는 방법입니다.</p>
+
+<p>쿠키는 매우 작은 4KB 이하의 데이터 크기입니다. 사용자의 접속된 컴퓨터에 저장됩니다. 4KB의 용량은 대략 300개 정도의 정보를 간단한 데이터를 저장할 수 있습니다.</p>
+
+<p>쿠키는 주로 접속한 페이지의 상태 등을 저장을 할 때 사용합니다. 매번 사용자가 서버로 페이지 요청을 할 때 쿠키 정보도 같이 서버로 전송됩니다.</p>
+
+<p>쿠키는 PHP 이외에 자바스크립트를 통해 클라이언트에서 직접 설정 및 변경도 가능합니다. 이러한 점으로 인하여 쿠키는 특정한 사용자 및 해킹 등에 의해서 조작될 수도 있습니다.</p>
+
+<p>따라서 쿠키는 중요하지 않은 임시 데이터 정보를 저장할 때 적당합니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1311-쿠키의-저장">13.1.1 쿠키의 저장</h3>
+<p>쿠키는 접속한 사용자 컴퓨터에 저장되는 데이터 입니다. 그렇기 때문에 접속자 브라우저가 실행되고 있는 경우에만 존재합니다.</p>
+
+<p>PHP 언어는 간단한 쿠키 내부 함수를 통해 쿠키 값을 설정할 수 있습니다. 생성된 쿠키 값은 접속 사용자 브라우저에게 쿠키를 전송하고 생성됩니다.</p>
+
+<p>|관련함수|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool setcookie(name, value, expire, path, domain, secure, httponly);
+</code></pre></div></div>
+
+<p>PHP의 setcookie() 함수를 통해 쿠키를 설정하기 위해서 몇 개의 인자 값이 필요합니다. 또한 쿠키의 실행 결과 값을 논리값으로 반환할 수 있습니다.</p>
+
+<ul>
+  <li>name = 입력 인자 중 name값은 필수 항목입니다.</li>
+  <li>value = 쿠키의 이름과 관련된 값</li>
+  <li>expire = 쿠키 유효 기간. expire를 기술하지 않으면 현재 웹 브라우저가 실행되는 동안만 유효함</li>
+  <li>path = 쿠키를 전송할 요청 경로</li>
+  <li>domain = 쿠키를 전송할 도메인</li>
+  <li>secure</li>
+  <li>httponly</li>
+</ul>
+
+<p>그 외 나머지는 인자 파라미터는 옵션입니다.</p>
+
+<p>쿠키 이름 및 규칙<br />
+쿠키 이름을 생성할 때 작명하는 이름은 RFC2109 규약을 따라서 만들어야 합니다.</p>
+
+<p>쿠키 이름은 아스키 코드 알파벳 및 숫자만 포함할 수 있습니다. 즉 콤마(,), 세미콜론(;), 공백(‘’) 등의 문자는 포함할 수 없습니다. 또한 $로 시작할 수 없습니다.</p>
+
+<p>예제 파일 cookie-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$cookie_name</span> <span class="o">=</span> <span class="s2">"user"</span><span class="p">;</span>
+	<span class="nv">$cookie_value</span> <span class="o">=</span> <span class="s2">"jiny"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">setcookie</span><span class="p">(</span><span class="nv">$cookie_name</span><span class="p">,</span> <span class="nv">$cookie_value</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">30</span><span class="p">),</span> <span class="s2">"/"</span><span class="p">))</span> <span class="p">{</span>
+		<span class="c1">// 86400 = 1 day</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 생성 성공"</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 생성 실패"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>쿠키 생성 성공
+</code></pre></div></div>
+
+<p>위의 예제는 쿠키 생성에 대한 실험입니다. 예제 코드를 보면 쿠키 이름 “user”에 사용자 이름 “jiny”를 30일(86400 * 30) 유효 기간으로 설정하는 단계입니다. 뒤의 “/”는 웹 사이트 전체에서 사용 가능하다는 의미입니다.</p>
+
+<p>별도의 서브 경로에서만 지정하려고 하면 path를 변경하면 됩니다.</p>
+
+<p>setcookie() 함수를 사용하면서 주의해야 할 점은 웹 사이트의 <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> 태그 출력 전에 먼저 쿠키 함수를 실행해야 됩니다.</p>
+
+<p>쿠키 값은 전송 시 자동적으로 URL 인코딩하여 전송합니다. 또한 받을 때도 자동적으로 URL 인코딩되어 받습니다.  만일 인코딩하지 않으려면 setrawcookie() 함수를 이용하면 됩니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1312-쿠키-값-확인">13.1.2 쿠키 값 확인</h3>
+<p>PHP는 setcookie() 함수로 생성한 쿠키를 슈퍼 변수 $_COOKIE를 통해 확인할 수 있습니다.</p>
+
+<p>$_COOKIE는 배열 변수입니다. 생성한 쿠키명을 배열의 키로 입력하면 설정한 쿠키 값을 확인할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_COOKIE[쿠키명];
+</code></pre></div></div>
+
+<p>PHP에서 쿠키 값을 이용하는 방법은 위처럼 매우 간단합니다. 다음 예제는 설정한 쿠키 값을 슈퍼변수를 통하여 확인하는 방법입니다.</p>
+
+<p>예제 파일 cookie-02.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">];</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키가 없습니다."</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny
+</code></pre></div></div>
+
+<p>위의 예에서 보면 앞에서 설정한 쿠키 값을 슈퍼 변수를 통해 간단하게 읽어올 수 있습니다. 그냥 배열 값으로 읽으면 됩니다.</p>
+
+<p>슈퍼 변수 $_COOKIE는 다수의 쿠키 값의 데이터를 저장하고, 읽어올 수 있습니다. 비록 쿠키가 많은 양의 데이터를 저장할 수 는 없지만 필요한 개수만큼 저장하여 배열로 읽어오면 됩니다.</p>
+
+<p>쿠키값 을 사용할 때는 프로그램 오류를 방지하기 위하여 쿠키 값을 확인 후에 처리하는 것이 좋습니다. 쿠키 값도 존재 여부를 isset()와 같은 함수를 통해 확인할 수 있습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1313-쿠키-값-변경">13.1.3 쿠키 값 변경</h3>
+<p>한 번 생성한 쿠키 값을 변경할 수 있습니다.</p>
+
+<p>쿠키 값을 변경하는 방법은 쿠키를 생성하는 것도 동일합니다. 다만, 동일한 쿠키명으로 쿠키를 생성하게 되면 쿠키 값이 변경 갱신된 효과가 됩니다.</p>
+
+<p>예제 파일 cookie-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">];</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키가 없습니다."</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nv">$cookie_name</span> <span class="o">=</span> <span class="s2">"user"</span><span class="p">;</span>
+	<span class="nv">$cookie_value</span> <span class="o">=</span> <span class="s2">"jinyPHP"</span><span class="p">;</span>
+	
+	<span class="k">if</span> <span class="p">(</span><span class="nb">setcookie</span><span class="p">(</span><span class="nv">$cookie_name</span><span class="p">,</span> <span class="nv">$cookie_value</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">30</span><span class="p">),</span> <span class="s2">"/"</span><span class="p">))</span> <span class="p">{</span>
+		<span class="c1">// 86400 = 1 day</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 변경 성공"</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 변경 실패"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny
+쿠키 변경 성공
+</code></pre></div></div>
+
+<p>쿠키를 새로 설정하여 변경했다고 해서 쿠키의 값이 바로 슈퍼변수에 저장되어 반영되지는 않습니다. 따라서 쿠키 설정 다음에 바로 다음에 변경된 쿠키 값을 확인할 수는 없습니다.</p>
+
+<p>변경된 쿠키 값을 반영하기 위해서는 현재의 페이지 화면을 새로고침해야 하지만 새롭게 변경된 쿠키 값을 적용하여 확인할 수 있습니다.</p>
+
+<p>이러한 쿠키 변경과 바로 사용할 수 없는 점은 코드 작성상 불편함이 있습니다. 약간의 편법으로 쿠키 값을 새로운 변수에 재할당하여 사용을 하면 이러한 불편함을 보완할 수 있습니다.</p>
+
+<p>예제 파일 cookie-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="nv">$__cookie_user</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">];</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키가 없습니다."</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="s2">"현재의 쿠키 값 = </span><span class="nv">$__cookie_user</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nv">$cookie_name</span> <span class="o">=</span> <span class="s2">"user"</span><span class="p">;</span>
+	<span class="nv">$__cookie_user</span> <span class="o">=</span> <span class="s2">"jinyPHP"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">setcookie</span><span class="p">(</span><span class="nv">$cookie_name</span><span class="p">,</span> <span class="nv">$__cookie_user</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">30</span><span class="p">),</span> <span class="s2">"/"</span><span class="p">))</span> <span class="p">{</span>
+		<span class="c1">// 86400 = 1 day</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 변경 성공"</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"쿠키 변경 실패"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="s2">"쿠키 변경 후 다시 확인 = "</span><span class="o">.</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"페이지 재로드하면 변경된 쿠키를 확인합니다. &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"쿠키 값 별도에 저장 = "</span><span class="o">.</span> <span class="nv">$__cookie_user</span><span class="o">.</span><span class="s2">"해서 사용하면 편리합니다. "</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>현재의 쿠키 값 = jiny
+쿠키 변경 성공 
+쿠키 변경 후 다시 확인 = jiny
+</code></pre></div></div>
+
+<p>페이지 재로드하면 변경된 쿠키를 확인합니다.
+쿠키 값 별도에 저장 = jinyPHP해서 사용하면 편리합니다.</p>
+
+<p>위의 예제에서 쿠키 값을 바로 사용하는 것이 아니라 $__cookie_user 와 같이 별개의 변수를 이용하여 쿠키 값을 생성하고 값을 이용하여 처리하면 쿠키 값 반영에 대한 불편함을 해결할 수 있을 것입니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1314-쿠키-삭제-및-만료">13.1.4 쿠키 삭제 및 만료</h3>
+<p>쿠키는 특이하게도 쿠키의 유효 기간이 있습니다. 유효시간이 지나면 쿠키의 값은 자동으로 소멸하거나 적용되지 않습니다.</p>
+
+<p>PHP에서 setcookie() 함수를 사용하여 쿠키를 생성할 때 쿠키의 만료 시간을 함께 설정했습니다. 쿠키는 만료 시간이 지나면 자연스럽게 삭제됩니다.</p>
+
+<p>또한 쿠키 값을 강제로 삭제하기 위해서는 쿠키 값의 만료 시간을 현재 시간 이전으로 변경 재설정하면 시간 만료로 인해 쿠기가 삭제됩니다.</p>
+
+<p>예)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setcookie("user", "", time() - 3600);
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h3 id="1315-쿠키-체크">13.1.5 쿠키 체크</h3>
+<p>슈퍼변수 $_COOKIE는 배열로 되어 있습니다. 배열 값 하나하나를 검사를 할 수도 있지만, 배열의 개수를 확인할 수 있는 count() 함수로 쿠키의 존재 여부를 확인할 수 있습니다.</p>
+
+<p>예제 파일 cookie-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    		<span class="k">echo</span> <span class="s2">"Cookies 존재. &lt;br&gt;"</span><span class="p">;</span>
+    		<span class="nb">print_r</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    		<span class="k">echo</span> <span class="s2">"Cookies 없음. &lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cookies 존재.
+Array ( [user] =&gt; jinyPHP ) 
+</code></pre></div></div>
+
+<p>위의 예는 쿠키 슈퍼변수의 개수를 파악하여 쿠키가 존재하는지 체크하는 간단한 예입니다.</p>
+
+<p><br /><br /></p>
+:ET

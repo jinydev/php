@@ -1,0 +1,41 @@
+I"	<h2 id="continue">continue</h2>
+<hr />
+
+<p><code class="highlighter-rouge">continue;</code>는 <code class="highlighter-rouge">break;</code>와 비슷하게 제어의 흐름을 변경할 수 있는 명령 키워드입니다. <code class="highlighter-rouge">break;</code>는 중괄호 <code class="highlighter-rouge">{ }</code>를 탈출하는 것이라면, <code class="highlighter-rouge">continue;</code>는 중괄호 <code class="highlighter-rouge">{ }</code> 처음으로 돌아가라는 의미입니다.</p>
+
+<p>소스를 해석하면서 <code class="highlighter-rouge">continue;</code> 명령을  만나게 되면 반복되는 소스 코드 중괄호 <code class="highlighter-rouge">{ }</code>의 시작 부분으로 이동합니다. 즉, 반복문을 처리하는 데 있어서 특별한 조건에 따라서 이후 코드를 처리하지 말고 다시 처음부터 반복을 이어서 하라는 의미입니다.</p>
+
+<p>다음은 <code class="highlighter-rouge">for</code> 반복문에서 <code class="highlighter-rouge">continue</code>를 사용하는 예제입니다.</p>
+
+<p>예제 파일 continue-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">continue</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">echo</span> <span class="nv">$i</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="s2">"종료"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+3
+5
+7
+9
+종료
+</code></pre></div></div>
+
+<p>위의 예제에서는 0부터 9까지의 숫자를 출력하는 데 있어서 $i가 2로 나눈 나머지 값이 0인 경우에는 <code class="highlighter-rouge">continue;</code>를 처리합니다.</p>
+
+<p>2로 나눈 나머지가 0이라는 의미는 <code class="highlighter-rouge">$i</code>가 짝수라는 의미입니다. 짝수일 때는 그 이후의 작업을 하지 않고 for문의 상단으로 이동하게 됩니다. 즉, 짝수는 화면에 출력하지 않겠다는 의미입니다.</p>
+
+<p><code class="highlighter-rouge">continue;</code>는 프로그램에서 불필요한 동작을 하지 않고 리소스를 절약할 수 있는 기능 중에 하나입니다.</p>
+
+<p><br /><br /></p>
+:ET

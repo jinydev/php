@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="내장-함수">내장 함수</h2>
+<p>프로그램 코딩을 하다 보면 수많은 함수들이 등장합니다. 수많은 함수 중에서는 PHP에서 편의상 미리 만들어 놓은 함수인 내장 함수와 개발자가 자체적으로 만들어 사용하는 사용자 정의 함수 두 개로 구분할 수 있습니다.</p>
+
+<p>대부분의 초보 개발자들은 PHP의 내장 함수를 사용하는 경우가 많이 있습니다. 개발자로서 먼저 PHP에서 제공하는 내장 함수에는 어떤 것이 있는지를 확인하고 사용법을 습득하는 것은 매우 중요합니다. 이런 내장 함수들을 먼저 확인해야 하는 것은 추후 사용하는 사용자 정의 함수와 내장 함수를 구분하기 위해서입니다. PHP에서 제공하는 내장 함수들은 PHP 공식 사이트 www.php.net에서 확인할 수 있습니다.</p>
+
+<p>일부 괜찮은 에디터의 경우 내장 함수와 사용자 함수를 확인하여 색상을 표시하는 기능을 제공하는 개발 툴도 있습니다. 하지만 이런 개발 툴에 의존하지 않고 내장 함수들을 많이 안다는 것은 초보 개발자를 넘어서 수많은 다른 사람들의 소스를 이해하는 데 매우 유용합니다.</p>
+
+<p>함수명은 중복된 이름으로 작성할 수 없습니다. 내장 함수의 이름들은 기존 PHP에서 이미 한 번 사용한 함수로서 사용자 정의 함수로 사용할 수 없습니다. 만일 동일한 이름의 함수명을 사용하여 작성한 경우에는 실행 시 에러가 발생할 것입니다.</p>
+
+<p>이러한 이유 또한 내장 함수들을 숙지하고 학습을 먼저 해야 하는 이유도 될 것입니다.</p>
+
+<p>PHP 내장 함수의 보다 자세한 사용법은 공식 사이트 www.php.net에서 매뉴얼을 확인할 수 있습니다.</p>
+
+<p>함수 체크<br />
+PHP 공식 사이트를 통해 정의된 함수들을 확인할 수 있습니다. 또는 사용자 함수를 많이 만들었을 때 함수명이 중복되는지 어떻게 확인할 수 있을까요? PHP는 내장 함수 및 사용자가 생성하는 함수들이 존재하는지 프로그램에서 검색할 수 있는 내장 함수를 제공합니다.</p>
+
+<p>|관련함수|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool function_exists ( string $function_name )
+</code></pre></div></div>
+
+<p>function_exists() 내장 함수는 내장 함수와 사용자 함수 모두 함수명의 존재 여부를 확인하여 논리 값으로 반환합니다. 함수가 존재하면 true(1)과 없는 경우에는 false(0)을 반환합니다. 이렇게 반환된 값을 if 조건문을 통해 함수를 체크할 수 있습니다. 이처럼 함수 존재 여부를 체크하는 내장 함수를 통해 함수를 호출할 때 발생할 수 있는 호출 오류를 사전에 방지할 수 있습니다.</p>
+
+<p>예제 파일 func-01.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$functionName</span> <span class="o">=</span> <span class="s2">"intval"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="nv">$functionName</span><span class="p">)){</span>
+    		<span class="k">echo</span> <span class="s2">"</span><span class="nv">$functionName</span><span class="s2"> 함수가 존재합니다. &lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    		<span class="k">echo</span> <span class="s2">"</span><span class="nv">$functionName</span><span class="s2"> 는 없는 함수입니다.&lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intval 함수가 존재합니다. 
+</code></pre></div></div>
+
+<h3 id="응용처리">응용처리</h3>
+
+<ul>
+  <li><a href="01">필터</a></li>
+  <li><a href="02">배열</a></li>
+  <li><a href="03">문자열</a></li>
+  <li><a href="04">JSON</a></li>
+  <li><a href="05">날짜</a></li>
+  <li><a href="06">파일제어</a></li>
+  <li><a href="07">CSV</a></li>
+  <li><a href="08">정규표현식</a></li>
+  <li><a href="09">URL</a></li>
+  <li><a href="10">아파치함수</a></li>
+  <li><a href="11">통신</a></li>
+  <li><a href="12">CURL</a></li>
+  <li><a href="13">외부 처리</a></li>
+  <li><a href="14">메일</a></li>
+  <li><a href="15">오류처리 함수</a></li>
+  <li><a href="16">함수</a></li>
+  <li><a href="17">HTML &amp; FORM</a></li>
+  <li><a href="18">스크립트</a></li>
+  <li><a href="19">정보</a></li>
+  <li><a href="20">오토로딩</a></li>
+</ul>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
