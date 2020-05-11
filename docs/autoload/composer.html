@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="컴포저">컴포저</h1>
+<hr />
+<p>PHP의 컴포저(composer)는 오토로드와 의존성을 관리할 수 있는 도구 입니다. npm이나 apt, pip같은 것들과 유사합니다. 컴포저는 PSR-4 AutoLoader 제안과 PSR를 준수하여 페키지 의존성을 관리합니다.
+컴포저를 PHP에서 사용하기 위해서는 PHP 5.3.2 이상의 버전이 필요로 합니다. 또한 컴포저는 멀티플레폼을 지원함으로 windows, linux, osx 등에서도 사용이 가능합니다.</p>
+
+<p><br /></p>
+
+<h2 id="컴포저-설치">컴포저 설치</h2>
+<hr />
+<p>컴포져는 https://getcomposer.org 에 접속하면 설치파일을 다운로드 할 수 있습니다. 컴포저는 무료로 다운로드 받아 설치할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="구성설정">구성설정</h2>
+<hr />
+
+<p>컴포저를 통하여 패키지들을 설치하면 자동적으로 의존성과 관련된 설정파일들이 생성되게 됩니다. 의존성 설정파일은 json 타입으로 작성되어 있습니다.</p>
+
+<p>composer.json 파일은 컴포저를 이용하여 의존성 및 설치된 패키지를 관리할 수 있는 설정 파일입니다. 컴포저를 통하여 패키지의 의존성이 설치가 되면 기존 conposer.json 파일과 별개로 composer.lock 파일이 추가로 생성이 됩니다.</p>
+
+<p>composer.lock 파일은 컴포넌트의 목록, 버전등 세부적인 정보들을 담고 있습니다.</p>
+
+<p>또한 composer.lock 파일은 컴포저가 패키지들의 최신버전과 별개로 composer.lock 에 명시된 버젼으로 다운로드 및 사용을 하게 됩니다. 이는 컴포저가 패키지를 최신버젼으로 업데이트하여 패키지의 버전의 차이로 인하여 발생할 수 있는 오류들을 줄여 줄 수 있습니다.</p>
+
+<h2 id="컴포넌트">컴포넌트</h2>
+<hr />
+
+<p>기존의 PHP는 다양한 해결문제점들을 개발자들이 중복적으로 개발하느라 많은 시간을 보냈습니다. 그리고 이렇게 개발, 공개된 소스들은 자신의 홈페이지나 블로그에 공개하는 방식으로 다른 개발자들과 공유를 하였습니다.</p>
+
+<p>개발자들의 서로 다른 공개방식 및 사이트들을 검색하고 찾아서 자신의 프로젝트에 설치하는 것 또한 개발자로서는 힘든 과정중에 하나 이었습니다.</p>
+
+<p>PHP는 이러한 분산되어 있는 PHP소스들을 컴포저 의존성설치 툴과 더불어 패키지스트 라는 통합 관리 사이트를 통하여 체계적으로 공유된 소스들을 관리하고 설치를 할 수 있는 서비스가 출현하였습니다.</p>
+
+<p>PHP 개발자들은 공동의 인터페이스와 코드 스타일로 소스를 코딩하고, 패키지스트 사이트를 통하여 배포, 컴포저를 이용한 설치 과정을 한번에 할 수 있도록 체계화 되어 가고 있습니다. 이러한 공통된 규약과 작업등으로 지금까지 PHP는 다양한 컴포넌트를 찾아보고, 빠른 시간안에 문제점들을 해결할 수 있게 되었습니다.</p>
+
+<p>컴포넌트들은 작은 단위로 정확한 문제점을 해결과 작은 코드로 되어 있기 때문에 빠르고 안정적으로 테스트하면서 적용을 할 수 있습니다. 또한 프레임워크를 적용하여 사용하는데 확장성과 향후 유지보수를 편리하게 도와 줍니다</p>
+
+<p><br /></p>
+
+<h2 id="페키지스트">페키지스트</h2>
+<hr />
+
+<p>패키지스트(https://packagist.org) 사이트는 PHP 컨포넌트를 등록 관리하는 사이트 입니다.  패키지스트에는 다양한 PHP 패키지들이 등록되어 있고, 검색하여 필요한 패키지를 컴포저를 통하여 설치 사용할 수 있습니다.</p>
+
+<p>컴포넌트는 대부분 배포하는 사람의 벤더명과 패키지명으로 구성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>벤더명/패키지명
+</code></pre></div></div>
+
+<p>이러한 구조들은 서로 패키지들이 중첩되지 않고 각각의 관리를 하기 위함 입니다. 동일한</p>
+
+<p>패키지스트 사이트는 수많은 PHP 개발자들이 만들어 놓은 패키지 컴포넌트를 검색할 수 있는 것과 더불어 자기 자신도 새로운 패키지 컴포넌트를 생성하여 다른 개발자들과 공유를 할 수 있습니다.</p>
+
+<h2 id="페키지-다운로드">페키지 다운로드</h2>
+<hr />
+
+<p>패키지 및 의존성관리 도구인 컴포저를 이용하면 패키지스트에 등록된 다양한  PHP 컴포넌트를 다운로드 및 설치할 수 있습니다.</p>
+
+<p>패키지스트 사이트에서 필요한 패키지를 검색해 봅니다. 검색창에서 키워드를 입력하면 관련된 다양한 패키지들을 찾을 수 있습니다.</p>
+
+<p>패키지를 검색을 하면 간략한 패키지 설명과 같이 옆에 다운로드수와 별점이 같이 표기가 됩니다. 다운로드수와 별점은 해당 패키지 컴포넌트가 얼마나 인기가 있고, 많은 사람들이 사용을 하는지 가늠해 볼 수 있습니다.</p>
+
+<p>하지만 이러한 평점들은 단순한 수치이고, 많은 테스트와 자신에게 맞는 패키지를 설치하여 사용을 하면 됩니다.</p>
+
+<p>필요한 패키지를 찾았으면 콘솔창에서 composer 명령을 통하여 패키지를 설치 할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require jiny/routes
+</code></pre></div></div>
+
+<p>패키지를 다운로드 하면 자동으로 최상의 디렉토리에 /vender 폴더가 하나 생성됩니다. /vender 폴더는 다운로드 받은 컨포넌트 패키지들을 저장 관리하는 폴더 입니다.</p>
+
+<p><code class="highlighter-rouge">/vander</code> 폴더 아래에 각각의 컴포넌트의 벤더명으로 폴더를 생성하고, 패키지 명으로 폴더를 생성합니다.</p>
+
+<p>/vender / 페키지벤더명 / 패키지명
+또한 composer.json 과 composer.lock 파일을 생성하고 관리해 줍니다.</p>
+
+<p><br /></p>
+
+<h2 id="사설-저장소">사설 저장소</h2>
+<hr />
+
+<p>모든 PHP의 컴포넌트를 위의 패키지리스트와 같은 서비스 사이트를 이용해야만 하는 것은 아닙니다. 자체적인 컴포넌트 저장소를 만들어서 개인적으로 제작한 사설 컴포넌트를 관리하고 컴포저를 통하여 설치를 할 수 있습니다.</p>
+
+<p>개인적인 내부서버를 통하여 컴포넌트를 관리하기 위해서는 컴포저에게 내부 서버명과 접속 정보를 같이 제공해야 합니다. 다음과 같은 형태로 접속정보를 auth.json 파일을 생성하여 관리할 수 있습니다. auth.json파일은 composer.json 과 같은 파일 위치에 있습니다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"페키지명"</span><span class="p">:{</span><span class="w">
+	    </span><span class="nl">"서버도메인"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	        </span><span class="nl">"username"</span><span class="p">:</span><span class="s2">"접속아이디"</span><span class="p">,</span><span class="w">
+	        </span><span class="nl">"password"</span><span class="p">:</span><span class="s2">"접속패스워드"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>또는 콘솔상에서 composer 명령을 입력할때 직접 입력을 하거나 <code class="highlighter-rouge">--global</code> 명령을 통하여 글로벌 정보로 저장할 수 있습니다.</p>
+
+<p>composer config 패키지명.도메인 아이디 페스워드</p>
+
+<p>또는</p>
+
+<p>composer config –global 패키지명.도메인 아이디 페스워드
+–global로 접속정보를 저장을 하면 ~/.composer/auth.json 파일에 저장이 됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="패키지-사용">패키지 사용</h2>
+<hr />
+
+<p>컴포저를 통하여 컴포넌트 패키지를 다운로드 하면 <code class="highlighter-rouge">/vender</code> 폴더에 자동적으로 저장이 됩니다. 컴포져는 모든 패키지들의 의존성과 호환이 되는 PSR-4 기준의 오토로더를 생성, 제공됩니다.</p>
+
+<p>자동적으로 제공되는 오토로더를 프로그램 상단에 <code class="highlighter-rouge">require</code> 명령을 통하여 삽입하여 패키지들을 사용하시면 됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="err">“</span><span class="nx">vender</span><span class="o">/</span><span class="nx">autoload</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>설치된 패키지를 통하여 클래스의 인스턴스를 생성할때는 패키지의 벤더명과 네임스페이스를 같이 사용을 해 주셔야 합니다.</p>
+
+<p>만일 네임스페이스명이 길다고 하면 <code class="highlighter-rouge">use</code> 명령을 통하여 별칭 또는 현재의 네임스페이스 경로를 변경할 수도 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\jiny\routes</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

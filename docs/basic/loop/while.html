@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>while - PHP 프로그래밍</title>
+            <meta name="title" content="while - PHP 프로그래밍" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="while">while</h1>
+<hr />
+
+<p>while 반복문은 for문과 같이 두 번째로 가장 많이 사용하는 반복 문법입니다. while은 for 문장과 달리 초기값과 증가 연산자 등의 반복 횟수를 제어하는 인자값이 없습니다. while의 인자값은 참의 값을 갖는 인자값 하나만 있습니다.</p>
+
+<p>반복 조건이 거짓(false) 조건이 나올 때까지 계속 반복합니다. while문은 동작의 반복 횟수를 사전에 정하지 않기 때문에 조건이 만족될 때까지 반복을 처리해야 하는 경우 매우 유리합니다. 하지만 조건 처리하는 부분이 반복 소스 안에 포함되지 않으면 반복문은 종료하지 않고 계속 무한정 실행됩니다.</p>
+
+<p>다음은 기본적인 while 반복문 문법입니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">참</span> <span class="nx">조건</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">반복</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>문법 구조에서 보듯이 조건과 반복 실행되는 소스의 블록 { }만 있습니다. while문의 동작을 그림으로 알아보면 다음과 같습니다.</p>
+
+<p>다음은 외부에 반복되는 초기 임시변수 값을 설정하고 while의 조건이 $i&lt;=5가 될 때까지 반복수행하는 예제입니다.</p>
+
+<p>예제 파일 while-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">echo</span> <span class="s2">"The number is: </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+      <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5 
+</code></pre></div></div>
+
+<p>while 반복문 블록 {} 안에는 조건을 증가시키는 $i++ 증가 연산자가 포함되어 있습니다. 반복문이 한 번씩 수행될 때마다 내부에서는 조건값을 한 개씩 증가시키면서 코드를 수행하게 됩니다.</p>
+
+<p>위의 예제는 외부에서 정의된 초기화 변수를 통하여 반복횟수를 정의하는 데 유용합니다. 어떻게 보면 for 구문에서 첫 번째 인자와 세 번째 인자를 입력하지 않고 작성한 다음 예제와 비슷할 수 있습니다.</p>
+
+<p>예제 파일 while-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span> <span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+      <span class="k">echo</span> <span class="s2">"The number is: </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5 
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: if 조건문은 중괄호 부분을 실행한후, 밖으로 빠져 나옵니다. 하지만, while은 다시한번 조건을 비교하여 중괄호를 실행합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="무한-루프">무한 루프</h2>
+<hr />
+
+<p>무한 루프란 프로그램상에서 조건이 항상 참인 상태의 반복문을 말합니다. 즉, 조건이 언제나 참(true)이기 때문에 거짓(false)이 나올 수 없습니다. 무한 루프는 프로그램을 강제로 종료하거나 반복문을 사용자가 종료시키기 전까지는 반복되는 코드를 무한정으로 실행합니다.</p>
+
+<p>무한 반복 루프는 외부와의 통신 대기를 하거나, 사용자가 언제 입력할지 모르는 값을 대기하거나 모니터링할 때 매우 유용합니다.</p>
+
+<p>무한 반복 사용은 매우 주의하여 사용해야 합니다. 무한 루프를 사용하더라도 항상 무한 루프를 탈출할 수 있는 처리 로직도 같이 만들어주는 것이 좋습니다. 잘못 사용하면 컴퓨터에 과부하를 주거나, 프로그램이 중단되는 것 같이 보이는 문제가 발생합니다.</p>
+
+<p>예제 파일) while-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">While</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+    <span class="k">echo</span> <span class="s2">"무제한으로 반복합니다."</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>무제한으로 반복합니다
+무제한으로 반복합니다
+무제한으로 반복합니다
+무제한으로 반복합니다
+….
+….
+…
+..
+</code></pre></div></div>
+
+<p>위의 무한 루프 예는 조건 값이 1(true)입니다. 1이라는 값은 상수 값으로 조건이 거짓(false)으로 변경이 될 수가 없습니다. 이런 경우 while 반복문은 무한 루프를 돌게 됩니다.</p>
+
+<p>그럼 무한 루프를 탈출하려고 한다면 어떻게 해야 할까요? break;문을 사용하면 됩니다. 
+break; 문장은 { }으로 싸인 블록 한 단계를 탈출합니다. 보다 자세한 예는 이후의 break 설명에서 다시 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="while-중첩">while 중첩</h2>
+<hr />
+
+<p>while 반복문도 for반복문법처럼 중첩하여 다중 반복문을 구현할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">조건</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">실행1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">조건</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">실행2</span><span class="p">;</span>
+       <span class="k">while</span> <span class="p">(</span><span class="nx">조건</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">실행3</span><span class="p">;</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>while문을 통한 중첩 반복을 할 때는 프로그램이 무한 루프에 걸리지 않도록 탈출 조건을 잘 계산하여 처리해야 합니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

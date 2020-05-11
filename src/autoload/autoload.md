@@ -1,0 +1,124 @@
+---
+layout: php
+title: "오토로드"
+keyword: "jinyphp, php"
+---
+
+# 오토로드를 통하여 클래스 파일 자동 결합하기
+---
+
+<br>
+
+## 클래스 의존성 체크 함수
+---
+기존에는 클래스를 사용을 하면 모든 클래스 파일을 미리 사전에 inlcude 또는 require 하여 파일을 삽입을 하였습니다. 하지만, 작성한 모든 클래스들이 하나에 파일에 다 사용이 되지는 않습니다.  
+
+PHP는 클래스의 인스턴스를 선언하거나 정적호출시 클래스의 의존성을 사전에 검사할 수 있는 함수를 제공합니다. 클래스 의존성을 체크할 수 있는 함수를 통하여 필요한 클래스 파일을 실시간으로 inlcude 또는 require 함으로서 메모리를 관리하고, 복잡한 의존성 관계를 쉽게 처리할 수 있습니다.  
+
+이렇게 클래스 파일을 자동으로 확인해서 처리하는 기능을 오토로드 기능이라고 합니다.  
+
+<br>
+
+## 클래스 파일 삽입
+---
+`Php5`로 버전업이 되면서 php가 클래스 또는 인터페이스를 호출할 때, 자동으로 실행되는 함수가 있습니다.  
+
+```php
+<?php
+	function __autoload($className){
+		include $className.”.class.php”;
+	}
+	$basic = new Basic;
+?>
+```
+
+`__autoload()` 함수는 위의 예처럼 new basic 형태로 클래스를 선언할 때, __autoload함수가 실행되고, 클래스 이름이 __autoload의 $className 으로 인자로 전달하게 됩니다. __autoload 함수는 전달된 클래스명 인자를 이용하여 클래스 파일을 include하여 정상적으로 클래스가 선언이 되도록 합니다.  
+
+프로젝트가 커질수록 클래스를 관리하고, 무결성을 유지하면서 클래스파일을 include 하기란 쉽지 않습니다. 이런 자동 로딩기능을 이용하면, 클래스 기반으로 코딩하는데 매우 편리할 것입니다.  
+
+PHP 5.1.2 로 업그레이드 되면서 기존 __autoload 는 spl_autoload_registrer()함수를 이용하여 보다 더 유연하게 오토로드 처리를 하실 수 있게 되었습니다.  
+
+최근에는 spl_autoload_register() 함수를 더 많이 쓰는 것 같습니다. spl_autoload_register() 함수는 기존 __autoload 함수 사용법이 같습니다.  
+
+```php
+function spl_autoload_register($className){
+	include $className.”.class.php”;
+}
+```
+
+형대로 동일하게 사용을 하면 됩니다.  
+
+오토로드 기능을 매번 파일 상단에 선언해서 사용하기란 불편합니다. 또한 오토로드 코드들이 각각의 파일마다 중복이 될 것입니다. 이런경우,  autoload.php 형태로 별도의 오토로드 처리 파일을 만들어서 사용을 하시면 편리합니다.  
+
+autoload.php 파일 생성 
+```php
+<?
+	// 오토로드 처리흘 위한 파일
+
+	// 클래스 파일을 구분하기 위한 사용자 정의 확장자를 사용하시면 , php 실행파일과 클래스파일 을 좀 더 쉽게 구분을 할 수 있습니다.
+	$classExt = ".class.php"; 
+
+	// 클래스를 호출하면 클래스명이 인자로 전달됩니다.
+	function spl_autoload_register($className){
+		$classFilePath = __DIR__ . "/" . $className . $classExt;
+
+		// 클래스 파일이 존재하는지 검사를 합니다.
+		// 클래스 파일이 없는 상태에서 require 등을 통하여 삽입을 한다고 하면, 에러를 발생할 수 있습니다.
+		if(is_readable($classFilePath)){
+
+			// 클래스 파일을 불러옵니다.
+			require $classFilePath;
+		
+		}
+		
+	}
+
+?>
+```
+
+이렇게 미리 만들어 놓은 클래스 오토로드 처리 파일을 프로그램작성시 먼저 한번 불러오고, 클래스를 선언을 하여 사용하면 자동으로 php가 선언되지 않은 클래스를 파일을 찾아 불러오고 사용을 할 수 있도록 처리를 해줍니다.  
+
+```php
+<?php 
+	// 오토로드 처리를 위한 파일을 불러옵니다.
+	require autoload.php;
+
+	// 오토로드 파일을 통하여, jiny클래스가 정의된 클래스파일을 불러와 클래스를 오류없이 선언하여 사용을 할 수 있습니다.
+	$jiny = new jiny;
+?>
+```
+
+<br>
+
+## PSR-4 Autoloading
+---
+
+PHP Framework Interop Group(PHP-FIG)에서는 SPR-0 autoloading standard 를 제안하였습니다. 아래와 같은 규칙을 적용하여 오토로드를 처리하도록 권장하고 있습니다.
+
+*  네임스페이스와 클래스명의 구조는 \<vender Name>\(<namespace>\)*<Classname> 형식을 따릅니다.
+* 네임스페이스는 서브 네임스페이스를 포함할 수 있습니다.
+* 네임스페이스 구분자는 파일을 불러오기 위한 디렉토리 구분자 입니다.
+* 클래스명에 포함된 _글자는 디텍토리 구분자로 사용된다.
+* 네임스페이스 와 클래스 파일을 불러올 때 .php 를 확장자로 불러 온다.
+* 벤더, 네임스페이스, 클래스 는 대소문자를 구분한다.
+
+```php
+<?php
+	function autoload($className) {
+		
+		$className = ltrim($className, '\\');
+		$fileName = '';
+ 		$namespace = '';
+
+		if ($lastNsPos = strpos($className, '\\')) {
+			$namespace = substr($className, 0, $lastNsPos);
+			$className = substr($className, $lastNsPos + 1);
+			$fileName = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+		}
+
+		$fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+		require $fileName;
+	}
+
+?>
+```

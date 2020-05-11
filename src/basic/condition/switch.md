@@ -1,6 +1,6 @@
 ---
 layout: php
-title: "switch | PHP"
+title: "switch - PHP 프로그래밍"
 ---
 
 # switch

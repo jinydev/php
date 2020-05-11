@@ -1,0 +1,20 @@
+I"-<h1 id="글로벌변수">글로벌변수</h1>
+<hr />
+
+<p>절차적인 간단한 프로그램들은 변수의 영역이라는 개념이 생소합니다. PHP 실행 코드 &lt;?php 다음에 선언하는 변수들은 글로벌변수로 처리를 합니다.</p>
+
+<p>PHP에서는 대부분 변수 선언과 동시에 사용이 가능하고 현재의 스크립트 종료까지 변수는 메모리와 데이터 값이 유효합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//글로벌변수 </span>
+
+	<span class="nv">$name</span> <span class="o">=</span> <span class="s2">"jiny"</span><span class="p">;</span>	<span class="c1">//글로벌변수 </span>
+	
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>위의 예제에서 정의된 $x 변수는 스크립트 종료까지 메모리에 공간이 유효하게 사용됩니다.</p>
+
+<p><br /></p>
+
+:ET

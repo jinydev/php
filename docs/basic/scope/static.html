@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="static-키워드">static 키워드</h1>
+<hr />
+
+<p>함수 안에 정의된 로컬변수는 휘발적인 특성이 있습니다. 즉, 함수가 종료되면 함수 내에서 사용된 변수들은 전부 자동 소멸하게 됩니다.</p>
+
+<p>하지만, 함수 내의 로컬변수의 자동 소멸을 방지할 수 있는 방법 또한 있습니다. static 키워드는 함수를 재사용을 하면서 함수 내에서 선언한 변수가 소멸하지 않도록 할 수 있습니다. 아래와 같이 함수 내에서,</p>
+
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static $변수명;
+</code></pre></div></div>
+
+<p>으로 선언을 하면, 함수가 종료된 후에도 해당 변수를 소멸하지 않고 변수를 남겨 놓을 수 있습니다.</p>
+
+<p>이렇게 변수의 자동소멸을 유보한 변수는 함수의 재호출 사용 시 기존의 작업된 변수의 내용을 가지고 와서 계속 연산을 이어 갈 수 있습니다.</p>
+
+<p>예제 파일 scope-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+	<span class="k">function</span> <span class="nf">increment</span><span class="p">(){</span>
+		<span class="c1">// static 변수는 처음 한 번 선언 시에만 초기화 됩니다.</span>
+		<span class="k">static</span> <span class="nv">$total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+		<span class="k">return</span> <span class="o">++</span><span class="nv">$total</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+2
+3
+</code></pre></div></div>
+
+<p>위의 예제는 정적변수의 실험입니다. increment() 함수 안에 정의한 정적변수 $total은 함수가 종료 후에도 자동으로 소멸하지 않습니다. 할당된 변수의 값을 계속 가지고 있습니다.</p>
+
+<p>또한 함수를 재호출할 때 기존 값을 이용하여 계속 참조할 수도 있습니다. 정적변수의 초기화는 처음 함수를 호출할 때 한 번만 실행됩니다.</p>
+
+<p>예제 파일 scope-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+	<span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="c1">// 정적 변수를 선언합니다.</span>
+		<span class="k">static</span> <span class="nv">$bar</span><span class="p">;</span> 
+		<span class="nv">$bar</span><span class="o">++</span><span class="p">;</span> 
+    		<span class="k">echo</span> <span class="s2">"unset 실행 전: </span><span class="nv">$bar</span><span class="s2">, "</span><span class="p">;</span> 
+    	
+		<span class="c1">// 변수를 직접 해제합니다.</span>
+    		<span class="nb">unset</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span> 
+    		<span class="nv">$bar</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span> 
+    		<span class="k">echo</span> <span class="s2">"unset 실행 후: </span><span class="nv">$bar</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span> 
+ 	<span class="p">}</span>
+
+ 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="c1">// 결과: unset 실행 전: 1, unset 실행 후: 21</span>
+ 	
+ 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="c1">// 결과: unset 실행 전: 2, unset 실행 후: 21 </span>
+ 	
+ 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="c1">// 결과: unset 실행 전: 3, unset 실행 후: 21 </span>
+ <span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unset 실행 전: 1, unset 실행 후: 21
+unset 실행 전: 2, unset 실행 후: 21
+unset 실행 전: 3, unset 실행 후: 21 
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

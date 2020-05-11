@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="spaceship-연산자">Spaceship 연산자</h1>
+<hr />
+
+<p>기존의 비교연산자는 두 개의 값을 비교하여 참(1)과 거짓(0)으로 논리 결과를 반환했습니다.</p>
+
+<p>PHP 7.x로 업그레이드되면서 두 개의 값이 큰지, 작은지, 같은지를 한 번에 비교하는 스페이스쉽  연산자를 새롭게 지원합니다.</p>
+
+<p>스페이스 연산자는 &lt;=&gt;로 표시가 되는데 그 모양이 우주선과 같이 보여서 스페이스 연산자라고 명칭하게 되었습니다.</p>
+
+<p>PHP 7.x 이전에 스페이스 연산과 같은 처리를 하기 위해서는 다음과 같은 함수를 만들어서 사용해야 했습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">_Spaceship</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">==</span> <span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$a</span><span class="o">&lt;</span><span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$a</span><span class="o">&gt;</span><span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> 
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>즉 입력된 2개의 값을 3번의 조건문을 통해 처리했습니다.</p>
+
+<p>예제 파일 space-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// 정수</span>
+	<span class="k">echo</span> <span class="s2">"정수&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1 &lt;=&gt; 1 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1 &lt;=&gt; 2 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"2 &lt;=&gt; 1 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">2</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+
+
+	<span class="c1">// 실수</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"실수&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1.5 &lt;=&gt; 1.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">1.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">1.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"1.5 &lt;=&gt; 2.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">1.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">2.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"2.5 &lt;=&gt; 1.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">2.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">1.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+ 
+	<span class="c1">// 문자열</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"문자열&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a &lt;=&gt; a = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"a"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"a &lt;=&gt; b = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"b"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"b &lt;=&gt; a = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"b"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"a"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정수
+1 &lt;=&gt; 1 = 0
+1 &lt;=&gt; 2 = -1
+2 &lt;=&gt; 1 = 1
+
+실수
+1.5 &lt;=&gt; 1.5 = 0
+1.5 &lt;=&gt; 2.5 = -1
+2.5 &lt;=&gt; 1.5 = 1
+
+문자열
+a &lt;=&gt; a = 0
+a &lt;=&gt; b = -1
+b &lt;=&gt; a = 1
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

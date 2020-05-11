@@ -1,6 +1,6 @@
 ---
 layout: php
-title: "참과거짓| 제어문| PHP"
+title: "참과거짓 - PHP 프로그래밍"
 ---
 
 # 참과 거짓

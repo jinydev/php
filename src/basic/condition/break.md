@@ -1,6 +1,6 @@
 ---
 layout: php
-title: "break | PHP"
+title: "break - PHP 프로그래밍"
 ---
 
 # break

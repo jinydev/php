@@ -1,0 +1,106 @@
+I"P<h1 id="if문">if문</h1>
+<hr />
+<p>if 키워드는 대부분 프로그램 언어에서 조건문으로 사용하고 있는 키워드입니다. 또한 if는 사전적 의미로 “(만약) .. 면”이라는 의미를 가지고 있습니다. PHP언어에서는 조건 명령문 키워드로 if 를 사용합니다.</p>
+
+<p><br /></p>
+
+<h2 id="조건-단일-실행">조건 단일 실행</h2>
+<hr />
+<p>다음 문법은 가장 기본적인 조건 제어문 표현 문법 예입니다. 문법을 살펴보면 “(만약) .. 면”이라는 조건을 if 키워드 다음에 적습니다. 즉, 조건이 참(true)일 경우에 뒤에 있는 실행 코드를 실행합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">작성</span> <span class="nx">문법</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">조건</span> <span class="p">)</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>if라는 키워드는 C 언어 스타일의 조건 제어문으로 이미 많은 프로그램 언어에서 유사하게 사용하고 있습니다. PHP 언어에서도 쉬운 언어 학습을 위해 동일한 형태의 키워드와 문법으로 제공하고 있습니다.</p>
+
+<p>PSR 표준 스타일 코딩 권장에 따르면 if 키워드와 조건문 소괄호() 블록 사이에 한 칸의 공백을 추가하여 일관적으로 작성하는 것을 추천합니다.</p>
+
+<p>단일 조건 실행이란 조건이 참일 경우 실행하는 문장이 한 개뿐이라는 것입니다.</p>
+
+<p>예제파일 if-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$country</span> <span class="o">=</span> <span class="s2">"Korea"</span><span class="p">;</span>
+
+	<span class="c1">// 문자열을 비교합니다.</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$country</span> <span class="o">==</span> <span class="s2">"Korea"</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$country</span> <span class="o">.</span> <span class="s2">"에 오신 것을"</span><span class="p">;</span>
+	
+	<span class="k">echo</span> <span class="s2">"환영합니다."</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예는 조건에 대한 단일 실행 코드입니다. if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다. $country 변수에는 국가 이름이 저장되어 있습니다. 만일 $country 값이 “Korea”와 같다면 실행 결과는 다음과 같습니다.</p>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Korea에 오신 것을 환영합니다.
+</code></pre></div></div>
+
+<p>만약 값이 틀리면 다음과 같이 출력됩니다.</p>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>환영합니다.
+</code></pre></div></div>
+
+<p>예제 파일 if-01-1.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+
+	<span class="c1">// 숫자를 비교합니다.</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="o">.</span> <span class="s2">"는 성인입니다."</span><span class="p">;</span>
+	
+	<span class="c1">// 숫자를 비교합니다.</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="o">.</span> <span class="s2">"는 미성년입니다."</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18는 성인입니다.
+</code></pre></div></div>
+
+<p>단일 실행은 조건이 간단한 작업을 처리할 때 매우 유용합니다. 단일 실행은 코드를 간결하게 하고 줄 단위로 가독성이 쉬운 코드로 작성할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="조건-다중-실행">조건 다중 실행</h2>
+<hr />
+<p>단일 실행 조건은 조건 만족 시 하나의 실행 코드만 처리를 합니다. 코드를 작성하다 보면 하나의 실행 코드만 실행하는 경우는 그렇게 많지 않습니다. 소스 코드의 여러 명령 블록을 묶어서 조건을 처리하게 됩니다.</p>
+
+<p>조건 다중 실행이란 여려 명령들을 묶어서 하나의 조건으로 처리한다는 의미입니다. 한 개 이상의 다수의 실행 코드를 처리하기 위해서는 중괄호 { } 기호로 실행할 코드를 감싸주면 됩니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nx">조건이</span> <span class="nx">만족을</span> <span class="nx">하면</span> <span class="nx">실행됩니다</span><span class="err">…</span>
+  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>다중 실행 조건을 작성할 때 주의할 점은 중괄호 시작과 끝을 짝을 맞추어 작성을 해야 합니다. 만일 중괄호의 짝을 한쌍으로 일치하지 않으면 PHP는 문법적 오류로 출력과 동작을 하지 않습니다.</p>
+
+<p>조건 다중 실행 예제<br />
+예제 파일) if-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$num</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"num 값은 "</span> <span class="o">.</span> <span class="nv">$num</span> <span class="o">.</span> <span class="s2">"입니다."</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$num</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">" (양수입니다.) &lt;br&gt;"</span><span class="p">;</span>
+  		<span class="nv">$num</span> <span class="o">--</span><span class="p">;</span>
+  		<span class="k">echo</span> <span class="s2">" 값을 하나 감소합니다 (</span><span class="nv">$num</span><span class="s2">)"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num 값은 10입니다. (양수입니다.)
+값을 하나 감소합니다 (9)
+</code></pre></div></div>
+
+<p>위의 예는 조건에 대한 다중 실행 코드입니다.  위의 예는 $num 값이 양수인지를 판별하고, 양수면 메시지를 추가로 출력하고 값을 1만큼 감소합니다.</p>
+
+<p>즉, 조건에 따라서 동작하는 명령이 세 개인 것입니다. 이런 조건 다중 처리일 경우 조건 만족 시 여러 줄을 실행을 하기 위해서 실행할 코드 부분을 중괄호 { }로 묶어주면 됩니다.</p>
+
+<p><br /><br /></p>
+:ET
