@@ -1,0 +1,145 @@
+I"�<h2 id="콘솔">콘솔</h2>
+<p>PHP는 웹 브라우저를 통해 실행뿐만 아니라 콘솔에서 직접 명령으로 PHP를 실행할 수 있습니다.</p>
+
+<p>콘솔 명령을 다른 말로는 CLI(command Line Interface)라고도 합니다. PHP CLI 기능은 PHP 4.3.x 버전 이후부터 적용된 기능입니다. PHP CLI는 SAPI(Server Application Programming Interface) 형식을 지원합니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="콘솔이란">콘솔이란?</h3>
+<p>컴퓨터와 사용자 사이에 대화를 할 수 있는 커맨드 기반의 입출력 장치를 말합니다.  옛날 DOS 나 리눅스의 bash shell, 윈도우 CMD 창 등이 콜솔 명령 작업을 할 수 있는 환경입니다.</p>
+
+<p>콘솔을 이용하면 명령을 통해 컴퓨터에게 직접 작업을 실행하거나 결과를 얻을 수 있습니다.</p>
+
+<h3 id="182-콘솔-옵션">18.2 콘솔 옵션</h3>
+<p>콘솔 창에서 php -help 명령을 입력하면 php 콘솔 실행과 관련된 여러 명령 옵션을 확인할 수 있습니다.</p>
+
+<p>|명령|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php -help
+
+Usage: php [options] [-f] &lt;file&gt; [--] [args...]
+   php [options] -r &lt;code&gt; [--] [args...]
+   php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...]
+   php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...]
+   php [options] -S &lt;addr&gt;:&lt;port&gt; [-t docroot]
+   php [options] -- [args...]
+   php [options] -a
+
+  -a               Run interactively
+  -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory
+  -n               No php.ini file will be used
+  -d foo[=bar]     Define INI entry foo with value 'bar'
+  -e               Generate extended information for debugger/profiler
+  -f &lt;file&gt;        Parse and execute &lt;file&gt;.
+  -h               This help
+  -i               PHP information
+  -l               Syntax check only (lint)
+  -m               Show compiled in modules
+  -r &lt;code&gt;        Run PHP &lt;code&gt; without using script tags &lt;?..?&gt;
+  -B &lt;begin_code&gt;  Run PHP &lt;begin_code&gt; before processing input lines
+  -R &lt;code&gt;        Run PHP &lt;code&gt; for every input line
+  -F &lt;file&gt;        Parse and execute &lt;file&gt; for every input line
+  -E &lt;end_code&gt;    Run PHP &lt;end_code&gt; after processing all input lines
+  -H               Hide any passed arguments from external tools.
+  -S &lt;addr&gt;:&lt;port&gt; Run with built-in web server.
+  -t &lt;docroot&gt;     Specify document root &lt;docroot&gt; for built-in web server.
+  -s               Output HTML syntax highlighted source.
+  -v               버전을 확인합니다.
+  -w               Output source with stripped comments and whitespace.
+  -z &lt;file&gt;        Load Zend extension &lt;file&gt;.
+
+  args...          Arguments passed to script. Use -- args when first argument
+                   starts with - or script is read from stdin
+
+  --ini            Show configuration file names
+
+  --rf &lt;name&gt;      Show information about function &lt;name&gt;.
+  --rc &lt;name&gt;      Show information about class &lt;name&gt;.
+  --re &lt;name&gt;      Show information about extension &lt;name&gt;.
+  --rz &lt;name&gt;      Show information about Zend extension &lt;name&gt;.
+  --ri &lt;name&gt;      Show configuration for extension &lt;name&gt;.
+</code></pre></div></div>
+
+<ul>
+  <li>PHP 버전 확인 <a href="v">-v</a></li>
+  <li>PHP 정보 확인 <a href="i">-i</a></li>
+  <li>PHP 강조 표시 <a href="s">-s</a></li>
+  <li>PHP 명령행 실행 <a href="w">-w</a></li>
+  <li>PHP 대화식 실행 <a href="a">-a</a></li>
+  <li>PHP 문법 검사 <a href="l">-l</a></li>
+  <li>PHP 모듈 출력 <a href="m">-m</a></li>
+</ul>
+
+<h2 id="183-콘솔-실행">18.3 콘솔 실행</h2>
+<p>PHP스크립트는 웹 브라우저를 통해 실행도 가능하나 콘솔로 실행할 수 도 있습니다. PHP 스크립트를 콘솔로 실행을 할 수 있다는 것은 몇 가지 장점이 있습니다.</p>
+
+<p>|명령|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php 실행 파일명.php
+</code></pre></div></div>
+
+<p>php 명령과 php 파일명을 콘솔상에 적으면 PHP는 콘솔상 php 스크립트를 실행하여 콘솔 화면에 출력합니다.</p>
+
+<p>예제</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86&gt;php ./jinyphp/1-03/hello.php
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+                        <span class="nt">&lt;h1&gt;</span> PHP 페이지를 만들어 봅니다.<span class="nt">&lt;/h1&gt;</span>
+                        Hello World!            <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+C:\php-7.1.4-Win32-VC14-x86&gt;
+</code></pre></div></div>
+
+<p>PHP의 콘솔 실행 가능 여부는 PHP를 웹 페이지 제작 이 외에도 시스템의 처리 등을 위한 스크립트로도 사용이 가능하다는 것입니다.</p>
+
+<p>윈도우의 스케줄러, 리눅스의 crontab에 넣어서 정기적으로 php 스크립트를 실행할 수 있습니다.</p>
+
+<h2 id="184-실행-인자">18.4 실행 인자</h2>
+<p>PHP 소스를 실행할 때 외부에서 입력하는 데이터 값을 입력 받아 처리를 할 수 있습니다.
+웹기반에서는 URL 의 GET 이나 폼의 POST 값을 통하여 PHP 소스에 데이터를 전달할 수 있었습니다.</p>
+
+<p>콘솔에서 PHP 스크립트 실행과 더불어 인자도 같이 전달 가능합니다. 이것을 외부 실행 인자라고 이야기합니다.</p>
+
+<p>예제 파일 consol-01.php</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">&lt;?php
+</span><span class="gp">	var_dump($</span>argv<span class="o">)</span><span class="p">;</span>
+<span class="gp">?&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>위와 같은 예제가 있습니다. 예제는 외부에서 입력된 배열변수의 값 $argv 를 출력하는 것입니다.</p>
+
+<p>다음과 같이 콘솔상에서 php 스크립트 실행과 외부 입력값을 전달할 수 있습니다.</p>
+
+<p>|명령|</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php consol-01.php arg1 arg2 arg3
+</code></pre></div></div>
+
+<p>결과)</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">array(4) {
+</span><span class="gp">  [0]=&gt;</span><span class="w">
+</span><span class="go">  string(23) "./jinyphp/consol-01.php"
+</span><span class="gp">  [1]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "arg1"
+</span><span class="gp">  [2]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "arg2"
+</span><span class="gp">  [3]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "agr3"
+}
+</span></code></pre></div></div>
+
+<p>$argv 배열 변수는 콘솔을 통하여 스크립트를 실행할 때 외부에서 입력된 값을 배열 형태로 참조할 수 있는 특별한 변수입니다.</p>
+
+<p>첫 번째 값으로는 실행하는 스크립트 파일의 경로를 가지고 있습니다.</p>
+
+<p>두 번째부터는 인자값으로 전달 되는 값들이 순차적으로 저장되고 참조가 가능합니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h2 id="185-백그라운드-실행">18.5 백그라운드 실행</h2>
+<p>PHP 스크립트는 리눅스와 같은 시스템에서 백그라운드로 실행시킬 수 있습니다. 리눅스의 명령어 &amp; 는 명령 동작을 백드라운드로 실행합니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php test.php &amp;  
+</code></pre></div></div>
+
+:ET

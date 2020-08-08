@@ -1,0 +1,20 @@
+I"<h1 id="php-명령행-실행--w">PHP 명령행 실행 -w</h1>
+<hr />
+<p>-w 옵션은 소스의 주석과 공백을 제거한 소스를 다시 출력합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86&gt;php -w index.php
+<span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">"PHP LocalServer Test"</span><span class="p">;</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>PHP 명령행 실행 -r
+-r 옵션은 php 콘솔상에서 PHP의 명령어를 직접 입력하여 실행할 수 있습니다.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86&gt;php -r "echo 'hello world!';"
+hello world!
+</code></pre></div></div>
+
+<p>위의 콘솔 예제처럼 스크립트 파일을 작성하지 않고도 직접 간단한 명령을 php 입력으로 실행할 수 있습니다.</p>
+:ET

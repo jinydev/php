@@ -1,0 +1,41 @@
+I".<p>|내부함수|
+array array_udiff_uassoc ( array $array1 , array $array2 [, array $… ],
+ callable $value_compare_func , callable $key_compare_func )</p>
+
+<p>내부함수 array_udiff_uassoc()는 콜백 함수로 데이터와 인덱스를 비교합니다.</p>
+
+<p>먼저 인덱스 검사를 통해 배열의 차이점을 계산합니다. 계산된  데이터 및 인덱스를 콜백 함수를 통하여 비교합니다.</p>
+
+<p>예제파일) array-64.php
+&lt;?php</p>
+
+<p>class cr {
+    private $priv_member;
+    function cr($val)
+    {
+        $this-&gt;priv_member = $val;
+    }</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static function comp_func_cr($a, $b)
+{
+    if ($a-&gt;priv_member === $b-&gt;priv_member) return 0;
+    return ($a-&gt;priv_member &gt; $b-&gt;priv_member)? 1:-1;
+}
+
+static function comp_func_key($a, $b)
+{
+    if ($a === $b) return 0;
+    return ($a &gt; $b)? 1:-1;
+} }
+</code></pre></div></div>
+
+<p>$a = array(“0.1” =&gt; new cr(9), “0.5” =&gt; new cr(12), 0 =&gt; new cr(23), 1=&gt; new cr(4), 2 =&gt; new cr(-15),);
+$b = array(“0.2” =&gt; new cr(9), “0.5” =&gt; new cr(22), 0 =&gt; new cr(3), 1=&gt; new cr(4), 2 =&gt; new cr(-15),);</p>
+
+<p>$result = array_udiff_uassoc($a, $b, array(“cr”, “comp_func_cr”), array(“cr”, “comp_func_key”));
+print_r($result);
+?&gt;</p>
+
+<p>화면출력)
+Array ( [0.1] =&gt; cr Object ( [priv_member:cr:private] =&gt; 9 ) [0.5] =&gt; cr Object ( [priv_member:cr:private] =&gt; 12 ) [0] =&gt; cr Object ( [priv_member:cr:private] =&gt; 23 ) )</p>
+:ET

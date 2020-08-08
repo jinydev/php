@@ -1,0 +1,24 @@
+I"R<h1 id="php-정보-확인--i">PHP 정보 확인 -i</h1>
+<hr />
+<p>-i 옵션은 PHP의 환경 설정 정보를 확인할 수 있습니다. 웹에서 phpinfo() 함수를 실행하는 것과 동일합니다.</p>
+
+<p>|명령|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php -i
+C:\php-7.1.4-Win32-VC14-x86&gt;php -i
+phpinfo()
+PHP Version =&gt; 7.1.4
+
+System =&gt; Windows NT LAPTOP-M0820HEF 10.0 build 14393 (Windows 10) i586
+Build Date =&gt; Apr 11 2017 19:53:44
+Compiler =&gt; MSVC14 (Visual C++ 2015)
+Architecture =&gt; x86
+Configure Command =&gt; cscript /nologo configure.js  "--enable-snapshot-build" "--enable-debug-pack" "--with-pdo-oci=c:\php-sdk\oracle\x86\instantclient_12_1\sdk,shared" "--with-oci8-12c=c:\php-sdk\oracle\x86\instantclient_12_1\sdk,shared" "--enable-object-out-dir=../obj/" "--enable-com-dotnet=shared" "--with-mcrypt=static" "--without-analyzer" "--with-pgo"
+Server API =&gt; Command Line Interface
+Virtual Directory Support =&gt; enabled
+Configuration File (php.ini) Path =&gt; C:\Windows
+….
+….
+….
+….
+</code></pre></div></div>
+:ET

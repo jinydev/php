@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <!--SEO--><title>Learn PHP</title><meta name="description" content="php 함수선언 및 활용법에 대해서 학습합니다. 함수는 특정한 코드의 블럭을 분리하여 재사용할 수 있는 유용한 코드 기법입니다." /><meta name="keyword" content="php, function" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             img {
@@ -48,10 +48,15 @@
         	</ul>
     	</div>
     </div>
-  </nav><nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
-</nav>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">function</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
@@ -61,7 +66,8 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h2 id="10-함수">10 함수</h2>
+                    <h1 id="함수">함수</h1>
+<hr />
 <p>프로그램은 개발자가 한 줄씩 코드를 에디터에 작성하면서 실행과 테스트를 반복합니다. 이렇게 작성된 절차적 프로그램들은 첫 줄부터 순차적으로 해석하여 실행하게 되고 결과를 화면에 출력하게 됩니다.</p>
 
 <p>간단하게 몇 줄의 기능으로만 처리가 가능하다면 기존 방식과 같은 절차적 순서로 작성이 가능할 수도 있을 것입니다. 하지만 본격적으로 실전 기능을 개발하게 되면 프로그램의 기능들은 구체적이고, 복잡하게 되고 또한 소스 코드도 길어지는 현상이 발생합니다. 심지어 중복된 코드와 기능이 발견되기도 합니다.</p>
@@ -71,25 +77,29 @@
 <p>이는 마치 컴퓨터에서 폴더를 사용하지 않고 모든 파일을 관리하는 것과 같습니다. 따라서 대부분의 언어들은 컴퓨터의 폴더와 같이 함수라는 기능을 지원합니다. 함수는 코드들을 그룹화하고 중복된 내용들을 함수 코드로 재사용함으로써 코드의 유지보수와 개발 과정을 편리하게 사용할 수 있는 소프트웨어 공학적인 컨셉입니다.</p>
 
 <p><br /></p>
+
+<h2 id="학습-목차">학습 목차</h2>
 <hr />
-
-<h3 id="학습내용">학습내용</h3>
 <ul>
-  <li><a href="10.1">함수란?</a></li>
-  <li><a href="10.3">함수의 선언</a></li>
-  <li><a href="10.4">인자 매개변수</a></li>
-  <li><a href="10.5">함수의 반환값</a></li>
-  <li><a href="10.6">가변 함수</a></li>
-  <li><a href="10.7">익명 함수</a></li>
-  <li><a href="10.8">재귀 호출</a></li>
-  <li><a href="10.9">제너레이터</a></li>
+  <li><a href="func">함수란?</a></li>
+  <li><a href="declare">함수의 선언</a></li>
+  <li><a href="param">인자 매개변수</a></li>
+  <li><a href="return">함수의 반환값</a></li>
+  <li><a href="variable">가변 함수</a></li>
+  <li><a href="annon">익명 함수</a></li>
+  <li><a href="rescure">재귀 호출</a></li>
+  <li><a href="generator">제너레이터</a></li>
 </ul>
 
-<h3 id="내장함수">내장함수</h3>
+<p><br /></p>
+
+<h2 id="빌트인-내장함수">빌트인 내장함수</h2>
+<hr />
 <ul>
-  <li><a href="internal">내장 함수</a>
-<br /><br /></li>
+  <li><a href="builtin">내장 함수</a></li>
 </ul>
+
+<p><br /></p>
 
                 </section>
 			</main>
@@ -120,7 +130,7 @@
 <br>
 
 <ul class="list-group">
-    <li class="list-group-item"><a href="/basic">문법</a></li>
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>
 </ul>
@@ -128,6 +138,7 @@
 
 <ul class="list-group">
     <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
 </ul>
 
 </aside>			

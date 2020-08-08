@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <ol>
+  <li>
+    <h1 id="정규표현식">정규표현식</h1>
+  </li>
+</ol>
+
+<p>PHP는 정규표현에 관련된 기능과 함수를 제공합니다.  정규표현식은 PHP언어 이외에도 다른 언어에서 일반적으로 사용하는 패턴을 처리하는 개별 언어일종 입니다.</p>
+
+<p>PHP는 정규표현에 대해서 perl(PCRE) 방식을 지원 합니다. 기존 POSIX 스타일의 정규표현은 PHP 5.3.x 이후에서 삭제되었습니다.</p>
+
+<p>정규표현은 특수한 문자들의 패턴입니다.</p>
+
+<h1 id="081-정규패턴">08.1 정규패턴</h1>
+
+<p>내부함수 preg_match()는 패턴 정규표현식을 입력된 문자열 $subject에서 찾습니다. preg_match() 함수는 subject 문자열에서 패턴을 매칭하여 결과값을 $matches 변수에 배열로 반환을 합니다.</p>
+
+<p>|내부함수|
+int preg_match ( string $pattern , string $subject [, array &amp;$matches [, int $flags = 0 [, int $offset = 0 ]]] )</p>
+
+<p>이전에 ereg() 함수를 사용을 하였으나 PHP 7.x 에서 예전함수는 삭제되었습니다.</p>
+
+<p>	matches:	세번째 인자 matches가 있을 경우에는 검색 결과를 배열로 반환을 합니다.
+	flags :	PREG_OFFSET_CAPTURE 값은 매치된 모든 문자열의 시작위치를 같이 반환합니다.
+	offset:	문자열 검색의 시작 포인트를 지정할 수 있습니다. 기본값은 0 입니다.</p>
+
+<p>예제) preg-01.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "2017-06-33"; 
+$pattern = "/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/";
+
+if ( preg_match($pattern, $string,$matches) ) { 
+	echo"날짜 형식이 맞습니다.&lt;br&gt;";
+
+	if (checkdate($match[2],$match[3],$match[1])) {
+		echo "유효한 날짜입니다.&lt;br&gt;";
+	} else {
+		echo "날짜 형식은 맞지만, 유효한 날짜는 아닙니다.&lt;br&gt;";
+	}
+} else { 
+	echo"날짜 형식이 다릅니다.&lt;br&gt;"; 
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+날짜 형식이 맞습니다.
+날짜 형식은 맞지만, 유효한 날짜는 아닙니다.</p>
+
+<h1 id="082-패턴변환">08.2 패턴변환</h1>
+
+<p>내부함수 preg_replace()는 패턴을 찾아서 다음 문자열로 변환을 합니다. 문자열 subject 에서 패턴 배열의 값과 같은 값들을 검사하여 replacement 문자열로 변환을 합니다.</p>
+
+<p>|내부함수|
+mixed preg_replace ( mixed $pattern , mixed $replacement , mixed $subject [, int $limit [, int &amp;$count ]] )</p>
+
+<p>예제) preg-02.php
+&lt;?php
+	$string = ‘jun 21, 2017’;
+	$pattern = ‘/(\w+) (\d+), (\d+)/i’;
+	$replacement = ‘${1} ${2}, $3’;
+	echo preg_replace($pattern, $replacement, $string);
+	echo “<br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = 'hello world! my name is jiny.';
+
+$patterns[0] = '/hello world/';
+$patterns[1] = '/my name is/';
+$patterns[2] = '/jiny/';
+
+$replacements[2] = '안녕하세요';
+$replacements[1] = '제 이름은 ';
+$replacements[0] = '지니';
+
+echo preg_replace($patterns, $replacements, $string);
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+jun 21, 2017
+안녕하세요! 제 이름은 지니.</p>
+
+<h1 id="083-패턴분리">08.3 패턴분리</h1>
+
+<p>내부함수 preg_split()는 정규표현 패턴에 따라서 문자열을 분리하여 배열로 반환을 합니다.</p>
+
+<p>|내부함수|
+rray preg_split ( string $pattern , string $subject [, int $limit [, int $flags ]] )</p>
+
+<p>예제) preg-03.php
+&lt;?php
+	// “ “, \r, \t, \n, \f를 포함하여
+	$keywords = preg_split(“/[\s,]+/”, “php language, programming”);
+	echo “임의 갯수의 콤마와 스페이스로 구문을 나눕니다. “;
+	print_r($keywords);
+	echo “<br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$str = 'string';
+echo "문자 단위로 분리합니다. ";
+$chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
+print_r($chars);
+echo "&lt;br&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+임의 갯수의 콤마와 스페이스로 구문을 나눕니다. Array ( [0] =&gt; php [1] =&gt; language [2] =&gt; programming )
+문자 단위로 분리합니다. Array ( [0] =&gt; s [1] =&gt; t [2] =&gt; r [3] =&gt; i [4] =&gt; n [5] =&gt; g )</p>
+
+<p>|내부함수|
+string preg_quote ( string $str [, string $delimiter ] )</p>
+
+<p>내부함수 preg_quote()는 정규표현식의 문자를 인용합니다. preg_quote() 함수는 입력된 문자열에 대해서 모든 문자앞에 백슬래시를 추가합니다.</p>
+
+<p>이러한 표현은 정규표현식을 처리하는 문자열 처리할때 유용합니다.
+정규 표현식 특수 문자는: . \ + * ? [ ^ ] $ ( ) { } = ! &lt; &gt; | :</p>
+
+<p>예제) preg-04.php
+&lt;?php
+	$keywords = ‘$123 for a hojin/jiny’;
+	$keywords = preg_quote($keywords, ‘/’);
+	echo $keywords;
+	echo “<br />”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// preg_quote($word)는 정규 표현식에서 애스터라이크(*) 처리
+$body = "안녕하세요 본 책은 매우 *쉽게* 작성을 하였습니다.";
+$word = "*매우*";
+$body = preg_replace("/".preg_quote($word)."/", "&lt;i&gt;" . $word . "&lt;/i&gt;", $body);
+echo $body; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+$123 for a hojin\/jiny
+안녕하세요 본 책은 매우 <em>쉽게</em> 작성을 하였습니다.
+<br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

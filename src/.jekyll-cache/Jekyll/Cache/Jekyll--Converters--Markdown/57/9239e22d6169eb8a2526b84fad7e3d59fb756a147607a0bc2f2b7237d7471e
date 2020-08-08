@@ -1,0 +1,40 @@
+I"�<h1 id="배열">배열</h1>
+<hr />
+<p>배열은 여러 개의 값을 가지는 유형의 데이터 타입입니다. 여러 개의 값을 가지고 있는 배열의 특성상 값의 정렬, 분리, 결합등의 추가적인 작업들이 가능합니다.</p>
+
+<p>PHP는 배열 데이터에 대해서 추가 작업들을 할 수 있도록 내부함수를 제공합니다.</p>
+
+<h2 id="021-배열생성">02.1 배열생성</h2>
+
+<h2 id="032-배열검사">03.2 배열검사</h2>
+
+<h2 id="034-배열위치">03.4 배열위치</h2>
+
+<h2 id="035-배열정렬">03.5 배열정렬</h2>
+
+<h2 id="036-배열-외부함수">03.6 배열 외부함수</h2>
+
+<h2 id="037-배열연산">03.7 배열연산</h2>
+
+<h2 id="비교">비교</h2>
+<hr />
+<p>배열의 데이터값, 키를 비교하여 처리를 할 수 있습니다.</p>
+
+<h3 id="값의-비교">값의 비교</h3>
+<hr />
+<ul>
+  <li><a href="diff/array_diff">array_diff</a></li>
+  <li><a href="diff/array_udiff">array_udiff</a></li>
+  <li><a href="diff/array_diff_assoc">array_diff_assoc</a></li>
+  <li><a href="diff/array_udiff_assoc">array_udiff_assoc</a></li>
+  <li><a href="diff/array_udiff_uassoc">array_udiff_uassoc</a></li>
+  <li><a href="diff/array_diff_uassoc">array_diff_uassoc</a></li>
+</ul>
+
+<h3 id="키의-비교">키의 비교</h3>
+<hr />
+<ul>
+  <li><a href="diff/array_diff_key">array_diff_key</a></li>
+  <li><a href="diff/array_diff_ukey">array_diff_ukey</a></li>
+</ul>
+:ET

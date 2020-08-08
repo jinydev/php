@@ -1,0 +1,46 @@
+I"�<h1 id="array_udiff_uassoc">array_udiff_uassoc</h1>
+<hr />
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">array_udiff_uassoc</span> <span class="p">(</span> <span class="k">array</span> <span class="nv">$array1</span> <span class="p">,</span> <span class="k">array</span> <span class="nv">$array2</span> <span class="p">[,</span> <span class="k">array</span> <span class="err">$</span><span class="o">...</span> <span class="p">],</span>
+ <span class="kt">callable</span> <span class="nv">$value_compare_func</span> <span class="p">,</span> <span class="kt">callable</span> <span class="nv">$key_compare_func</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>내부함수 array_udiff_uassoc()는 콜백 함수로 데이터와 인덱스를 비교합니다.</p>
+
+<p>먼저 인덱스 검사를 통해 배열의 차이점을 계산합니다. 계산된  데이터 및 인덱스를 콜백 함수를 통하여 비교합니다.</p>
+
+<p>예제파일) array-64.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">cr</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$priv_member</span><span class="p">;</span>
+    <span class="k">function</span> <span class="nf">cr</span><span class="p">(</span><span class="nv">$val</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">priv_member</span> <span class="o">=</span> <span class="nv">$val</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="k">function</span> <span class="nf">comp_func_cr</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$a</span><span class="o">-&gt;</span><span class="na">priv_member</span> <span class="o">===</span> <span class="nv">$b</span><span class="o">-&gt;</span><span class="na">priv_member</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nv">$a</span><span class="o">-&gt;</span><span class="na">priv_member</span> <span class="o">&gt;</span> <span class="nv">$b</span><span class="o">-&gt;</span><span class="na">priv_member</span><span class="p">)</span><span class="o">?</span> <span class="mi">1</span><span class="o">:-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="k">function</span> <span class="nf">comp_func_key</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">===</span> <span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">&gt;</span> <span class="nv">$b</span><span class="p">)</span><span class="o">?</span> <span class="mi">1</span><span class="o">:-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"0.1"</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="s2">"0.5"</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span> <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">23</span><span class="p">),</span> <span class="mi">1</span><span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">),);</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"0.2"</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="s2">"0.5"</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span> <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">cr</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">),);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">array_udiff_uassoc</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"cr"</span><span class="p">,</span> <span class="s2">"comp_func_cr"</span><span class="p">),</span> <span class="k">array</span><span class="p">(</span><span class="s2">"cr"</span><span class="p">,</span> <span class="s2">"comp_func_key"</span><span class="p">));</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>화면출력)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [0.1] =&gt; cr Object ( [priv_member:cr:private] =&gt; 9 ) [0.5] =&gt; cr Object ( [priv_member:cr:private] =&gt; 12 ) [0] =&gt; cr Object ( [priv_member:cr:private] =&gt; 23 ) ) 
+</code></pre></div></div>
+:ET

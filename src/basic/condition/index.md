@@ -1,6 +1,11 @@
 ---
 layout: php
-title: "제어문 - PHP 프로그래밍"
+title: "PHP 제어문 - PHP 프로그래밍"
+breadcrumb:
+- basic
+- condition
+keyword: "php, grammer, web"
+description: "웹 어플리케이션 서버를 개발을 위한 php 언어의 기본 문법을 학습니다."
 ---
 
 # 조건 제어문
@@ -28,7 +33,7 @@ PHP 언어는 C 언어스타일의 조건문 작성 규칙과 유사하게 작�
 ## 참 과 거짓
 ---
 
-* [참과 거짓](true))
+* [참과 거짓](bool)
 
 <br>
 
@@ -55,8 +60,8 @@ PHP 언어는 C 언어스타일의 조건문 작성 규칙과 유사하게 작�
 
 <br>
 
-## 3항 연산자
+## 3항 연산자 (Ternary operator)
 ---
-* [3항 연산자](08.10)
+* [3항 연산자](ternary)
 
 <br>

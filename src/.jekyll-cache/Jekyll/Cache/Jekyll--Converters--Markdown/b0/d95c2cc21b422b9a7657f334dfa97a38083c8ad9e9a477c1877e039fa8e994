@@ -1,0 +1,8 @@
+I"%<h1 id="php-문법-검사--l">PHP 문법 검사 -l</h1>
+<hr />
+<p>-l 옵션은 PHP의 문법적 오류를 체크합니다. 오류가 없는 경우에는 No syntax errors를 출력합니다.</p>
+
+<p>```
+C:\php-7.1.4-Win32-VC14-x86&gt;php -l index.php
+No syntax errors detected in index.php</p>
+:ET

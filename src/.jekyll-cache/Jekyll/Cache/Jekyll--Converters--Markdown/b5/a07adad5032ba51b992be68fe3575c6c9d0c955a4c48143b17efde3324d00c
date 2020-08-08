@@ -1,0 +1,23 @@
+I"�	<h1 id="array_diff_assoc">array_diff_assoc</h1>
+<hr />
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">array_diff_assoc</span> <span class="p">(</span> <span class="k">array</span> <span class="nv">$array1</span> <span class="p">,</span> <span class="k">array</span> <span class="nv">$array2</span> <span class="p">[,</span> <span class="k">array</span> <span class="err">$</span><span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>내부함수 array_diff_assoc()는 인덱스를 기준으로 배열의 차이를 계산합니다.</p>
+
+<p>array1과 array2를 비교하여 차이를 반환합니다. 비교후에 array1에 있고 다른 배열에는 없는 값들을 반환합니다. array_diff ()와 달리 배열 키도 비교에 사용합니다.</p>
+
+<p>예제파일) array-62.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nv">$array1</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"a"</span> <span class="o">=&gt;</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"b"</span> <span class="o">=&gt;</span> <span class="s2">"brown"</span><span class="p">,</span> <span class="s2">"c"</span> <span class="o">=&gt;</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">);</span>
+<span class="nv">$array2</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"a"</span> <span class="o">=&gt;</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"yellow"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">);</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">array_diff_assoc</span><span class="p">(</span><span class="nv">$array1</span><span class="p">,</span> <span class="nv">$array2</span><span class="p">);</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>화면출력)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [b] =&gt; brown [c] =&gt; blue [0] =&gt; red ) 
+</code></pre></div></div>
+:ET

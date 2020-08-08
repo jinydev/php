@@ -1,0 +1,44 @@
+I"<p>|내부함수|
+array array_udiff ( array $array1 , array $array2 [, array $… ], callable $value_compare_func )</p>
+
+<p>내부함수 array_udiff()는 콜백 함수를 사용하여 배열의 차이를 계산합니다. 데이터 비교를위한 내부 함수를 사용하는 array_diff ()와는 차이가 있습니다.</p>
+
+<p>예제파일) array-61.php
+&lt;?php
+// Arrays to compare
+$array1 = array(new stdclass, new stdclass,
+                new stdclass, new stdclass,
+               );</p>
+
+<p>$array2 = array(
+                new stdclass, new stdclass,
+               );</p>
+
+<p>// Set some properties for each object
+$array1[0]-&gt;width = 11; $array1[0]-&gt;height = 3;
+$array1[1]-&gt;width = 7;  $array1[1]-&gt;height = 1;
+$array1[2]-&gt;width = 2;  $array1[2]-&gt;height = 9;
+$array1[3]-&gt;width = 5;  $array1[3]-&gt;height = 7;</p>
+
+<p>$array2[0]-&gt;width = 7;  $array2[0]-&gt;height = 5;
+$array2[1]-&gt;width = 9;  $array2[1]-&gt;height = 2;</p>
+
+<p>function compare_by_area($a, $b) {
+    $areaA = $a-&gt;width * $a-&gt;height;
+    $areaB = $b-&gt;width * $b-&gt;height;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($areaA &lt; $areaB) {
+    return -1;
+} elseif ($areaA &gt; $areaB) {
+    return 1;
+} else {
+    return 0;
+} }
+</code></pre></div></div>
+
+<p>print_r(array_udiff($array1, $array2, ‘compare_by_area’));
+?&gt;</p>
+
+<p>화면출력)
+Array ( [0] =&gt; stdClass Object ( [width] =&gt; 11 [height] =&gt; 3 ) [1] =&gt; stdClass Object ( [width] =&gt; 7 [height] =&gt; 1 ) )</p>
+:ET

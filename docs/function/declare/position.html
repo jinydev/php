@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="함수-실행-위치">함수 실행 위치</h1>
+<hr />
+<p>인터프리터 언어의 특성상 PHP는 함수를 <code class="highlighter-rouge">선언</code>하는 위치는 중요하지 않습니다. 
+하지만 함수의 <code class="highlighter-rouge">실행</code> 위치는 매우 중요합니다.</p>
+
+<p>함수의 실행 위치는 프로그램의 제어권 변경과 또 다른 동작을 수행하기 때문입니다. 
+프로그램 코드가 함수를 실행 명령을 만나게 되면 프로그램의 실행 제어권이 함수로 전달됩니다. 
+함수 호출 시 PHP는 현재의 호출 시점을 임시로 저장한 후에 다른 함수들을 실행합니다.</p>
+
+<p>즉, 함수를 호출하는 위치에서 함수의 코드들이 실행되기 때문입니다.</p>
+
+<p>함수가 호출되면 그 자리에서 함수명과 동일한 함수를 실행하고 실행 전에 임시로 저장한 프로그램 제어권 자리로 다시 돌아옵니다. 
+이러한 제어권의 임시 저장과 함수 호출, 되돌아오는 과정을 통해 함수형 코딩으로 프로그램을 작성했다고 해서 프로그램의 처리 루틴이 꼬이거나 잘못된 경우가 발생되지 않는 것입니다.</p>
+
+<p>예제 파일 func-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="nf">helloMsg</span><span class="p">()</span> <span class="p">{</span>
+    		<span class="k">echo</span> <span class="s2">"Hello world! &lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="nx">helloMsg</span><span class="p">();</span> <span class="c1">// 함수를 호출합니다.</span>
+
+	<span class="nx">helloMsg</span><span class="p">();</span> <span class="c1">// 재사용 함수 재호출합니다.</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예제를 보면 화면에 “Hello world!”라는 글자가 한 줄 출력됩니다. 함수는 재사용이 가능합니다. 바로 밑에 동일한 함수 호출 helloMsg();을 만나게 됩니다.</p>
+
+<p>그러면 또 다시 그 자리에서 동일한 함수명을 가진 함수를 실행하고 다시 그 위치에 돌아오게 됩니다.</p>
+
+<p>위의 함수 예제는 하나의 함수 정의와 두 번의 함수 호출을 통해 두 줄의 “Hello world!” 메시지가 화면에 출력이 됩니다. 이것 또한 함수형 코딩의 장점으로 한 번 작성한 함수를 중복으로 재사용 가능하다는 것입니다.</p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
