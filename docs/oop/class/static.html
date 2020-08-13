@@ -68,100 +68,123 @@
 			<main role="main">
                 <section>
                     <h1 id="정적-클래스">정적 클래스</h1>
-<p>클래스는 지금까지 인스턴스 객체를 생성을 하여 접근을 했습니다. 정적 클래스는 인스턴스를 생성하지 않고 클래스의 메서드와 프로퍼티를 접근할 수 있는 방식입니다.</p>
+<hr />
+<p>클래스는 지금까지 인스턴스 객체를 생성을 하여 접근을 했습니다.<br />
+정적 클래스는 인스턴스를 생성하지 않고 클래스의 메서드와 프로퍼티를 접근할 수 있는 방식입니다.</p>
 
 <p>정적 클래스 방식으로 접근하여 사용 시에는 인스턴스 객체를 가리키는 $this를 사용할 수 없습니다.</p>
 
-<h2 id="1461-static">14.6.1 static</h2>
-<p>static 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미입니다. static으로 선언된 프로퍼티는 인스턴스를 생성하지 않아도 접근이 가능합니다.</p>
+<p><br /></p>
+
+<h2 id="static">static</h2>
+<hr />
+<p><code class="highlighter-rouge">static</code> 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미입니다.<br />
+<code class="highlighter-rouge">static</code>으로 선언된 프로퍼티는 인스턴스를 생성하지 않아도 접근이 가능합니다.</p>
 
 <p>하지만 인스턴스 객체변수로는 접근이 불가능합니다.</p>
 
-<p>예제 파일 class-09.php
-&lt;?php
-	// 클래스를 선언합니다.
-	class Jiny
-	{
-		public static $aaa = 10;</p>
+<p>예제 파일 class-09.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 클래스를 선언합니다.</span>
+	<span class="kd">class</span> <span class="nc">Jiny</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="k">static</span> <span class="nv">$aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(){</span>
+			<span class="k">echo</span> <span class="s2">"show = "</span><span class="o">.</span> <span class="kt">self</span><span class="o">::</span><span class="nv">$aaa</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
-		echo "show = ". self::$aaa;
-	}
-}
+	<span class="k">echo</span> <span class="s2">"aaa = "</span><span class="o">.</span> <span class="nx">Jiny</span><span class="o">::</span><span class="nv">$aaa</span> <span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-echo "aaa = ". Jiny::$aaa ."&lt;br&gt;";
+	<span class="nx">Jiny</span><span class="o">::</span><span class="na">show</span><span class="p">();</span>
 
-Jiny::show();
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>?&gt;</p>
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aaa = 10
+show = 10
+</code></pre></div></div>
 
-<p>결과
-aaa = 10
-show = 10</p>
+<p><br /></p>
 
-<h2 id="1462-호출">14.6.2 호출</h2>
-<p>정적 메서드와 프로퍼티의 호출은 -&gt; 기호 대신에 더블콜론(::)을 사용합니다. 인스턴스의 객체가 없기 때문에 -&gt;를 사용할 수 없습니다.</p>
+<h2 id="호출">호출</h2>
+<hr />
+<p>정적 메서드와 프로퍼티의 호출은 <code class="highlighter-rouge">-&gt;</code> 기호 대신에 더블콜론(<code class="highlighter-rouge">::</code>)을 사용합니다.<br />
+인스턴스의 객체가 없기 때문에 -&gt;를 사용할 수 없습니다.</p>
 
-<p>|문법|
-클래스명::메서드();
-클래스명::$프로퍼티명</p>
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스명::메서드();
+클래스명::$프로퍼티명
+</code></pre></div></div>
 
 <p>형태로 작성을 해주면 됩니다.</p>
 
 <p>위의 예제는 정적으로 선언된 프로퍼티와 메서드를 인스턴스 없이 바로 호출하는 예제입니다.</p>
 
-<p>예제 파일 class-10.php
-&lt;?php
-	// 클래스를 선언합니다.
-	class jiny
-	{
-		public static $my_static = ‘jiny’;</p>
+<p>예제 파일 class-10.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 클래스를 선언합니다.</span>
+	<span class="kd">class</span> <span class="nc">jiny</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="k">static</span> <span class="nv">$my_static</span> <span class="o">=</span> <span class="s1">'jiny'</span><span class="p">;</span>
+		
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">staticValue</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="k">return</span> <span class="kt">self</span><span class="o">::</span><span class="nv">$my_static</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function staticValue()
-	{
-		return self::$my_static;
-	}
-}
+	<span class="c1">// 정적 프로퍼티를 출력합니다.</span>
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span> <span class="nx">Jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-// 정적 프로퍼티를 출력합니다.
-print "정적 프로퍼티 =". Jiny::$my_static . "&lt;br&gt;";
+	<span class="nv">$jiny</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Jiny</span><span class="p">();</span>
+	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="o">.</span> <span class="nv">$jiny</span><span class="o">-&gt;</span><span class="na">staticValue</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-$jiny = new Jiny();
-print "인스턴스 =". $jiny-&gt;staticValue() . "&lt;br&gt;";
+	<span class="c1">// 정적 프로퍼티는 인스턴트화된 경우 -&gt;로 호출할 수 없습니다.  </span>
+	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="o">.</span><span class="nv">$jiny</span><span class="o">-&gt;</span><span class="na">my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// Undefined "Property" my_static </span>
 
-// 정적 프로퍼티는 인스턴트화된 경우 -&gt;로 호출할 수 없습니다.  
-print "인스턴스 =".$jiny-&gt;my_static . "&lt;br&gt;";      // Undefined "Property" my_static 
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span><span class="nv">$jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$classname</span> <span class="o">=</span> <span class="s1">'Jiny'</span><span class="p">;</span>
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span><span class="nv">$classname</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// As of PHP 5.3.0</span>
 
-print "정적 프로퍼티 =".$jiny::$my_static . "&lt;br&gt;";
-$classname = 'Jiny';
-print "정적 프로퍼티 =".$classname::$my_static . "&lt;br&gt;"; // As of PHP 5.3.0
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>?&gt;</p>
-
-<p>결과
-정적 프로퍼티 =jiny
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정적 프로퍼티 =jiny
 인스턴스 =jiny
 인스턴스 =
 정적 프로퍼티 =jiny
-정적 프로퍼티 =jiny</p>
+정적 프로퍼티 =jiny
+</code></pre></div></div>
 
-<p>PHP 5.3 이상부터는 클래스 이름을 가변변수를 이용하여 호출이 가능합니다. 변수를 이용한 호출은 가변적인 클래스 선택과 호출을 할 수 있는 장점이 있습니다.</p>
+<p>PHP 5.3 이상부터는 클래스 이름을 가변변수를 이용하여 호출이 가능합니다.<br />
+변수를 이용한 호출은 가변적인 클래스 선택과 호출을 할 수 있는 장점이 있습니다.</p>
 
-<h2 id="1463-self">14.6.3 SELF</h2>
+<p><br /></p>
+
+<h2 id="self">SELF</h2>
+<hr />
 <p>자기 자신을 호출할 때 사용하는 키워드입니다.</p>
 
 <p>예로 자기 자신의 상수나 프로퍼티, 메서드를 호출할 때 사용합니다.</p>
 
-<p>클래스 안에서 선언한 상수는 다음과 같이 호출하여 사용할 수 있습니다.
-self::상수명;</p>
+<p>클래스 안에서 선언한 상수는 다음과 같이 호출하여 사용할 수 있습니다.</p>
 
-<p>클래스 안에 있는 프로퍼티 호출
-self::$변수명;</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">상수명</span><span class="p">;</span>
+</code></pre></div></div>
 
-<p>클래스 안에 있는 메서드 호출
-self::메서드();</p>
+<p>클래스 안에 있는 프로퍼티 호출</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="nv">$변수명</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>클래스 안에 있는 메서드 호출</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">메서드</span><span class="p">();</span>
+</code></pre></div></div>
 
                 </section>
 			</main>
@@ -183,24 +206,26 @@ self::메서드();</p>
         <!-- Sidebar Column -->
         <div class="col-md-3">
 			<aside><ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
     <li class="list-group-item"><a href="/setup">설치</a></li>
     <li class="list-group-item"><a href="/console">콘솔</a></li>
     <li class="list-group-item"><a href="/env">환경설정</a></li>
-</ul>
-<br>
-
-<ul class="list-group">
     <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
 </ul>
+
 <br>
 
-<ul class="list-group">
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
 </ul>
 
 </aside>			

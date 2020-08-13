@@ -67,45 +67,51 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h2 id="객체-복사">객체 복사</h2>
-<p>new 키워드는 새로운 객체를 생성합니다. new 키워드는 초기화된 객체를 생성합니다. 만일 클래스 값의 초기화 같은 것이 필요하다면 그냥 new 키워드를 이용하여 객체를 생성하면 됩니다.</p>
+                    <h1 id="객체-복사">객체 복사</h1>
+<hr />
+<p>new 키워드는 새로운 객체를 생성합니다. new 키워드는 초기화된 객체를 생성합니다.<br />
+만일 클래스 값의 초기화 같은 것이 필요하다면 그냥 new 키워드를 이용하여 객체를 생성하면 됩니다.</p>
 
-<p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 clone 키워드를 사용해야 합니다.</p>
+<p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 <code class="highlighter-rouge">clone</code> 키워드를 사용해야 합니다.</p>
 
-<p>|문법|
-$obj2 = clone $obj;</p>
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj2 = clone $obj;
+</code></pre></div></div>
 
 <p>clone 키워드는 현재의 객체의 상태를 포함하여 객체를 복사합니다.</p>
 
-<p>예제 파일 class-03.php
-&lt;?php
-	class JinyClass
-	{
-		public $message;</p>
+<p>예제 파일 class-03.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">JinyClass</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function showMessage(){
-		return $this-&gt;message;
-	}
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">showMessage</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
+		<span class="p">}</span>
 
-}
+	<span class="p">}</span>
 
-$obj = new JinyClass;
-$obj-&gt;message = "testing clone";
-echo $obj-&gt;showMessage() . "&lt;br&gt;";
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="s2">"testing clone"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-$obj2 = clone $obj;
-echo $obj2-&gt;showMessage() . "&lt;br&gt;";
+	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>?&gt;</p>
-
-<p>결과
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
 testing clone
-testing clone</p>
+</code></pre></div></div>
 
-<p>위의 예는 객체 복사에 대한 실험입니다. 첫 번째 객체 $obj는 처음에 생성된 객체변수입니다. 생성된 객체에 메시지 내용을 설정한 다음에 화면 출력합니다.</p>
+<p>위의 예는 객체 복사에 대한 실험입니다. 첫 번째 객체 $obj는 처음에 생성된 객체변수입니다.<br />
+생성된 객체에 메시지 내용을 설정한 다음에 화면 출력합니다.</p>
 
-<p>$obj2는 $obj를 복사한 객체입니다. 현재 $obj객체의 설정값을 포함하여 새로운 객체변수에 복제가 됩니다. 복제된 $obj2를 통해 메시지를 출력하면 복제하기 전의 $obj 의 프로퍼티 값이 출력되는 것을 볼 수 있습니다.</p>
+<p>$obj2는 $obj를 복사한 객체입니다. 현재 $obj객체의 설정값을 포함하여 새로운 객체변수에 복제가 됩니다.<br />
+복제된 $obj2를 통해 메시지를 출력하면 복제하기 전의 $obj 의 프로퍼티 값이 출력되는 것을 볼 수 있습니다.</p>
 
 <p>복제는 이전 객체에 어떠한 프로퍼티 값이 설정이 되어 있다면 이 설정값까지 모두 복제를 합니다.</p>
 
@@ -129,24 +135,26 @@ testing clone</p>
         <!-- Sidebar Column -->
         <div class="col-md-3">
 			<aside><ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
     <li class="list-group-item"><a href="/setup">설치</a></li>
     <li class="list-group-item"><a href="/console">콘솔</a></li>
     <li class="list-group-item"><a href="/env">환경설정</a></li>
-</ul>
-<br>
-
-<ul class="list-group">
     <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
 </ul>
+
 <br>
 
-<ul class="list-group">
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
 </ul>
 
 </aside>			

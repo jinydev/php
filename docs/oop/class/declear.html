@@ -67,37 +67,57 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h2 id="클래스-선언">클래스 선언</h2>
-
-<p>클래스를 사용하기 위해서는 함수 선언처럼 클래스를 미리 정의해야 합니다. 또한 PSR 코딩 스타일에 따르면 클래스는 기능별 개별 파일로 작성하는 것을 권장합니다. 또한 1개의 파일 안에 1개의 클래스 작성을 권장합니다.</p>
+                    <h1 id="클래스-선언">클래스 선언</h1>
+<hr />
+<p>클래스를 사용하기 위해서는 함수 선언처럼 클래스를 미리 <code class="highlighter-rouge">선언</code>을 해야 합니다. 
+또한 PSR 코딩 스타일에 따르면 클래스는 기능별 개별 파일로 작성하는 것을 권장합니다. 
+또한 1개의 파일 안에 1개의 클래스 작성을 권장합니다.</p>
 
 <p>클래스 이외에도 향후 설명할 인터페이스, 트레이트 등도 같은 방식의 코딩스타일 사용을 권장합니다.</p>
 
-<h2 id="1431-class-키워드">14.3.1 class 키워드</h2>
-<p>클래스의 정의는 class 키워드를 통해 클래스를 선언할 수 있습니다. 클래스의 선언 방법은 class 키워드 다음에 클래스명을 작성을 합니다. 클래스명은 PSR-1 표준 코딩 스타일 방식을 따르면 클래스명은 낙타 표기법 (StudlyCaps) 스타일로 작성을 권장합니다.</p>
+<p><br /></p>
 
-<p>예) StudyCaffe, JinyPhp</p>
+<h2 id="class-키워드">class 키워드</h2>
+<hr />
+<p>클래스의 정의는 class 키워드를 통해 클래스를 선언할 수 있습니다.<br />
+클래스의 선언 방법은 class 키워드 다음에 클래스명을 작성을 합니다.</p>
 
-<p>위의 예처럼 낙타 표기법(StudlyCaps) 방식은 첫 문자는 대문자로 표기하는 스타일입니다.</p>
+<p><br /></p>
+
+<h2 id="클래스-이름">클래스 이름</h2>
+<hr />
+<p>클래스명은 PSR-1 표준 코딩 스타일 방식을 따르면 클래스명은 낙타 표기법 (StudlyCaps) 스타일로 작성을 권장합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) 
+StudyCaffe 
+JinyPhp
+</code></pre></div></div>
+<p>위의 예처럼 <code class="highlighter-rouge">낙타 표기법</code>(StudlyCaps) 방식은 <code class="highlighter-rouge">첫 문자</code>는 대문자로 표기하는 스타일입니다.</p>
 
 <p>또한 클래스명은 PHP에서 예약된 키워드를 제외한 영문자로 시작되어야 합니다.</p>
 
-<p>|문법|
-class 클래스명
-{
-    // 프로퍼티 선언
-    public $var = “default”’;</p>
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">클래스명</span>
+<span class="p">{</span>
+    <span class="c1">// 프로퍼티 선언</span>
+    <span class="k">public</span> <span class="nv">$var</span> <span class="o">=</span> <span class="s2">"default"</span><span class="p">;</span>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 메서드 함수 선언
-public function 함수명()
-{
-    메서드 함수 내용들...
-} }
+    <span class="c1">// 메서드 함수 선언</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">함수명</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//메서드 함수 내용들...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>클래스 객체는 여러 개의 프로퍼티와 메서드를 포함하고 있습니니다.  클래스 객체의 프로퍼티와 메서드는 클래스 본체 중괄호 { } 안에 작성합니다.</p>
+<p>클래스 객체는 여러 개의 프로퍼티와 메서드를 포함하고 있습니니다.<br />
+클래스 객체의 프로퍼티와 메서드는 클래스 본체 중괄호 <code class="highlighter-rouge">{}</code> 안에 작성합니다.</p>
 
-<p>PSR 에서 권고하는 코딩 스타일 방식을 따르면 중괄호 의 시작 위지는 클래스 선언 다음  줄에 위치합니다. 또한 class 키워드와 같은 탭 크기의 들여쓰기 위치에 자리를 잡습니다. 객체의 메서드와 프로퍼티는 중괄호 본체 안에서 들여쓰기로 작성합니다.</p>
+<h2 id="psr-규칙">PSR 규칙</h2>
+<hr />
+<p>PSR 에서 권고하는 코딩 스타일 방식을 따르면 중괄호 의 시작 위지는 클래스 선언 다음  줄에 위치합니다. 
+또한 class 키워드와 같은 탭 크기의 들여쓰기 위치에 자리를 잡습니다. 
+객체의 메서드와 프로퍼티는 중괄호 본체 안에서 들여쓰기로 작성합니다.</p>
 
                 </section>
 			</main>
@@ -119,24 +139,26 @@ public function 함수명()
         <!-- Sidebar Column -->
         <div class="col-md-3">
 			<aside><ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
     <li class="list-group-item"><a href="/setup">설치</a></li>
     <li class="list-group-item"><a href="/console">콘솔</a></li>
     <li class="list-group-item"><a href="/env">환경설정</a></li>
-</ul>
-<br>
-
-<ul class="list-group">
     <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
 </ul>
+
 <br>
 
-<ul class="list-group">
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
 </ul>
 
 </aside>			

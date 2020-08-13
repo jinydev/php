@@ -67,114 +67,120 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <ol>
-  <li>
-    <h1 id="psr-4">PSR-4</h1>
-  </li>
-</ol>
-
+                    <h1 id="04-psr-4">04. PSR-4</h1>
+<hr />
 <p>PSR4는 오토로딩에 대한 규약입니다.</p>
 
-<p>04.1 namespace and Autoload
-composer.json 파일의 추가 필드 중에 autoload가 있습니다. 여기서 PSR-4를 설정할 수 있습니다.</p>
+<p><br /></p>
 
-<p>“autoload”: {
-“psr-4”: {</p>
+<h2 id="041-namespace-and-autoload">04.1 namespace and Autoload</h2>
+<hr />
+<p>composer.json 파일의 추가 필드 중에 autoload가 있습니다. 여기서 PSR-4를 설정할 수 있습니다.</p>
 
-<p>},
-“files”: [
-],
-“classmap”: [
-]      <br />
-},
-“autoload-dev”: {</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="nl">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 
-<p>}</p>
+</span><span class="p">},</span><span class="w">
+</span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"classmap"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">        
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="nl">"autoload-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 
-<p>프로젝트에 페키지와 별개로 /app/controller 과 같은 새로운 폴더를 하나 만들어 그안에 클래스 파일을 하나 만든다고 생각해 봅니다.</p>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-<p>App\Controllers\UsersController.php
-&lt;?php</p>
+<p>프로젝트에 페키지와 별개로 <code class="highlighter-rouge">/app/controller</code> 과 같은 새로운 폴더를 하나 만들어 그안에 클래스 파일을 하나 만든다고 생각해 봅니다.</p>
 
-<p>namespace App\Controllers;
-class UsersController
-{
-    function <strong>construct()
-    {
-        echo __CLASS</strong>.”가 생성이 되었습니다.<br />”;
-    }
-}</p>
+<p>App\Controllers\UsersController.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">App\Controllers</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">UsersController</span>
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="k">__CLASS__</span><span class="o">.</span><span class="s2">"가 생성이 되었습니다.&lt;br&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>App\Models\User.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<p>&lt;?php</p>
-
-<p>namespace App\Models;
-class User
-{
-    function <strong>construct()
-    {
-        echo __CLASS</strong>.”가 생성이 되었습니다.<br />”;
-    }
-}</p>
+<span class="kn">namespace</span> <span class="nn">App\Models</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">User</span>
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="k">__CLASS__</span><span class="o">.</span><span class="s2">"가 생성이 되었습니다.&lt;br&gt;"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>Psr4.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<p>&lt;?php</p>
+<span class="k">require</span> <span class="s2">"app/controllers/UsersController.php"</span><span class="p">;</span>
+<span class="k">require</span> <span class="s2">"app/models/User.php"</span><span class="p">;</span>
 
-<p>require “app/controllers/UsersController.php”;
-require “app/models/User.php”;</p>
-
-<p>$users = new UsersController;
-$user = new User;</p>
+<span class="nv">$users</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UsersController</span><span class="p">;</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>네임스페이스를 추가합니다.
 네임스페이스를 통하여 컴포저의 PSR-4 오토로드를 연결합니다.</p>
 
-<p>“autoload”: {
-        “psr-4”: {
-            “App\”: “app”
-        }     <br />
-    }
-를 추가합니다. 그리고 composer dumpautoload 를 실행해서 갱신해 줍니다.</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"App\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app"</span><span class="w">
+        </span><span class="p">}</span><span class="w">       
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>를 추가합니다. 그리고 composer dumpautoload 를 실행해서 갱신해 줍니다.</p>
 
-<p>d:\htdocs\composer&gt;composer dumpautoload
-Generating autoload files</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:\htdocs\composer&gt;composer dumpautoload
+Generating autoload files
+</code></pre></div></div>
 
-<p>이렇게 하면 /vendor/composer/autoload_psr4.php 파일이 갱신되게 됩니다.
-&lt;?php</p>
+<p>이렇게 하면 /vendor/composer/autoload_psr4.php 파일이 갱신되게 됩니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<p>// autoload_psr4.php @generated by Composer</p>
+<span class="c1">// autoload_psr4.php @generated by Composer</span>
 
-<p>$vendorDir = dirname(dirname(<strong>FILE</strong>));
-$baseDir = dirname($vendorDir);</p>
+<span class="nv">$vendorDir</span> <span class="o">=</span> <span class="nb">dirname</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">));</span>
+<span class="nv">$baseDir</span> <span class="o">=</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$vendorDir</span><span class="p">);</span>
 
-<p>return array(
-    ‘Symfony\Polyfill\Mbstring\’ =&gt; array($vendorDir . ‘/symfony/polyfill-mbstring’),
-    ‘Symfony\Component\Translation\’ =&gt; array($vendorDir . ‘/symfony/translation’),
-    ‘Psr\SimpleCache\’ =&gt; array($vendorDir . ‘/psr/simple-cache/src’),
-    ‘Psr\Container\’ =&gt; array($vendorDir . ‘/psr/container/src’),
-    ‘Illuminate\Support\’ =&gt; array($vendorDir . ‘/illuminate/support’),
-    ‘Illuminate\Contracts\’ =&gt; array($vendorDir . ‘/illuminate/contracts’),
-    ‘Illuminate\Container\’ =&gt; array($vendorDir . ‘/illuminate/container’),
-    ‘Doctrine\Common\Inflector\’ =&gt; array($vendorDir . ‘/doctrine/inflector/lib/Doctrine/Common/Inflector’),
-    ‘App\’ =&gt; array($baseDir . ‘/app’),
-    ‘’ =&gt; array($vendorDir . ‘/nesbot/carbon/src’),
-);</p>
+<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Symfony\\Polyfill\\Mbstring\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/symfony/polyfill-mbstring'</span><span class="p">),</span>
+    <span class="s1">'Symfony\\Component\\Translation\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/symfony/translation'</span><span class="p">),</span>
+    <span class="s1">'Psr\\SimpleCache\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/psr/simple-cache/src'</span><span class="p">),</span>
+    <span class="s1">'Psr\\Container\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/psr/container/src'</span><span class="p">),</span>
+    <span class="s1">'Illuminate\\Support\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/illuminate/support'</span><span class="p">),</span>
+    <span class="s1">'Illuminate\\Contracts\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/illuminate/contracts'</span><span class="p">),</span>
+    <span class="s1">'Illuminate\\Container\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/illuminate/container'</span><span class="p">),</span>
+    <span class="s1">'Doctrine\\Common\\Inflector\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/doctrine/inflector/lib/Doctrine/Common/Inflector'</span><span class="p">),</span>
+    <span class="s1">'App\\'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$baseDir</span> <span class="o">.</span> <span class="s1">'/app'</span><span class="p">),</span>
+    <span class="s1">''</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$vendorDir</span> <span class="o">.</span> <span class="s1">'/nesbot/carbon/src'</span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div></div>
 
 <p>네임스페이스 App 부분 관련해서 추가된 모습을 보실 수 있습니다.</p>
 
-<p>psr4.php
-&lt;?php</p>
+<p>psr4.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<p>require “vendor/autoload.php”;</p>
+<span class="k">require</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 
-<p>$users = new \App\Controllers\UsersController;
-$user = new App\Models\User;</p>
+<span class="nv">$users</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Controllers\UsersController</span><span class="p">;</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">App\Models\User</span><span class="p">;</span>
+</code></pre></div></div>
 
-<p>결과
-App\Controllers\UsersController가 생성이 되었습니다.
-App\Models\User가 생성이 되었습니다.</p>
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>App\Controllers\UsersController가 생성이 되었습니다.
+App\Models\User가 생성이 되었습니다.
+</code></pre></div></div>
 
 
                 </section>
@@ -197,24 +203,26 @@ App\Models\User가 생성이 되었습니다.</p>
         <!-- Sidebar Column -->
         <div class="col-md-3">
 			<aside><ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
     <li class="list-group-item"><a href="/setup">설치</a></li>
     <li class="list-group-item"><a href="/console">콘솔</a></li>
     <li class="list-group-item"><a href="/env">환경설정</a></li>
-</ul>
-<br>
-
-<ul class="list-group">
     <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
 </ul>
+
 <br>
 
-<ul class="list-group">
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
 </ul>
 
 </aside>			
