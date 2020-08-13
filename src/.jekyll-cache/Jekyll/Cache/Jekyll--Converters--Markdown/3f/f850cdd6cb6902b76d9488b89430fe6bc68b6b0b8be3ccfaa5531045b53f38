@@ -1,0 +1,87 @@
+I"<<blockquote>
+  <p>대입연산자, 할당 연산자(assignment operator) 같은 의미 입니다.</p>
+</blockquote>
+
+<h1 id="-대입-연산자">= 대입 연산자</h1>
+<hr />
+
+<p>일반적으로 우리가 수학에서 알고 있는 = 기호는 다항식, 방정식 등에서 서로 같다’라는 의미로 알고 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 + 1 = 2
+x + 2 = y
+</code></pre></div></div>
+
+<p>위의 표현 처럼 = 기호는 왼쪽에는 수식을 입력하고 결과를 오른쪽에 표시하는 데 익숙할 것입니다. 그러나 컴퓨터 프로그램 언어에서는 수학에서 표시하는 방법과는 반대로 좌우가 바뀌어 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2 = 1 + 1
+y = x  + 2 
+</code></pre></div></div>
+
+<p>대부분의 컴퓨터 프로그램 언어에서는 좌측의 값은 우측의 값과 같다라고 표현합니다.</p>
+
+<p><br /></p>
+
+<h2 id="대입의-의미">대입의 의미</h2>
+<hr />
+
+<p>프로그램 언어에서는 =를 ‘같다’는 의미의 또 다른 의미로 ‘대입’이라고 표현합니다. 이것은 컴퓨터 시스템의 메모리등의 컨셉이 기존 수학적 개념과 약간 달리 표현하기 때문입니다.</p>
+
+<p>결국 대입한다는 것은 좌측의 값과 우측의 값이 같다는 의미로도 생각할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="nv">$b</span> <span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위의 기본 문법을 보면 변수 $b의 값을 $a에 값을 대입하여 저장한다는 의미입니다.</p>
+
+<p>컴퓨터에서는 값이 같다라는 표현보다 똑 같은 값을 ‘저장한다’ 라는 표현이 더 정확할 지도 모르겠습니다. 우측의 값을 연산하여 좌측의 변수에 저장을 하기 때문에 서로의 값은 같기도 하면서 대입하여 저장이 된다고도 표현할 수 있을 것입니다.</p>
+
+<p><br /></p>
+
+<h2 id="다양한-대입-응용">다양한 대입 응용</h2>
+<hr />
+
+<p>대입 연산자는 수식에서만 사용하지 않고 문자열에도 사용 가능합니다. 이런 표현이 가능한 것은 = 기호를 ‘같다’라는 의미보다 대입, 저장한다 라는 의미로 받아 들이기 때문입니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="s2">"hello world!"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>$a에 문자열 “hello world!”를 대입하면 좌측의 $a와 “hello world!” 은 같은 값이 되는 것입니다.</p>
+
+<p>대입 연산자는 프로그램 가장 기본적이고 향후에 다루어 지는 모든 소스, 다루어지는 함수, 클래스 인스턴스 등 다양한 문법에도 사용을 합니다.</p>
+
+<p>함수 대입 예제)</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$i</span> <span class="o">=</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$val</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>위의 예제표현은 함수의 결과값을 $i에 저장을 하기 때문에 서로 같은 것입니다.</p>
+
+<p>클래스 대입 예제)</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">jiny</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위의 예제표현은 클래스의 오브젝트를 생성하여 저장하는 예 입니다. 저장을 했기 때문에 대입연산자 <code class="highlighter-rouge">=</code> 를 사용한 것입니다.</p>
+
+<p><br /></p>
+
+<h2 id="call-by-value">call by value</h2>
+<hr />
+
+<p>대입 연산자 = 기호는 같다의 또 다른 의미로 우측의 값을 좌측으로 넣는다고 했습니다. 대부분의 변수 데이터는 메모리 안에 값이 저장이 됩니다. 언어에서 아래와 같은 표현은</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="nv">$b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>$b의 메모리 값을 $a의 메모리에 값을 복사하는 것과 같습니다.</p>
+
+<p>대입은 좀 더 실제적인 의미는 우측의 값을 좌측으로 저장, 즉 복사를 하는 것과 같습니다. 이것은 프로그램에서 변수를 정의하거나 생성하면 각각의 메모리 공간이 생성됩니다.</p>
+
+<p>이렇게 메모리 값을 직접 저장하는 방식의 데이터 처리 유형을 call by value라고 합니다. 말 그대로 값을 호출한다 입니다.call by value는 실제적인 값이 변수에 저장되어 전달됩니다.</p>
+
+<p>앞으로도 대입 연산자는 많은 소스와 예제를 통해 다양한 활용법을 학습할 수 있을 것입니다.</p>
+
+<p><br /><br /></p>
+:ET

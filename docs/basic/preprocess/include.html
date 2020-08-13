@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="include">include</h1>
+<hr />
+<p>include 전처리기 명령어는 아주 익숙한 키워드입니다. 
+다양한 언어에서도 동일한 키워드를 사용하는 경우가 많습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">include</span> <span class="err">“</span><span class="nx">파일명</span><span class="err">”'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>PHP가 스크립트 실행 도중에 include 명령을 만나면 해당 명령이 선언한 자리에 지정한 파일을 삽입, 결합합니다.</p>
+
+<p><br /></p>
+
+<h2 id="파일-실패">파일 실패</h2>
+<hr />
+<p>전처리기 명령어 include는 삽입, 결합할 php 스크립트를 동일한 서버에서 찾습니다. 
+소스파일을 찾으면 삽입을 통하여 소스를 결합하고, 만일 소스 파일을 찾지 못하면 경고(E_WARNING)를 출력합니다. 
+환경설정에서 이 경고는 무시하고 출력하지 않도록 설정할 수도 있습니다.</p>
+
+<p>include명령어는 PHP를 실행하는 데 있어서 파일 존재 여부와 상관없습니다. 
+만일 include 명령에서 지정한 소스파일을 찾지 못해도 PHP는 정상적으로 실행됩니다. 단지 오류 메시지만 출력합니다.</p>
+
+<p>따라서 정확한 include 명령을 하고 싶다면 파일의 경로나 존재 여부를 개발자가 꼭 확인하고 명령을 작성하는 것이 좋습니다.</p>
+
+<p>예)</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$filename</span><span class="p">)){</span>
+	<span class="k">include</span> <span class="nv">$filename</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예 표현에서 사용한 file_exists() 함수는 파일의 존재 유무를 확인합니다. 
+이는 PHP의 파일 처리 내부 함수입니다.</p>
+
+<p><br /></p>
+
+<h2 id="중복-처리">중복 처리</h2>
+<hr />
+<p>전처리기 include명령어는 삽입하고자 하는 소스 파일의 중복 여부를 체크하지 않습니다.
+만일 소스상에서 동일한 include를 중복하여 작성했을 때가 있습니다. 
+이런 경우 PHP는 파일을 두 번 읽어서 결합을 하게 됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">include</span> <span class="s1">'sub_function.php'</span><span class="p">;</span>
+
+<span class="nv">$i</span> <span class="o">=</span> <span class="err">$</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">include</span> <span class="s1">'sub_function.php'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>만일 삽입하는 파일 안에 함수와 같은 선언이 있다면 PHP는 바로 오류를 출력할 것입니다.</p>
+
+<p>하지만 인위적으로 단순한 처리 로직을 두 번 처리해야 하는 경우라면 이때도 매우 유용할 수 있습니다.</p>
+
+<p>예제 파일 include_lib.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">){</span>
+		<span class="k">return</span> <span class="nv">$x</span><span class="o">+</span><span class="nv">$y</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>예제 파일 include-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">include</span> <span class="s2">"include_lib.php"</span><span class="p">;</span>
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	
+	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+</code></pre></div></div>
+
+<p>위의 예제는 include 명령어를 통해 실행 파일을 2개로 분리했습니다. 
+include-02.php 파일은 include_lib.php 파일을 삽입하여 실행 함수를 호출합니다. 
+include-02.php에서 사용한 addPlus() 함수는 include_lib.php 파일에 정의되어 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="include_once">include_once</h2>
+<hr />
+<p>기존 include명령어는 중복 사용할 경우 여러 문제를 발생할 수 있습니다. 
+이런 이중 사용으로 인해 발생할 수 있는 문제들을 방지하기 위해서 꼭 한 번만 include해야 되는 스크립트가 있다면 include 대신에 include_once 사용을 권장합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">include_once</span>  <span class="s1">'filename'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>include_once명령어는 의미 그대로 소스상에서 지정한 파일을 한 번만 삽입을 하라는 의미입니다.</p>
+
+<p>예제 파일 include-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">include_once</span> <span class="s2">"include_lib.php"</span><span class="p">;</span>
+	<span class="c1">// 두 번 삽입을 해도 오류가 나지 않습니다.</span>
+	<span class="k">include_once</span> <span class="s2">"include_lib.php"</span><span class="p">;</span>
+
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	
+	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">15
+</span></code></pre></div></div>
+
+<p>위의 예는 <code class="highlighter-rouge">include_one</code>을 이용한 실험입니다. 
+<code class="highlighter-rouge">include_once</code> 명령어는 두 번 삽입하는 실수를 방지할 수 있습니다. 
+중복하여 사용하는 경우 두 번째 <code class="highlighter-rouge">include_once</code>는 무시하게 됩니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

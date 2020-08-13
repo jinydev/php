@@ -3,9 +3,9 @@ layout: php
 title: "PHP"
 keyword: "php, jinyphp, mysql"
 ---
-### Mysql
-<hr>
 
+# Mysql
+---
 * 21.데이터
 * 22.MYSQL 설치
 * 23.SQL

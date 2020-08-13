@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="트레이트">트레이트</h1>
+<p>클래스의 상속 기능은 기존의 코드들을 재사용하면서 새로운 클래스를 생성하기 위한 코딩 방법론이었습니다. 하지만 상속이라는 개념은 클래스의 계층화로 항상 부모가 존재합니다.</p>
+
+<p>클래스의 상속, 오버라이딩, 인터페이스, 추상화 등 객체들을 계층적으로 생성하고 정의하여 사용했습니다. 기존 방식과 같이 만일 클래스 A 기능과, 클래스 B의 기능을 가진 클래스 C를 만들고 한다면 어떻게 해야 할까요?</p>
+
+<p>class a {
+}</p>
+
+<p>class b extend b {
+}</p>
+
+<p>class c extend b {
+}</p>
+
+<p>형태로 계속 상속 형태로 들어가면서 계층화를 해야 합니다. 객체를 계층화한다는 것은 불필요한 기능적 유전자까지 모두 부모의 영향을 받게 됩니다.</p>
+
+<p>트레이트는 요즘 유전자 조작처럼 상속을 받지 않고 특정한 클래스들을 조합하는 것과 같습니다. 최신 PHP 코딩 방식에서는 이런 계층화적인 클래스 재사용 방식이 아니라 클래스 안에 새로운 또 다른 클래스를 삽입하는 개념의 트레이트를 방법을 제공합니다.</p>
+
+<p>트레이트는 PHP 5.4 업그레이드되면서 적용된 기능입니다.</p>
+
+<p>15.5.1 트레이트 선언</p>
+
+<p>트레이트를 선언하는 방법은 클래스 선언 문법과 비슷합니다. class 키워드 대신에 trait 키워드를 사용해주면 됩니다.</p>
+
+<p>트레이트 문법
+trait 트레이트명 
+{
+// 트레이트 내용 구현
+}</p>
+
+<p>이렇게 선언한 트레이트 클래스는 다른 클래스에 use 키워드로 삽입할 수 있습니다.</p>
+
+<?php
+class MyClass {
+
+  use myTrait; 
+
+  // 클래스 내용 구현
+}
+?>
+
+<p>PHP언어의 전처리기 명령인 include와 require처럼 코드를 읽어서 결합하는 것과 비슷해 보입니다. 클래스의 결합이라고 이해하면 됩니다. 하지만, 상속과도 약간의 차이점이 있는 것을 알 수 있습니다.</p>
+
+<p>트래이트를 구현 시 현재의 메서드를 우선적으로 적용 후에 상속된 메서드를 재정의하는 우선순위를 가지고 있습니다.</p>
+
+<p>다음 예제는 트레이트를 생성 후에 클래스에 주입하여 사용하는 예제입니다.
+예제 파일 trait-01.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 기존 클래스 작성하는 것과 같이 트레이트를 작성합니다.
+trait geoLocation
+{
+	public function getLatitude()
+	{
+		echo "좌표  Latitude&lt;br&gt;";
+  		}
+</code></pre></div></div>
+
+ 		public function getLongtitude()
+ 		{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		echo "좌표  Longtitude&lt;br&gt;";
+ 		}
+
+}
+
+// 지도 매핑 클래스를 생성합니다.
+class mapping
+{
+	// use키워드로 트레이드를 삽입합니다.
+  		use geoLocation;
+</code></pre></div></div>
+
+  		// 추가 클래스…. 구현
+  		public function copyright()
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    		{
+        		// 본 메서드 함수는 대체되지 않습니다.
+        		echo "copyright all Right JinyPHP";
+    		}
+
+}
+
+$obj = new mapping();
+
+// 트레이트로 삽입한 메서드를 실행합니다.
+$obj-&gt;getLatitude();
+$obj-&gt;getLongtitude();
+
+// 자체 선언 메서드를 출력합니다.
+$obj-&gt;copyright();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+좌표 Latitude
+좌표 Longtitude
+copyright all Right JinyPHP</p>
+
+<p>위의 예를 보면 트레이트를 통해 지리 정보를 출력하는 간단한 트레이트를 생성합니다.</p>
+
+<p>mapping 클래스는 geoLocation라는 클래스를 상속하는 것이 아니라 클래스 안에 트레이트로 삽입하는 것을 볼 수 있습니다.</p>
+
+<p>트레이트가 주입된 클래스는 일반적인 인스턴스 형태로 생성한 다음 -&gt; 기호를 통해 트레이트에서 선언한 메서드를 실행할 수 있습니다.</p>
+
+<p>15.5.2 다중 트레이트
+트레이트는 콤마(,)를 통하여 다중 트레이트를 적용할 수 있습니다.</p>
+
+<p>|문법|
+use trait1, trait2;
+예제 파일 trait-02.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 기존 클래스 작성하는 것 과 같이 트레이트를 작성합니다.
+trait Latitude
+{
+	public function getLatitude()
+	{
+		echo "좌표  Latitude&lt;br&gt;";
+  		}
+
+}
+
+trait Longtitude
+{
+	public function getLongtitude()
+ 		{
+		echo "좌표  Longtitude&lt;br&gt;";
+ 		}
+}
+
+// 지도 매핑 클래스를 생성합니다.
+class mapping
+{
+	// use키워드로 트레이드를 삽입합니다.
+	// 콤마로 구분하여 다중 트레이트를 구현합니다.
+  		use Latitude, Longtitude;
+</code></pre></div></div>
+
+  		// 추가 클래스…. 구현
+  		public function copyright()
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    		{
+        		// 본 매메서드 함수는 대체되지 않습니다.
+        		echo "copyright all Right JinyPHP";
+    		}
+
+}
+
+$obj = new mapping();
+
+// 트레이트로 삽입한 매메소드메서드를 실행합니다.
+$obj-&gt;getLatitude();
+$obj-&gt;getLongtitude();
+
+// 자체 선언 메소드메서드를 출력합니다.
+$obj-&gt;copyright();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+좌표 Latitude
+좌표 Longtitude
+copyright all Right JinyPHP</p>
+
+<p>위의 예제는 다중 트레이트의 예입니다. 위의 trait-01.php 예제와 동일한 결과를 출력하지만, 트레이트를 두 개로 나눠서 다중 트레이트 방식으로 적용합니다.</p>
+
+<p>15.5.3 트레이트 충돌
+여러 개의 트레이트를 적용할 경우 메서드의 동일한 이름으로 인하여 충돌이 발생할 수도 있습니다. 트레이트는 오버라이딩처럼 재정의할 수가 없습니다. 이런 경우 insteadof 키워드를 통하여 충돌한 트레이트의 메서드를 직접 지정해야 합니다.
+예제 파일 trait-03.php
+&lt;?php
+    trait a {
+        public function name() {
+            echo “trait A name<br />”;
+        }</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    public function age() {
+        echo "trait A age&lt;br&gt;";
+    }
+}
+
+trait b {
+    public function name() {
+        echo "trait B name&lt;br&gt;";
+    }
+
+    public function age() {
+        echo "trait B age&lt;br&gt;";
+    }
+}
+
+class members {
+    use a, b {
+        b::name insteadof a;
+        a::age insteadof b;
+        b::name as name2;
+    }
+}
+
+$obj = new members;
+$obj-&gt;name();
+$obj-&gt;age();
+
+// as 별칭 메서드
+$obj-&gt;name2();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+trait B name
+trait A age
+trait B name</p>
+
+<p>위의 예제는 트레이트 충돌에 대한 예입니다. 트레이트 a와 b의 메서드는 서로 충돌합니다. 트레이트를 적용할 때 insteadof 키워드를 통하여 사용할 트레이트의 메서드를 직접 지정할 수 있습니다.</p>
+
+<p>또는 as 키워드를 통해 충돌되는 메서드를 다른 이름으로 별칭을 만들어 사용할 수도 있습니다.</p>
+
+<p>15.5.4 메서드 속성 변경
+트레이트를 적용할 때 as 키워드를 통하여 메서드의 속성을 변경할 수 있습니다.</p>
+
+<p>예제 파일 trait-04.php
+&lt;?php
+	trait HelloWorld {
+    		public function sayHello() {
+        			echo “Hello World!”;
+    		}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// sayHello 속성을 변경
+class MyClass1 {
+		use HelloWorld { sayHello as protected; }
+
+		public function hello(){
+			echo "protect method call &lt;br&gt;";
+			$this-&gt;sayHello();
+		}
+}
+
+$obj = new MyClass1;
+$obj-&gt;hello();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+protect method call 
+Hello World!</p>
+
+<p>위의 예제는 as 키워드를 통하여 메서드의 속성을 변경합니다. public 속성의 sayHello() 메서드를 as 키워드를 이용하여 protect 속성으로 변경합니다. hello() 메서드는 protect 속성으로 변경된 sayHello() 메서드를 호출합니다.</p>
+
+<p>15.5.5  트레이트 조합
+하나의 트레이트에서는 또 다른 트레이트를 연결하여 조합할 수 있습니다.</p>
+
+<p>예제 파일 trait-05.php
+&lt;?php
+	trait a {
+    	public function foo() {
+        	echo “Trait Method foo!<br />”;
+    	}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trait b {
+	
+	// 트레이트 a 를 조합
+	use a;
+
+	public function bar() {
+    	echo "Trait Method bar!&lt;br&gt;";
+	}
+}
+
+class myClass {
+	use b;
+}
+
+$obj = new myClass;
+$obj-&gt;foo();
+$obj-&gt;bar();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+Trait Method foo!
+Trait Method bar!</p>
+
+<p>15.5.6  트레이트 추상화
+트레이트 메서드를 선언할 때 abstract 키워드를 통하여 추상화 메서드도 같이 설정할 수 있습니다. abstract로 선언된 메서드는 use 키워드를 통해 트레이트 적용 후에 추상화 선언된 메서드를 생성해야 합니다.</p>
+
+<p>예제 파일 trait-06.php
+&lt;?php
+	trait Hello {
+    		public function sayHelloWorld() {
+        			echo “Hello “.$this-&gt;getWorld();
+    		}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		abstract public function getWorld();
+}
+
+class MyHelloWorld {
+		private $world;
+	
+		use Hello;
+	
+		public function getWorld() {
+    			return $this-&gt;world;
+		}
+
+		public function setWorld($val) {
+    			$this-&gt;world = $val;
+		}
+}
+
+$obj = new MyHelloWorld;
+$obj-&gt;setWorld("jiny");
+
+echo $obj-&gt;getWorld();
+echo "&lt;br&gt;";
+$obj-&gt;sayHelloWorld();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+jiny
+Hello jiny</p>
+
+<p>15.5.7  트레이트 정적 호출
+정적 static 키워드를 통해 선언된 트레이트 메서드는 더블콜론(::)을 이용하여 호출할 수 있습니다.</p>
+
+<p>예제 파일 trait-07.php
+&lt;?php
+	trait Hello {
+    	public static function sayHelloWorld() {
+        	return “Hello World!”;
+    	}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class MyHelloWorld {
+	use Hello;
+}
+
+echo MyHelloWorld::sayHelloWorld(); ?&gt;
+</code></pre></div></div>
+
+<p>결과
+Hello World!</p>
+
+<p>15.5.8  트레이트 프로퍼티
+트레이트 안에서도 프로퍼티 변수를 선언할 수 있습니다. 트레이트 안에서 선언된 프로퍼티는 클래스 안에서 동일한 이름으로 프로퍼티를 정의할 수 없습니다.</p>
+
+<p>예제 파일 trait-08.php
+&lt;?php
+	trait PropertiesTrait {
+    	public $x = 1;
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class myClass {
+	use PropertiesTrait;
+}
+
+$obj = new myClass;
+echo $obj-&gt;x; ?&gt;
+</code></pre></div></div>
+
+<p>결과
+1</p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

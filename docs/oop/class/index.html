@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="클래스">클래스</h1>
+<p>클래스는 기존 함수형 프로그램 코딩 개발 방법보다 향상된 객체지향형 프로그램 개발 방법론 및 환경을 지원합니다. PHP도 다양한 객체지향 방법론을 도입하여 최신 트렌드에 맞는 클래스 및 코딩 방법을 제공합니다.</p>
+
+<h2 id="클래스와-객체">클래스와 객체</h2>
+<p>객체지향 방식의 프로그램 OOP는 Object-Oriented Programming의 약자입니다. 객체지향 프로그램 코딩 방식은 기존 함수형 절차적 프로그램 방식과 비교하여 소프트웨어의 유지보수 및 구조적으로 개발하는 데 있어 매우 유용합니다. 그런 점에서 최신 소스코드의 개발 방식은 클래스 기반의 코딩 스타일을 많이 적용합니다.</p>
+
+<p>객체지향 프로그램은 단순한 코딩 문법 및 스타일이 아닙니다. 데이터의 처리와 기능, 각각의 요소를 하나의 객체로 처리합니다. 객체는 각각의 데이터와 기능들이 연관하여 프로그램이 동작, 구성됩니다.</p>
+
+<h3 id="절차적-프로그램">절차적 프로그램</h3>
+<p>절차적 프로그래밍 방식은 초기의 프로그램 개발 방법입니다. 단순하게 프로그램의 명령어를 모아 놓은 형태로 논리적 순서대로 쓰여진 프로그램을 코딩을 말합니다. 예전 초창기 컴퓨터 개발 방법이며, 간단한 기능과 테스트 결과를 빠르게 보기 위해서 자주 사용합니다.</p>
+
+<p>만일 절차적 방식으로 작성된 대용량 프로그램은 소스의 내용을 쉽게 이해하기가 어렵습니다. 또한 복잡한 동작을 처리하기 위해서 상당량의 유지보수 시간이 필요합니다.</p>
+
+<h3 id="구조적-프로그램">구조적 프로그램</h3>
+<p>구조적 프로그램밍은 이전 절차적 프로그래밍의 문제점을 보완한 프로그램 개발 방법론 입니다. 좀 더 체계적이고 구조적으로 프로그램을 개발하기 위한 새로운 다양한 시도 중의 하나입니다.</p>
+
+<p>나날이 프로그램은 복잡해지고 크기가 커지고 있습니다. 방대한 기능의 프로그램 동작 다수의 사람들이 팀원을 위하여 서로 이해하고 내용을 공유하는 것은 매우 어렵습니다. 또한 순서도를 통하여 쉽게 표현하기도 어려울 것입니다. 이러한 문제점들은 소프트웨어를 고도화하고 유지 보수하는 데 매우 어렵습니다. 
+구조적 프로그램은 이러한 문제점을 보완하고자 1968년 에츠러르 다익스트라가 자신의 논문 <GOTO문의 해로움="">(GO To statement considered Harmful)에서 프로그램을 함수(프로시저) 단위로 나눠서 프로시저 간에 연관과 호출을 통해 구조적 프로그램 방법을 제안한 것이 계기가 되었습니다.</GOTO문의></p>
+
+<p>하지만 기존의 함수 방식의 개발 방법은 데이터 처리 등을 구조화하여 처리하는 반면에, 실제적으로 데이터 자체까지는 구조적으로 해결을 하지 못했습니다. 또한 외부 변수들을 많이 쓰는 바람에 사용 가능한 변수 이름을 다 써버리는 등 프로그램의 크기가 커질수록 개발할 수 있는 환경은 포화되어 갔습니다.</p>
+
+<p>함수형 프로그램의 다양한 문제점을 개선하기 위해서 등장한 것이 객체지향 프로그래밍입니다. 객체지향 프로그램은 작은 객체들을 만들어서 문제를 해결하고, 해결된 문제를 연결하여 더 큰 문제를 해결하는 상향식(bottom-up) 설계 방법을 도입하게 되었습니다. 또한 이렇게 생성된 객체들은 독립성과 신뢰성을 향상하여 객체를 수정 없이 재사용할 수 있어 개발과 유지보수를 대폭적으로 개선했습니다.</p>
+
+<h2 id="1413-캡슐화">14.1.3 캡슐화</h2>
+<p>캡슐화는 객체지향 방법의 기본 개념입니다. 캡슐화의 목적은 ‘코드를 수없이 재사용’하는 것 입니다. 갭슐화는 프로그램 코드를 재사용하는 데 있어서 기능적인 부분과 데이터적인 부분을 한곳에 묶어서 관리할 필요성이 있습니다.</p>
+
+<p>객체 = 변수 + 함수</p>
+
+<p>객체와 함수의 차이점은 데이터를 같이 관리하는지 여부입니다. 보통 변수는 프로퍼티(property), 함수는 메서드(method)라고 합니다.</p>
+
+<h2 id="142-클래스--인스턴스">14.2 클래스 &amp; 인스턴스</h2>
+
+<p>클래스는 계층적으로 분류한 기능과 특성의 모음이라 생각하시면 됩니다. 클래스는 객체(object)와 실체화(instance)를 통하여 만들 수 있습니다.</p>
+
+<p>PHP 에서는 클래스 선언을 다음과 같이 할 수 있습니다.</p>
+
+<p>|문법|
+class jiny {
+	클래스 내용 …</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public $username;
+
+public function setName($name){
+	$this-&gt;username = $name;
+} }
+</code></pre></div></div>
+
+<p>class라는 키워드를 사용하고 다음에 클래스 이름을 사용자가 지정할 수 있습니다.</p>
+
+<p>클래스명은 영문 또는 언더바(_)로 시작합니다. 클래스의 내용은 중괄호 { } 안에 내용을 작성하면 됩니다.</p>
+
+<h2 id="142-접근-권한-속성">14.2 접근 권한 속성</h2>
+
+<p>클래스와 같이 객체지향 프로그램에서 속성이라는 추가적인 접근 권한 개념이 도입됩니다. 접근 권한 속성은 각각의 클래스의 독립성과 보호를 위해서 프로퍼티(변수)나 메서드(함수) 등에 권한을 설정하는 것입니다.</p>
+
+<p>PHP 클래스에서는 세 가지의 속성을 가지고 있습니다. public, protected, private를 제공합니다.
+속성은 클래스 외부에서의 접근을 제한하고자 할 때 사용할 수 있습니다.</p>
+
+<p>접근 속성의 종류
+PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타입을 지원합니다.</p>
+
+<p>●	public:  public으로 설정된 프로퍼티 변수는 외부에서 접근이 가능합니다. 즉, 값을 읽거나 새로운 값으로 설정이 가능합니다.</p>
+
+<p>●	protected: 정의한 클래스와 상속한 클래스에서만 사용이 가능합니다. 이 속성은 클래스 내의 메서드와 서브 클래스에서만 접근하여 사용할 수 있습니다. 외부에서 접근할 수는 없지만 상속을 받은 경우에는 접근이 가능합니다.</p>
+
+<p>●	private: 정의한 클래스 내에서만 사용 가능합니다. 이 속성은 같은 클래스 내에서만 참조가 가능합니다. protectd와 달리 서브 클래스에서는 사용할 수 없습니다</p>
+
+<h2 id="class-선언"><a href="declear">class 선언</a></h2>
+
+<h2 id="프로퍼티"><a href="property">프로퍼티</a></h2>
+
+<h2 id="메서드"><a href="method">메서드</a></h2>
+
+<h2 id="클래스-상수"><a href="const">클래스 상수</a></h2>
+
+<h2 id="인스턴스-생성"><a href="new">인스턴스 생성</a></h2>
+
+<h2 id="객체-복사"><a href="clone">객체 복사</a></h2>
+
+<h2 id="객체-접근"><a href="access">객체 접근</a></h2>
+
+<h2 id="this"><a href="this">$this</a></h2>
+
+<h2 id="정적-클래스"><a href="static">정적 클래스</a></h2>
+
+<h2 id="익명-클래스"><a href="anno">익명 클래스</a></h2>
+
+<h2 id="매직-메서드"><a href="magic">매직 메서드</a></h2>
+
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

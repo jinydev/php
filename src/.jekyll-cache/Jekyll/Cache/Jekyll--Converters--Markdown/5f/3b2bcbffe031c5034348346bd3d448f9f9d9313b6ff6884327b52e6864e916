@@ -1,0 +1,34 @@
+I"�	<h1 id="리소스resource">리소스(Resource)</h1>
+<hr />
+<p>특별한 유형의 리소스 타입은 실제적인 데이터 타입이 아닙니다. 리스트 타입은 함수를 참조하거나 외부 PHP 리소스를 참조할 수 있습니다.</p>
+
+<p>일반적으로 리소스 데이터 타입은 데이터 베이스를 호출할 때 많이 사용합니다.</p>
+
+<p><br /></p>
+
+<h2 id="리소스-확인">리소스 확인</h2>
+<hr />
+<p>get_resource_type() 내부 함수를 이용하면 리소스 타입을 확인할 수 있습니다.</p>
+
+<p>|관련함수|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>string get_resource_type ( resource $handle )
+</code></pre></div></div>
+
+<p>예제 파일 resource-01.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// prints: mysql link</span>
+<span class="nv">$c</span> <span class="o">=</span> <span class="nb">mysql_connect</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nb">get_resource_type</span><span class="p">(</span><span class="nv">$c</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="c1">// prints: stream</span>
+<span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">get_resource_type</span><span class="p">(</span><span class="nv">$fp</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="c1">// prints: domxml document</span>
+<span class="nv">$doc</span> <span class="o">=</span> <span class="nx">new_xmldoc</span><span class="p">(</span><span class="s2">"1.0"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">get_resource_type</span><span class="p">(</span><span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">doc</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p><br /></p>
+:ET

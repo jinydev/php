@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="클래스-상수">클래스 상수</h2>
+<p>객체 클래스만의 상수를 선언할 수 있습니다. 객체 클래스 내에 상수를 선언하는 것은 프로그램 소스 전체에서 사용이 가능한 공용 상수가 아닙니다. 이 상수는 객체 클래스 안에서만 사용할 수 있는 상수 코드로 독립적인 효과가 있습니다.</p>
+
+<p>PHP 언어는 두 가지의 방식으로 상수를 설정할 수 있습니다. 하지만 이 두 가지 중에서 객체 클래스 안에서 상수 설정 가능한 방법은 const 명령만 사용 가능합니다. 즉, define() 함수는 사용하지 않습니다.</p>
+
+<p>클래스 상수
+class language {
+	const ENGLISH = “en”;
+	const KOREAN = “ko”;
+}</p>
+
+<p>객체 클래스 본문 중괄호 { } 안에 const를 사용하여 상수를 선언하면 됩니다. 상수를 선언하는 문법과 방식은 기존 PHP 상수 설정과 같지만 클래스 본문 안에 작성한다는 것이 차이점입니다.</p>
+
+<p>클래스 안에 상수를 쓸 때는 PSR-2 코딩 스타일 방식으로 들여쓰기를 하여 작성합니다. PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(_)을 통해 구분하여 상수명을 작성할 수도 있습니다.</p>
+
+<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(::) 기호로 사용할 수 있습니다.</p>
+
+<p>|문법|
+$객체변수::상수명</p>
+
+<p>클래스 내부적으로 사용을 할 때는 다음과 같은 형태로 사용 가능합니다.</p>
+
+<p>|문법|
+self::상수명
+예제 파일 class-01.php
+&lt;?php
+	class language {
+		const ENGLISH = “en”;
+		const KOREAN = “ko”;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function getEnglish()
+	{
+		return self::ENGLISH;
+	}
+}
+
+$obj = new language();
+
+echo "클래스 상수 출력&lt;br&gt;";
+echo "KOREAN = " . $obj::KOREAN . "&lt;br&gt;";
+
+echo "메서드를 이용한 상수 출력&lt;br&gt;";
+echo "ENGLISH = " . $obj-&gt;getEnglish() . "&lt;br&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>결과
+클래스 상수 출력
+KOREAN = ko
+메서드를 이용한 상수 출력
+ENGLISH = en</p>
+
+<p>위의 예제는 클래스 내부에 독립 상수를 설정하고, 이를 접근 출력하는 예입니다. language 클래스는 두 개의 상수를 가지고 있습니다. 첫 번째 출력에서는 직접 객체에 접근하여 사용했습니다. 두 번째 출력에서는 매서드를 이용하여 내부 접근을 한 후에 상수값을 출력합니다.</p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

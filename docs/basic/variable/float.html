@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="실수형">실수형</h1>
+<hr />
+<p>실수는 정수의 개념보다 한단계 더 큰 수학적 개념입니다. 실수는 정수와 달리 소수점을 포함하여 큰 수의 값을 표현할 수 있습니다. 또는 지수로 표기된 실수 값을 말합니다.</p>
+
+<h2 id="실수-데이터">실수 데이터</h2>
+<hr />
+<p>실수는 정수와 달리 데이터를 표현하는데 있어서 변수의 bit를 모두 숫자로 표현을 하지 않습니다. 숫자 부분과 지수를 표현하는 부분으로 나누어 처리합니다.</p>
+
+<p>또한 실수는 컴퓨터의 표현의 제한으로 큰 수의 경우 숫자의 정밀도는 제한적일 수 있습니다. 큰 수를 사용하기 위해서 별도의 알고리즘이 필요로 합니다. PHP는 IEEE 754 형식을 따라 부동 소수점을 표현합니다.</p>
+
+<p>IEEE 754는 1.11e-16의 반올림으로 인해 최대 상대 오차가 발생할 수 있습니다. 기본이 아닌 산술 연산은 더 큰 오류가 발생할 수 있습니다. 물론 여러 작업이 혼합 될 때 오류를 고려해야 연산을 해야 합니다.</p>
+
+<p>또한 기수 10의 부동 소수점 숫자로 정확하게 표현할 수 있는 유리수 (예 : 0.1 또는 0.7)는 가수의 크기에 관계없이 내부적으로 사용되는 2 진수의 부동 소수점 숫자와 정확히 일치하지 않습니다.</p>
+
+<p>따라서 정밀도를 잃지 않고 내부 바이너리로 변환 할 수 없습니다. 예를 들어 floor ((0.1 + 0.7) * 10)는 내부 표현이 7.999999999999911181과 같기 때문에 일반적으로 예상되는 8 대신 7을 반환합니다.</p>
+
+<p>실수는 시스템 환경에 따라 표현을 할 수 있는 수는 차이가 있습니다. 64bit 환경에서 최대 표현 값은 ~1.8e308 입니다.</p>
+
+<p><br /></p>
+
+<h2 id="실수-변수">실수 변수</h2>
+<hr />
+<p>실수 변수는 $변수에 실수 값을 대입하는 것으로 쉽게 저장을 할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span> 
+<span class="nv">$b</span> <span class="o">=</span> <span class="mf">1.2e3</span><span class="p">;</span> 
+<span class="nv">$c</span> <span class="o">=</span> <span class="mi">7</span><span class="nx">E</span><span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>다음 예제는 실수변수를 화면에 출력하는 예제 입니다.</p>
+
+<p>예제 파일 float-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mf">10.365</span><span class="p">;</span>
+	<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>결과화면</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(10.365) 
+</code></pre></div></div>
+
+<p>다은 예제는 각도의 라디안 값 계산하는 실수형 예제 입니다.</p>
+
+<p>예제 파일 float-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">const</span> <span class="no">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+
+	<span class="nv">$deg</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+	<span class="nv">$rad</span> <span class="o">=</span> <span class="nv">$deg</span> <span class="o">*</span> <span class="nb">PI</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">;</span>
+	<span class="nb">printf</span><span class="p">(</span><span class="s2">"DEG = %d, RAD = %f"</span><span class="p">,</span> <span class="nv">$deg</span><span class="p">,</span> <span class="nv">$rad</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과화면</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEG = 30, RAD = 0.523333
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="실수-확인">실수 확인</h2>
+<hr />
+<p>PHP는 생성한 변수가 실수변수를 확인할 수 있는 is_float()이라는 내부함수를 제공합니다.</p>
+
+<p>|관련함수|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_float</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>매개변수값으로 변수를 전달하면 변수의 오브젝트 타입 여부를 논리값 형태로 반환합니다.</p>
+
+<p>예제 파일 float-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mf">27.25</span><span class="p">)</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mf">23.5</span><span class="p">)</span> <span class="p">);</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mi">1</span><span class="nx">e7</span><span class="p">)</span> <span class="p">);</span>  <span class="c1">//Scientific Notation</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">);</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool(true)
+bool(false)
+bool(false)
+bool(true)
+bool(true)
+bool(false)
+</code></pre></div></div>
+
+<p>위의 예제는 나열된 데이터들이 실수형 데이터 타입인지를 확인하는 예입니다.</p>
+
+<p><br /></p>
+
+<h2 id="실수-형변환">실수 형변환</h2>
+<hr />
+<p>PHP에서는 변수에 실수 값을 저장할 때 변수의 타입은 실수형이 됩니다.</p>
+
+<p>형변환이라는 것은 변수에 값을 입력할 때 값 앞에 변수의 형태를 미리 지정하여 저장하는 방법입니다.</p>
+
+<p>예제 파일 float-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 실수값을 입력하면 변수는 실수 입니다.</span>
+	<span class="nv">$pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$pi</span> <span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"pi = </span><span class="nv">$pi</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 정수로 형변환 합니다.</span>
+	<span class="nv">$a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="mf">5.14</span><span class="p">;</span>
+	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$a</span> <span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"a = </span><span class="nv">$a</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 더블형으로 형변환 합니다.</span>
+	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="nx">double</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
+	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"b = </span><span class="nv">$b</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 문자열로 형현환 합니다.</span>
+	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
+	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"b = </span><span class="nv">$b</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(3.14) pi = 3.14
+int(5) a = 5
+float(3.14) b = 3.14
+string(4) "3.14" b = 3.14
+</code></pre></div></div>
+
+<p>위의 예제는 형변환을 실험하는 예입니다. 형변환을 키워드를 이용하여 데이터의 값의 형을 바꿀 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="소수점-처리">소수점 처리</h2>
+<hr />
+<p>실수형 수는 소수점을 포함하고 있습니다. 소수점이 있을 경우 버림, 올림, 반올림 내장 함수를 통해 계산할 수 있습니다.</p>
+
+<p>|관련함수|
+소수점 이하 올림</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nb">ceil</span> <span class="p">(</span> <span class="nx">실수값</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>ceil() 함수는 입력된 실수값의 소수점 이하를 올림 처리한 값을 반환합니다.</p>
+
+<p>|관련함수|
+소수점 이하 버림</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mixed</span> <span class="nb">floor</span> <span class="p">(</span> <span class="nx">실수값</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>floor() 함수는 입력된 실수값의 소수점 이하를 버림 처리한 값을 반환합니다.</p>
+
+<p>|관련함수|
+소수점 이하 반올림</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nb">round</span> <span class="p">(</span><span class="nx">실수값</span><span class="p">,</span> <span class="nx">자릿수</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>round() 함수는 입력된 실수값의 이하 반올림 처리한 값을 반환합니다.</p>
+
+<p>예제 파일 float-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 올림</span>
+	<span class="k">echo</span> <span class="nb">ceil</span><span class="p">(</span><span class="mf">4.3</span><span class="p">);</span>    <span class="c1">// 5</span>
+	<span class="k">echo</span> <span class="nb">ceil</span><span class="p">(</span><span class="mf">9.999</span><span class="p">);</span>  <span class="c1">// 10</span>
+	<span class="k">echo</span> <span class="nb">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">);</span>  <span class="c1">// -3</span>
+
+	<span class="c1">// 버림</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>   <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">9.999</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 9</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -4</span>
+
+	<span class="c1">// 반올림 처리</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 3</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// 4</span>
+
+	<span class="c1">// 소수점 자리 반올림</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.95583</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>  <span class="c1">// 1.96</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.045</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.05</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.055</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.06</span>
+
+	<span class="c1">// 소수점 위3자리에서 반올림</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1241757</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1242000</span>
+	
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>510-34
+9
+-4
+3
+4
+4
+4
+1.96
+5.05
+5.06
+1242000
+</code></pre></div></div>
+
+<p>위의 예제는 실수의 버림, 올림, 반올림에 대한 처리 예입니다.</p>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

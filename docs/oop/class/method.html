@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP</title>
+            <meta name="title" content="PHP" /><meta name="keyword" content="jinyphp, php" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="메서드">메서드</h2>
+<p>메서드(Method)라는 이름은 객체 내에서 함수를 부르는 또 다른 이름 중 하나입니다.</p>
+
+<p>클래스 안에서 작성된 함수를 메서드라고 부릅니다. 이렇게 이름을 달리 부르는 것은 기존에 사용하는 함수와 클래스 안에 있는 함수를 구분하기 위해서입니다.</p>
+
+<p>클래스 안에서 메서드를 선언하는 것은 기존 함수를 선언하여 사용하는 것과 동일합니다. 단지 클래스 내부에 함수를 선언한다는 것이 차이점입니다.</p>
+
+<p>|문법|
+class ClassName
+{
+    public function 메서드_함수명1(매개변수)
+    {
+        // method body
+    }</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private function 메서드_함수명2(
+	매개변수1,
+	매개변수2,
+	매개변수3
+) {
+    // method body
+} }
+</code></pre></div></div>
+
+<p>메서드 또한 함수이기 때문에 function 키워드를 이용하여 작성합니다.</p>
+
+<p>메서드 이름은 PSR 권장 표준 코딩 스타일을 따라서 낙타 표기법(camelCase) 스타일로 작성을 권고합니다. 또한 메서드 이름의 첫 시작 문자는 소문자 사용 할 것을 권장합니다.</p>
+
+<p>예) camelCase (), loveStudy()</p>
+
+<p>객체 내에서 메서드를 선언할 때는 PSR 권장 코딩 스타일 방식으로 중괄호 본체 안에서 들여쓰기 하여 작성할 것을 권고합니다.</p>
+
+<p>객체의 메서드도 일반 함수처럼 매개변수 인자를 가질 수 있습니다. 함수와 같이 매개변수를 전달하는 소괄호를 사용하여 다수의 변수 값을 메서드로 전달할 수 있습니다. 다수의 변수를 전달할 때는 콤마로 구분하거나 여러 줄로 작성할 때는 PSR 코딩 스타일 방식으로 한 줄에 한 개의 매개변수 작성하는 것을 권고합니다.</p>
+
+<p>객체의 메서드는 일반 함수와 달리 function 키워드 안에 접근 권한 속성을 갖는 키워드를 같이 지정하여 사용합니다. 프로퍼티 설정에서 접근 권한 속성을 부여하는 것과 같습니다.</p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

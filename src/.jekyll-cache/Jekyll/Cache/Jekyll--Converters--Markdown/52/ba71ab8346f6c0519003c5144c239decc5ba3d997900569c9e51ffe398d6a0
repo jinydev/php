@@ -1,0 +1,71 @@
+I"�<h1 id="php-테그">PHP 테그</h1>
+<hr />
+
+<h2 id="php-코드를-상징하는-기호-와-">PHP 코드를 상징하는 기호 <code class="highlighter-rouge">&lt;?</code>와 <code class="highlighter-rouge">?&gt;</code></h2>
+<hr />
+<p>프로그램 소스상에서 PHP 인터프리터가 파일의 전부를 PHP 코드로 인식하지는 않습니다. 소스 파일을 읽을 때 <code class="highlighter-rouge">&lt;?</code> 또는 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code> 기호를 만나는 순간부터 PHP 소스로 인식합니다. 또한 ?&gt;를 만나면 PHP 소스가 끝나는 시점으로 해석을 종료합니다.</p>
+
+<p>이런 자유로운 프로그램 코딩 방식은 PHP를 다른 언어에 삽입하여 두 가지 이상의 언어와 혼합해서 사용 가능하다는 장점이 있습니다. 주로 HTML 소스 안에 PHP 소스 코드를 삽입하거나 또는 HTML 소스 안에서 자바스크립트 코드와 PHP 코드를 혼합하여 프로그래밍이 가능할 수도 있습니다.</p>
+
+<p>이런 프로그램 코드의 강점과 달리 유지보수 측면을 고려하여 별도로 PHP 코드만 분리하는 경우도 있습니다. 보통 프레임워크가 MVC 패턴에서 view 처리 부분이 이와 유사합니다. PHP는 HTML등 다른 언어와 같이 사용해도 되고 독립적으로 사용해도 괜찮습니다. 모두 정상적으로 잘 동작합니다.</p>
+
+<p>다음 PHP 언어를 HTML마크업과 같이 사용하는 예입니다.</p>
+
+<p>예제 파일 hello-01.php</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+       	<span class="nt">&lt;body&gt;</span>
+                 	<span class="nt">&lt;h1&gt;</span> PHP 페이지를 만들어 봅니다.<span class="nt">&lt;/h1&gt;</span>
+                 	<span class="cp">&lt;?php
+                            	echo "Hello World!";
+                 	?&gt;</span>
+       	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예제를 보면 HTML 코드 안에 PHP 코드가 삽입되어 있습니다.</p>
+
+<p>또는 PHP코드만 독립적으로 사용을 할 때는 다음과 같이 사용해도 됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+       	<span class="nx">코드</span><span class="err">…</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>하나의 프로그램 소스 안에서 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code>와 <code class="highlighter-rouge">?&gt;</code>은 한번만 사용을 해야 되는 것은 아닙니다. 그때마다 필요할 때 PHP코드들을 분리해서 삽입이 가능합니다.</p>
+
+<p>아래 예제는 하나의 HTML 파일에 2개의 php 코드 그룹을 넣은 예제입니다.</p>
+
+<p>예제 파일 hello-02.php</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		<span class="nt">&lt;h1&gt;</span> PHP 페이지를 만들어 봅니다.<span class="nt">&lt;/h1&gt;</span>
+		<span class="cp">&lt;?php
+					echo "Hello World!";
+		?&gt;</span>
+		<span class="nt">&lt;h2&gt;</span> 두 번째로 PHP 코드를 삽입을 합니다. <span class="nt">&lt;/h2&gt;</span>
+		<span class="cp">&lt;?php
+					echo "good morning!";
+		?&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위처럼 HTML 마크업 안에서 2개의 PHP코드를 그룹 분할하여 삽입하는 기능은 PHP 코드가 다른 언어와 연결하여 프로그래밍하는 데 많은 도움을 줄 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="php-종료-태그-생략">php 종료 태그 생략</h2>
+<hr />
+<p>PHP는 종료 태그 <code class="highlighter-rouge">?&gt;</code>로 끝나는 경우에 한하여 다음과 같이 태그를 생략할 수 있습니다. 하지만 PHP 코딩 스타일 PSR-2 에서는 PHP 소스의 마지막에 종료 태그 <code class="highlighter-rouge">?&gt;</code>를 생략해서 쓰는 방법을 권장하고 있습니다. 종료 태그 <code class="highlighter-rouge">?&gt;</code>를 생각하게 되면 예상치 않은 출력 오류를 방지할 수도 있습니다.</p>
+
+<p>예제파일 hello-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">"Hello World!"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위의 예제 표현은 마지막에 종료 태그 <code class="highlighter-rouge">?&gt;</code>를 삭제한 것입니다. 태그를 삭제해도 PHP 실행에는 지장이 없습니다.</p>
+
+<p><br /><br /></p>
+:ET

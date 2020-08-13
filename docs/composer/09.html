@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP composer</title>
+            <meta name="title" content="PHP composer" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">composer</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <ol>
+  <li>
+    <h1 id="코딩하기">코딩하기</h1>
+  </li>
+</ol>
+
+<p>이번 장에서는 실제적인 페키지를 검색하여 설치하는 과정을 실습해 보도록 합니다. 또한 설치한 패키지를 코드로 옴겨서 실행하는 과정도 함께 실습을 해보도록 합니다.</p>
+
+<p>09.1 패키지 설치
+앞에서 검색한 컴포저 패키지를 추가로 설치해 보도록 하겠습니다.</p>
+
+<p>composer require illuminate/support</p>
+
+<p>illuminate/support 페키지는 배열과 관련된 핼퍼들을 포함하고 있습니다.</p>
+
+<p>컴포저의 페키지 라이브러리는 github와 연계되어 동작을 합니다. 컴포저는 페키지리스트와 연계하여 깃허브에서 다운로드 받아 자동설치하게 됩니다.</p>
+
+<p>인터넷을 통하여 설치가 되기 때문에 다소 시간이 걸릴 수 있습니다. 페지지가 설치가 되면, composer.lock 파일과 vender 폴더가 하나더 추가로 생성이 됩니다.</p>
+
+<p>그리고 composer.json 파일에는 추가한 패키지 정보가 자동으로 갱신이 됩니다. 다시한번 변경된 composer.json 파일을 확인해 보도록 합니다.</p>
+
+<p>{
+    “name”: “jinyphp/jiny”,
+    “authors”: [
+        {
+            “name”: “HojinLee”,
+            “email”: “infohojin@naver.com”
+        }
+    ],
+    “require”: {
+        “illuminate/support”: “^5.6”
+    }
+}</p>
+
+<p>또 하나 같이 생성되는 vender 폴더에는 패키지들이 다운로드 되어 설치합니다.</p>
+
+<p>09.2 코드 작성</p>
+
+<p>설치한 컴포저 패키지를 실습적용해 보도록 합니다.</p>
+
+<p>아무리 많은 페키지를 설치하였다고 해도 vendor/autoload.php 파일을 한번만 읽어와도 됩니다.</p>
+
+<p>컴포저로 설치한 패키지를 사용하기 위해서는 컴포저 오토로드를 require로 읽어와야 합니다. 오토로드 파일은 컴포저 패키지 설치시 자동으로 같이 파일이 생성 됩니다.</p>
+
+<p>&lt;?php</p>
+
+<p>echo “Composer Study<br />”;
+require “vendor/autoload.php”;</p>
+
+<p>$arr = array(
+    ‘admin’ =&gt; array(
+        ‘first_name’ =&gt; ‘hojin’,
+        ‘last_name’ =&gt; ‘lee’
+    ) <br />
+);</p>
+
+<p>echo $arr[‘admin’][‘first_name’];
+echo “<br />”;</p>
+
+<p>$first_name = array_get($arr, ‘admin.first_name’);
+echo $first_name;</p>
+
+<p>09.3 페키지 제거
+설치한 컴포저 페키지를 cli 명령어를 통하여 제거할 수 있습니다.</p>
+
+<p>$ composer remove illuminate/support</p>
+
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/php">php</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/console">콘솔</a></li>
+    <li class="list-group-item"><a href="/env">환경설정</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    <li class="list-group-item"><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
