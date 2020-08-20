@@ -52,7 +52,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">basic</a></li><li class="breadcrumb-item active"><a href="#">loop</a></li><li class="breadcrumb-item active"><a href="#">for</a></li></ol>    
         </nav>
     </div>
 </div>
@@ -68,7 +68,6 @@
                 <section>
                     <h1 id="for">for</h1>
 <hr />
-
 <p>for 반복문은 대부분의 언어에서 가장 기본적이고 많이 사용하는 반복 문법입니다. for 키워드를 이용한 반복문은 C 언어 스타일로 고급 언어에서는 대부분 적용이 가능한 문법 구조입니다. PHP에서도 대중적인 반복 문법인 for문을 제공합니다.</p>
 
 <p>다음은 for 반복 문법의 기존 구조 표현입니다.</p>
@@ -104,7 +103,6 @@
 
 <h2 id="초기값">초기값</h2>
 <hr />
-
 <p>반복 문법 for문장은 중괄호로 묶여 있는 반복 코드 블록을 지정한 수만큼 반복 수행합니다. 만일 우리가 다섯 번의 반복 수행을 한다고 할 때 사람들은 추상적으로 다섯 번을 쉽게 이해할 수 있습니다. 하지만 1회, 2회, 3회, 4회, 5회 등 횟수를 카운트하기 위해서는 초기의 시작하는 값이 필요합니다. 1부터 다섯 번을 세어 5까지 셀 수도 있고, 3부터 다섯 번을 세어 7까지도 셀 수도 있습니다. 그러므로 반복문을 실행하기 위해서는 반복 횟수를 카운트를 하기 위한 초기값을 반드시 필요로 합니다.</p>
 
 <p>반복문에서는 카운트를 할 때 카운트용으로 사용할 하나의 변수가 필요로 합니다. 즉, 한 번, 두 번, 세 번 등 반복되는 횟수를 저장해야 할 임시변수입니다. 반복문의 초기값이란 이 반복 횟수를 지정하는 변수에 초기값을 지정하는 것입니다.</p>
@@ -150,7 +148,6 @@
 
 <h2 id="증가-연산자">증가 연산자</h2>
 <hr />
-
 <p>반복문이 여러 번의 코드를 수행할 때 반복 횟수는 어떻게 카운트할까요? 바로 for문의 세 번째 인자값을 증가 연산자 형태를 이용하여 반복을 수행하면서 카운트의 값을 한 번씩 변경합니다. 대부분 반복 수행을 할 때 카운트의 숫자를 1씩 증가를 합니다. 꼭 증가만 하는 것은 아닙니다. 감소할 때는 감소 연산자를 사용하면 됩니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">조건</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="nx">반복되는</span> <span class="nx">수행문</span><span class="p">;</span>
@@ -181,7 +178,6 @@
 
 <h2 id="조건">조건</h2>
 <hr />
-
 <p>for 반복 문법의 조건인자는 for문의 소스를 반복하는 조건 횟수를 판별하는 if와 같습니다. 첫 번째 인자의 초기값으로 시작하여, 세 번째 인자의 설정값처럼 증가/감소하면서 반복하다가 두 번째 인자의 조건이 되면 반복문을 종료하게 됩니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="nx">반복되는</span> <span class="nx">수행문</span><span class="p">;</span>
@@ -193,7 +189,6 @@
 
 <h2 id="반복-플로우">반복 플로우</h2>
 <hr />
-
 <p>지금까지 배운 for 반복 문법의 조건 블록을 순차적으로 한번 그림으로 정리해 봅니다.</p>
 
 <ul>
@@ -212,7 +207,6 @@
 
 <h2 id="예제">예제</h2>
 <hr />
-
 <p>몇 가지 예제를 통하여 for 반복문의 실행과 동작을 숙지하도록 하겠습니다. 반복문은 많이 사용해야만 익숙해지고 쉽게 소스 코드를 이해할 수 있습니다.</p>
 
 <p>예제 파일 for-01.php</p>
@@ -287,8 +281,6 @@ for 반복 문장은 프로그램에서 반복문의 가장 전형적인 문법�
 			<aside><ul class="list-group">
     <li class="list-group-item"><a href="/php">php 언어</a></li>
     <li class="list-group-item"><a href="/setup">설치</a></li>
-    <li class="list-group-item"><a href="/console">콘솔</a></li>
-    <li class="list-group-item"><a href="/env">환경설정</a></li>
     <li class="list-group-item"><a href="/basic">기본문법</a></li>
     <li class="list-group-item"><a href="/function">함수</a></li>
     <li class="list-group-item"><a href="/oop">객체지향</a></li>

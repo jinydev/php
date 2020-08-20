@@ -1,0 +1,41 @@
+I"�<h1 id="php-정보-확인--i">PHP 정보 확인 -i</h1>
+<hr />
+<p>웹에서는 phpinfo() 함수를 통하여 php의 환경설정 정보를 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="phpinfo">phpinfo()</h2>
+<hr />
+<p><code class="highlighter-rouge">phpinfo()</code> 함수는 웹서버를 통하여 php의 환경 정보를 브라우저로 확인할 수 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nb">phpinfo</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="-i-옵션">-i 옵션</h2>
+<hr />
+<p><code class="highlighter-rouge">-i</code> 옵션은 phpinfo() 함수와 동일하게 환경 설정 정보를 확인할 수 있는 콜솔 옵션 입니다.</p>
+
+<p>|명령|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php -i
+C:\php-7.1.4-Win32-VC14-x86&gt;php -i
+phpinfo()
+PHP Version =&gt; 7.1.4
+
+System =&gt; Windows NT LAPTOP-M0820HEF 10.0 build 14393 (Windows 10) i586
+Build Date =&gt; Apr 11 2017 19:53:44
+Compiler =&gt; MSVC14 (Visual C++ 2015)
+Architecture =&gt; x86
+Configure Command =&gt; cscript /nologo configure.js  "--enable-snapshot-build" "--enable-debug-pack" "--with-pdo-oci=c:\php-sdk\oracle\x86\instantclient_12_1\sdk,shared" "--with-oci8-12c=c:\php-sdk\oracle\x86\instantclient_12_1\sdk,shared" "--enable-object-out-dir=../obj/" "--enable-com-dotnet=shared" "--with-mcrypt=static" "--without-analyzer" "--with-pgo"
+Server API =&gt; Command Line Interface
+Virtual Directory Support =&gt; enabled
+Configuration File (php.ini) Path =&gt; C:\Windows
+….
+….
+….
+….
+</code></pre></div></div>
+
+:ET

@@ -1,6 +1,10 @@
 ---
 layout: php
 title: "switch - PHP 프로그래밍"
+breadcrumb:
+- "basic"
+- "condition"
+- "switch"
 ---
 
 # switch

@@ -1,0 +1,40 @@
+I"�<h1 id="실행-인자">실행 인자</h1>
+<hr />
+<p>PHP 소스를 실행할 때 외부에서 입력하는 데이터 값을 입력 받아 처리를 할 수 있습니다.
+웹기반에서는 URL 의 GET 이나 폼의 POST 값을 통하여 PHP 소스에 데이터를 전달할 수 있었습니다.</p>
+
+<p>콘솔에서 PHP 스크립트 실행과 더불어 인자도 같이 전달 가능합니다. 이것을 외부 실행 인자라고 이야기합니다.</p>
+
+<p>예제 파일 consol-01.php</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">&lt;?php
+</span><span class="gp">	var_dump($</span>argv<span class="o">)</span><span class="p">;</span>
+<span class="gp">?&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p>위와 같은 예제가 있습니다. 예제는 외부에서 입력된 배열변수의 값 $argv 를 출력하는 것입니다.</p>
+
+<p>다음과 같이 콘솔상에서 php 스크립트 실행과 외부 입력값을 전달할 수 있습니다.</p>
+
+<p>|명령|</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php consol-01.php arg1 arg2 arg3
+</code></pre></div></div>
+
+<p>결과)</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">array(4) {
+</span><span class="gp">  [0]=&gt;</span><span class="w">
+</span><span class="go">  string(23) "./jinyphp/consol-01.php"
+</span><span class="gp">  [1]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "arg1"
+</span><span class="gp">  [2]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "arg2"
+</span><span class="gp">  [3]=&gt;</span><span class="w">
+</span><span class="go">  string(4) "agr3"
+}
+</span></code></pre></div></div>
+
+<p>$argv 배열 변수는 콘솔을 통하여 스크립트를 실행할 때 외부에서 입력된 값을 배열 형태로 참조할 수 있는 특별한 변수입니다.</p>
+
+<p>첫 번째 값으로는 실행하는 스크립트 파일의 경로를 가지고 있습니다.</p>
+
+<p>두 번째부터는 인자값으로 전달 되는 값들이 순차적으로 저장되고 참조가 가능합니다.</p>
+:ET

@@ -1,68 +1,74 @@
 ---
 layout: php
+title: PHP 설치하기
+keyword: "php설치, php setup"
+description: "php를 설치하고 실행하는 방법에 대해서 학습합니다. windows/linux/mac 환경에서 설치할 수 있습니다."
+breadcrumb:
+- setup
 ---
 
-<h1 class="mt-4">공식사이트</h1>
-<hr>
-PHP 공식사이트는 <a href="php.net">php.net</a> 입니다. 공식사이트를 통하여 다양한 버전의 PHP 인터프리터를 다운로드 받을 수 있습니다.  
+# php 다운로드 및 설치
+---
+php는 웹프로그램 시장에서 오래동안 인기를 얻은 서버사이드 언어 입니다. 
+다양한 운영체제에 설치가 가능하며, 희망하는 웹서비스를 개발할 수 있습니다.
 
-![공식사이트](./img/phpnet.jpg)
+<br>
 
-상단 메뉴에서 `download`를 클릭합니다.
-<br><br>
+## [공식사이트](phpnet)
+---
+PHP는 오픈소소로 개발 배포되고 있는 인터프리터 언어 입니다.  
+PHP 공식사이트는 <a href="php.net">php.net</a> 입니다. 
+공식사이트를 통하여 다양한 버전의 PHP 인터프리터를 다운로드 받을 수 있습니다.  
 
-### 다운로드
-<hr>
-download 페이지로 이동합니다. 다양한 운용체제와 버전의 PHP를 다운로드 받을 수 있습니다.
+<br>
 
-![공식사이트](./img/php_download.jpg)
+## [Windows 설치](windows)
+---
+windows는 마이크로소프트에서 개발한 운영체제 소프트웨어 입니다. php는 윈도우 운영체제에서 설치할 수 있는 몇가지 방법들을 제공합니다.
 
-<br><br>
+* 실행파일 [다운로드 설치](./windows/download)
+php.net 공식사이트에서 윈도우용 php 파일을 다운로드 받아 설치를 합니다. 정확히 말하면 설치보다는, 압축파일을 해제하는 것입니다.
 
-### Windows
-<hr>
-windows 운영체제는 개발자, 일반인등 다양한 사람들이 폭넓게 가장 많이 사용을 하고 있는 운영체제 입니다. 다운로드 화면에서 `windows downloads`를 클릭합니다.  
+* 통합페키지 설치
+PHP는 서버사이드 언어 입니다. 완벽한 php 개발환경을 구축하기 위해서는 웹서버와 데이터베이스가 같이 필요합니다. 
+웹서버로는 Apache를 많이 사용하며, 데이터베이스로는 Mysql을 사용합니다. 이 3개의 소프트웨어를 합쳐서 APM이라고 합니다.
 
-다운로드 받은 `zip`파일을 적절한 폴더에 압축을 해제합니다. 파일을 목록을 확인합니다.
+    - [Bitnami APM](./windows/bitnami)
 
-```
-D:\php\php-7.4.0>dir/w
-[.]                      [..]                     deplister.exe            [dev]
-[ext]                    [extras]                 glib-2.dll               gmodule-2.dll
-icudt65.dll              icuin65.dll              icuio65.dll              icuuc65.dll
-[lib]                    libcrypto-1_1-x64.dll    libenchant.dll           libpq.dll
-libsasl.dll              libsodium.dll            libsqlite3.dll           libssh2.dll
-libssl-1_1-x64.dll       license.txt              news.txt                 nghttp2.dll
-phar.phar.bat            pharcommand.phar         php-cgi.exe              php-win.exe
-php.exe                  php.ini-development      php.ini-production       php7.dll
-php7embed.lib            php7phpdbg.dll           phpdbg.exe               readme-redist-bins.txt
-README.md                [sasl2]                  snapshot.txt
-              32개 파일          51,980,199 바이트
-               7개 디렉터리  946,800,377,856 바이트 남음
-```
+<br>
 
-폴더안에 `php.exe` 파일을 찾아 볼 수 있습니다. php를 실행해 보도록 합니다.
+## [Linux 설치](linux)
+---
+PHP 언어가 가장많이 설치되어 운영하고 있는 환경은 Linux 입니다. 수많은 리눅스 서버들은 웹서비스 운영을 위해서 PHP 언어를 사용합니다.
 
-```
-D:\php\php-7.4.0>php --version
-PHP 7.4.0 (cli) (built: Nov 27 2019 10:13:59) ( NTS Visual C++ 2017 x64 )
-Copyright (c) The PHP Group
-Zend Engine v3.4.0, Copyright (c) Zend Technologies
-```
+* ubuntu
+* centos
 
-정상적으로 PHP가 실행이 됩니다.
+<br>
 
-> Note: 설치된 php 폴더를 path 등록을 해두면, 아무 디렉토리에서 php를 실행 할 수 있습니다.
+## [Mac 설치](mac)
+---
+Apple의 Mac 운영체제는 리눅스와 호환된 환경을 가지고 있어, 많은 프로그래머들이 개발환경으로 사용하고 있습니다.
 
-<br><br>
+<br>
 
-### 패키지 설치
-<hr>
-공식사이트에서 간단하게 실행파일을 내려받아 PHP를 사용하였습니다. 하지만, PHP는 아파치 웹서버와 Mysql 데이터베이스와 같이 연동하여 웹사이트를 개발하는 것이 일반적입니다. 따라서, 별도로 아파치 웹서버와 Mysql 데이터베이스를 각각 설치해 주어야 합니다.  
+## [콘솔환경](console)
+---
+PHP는 인터프리터 스트립트 언어 입니다. php 코드를 작성하기 위해서는 코드 에디터 프로그램을 사용하면 됩니다. 
+또한 생성된 프로그램을 실행할때에는 터미널 환경 또는 웹서버를 통하여 브라우저에서 결과를 확인할 수 있습니다.
 
-하지만, 전용 패키지를 이용하면 보다 쉽게 PHP + Apache + Mysql을 설치할 수 있습니다. 이를 `APM` 페키지라고 합니다. 가장 인기있는 APM 패키지는 비트나미의 `wapm` 입니다. 비트나미 사이트에 접속하여 전용 패키지를 다운로드 받아 설치합니다.
+* [콘솔 옵션](console/option) 
+* [콘솔 실행](console/execute) 
 
-* 비트나미 [Wamp 설치](./wapm)
+<br>
 
-<br><br>
+## [환경설정](env)
+---
+php가 구동되는 환경을 설정할 수 있습니다.  
+좀더 다양한 모듈의 사용과 기능을 위해서는 약간의 설정파일을 변경하는 방법에 대해서 알아 두는 것이 필요합니다.
+
+
+* [ini 파일](env/ini)
+* [파일 업로드 허용](env/upload)
+* [오류표시](env/error)
 

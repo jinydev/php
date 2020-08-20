@@ -10,31 +10,46 @@ OP코드/JIT등의 도입으로 빠른 서비스의 성능 향상이 이루어 �
 
 <br>
 
-## 설치
+## PHP 버전 및 설치하기
 ---
 PHP는 다양한 운영체제를 지원하는 웹스크립트 언어 입니다.
-* [윈도우](./install/windows)
-* [리눅스](./install/linux)
-* [맥](./install/mac)
+
+<div class="row">
+    <div class="col">
+        <p>PHP 버젼</p>
+        <ul>
+            <li><a href="#">php 8.x</a></li>
+            <li><a href="#">php 7.x</a></li>
+            <li><a href="#">php 5.x</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <p>운영체제별 설치하기</p>
+        <ul>
+            <li><a href="./setup/windows">윈도우</a></li>
+            <li><a href="./setup/linux">리눅스</a></li>
+            <li><a href="./setup/mac">맥</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <p>실행하기</p>
+        <ul>
+            <li><a href="./setup/console">콘솔환경</a></li>
+            <li><a href="./setup/env">환경 설정하기</a></li>
+            <li><a href="./composer">컴포저</a></li>
+        </ul>
+    </div>
+</div>
+
+
 
 <br>
 
-## 기본문법
+## 시작하기
 ---
-* [상수](./basic/const)
-* [변수](./basic/variable)
+* 기본문법
 * 함수
-
-<br>
-
-## 객체지향
----
-
-<br>
-
-## [컴포저](composer)
----
-
+* 객체지향
 
 <br>
 

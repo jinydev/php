@@ -31,32 +31,26 @@ PHP 언어의 `상수`, `변수`의 선언 및 구조에 대해서 알아 봅니
 ---
 절차지향적 논리적 프로그래밍을 위한 흐름제어 기능에 대해서 알아 보도록 합니다.  
 
-### 조건제어문
----
 * [조건제어문](condition)
 * [3항 연산자](condition/ternary)
 
-### 반복문
----
 * [반복문](loop)
 
 <br>
 
-## 전처리기
+## [전처리기](preprocess)
 ---
-* [전처리기](preprocess)
-
-### include
----
-
-### require
----
+* include
+* require
 
 <br>
 
-## 유효범위
+## [유효범위](scope)
 ---
-* [유효범위](scope)
+* Global : 글로벌변수
+* Local : 지역변수
+* Static : 정적변수
+
 
 <br>
 

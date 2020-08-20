@@ -1,0 +1,9 @@
+I".<h1 id="php-명령행-실행--w">PHP 명령행 실행 -w</h1>
+<hr />
+<p>-w 옵션은 소스의 주석과 공백을 제거한 소스를 다시 출력합니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\php-7.1.4-Win32-VC14-x86&gt;</span>php <span class="nt">-w</span> index.php
+<span class="go">&lt;?php
+</span><span class="gp">echo "PHP LocalServer Test";</span><span class="w"> </span>phpinfo<span class="o">()</span><span class="p">;</span> ?&gt;
+</code></pre></div></div>
+:ET

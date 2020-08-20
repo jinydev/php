@@ -1,0 +1,45 @@
+I"p<h1 id="콘솔-실행">콘솔 실행</h1>
+<hr />
+<p>PHP스크립트는 웹 브라우저를 통해 실행도 가능하나 콘솔로 실행할 수 도 있습니다.<br />
+PHP 스크립트를 콘솔로 실행을 할 수 있다는 것은 몇 가지 장점이 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="실행방법">실행방법</h2>
+<hr />
+<p><code class="highlighter-rouge">php</code>명령어 뒤에 작성한 php 코드의 파일명만을 적어 주시면 됩니다.</p>
+
+<p>|명령|</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">php 실행파일.php
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="실습하기">실습하기</h2>
+<hr />
+<p>간단한 php코드를 작성한 후에, 콘솔에서 스크립트를 실행해 보도록 합니다.</p>
+
+<p>vscode와 같은 코드편집기를 통하여 코드를 작성합니다.
+예제파일 : hello.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">"Hello World!"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이제 작성한 코드를 콘솔에서 실행합니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">php hello.php
+Hello World!
+</span></code></pre></div></div>
+<p>콘솔에서 php 명령과 파일명을 같이 적어주면, 스크립트를 실행하여 결과를 다음줄에 표시를 합니다.<br />
+이처럼 콘솔을 이용하여 php 코드를 실행하면, 빠르게 동작결과를 확인할 수 있는 장점이 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="응용">응용</h2>
+<hr />
+<p>php 코드를 콘솔에서 직접 실행할 수 있다는 것은, php언어를 다양하게 활용할 수 있는 장점이 있습니다.</p>
+
+<p>php코드를 작성하여 직접 시스탬의 동작을 처리할 수도 있고, 
+특정시간대에 동작을 할 수 있도록 스케쥴러, crontab에 설정하여 <a href="background">백그라운드로 실행</a>을 할 수 있다는 것입니다.</p>
+
+:ET

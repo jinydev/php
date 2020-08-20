@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Learn PHP</title><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">setup</a></li><li class="breadcrumb-item active"><a href="#">console</a></li><li class="breadcrumb-item active"><a href="#">option</a></li></ol>    
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="콘솔-옵션">콘솔 옵션</h1>
+<hr />
+<p>콘솔 창에서 php <code class="highlighter-rouge">-help 명령</code>을 입력하면 php 콘솔 실행과 관련된 여러 명령 옵션을 확인할 수 있습니다.</p>
+
+<p>|명령|</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php <span class="nt">-help</span>
+<span class="go">
+</span><span class="gp">Usage: php [options] [-f] &lt;file&gt;</span><span class="w"> </span><span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>args...]
+<span class="gp">   php [options] -r &lt;code&gt;</span><span class="w"> </span><span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>args...]
+<span class="gp">   php [options] [-B &lt;begin_code&gt;</span><span class="o">]</span> <span class="nt">-R</span> &lt;code&gt; <span class="o">[</span><span class="nt">-E</span> &lt;end_code&gt;] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>args...]
+<span class="gp">   php [options] [-B &lt;begin_code&gt;</span><span class="o">]</span> <span class="nt">-F</span> &lt;file&gt; <span class="o">[</span><span class="nt">-E</span> &lt;end_code&gt;] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>args...]
+<span class="gp">   php [options] -S &lt;addr&gt;</span>:&lt;port&gt; <span class="o">[</span><span class="nt">-t</span> docroot]
+<span class="go">   php [options] -- [args...]
+   php [options] -a
+
+  -a               Run interactively
+</span><span class="gp">  -c &lt;path&gt;</span>|&lt;file&gt; Look <span class="k">for </span>php.ini file <span class="k">in </span>this directory
+<span class="go">  -n               No php.ini file will be used
+  -d foo[=bar]     Define INI entry foo with value 'bar'
+  -e               Generate extended information for debugger/profiler
+</span><span class="gp">  -f &lt;file&gt;</span><span class="w">        </span>Parse and execute &lt;file&gt;.
+<span class="go">  -h               This help
+  -i               PHP information
+  -l               Syntax check only (lint)
+  -m               Show compiled in modules
+</span><span class="gp">  -r &lt;code&gt;</span><span class="w">        </span>Run PHP &lt;code&gt; without using script tags &lt;?..?&gt;
+<span class="gp">  -B &lt;begin_code&gt;</span><span class="w">  </span>Run PHP &lt;begin_code&gt; before processing input lines
+<span class="gp">  -R &lt;code&gt;</span><span class="w">        </span>Run PHP &lt;code&gt; <span class="k">for </span>every input line
+<span class="gp">  -F &lt;file&gt;</span><span class="w">        </span>Parse and execute &lt;file&gt; <span class="k">for </span>every input line
+<span class="gp">  -E &lt;end_code&gt;</span><span class="w">    </span>Run PHP &lt;end_code&gt; after processing all input lines
+<span class="go">  -H               Hide any passed arguments from external tools.
+</span><span class="gp">  -S &lt;addr&gt;</span>:&lt;port&gt; Run with built-in web server.
+<span class="gp">  -t &lt;docroot&gt;</span><span class="w">     </span>Specify document root &lt;docroot&gt; <span class="k">for </span>built-in web server.
+<span class="go">  -s               Output HTML syntax highlighted source.
+  -v               버전을 확인합니다.
+  -w               Output source with stripped comments and whitespace.
+</span><span class="gp">  -z &lt;file&gt;</span><span class="w">        </span>Load Zend extension &lt;file&gt;.
+<span class="go">
+  args...          Arguments passed to script. Use -- args when first argument
+                   starts with - or script is read from stdin
+
+  --ini            Show configuration file names
+
+</span><span class="gp">  --rf &lt;name&gt;</span><span class="w">      </span>Show information about <span class="k">function</span> &lt;name&gt;.
+<span class="gp">  --rc &lt;name&gt;</span><span class="w">      </span>Show information about class &lt;name&gt;.
+<span class="gp">  --re &lt;name&gt;</span><span class="w">      </span>Show information about extension &lt;name&gt;.
+<span class="gp">  --rz &lt;name&gt;</span><span class="w">      </span>Show information about Zend extension &lt;name&gt;.
+<span class="gp">  --ri &lt;name&gt;</span><span class="w">      </span>Show configuration <span class="k">for </span>extension &lt;name&gt;.
+</code></pre></div></div>
+
+<ul>
+  <li>PHP 버전 확인 <a href="v">-v</a></li>
+  <li>PHP 정보 확인 <a href="i">-i</a></li>
+  <li>PHP 강조 표시 <a href="s">-s</a></li>
+  <li>PHP 명령행 실행 <a href="w">-w</a></li>
+  <li>PHP 대화식 실행 <a href="a">-a</a></li>
+  <li>PHP 문법 검사 <a href="l">-l</a></li>
+  <li>
+    <p>PHP 모듈 출력 <a href="m">-m</a></p>
+  </li>
+  <li><a href="r">-r</a></li>
+</ul>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
+</ul>
+
+<br>
+
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

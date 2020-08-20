@@ -1,0 +1,31 @@
+I"�<h1 id="파일-업로드">파일 업로드</h1>
+<hr />
+<p>PHP는 HTML FORM 요소를 통해 파일 업로드가 가능합니다.</p>
+
+<p><br /></p>
+
+<h2 id="허용">허용</h2>
+<p>PHP form 태그를 사용하여 서버로 바이너리 파일을 전송 가능하게 하는 설정입니다. 
+이를 가능하게 하기 위해서는 php.ini에서 <code class="highlighter-rouge">file_uploads</code> 속성을 <code class="highlighter-rouge">On</code>으로 해주어야 합니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">file_uploads</span> <span class="p">=</span> <span class="s">On</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="파일-최대-크기">파일 최대 크기</h2>
+<hr />
+<p>업로드 가능한 최대 파일의 크기를 설정합니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">upload_max_filesize</span> <span class="p">=</span> <span class="s">40M</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="업로드-파일-갯수">업로드 파일 갯수</h2>
+<hr />
+<p>파일 업로드 전송 시 최대 선택할 수 있는 개수를 설정합니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">max_file_uploads</span> <span class="p">=</span> <span class="s">20</span>
+</code></pre></div></div>
+:ET

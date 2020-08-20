@@ -1,0 +1,34 @@
+I"�<h1 id="환경-설정">환경 설정</h1>
+<hr />
+<p>PHP의 동작에 관련한 환경 설정은 php.ini에 의존합니다.<br />
+php.ini 설정을 통해 PHP의 패키지 설치 및 환경 설정으로 php 실행의 <code class="highlighter-rouge">제한</code>을 설정할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="정보-출력하기">정보 출력하기</h2>
+<hr />
+<p>현재 PHP의 환경 설정 정보를 웹에서 간단하게 확인할 수 있습니다.<br />
+phpinfo(); 함수는 현재 php의 설정 사항을 웹 화면으로 출력합니다.</p>
+
+<p>예제 파일 phpinfo.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nb">phpinfo</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="phpini-위치">php.ini 위치</h2>
+<hr />
+<p>위의 환경 정보 index.php 를 실행하면 전반적인 PHP 환경 정보를 확인할 수 있습니다.<br />
+출력 화면 첫 번째 블록에 보면 <code class="highlighter-rouge">php.ini</code>가 설치된 경로를 확인할 수 있습니다.</p>
+
+<h2 id="ini-파일"><a href="ini">ini 파일</a></h2>
+<hr />
+<p>ini 파일의  주요 설정 기능에 대해서 알아 봅니다.</p>
+
+<ul>
+  <li><a href="upload">파일업로드</a></li>
+  <li><a href="error">오류표시</a></li>
+</ul>
+:ET

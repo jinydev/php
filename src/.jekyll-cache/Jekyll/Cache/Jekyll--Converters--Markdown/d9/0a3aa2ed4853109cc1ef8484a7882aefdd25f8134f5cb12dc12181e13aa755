@@ -1,0 +1,24 @@
+I"�<h1 id="ini-설정">ini 설정</h1>
+<hr />
+<p>php.ini는 PHP의 환경 설정 파일입니다. php.ini이 변경되면 서버의 모든 PHP 스크립트 파일에 영향을 주면서 실행하게 됩니다.<br />
+php.ini 파일에는 매우 다양한 값이 설정되어 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="값-설정">값 설정</h2>
+<hr />
+<p>php는 ini 타입으로 환경값을 설정합니다.<br />
+ini는 키와 값으로 구성되며, 관계는 <code class="highlighter-rouge">=</code>로 설정을 합니다.</p>
+
+<p>|설정|</p>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">설정</span> <span class="err">항목</span> <span class="err">=</span> <span class="err">값</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="주석">주석</h2>
+<hr />
+<p>ini 설정 파일에서 세미콜론(;)으로 시작하는 행은 주석으로 처리합니다.</p>
+
+<p><br /></p>
+:ET
