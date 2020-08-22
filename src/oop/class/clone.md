@@ -2,6 +2,10 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "class"
+- "clone"
 ---
 
 # 객체 복사
@@ -12,14 +16,14 @@ new 키워드는 새로운 객체를 생성합니다. new 키워드는 초기화
 하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 `clone` 키워드를 사용해야 합니다. 
 
 |문법|
-```
+```php
 $obj2 = clone $obj;
 ```
  
 clone 키워드는 현재의 객체의 상태를 포함하여 객체를 복사합니다.
 
 예제 파일 class-03.php
-```
+```php
 <?php
 	class JinyClass
 	{

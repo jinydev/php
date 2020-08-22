@@ -43,7 +43,7 @@ class 클래스명
 이런 경우 별도의 부모 초기값 매직 메서드를 추가해야 합니다.
 
 예제 파일 class-12.php
-```
+```php
 <?php
 	class BaseClass
 	{

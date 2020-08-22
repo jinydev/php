@@ -2,6 +2,10 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "class"
+- "static"
 ---
 
 # 정적 클래스

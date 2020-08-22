@@ -2,6 +2,10 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "class"
+- "const"
 ---
 
 # 클래스 상수

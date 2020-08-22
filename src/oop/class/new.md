@@ -2,6 +2,10 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "class"
+- "new"
 ---
 
 # 인스턴스 생성
@@ -28,7 +32,7 @@ $인스턴스 변수 = new 클래스명;
 `new` 키워드로 대입한 변수는 객체 데이터 타입으로 생성됩니다.
 
 예제 파일 class-02.php
-```
+```php
 <?php
 	class JinyClass
 	{

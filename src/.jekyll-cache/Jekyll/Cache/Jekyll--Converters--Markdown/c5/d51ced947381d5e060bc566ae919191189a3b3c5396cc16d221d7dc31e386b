@@ -1,0 +1,1140 @@
+I"��<h1 id="클래스">클래스</h1>
+<hr />
+<p>클래스는 기존 함수형 프로그램 코딩 개발 방법보다 향상된 객체지향형 프로그램 개발 방법론 및 환경을 지원합니다. PHP도 다양한 객체지향 방법론을 도입하여 최신 트렌드에 맞는 클래스 및 코딩 방법을 제공합니다.</p>
+
+<p><br /></p>
+
+<h2 id="클래스와-객체">클래스와 객체</h2>
+<hr />
+<p>객체지향 방식의 프로그램 OOP는 Object-Oriented Programming의 약자입니다.<br />
+객체지향 프로그램 코딩 방식은 기존 함수형 절차적 프로그램 방식과 비교하여 소프트웨어의 유지보수 및 구조적으로 개발하는 데 있어 매우 유용합니다. 그런 점에서 최신 소스코드의 개발 방식은 클래스 기반의 코딩 스타일을 많이 적용합니다.</p>
+
+<p>객체지향 프로그램은 단순한 코딩 문법 및 스타일이 아닙니다. 데이터의 처리와 기능, 각각의 요소를 하나의 객체로 처리합니다.<br />
+객체는 각각의 데이터와 기능들이 연관하여 프로그램이 동작, 구성됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="절차적-프로그램">절차적 프로그램</h2>
+<hr />
+<p>절차적 프로그래밍 방식은 초기의 프로그램 개발 방법입니다.<br />
+단순하게 프로그램의 명령어를 모아 놓은 형태로 논리적 순서대로 쓰여진 프로그램을 코딩을 말합니다.<br />
+예전 초창기 컴퓨터 개발 방법이며, 간단한 기능과 테스트 결과를 빠르게 보기 위해서 자주 사용합니다.</p>
+
+<p>만일 절차적 방식으로 작성된 대용량 프로그램은 소스의 내용을 쉽게 이해하기가 어렵습니다.<br />
+또한 복잡한 동작을 처리하기 위해서 상당량의 유지보수 시간이 필요합니다.</p>
+
+<p><br /></p>
+
+<h2 id="구조적-프로그램">구조적 프로그램</h2>
+<hr />
+<p>구조적 프로그램밍은 이전 절차적 프로그래밍의 문제점을 보완한 프로그램 개발 방법론 입니다.<br />
+좀 더 체계적이고 구조적으로 프로그램을 개발하기 위한 새로운 다양한 시도 중의 하나입니다.</p>
+
+<p>나날이 프로그램은 복잡해지고 크기가 커지고 있습니다. 
+방대한 기능의 프로그램 동작 다수의 사람들이 팀원을 위하여 서로 이해하고 내용을 공유하는 것은 매우 어렵습니다. 
+또한 순서도를 통하여 쉽게 표현하기도 어려울 것입니다. 
+이러한 문제점들은 소프트웨어를 고도화하고 유지 보수하는 데 매우 어렵습니다. 
+구조적 프로그램은 이러한 문제점을 보완하고자 1968년 에츠러르 다익스트라가 자신의 논문 <code class="highlighter-rouge">&lt;GOTO문의 해로움&gt;(GO To statement considered Harmful)</code>에서 프로그램을 함수(프로시저) 단위로 나눠서 프로시저 간에 연관과 호출을 통해 구조적 프로그램 방법을 제안한 것이 계기가 되었습니다.</p>
+
+<p>하지만 기존의 함수 방식의 개발 방법은 데이터 처리 등을 구조화하여 처리하는 반면에, 실제적으로 데이터 자체까지는 구조적으로 해결을 하지 못했습니다. 또한 외부 변수들을 많이 쓰는 바람에 사용 가능한 변수 이름을 다 써버리는 등 프로그램의 크기가 커질수록 개발할 수 있는 환경은 포화되어 갔습니다.</p>
+
+<p>함수형 프로그램의 다양한 문제점을 개선하기 위해서 등장한 것이 객체지향 프로그래밍입니다. 객체지향 프로그램은 작은 객체들을 만들어서 문제를 해결하고, 해결된 문제를 연결하여 더 큰 문제를 해결하는 상향식(bottom-up) 설계 방법을 도입하게 되었습니다. 또한 이렇게 생성된 객체들은 독립성과 신뢰성을 향상하여 객체를 수정 없이 재사용할 수 있어 개발과 유지보수를 대폭적으로 개선했습니다.</p>
+
+<p><br /></p>
+
+<h2 id="캡슐화">캡슐화</h2>
+<hr />
+<p>캡슐화는 객체지향 방법의 기본 개념입니다. 캡슐화의 목적은 <code class="highlighter-rouge">코드를 수없이 재사용</code>하는 것 입니다.<br />
+갭슐화는 프로그램 코드를 재사용하는 데 있어서 기능적인 부분과 데이터적인 부분을 한곳에 묶어서 관리할 필요성이 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">객체</span> <span class="o">=</span> <span class="nx">변수</span> <span class="o">+</span> <span class="nx">함수</span>
+</code></pre></div></div>
+
+<p>객체와 함수의 차이점은 데이터를 같이 관리하는지 여부입니다.<br />
+보통 변수는 프로퍼티(property), 함수는 메서드(method)라고 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="클래스--인스턴스">클래스 &amp; 인스턴스</h2>
+<hr />
+<p>클래스는 계층적으로 분류한 기능과 특성의 모음이라 생각하시면 됩니다.<br />
+클래스는 객체(object)와 실체화(instance)를 통하여 만들 수 있습니다.</p>
+
+<p>PHP 에서는 클래스 선언을 다음과 같이 할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">jiny</span> <span class="p">{</span>
+	<span class="nx">클래스</span> <span class="nx">내용</span> <span class="o">...</span>
+
+	<span class="k">public</span> <span class="nv">$username</span><span class="p">;</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">username</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>class라는 키워드를 사용하고 다음에 클래스 이름을 사용자가 지정할 수 있습니다.<br />
+클래스명은 영문 또는 언더바(_)로 시작합니다. 클래스의 내용은 중괄호 { } 안에 내용을 작성하면 됩니다.</p>
+
+<p><br /></p>
+
+<h1 id="142-접근-권한-속성">14.2 접근 권한 속성</h1>
+<hr />
+<p>클래스와 같이 객체지향 프로그램에서 속성이라는 추가적인 접근 권한 개념이 도입됩니다.<br />
+접근 권한 속성은 각각의 클래스의 독립성과 보호를 위해서 프로퍼티(변수)나 메서드(함수) 등에 권한을 설정하는 것입니다.</p>
+
+<p>PHP 클래스에서는 세 가지의 속성을 가지고 있습니다. public, protected, private를 제공합니다.<br />
+속성은 클래스 외부에서의 접근을 제한하고자 할 때 사용할 수 있습니다.</p>
+
+<h2 id="접근-속성의-종류">접근 속성의 종류</h2>
+<hr />
+<p>PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타입을 지원합니다.</p>
+
+<ul>
+  <li>
+    <p>public:  public으로 설정된 프로퍼티 변수는 외부에서 접근이 가능합니다. 즉, 값을 읽거나 새로운 값으로 설정이 가능합니다.</p>
+  </li>
+  <li>
+    <p>protected: 정의한 클래스와 상속한 클래스에서만 사용이 가능합니다. 이 속성은 클래스 내의 메서드와 서브 클래스에서만 접근하여 사용할 수 있습니다. 외부에서 접근할 수는 없지만 상속을 받은 경우에는 접근이 가능합니다.</p>
+  </li>
+  <li>
+    <p>private: 정의한 클래스 내에서만 사용 가능합니다. 이 속성은 같은 클래스 내에서만 참조가 가능합니다. protectd와 달리 서브 클래스에서는 사용할 수 없습니다</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="143-클래스-선언">14.3 클래스 선언</h2>
+<hr />
+<p>클래스를 사용하기 위해서는 함수 선언처럼 클래스를 미리 정의해야 합니다. 또한 PSR 코딩 스타일에 따르면 클래스는 기능별 개별 파일로 작성하는 것을 권장합니다. 또한 1개의 파일 안에 1개의 클래스 작성을 권장합니다.</p>
+
+<p>클래스 이외에도 향후 설명할 인터페이스, 트레이트 등도 같은 방식의 코딩스타일 사용을 권장합니다.</p>
+
+<h2 id="1431-class-키워드">14.3.1 class 키워드</h2>
+<hr />
+<p>클래스의 정의는 class 키워드를 통해 클래스를 선언할 수 있습니다. 클래스의 선언 방법은 class 키워드 다음에 클래스명을 작성을 합니다. 클래스명은 PSR-1 표준 코딩 스타일 방식을 따르면 클래스명은 낙타 표기법 (StudlyCaps) 스타일로 작성을 권장합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">예</span><span class="p">)</span> 
+<span class="nx">StudyCaffe</span>
+<span class="nx">JinyPhp</span>
+</code></pre></div></div>
+
+<p>위의 예처럼 낙타 표기법(StudlyCaps) 방식은 첫 문자는 대문자로 표기하는 스타일입니다.</p>
+
+<p>또한 클래스명은 PHP에서 예약된 키워드를 제외한 영문자로 시작되어야 합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">클래스명</span>
+<span class="p">{</span>
+    <span class="c1">// 프로퍼티 선언</span>
+    <span class="k">public</span> <span class="nv">$var</span> <span class="o">=</span> <span class="err">“</span><span class="k">default</span><span class="err">”'</span><span class="p">;</span>
+
+    <span class="c1">// 메서드 함수 선언</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">함수명</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">메서드</span> <span class="nx">함수</span> <span class="nx">내용들</span><span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>클래스 객체는 여러 개의 프로퍼티와 메서드를 포함하고 있습니니다.  클래스 객체의 프로퍼티와 메서드는 클래스 본체 중괄호 { } 안에 작성합니다.</p>
+
+<p>PSR 에서 권고하는 코딩 스타일 방식을 따르면 중괄호 의 시작 위지는 클래스 선언 다음  줄에 위치합니다. 또한 class 키워드와 같은 탭 크기의 들여쓰기 위치에 자리를 잡습니다. 객체의 메서드와 프로퍼티는 중괄호 본체 안에서 들여쓰기로 작성합니다.</p>
+
+<p>14.3.2 프로퍼티
+프로퍼티는 클래스에서 변수를 부르는 또 다른 이름 중 하나입니다.</p>
+
+<p>클래스 안에 선언된 변수를 프로퍼티라고 부르는데, 이렇게 이름을 달리 부르는 것은 기존에 사용하는 변수와 클래스 안에 들어 있는 변수를 구분하기 위해서입니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">클래스명</span>
+<span class="p">{</span>
+    <span class="c1">// 프로퍼티 선언</span>
+    <span class="k">private</span> <span class="nv">$aaa</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$bbb</span> <span class="o">=</span> <span class="s2">"default"</span><span class="p">;</span>
+
+    <span class="c1">// _ 밑줄을 이용하여 구분할 수 있습니다.</span>
+    <span class="k">const</span> <span class="no">DATE_APPROVED</span> <span class="o">=</span> <span class="s1">'2017-05-17'</span><span class="p">;</span>
+
+    <span class="c1">// 메서드 함수 선언</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">함수명</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">메서드</span> <span class="nx">함수</span> <span class="nx">내용들</span><span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>프로퍼티를 작성하는 위치는 클래스 안과 메서드 함수 밖에 선언합니다. 다른 관점으로 생각해보면 클래스 객체 안에서는 바라보면 지역변수가 될 수도 있고, 메서드 밖에서는 바라보면 글로벌변수가 될 수도 있습니다.</p>
+
+<p>PHP언어에서는 특성상 변수 사용과 동시에 자동으로 변수가 할당되어 생성됩니다. 이러한 점은 PHP에서 매우 편리한 기능입니다. 하지만 객체에 포함되는 프로퍼티 변수는 먼저 사용하기 전에 미리 변수를 프로퍼티로 선언해야 합니다.</p>
+
+<p>프로퍼티 변수만 선언할 수 있습니다. 또는 = 대입 연산자를 통해 초기값도 같이 설정할 수 있습니다.</p>
+
+<p>통상적으로 객체 안에 포함되는 프로퍼티 변수는 변수명 앞에 접근 권한 속성을 갖는 키워드를 같이 지정하여 사용합니다. 만일 접근 권한 속성을 생략하는 경우에는 명시적으로 public으로 설정한 것으로 간주합니다.</p>
+
+<p>프로퍼티 변수명은 일관성 있게 사용을 권장합니다. PSR 권장 코딩 스타일로 특별히 낙타 표기법 (StudlyCaps, camelCase, under_score) 사용을 구분하지는 않습니다.</p>
+
+<p>객체 내에서 프로퍼티를 선언할 때는 PSR 권장 코딩 스타일 방식으로 중괄호 본체 안에서 들여쓰기 작성을 권고합니다.</p>
+
+<p>14.3.3 메서드
+메서드(Method)라는 이름은 객체 내에서 함수를 부르는 또 다른 이름 중 하나입니다.</p>
+
+<p>클래스 안에서 작성된 함수를 메서드라고 부릅니다. 이렇게 이름을 달리 부르는 것은 기존에 사용하는 함수와 클래스 안에 있는 함수를 구분하기 위해서입니다.</p>
+
+<p>클래스 안에서 메서드를 선언하는 것은 기존 함수를 선언하여 사용하는 것과 동일합니다. 단지 클래스 내부에 함수를 선언한다는 것이 차이점입니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ClassName</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">메서드_함수명1</span><span class="p">(</span><span class="nx">매개변수</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// method body</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">메서드_함수명2</span><span class="p">(</span>
+    	<span class="nx">매개변수1</span><span class="p">,</span>
+    	<span class="nx">매개변수2</span><span class="p">,</span>
+    	<span class="nx">매개변수3</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// method body</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>메서드 또한 함수이기 때문에 function 키워드를 이용하여 작성합니다.</p>
+
+<p>메서드 이름은 PSR 권장 표준 코딩 스타일을 따라서 낙타 표기법(camelCase) 스타일로 작성을 권고합니다. 또한 메서드 이름의 첫 시작 문자는 소문자 사용 할 것을 권장합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) camelCase (), loveStudy()
+</code></pre></div></div>
+
+<p>객체 내에서 메서드를 선언할 때는 PSR 권장 코딩 스타일 방식으로 중괄호 본체 안에서 들여쓰기 하여 작성할 것을 권고합니다.</p>
+
+<p>객체의 메서드도 일반 함수처럼 매개변수 인자를 가질 수 있습니다. 함수와 같이 매개변수를 전달하는 소괄호를 사용하여 다수의 변수 값을 메서드로 전달할 수 있습니다. 다수의 변수를 전달할 때는 콤마로 구분하거나 여러 줄로 작성할 때는 PSR 코딩 스타일 방식으로 한 줄에 한 개의 매개변수 작성하는 것을 권고합니다.</p>
+
+<p>객체의 메서드는 일반 함수와 달리 function 키워드 안에 접근 권한 속성을 갖는 키워드를 같이 지정하여 사용합니다. 프로퍼티 설정에서 접근 권한 속성을 부여하는 것과 같습니다.</p>
+
+<p><br /></p>
+
+<h3 id="1434-클래스-상수">14.3.4 클래스 상수</h3>
+<p>객체 클래스만의 상수를 선언할 수 있습니다. 객체 클래스 내에 상수를 선언하는 것은 프로그램 소스 전체에서 사용이 가능한 공용 상수가 아닙니다. 이 상수는 객체 클래스 안에서만 사용할 수 있는 상수 코드로 독립적인 효과가 있습니다.</p>
+
+<p>PHP 언어는 두 가지의 방식으로 상수를 설정할 수 있습니다. 하지만 이 두 가지 중에서 객체 클래스 안에서 상수 설정 가능한 방법은 const 명령만 사용 가능합니다. 즉, define() 함수는 사용하지 않습니다.</p>
+
+<p>클래스 상수</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">language</span> <span class="p">{</span>
+	<span class="k">const</span> <span class="no">ENGLISH</span> <span class="o">=</span> <span class="s2">"en"</span><span class="p">;</span>
+	<span class="k">const</span> <span class="no">KOREAN</span> <span class="o">=</span> <span class="s2">"ko"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체 클래스 본문 중괄호 { } 안에 const를 사용하여 상수를 선언하면 됩니다.<br />
+상수를 선언하는 문법과 방식은 기존 PHP 상수 설정과 같지만 클래스 본문 안에 작성한다는 것이 차이점입니다.</p>
+
+<p>클래스 안에 상수를 쓸 때는 PSR-2 코딩 스타일 방식으로 들여쓰기를 하여 작성합니다.<br />
+PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(_)을 통해 구분하여 상수명을 작성할 수도 있습니다.</p>
+
+<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(<code class="highlighter-rouge">::</code>) 기호로 사용할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">::</span><span class="na">상수명</span>
+</code></pre></div></div>
+
+<p>클래스 내부적으로 사용을 할 때는 다음과 같은 형태로 사용 가능합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">상수명</span>
+</code></pre></div></div>
+
+<p>예제 파일 class-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">language</span> <span class="p">{</span>
+		<span class="k">const</span> <span class="no">ENGLISH</span> <span class="o">=</span> <span class="s2">"en"</span><span class="p">;</span>
+		<span class="k">const</span> <span class="no">KOREAN</span> <span class="o">=</span> <span class="s2">"ko"</span><span class="p">;</span>
+
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">getEnglish</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="k">return</span> <span class="kt">self</span><span class="o">::</span><span class="na">ENGLISH</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">language</span><span class="p">();</span>
+
+	<span class="k">echo</span> <span class="s2">"클래스 상수 출력&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"KOREAN = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">::</span><span class="na">KOREAN</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"메서드를 이용한 상수 출력&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"ENGLISH = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getEnglish</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 상수 출력
+KOREAN = ko
+메서드를 이용한 상수 출력
+ENGLISH = en
+</code></pre></div></div>
+
+<p>위의 예제는 클래스 내부에 독립 상수를 설정하고, 이를 접근 출력하는 예입니다. language 클래스는 두 개의 상수를 가지고 있습니다. 
+첫 번째 출력에서는 직접 객체에 접근하여 사용했습니다.<br />
+두 번째 출력에서는 매서드를 이용하여 내부 접근을 한 후에 상수값을 출력합니다.</p>
+
+<p><br /></p>
+
+<h2 id="144-인스턴스-생성">14.4 인스턴스 생성</h2>
+<hr />
+<p>인스턴스란 말은 앞에서 선언한 클래스를 통해 객체변수를 생성하는 것을 말합니다.</p>
+
+<p>함수는 정의 후에 바로 호출하여 사용할 수 있었습니다. 하지만 객체 클래스는 선언을 했다고 해서 바로 함수처럼 호출하여 사용할 수 있는 것은 아닙니다. 사용하기 전에 인스턴스화 작업을 통해 클래스 객체를 생성을 한 번 더 해줘야 합니다. 인스턴스화는 클래스 선언된 정보를 통해 객체변수를 생성 합니다.</p>
+
+<p>인스턴스화를 통하여 객체를 생성하면 클래스에 정의된 프로퍼티와 메서드를 함께 생성하여 새로운 객체를 생성 합니다. 정확히 말하면 객체를 생성하여 지정된 변수에 할당(대입)하는 것입니다. 객체변수를 통해 프로퍼티와 메서드에 접근하게 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="1441-new-키워드">14.4.1 new 키워드</h3>
+<hr />
+<p>정의한 클래스를 객체 인스턴스 형태로 생성하는 방법은 매우 간단합니다. 단지 정의한 클래스명 앞에 new 키워드를 통해 변수에 대입하면 됩니다.</p>
+
+<p>문법)</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$인스턴스</span> <span class="nx">변수</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">클래스명</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>new 키워드로 대입한 변수는 객체 데이터 타입으로 생성됩니다.</p>
+
+<p>예제 파일 class-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">JinyClass</span>
+	<span class="p">{</span>
+
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nv">$msg</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">return</span> <span class="nv">$msg</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="s2">"JinyClass 인스턴스&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$JinyClass</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="s2">"JinyClass"</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"클래스 인스턴스1&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj1</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"클래스 인스턴스2&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JinyClass 인스턴스
+JinyClass
+클래스 인스턴스1
+1
+클래스 인스턴스2
+2
+</code></pre></div></div>
+
+<p>위의 예제는 클래스 객체를 생성하는 예제입니다. 예제 소스를 살펴보면 아래와 같이 클래스를 인스턴스화하여 객체를 생성할 때 어떤 예는 변수명과 클래스명이 같은 경우를 종종 볼 수 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>인스턴스 객체변수로 클래스명과 같은 이름을 사용할 수도 있습니다. 
+하지만 변수명과 클래스 이름은 서로 다른 의미 입니다. 객체변수는 변수이고, 클래스명은 클래스 이름이라는 것입니다.</p>
+
+<p>서로 같지 않습니다.</p>
+
+<p>이름만 같을 뿐 서로 영향을 주지 않습니다. 이름이 같다고 해도 왼쪽은 객체변수이고 오른쪽은 그냥 클래스명입니다.</p>
+
+<p>선언된 클래스는 new 키워드를 통해 객체를 생성하면 객체는 클래스의 선언된 타입과 같습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위의 예처럼 한 개의 클래스를 통해 동일한 객체 내용을 가지고 있는 데이터 타입 변수 두 개를 생성할 수 있습니다. 
+$obj1과 $obj2는 서로 다른 객체변수입니다. 하지만 동일한 클래스의 구조를 가지고 있습니다.</p>
+
+<p>함수 VS 클래스
+함수는 선언과 호출 2단계 작업을 한 쌍으로 사용합니다. 반면에 클래스는 선언과 인스턴스 생성, 호출 3단계의 작업을 한 쌍으로 사용합니다.</p>
+
+<p><br /></p>
+
+<h3 id="1442-객체-복사">14.4.2 객체 복사</h3>
+<hr />
+<p>new 키워드는 새로운 객체를 생성합니다. new 키워드는 초기화된 객체를 생성합니다.<br />
+만일 클래스 값의 초기화 같은 것이 필요하다면 그냥 new 키워드를 이용하여 객체를 생성하면 됩니다.</p>
+
+<p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 clone 키워드를 사용해야 합니다.</p>
+
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj2 = clone $obj;
+</code></pre></div></div>
+
+<p>clone 키워드는 현재의 객체의 상태를 포함하여 객체를 복사합니다.</p>
+
+<p>예제 파일 class-03.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">JinyClass</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
+
+		<span class="k">public</span> <span class="k">function</span> <span class="nf">showMessage</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
+		<span class="p">}</span>
+
+	<span class="p">}</span>
+
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="s2">"testing clone"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
+testing clone
+</code></pre></div></div>
+
+<p>위의 예는 객체 복사에 대한 실험입니다. 첫 번째 객체 $obj는 처음에 생성된 객체변수입니다. 
+생성된 객체에 메시지 내용을 설정한 다음에 화면 출력합니다.</p>
+
+<p>$obj2는 $obj를 복사한 객체입니다. 현재 $obj객체의 설정값을 포함하여 새로운 객체변수에 복제가 됩니다. 
+복제된 $obj2를 통해 메시지를 출력하면 복제하기 전의 $obj 의 프로퍼티 값이 출력되는 것을 볼 수 있습니다.</p>
+
+<p>복제는 이전 객체에 어떠한 프로퍼티 값이 설정이 되어 있다면 이 설정값까지 모두 복제를 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="145-객체-접근">14.5 객체 접근</h2>
+<hr />
+<p>객체변수는 클래스를 통하여 인스턴스화된 객체변수를 통하여 메서드나 프로퍼티를 접근 및 호출합니다.</p>
+
+<p>생성된 객체변수의 메서드와 프로퍼티를 호출하기 위해서는 접근 연산자 -&gt;를 사용합니다. -&gt; 기호는 객체 안에 있는 메서드와 프로퍼티를 접근하여 값을 설정하거나 호출할 수 있습니다.</p>
+
+<p>$객체변수-&gt;메서드;</p>
+
+<p>$객체변수-&gt;프로퍼티;</p>
+
+<p>기존 다른 언어에서는 클래스 객체의 메서드 접근을 점(.)을 사용하기도 합니다. PHP 언어의 경우에는 -&gt; 기호를 사용하는 차이점이 있습니다.</p>
+
+<p>14.5.1 프로퍼티 접근
+프로퍼티에 값을 저장하거나 읽어오기 위해서는 객체 접근이 필요합니다. 접근 기호를 통해 객체변수의 프로퍼티에 접근할 수 있습니다. 앞에서 설명한 것처럼 아래와 같이 작성하면 됩니다.</p>
+
+<p>|문법|
+$객체변수-&gt;프로퍼티;</p>
+
+<p>하지만 프로퍼티 이름 앞에 $ 기호는 사용하지 않습니다.</p>
+
+<p>$jiny-&gt;username = “hojin lee”;</p>
+
+<p>$name = $jiny-&gt;username;</p>
+
+<p>위의 예제는 프로퍼티에 접근하여 값을 읽어오거나 저장하는 간단한 표현입니다. 접근 기호 -&gt;만 넣어서 사용하면 됩니다.</p>
+
+<p>간접 접근
+위의 예와 접근 방식은 객체에 직접 프로퍼티를 접근하는 방법입니다. 또한 프로퍼티를 접근할 때 프로퍼티명 앞에 $를 쓰지 않았습니다.</p>
+
+<p>만일 $를 포함하여 작성하면 프로퍼티명을 변수 값을 이용하여 호출하겠다는 의미입니다. $ 변수를 통해 간접적으로 프로퍼티에 접근하게 되는 것입니다.</p>
+
+<p>$obj-&gt;$proertyName ;</p>
+
+<p>간접 접근은 가변적으로 프로퍼티를 선택하여 호출할 때 이용할 수 있습니다. 접근하려고 하는 프로퍼티는 $propertyName의 값의 이름입니다.</p>
+
+<p>예제 파일 class-04.php
+&lt;?php
+	class JinyClass
+	{
+		public $age;
+		public $name;
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new JinyClass;
+
+// 프로퍼티에 값을 저장
+$obj-&gt;age = 18;
+
+// 프로퍼티의 값을 읽어옵니다.
+echo "나이는 ".$obj-&gt;age." 입니다.&lt;br&gt;";
+
+// 간접 프로퍼티 접근
+// aaa 변수에 프로퍼티명을 설정 후에 간접적으로 접근함
+$aaa = "name";
+$obj-&gt;$aaa = "jiny";
+
+// 프로퍼티의 값을 읽어옵니다.
+echo "내 이름은 ".$obj-&gt;$aaa." 입니다.&lt;br&gt;";
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+나이는 18입니다.
+내 이름은 jiny입니다.</p>
+
+<p>위의 예제는 프로퍼티 간접 접근에 대한 실험입니다. 예에서 첫 번째 나이 부분은 직접 프로퍼티명을 입력하여 값을 설정하거나 읽어서 출력했습니다.</p>
+
+<p>하지만 두 번째 이름은 변수에 프로퍼티명을 설정한 후에 간접적으로 프로퍼티를 선택하여 설정, 출력을 했습니다.</p>
+
+<p>14.5.2 메서드 접근
+클래스의 함수인 메서드 접근은 프로퍼티 접근 방식과 유사합니다. 객체변수 뒤에 접근 연산자 -&gt;를 통해 메서드를 호출할 수 있습니다.</p>
+
+<p>|문법|
+$객체변수-&gt;메서드();</p>
+
+<p>예제 파일 class-05.php
+&lt;?php
+	class JinyClass
+	{
+		public $message;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function setMessage($msg){
+		$this-&gt;message = $msg;
+	}
+
+	public function showMessage(){
+		return $this-&gt;message;
+	}
+
+}
+
+$obj = new JinyClass;
+
+// 메서드를 호출합니다.
+$obj-&gt;setMessage("hello world!");
+
+// 메서드 호출 및 반환값
+$msg = $obj-&gt;showMessage();
+echo $msg . "&lt;br&gt;";
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+hello world!</p>
+
+<p>위의 예처럼 메서드를 단독으로 호출할 수 있습니다. 또한 메서드의 반환값을 받아서 처리할 수도 있습니다.</p>
+
+<p>14.5.3 $this
+정의된 클래스의 메서드와 프로퍼티는 인스턴스화를 통하여 생성된 객체변수에 직접 접근했습니다. 이러한 인스턴스화를 통한 객체의 생성과 접근은 클래스 외부에서 메서드와 프로퍼티를 사용하는 대표적인 방법입니다.</p>
+
+<p>하지만 클래스의 정의 내부에서 선언된 프로퍼티와 메서드에 접근하려면 어떻게 해야 할까요? 클래스가 객체지향적일 때 동일한 클래스 메서드에서 다른 메서드를 호출이 필요한 경우가 많이 발생할 것입니다.</p>
+
+<p>이런 경우 클래스는 내부 접근을 위해서 특별한 인스턴스 변수 $this를 제공합니다. $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수입니다.</p>
+
+<p>예제 파일 class-06.php
+&lt;?php
+	class JinyClass
+	{
+		public $message;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
+		// 내부 메서드를 호출합니다.
+		echo $this-&gt;getMessage();
+	}
+
+	public function getMessage(){
+		return $this-&gt;message;
+	}
+
+}
+
+$obj = new JinyClass;
+$obj-&gt;message = "안녕하세요";
+echo $obj-&gt;show() . "&lt;br&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>결과
+안녕하세요</p>
+
+<p>위의 예제를 보면 클래스 내부의 프로퍼티와 메서드는 $this를 통해 내부 접근이 가능합니다.
+클래스 내의 show() 메서드는 getMessage() 메서드를 호출하고, getMessage() 메서드는 message 프로퍼티에 접근합니다.</p>
+
+<p>특별한 $this 인스턴스 변수를 클래스 정의 내에서 사용하기 위해서는 반드시 클래스를 인스턴스화 형태로 객체를 생성해야 합니다. 예를 들면 $this를 사용하기 위해서 다음과 같이 클래스의 인스턴스화 작업을 해야만 합니다.</p>
+
+<p>$obj = new JinyClass;</p>
+
+<p>위처럼 $obj 객체변수가 생성되고 나서 내부에서 $this를 통해 내부 메서드와 프로퍼티를 접근할 수 있는 것입니다.</p>
+
+<p>만일 정적 방식으로 클래스를 사용할 때는 $this를 사용할 수 없습니다. 인스턴스를 생성하지 않기 때문 입니다.</p>
+
+<p>즉, $obj 인스턴스를 생성하게 되면 $this는 $obj를 가리키게 됩니다. 인스턴스를 생성하지 않으면 객체 자체가 없기 때문에 $this 사용을 못하는 것입니다.</p>
+
+<p>14.5.4 매서드체인
+메서드 체인이란 $this의 특성을 이용하여 클래스 메서드를 연결하여 사용하는 코딩 스타일을 말합니다.</p>
+
+<p>PHP 클래스 응용 소스를 보면,</p>
+
+<p>$obj-&gt;setEnv()-&gt;loading();</p>
+
+<p>위처럼 메서드 함수를 -&gt;로 연결하여 사용하는 코드를 본적이 있을 것입니다.</p>
+
+<p>이런 형태의 메서드 호출을 매서드 체인이라고 합니다. 메서드 체인은 PHP 4.x에서 PHP 5.x 버전으로 업그레이드되면서 지원하게 되었습니다.</p>
+
+<p>메서드 체인의 원리는 각각의 메서드를 실행 후 $this 반환으로서 객체를 연결합니다.</p>
+
+<p>$obj-&gt;setEnv()-&gt;loading();는 $obj-&gt;setEnv()를 실행하고 $this를 반환합니다. $this는 $obj를 가리키기 때문에 다시</p>
+
+<p>$obj-&gt;loading();처럼 실행할 수 있습니다.</p>
+
+<p>이러한 메서드 체인 방법은 보다 코드를 간결하게 만들고 프로그램을 개발하는 데 좀 더 직관적으로 유지보수가 쉬워지는 면도 있습니다.</p>
+
+<p>예제 파일 class-07.php
+&lt;?php
+	class members
+	{
+		private $user_name;
+		private $user_age;
+		private $user_sex;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 이름을 설정합니다.
+	public function setUserName($name)
+	{
+		$this-&gt;user_name = $name;
+
+		// 자기 자신의 객체를 반환합니다.
+		return $this;
+	}
+
+	// 나이를 설정합니다.
+	public function setUserAge($age)
+	{
+		$this-&gt;user_age = $age;
+
+		// 자기 자신의 객체를 반환합니다.
+		return $this;
+	}
+
+	// 성별을 설정합니다.
+	public function setUserSex($sex)
+	{
+		$this-&gt;user_sex = $sex;
+
+		// 자기 자신의 객체를 반환합니다.
+		return $this;
+	}
+
+	public function show()
+	{
+		printf("안녕하세요. 저는 %s입니다. 나이는 %d이고요 %s입니다.",$this-&gt;user_name, $this-&gt;user_age, $this-&gt;user_sex);
+	}
+}
+
+// 클래스를 선언합니다.
+$objMembers = new members;
+$objMembers-&gt;setUserName("jiny")-&gt;setUserAge(18)-&gt;setUserSex("남자")-&gt;show();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+안녕하세요. 저는 jiny입니다. 나이는 18이고요 남자입니다.</p>
+
+<p>위의 예제를 보면 각각의 메서드는 $this 자기 자신의 객체를 반환합니다.</p>
+
+<p>// 클래스를 선언합니다.
+$objMembers = new members;
+$objMembers-&gt;setUserName(“jiny”)-&gt;setUserAge(18)-&gt;setUserSex(“남자”)-&gt;show();</p>
+
+<p>클래스를 선언하고 메서드 체인으로 각각의 메서드를 연결, 호출합니다. 기존 메서드 호출 방식으로 호출은 다음과 같습니다.</p>
+
+<p>// 클래스를 선언합니다.
+$objMembers = new members;</p>
+
+<p>// 메서드 호출로 변수를 초기화합니다.
+$objMembers-&gt;setUserName(“jiny”);
+$objMembers-&gt;setUserAge(“18”);
+$objMembers-&gt;setUserSex(“남자”);</p>
+
+<p>$objMembers-&gt;show();</p>
+
+<p>위의 전형적은 메서드 호출 사용법은 메서드를 직접 하나씩 호출하여 프로퍼티 변수들을 초기화합니다. 세 개의 프로퍼티를 초기화하기 위해서 소스상에서 세 줄을 할당하여 사용합니다.</p>
+
+<p>메서드 체인 방식은 함수의 연속 호출과 반환되는 값을 이용하기 때문에 직관적이고 한 줄에 모든 명령을 실행할 수 있습니다.</p>
+
+<p>메서드 체인도 $this의 속성을 이용하기 때문에 사용 전에 반드시 클래스의 인스턴스를 생성 후에 사용해야 합니다.</p>
+
+<p>14.5.5 객체 순회
+PHP 5.x 부터는 객체를 리스트처럼 순회하여 접근할 수 있습니다. 다음 예제는 객체의 프로퍼티를 foreach문을 사용하여 순회하여 접근합니다.</p>
+
+<p>예제 파일 class-08.php
+&lt;?php
+  class MyClass
+  {
+    public $var1 = ‘value 1’;
+    public $var2 = ‘value 2’;
+    public $var3 = ‘value 3’;
+  }</p>
+
+<p>$obj = new MyClass();</p>
+
+<p>foreach($obj as $key =&gt; $value) {
+    print “$key =&gt; $value <br />”;
+  }</p>
+
+<p>?&gt;</p>
+
+<p>결과
+var1 =&gt; value 1 
+var2 =&gt; value 2 
+var3 =&gt; value 3</p>
+
+<p>14.6 정적 클래스
+클래스는 지금까지 인스턴스 객체를 생성을 하여 접근을 했습니다. 정적 클래스는 인스턴스를 생성하지 않고 클래스의 메서드와 프로퍼티를 접근할 수 있는 방식입니다.</p>
+
+<p>정적 클래스 방식으로 접근하여 사용 시에는 인스턴스 객체를 가리키는 $this를 사용할 수 없습니다.</p>
+
+<p>14.6.1 static
+static 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미입니다. static으로 선언된 프로퍼티는 인스턴스를 생성하지 않아도 접근이 가능합니다.</p>
+
+<p>하지만 인스턴스 객체변수로는 접근이 불가능합니다.</p>
+
+<p>예제 파일 class-09.php
+&lt;?php
+	// 클래스를 선언합니다.
+	class Jiny
+	{
+		public static $aaa = 10;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
+		echo "show = ". self::$aaa;
+	}
+}
+
+echo "aaa = ". Jiny::$aaa ."&lt;br&gt;";
+
+Jiny::show();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+aaa = 10
+show = 10</p>
+
+<p>14.6.2 호출
+정적 메서드와 프로퍼티의 호출은 -&gt; 기호 대신에 더블콜론(::)을 사용합니다. 인스턴스의 객체가 없기 때문에 -&gt;를 사용할 수 없습니다.</p>
+
+<p>|문법|
+클래스명::메서드();
+클래스명::$프로퍼티명</p>
+
+<p>형태로 작성을 해주면 됩니다.</p>
+
+<p>위의 예제는 정적으로 선언된 프로퍼티와 메서드를 인스턴스 없이 바로 호출하는 예제입니다.</p>
+
+<p>예제 파일 class-10.php
+&lt;?php
+	// 클래스를 선언합니다.
+	class jiny
+	{
+		public static $my_static = ‘jiny’;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function staticValue()
+	{
+		return self::$my_static;
+	}
+}
+
+// 정적 프로퍼티를 출력합니다.
+print "정적 프로퍼티 =". Jiny::$my_static . "&lt;br&gt;";
+
+$jiny = new Jiny();
+print "인스턴스 =". $jiny-&gt;staticValue() . "&lt;br&gt;";
+
+// 정적 프로퍼티는 인스턴트화된 경우 -&gt;로 호출할 수 없습니다.  
+print "인스턴스 =".$jiny-&gt;my_static . "&lt;br&gt;";      // Undefined "Property" my_static 
+
+print "정적 프로퍼티 =".$jiny::$my_static . "&lt;br&gt;";
+$classname = 'Jiny';
+print "정적 프로퍼티 =".$classname::$my_static . "&lt;br&gt;"; // As of PHP 5.3.0
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+정적 프로퍼티 =jiny
+인스턴스 =jiny
+인스턴스 =
+정적 프로퍼티 =jiny
+정적 프로퍼티 =jiny</p>
+
+<p>PHP 5.3 이상부터는 클래스 이름을 가변변수를 이용하여 호출이 가능합니다. 변수를 이용한 호출은 가변적인 클래스 선택과 호출을 할 수 있는 장점이 있습니다.</p>
+
+<p>14.6.3 SELF
+자기 자신을 호출할 때 사용하는 키워드입니다.</p>
+
+<p>예로 자기 자신의 상수나 프로퍼티, 메서드를 호출할 때 사용합니다.</p>
+
+<p>클래스 안에서 선언한 상수는 다음과 같이 호출하여 사용할 수 있습니다.
+self::상수명;</p>
+
+<p>클래스 안에 있는 프로퍼티 호출
+self::$변수명;</p>
+
+<p>클래스 안에 있는 메서드 호출
+self::메서드();</p>
+
+<p>14.7 익명 클래스</p>
+
+<p>클래스를 선언할 때는 클래스명이 있어야 합니다. 함수에서 도 익명 함수가 있듯이 클래스에서도 클래스명을 생략한 익명 클래스를 사용할 수 있습니다.</p>
+
+<p>익명 함수 기능은 PHP 7.x으로 업그레이드되면서 새롭게 추가된 기능입니다.</p>
+
+<p>예제 파일 class-11.php
+&lt;?php
+    // 인터페이스를 설정
+    interface Logger
+    {
+        public function log(string $msg);
+    }</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Application
+{
+    private $logger;
+
+    // 반환 타입은 logger입니다.
+    public function getLogger(): Logger
+    {
+        return $this-&gt;logger;
+    }
+
+	// 인자값으로 클래스를 입력을 받습니다.
+	public function setLogger(Logger $logger)
+    {
+    	$this-&gt;logger = $logger;
+	}
+}
+
+$app = new Application;
+
+// 인자값을 익명의 클래스로 만들어서 전달합니다.
+$app-&gt;setLogger(
+    new class implements Logger {
+		public function log(string $msg)
+        {
+    	   echo $msg;
+		}
+   }
+);
+
+var_dump($app-&gt;getLogger());
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+object(class@anonymous)#2 (0) { }</p>
+
+<p>위의 예제는 php.net에서 php7.x 새로운 익명 함수에 대한 간단한 설명 예제를 발췌했습니다. Application이라는 클래스는 한 개의 프로퍼티 변수와 두 개의 메서드 함수를 가지고 있습니다.</p>
+
+<p>그중 setLogger() 메서드 함수는 매개변수 인자로 Logger 클래스 객체 타입의 변수를 전달받습니다. 기존의 경우 클래스 객체변수를 전달하기 위해서는 new를 통해서 Logger 클래스를 인스턴스화하여 객체변수를 생성 후에 매개변수로 사용해야 했습니다.</p>
+
+<p>매번 일회성의 객체변수를 생성하는 것은 불필요할 수 있습니다. 이런 경우 익명 클래스를 통해 매개변수 입력 부분에 직접 클래스를 선언하여 전달합니다.</p>
+
+<p>new class implements Logger {
+    	public function log(string $msg) {
+            	echo $msg;
+    	}
+}</p>
+
+<p>매개변수로 전달되는 객체변수를 위와 같이 클래스명이 생략된 형태로 객체 선언으로 대체할 수 있습니다.</p>
+
+<p>14.8 매직 메서드
+클래스는 매직 메서드라는 몇 개의 미리 사전에 정의한 특수한 메서드가 있습니다. 클래스를 생성할 때 초기값을 설정하거나 오류 동작 등 실행되는 특별한 메서드입니다.</p>
+
+<p>14.8.1 초기화
+__construct() 메서드는 객체 생성 시 초기값 설정을 해주는 특수 메서드입니다. 또는 생성자 메서드라고도 부릅니다.</p>
+
+<p>$obj = new members();</p>
+
+<p>다음과 같이 클래스 인스턴스를 생성할 때 __construct() 메서드는 한 번 실행하게 됩니다. 이 메서드명은 미리 정의된 이름입니다.</p>
+
+<p>__construct() 메서드를 사용하기 위해서는 클래스 내에 선언해야 합니다.</p>
+
+<p>|문법|
+class 클래스명
+{
+	function __construct()
+	{
+		// 부모의 초기값을 실행합니다.
+		parent::__construct();</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 개별 초기값을 설정합니다.
+} }
+</code></pre></div></div>
+
+<p>클래스 상속의 경우 부모의 초기값 매직 메서드는 자동으로 실행되지 않습니다. 이런 경우 별도의 부모 초기값 매직 메서드를 추가해야 합니다.</p>
+
+<p>예제 파일 class-12.php
+&lt;?php
+	class BaseClass
+	{
+		function __construct()
+		{
+			echo “BaseClass 초기화<br />”;
+		}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class SubClass extends BaseClass
+{
+	function __construct($a1,$a2,$a3)
+	{
+		// 부모의 초기화 메서드를 실행합니다.
+		parent::__construct();
+
+		// 초기화 메서드를 실행합니다.
+		echo "SubClass 초기화&lt;br&gt;";
+
+		// 입력 매개변수를 확인합니다.
+		echo "초기화 매개변수 a1 = ".$a1."&lt;br&gt;";
+		echo "초기화 매개변수 a2 = ".$a2."&lt;br&gt;";
+		echo "초기화 매개변수 a3 = ".$a3."&lt;br&gt;";
+	}
+
+	public function show()
+	{
+		echo "hello world! &lt;br&gt;";
+	}
+}
+
+// 인스턴스 생성 시 초기화 매개변수를 같이 전달합니다.
+$obj = new SubClass("인자1","인자2","인자3");
+$obj-&gt;show();
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>결과
+BaseClass 초기화
+SubClass 초기화
+초기화 매개변수 a1 = 인자1
+초기화 매개변수 a2 = 인자2
+초기화 매개변수 a3 = 인자3
+hello world!</p>
+
+<p>위의 예제는 상속받은 클래스의 인스턴스를 생성합니다. 인스턴스 생성 시 초기 매개변수 값과 초기화 매직 메서드를 실행합니다.</p>
+
+<p>14.8.2 소멸자
+__construct() 처럼 초기화 메서드가 있다고 한다면 반대로 소멸자 매직 메서드가 존재합니다.</p>
+
+<p>PHP 스크립트의 모든 소스가 실행 끝나고 나면 __destruct() 메서드 함수가 실행됩니다.
+|문법|
+class 클래스명
+{
+	function __destruct()
+	{
+		// 소멸 작업들을 설정합니다.
+	}
+}</p>
+
+<p>예제 파일 class-13.php
+&lt;?php
+	class BaseClass
+	{
+		function __construct()
+		{
+			echo “BaseClass 초기화<br />”;
+		}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show()
+	{
+		echo "hello world! &lt;br&gt;";
+	}
+
+	function __destruct()
+	{
+		echo "BaseClass 소멸&lt;br&gt;";
+	}
+}
+
+// 인스턴스 생성
+$obj = new BaseClass();
+$obj-&gt;show(); ?&gt;
+</code></pre></div></div>
+
+<p>결과
+BaseClass 초기화
+hello world!
+BaseClass 소멸</p>
+
+<p>위의 예제는 클래스의 인스턴스를 생성과 스크립트 종료와 함께 __destruct() 매직 메서드가 호출됩니다.</p>
+
+<p>14.8.3 오류 호출
+매서드를 사용하기 위해서는 반드시 클래스 내에 매서드 함수를 정의해야 합니다. 하지만 정의되지 않는 클래스를 사용하려고 하면 당연히 오류가 발생할 것입니다. 공동 작업이나 소스가 커질수록 이러한 오류가 발생할 확률도 커집니다.</p>
+
+<p>만일 클래스 내에서 존재하지 않는 메서드를 호출할 때 오류를 발생하지 않고 __call() 메서드를 호출합니다. 
+예제 파일 class-14.php
+&lt;?php
+	class BaseClass
+	{
+		function __call($method,$params)
+		{
+			echo “오류: 정의되지 않는 메서드 “.$method.”를 “.implode(‘, ‘, $params).”호출했습니다.”;
+		}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 인스턴스 생성
+$obj = new BaseClass();
+$obj-&gt;show("a1","a2","a3"); ?&gt;
+</code></pre></div></div>
+
+<p>결과
+오류: 정의되지 않는 메서드 show를 a1, a2, a3호출했습니다.</p>
+
+<p>위의 예제 에서는 없는 메서드를 호출합니다. 없는 메서드를 호출하게 되면 대신에 __call() 매직 메서드를 호출합니다. __call() 함수는 두 개의 인자를 받습니다. 호출한 메서드명과 입력받은 파라미터 값을 배열로 전달합니다.</p>
+
+<p>매직 메서드를 잘 이용하면 공동 작업 시 잘못된 메서드의 호출로 인하여 발생할 수 있는 오류를 사전에 방지할 수 있습니다.</p>
+
+<p>14.8.4 객체의 문자열 변환
+__toString() 매직 매서드는 클래스가 문자열로 변환하여 처리될 때 동작합니다. 예로 클래스 객체를 echo $obj;처럼 출력할 때 __toString() 메서드가 동작합니다.</p>
+
+<p>예재 파일 class-15.php
+&lt;?php
+	class TestClass
+	{
+    		public $foo;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		public function __construct($foo)
+		{
+    		$this-&gt;foo = $foo;
+		}
+
+		public function __toString()
+		{
+    			return $this-&gt;foo;
+		}
+}
+
+$obj = new TestClass('Hello');
+
+// 클래스가 문자열로 변환 
+echo $obj; ?&gt;
+</code></pre></div></div>
+
+<p>결과
+Hello</p>
+
+<p>14.8.5 객체 함수 호출</p>
+
+<p>__invoke() 매직 메서드는 객체를 함수처럼 호출할 경우에 호출되는 메서드 입니다. $obj() 형태로 호출될 때 실행됩니다.</p>
+
+<p>예제파일) class-16.php
+&lt;?php
+	class dataInt
+	{
+    		public function __invoke($x)
+    		{
+        			var_dump($x);
+    		}
+	}</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new dataInt;
+
+$obj(5);
+
+var_dump(is_callable($obj)); ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+int(5) bool(true)</p>
+
+<p>14.8.6 객체 복제 호출</p>
+
+<p>__clone() 매직 메소드는 객체가 복제 되었을 때 실행회는 메서드입니다.</p>
+
+<p>예제파일) class-17.php
+&lt;?php</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class MyClass
+{
+    public $instance;
+
+    public function __clone() {
+        echo "clone object&lt;br&gt;";
+    }
+
+}
+    
+$obj = new MyClass();
+
+$obj2 = clone $obj;
+</code></pre></div></div>
+
+<p>?&gt;</p>
+
+<p>화면출력)
+clone object</p>
+
+<p>14.8.7 __set(), __get(), __isset(), __unset()</p>
+
+<p>__set() 매직 메서드는 접근할 수 없는 프로퍼티에 값을 쓰고자 할 때 호출됩니다. __get() 매직 메서드는 접근할 수 없는 프로퍼티의 값을 읽을 경우에 호출됩니다. __isset() 매직 메서드는 접근할 수 없는 프로퍼티에 isset() 함수나 empty() 함수를 사용할 때 호출됩니다. __unset() 매직 매서드는 접근할 수 없는 프로퍼티를 unset() 함수를 사용할 때 호출됩니다.</p>
+
+<p>예제 파일 class-18.php
+&lt;?php
+	class MyClass
+	{</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function __set($name, $value) {
+		echo "Setting '$name' to '$value' &lt;br&gt;";
+	}
+
+	public function __isset($name)
+	{
+		echo "Is '$name' set? &lt;br&gt;";
+	}
+
+	public function __unset($name)
+	{
+		echo "Unsetting '$name' &lt;br&gt;";
+	}
+
+// 접근불가 프로퍼티에 대해 isset() 나 empty() 가 호출되었을때 불려집니다. 
+
+	public function __get($name) {
+		echo "Reading '$name' &lt;br&gt;";
+	}
+
+
+}
+
+$obj = new MyClass();
+
+// 접근 불가 프로퍼티에 값을 설정할때 매직 매소드 __set() 호출
+$obj-&gt;name = "jiny";
+
+isset($obj-&gt;name);
+
+empty($obj-&gt;name);
+
+unset($obj-&gt;name);
+
+
+// 접근 불가 프로퍼티에 값을 읽을때 매직 매소드 __get() 호출
+echo $obj-&gt;name; ?&gt;
+</code></pre></div></div>
+
+<p>결과
+Setting ‘name’ to ‘jiny’ 
+Is ‘name’ set? 
+Is ‘name’ set? 
+Unsetting ‘name’ 
+Reading ‘name’</p>
+
+<p>14.8.8 그 외 메서드
+이외에도 다음과 같은 매직 메서드가 더 있습니다. 지면상 전부 다룰 수 없어서 보다 자세한 부분은 공식 사이트에서 확인 가능합니다.</p>
+
+<p>●	__callStatic() : 정적 컨텍스트 내에서 접근 불가 메서드를 가져올 때 호출됩니다.
+●	__sleep()
+●	__wakeup()
+●	__set_state() : var_export()에 의해 내보내진 클래스를 위해 호출됩니다.
+●	__debugInfo() : var_dump()에 의해 덤프될 때 보여줄 속성을 가져올 때 호출됩니다.</p>
+
+:ET

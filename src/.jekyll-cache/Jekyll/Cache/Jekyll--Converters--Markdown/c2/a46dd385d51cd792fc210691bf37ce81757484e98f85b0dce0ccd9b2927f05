@@ -1,0 +1,19 @@
+I"�<h1 id="함수명">함수명</h1>
+<hr />
+<p>함수명을 작명할 때는 기존의 내장 함수 이름과 중복되지 않게 주의를 해야 합니다.<br />
+중복되지 않는 상태에서 함수의 이름은 규격에 맞게 사용자가 자유롭게 작성을 할 수 있습니다.</p>
+
+<p>함수명은 영문자로 작명을 합니다. 함수명은 숫자로 시작할 수 없습니다.<br />
+하지만 특수기호 밑줄(<code class="highlighter-rouge">_</code>)로 시작하거나 중간에 넣을 수 있습니다.</p>
+
+<p>예제 파일 func-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="nf">helloMsg</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">echo</span> <span class="s2">"Hello world! &lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예제는 function 키워드로 helloMsg 함수를 정의합니다.<br />
+사용자 정의된 <code class="highlighter-rouge">helloMsg 함수</code>는 “Hello world!”라는 메시지를 출력하는 단순한 기능을 가지고 있습니다.</p>
+:ET

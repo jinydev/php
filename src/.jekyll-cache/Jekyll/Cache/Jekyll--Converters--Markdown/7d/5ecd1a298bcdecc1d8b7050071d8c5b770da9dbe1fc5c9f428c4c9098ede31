@@ -1,0 +1,19 @@
+I"s<h1 id="키워드">키워드</h1>
+<hr />
+<p>프로그램에서 함수를 정의하는 키워드는 <code class="highlighter-rouge">function</code>입니다. 대부분의 언어에서도 이와 유사한 function 키워드를 자주 사용합니다. PHP 언어는 프로그램 코드를 분석하면서 function이라는 키워드를 만나게 되면 PHP는 함수를 선언하는 것으로 인지합니다.</p>
+
+<p>사용자 정의 함수는 function이라는 함수를 정의하는 키워드와 사용자가 임의로 정의한 함수의 이름을 정의하여 생성할 수 있습니다.</p>
+
+<p>함수 선언 문법</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">함수명</span> <span class="p">(</span><span class="nx">인자1</span><span class="p">,</span> <span class="nx">인자2</span><span class="p">,</span> <span class="nx">인자3</span> <span class="o">...</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">함수</span> <span class="nx">정의</span> <span class="nx">몸체</span> <span class="o">...</span> 
+<span class="nx">소스</span> <span class="nx">코드</span> <span class="nx">내용</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>사용자 정의 함수 선언은 <code class="highlighter-rouge">function</code> 키워드 다음에 바로 함수명을 적으면 됩니다.</p>
+
+<p>함수명 다음에는 함수의 인자값 선언부 소괄호 <code class="highlighter-rouge">()</code>와 함수의 몸체라고 일컫는 블록 중괄호 { }로 정의됩니다.</p>
+
+<p><br /></p>
+:ET

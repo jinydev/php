@@ -2,6 +2,10 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "class"
+- "declear"
 ---
 
 # 클래스 선언

@@ -1,0 +1,65 @@
+I"�<h1 id="재귀-호출">재귀 호출</h1>
+<hr />
+<p>재귀 호출이란 함수가 자기 자신을 호출하는 것을 말합니다. 또는 ‘함수 되부름’이라고도 합니다. 재귀 함수는 자기 자신을 반복 수행하기 때문에 세밀하게 주의하여 사용해야 합니다. 잘못 사용하면 프로그램의 논리적인 오동작이 발생할 수도 있습니다.</p>
+
+<p>재귀 함수를 쓸 때는 매번 전달하는 호출 아규먼트 인자가 바뀝니다. 이는 자기 자신을 재호출하기 때문입니다. 값을 바꿔가면서 단계적으로 계속 자기 자신 호출을 실행합니다. 재귀 함수를 사용할 때는 자기 자신의 반복의 횟수를 정하는 것이 좋습니다.</p>
+
+<p>또는 재귀 호출 시 탈출할 수 있는 조건을 넣어두는 것이 현명합니다. 자기 자신의 재귀 호출 반복 횟수를 정의해야 재귀 호출 처리를 한 후에 함수를 탈출할 수 있습니다.</p>
+
+<p>예제 파일 func-23.php</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+	<span class="k">function</span> <span class="nf">recursion</span><span class="p">(</span><span class="nv">$a</span><span class="p">){</span> 
+    		<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span> 
+        			<span class="k">echo</span> <span class="s2">"입력값 = </span><span class="nv">$a</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+        			<span class="c1">// 자기 자신을 호출합니다.</span>
+        			<span class="nx">recursion</span><span class="p">(</span><span class="nv">$a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+        			<span class="k">echo</span> <span class="s2">"함수 탈출(</span><span class="nv">$a</span><span class="s2">) &lt;br&gt;"</span><span class="p">;</span> 
+    		<span class="p">}</span> 
+ 	<span class="p">}</span> 
+
+ 	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+ 	<span class="nx">recursion</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span> 
+ 
+
+ 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">function</span> <span class="nf">recursion2</span><span class="p">(</span><span class="nv">$a</span><span class="p">)</span> <span class="p">{</span> 
+    		<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span> 
+        			<span class="k">echo</span> <span class="s2">"이전: "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> 
+        			<span class="nx">recursion2</span><span class="p">(</span><span class="nv">$a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> 
+        			<span class="k">echo</span> <span class="s2">"이후: "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> 
+    		<span class="p">}</span> 
+ 	<span class="p">}</span> 
+ 	<span class="nx">recursion2</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> 
+ <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>입력값 = 1
+입력값 = 2
+입력값 = 3
+입력값 = 4
+함수 탈출(4)
+함수 탈출(3)
+함수 탈출(2)
+함수 탈출(1)
+
+이전: 0
+이전: 1
+이전: 2
+이전: 3
+이전: 4
+이후: 4
+이후: 3
+이후: 2
+이후: 1
+이후: 0
+</code></pre></div></div>
+
+<p>함수는 한번 호출될 때마다 호출 값에 대한 메모리를 할당하게 됩니다. 무한적인 재귀 호출은 메모리 오버플로 등을 만들어내서 프로그램이 멈출 수 있습니다.</p>
+
+<p>위의 예제에서 함수를 재귀 호출할 때 인자값으로 $a를 넘겨 줍니다. 함수는 $a &lt; 5일 경우에만 재귀 호출을 합니다. 이런 형태로 조건 및 재귀 호출 탈출 조건을 생성합니다. 항상 재귀 호출을 기능을 구현할 때는 이러한 점들을 주의해야 합니다.</p>
+
+<p><br /><br /></p>
+:ET

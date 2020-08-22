@@ -53,7 +53,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a href="/">Home</a></li></ol>    
+                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">oop</a></li><li class="breadcrumb-item active"><a href="#">class</a></li><li class="breadcrumb-item active"><a href="#">clone</a></li></ol>    
         </nav>
     </div>
 </div>
@@ -75,13 +75,13 @@
 <p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 <code class="highlighter-rouge">clone</code> 키워드를 사용해야 합니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj2 = clone $obj;
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>clone 키워드는 현재의 객체의 상태를 포함하여 객체를 복사합니다.</p>
 
 <p>예제 파일 class-03.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">class</span> <span class="nc">JinyClass</span>
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
