@@ -2,8 +2,8 @@
 layout: php
 title: "연산자 - PHP 프로그래밍"
 breadcrumb:
-- "기본문법"
-- "연산자"
+- "basic"
+- "operator"
 --- 
 
 # 연산자

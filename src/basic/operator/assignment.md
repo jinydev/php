@@ -8,7 +8,7 @@ breadcrumb:
 
 > 대입연산자, 할당 연산자(assignment operator) 같은 의미 입니다.
 
-# = 대입 연산자
+# = 대입 연산자 <small>(assignment)</small>
 ---
 일반적으로 우리가 수학에서 알고 있는 = 기호는 다항식, 방정식 등에서 서로 같다’라는 의미로 알고 있습니다.  
 

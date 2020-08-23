@@ -1,0 +1,98 @@
+I"�<h1 id="기본문법">기본문법</h1>
+<hr />
+<p><code class="highlighter-rouge">PHP 언어</code>를 학습하는 초보자를 대상으로 기본적인 프로그램밍 구조와 문법에 대해서 학습합니다.</p>
+
+<p><br /></p>
+
+<h2 id="코드작성">코드작성</h2>
+<hr />
+<p>PHP 코드를 작성 및 삽입을 위한 <code class="highlighter-rouge">Tag</code>와 코드 작성을 위한 코드 컨벤션인 <code class="highlighter-rouge">PSR</code>에 대해서 알아 봅니다.</p>
+
+<h3 id="php-테그"><a href="tag">PHP 테그</a></h3>
+<hr />
+<p>PHP 코드를 작성하는 방법은 자유롭습니다. PHP코드의 시작과 끝을 <code class="highlighter-rouge">표기</code>만 해주면 됩니다.<br />
+시작테그(<code class="highlighter-rouge"><span class="cp">&lt;?php</span></code>)와 종료테그(<code class="highlighter-rouge">?&gt;</code>)에 대해서 학습합니다.</p>
+
+<ul>
+  <li><a href="tag">시작테그와 종료테그</a></li>
+  <li>html코드와 <a href="tag/html">혼합 사용하기</a></li>
+  <li><a href="standard">독립적인 php코드</a> 사용하기</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="코드스타일-psr"><a href="psr">코드스타일 PSR</a></h3>
+<hr />
+<p>PSR은 코드 스타일을 권장하여 더 많은 사람들이 PHP 소스를 공유하고 함께 개발하기 위해서입니다.</p>
+
+<ul>
+  <li><a href="psr/psr1">PSR-1</a></li>
+  <li><a href="psr/psr2">PSR-2</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="자료구조-및-연산">자료구조 및 연산</h2>
+<hr />
+<p>PHP 언어의 <code class="highlighter-rouge">상수</code>, <code class="highlighter-rouge">변수</code>의 선언 및 구조에 대해서 알아 봅니다. 또한, 기본적인 연산 동작에 대해서 알아 봅니다.</p>
+
+<p><br /></p>
+
+<h3 id="상수"><a href="const">상수</a></h3>
+<hr />
+
+<ul>
+  <li><a href="const/type">상수의 타입</a></li>
+  <li>상수값 사용</li>
+  <li><a href="const/define">define()</a></li>
+  <li><a href="const/const">const 키워드</a></li>
+  <li><a href="const/defined">상수 존재 여부 확인</a></li>
+  <li><a href="const/reserved">미리 정의된 상수</a></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="변수"><a href="variable">변수</a></h3>
+<hr />
+
+<p><br /></p>
+
+<h3 id="연산자"><a href="operator">연산자</a></h3>
+<hr />
+
+<p><br /></p>
+
+<h2 id="흐름제어">흐름제어</h2>
+<hr />
+<p>절차지향적 논리적 프로그래밍을 위한 흐름제어 기능에 대해서 알아 보도록 합니다.</p>
+
+<ul>
+  <li><a href="condition">조건제어문</a></li>
+  <li>
+    <p><a href="condition/ternary">3항 연산자</a></p>
+  </li>
+  <li><a href="loop">반복문</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="전처리기"><a href="preprocess">전처리기</a></h2>
+<hr />
+<ul>
+  <li>include</li>
+  <li>require</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="유효범위"><a href="scope">유효범위</a></h2>
+<hr />
+<ul>
+  <li>Global : 글로벌변수</li>
+  <li>Local : 지역변수</li>
+  <li>Static : 정적변수</li>
+</ul>
+
+<p><br /></p>
+
+:ET

@@ -3,14 +3,7 @@ layout: default
 --- 
 <div class="bg-light">
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                {%- for breadcrumb in page.breadcrumb -%}
-                <li class="breadcrumb-item active"><a href="#">{{ breadcrumb }}</a></li>
-                {%- endfor -%}
-            </ol>    
-        </nav>
+        {%- include breadcrumb.html -%}
     </div>
 </div>
 
@@ -18,7 +11,6 @@ layout: default
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
 			<main role="main">

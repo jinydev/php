@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>PHP, HTML 코드와 혼합하여 사용하기</title>
+            <meta name="title" content="PHP, HTML 코드와 혼합하여 사용하기" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+        <style>
+            h1  a {
+                color: black;
+            }
+            h1 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h2  a {
+                color: black;
+            }
+            h2 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h3  a {
+                color: black;
+            }
+            h3 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h4  a {
+                color: black;
+            }
+            h4 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    	<a class="navbar-brand" href="/">Learn PHP</a>
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarResponsive">
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+        			<a class="nav-link" href="/php">소개</a>
+        		</li>
+        		<li class="nav-item active">
+        			<a class="nav-link" href="/setup">설치</a>
+        		</li>
+        		<li class="nav-item">
+        			<a class="nav-link" href="/basic">기본문법</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/function">함수</a>
+				</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="/oop">객체지향</a>
+        		</li>
+        	</ul>
+    	</div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item "><a href="../">tag</a></li><li class="breadcrumb-item active">html</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="html-코드와-혼합하여-사용하기">HTML 코드와 혼합하여 사용하기</h1>
+<hr />
+<p>이런 자유로운 PHP 프로그램 코딩 방식은 PHP 코드를 <code class="highlighter-rouge">다른 언어에 삽입</code>하여 혼합 사용 가능하다는 장점이 있습니다.<br />
+하나의 소스코드로 두개 이상의 언어를 사용할 수 있다는 것입니다.</p>
+
+<p><br /></p>
+
+<h2 id="html-코드와-혼합">HTML 코드와 혼합</h2>
+<hr />
+<p>주로 HTML 소스 안에 PHP 소스 코드를 삽입하거나 또는 HTML 소스 안에서 자바스크립트 코드와 PHP 코드를 혼합하여 프로그래밍이 가능할 수도 있습니다.<br />
+다음 PHP 언어를 HTML마크업과 같이 사용하는 예입니다.</p>
+
+<p>예제 파일 hello-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		<span class="nt">&lt;h1&gt;</span> PHP 페이지를 만들어 봅니다.<span class="nt">&lt;/h1&gt;</span>
+		<span class="cp">&lt;?php</span>
+			<span class="k">echo</span> <span class="s2">"Hello World!"</span><span class="p">;</span>
+		<span class="cp">?&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예제를 보면 <code class="highlighter-rouge">HTML 코드</code> 안에 <code class="highlighter-rouge">PHP 코드</code>가 삽입되어 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="분할-적용">분할 적용</h2>
+<hr />
+<p>하나의 html 소스에서 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code>와 <code class="highlighter-rouge">?&gt;</code>은 한번만 사용을 해야 되는 것은 아닙니다. 
+시작테그와 종료테그만 잘 유지하면, 필요할 때마다 PHP코드를 분리하여 삽입 할 수 있습니다.</p>
+
+<p>다음 예제는 하나의 HTML 파일에 <code class="highlighter-rouge">2개</code>의 php 코드를 넣은 예제입니다.</p>
+
+<p>예제 파일 hello-02.php</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		<span class="nt">&lt;h1&gt;</span> PHP 페이지를 만들어 봅니다.<span class="nt">&lt;/h1&gt;</span>
+		<span class="cp">&lt;?php
+			echo "Hello World!";
+		?&gt;</span>
+		<span class="nt">&lt;h2&gt;</span> 두 번째로 PHP 코드를 삽입을 합니다. <span class="nt">&lt;/h2&gt;</span>
+		<span class="cp">&lt;?php
+			echo "good morning!";
+		?&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>위처럼 HTML 마크업 안에서 2개의 PHP코드를 그룹 분할하여 삽입하는 기능은 PHP 코드가 다른 언어와 연결하여 프로그래밍하는 데 많은 도움을 줄 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="스파게티-코드">스파게티 코드</h2>
+<hr />
+<p>위의 코드방식은 2개의 언어가 하나의 파일안에 혼재되어 있습니다. 
+따라서, 이 코드를 해석 또는 수정을 하기 위해서는 2개의 언어를 모두 알고 있어야 합니다.</p>
+
+<p>또한, 2개의 언어로 인하여 코드 작성 실수를 발생할 수 있습니다.</p>
+
+<p>과거에는 이처럼 하나의 파일안에 혼합하여 코드를 많이 작성을 하였으나, 최근에는 실제 코드 로직과 화면을 분리하여 처리하는 방법을 많이 사용합니다.</p>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><ul class="list-group">
+    <li class="list-group-item"><a href="/php">php 언어</a></li>
+    <li class="list-group-item"><a href="/setup">설치</a></li>
+    <li class="list-group-item"><a href="/basic">기본문법</a></li>
+    <li class="list-group-item"><a href="/function">함수</a></li>
+    <li class="list-group-item"><a href="/oop">객체지향</a></li>
+    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
+    <li class="list-group-item"><a href="/composer">컴포저</a></li>
+    <li class="list-group-item"><a href="/web">웹개발</a></li>
+    
+</ul>
+
+<br>
+
+<ul>
+    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
+    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
+    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
+    <li><a href="https://git.jiny.dev">깃(git)</a></li>
+</ul>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

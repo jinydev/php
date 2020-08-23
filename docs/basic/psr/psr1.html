@@ -20,6 +20,41 @@
         <!--에드센스-->
         <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+        <style>
+            h1  a {
+                color: black;
+            }
+            h1 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h2  a {
+                color: black;
+            }
+            h2 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h3  a {
+                color: black;
+            }
+            h3 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h4  a {
+                color: black;
+            }
+            h4 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+
+        </style>
     </head>
     <body>
         <!--네비게이션--><!-- Navigation -->
@@ -50,44 +85,58 @@
     	</div>
     </div>
   </nav><div class="bg-light">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">basic</a></li><li class="breadcrumb-item active"><a href="#">psr</a></li><li class="breadcrumb-item active"><a href="#">psr1</a></li></ol>    
-        </nav>
-    </div>
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item "><a href="../">psr</a></li><li class="breadcrumb-item active">psr1</li></ol>    
+</nav></div>
 </div>
 
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
 			<main role="main">
                 <section>
                     <h1 id="psr-1-표준-코딩">PSR-1 표준 코딩</h1>
 <hr />
-<p>PSR-1은 기본적인 PHP의 표준 코딩 가이드입니다. PHP 태그, 인코딩 및 이름 규칙 등을 서로 규약하여 호환성을 증대합니다.</p>
+<p><code class="highlighter-rouge">PSR-1</code>은 기본적인 PHP의 표준 코딩 가이드입니다.<br />
+PHP 태그, 인코딩 및 이름 규칙 등을 서로 규약하여 호환성을 증대합니다.</p>
 
 <p><br /></p>
 
 <h2 id="php-파일">PHP 파일</h2>
 <hr />
-<p>시작 태그: PHP의 시작과 종료 태그입니다. PHP는 다양한 태그 약자가 존재합니다. PSR-1에서는 <?php ?> 와 <?= ?> 만 사용하기를 권고합니다.</p>
 
-<p>인코딩: PHP 소스 텍스트 파일의 인코딩을 규약합니다. 보통 텍스트 에디터에는 다양한 문서 인코딩 방식을 지원하지만 PSR-1 에서는 문서 인코딩 포맷을 UTF-8로 사용할 것을 권고합니다.</p>
+<ul>
+  <li>
+    <p>시작 태그: PHP의 시작과 종료 태그입니다. PHP는 다양한 태그 약자가 존재합니다.<br />
+PSR-1에서는 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code> <code class="highlighter-rouge">?&gt;</code> 와 <code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> <code class="highlighter-rouge">?&gt;</code> 만 사용하기를 권고합니다.</p>
+  </li>
+  <li>
+    <p>인코딩: PHP 소스 텍스트 파일의 인코딩을 규약합니다.<br />
+보통 텍스트 <code class="highlighter-rouge">에디터</code>에는 다양한 문서 <code class="highlighter-rouge">인코딩</code> 방식을 지원하지만 PSR-1 에서는 문서 인코딩 포맷을 <code class="highlighter-rouge">UTF-8</code>로 사용할 것을 권고합니다.</p>
+  </li>
+</ul>
 
-<p>UTF-8은 그냥 UTF-8 방식과 BOM(byte order Mark)이 적용된 두 가지 방식이 있습니다. PSR-1에서는 <code class="highlighter-rouge">BOM이 적용되지 않은 그냥 UTF-8</code>을 권고합니다.</p>
+<blockquote>
+  <p>UTF-8은 그냥 UTF-8 방식과 BOM(byte order Mark)이 적용된 두 가지 방식이 있습니다.<br />
+PSR-1에서는 <code class="highlighter-rouge">BOM이 적용되지 않은 그냥 UTF-8</code>을 권고합니다.</p>
+</blockquote>
 
 <p><br /></p>
 
 <h2 id="사이드-이펙트">사이드 이펙트</h2>
 <hr />
-<p>코드를 작성할 때는 사이드 이펙트(side effect)가 적게 발생되도록 주의합니다. 사이드 이펙트는 다양한 곳에서 발생할 수 있습니다. 한 개의 PHP 파일 안에서도 클래스, 함수, 상수 등 새로운 심볼을 선언할 때, 또한 이것들이 다른 사이드 이펙트의 원인이 되어서는 안 됩니다.</p>
+<p>코드를 작성할 때는 <code class="highlighter-rouge">사이드 이펙트(side effect)</code>가 적게 발생되도록 주의합니다.<br />
+사이드 이펙트는 다양한 곳에서 발생할 수 있습니다.</p>
 
-<p><code class="highlighter-rouge">사이드 이펙트</code>의 의미는 클래스, 함수, 상수를 직접적인 관련 없이 로직이 실행되는 것입니다. 사이드 이펙트 적용될 수도 있지만 그 사용을 구체적으로 제한하지는 않습니다(이를테면, 출력 발생, require 또는 include 사용, 외부 서비스 연결, ini 설정 변경, 방출 오류 또는 예외, 글로벌 또는 정적변수 변경, 파일을 읽거나 저장 등).</p>
+<p>한 개의 PHP 파일 안에서도 <code class="highlighter-rouge">클래스</code>, <code class="highlighter-rouge">함수</code>, <code class="highlighter-rouge">상수</code> 등 새로운 심볼을 선언할 때, 또한 이것들이 다른 사이드 이펙트의 <code class="highlighter-rouge">원인</code>이 되어서는 안 됩니다.</p>
+
+<p><code class="highlighter-rouge">사이드 이펙트</code>의 의미는 클래스, 함수, 상수를 직접적인 관련 없이 <code class="highlighter-rouge">로직이 실행</code>되는 것입니다.<br />
+사이드 이펙트 적용될 수도 있지만 그 사용을 구체적으로 제한하지는 않습니다(이를테면, 출력 발생, require 또는 include 사용, 외부 서비스 연결, ini 설정 변경, 방출 오류 또는 예외, 글로벌 또는 정적변수 변경, 파일을 읽거나 저장 등).</p>
 
 <p>다음은 선언과 사이드 이펙트 관련된 파일의 예 입니다.</p>
 
@@ -130,9 +179,11 @@
 
 <h2 id="네임스페이스와-클래스">네임스페이스와 클래스</h2>
 <hr />
-<p>네임스페이스와 클래스는 다음 장에서 설명하지만 네임스페이스와 클래스는 PSR 오토로딩 권장을 따라서 사용해야 합니다.</p>
+<p>네임스페이스와 클래스는 다음 장에서 설명하지만 <code class="highlighter-rouge">네임스페이스</code>와 클래스는 <code class="highlighter-rouge">PSR 오토로딩</code> 권장을 따라서 사용해야 합니다.</p>
 
-<p>클래스는 PHP 파일 하나에 한 개씩 작성하는 것을 권장합니다. 또한 네임스페이스는 이름은 최소한 한 개 이상의 레벨로 작성합니다. 1개 이상을 사용해야 하는 이유는 최상의 레벨은 벤더 이름으로 사용하기 때문입니다.</p>
+<p>클래스는 PHP 파일 하나에 <code class="highlighter-rouge">한 개씩 작성</code>하는 것을 권장합니다.<br />
+또한 네임스페이스는 이름은 최소한 한 개 이상의 <code class="highlighter-rouge">레벨</code>로 작성합니다.<br />
+1개 이상을 사용해야 하는 이유는 최상의 레벨은 <code class="highlighter-rouge">벤더</code> 이름으로 사용하기 때문입니다.</p>
 
 <p>PHP 5.3 이상에서는 네임스페이스를 사용하는 것을 적극 권장합니다.</p>
 
@@ -160,11 +211,12 @@
 <hr />
 <p>클래스, 인터페이스, 트레이트 등의 이름을 작명할 때 다음과 같은 작명 방식을 권장합니다.</p>
 
-<p>클래스명: 클래스 이름은 낙타 표기법(camel case)인 StudlyCaps 스타일로 작성합니다. 클래스 이름의 첫 글자는 대문자로 표기하는 타이틀 케이스 형태로 작성을 권고합니다.</p>
+<p>클래스명: 클래스 이름은 <code class="highlighter-rouge">낙타 표기법(camel case)</code>인 StudlyCaps 스타일로 작성합니다.<br />
+클래스 이름의 첫 글자는 대문자로 표기하는 타이틀 케이스 형태로 작성을 권고합니다.</p>
 
 <p>예) StudyCaffe, JinyPhp</p>
 
-<p>상수: 상수는 대문자와 밑줄 “_”로 구분하여 사용합니다.</p>
+<p>상수: 상수는 대문자와 밑줄 <code class="highlighter-rouge">_</code>로 구분하여 사용합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="kn">namespace</span> <span class="nn">Vendor\Model</span><span class="p">;</span>
@@ -176,11 +228,12 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>메서드: 메서드 이름은 낙타 표기법 으로 작성합니다. 메서드의 시작 문자는 소문자를 사용합니다.</p>
+<p>메서드: 메서드 이름은 <code class="highlighter-rouge">낙타 표기법</code>으로 작성합니다. 메서드의 시작 문자는 <code class="highlighter-rouge">소문자</code>를 사용합니다.</p>
 
 <p>예) camelCase (), loveStudy()</p>
 
-<p>프로퍼티: 프로퍼티(변수)는 낙타 표기법(StudlyCaps, camelCase, under_score)을 구분하지는 않습니다. 코드상에서 일관성 있게 사용하면 됩니다.</p>
+<p>프로퍼티: 프로퍼티(변수)는 낙타 표기법(StudlyCaps, camelCase, under_score)을 구분하지는 않습니다.<br />
+코드상에서 일관성 있게 사용하면 됩니다.</p>
 
                 </section>
 			</main>

@@ -20,6 +20,41 @@
         <!--에드센스-->
         <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+        <style>
+            h1  a {
+                color: black;
+            }
+            h1 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h2  a {
+                color: black;
+            }
+            h2 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h3  a {
+                color: black;
+            }
+            h3 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h4  a {
+                color: black;
+            }
+            h4 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+
+        </style>
     </head>
     <body>
         <!--네비게이션--><!-- Navigation -->
@@ -50,36 +85,49 @@
     	</div>
     </div>
   </nav><div class="bg-light">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active"><a href="#">basic</a></li><li class="breadcrumb-item active"><a href="#">psr</a></li></ol>    
-        </nav>
-    </div>
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item active">psr</li></ol>    
+</nav></div>
 </div>
 
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
 			<main role="main">
                 <section>
                     <h1 id="psr-php-standard-recommendation">PSR <small>(PHP Standard Recommendation)</small></h1>
 <hr />
-<p>PHP는 자유로운 스타일의 언어입니다. 또한 프로그램 소스 코드는 개발자 성향과 개발 방법에 따라서 코드 작성 표기가 자유롭습니다.</p>
+<p>PHP는 <code class="highlighter-rouge">오픈소스</code>, <code class="highlighter-rouge">프레임워크</code> 등 공개로 인하여 여러 개발자들이 소스를 <code class="highlighter-rouge">공유</code>하고, 함께 개발하고 있습니다.<br />
+또한 이러한 공유와 나눔으로 PHP는 많은 발전을 하고 있습니다.</p>
 
-<p>PHP는 오픈소스, 프레임워크 등 공개로 인하여 여러 개발자들이 소스를 공유하고, 함께 개발하고 있습니다. 또한 이러한 공유와 나눔으로 PHP는 많은 발전을 하고 있습니다.</p>
+<p><br /></p>
 
-<p>PSR은 PHP Standard Recommendation의 약자로 PHP-FIG에서는 권장하는 PHP의 코드 스타일입니다. PHP-FIG에서 PSR이라는 코드 스타일을 권장하는 이유는 더 많은 사람들이 PHP 소스를 공유하고 함께 개발하기 위해서입니다.</p>
+<h2 id="코드스타일">코드스타일</h2>
+<hr />
+<p>PHP는 자유로운 스타일의 언어입니다.<br />
+또한 프로그램 소스 코드는 개발자 성향과 개발 방법에 따라서 코드 작성 표기가 자유롭습니다.</p>
 
-<p>공식 사이트 http://www.php-fig.org</p>
+<p>PSR은 PHP Standard Recommendation의 약자로 PHP-FIG에서는 권장하는 PHP의 코드 스타일입니다.<br />
+<br /></p>
 
-<p>PSR 권고안은 함께 만들어가는 권고안입니다. 지금도 새로운 아이디어가 제안되고 많은 개발자들의 의견을 받아들이고 있습니다. 이런 의견들은 초안 → 리뷰 → 수용 세 가지 상태로 구분됩니다.</p>
+<h2 id="php-fig">PHP-FIG</h2>
+<hr />
+<p>PHP-FIG에서 PSR이라는 코드 스타일을 권장하는 이유는 더 많은 사람들이 PHP 소스를 공유하고 함께 개발하기 위해서입니다.</p>
 
-<p>PSR 권고안은 PSR + 번호 형태로 발표합니다. 현재 공식 사이트에서 수용된 권고안은 다음과 같습니다.</p>
+<p>공식 사이트 <a href="http://www.php-fig.org">http://www.php-fig.org</a>
+PSR 권고안은 함께 만들어가는 권고안입니다.</p>
+
+<p><br /></p>
+
+<h2 id="psr-권고안">PSR 권고안</h2>
+<hr />
+<p>PSR 권고안은 PSR + 번호 형태로 발표합니다.<br />
+현재 공식 사이트에서 수용된 권고안은 다음과 같습니다.</p>
 
 <ul>
   <li><a href="psr1">PSR-1</a>: 기본 표준코딩</li>
@@ -92,9 +140,17 @@
   <li>PSR-16: 간단한 캐시</li>
 </ul>
 
-<p>이외 리뷰 중인 제안과 다수의 초안 제안 등이 있습니다. 아직 수용되지 않은 초안과 리뷰 단계의 제안은 웹 사이트를 방문하면 확인할 수 있습니다.</p>
+<p><br /></p>
 
-<p>PSR은 다수의 PHP 프레임워크에서 적용되고 있습니다. 또한 이 책에서도 PSR 코딩 스타일 규격을 따라서 학습자에게도 향후 PSR 스타일의 코딩과 소스 공유 시 이해가 쉽도록 설명하려고 합니다.</p>
+<h2 id="psr-아이디어">PSR 아이디어</h2>
+<hr />
+<p>지금도 새로운 아이디어가 제안되고 많은 개발자들의 의견을 받아들이고 있습니다.<br />
+이런 의견들은 <code class="highlighter-rouge">초안</code> → <code class="highlighter-rouge">리뷰</code> → <code class="highlighter-rouge">수용</code> 세 가지 상태로 구분됩니다.</p>
+
+<p>이외 리뷰 중인 제안과 다수의 초안 제안 등이 있습니다.<br />
+아직 수용되지 않은 초안과 리뷰 단계의 제안은 웹 사이트를 방문하면 확인할 수 있습니다.</p>
+
+<p>PSR은 다수의 PHP 프레임워크에서 적용되고 있습니다.</p>
 
 <p><br /></p>
 
