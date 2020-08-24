@@ -21,6 +21,7 @@
         <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
         <style>
+            /*
             h1  a {
                 color: black;
             }
@@ -52,6 +53,7 @@
                 color: blue;
                 text-decoration: none;
             }
+            */
 
 
         </style>
@@ -88,7 +90,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">기본문법</a></li><li class="breadcrumb-item "><a href="../">연산자</a></li><li class="breadcrumb-item active">incdec</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item "><a href="../">operator</a></li><li class="breadcrumb-item active">incdec</li></ol>    
 </nav></div>
 </div>
 
@@ -114,7 +116,7 @@ or
 </code></pre></div></div>
 
 <p>증감연산자를 처음으로 도입된 것은 1996년 B언어에 <code class="highlighter-rouge">켄 톰프슨</code>이 처음으로 도입되어 사용되었다고 합니다. 
-B/C언어에 문법적으로 파생된 언어들 대부분이 증가연산자는 ++로, 감소 연산자는 –로 사용됩니다.</p>
+B/C언어에 문법적으로 파생된 언어들 대부분이 증가연산자는 <code class="highlighter-rouge">++</code>로, 감소 연산자는 <code class="highlighter-rouge">--</code>로 사용됩니다.</p>
 
 <p><br /></p>
 
@@ -143,7 +145,7 @@ B/C언어에 문법적으로 파생된 언어들 대부분이 증가연산자는
 연산자 실행 후 i = 1 
 </code></pre></div></div>
 
-<p>증가 값이 1 이외의 설정 방법은 변수명 += 증가값;으로 작성하면 됩니다.</p>
+<p>증가 값이 1 이외의 설정 방법은 변수명 <code class="highlighter-rouge">+= 증가값;</code>으로 작성하면 됩니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$i += 2;	// 2씩 증가합니다.
 $i += 5;	// 5씩 증가합니다.
@@ -183,8 +185,8 @@ $i += 10;	// 10씩 증가합니다.
 <hr />
 <p><code class="highlighter-rouge">++</code> 값이 1씩 증가하는 방식이라면, <code class="highlighter-rouge">--</code>는 1씩 감소합니다.</p>
 
-<p>$i– 은 $i = $i - 1 과 같은 의미입니다.
-즉 변수명 뒤에 붙은 – 기호는 변수에 1을 감소한다는 의미입니다.</p>
+<p><code class="highlighter-rouge">$i--</code> 은 <code class="highlighter-rouge">$i = $i - 1</code> 과 같은 의미입니다.
+즉 변수명 뒤에 붙은 <code class="highlighter-rouge">--</code> 기호는 변수에 <code class="highlighter-rouge">1</code>을 감소한다는 의미입니다.</p>
 
 <p>예제 파일) inc-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -203,7 +205,7 @@ $i += 10;	// 10씩 증가합니다.
 연산자 실행 후 i = -1 
 </code></pre></div></div>
 
-<p>증가 값이 1 이외의 설정 방법은 변수명 -= 증가값;으로 작성하면 됩니다.</p>
+<p>증가 값이 1 이외의 설정 방법은 변수명 <code class="highlighter-rouge">-= 증가값;</code>으로 작성하면 됩니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$i -= 2;		// 2씩 감소합니다.
 $i -= 5;		// 5씩 감소합니다.
@@ -272,10 +274,10 @@ $i -= 10;	// 10씩 감소합니다.
 2
 </code></pre></div></div>
 
-<p>위의 예를 보면 후순위 증가 방식은 $i의 값을 한 번 사용하고 ++로 1의 값이 증가합니다.
-따라서 첫 번째 출력은 0이 출력되고 나서 1이 증가됩니다.</p>
+<p>위의 예를 보면 후순위 증가 방식은 $i의 값을 한 번 사용하고 <code class="highlighter-rouge">++</code>로 1의 값이 증가합니다.
+따라서 첫 번째 출력은 <code class="highlighter-rouge">0</code>이 출력되고 나서 <code class="highlighter-rouge">1</code>이 증가됩니다.</p>
 
-<p>반면에 선순위 방식은 $i 앞에 ++가 붙었기 때문에 $i를 사용하기 전에 1을 증가 후 변수의 값이 사용됩니다.</p>
+<p>반면에 선순위 방식은 <code class="highlighter-rouge">$i앞</code>에 <code class="highlighter-rouge">++</code>가 붙었기 때문에 <code class="highlighter-rouge">$i</code>를 사용하기 전에 1을 증가 후 변수의 값이 사용됩니다.</p>
 
 <p><br /></p>
 
@@ -319,10 +321,10 @@ $i -= 10;	// 10씩 감소합니다.
 </code></pre></div></div>
 
 <p>위의 예제를 보면 후순위일 때는 변수를 참조 후에 값이 변경됩니다.<br />
-먼저 0을 출력 후 -1로 변경되고, -1로 출력 후 -2로 변경됩니다. 따라서 마지막 세 번째 출력도 -2가 출력됩니다.</p>
+먼저 <code class="highlighter-rouge">0</code>을 출력 후 <code class="highlighter-rouge">-1</code>로 변경되고, <code class="highlighter-rouge">-1</code>로 출력 후 <code class="highlighter-rouge">-2</code>로 변경됩니다. 따라서 마지막 세 번째 출력도 <code class="highlighter-rouge">-2</code>가 출력됩니다.</p>
 
-<p>선순위일 때는 먼저 값이 변경되어 -1이 출력되고, 두 번째도 값이 변경된 후에 -2가 출력됩니다.<br />
-그래서 마지막 세 번째는 그냥 값의 변경됨 없이 -2가 출력됩니다.</p>
+<p>선순위일 때는 먼저 값이 변경되어 <code class="highlighter-rouge">-1</code>이 출력되고, 두 번째도 값이 변경된 후에 <code class="highlighter-rouge">-2</code>가 출력됩니다.<br />
+그래서 마지막 세 번째는 그냥 값의 변경됨 없이 <code class="highlighter-rouge">-2</code>가 출력됩니다.</p>
 
 <p><br /></p>
 

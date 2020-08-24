@@ -1,8 +1,8 @@
 ---
 layout: php
 breadcrumb:
-- "기본문법"
-- "연산자"
+- "basic"
+- "operator"
 - "arithmetic"
 ---
 

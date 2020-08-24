@@ -1,0 +1,242 @@
+I"�8<h1 id="증감-연산자increament--decreament">증감 연산자(Increament / Decreament)</h1>
+<hr />
+<p>증가/감소 연산자란 변수와 연산자를 결합하여 일정한 수를 증가 또는 감소하는 특수한 연산 처리입니다.<br />
+이 특수한 연산자는 <code class="highlighter-rouge">피연산자</code>를 더하거나 빼는 등의 <code class="highlighter-rouge">단항연산</code>을 수행합니다.</p>
+
+<p>증감 연산자는 명령형 프로그래밍 언어들은 공통적으로 구현되여 있습니다.</p>
+
+<p>|문법|</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>변수명 연산자
+or
+연산자 변수명
+</code></pre></div></div>
+
+<p>증감연산자를 처음으로 도입된 것은 1996년 B언어에 <code class="highlighter-rouge">켄 톰프슨</code>이 처음으로 도입되어 사용되었다고 합니다. 
+B/C언어에 문법적으로 파생된 언어들 대부분이 증가연산자는 <code class="highlighter-rouge">++</code>로, 감소 연산자는 <code class="highlighter-rouge">--</code>로 사용됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="후순위-증가">후순위 증가</h2>
+<hr />
+<p>후순위 증가 연산자란 연산자 기호가 변수명 뒤쪽에 있는 경우를 말합니다.<br />
+대표적으로 가장 많이 사용하는 타입이기도 합니다.</p>
+
+<p><code class="highlighter-rouge">$i++</code>은 <code class="highlighter-rouge">$i = $i + 1</code>과 같은 의미입니다.<br />
+즉 변수명 뒤에 붙은 ++ 기호는 변수에 1을 더한다는 의미입니다.</p>
+
+<p>예제 파일) inc-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"연산자 실행 전 "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>연산자 실행 전 i = 0
+연산자 실행 후 i = 1 
+</code></pre></div></div>
+
+<p>증가 값이 1 이외의 설정 방법은 변수명 <code class="highlighter-rouge">+= 증가값;</code>으로 작성하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$i += 2;	// 2씩 증가합니다.
+$i += 5;	// 5씩 증가합니다.
+$i += 10;	// 10씩 증가합니다.
+</code></pre></div></div>
+
+<p>예제 파일) inc-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"연산자 실행 전 "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 2 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 3 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 10 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>연산자 실행 전 i = 0
+연산자 2 실행 후 i = 2
+연산자 3 실행 후 i = 5
+연산자 10 실행 후 i = 15 
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="후순위-감소">후순위 감소</h2>
+<hr />
+<p><code class="highlighter-rouge">++</code> 값이 1씩 증가하는 방식이라면, <code class="highlighter-rouge">--</code>는 1씩 감소합니다.</p>
+
+<p><code class="highlighter-rouge">$i--</code> 은 <code class="highlighter-rouge">$i = $i - 1</code> 과 같은 의미입니다.
+즉 변수명 뒤에 붙은 <code class="highlighter-rouge">--</code> 기호는 변수에 <code class="highlighter-rouge">1</code>을 감소한다는 의미입니다.</p>
+
+<p>예제 파일) inc-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"연산자 실행 전 "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span><span class="o">--</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>연산자 실행 전 i = 0
+연산자 실행 후 i = -1 
+</code></pre></div></div>
+
+<p>증가 값이 1 이외의 설정 방법은 변수명 <code class="highlighter-rouge">-= 증가값;</code>으로 작성하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$i -= 2;		// 2씩 감소합니다.
+$i -= 5;		// 5씩 감소합니다.
+$i -= 10;	// 10씩 감소합니다.
+</code></pre></div></div>
+
+<p>예제 파일) inc-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"연산자 실행 전 "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 2 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 3 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">-=</span> <span class="mi">3</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"연산자 10 실행 후 "</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>연산자 실행 전 i = 0
+연산자 2 실행 후 i = -2
+연산자 3 실행 후 i = -5
+연산자 10 실행 후 i = -15 
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="선순위-증가">선순위 증가</h2>
+<hr />
+
+<p>증가 연산자의 선순위와 후순위의 차이점은 증가 값의 변화가 변수 사용 전에 변경이 되는지 사용 후에 변경이 되는지의 차이입니다.</p>
+
+<p>예제 파일) inc-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">echo</span> <span class="s2">"후순의 증가 &lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"선순의 증가 &lt;br&gt;"</span><span class="p">;</span>
+	
+	<span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="o">++</span><span class="nv">$j</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="o">++</span><span class="nv">$j</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>후순의 증가
+0
+1
+선순의 증가
+1
+2
+</code></pre></div></div>
+
+<p>위의 예를 보면 후순위 증가 방식은 $i의 값을 한 번 사용하고 <code class="highlighter-rouge">++</code>로 1의 값이 증가합니다.
+따라서 첫 번째 출력은 <code class="highlighter-rouge">0</code>이 출력되고 나서 <code class="highlighter-rouge">1</code>이 증가됩니다.</p>
+
+<p>반면에 선순위 방식은 <code class="highlighter-rouge">$i앞</code>에 <code class="highlighter-rouge">++</code>가 붙었기 때문에 <code class="highlighter-rouge">$i</code>를 사용하기 전에 1을 증가 후 변수의 값이 사용됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="선순위-감소">선순위 감소</h2>
+<hr />
+
+<p>선순위 감소 또한 <code class="highlighter-rouge">--</code> 값이 변수명 앞뒤 위치에 따라서 감소 값의 적용 차이가 발생합니다.</p>
+
+<p>예제 파일) inc-06.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">echo</span> <span class="s2">"후순의 감소 &lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$i</span><span class="o">--</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$i</span><span class="o">--</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$i</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"선순의 감소 &lt;br&gt;"</span><span class="p">;</span>
+	
+	<span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="o">--</span><span class="nv">$j</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="o">--</span><span class="nv">$j</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$j</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>후순의 감소
+0
+-1
+-2
+선순의 감소
+-1
+-2
+-2
+</code></pre></div></div>
+
+<p>위의 예제를 보면 후순위일 때는 변수를 참조 후에 값이 변경됩니다.<br />
+먼저 <code class="highlighter-rouge">0</code>을 출력 후 <code class="highlighter-rouge">-1</code>로 변경되고, <code class="highlighter-rouge">-1</code>로 출력 후 <code class="highlighter-rouge">-2</code>로 변경됩니다. 따라서 마지막 세 번째 출력도 <code class="highlighter-rouge">-2</code>가 출력됩니다.</p>
+
+<p>선순위일 때는 먼저 값이 변경되어 <code class="highlighter-rouge">-1</code>이 출력되고, 두 번째도 값이 변경된 후에 <code class="highlighter-rouge">-2</code>가 출력됩니다.<br />
+그래서 마지막 세 번째는 그냥 값의 변경됨 없이 <code class="highlighter-rouge">-2</code>가 출력됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="복합-연산">복합 연산</h2>
+<hr />
+
+<p><code class="highlighter-rouge">++</code> 는 <code class="highlighter-rouge">+= 2</code> 와 값이 증가 값을 변경할 수 있었습니다.</p>
+
+<p><code class="highlighter-rouge">++</code> 와 <code class="highlighter-rouge">--</code> 이외에,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*=	$a = $a * 값;
+/=	$a = $a / 값;
+%=	$a = $a % 값;
+</code></pre></div></div>
+
+<p>형태를 이용하여 다른 산술 연산자와 결합하여 처리할 수도 있습니다.</p>
+
+<p><br /><br /></p>
+:ET

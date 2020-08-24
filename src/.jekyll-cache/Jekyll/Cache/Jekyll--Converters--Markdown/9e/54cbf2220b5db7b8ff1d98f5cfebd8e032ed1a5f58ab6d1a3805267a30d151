@@ -1,0 +1,83 @@
+I"�<h1 id="spaceship-연산자">Spaceship 연산자</h1>
+<hr />
+<p>기존의 비교연산자는 두 개의 값을 비교하여 참(1)과 거짓(0)으로 논리 결과를 반환했습니다.</p>
+
+<p>PHP 7.x로 업그레이드되면서 두 개의 값이 큰지, 작은지, 같은지를 한 번에 비교하는 스페이스쉽  연산자를 새롭게 지원합니다.</p>
+
+<p>스페이스 연산자는 <code class="highlighter-rouge">&lt;=&gt;</code>로 표시가 되는데 그 모양이 우주선과 같이 보여서 스페이스 연산자라고 명칭하게 되었습니다.</p>
+
+<p>PHP 7.x 이전에 스페이스 연산과 같은 처리를 하기 위해서는 다음과 같은 함수를 만들어서 사용해야 했습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">_Spaceship</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span><span class="nv">$b</span><span class="p">){</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">==</span> <span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$a</span><span class="o">&lt;</span><span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$a</span><span class="o">&gt;</span><span class="nv">$b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> 
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>즉 입력된 2개의 값을 3번의 조건문을 통해 처리했습니다.</p>
+
+<p>예제 파일 space-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// 정수</span>
+	<span class="k">echo</span> <span class="s2">"정수&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1 &lt;=&gt; 1 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1 &lt;=&gt; 2 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"2 &lt;=&gt; 1 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mi">2</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+
+
+	<span class="c1">// 실수</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"실수&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"1.5 &lt;=&gt; 1.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">1.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">1.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"1.5 &lt;=&gt; 2.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">1.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">2.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"2.5 &lt;=&gt; 1.5 = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="mf">2.5</span> <span class="o">&lt;=&gt;</span> <span class="mf">1.5</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+ 
+	<span class="c1">// 문자열</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"문자열&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a &lt;=&gt; a = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"a"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 0</span>
+	<span class="k">echo</span> <span class="s2">"a &lt;=&gt; b = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"b"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -1</span>
+	<span class="k">echo</span> <span class="s2">"b &lt;=&gt; a = "</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"b"</span> <span class="o">&lt;=&gt;</span> <span class="s2">"a"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정수
+1 &lt;=&gt; 1 = 0
+1 &lt;=&gt; 2 = -1
+2 &lt;=&gt; 1 = 1
+
+실수
+1.5 &lt;=&gt; 1.5 = 0
+1.5 &lt;=&gt; 2.5 = -1
+2.5 &lt;=&gt; 1.5 = 1
+
+문자열
+a &lt;=&gt; a = 0
+a &lt;=&gt; b = -1
+b &lt;=&gt; a = 1
+</code></pre></div></div>
+
+<p><br /><br /></p>
+:ET
