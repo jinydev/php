@@ -1,0 +1,20 @@
+I"�<h1 id="괄호">괄호</h1>
+<hr />
+<p>각각의 연산자는 우선순위를 가지고 있습니다.<br />
+하지만 연산자의 우선순위를 바꾸기 위한 방법으로 괄호<code class="highlighter-rouge">()</code>를 사용합니다.</p>
+
+<p><br /></p>
+
+<h2 id="계산순서">계산순서</h2>
+<hr />
+<p>연산 수식에서 괄호가 있으면 제일 우선적으로 처리합니다.</p>
+
+<p>예제)</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$value</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.0</span> <span class="o">+</span> <span class="mf">25.3</span><span class="p">)</span> <span class="o">*</span> <span class="nv">$abc</span> <span class="o">/</span> <span class="nv">$two</span><span class="p">;</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span><span class="mi">3</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>중괄호가 중첩될 경우에는 안쪽의 괄호가 우선적으로 처리됩니다.</p>
+
+<p><br /></p>
+:ET

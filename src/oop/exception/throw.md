@@ -2,6 +2,9 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "exception"
 ---
 ## 오류 및 예외 처리
 

@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "scope"
 ---
 
 # 변수 유효 범위

@@ -1,5 +1,9 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
+- "scalar"
 ---
 
 # 스칼라 타입

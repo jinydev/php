@@ -2,6 +2,9 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "namespace"
 ---
 
 # 네임스페이스

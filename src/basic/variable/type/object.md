@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
 ---
 
 # 오브젝트

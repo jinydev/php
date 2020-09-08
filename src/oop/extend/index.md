@@ -2,6 +2,9 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "extend"
 ---
 
 # 클래스 확장

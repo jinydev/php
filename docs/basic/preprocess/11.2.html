@@ -89,7 +89,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item active">preprocess</li></ol>    
 </nav></div>
 </div>
 
@@ -144,11 +144,12 @@ PHP는 소스 자체를 읽어서 삽입을 하기 때문입니다.
 
 <p>하지만 워드프레스와 같은 CMS 프로그램은 include 기능을 구조적 레이아웃에 따라 소스를 분리하여 사용하기도 합니다.</p>
 
-<p>예<br />
-header.php <br />
-footer.php<br />
-index.php<br />
-layout.php</p>
+<p>예</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>header.php   
+footer.php  
+index.php  
+layout.php  
+</code></pre></div></div>
 
 <p>이렇게 구조적으로 분리된 소스 파일들은 유지보수 등을 효율적으로 할 수 있도록 도와줍니다.</p>
 

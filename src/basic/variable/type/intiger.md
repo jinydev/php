@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
 ---
 
 # 정수형

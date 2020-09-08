@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
 ---
 
 # 리소스(Resource)

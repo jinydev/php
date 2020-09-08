@@ -1,0 +1,16 @@
+I"8<h2 id="곱셈과-나눗셈">곱셈과 나눗셈</h2>
+<hr />
+<p>곱셈(*)과 나눗셈(/)은 덧셈과 뺄셈보다 우선합니다.</p>
+
+<p><br /></p>
+
+<h2 id="계산순서">계산순서</h2>
+<hr />
+<p>좌측에서 우측으로 연산하기에 앞서 곱셈과 나눗셈이 나타나면 우선적으로 처리합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">-</span> <span class="mi">7</span><span class="p">;</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">+</span> <span class="mf">25.3</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">/</span> <span class="nv">$n</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+:ET

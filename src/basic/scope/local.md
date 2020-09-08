@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "scope"
 ---
 
 # 로컬변수

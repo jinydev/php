@@ -145,7 +145,32 @@ PHP 인터프리터는 소스 파일을 읽을 때 시작테크를 만날때 부
   <li><a href="standard">php 종료 태그 생략</a></li>
 </ul>
 
-<p><br /><br /></p>
+<p><br /></p>
+
+<h2 id="단축테그">단축테그</h2>
+<hr />
+<p>PHP는 <code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 단축테그를 제공합니다. 단축테그는 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code> 보다 짧아서 html 문서안에 php 출력코드를 삽입할 때 많이 사용합니다.</p>
+
+<p>만일 <code class="highlighter-rouge">$msg</code> 변수의 값을 html 문서내에 출력을 한다고 할때 다음과 같이 작성합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>오류가 발생하였습니다.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+    <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>단순한 값의 출력의 경우 단축코드로 변경을 할 수 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>오류가 발생하였습니다.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+    <span class="cp">&lt;?=</span> <span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 단축코드는 오로지 출력만 가능합니다. 즉, <code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 뒤에 있는 문자열의 출력을 결합합니다.
+단축코드는 if, for등의 제어구문은 사용할 수 없습니다.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>

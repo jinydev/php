@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
 ---
 
 # 배열 어레이

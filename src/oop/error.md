@@ -2,6 +2,9 @@
 layout: php
 title: "PHP"
 keyword: "jinyphp, php"
+breadcrumb:
+- "oop"
+- "error"
 ---
 
 15. 오류처리 함수

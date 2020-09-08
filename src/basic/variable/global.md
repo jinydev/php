@@ -1,5 +1,9 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
+- "global"
 ---
 
 # 자동 전역변수

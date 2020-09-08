@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "preprocess"
 ---
 
 # 파일 경로

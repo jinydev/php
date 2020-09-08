@@ -1,0 +1,94 @@
+I"r<h1 id="나머지">나머지</h1>
+<hr />
+<p>컴퓨터는 프로그램 언어는 일반적인 사칙 연산 네 가지 이외에 나누기의 <code class="highlighter-rouge">나머지</code>를 계산할 수 있는 특수한 기호를 제공합니다.</p>
+
+<p><br /></p>
+
+<h2 id="-연산기호">% 연산기호</h2>
+<hr />
+<p>앞서 나눗셈을 원리를 풀어서 코딩한 것을 보면은 나머지를 구하는 <code class="highlighter-rouge">공식</code>은 그다지 간단하지 않습니다. 
+하지만 PHP 언어에서는 나머지를 쉽게 구할 수 있는 <code class="highlighter-rouge">연산기호</code>를 제공합니다.</p>
+
+<p><code class="highlighter-rouge">%</code> 기호는 나누기 연산의 몫이 있을 때 값을 반환합니다.<br />
+결과값을 <code class="highlighter-rouge">왼쪽</code>에 <code class="highlighter-rouge">대입 연산자</code>를 통해 변수에 저장할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">%</span> <span class="nv">$y</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="연습문제1">연습문제1</h2>
+<hr />
+<p><code class="highlighter-rouge">%</code> 기호를 통해 $x에 대한 $y의 나머지를 계산할 수 있습니다.</p>
+
+<p>예제 파일 div-04.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"나누기 몫 = "</span> <span class="o">.</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나누기 몫 = 1
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="연습문제2">연습문제2</h2>
+<hr />
+<p>나누기의 몫(%)을 잘 이용하면 홀수/짝수 등 특정 숫자의 배수를 계산할 수 있습니다.</p>
+
+<p>예제 파일 div-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="nv">$even</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="s2">"x = </span><span class="nv">$x</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$x</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$i</span><span class="o">%</span><span class="nv">$even</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"x = </span><span class="nv">$i</span><span class="s2"> 는 홀수입니다.&lt;br&gt;"</span><span class="p">;</span>			
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"x = </span><span class="nv">$i</span><span class="s2"> 는 짝수입니다.&lt;br&gt;"</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$i</span><span class="o">%</span><span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"x = </span><span class="nv">$i</span><span class="s2"> 는 3의 배수 아닙니다.&lt;br&gt;"</span><span class="p">;</span>			
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"x = </span><span class="nv">$i</span><span class="s2"> 는 3의 배수입니다.&lt;br&gt;"</span><span class="p">;</span>
+		<span class="p">}</span>
+		
+	<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 10
+x = 1 는 홀수입니다.
+x = 1 는 3의 배수 아닙니다.
+x = 2 는 짝수입니다.
+x = 2 는 3의 배수 아닙니다.
+x = 3 는 홀수입니다.
+x = 3 는 3의 배수입니다.
+x = 4 는 짝수입니다.
+x = 4 는 3의 배수 아닙니다.
+x = 5 는 홀수입니다.
+x = 5 는 3의 배수 아닙니다.
+x = 6 는 짝수입니다.
+x = 6 는 3의 배수입니다.
+x = 7 는 홀수입니다.
+x = 7 는 3의 배수 아닙니다.
+x = 8 는 짝수입니다.
+x = 8 는 3의 배수 아닙니다.
+x = 9 는 홀수입니다.
+x = 9 는 3의 배수입니다.
+</code></pre></div></div>
+
+<p>위의 예제는 2의 배수나 3의 배수 등 나머지가 0이 된다는 것은 배수이고, 
+아닌 것은 배수가 아니라는 나머지의 특성을 가지고 작성한 예제 소스입니다.</p>
+
+<p><br /><br /></p>
+:ET

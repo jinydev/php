@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
 ---
 
 # 문자와 문자열

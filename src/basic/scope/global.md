@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "scope"
 ---
 
 # 글로벌변수

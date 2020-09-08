@@ -1,0 +1,43 @@
+I"�
+<h1 id="곱하기">곱하기</h1>
+<hr />
+<p>컴퓨터 언어의 곱셈 기호는 <code class="highlighter-rouge">*</code>를 사용합니다. 우리가 일반적으로 알고 있는 <code class="highlighter-rouge">×</code>를 사용하지 않습니다.</p>
+
+<p><br /></p>
+
+<h2 id="-연산기호"><code class="highlighter-rouge">*</code> 연산기호</h2>
+<hr />
+<p><code class="highlighter-rouge">곱셈</code>은 좌우의 값을 곱한 값을 출력합니다.<br />
+또한 곱한 결과값을 왼쪽에 대입 연산자를 통해 변수에 저장할 수 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">*</span> <span class="nv">$y</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// $a = 5 + 5 + 5;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="연습문제1">연습문제1</h2>
+<hr />
+<p>곱셈은 왼쪽에 있는 값을 오른쪽의 값의 횟수만큼 <code class="highlighter-rouge">더한 값</code>과 같습니다.<br />
+즉 세 번의 덧셈을 처리하는 것과 같습니다.</p>
+
+<p>예제 파일 mul-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+	<span class="nv">$sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$y</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$sum</span> <span class="o">+</span> <span class="nv">$x</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">echo</span> <span class="s2">"곱셈은 덧셈의 반복 = "</span><span class="o">.</span> <span class="nv">$sum</span> <span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>곱셈은 덧셈의 반복 = 15
+</code></pre></div></div>
+:ET

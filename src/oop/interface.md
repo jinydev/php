@@ -4,7 +4,6 @@ title: "PHP"
 keyword: "jinyphp, php"
 breadcrumb:
 - "oop"
-- "class"
 - "interface"
 ---
 

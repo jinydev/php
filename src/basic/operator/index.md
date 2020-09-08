@@ -1,6 +1,8 @@
 ---
 layout: php
 title: "연산자 - PHP 프로그래밍"
+keyword: "php, operator"
+description: "컴퓨터의 연산처리를 방법을 알아봅니다. 또한, 우선순의의 계산법을 적용합니다."
 breadcrumb:
 - "basic"
 - "operator"
@@ -29,6 +31,12 @@ PHP에서는 다음과 같은 연산과 기호를 제공합니다.
 ## 대입과 참조
 ---
 * [대입](assignment)
+대입연산자, 할당 연산자(assignment operator) 같은 의미 입니다.
+    + [같다](equal)
+    + [다양한 대입 응용](apply)
+    + [call by value](value)
+
+
 * [참조](reference)
 
 <br>
@@ -36,7 +44,23 @@ PHP에서는 다음과 같은 연산과 기호를 제공합니다.
 ## 연산
 ---
 * [산술 연산](arithmetic)
+산술 연산이란 일반적으로 숫자를 기준으로 더하거나 빼기, 곱하기, 나누기 등 사칙 연산을 말합니다. 
+    + [더하기](arithmetic/add)
+    + [빼기](arithmetic/sub)
+    + [곱하기](arithmetic/multiply)
+    + [나누기](arithmetic/division)
+    + [나머지](arithmetic/rest)
+
 * [우선순위](priority)
+우선순위는 여러 개의 연산자를 복합적으로 사용할 때 순서대로 처리하는 것이 아니라 `연산 속성`에 따라서 `먼저 처리`를 해야 하는 순서입니다. 
+    + [우선순위 결합 위치](pos)
+    + [덧셈과 뺄셈](rule1)
+    + [곱셈과 나눗셈](rule2)
+    + [괄호](bracket)
+    + 우선순위 [예제1: 조건문](sample1)
+    + 우선순위 [예제2: (sample2)
+
+<br>
 
 ## 논리
 ---

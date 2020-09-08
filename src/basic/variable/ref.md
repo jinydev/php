@@ -1,5 +1,9 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "variable"
+- "ref"
 ---
 
 # 가변변수

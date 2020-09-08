@@ -25,7 +25,7 @@ PHP 코드를 작성하는 방법은 자유롭습니다. PHP코드의 시작과 
 
 * [시작테그와 종료테그](tag)
 * html코드와 [혼합 사용하기](tag/html)
-* [독립적인 php코드](standard) 사용하기
+* [독립적인 php코드](tag/standard) 사용하기
 
 <br>
 

@@ -1,5 +1,9 @@
 ---
 layout: php
+breadcrumb:
+- "function"
+- "declare"
+- "call"
 ---
 
 # 함수 실행

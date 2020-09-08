@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "scope"
 ---
 
 # 슈퍼변수
@@ -10,15 +13,16 @@ layout: php
 PHP언어는 $GLOBALS 이외에 여러 개의 슈퍼변수를 다음과 같이 제공합니다.  
 
 PHP 슈퍼 글로벌변수들  
-*	$GLOBALS
-*	$_SERVER
-*	$_REQUEST
-*	$_POST
-*	$_GET
-*	$_FILES
-*	$_ENV
-*	$_COOKIE
-*	$_SESSION
+
+* $GLOBALS
+* $_SERVER
+* $_REQUEST
+* $_POST
+* $_GET
+* $_FILES
+* $_ENV
+* $_COOKIE
+* $_SESSION
 
 이러한 슈퍼변수의 개념은 PHP 4.1.0에서 도입된 기능입니다.  
 

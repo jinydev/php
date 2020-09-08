@@ -1,5 +1,8 @@
 ---
 layout: php
+breadcrumb:
+- "basic"
+- "preprocess"
 ---
 
 # include
@@ -9,7 +12,7 @@ include 전처리기 명령어는 아주 익숙한 키워드입니다.
 
 |문법|
 ```php
-include “파일명”';
+include "파일명";
 ```
 
 PHP가 스크립트 실행 도중에 include 명령을 만나면 해당 명령이 선언한 자리에 지정한 파일을 삽입, 결합합니다.  

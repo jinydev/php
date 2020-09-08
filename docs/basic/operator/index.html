@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>연산자 - PHP 프로그래밍</title>
-            <meta name="title" content="연산자 - PHP 프로그래밍" /><!--부트스트랩4-->
+            <meta name="title" content="연산자 - PHP 프로그래밍" /><meta name="description" content="컴퓨터의 연산처리를 방법을 알아봅니다. 또한, 우선순의의 계산법을 적용합니다." /><meta name="keyword" content="php, operator" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             img {
@@ -125,7 +125,14 @@ PHP에서는 다음과 같은 연산과 기호를 제공합니다.</p>
 <h2 id="대입과-참조">대입과 참조</h2>
 <hr />
 <ul>
-  <li><a href="assignment">대입</a></li>
+  <li><a href="assignment">대입</a>
+대입연산자, 할당 연산자(assignment operator) 같은 의미 입니다.
+    <ul>
+      <li><a href="equal">같다</a></li>
+      <li><a href="apply">다양한 대입 응용</a></li>
+      <li><a href="value">call by value</a></li>
+    </ul>
+  </li>
   <li><a href="reference">참조</a></li>
 </ul>
 
@@ -134,9 +141,30 @@ PHP에서는 다음과 같은 연산과 기호를 제공합니다.</p>
 <h2 id="연산">연산</h2>
 <hr />
 <ul>
-  <li><a href="arithmetic">산술 연산</a></li>
-  <li><a href="priority">우선순위</a></li>
+  <li><a href="arithmetic">산술 연산</a>
+산술 연산이란 일반적으로 숫자를 기준으로 더하거나 빼기, 곱하기, 나누기 등 사칙 연산을 말합니다.
+    <ul>
+      <li><a href="arithmetic/add">더하기</a></li>
+      <li><a href="arithmetic/sub">빼기</a></li>
+      <li><a href="arithmetic/multiply">곱하기</a></li>
+      <li><a href="arithmetic/division">나누기</a></li>
+      <li><a href="arithmetic/rest">나머지</a></li>
+    </ul>
+  </li>
+  <li><a href="priority">우선순위</a>
+우선순위는 여러 개의 연산자를 복합적으로 사용할 때 순서대로 처리하는 것이 아니라 <code class="highlighter-rouge">연산 속성</code>에 따라서 <code class="highlighter-rouge">먼저 처리</code>를 해야 하는 순서입니다.
+    <ul>
+      <li><a href="pos">우선순위 결합 위치</a></li>
+      <li><a href="rule1">덧셈과 뺄셈</a></li>
+      <li><a href="rule2">곱셈과 나눗셈</a></li>
+      <li><a href="bracket">괄호</a></li>
+      <li>우선순위 <a href="sample1">예제1: 조건문</a></li>
+      <li>우선순위 [예제2: (sample2)</li>
+    </ul>
+  </li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="논리">논리</h2>
 <hr />
