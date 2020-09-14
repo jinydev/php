@@ -1,4 +1,4 @@
-I"p<h1 id="변수-삭제">변수 삭제</h1>
+I"�<h1 id="변수-삭제">변수 삭제</h1>
 <hr />
 <p>캐스팅 방식으로 생성한 변수를 삭제할 수 있습니다.</p>
 
@@ -7,13 +7,13 @@
  	<span class="k">echo</span> <span class="s2">"casting &lt;br&gt;"</span><span class="p">;</span>
 
  	<span class="nv">$a</span> <span class="o">=</span> <span class="s2">"변수를 삭제합니다."</span><span class="p">;</span> 
- 	<span class="k">echo</span> <span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
- 	<span class="k">echo</span> <span class="s2">"변수 삭제 = "</span><span class="o">.</span><span class="p">(</span><span class="nb">unset</span><span class="p">)</span><span class="nv">$a</span><span class="p">;</span> <span class="c1">// 결과:  </span>
+ 	<span class="k">echo</span> <span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+ 	<span class="k">echo</span> <span class="s2">"변수 삭제 = "</span><span class="mf">.</span><span class="p">(</span><span class="n">unset</span><span class="p">)</span><span class="nv">$a</span><span class="p">;</span> <span class="c1">// 결과:  </span>
  <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>casting
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>casting
 변수를 삭제합니다.
 변수 삭제 = 
 </code></pre></div></div>

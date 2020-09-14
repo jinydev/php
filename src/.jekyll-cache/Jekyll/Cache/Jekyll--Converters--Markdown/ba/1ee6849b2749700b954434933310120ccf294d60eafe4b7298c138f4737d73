@@ -1,4 +1,4 @@
-I"�4<h1 id="다중-반복문">다중 반복문</h1>
+I"5<h1 id="다중-반복문">다중 반복문</h1>
 <hr />
 <p>반복문은 여러 소스코드를 묽어 반복처리를 수행합니다. 반복문 또한 소스코드 이기 때문에 다른 반복문의 반복 수행되는 코드가 될 수 있습니다. 다중 반복문이란 하나의 반복문이 또 다른 반복문을 포함하는 형태를 말합니다.<br />
 그림으로 이중 반복문을 표현하면 다음과 같습니다.</p>
@@ -24,7 +24,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>윗몸 일으키기
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>윗몸 일으키기
 윗몸 일으키기
 윗몸 일으키기
 ...
@@ -43,10 +43,10 @@
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="c1">// 1차 반복문</span>
-<span class="k">for</span> <span class="p">(</span><span class="nx">초기값</span> <span class="nx">설정</span><span class="p">;</span> <span class="nx">조건</span><span class="p">;</span> <span class="nx">증가</span> <span class="nx">연산자</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">초기값</span> <span class="n">설정</span><span class="p">;</span> <span class="n">조건</span><span class="p">;</span> <span class="n">증가</span> <span class="n">연산자</span><span class="p">)</span> <span class="p">{</span>
   
   <span class="c1">// 2차 반복문</span>
-  <span class="k">for</span> <span class="p">(</span><span class="nx">초기값</span> <span class="nx">설정</span><span class="p">;</span> <span class="nx">조건</span><span class="p">;</span> <span class="nx">증가</span> <span class="nx">연산자</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">초기값</span> <span class="n">설정</span><span class="p">;</span> <span class="n">조건</span><span class="p">;</span> <span class="n">증가</span> <span class="n">연산자</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -76,7 +76,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>세트0 시작
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>세트0 시작
 윗몸 일으키기
 ...
 윗몸 일으키기
@@ -132,7 +132,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Volvo 10 300
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Volvo 10 300
 BMW 11 250
 Saab 12 350
 kia 13 200 
@@ -152,7 +152,7 @@ kia 13 200
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*
 **
 ***
 ****
@@ -181,7 +181,7 @@ kia 13 200
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_____
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_____
 ____*
 ___***
 __*****

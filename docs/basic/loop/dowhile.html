@@ -113,7 +113,7 @@
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">do</span><span class="p">{</span>
 
-  <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nx">참</span> <span class="nx">조건</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">참</span> <span class="n">조건</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>do..while의 반복 문법을 보면 while과 다르게 while(참 조건); 부분이 { } 하단에 적혀 있는 것을 확인할 수 있습니다. 즉, 조건을 검사하기 전에 한번은 { } 부분을 처리하라는 의미입니다.</p>
@@ -132,7 +132,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 1
 The number is: 2
 The number is: 3
 The number is: 4
@@ -154,7 +154,7 @@ The number is: 5
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 6
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The number is: 6
 </code></pre></div></div>
 
 <p>즉, 조건과 상관없이 { } 안의 명령을 한 번은 수행을 한다는 특징이 있습니다.</p>
@@ -164,15 +164,15 @@ The number is: 5
 <h2 id="break">break</h2>
 <hr />
 
-<p><code class="highlighter-rouge">break;</code> 명령문은 앞서 설명한 조건 switch문과 더불어 반복문의 제어 흐름을 처리하는 데도 종종 사용됩니다.<br />
-<code class="highlighter-rouge">break;</code>문의 특징은 <code class="highlighter-rouge">break;</code>를 감싸고 있는 조건이나 반복문의 중괄호 <code class="highlighter-rouge">{ }</code>를 빠져나온다는 것입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">break;</code> 명령문은 앞서 설명한 조건 switch문과 더불어 반복문의 제어 흐름을 처리하는 데도 종종 사용됩니다.<br />
+<code class="language-plaintext highlighter-rouge">break;</code>문의 특징은 <code class="language-plaintext highlighter-rouge">break;</code>를 감싸고 있는 조건이나 반복문의 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code>를 빠져나온다는 것입니다.</p>
 
 <p><br /></p>
 
 <h2 id="무한-루프-탈출">무한 루프 탈출</h2>
 <hr />
 
-<p>while 반복문을 통해 무한 루프 동작을 하고 있을 때 프로그램은 어떻게 무한 루프를 탈출할 수 있을 까요? while문의 반복되는 코드 블록 중괄호 <code class="highlighter-rouge">{}</code> 안에 <code class="highlighter-rouge">break;</code>를 처리하면 무한 반복문의 루프를 탈출할 수 있습니다.</p>
+<p>while 반복문을 통해 무한 루프 동작을 하고 있을 때 프로그램은 어떻게 무한 루프를 탈출할 수 있을 까요? while문의 반복되는 코드 블록 중괄호 <code class="language-plaintext highlighter-rouge">{}</code> 안에 <code class="language-plaintext highlighter-rouge">break;</code>를 처리하면 무한 반복문의 루프를 탈출할 수 있습니다.</p>
 
 <p>예제 파일 break-11.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -191,7 +191,7 @@ The number is: 5
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10보다 작으면 무제한 반복합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10보다 작으면 무제한 반복합니다.
 10보다 작으면 무제한 반복합니다.
 10보다 작으면 무제한 반복합니다.
 10보다 작으면 무제한 반복합니다.
@@ -216,7 +216,7 @@ The number is: 5
  
     <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$myfile</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">echo</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$myfile</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="nb">fgets</span><span class="p">(</span><span class="nv">$myfile</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="p">}</span>  
@@ -233,7 +233,7 @@ The number is: 5
 
 <h2 id="반복문-강제-종료">반복문 강제 종료</h2>
 <hr />
-<p><code class="highlighter-rouge">break;</code>문은 while 반복문 이외에 for 반복문에서도 사용이 가능합니다. for처럼 반복의 횟수를 정하여 반복 작업을 하더라도 특정한 조건에 따라 더 이상 반복을 처리하지 않아도 될 때 break;문을 통해 for 반복문을 종료, 탈출할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">break;</code>문은 while 반복문 이외에 for 반복문에서도 사용이 가능합니다. for처럼 반복의 횟수를 정하여 반복 작업을 하더라도 특정한 조건에 따라 더 이상 반복을 처리하지 않아도 될 때 break;문을 통해 for 반복문을 종료, 탈출할 수 있습니다.</p>
 
 <p>예제 파일 break-13.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -243,7 +243,7 @@ The number is: 5
 			<span class="k">break</span><span class="p">;</span>
 		<span class="p">}</span>
 
-		<span class="k">echo</span> <span class="nv">$i</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+		<span class="k">echo</span> <span class="nv">$i</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 
 	<span class="k">echo</span> <span class="s2">"종료"</span><span class="p">;</span>
@@ -251,7 +251,7 @@ The number is: 5
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0
 1
 2
 3

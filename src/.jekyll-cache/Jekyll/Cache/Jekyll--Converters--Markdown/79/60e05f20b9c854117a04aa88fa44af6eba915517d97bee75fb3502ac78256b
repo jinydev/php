@@ -1,6 +1,6 @@
-I"Y<h1 id="오류-제어-연산자">오류 제어 연산자</h1>
+I"�<h1 id="오류-제어-연산자">오류 제어 연산자</h1>
 <hr />
-<p>PHP는 오류제어 연산자 <code class="highlighter-rouge">@</code>를 지원합니다.</p>
+<p>PHP는 오류제어 연산자 <code class="language-plaintext highlighter-rouge">@</code>를 지원합니다.</p>
 
 <p><br /></p>
 
@@ -21,21 +21,21 @@
 </code></pre></div></div>
 
 <p>화면 출력</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
-<p>위의 예제는 실제 존재하지 않는 파일을 <code class="highlighter-rouge">include</code>하는 예제입니다.<br />
+<p>위의 예제는 실제 존재하지 않는 파일을 <code class="language-plaintext highlighter-rouge">include</code>하는 예제입니다.<br />
 실행 시 파일에 대한 오류 메시지를 출력합니다.</p>
 
-<p><code class="highlighter-rouge">@include('test.php');</code> 형태로 <code class="highlighter-rouge">@</code>를 앞에 붙여서 실행하면 오류가 발생해도 화면에 출력하지 않습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">@include('test.php');</code> 형태로 <code class="language-plaintext highlighter-rouge">@</code>를 앞에 붙여서 실행하면 오류가 발생해도 화면에 출력하지 않습니다.</p>
 
-<p><code class="highlighter-rouge">@</code> 연산자를 사용할 때는 주의해야 합니다. 
+<p><code class="language-plaintext highlighter-rouge">@</code> 연산자를 사용할 때는 주의해야 합니다. 
 만일, 잘못된 사용으로 인해 오류가 출력하지 않을 때 프로그램의 문제를 해결하기란 매우 어렵습니다.</p>
 
 <p><br /></p>
 
 <h2 id="오류메시지-저장">오류메시지 저장</h2>
 <hr />
-<p><code class="highlighter-rouge">@</code>로 인하여 오류가 발생한 경우는 별도로 오류 메시지를 <code class="highlighter-rouge">$php_errormsg</code> 변수에 저장해 놓습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">@</code>로 인하여 오류가 발생한 경우는 별도로 오류 메시지를 <code class="language-plaintext highlighter-rouge">$php_errormsg</code> 변수에 저장해 놓습니다.</p>
 
 <p>예제 파일 opr-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -43,25 +43,25 @@
 	<span class="nb">error_reporting</span><span class="p">(</span><span class="kc">E_ALL</span><span class="p">);</span>
 	<span class="nb">ini_set</span><span class="p">(</span><span class="s2">"display_errors"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-	<span class="nv">$my_file</span> <span class="o">=</span> <span class="o">@</span><span class="nb">file</span> <span class="p">(</span><span class="s1">'testing.txt'</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="nv">$php_errormsg</span><span class="o">.</span><span class="s2">" = 오류를 출력합니다."</span><span class="p">);</span>
+	<span class="nv">$my_file</span> <span class="o">=</span> <span class="o">@</span><span class="nb">file</span> <span class="p">(</span><span class="s1">'testing.txt'</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="nv">$php_errormsg</span><span class="mf">.</span><span class="s2">" = 오류를 출력합니다."</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Notice: Undefined variable: php_errormsg in C:\php-7.1.4-Win32-VC14-x86\jinyphp\opr-02.php on line 6
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Notice: Undefined variable: php_errormsg in C:\php-7.1.4-Win32-VC14-x86\jinyphp\opr-02.php on line 6
 = 오류를 출력합니다.
 </code></pre></div></div>
 
-<p>오류 발생시 <code class="highlighter-rouge">$php_errormsg</code> 변수는 <code class="highlighter-rouge">바로 사용</code>해야 합니다.<br />
-만일 여러 번의 오류가 발생할 경우 <code class="highlighter-rouge">$php_errormsgs</code>는 새로운 오류 메시지로 <code class="highlighter-rouge">덮어쓰게</code> 됩니다.</p>
+<p>오류 발생시 <code class="language-plaintext highlighter-rouge">$php_errormsg</code> 변수는 <code class="language-plaintext highlighter-rouge">바로 사용</code>해야 합니다.<br />
+만일 여러 번의 오류가 발생할 경우 <code class="language-plaintext highlighter-rouge">$php_errormsgs</code>는 새로운 오류 메시지로 <code class="language-plaintext highlighter-rouge">덮어쓰게</code> 됩니다.</p>
 
 <p><br /></p>
 
 <h2 id="환경설정">환경설정</h2>
 <hr />
-<p><code class="highlighter-rouge">$php_errormsgs</code>를 사용하기 위해서는 PHP의 환경 설정 <code class="highlighter-rouge">php.ini</code> 에서</p>
+<p><code class="language-plaintext highlighter-rouge">$php_errormsgs</code>를 사용하기 위해서는 PHP의 환경 설정 <code class="language-plaintext highlighter-rouge">php.ini</code> 에서</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>track_error = on
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>track_error = on
 </code></pre></div></div>
 
 <p>상태일 때만 가능합니다.</p>

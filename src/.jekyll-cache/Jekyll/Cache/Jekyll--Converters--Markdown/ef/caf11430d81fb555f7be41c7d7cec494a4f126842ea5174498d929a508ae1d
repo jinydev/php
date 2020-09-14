@@ -1,4 +1,4 @@
-I"%<h1 id="view-헬퍼함수-jinyphp">view 헬퍼함수 (jinyphp)</h1>
+I"<h1 id="view-헬퍼함수-jinyphp">view 헬퍼함수 (jinyphp)</h1>
 <hr />
 <p>jinyphp의 view 패키지는 파사드 형태의 몇가지 헬퍼 함수들을 제공합니다.</p>
 
@@ -9,6 +9,6 @@
 php 파일 실행시 필요한 변수가 있는 경우 배열로 인자값을 전달 할 수 있습니다.
 배열은 연상배열로 작성을 합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="err">\</span><span class="nf">jiny</span><span class="nx">\view\template</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$vars</span><span class="o">=</span><span class="p">[])</span> <span class="o">:</span><span class="kt">string</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="err">\</span><span class="nf">jiny\view\template</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="nv">$vars</span><span class="o">=</span><span class="p">[])</span> <span class="o">:</span><span class="n">string</span>
 </code></pre></div></div>
 :ET

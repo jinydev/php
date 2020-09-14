@@ -1,4 +1,4 @@
-I"p8<h1 id="this">$this</h1>
+I"!9<h1 id="this">$this</h1>
 <hr />
 <p>정의된 클래스의 메서드와 프로퍼티는 인스턴스화를 통하여 생성된 객체변수에 직접 접근했습니다.<br />
 이러한 인스턴스화를 통한 객체의 생성과 접근은 클래스 외부에서 메서드와 프로퍼티를 사용하는 대표적인 방법입니다.</p>
@@ -15,25 +15,25 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(){</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">show</span><span class="p">(){</span>
 			<span class="c1">// 내부 메서드를 호출합니다.</span>
-			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
 		<span class="p">}</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getMessage</span><span class="p">(){</span>
-			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getMessage</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">;</span>
 		<span class="p">}</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="s2">"안녕하세요"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"안녕하세요"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">show</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요
 </code></pre></div></div>
 
 <p>위의 예제를 보면 클래스 내부의 프로퍼티와 메서드는 $this를 통해 내부 접근이 가능합니다.<br />
@@ -42,7 +42,7 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 <p>특별한 $this 인스턴스 변수를 클래스 정의 내에서 사용하기 위해서는 반드시 클래스를 인스턴스화 형태로 객체를 생성해야 합니다.<br />
 예를 들면 $this를 사용하기 위해서 다음과 같이 클래스의 인스턴스화 작업을 해야만 합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>위처럼 $obj 객체변수가 생성되고 나서 내부에서 $this를 통해 내부 메서드와 프로퍼티를 접근할 수 있는 것입니다.</p>
@@ -59,7 +59,7 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 
 <p>PHP 클래스 응용 소스를 보면,</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">setEnv</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">loading</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">setEnv</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">loading</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>위처럼 메서드 함수를 -&gt;로 연결하여 사용하는 코드를 본적이 있을 것입니다.</p>
@@ -68,8 +68,8 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 
 <p>메서드 체인의 원리는 각각의 메서드를 실행 후 $this 반환으로서 객체를 연결합니다.</p>
 
-<p><code class="highlighter-rouge">$obj-&gt;setEnv()-&gt;loading();는 $obj-&gt;setEnv()</code>를 실행하고 <code class="highlighter-rouge">$this</code>를 반환합니다. <code class="highlighter-rouge">$this</code>는 <code class="highlighter-rouge">$obj</code>를 가리키기 때문에 다시<br />
-<code class="highlighter-rouge">$obj-&gt;loading();</code>처럼 실행할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">$obj-&gt;setEnv()-&gt;loading();는 $obj-&gt;setEnv()</code>를 실행하고 <code class="language-plaintext highlighter-rouge">$this</code>를 반환합니다. <code class="language-plaintext highlighter-rouge">$this</code>는 <code class="language-plaintext highlighter-rouge">$obj</code>를 가리키기 때문에 다시<br />
+<code class="language-plaintext highlighter-rouge">$obj-&gt;loading();</code>처럼 실행할 수 있습니다.</p>
 
 <p>이러한 메서드 체인 방법은 보다 코드를 간결하게 만들고 프로그램을 개발하는 데 좀 더 직관적으로 유지보수가 쉬워지는 면도 있습니다.</p>
 
@@ -82,68 +82,68 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 		<span class="k">private</span> <span class="nv">$user_sex</span><span class="p">;</span>
 
 		<span class="c1">// 이름을 설정합니다.</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">setUserName</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">setUserName</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
 		<span class="p">{</span>
-			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+			<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
 
 			<span class="c1">// 자기 자신의 객체를 반환합니다.</span>
 			<span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
 		<span class="p">}</span>
 
 		<span class="c1">// 나이를 설정합니다.</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">setUserAge</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">setUserAge</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
 		<span class="p">{</span>
-			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_age</span> <span class="o">=</span> <span class="nv">$age</span><span class="p">;</span>
+			<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_age</span> <span class="o">=</span> <span class="nv">$age</span><span class="p">;</span>
 
 			<span class="c1">// 자기 자신의 객체를 반환합니다.</span>
 			<span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
 		<span class="p">}</span>
 
 		<span class="c1">// 성별을 설정합니다.</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">setUserSex</span><span class="p">(</span><span class="nv">$sex</span><span class="p">)</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">setUserSex</span><span class="p">(</span><span class="nv">$sex</span><span class="p">)</span>
 		<span class="p">{</span>
-			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_sex</span> <span class="o">=</span> <span class="nv">$sex</span><span class="p">;</span>
+			<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_sex</span> <span class="o">=</span> <span class="nv">$sex</span><span class="p">;</span>
 
 			<span class="c1">// 자기 자신의 객체를 반환합니다.</span>
 			<span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
 		<span class="p">}</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">show</span><span class="p">()</span>
 		<span class="p">{</span>
-			<span class="nb">printf</span><span class="p">(</span><span class="s2">"안녕하세요. 저는 %s입니다. 나이는 %d이고요 %s입니다."</span><span class="p">,</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_name</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_age</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user_sex</span><span class="p">);</span>
+			<span class="nb">printf</span><span class="p">(</span><span class="s2">"안녕하세요. 저는 %s입니다. 나이는 %d이고요 %s입니다."</span><span class="p">,</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_name</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_age</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">user_sex</span><span class="p">);</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
 	<span class="c1">// 클래스를 선언합니다.</span>
-	<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">members</span><span class="p">;</span>
-	<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setUserAge</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">();</span>
+	<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">members</span><span class="p">;</span>
+	<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">setUserAge</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">show</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요. 저는 jiny입니다. 나이는 18이고요 남자입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>안녕하세요. 저는 jiny입니다. 나이는 18이고요 남자입니다.
 </code></pre></div></div>
 
-<p>위의 예제를 보면 각각의 메서드는 <code class="highlighter-rouge">$this</code> 자기 자신의 객체를 반환합니다.</p>
+<p>위의 예제를 보면 각각의 메서드는 <code class="language-plaintext highlighter-rouge">$this</code> 자기 자신의 객체를 반환합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 클래스를 선언합니다.</span>
-<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">members</span><span class="p">;</span>
-<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setUserAge</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">();</span>
+<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">members</span><span class="p">;</span>
+<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">setUserAge</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">show</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>클래스를 선언하고 메서드 체인으로 각각의 메서드를 연결, 호출합니다.<br />
 기존 메서드 호출 방식으로 호출은 다음과 같습니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 클래스를 선언합니다.</span>
-<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">members</span><span class="p">;</span>
+<span class="nv">$objMembers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">members</span><span class="p">;</span>
 
 <span class="c1">// 메서드 호출로 변수를 초기화합니다.</span>
-<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
-<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">setUserAge</span><span class="p">(</span><span class="s2">"18"</span><span class="p">);</span>
-<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">);</span>
+<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">setUserName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
+<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">setUserAge</span><span class="p">(</span><span class="s2">"18"</span><span class="p">);</span>
+<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">setUserSex</span><span class="p">(</span><span class="s2">"남자"</span><span class="p">);</span>
 
-<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">();</span>
+<span class="nv">$objMembers</span><span class="o">-&gt;</span><span class="nf">show</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>위의 전형적은 메서드 호출 사용법은 메서드를 직접 하나씩 호출하여 프로퍼티 변수들을 초기화합니다.<br />
@@ -158,7 +158,7 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 <h2 id="객체-순회">객체 순회</h2>
 <hr />
 <p>PHP 5.x 부터는 객체를 리스트처럼 순회하여 접근할 수 있습니다.<br />
-다음 예제는 객체의 프로퍼티를 <code class="highlighter-rouge">foreach</code>문을 사용하여 순회하여 접근합니다.</p>
+다음 예제는 객체의 프로퍼티를 <code class="language-plaintext highlighter-rouge">foreach</code>문을 사용하여 순회하여 접근합니다.</p>
 
 <p>예제 파일 class-08.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -169,7 +169,7 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
     <span class="k">public</span> <span class="nv">$var3</span> <span class="o">=</span> <span class="s1">'value 3'</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+  <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MyClass</span><span class="p">();</span>
 
   <span class="k">foreach</span><span class="p">(</span><span class="nv">$obj</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">print</span> <span class="s2">"</span><span class="nv">$key</span><span class="s2"> =&gt; </span><span class="nv">$value</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
@@ -179,7 +179,7 @@ $this 객체변수는 자기 자신의 클래스를 가르키는 셀프 변수�
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var1 =&gt; value 1 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var1 =&gt; value 1 
 var2 =&gt; value 2 
 var3 =&gt; value 3
 </code></pre></div></div>

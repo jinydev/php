@@ -1,4 +1,4 @@
-I"�'<ol>
+I"�(<ol>
   <li>
     <h1 id="스크립트">스크립트</h1>
   </li>
@@ -16,7 +16,7 @@ void exit ([ string $status ] )</p>
 <p>예제) exit.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//일반적인 프로그램 종료
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//일반적인 프로그램 종료
 exit;
 exit();
 exit(0);
@@ -37,9 +37,9 @@ void die ( [ string $status ]  );</p>
 <p>내부함수 die()는 스크립트를 종료합니다. exit() 함수와 동일한 동작을 수행합니다.</p>
 
 <p>예제) die.php
-<?php
-	die ("데이터베이스 접속실패");
-?></p>
+&lt;?php
+	die (“데이터베이스 접속실패”);
+?&gt;</p>
 
 <p>|내부함수|
 void register_shutdown_function ( callable $callback [, mixed $parameter [, mixed $… ]] )</p>
@@ -53,7 +53,7 @@ void register_shutdown_function ( callable $callback [, mixed $parameter [, mixe
     	echo ‘Script executed with success’, PHP_EOL;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>register_shutdown_function('shutdown'); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>register_shutdown_function('shutdown'); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -71,7 +71,7 @@ mixed eval ( string $code )</p>
 	$string = ‘cup’;
 	$name = ‘coffee’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 작은 따옴표는 일반 텍스트로 문자를 인식합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 작은 따옴표는 일반 텍스트로 문자를 인식합니다.
 // $string, $name 는 변수명 자체를 화면에 출력합니다.
 $str = 'This is a $string with my $name in it.';
 echo $str. "&lt;br&gt;";
@@ -105,15 +105,15 @@ int connection_status ( void )</p>
 <p>NORMAL 상태는 보통 스크립트를 실행하고 정상적인 동작을 할때 입니다.</p>
 
 <p>예제) connection_status.php
-<?php
+&lt;?php
 	$status = connection_status();
 	if ($status!=0){
     	die;
     } else {
-    	echo $status."<br>";
-    	echo "접속상태 입니다.";
+    	echo $status.”<br />”;
+    	echo “접속상태 입니다.”;
     }
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 0
@@ -136,7 +136,7 @@ int ignore_user_abort ([ bool $value ] )</p>
 &lt;?php
 	echo ‘PHP connection’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ignore_user_abort(true);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ignore_user_abort(true);
 set_time_limit(0);
 
 while(1) {
@@ -178,7 +178,7 @@ int sleep ( int $seconds )</p>
 <p>예제) sleep.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 시간
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 시간
 echo date('h:i:s') . "&lt;br&gt;";
 
 // 10 초간 지연 
@@ -202,7 +202,7 @@ void usleep ( int $micro_seconds )</p>
 <p>예제) usleep.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 시간
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 시간
 echo date('h:i:s') . "&lt;br&gt;";
 
 // 2 초간 대기합니다.
@@ -231,7 +231,7 @@ void set_time_limit ( int $seconds )</p>
 	set_time_limit(100);
 	echo “스크립트시간 100초<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while ($i&lt;=50){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while ($i&lt;=50){
     echo "sleep=$i , ";
     sleep(1);
     $i++;
@@ -249,7 +249,7 @@ sleep= , sleep=1 , sleep=2 , sleep=3 , sleep=4 , sleep=5 , sleep=6 , sleep=7 , s
 <p>예제) set_time_limit2.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set_time_limit(20);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set_time_limit(20);
 
 while ($i&lt;=10){
     echo "i=$i ";
@@ -273,9 +273,9 @@ string get_current_user ( void )</p>
 <p>내부함수 get_current_user()는 현재 PHP 스크립트를 실행하고 있는 소유자(owner)를 확인할 수 있습니다.</p>
 
 <p>예제) get_current_user.php
-<?php
-	echo "스크립트 onwer: " . get_current_user();
-?></p>
+&lt;?php
+	echo “스크립트 onwer: “ . get_current_user();
+?&gt;</p>
 
 <p>화면출력)
 스크립트 onwer: infoh</p>
@@ -288,7 +288,7 @@ int getlastmod ( void )</p>
 <p>예제) getlastmod.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$scriptDate = date ("F d Y H:i:s.", getlastmod());
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$scriptDate = date ("F d Y H:i:s.", getlastmod());
 echo "죄종수정일: " . $scriptDate . "&lt;br&gt;";
 
 if (date ("Y-m-d", getlastmod()) &lt;= "2017-10-03"){

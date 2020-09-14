@@ -1,4 +1,4 @@
-I"_6<h1 id="문자와-문자열">문자와 문자열</h1>
+I"z7<h1 id="문자와-문자열">문자와 문자열</h1>
 <hr />
 <p>PHP는 변수의 타입을 문자 변수와 문자열 변수로 구분하지 않습니다. PHP는 모두 하나의 문자열 변수로 취급합니다. 하지만 C 언어와 같은 언어들은 문자와 문자열을 구별하여 처리하고 있습니다.</p>
 
@@ -65,7 +65,7 @@
 
 <p>|문자열|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$name1</span> <span class="o">=</span> <span class="s2">"Hello world!"</span><span class="p">;</span>
-<span class="nv">$name2</span> <span class="o">=</span> <span class="err">‘</span><span class="nx">php</span> <span class="nx">world</span><span class="o">!</span><span class="err">’</span><span class="p">;</span>
+<span class="nv">$name2</span> <span class="o">=</span> <span class="err">‘</span><span class="n">php</span> <span class="n">world</span><span class="o">!</span><span class="err">’</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>PHP 언어가 C 언어와 달리 문자와 문자열을 구분하지 않고, 문자 배열을 사전에 정의하지 않아도 된다는 것은 프로그램 동작 시 발생하는 데이터 타입 불일치 오류를 줄여줄 수 있는 강점입니다.</p>
@@ -81,7 +81,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world!
 </code></pre></div></div>
 
 <p>PHP는 문자열을 표시하는 데 있어서 큰따옴표(“)와 작은따옴표(‘)를 모두 사용할 수 있습니다.
@@ -99,17 +99,17 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello 'PHP' world!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello 'PHP' world!
 </code></pre></div></div>
 
-<p>위의 예제는 <code class="highlighter-rouge">$name</code> 변수에 문자열을 저장 후에 값을 출력합니다.</p>
+<p>위의 예제는 <code class="language-plaintext highlighter-rouge">$name</code> 변수에 문자열을 저장 후에 값을 출력합니다.</p>
 
 <blockquote>
   <p>HTML은 대부분 문자열을 큰따옴표를 이용하여 사용하는 경우가 많다. 이러한 이유로 PHP 개발자들은 작은 따옴표를 선호하는 경향이 있습니다.</p>
 </blockquote>
 
 <blockquote>
-  <p>큰 따옴표을 포함하여 문자열을 처리할때, 충돌을 방지하기 위해서 <code class="highlighter-rouge">\"</code>와 같이 이스케이프 문자를 같이 사용합니다.</p>
+  <p>큰 따옴표을 포함하여 문자열을 처리할때, 충돌을 방지하기 위해서 <code class="language-plaintext highlighter-rouge">\"</code>와 같이 이스케이프 문자를 같이 사용합니다.</p>
 </blockquote>
 
 <p><br /></p>
@@ -127,7 +127,7 @@
 
   <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
   	<span class="c1">// 한 글자씩 출력합니다.</span>
-  	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> , "</span> <span class="o">.</span> <span class="nv">$name</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+  	<span class="k">echo</span> <span class="s2">"i = </span><span class="nv">$i</span><span class="s2"> , "</span> <span class="mf">.</span> <span class="nv">$name</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
   <span class="p">}</span>
 
   
@@ -135,7 +135,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 0 , H
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i = 0 , H
 i = 1 , e
 i = 2 , l
 i = 3 , l
@@ -157,7 +157,7 @@ i = 11 , !
 <p>생성한 변수의 타입이 문자열인지를 확인할 수 있습니다. is_string() 내부 함수는 입력되는 변수의 타입이 문자열인지를 판별하여 논리값으로 반환합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_string</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_string</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>예제 파일 string-04.php</p>
@@ -174,7 +174,7 @@ i = 11 , !
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>is_string(false) = bool(false)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>is_string(false) = bool(false)
 is_string(true) = bool(false)
 is_string(NULL) = bool(false)
 is_string('abc') = bool(true)
@@ -196,21 +196,21 @@ is_string(0) = bool(false)
 <hr />
 <p>문자 중에는 특수문자라는 것이 있습니다. 브라우저 이외에 콘솔 등 text 형태로 자료를 출력할 때 특수문자를 같이 이용할 때 좀 더 보기 좋은 문서를 만들 수 있습니다.</p>
 
-<p><code class="highlighter-rouge">\n</code>	:개행문자</p>
+<p><code class="language-plaintext highlighter-rouge">\n</code>	:개행문자</p>
 
-<p><code class="highlighter-rouge">\r</code>	:캐리지 리턴</p>
+<p><code class="language-plaintext highlighter-rouge">\r</code>	:캐리지 리턴</p>
 
-<p><code class="highlighter-rouge">\t</code>	:탭</p>
+<p><code class="language-plaintext highlighter-rouge">\t</code>	:탭</p>
 
-<p><code class="highlighter-rouge">\f</code>	:폼피드</p>
+<p><code class="language-plaintext highlighter-rouge">\f</code>	:폼피드</p>
 
-<p><code class="highlighter-rouge">\b</code>	:백스페이스</p>
+<p><code class="language-plaintext highlighter-rouge">\b</code>	:백스페이스</p>
 
-<p><code class="highlighter-rouge">\a</code>	:경고음</p>
+<p><code class="language-plaintext highlighter-rouge">\a</code>	:경고음</p>
 
-<p><code class="highlighter-rouge">\e</code>	:esc문자</p>
+<p><code class="language-plaintext highlighter-rouge">\e</code>	:esc문자</p>
 
-<p><code class="highlighter-rouge">\\</code>	:역슬래시</p>
+<p><code class="language-plaintext highlighter-rouge">\\</code>	:역슬래시</p>
 
 <blockquote>
   <p>Note: 이스케이프는 바로 다음에 위치한 글자를 단순한 문자로 인식을 합니다.</p>
@@ -241,7 +241,7 @@ is_string(0) = bool(false)
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world!
 hello world!
 $a
 </code></pre></div></div>

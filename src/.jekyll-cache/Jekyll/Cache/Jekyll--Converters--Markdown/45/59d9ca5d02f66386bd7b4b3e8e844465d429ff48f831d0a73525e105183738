@@ -1,11 +1,11 @@
-I"c<h1 id="localhost">localhost</h1>
+I"v<h1 id="localhost">localhost</h1>
 <hr />
 <p>만일 PHP를 서버가 아닌 개인 PC에서 실행할 경우 도메인이나 서버 IP 접속을 할 수 없습니다. 또는 보유한 도메인 주소가 없는 경우에는 localhost 이름을 통해 php가 실행되어 있는 웹 서버로 접속이 가능합니다.</p>
 
 <p>localhost는 127.0.0.1의 IP 주소 값을 가집니다.</p>
 
 <p>실행 접속 )</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http:// localhost / 스크립트파일.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http:// localhost / 스크립트파일.php
 
 http:// 127.0.0.1 / 스크립트파일.php
 </code></pre></div></div>

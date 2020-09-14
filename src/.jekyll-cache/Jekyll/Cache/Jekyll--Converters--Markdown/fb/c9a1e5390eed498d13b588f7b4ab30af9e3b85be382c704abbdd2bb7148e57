@@ -1,4 +1,4 @@
-I"�&<h1 id="패키지-배포">패키지 배포</h1>
+I"�'<h1 id="패키지-배포">패키지 배포</h1>
 <hr />
 
 <p>작성한 페키지를 배포를 하기 위해서는 페키지스트에 등록을 해야 합니다.</p>
@@ -14,7 +14,7 @@
 <hr />
 <p>작성한 페키지를 Git으로 형상관리를 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd packages\jiny\hello
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd packages\jiny\hello
 </code></pre></div></div>
 
 <p>먼저 작성한 페키지의 작업 디렉토리로 이동을 합니다.</p>
@@ -25,13 +25,13 @@
 <hr />
 <p>깃 초기화 명령을 통해서 깃을 레포지토리를 생성을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git init
 Initialized empty Git repository in D:/htdocs/composer/packages/jiny/hello/.git/
 </code></pre></div></div>
 
 <h3 id="1112-등록과-커밋">11.1.2 등록과 커밋</h3>
 <hr />
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git add .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git add .
 The file will have its original line endings in your working directory.
 
 D:\htdocs\composer\packages\jiny\hello&gt;git commit -m "First commit"
@@ -57,7 +57,7 @@ D:\htdocs\composer\packages\jiny\hello&gt;git commit -m "First commit"
 <hr />
 <p>페키지 작업폴더를 깃허브 원격 저장소와 연결을 합니다. 처음 깃 저장소를 생성을 하게 되면 친절하게 원격저장소로 연결할 수 있는 방법을 알려 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git remote add origin https://github.com/jinyphp/hello.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git remote add origin https://github.com/jinyphp/hello.git
 
 D:\htdocs\composer\packages\jiny\hello&gt;git push -u origin master
 Counting objects: 5, done.
@@ -80,7 +80,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 <p>패키지의 버전을 관리할 수 있도록 테그를 설정합니다.<br />
 깃 테그 명령을 입력후에 데크부분도 같이 업로드 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git tag -a 0.0.1 -m "First Version"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;git tag -a 0.0.1 -m "First Version"
 
 D:\htdocs\composer\packages\jiny\hello&gt;git push --tags
 Counting objects: 1, done.
@@ -90,7 +90,7 @@ To https://github.com/jinyphp/hello.git
  * [new tag]         0.0.1 -&gt; 0.0.1
 </code></pre></div></div>
 
-<p>깃허브 저장소 이름아래에 있는 텝메뉴에서 <code class="highlighter-rouge">Release</code>를 선택합니다.<br />
+<p>깃허브 저장소 이름아래에 있는 텝메뉴에서 <code class="language-plaintext highlighter-rouge">Release</code>를 선택합니다.<br />
 번호가 한단계 늘어나서 1로 변경된 것을 확인해 볼 수 있습니다.</p>
 
 <p>이제 만들어 놓은 페키지를 깃허브에 등록을 하였습니다.<br />
@@ -114,9 +114,9 @@ To https://github.com/jinyphp/hello.git
 
 <h3 id="1132-등록-제출">11.3.2 등록 제출</h3>
 <hr />
-<p>깃허브에 공개한 페키지를 등록을 합니다. 상단 메뉴에 있는 <code class="highlighter-rouge">submit</code>을 선택합니다.</p>
+<p>깃허브에 공개한 페키지를 등록을 합니다. 상단 메뉴에 있는 <code class="language-plaintext highlighter-rouge">submit</code>을 선택합니다.</p>
 
-<p>깃 저장소의 주소를 입력하는 곳이 있습니다. 주소는 깃허브의 저장소에서 확인을 할 수 있습니다. <code class="highlighter-rouge">check</code>를 선택하여 등록을 진행합니다.</p>
+<p>깃 저장소의 주소를 입력하는 곳이 있습니다. 주소는 깃허브의 저장소에서 확인을 할 수 있습니다. <code class="language-plaintext highlighter-rouge">check</code>를 선택하여 등록을 진행합니다.</p>
 
 <p>문제가 없다고 판단이 되면 “submit” 버튼이 활성화 됩니다.</p>
 
@@ -140,17 +140,17 @@ To https://github.com/jinyphp/hello.git
 <hr />
 <p>패키지스트 우측상단의 자신의 계정이름을 클릭하시면 본인이 등록한 페키지들의 목록을 확인할 수 있습니다.</p>
 
-<p><code class="highlighter-rouge">Show API Token</code> 버튼을 클릭하면 우측에 토큰기를 생성하여 출력해 줍니다.</p>
+<p><code class="language-plaintext highlighter-rouge">Show API Token</code> 버튼을 클릭하면 우측에 토큰기를 생성하여 출력해 줍니다.</p>
 
 <p>이 토큰키를 복사하여 깃허브 저장소에 등록해 주도록 합니다.</p>
 
-<p>깃허브 저장소로 이동하여 저장소의 <code class="highlighter-rouge">Setting</code>을 부분을 선택합니다.</p>
+<p>깃허브 저장소로 이동하여 저장소의 <code class="language-plaintext highlighter-rouge">Setting</code>을 부분을 선택합니다.</p>
 
 <p>좌측 메뉴에 보면 WebHooks 메뉴를 확인할 수 있습니다.</p>
 
-<p><code class="highlighter-rouge">add webhook</code>을 선택합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">add webhook</code>을 선택합니다.</p>
 
-<p><code class="highlighter-rouge">Integrations &amp; service</code>를 선택합니다. <code class="highlighter-rouge">add service</code>를 선택합니다.
+<p><code class="language-plaintext highlighter-rouge">Integrations &amp; service</code>를 선택합니다. <code class="language-plaintext highlighter-rouge">add service</code>를 선택합니다.
 서비스 목록에서 packagist를 선택합니다.</p>
 
 <p>페키지스트 사이트에서 복사한 토큰키를 저장후에 등록을 합니다.</p>
@@ -168,7 +168,7 @@ To https://github.com/jinyphp/hello.git
 <p>앞에서 등록한 오토로드를 원상태로 되돌립니다. 추가한 내용을 삭제하고, dumpautoload를 실행합니다.</p>
 
 <p>그러면 아래와 같이 PHP는 관련 클래스를 찾을 수 없어 오류를 발생하게 됩니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Fri May 18 20:19:07 2018] PHP Fatal error:  Uncaught Error: Class 'Jiny\Hello\HelloMessage' not found in D:\htdocs\composer\index.php:6
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Fri May 18 20:19:07 2018] PHP Fatal error:  Uncaught Error: Class 'Jiny\Hello\HelloMessage' not found in D:\htdocs\composer\index.php:6
 St[Fri May 18 20:19:07 2018] ::1:55047 [500]: / - Uncaught Error: Class 'Jiny\Hello\HelloMessage' not found in D:\htdocs\composer\index.php:6
 Stack trace:
 #0 {main}
@@ -177,7 +177,7 @@ thrown in D:\htdocs\composer\index.php on line 6
 
 <h3 id="1152-패키지-설치">11.5.2 패키지 설치</h3>
 <hr />
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer&gt;composer require jiny/hello
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer&gt;composer require jiny/hello
 Using version ^0.0.1 for jiny/hello
 ./composer.json has been updated
 Loading composer repositories with package information
@@ -190,7 +190,7 @@ Generating autoload files
 
 <p>패키지가 성공적으로 설치가 되었습니다. 컴포저의 패키지를 담고 있는 /vendor 디렉토리를 확인해 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\vendor&gt;dir/w
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\vendor&gt;dir/w
  D 드라이브의 볼륨: dev
  볼륨 일련 번호: 1669-566C
 

@@ -1,4 +1,4 @@
-I"<p>|내부함수|
+I""<p>|내부함수|
 array array_udiff ( array $array1 , array $array2 [, array $… ], callable $value_compare_func )</p>
 
 <p>내부함수 array_udiff()는 콜백 함수를 사용하여 배열의 차이를 계산합니다. 데이터 비교를위한 내부 함수를 사용하는 array_diff ()와는 차이가 있습니다.</p>
@@ -27,7 +27,7 @@ $array2[1]-&gt;width = 9;  $array2[1]-&gt;height = 2;</p>
     $areaA = $a-&gt;width * $a-&gt;height;
     $areaB = $b-&gt;width * $b-&gt;height;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($areaA &lt; $areaB) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($areaA &lt; $areaB) {
     return -1;
 } elseif ($areaA &gt; $areaB) {
     return 1;

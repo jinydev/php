@@ -1,9 +1,9 @@
-I"�<h1 id="객체-복사">객체 복사</h1>
+I"<h1 id="객체-복사">객체 복사</h1>
 <hr />
 <p>new 키워드는 새로운 객체를 생성합니다. new 키워드는 초기화된 객체를 생성합니다.<br />
 만일 클래스 값의 초기화 같은 것이 필요하다면 그냥 new 키워드를 이용하여 객체를 생성하면 됩니다.</p>
 
-<p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 <code class="highlighter-rouge">clone</code> 키워드를 사용해야 합니다.</p>
+<p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 <code class="language-plaintext highlighter-rouge">clone</code> 키워드를 사용해야 합니다.</p>
 
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
@@ -17,24 +17,24 @@
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">showMessage</span><span class="p">(){</span>
-			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">showMessage</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">;</span>
 		<span class="p">}</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="s2">"testing clone"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">message</span> <span class="o">=</span> <span class="s2">"testing clone"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">showMessage</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="nf">showMessage</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
 testing clone
 </code></pre></div></div>
 

@@ -123,13 +123,13 @@
 <hr />
 <p>컴포저 초기화는 터미널 창에서 다음과 같이 명령을 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer init
 </code></pre></div></div>
 
 <p>초기화 명령을 입력하면 몇 단계입력을 요구합니다.<br />
 입력된 내용을 기반으로 컴포저 관리파일인 composer.json 파일을 자동으로 생성해 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:\htdocs\composer&gt;composer init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:\htdocs\composer&gt;composer init
 
   Welcome to the Composer config generator
 
@@ -233,7 +233,7 @@ Do you confirm generation [yes]? yes
 <h2 id="063-페키지-설치">06.3 페키지 설치</h2>
 <hr />
 <p>컴포저를 이용하여 페키지를 설치하는 방법에는 2가지가 있습니다.<br />
-<code class="highlighter-rouge">Require</code> 명령을 이용하는 방법과 <code class="highlighter-rouge">install</code> 명령을 이용하는 방법입니다.</p>
+<code class="language-plaintext highlighter-rouge">Require</code> 명령을 이용하는 방법과 <code class="language-plaintext highlighter-rouge">install</code> 명령을 이용하는 방법입니다.</p>
 
 <p><br /></p>
 
@@ -253,7 +253,7 @@ Do you confirm generation [yes]? yes
 
 <p>설치할 패지키 목록이 들어 있는 composer.json 파일을 가지고 있다면, 쉽게 관련된 페키지를 설치할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div></div>
 
 <p>위의 방식은 이전의 require를 이용하여 페지키를 설치하는 것과 유사합니다.<br />
@@ -269,18 +269,18 @@ Require는 페키지를 찾아 설치하고 json 파일을 갱신하게 됩니�
 
 <p>Require-dev를 설치할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require --dev 페키지명
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require --dev 페키지명
 </code></pre></div></div>
 
 <p>아래와 같이 페키지를 require-dev 쪽으로 설치할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:\htdocs\composer&gt;composer require --dev illuminate/container
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d:\htdocs\composer&gt;composer require --dev illuminate/container
   [Symfony\Component\Console\Exception\CommandNotFoundException]
   Command "require-dev" is not defined.
 </code></pre></div></div>
 
 <p>설치후에 다시 composer.json 파일을 확인해 보도록 합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
     "name": "infoh/composer",
     "authors": [
         {
@@ -298,7 +298,7 @@ Require는 페키지를 찾아 설치하고 json 파일을 갱신하게 됩니�
 </code></pre></div></div>
 
 <p>굵은 표시로 된 영역이 자동적으로 추가된 것을 확인을 할 수 있습니다. 이렇게 설치된 패키지는 컴포저 오토로드가 아직 알지 못합니다.<br />
-내부적인 <code class="highlighter-rouge">vendor/composer</code> 파일들을 재작성 해주어야 합니다. 재작성하는 방법으로는 <code class="highlighter-rouge">dumpautoload</code> 명령을 수행하는 것입니다.</p>
+내부적인 <code class="language-plaintext highlighter-rouge">vendor/composer</code> 파일들을 재작성 해주어야 합니다. 재작성하는 방법으로는 <code class="language-plaintext highlighter-rouge">dumpautoload</code> 명령을 수행하는 것입니다.</p>
 
 <p><br /></p>
 
@@ -309,7 +309,7 @@ Require는 페키지를 찾아 설치하고 json 파일을 갱신하게 됩니�
 <hr />
 <p>패키지를 추가하게 되면 갱신이 필요하게 됩니다. 터미널 창에서 다음과 같이 명령을 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer dumpautoload
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer dumpautoload
 </code></pre></div></div>
 
 <p>매번 패키지를 재설치하는 경우 내부적으로 컴포저가 인식할 수 있도록 dumpautoload를 실행해 주는 것이 좋습니다.</p>
@@ -324,12 +324,12 @@ Require는 페키지를 찾아 설치하고 json 파일을 갱신하게 됩니�
 
 <p>이는 페키지를 다운로드하는 것이 아닌 새로운 내용을 담을 페키지를 생성을 하는 명령어 입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer create-project 패키지명 폴더명 버전
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer create-project 패키지명 폴더명 버전
 </code></pre></div></div>
 
 <p>예를 들어 라라벨과 같은 프레임워크는 설치파일이 컴포저를 통하여 배포됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer create-project laravel/laravel
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer create-project laravel/laravel
 </code></pre></div></div>
 
 <p>과 같이 입력하게 되면 컴포저를 통하여 설치파일과 디렉토리가 생성됩니다.</p>
@@ -371,7 +371,7 @@ Git의 clone으로 설치하게 되면 소스 형상관리 형태로 복제되�
 
 <p>컴포저를 이용하면 쉽게 사용중인 페키지의 버전을 확인하여 업데이트를 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
 </code></pre></div></div>
 
 <p>Update는 Require를 통하여 설치하는 것 대신에, 직접 composer.json 파일을 수정후에 update명령어로 설치를 할 수도 있습니다.</p>
@@ -382,7 +382,7 @@ Git의 clone으로 설치하게 되면 소스 형상관리 형태로 복제되�
 <hr />
 <p>설치한 페키지를 삭제할 수 있습니다. 터미널창에서 간단하게 remove 명령만 입력하게 되면 설치한 페키지를 쉽게 제거할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer remove 패키지이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer remove 패키지이름
 </code></pre></div></div>
 
 <p>페키지를 제거하게 되면 관련 파일들을 자동으로 삭제함과 동시에 composer.json 파일도 갱신해 주기 때문에 매우 편리합니다.</p>

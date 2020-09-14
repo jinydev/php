@@ -115,15 +115,15 @@
 <p>예제 파일 logic-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$a</span> <span class="o">=</span> <span class="mh">0x02</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="nv">$a</span> <span class="o">|=</span> <span class="mh">0x01</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a값 = 2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a값 = 2
 a값 = 3
 </code></pre></div></div>
 
@@ -150,15 +150,15 @@ or( | ) 연산을 비트별로 하게 되면<br />
 <p>예제 파일 logic-06.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$a</span> <span class="o">=</span> <span class="mh">0x03</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="nv">$a</span> <span class="o">&amp;=</span> <span class="mh">0x02</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="o">.</span><span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"a값 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a값 = 3
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a값 = 3
 a값 = 2
 </code></pre></div></div>
 
@@ -192,13 +192,13 @@ a값 = 2
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 03
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 03
 b = 0f
 a^b = 0c 
 </code></pre></div></div>
 
 <p>위 예제는</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A는 = 0 0 0 0  0 0 1 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A는 = 0 0 0 0  0 0 1 1
 B는 = 0 0 0 0  1 1 1 1 
 ----------------------------
 XOR  0 0 0 0  1 1 0 0
@@ -259,7 +259,7 @@ XOR  0 0 0 0  1 1 0 0
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
 a = 2
 a = 8
 a = 4

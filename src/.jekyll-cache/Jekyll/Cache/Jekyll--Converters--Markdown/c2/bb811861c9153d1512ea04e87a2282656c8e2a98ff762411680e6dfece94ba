@@ -1,4 +1,4 @@
-I"� <h1 id="논리변수">논리변수</h1>
+I"� <h1 id="논리변수">논리변수</h1>
 <hr />
 <p>불린(Boolean)이라고 부르는 변수형 타입은 논리형 변수라고도 합니다. 주로 수학적의미로 참과 거짓을 표기합니다. 또는 1과 0의 숫자값으로 표현하기도 합니다. 하지만 요즘은 숫자값 대신 상수를 이용하여 true, false 기호를 많이 사용합니다.</p>
 
@@ -23,7 +23,7 @@
 <p>0과 1의 표현은 사람이 직관적으로 쉽게 알아보기는 어렵습니다. 그래서,</p>
 
 <p>|표현|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 = false (거짓)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 = false (거짓)
 1 = true (참)
 </code></pre></div></div>
 
@@ -83,7 +83,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = true(참) 입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = true(참) 입니다.
 b = true(참) 입니다.
 c = false(거짓) 입니다.
 d = false(거짓) 입니다.
@@ -96,7 +96,7 @@ d = false(거짓) 입니다.
 <p>PHP는 생성한 변수가 논리변수를 확인할 수 있는 is_bool()이라는 내부함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_bool</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_bool</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>매개변수 값으로 변수를 전달하면 변수의 논리 타입 여부를 논리값 형태로 반환합니다.</p>
@@ -123,7 +123,7 @@ d = false(거짓) 입니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a는 논리 변수 입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a는 논리 변수 입니다.
 b는 논리 변수가 아닙니다.
 int(0)
 </code></pre></div></div>

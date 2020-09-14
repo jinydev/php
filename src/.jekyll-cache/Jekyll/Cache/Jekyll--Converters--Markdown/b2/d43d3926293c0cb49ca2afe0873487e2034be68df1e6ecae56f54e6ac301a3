@@ -1,4 +1,4 @@
-I"7<h1 id="linux-설치">Linux 설치</h1>
+I"J<h1 id="linux-설치">Linux 설치</h1>
 <hr />
 <p>PHP 언어가 가장많이 설치되어 운영하고 있는 환경은 Linux 입니다. 수많은 리눅스 서버들은 웹서비스 운영을 위해서 PHP 언어를 사용합니다.</p>
 
@@ -25,7 +25,7 @@
 
 <p>파워셀을 실행하여 다음과 같이 명령을 입력 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 </code></pre></div></div>
 
 <p><img src="./img/linux02.png" alt="" /></p>

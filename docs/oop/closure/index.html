@@ -142,7 +142,7 @@ Closure {
 	/* 메서드 */
 	private __construct ( void )</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static Closure bind ( Closure $closure , object $newthis [, mixed $newscope = "static" ] )
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static Closure bind ( Closure $closure , object $newthis [, mixed $newscope = "static" ] )
 
 public Closure bindTo ( object $newthis [, mixed $newscope = "static" ] )
 
@@ -203,7 +203,7 @@ $변수명();</p>
 // memCustomer() 함수는 클로저(익명 함수)를 반환합니다. 
 function memCustomer($name){</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $name 변수를 둘러싼 클로저를 반환합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $name 변수를 둘러싼 클로저를 반환합니다.
 return function ($doCommand) use ($name){
 return echo “name=” . $name . “, Command=” . $doCommand; }
 </code></pre></div></div>
@@ -253,7 +253,7 @@ name = hojin , command = jiny</p>
 
 <p>class A {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function __construct($val) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function __construct($val) {
     $this-&gt;val = $val;
 }
 

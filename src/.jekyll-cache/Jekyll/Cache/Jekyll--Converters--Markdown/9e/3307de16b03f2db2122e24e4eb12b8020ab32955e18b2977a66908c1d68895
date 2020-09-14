@@ -1,4 +1,4 @@
-I"�<h1 id="frontmatter란">FrontMatter란?</h1>
+I"/<h1 id="frontmatter란">FrontMatter란?</h1>
 <hr />
 <p>FrontMatter는 문서의 포맷형태로 머리말을 의미합니다.</p>
 
@@ -11,7 +11,7 @@ layout: "home"
 <span class="cp">&lt;?php echo "Hello"; ?&gt;</span>
 </code></pre></div></div>
 
-<p>다음과 같이 html 문서 내의 상단에 <code class="highlighter-rouge">---</code>로 둘러싼 yaml 타입의 데이터를 추출 할 수 있습니다.</p>
+<p>다음과 같이 html 문서 내의 상단에 <code class="language-plaintext highlighter-rouge">---</code>로 둘러싼 yaml 타입의 데이터를 추출 할 수 있습니다.</p>
 
 <h2 id="패키지-설치">패키지 설치</h2>
 <hr />
@@ -23,7 +23,7 @@ layout: "home"
 <hr />
 <p>쉽게 프론트메터를 분리하기 위해서 전용함수를 제공합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">\jiny\frontMatter</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">\</span><span class="nf">jiny\frontMatter</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>예제코드</p>
@@ -33,7 +33,7 @@ layout: "home"
 <span class="nv">$content</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">"test.php.html"</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$content</span><span class="p">;</span>
 
-<span class="nv">$body</span> <span class="o">=</span> <span class="nx">\jiny\frontMatter</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
+<span class="nv">$body</span> <span class="o">=</span> <span class="err">\</span><span class="nf">jiny\frontMatter</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
 <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$body</span><span class="p">);</span>
 </code></pre></div></div>
 :ET

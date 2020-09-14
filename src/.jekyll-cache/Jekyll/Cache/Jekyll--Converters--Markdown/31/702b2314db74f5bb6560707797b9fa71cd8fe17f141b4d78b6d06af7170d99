@@ -1,13 +1,13 @@
-I"<h1 id="3항-연산자-ternary-operator">3항 연산자 (Ternary operator)</h1>
+I"�<h1 id="3항-연산자-ternary-operator">3항 연산자 (Ternary operator)</h1>
 <hr />
 <p>새롭게 등장하는 3항 연산자는 if조건문을 간략하게 약식 형태의 연산자 처럼 표현을 할 수 있는 방법입니다. 
 3항 연산자는 물음표(?) 기호와 콜론(:) 기호로 구성됩니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">조건식</span> <span class="o">?</span> <span class="nx">true의</span> <span class="nx">처리</span> <span class="nx">로직</span> <span class="o">:</span> <span class="nx">false의</span> <span class="nx">처리</span> <span class="nx">로직</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">조건식</span> <span class="o">?</span> <span class="n">true의</span> <span class="n">처리</span> <span class="n">로직</span> <span class="o">:</span> <span class="n">false의</span> <span class="n">처리</span> <span class="n">로직</span>
 </code></pre></div></div>
 
-<p>위와 같이 조건식<code class="highlighter-rouge">?</code>공식1<code class="highlighter-rouge">:</code>공식2 형태로 표현한 것을 3항 연산자라고 합니다.<br />
+<p>위와 같이 조건식<code class="language-plaintext highlighter-rouge">?</code>공식1<code class="language-plaintext highlighter-rouge">:</code>공식2 형태로 표현한 것을 3항 연산자라고 합니다.<br />
 3항 연산자는 두 개의 연산 기호를 사용합니다. 바로 ? 기호와 : 기호입니다.</p>
 
 <p><br /></p>
@@ -34,10 +34,10 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>한국어
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>한국어
 </code></pre></div></div>
 
-<p>위의 예제는 $lang 변수의 값이 <code class="highlighter-rouge">ko</code>인 경우에는 참(true) 조거인 <code class="highlighter-rouge">한국어</code> 문자열을 출력합니다.<br />
+<p>위의 예제는 $lang 변수의 값이 <code class="language-plaintext highlighter-rouge">ko</code>인 경우에는 참(true) 조거인 <code class="language-plaintext highlighter-rouge">한국어</code> 문자열을 출력합니다.<br />
 그 이외의 경우에는 else의 의미인 콜론 기호 다음의 “Korean” 문자열을 출력합니다.</p>
 
 <p><br /></p>
@@ -46,11 +46,11 @@
 <hr />
 <p>3항 연산자에서 만일 참(true) 조건이 없는 경우에는 참 조건의 식은 생략 가능합니다.</p>
 <blockquote>
-  <p>이 기능은 <code class="highlighter-rouge">PHP 5.3</code>부터 지원합니다.</p>
+  <p>이 기능은 <code class="language-plaintext highlighter-rouge">PHP 5.3</code>부터 지원합니다.</p>
 </blockquote>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">조건식</span> <span class="o">?:</span> <span class="nx">false의</span> <span class="nx">처리</span> <span class="nx">로직</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">조건식</span> <span class="o">?:</span> <span class="n">false의</span> <span class="n">처리</span> <span class="n">로직</span>
 </code></pre></div></div>
 
 <p>다음은 참 조건을 생략하는 예제입니다.</p>
@@ -71,16 +71,16 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>english
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>english
 Korean
 </code></pre></div></div>
 
-<p>위의 예제에는 두 번의 3항 연산자를 사용했습니다. 처음의 3항 연산자의 경우 <code class="highlighter-rouge">$lang</code> 변수의 값이 미지정되어 미정의된 상태입니다.<br />
-따라서 3항 연산자의 첫 번째 로직의 조건은 거짓(false)으로 false 조건인 <code class="highlighter-rouge">english</code> 문자열이 출력됩니다.</p>
+<p>위의 예제에는 두 번의 3항 연산자를 사용했습니다. 처음의 3항 연산자의 경우 <code class="language-plaintext highlighter-rouge">$lang</code> 변수의 값이 미지정되어 미정의된 상태입니다.<br />
+따라서 3항 연산자의 첫 번째 로직의 조건은 거짓(false)으로 false 조건인 <code class="language-plaintext highlighter-rouge">english</code> 문자열이 출력됩니다.</p>
 
 <p>두 번째 3항 연산자의 경우 먼저 $lang 변수에 값을 미리 지정합니다. 
-따라서 두 번째 3항 연산자의 조건은 참(true)이 되어서 <code class="highlighter-rouge">Korean</code> 문자열을 출력합니다. 
-즉, <code class="highlighter-rouge">$lang</code>의 값이 반환됩니다.</p>
+따라서 두 번째 3항 연산자의 조건은 참(true)이 되어서 <code class="language-plaintext highlighter-rouge">Korean</code> 문자열을 출력합니다. 
+즉, <code class="language-plaintext highlighter-rouge">$lang</code>의 값이 반환됩니다.</p>
 
 <p><br /></p>
 :ET

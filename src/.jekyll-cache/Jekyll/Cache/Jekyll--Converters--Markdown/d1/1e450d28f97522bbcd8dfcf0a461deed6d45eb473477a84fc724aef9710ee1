@@ -1,4 +1,4 @@
-I"k<h1 id="메서드">메서드</h1>
+I"|<h1 id="메서드">메서드</h1>
 <hr />
 <p>메서드(Method)라는 이름은 객체 내에서 함수를 부르는 또 다른 이름 중 하나입니다.</p>
 
@@ -9,15 +9,15 @@
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ClassName</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">메서드_함수명1</span><span class="p">(</span><span class="nx">매개변수</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">메서드_함수명1</span><span class="p">(</span><span class="kt">매개변수</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// method body</span>
     <span class="p">}</span>
 
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">메서드_함수명2</span><span class="p">(</span>
-    	<span class="nx">매개변수1</span><span class="p">,</span>
-    	<span class="nx">매개변수2</span><span class="p">,</span>
-    	<span class="nx">매개변수3</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="n">메서드_함수명2</span><span class="p">(</span>
+    	<span class="kt">매개변수1</span><span class="p">,</span>
+    	<span class="kt">매개변수2</span><span class="p">,</span>
+    	<span class="kt">매개변수3</span>
     <span class="p">)</span> <span class="p">{</span>
         <span class="c1">// method body</span>
     <span class="p">}</span>
@@ -28,7 +28,7 @@
 
 <p>메서드 이름은 PSR 권장 표준 코딩 스타일을 따라서 낙타 표기법(camelCase) 스타일로 작성을 권고합니다. 또한 메서드 이름의 첫 시작 문자는 소문자 사용 할 것을 권장합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) 
 camelCase ()
 loveStudy()
 </code></pre></div></div>

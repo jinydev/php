@@ -121,12 +121,13 @@
 
 <p>PHP에서는 대부분 변수 선언과 동시에 사용이 가능하고 현재의 스크립트 종료까지 변수는 메모리와 데이터 값이 유효합니다.</p>
 
-<?php
-	$x = 5; //글로벌변수 
+<p>&lt;?php
+	$x = 5; //글로벌변수</p>
 
-	$name = "jiny";	//글로벌변수 
-	
-?>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$name = "jiny";	//글로벌변수 
+</code></pre></div></div>
+
+<p>?&gt;</p>
 
 <p>위의 예제에서 정의된 $x 변수는 스크립트 종료까지 메모리에 공간이 유효하게 사용됩니다.</p>
 
@@ -162,7 +163,7 @@
 &lt;?php
 	$x = 5; //글로벌변수</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
 	// 함수 내에서는 함수 외부에 있는 글로벌변수를 읽을 수 없습니다.
 	echo "함수 안에서는 외부 변수를 사용할 수 없습니다. x = $x&lt;/p&gt;";
 }
@@ -183,7 +184,7 @@ echo "외부에서는 글로벌변수를 사용할 수 있습니다. x = $x&lt;/
 <p>예제 파일  scope-02.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = "jiny";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = "jiny";
 $b = "lee";
 
 echo "글로벌 변수를 출력합니다. &lt;br&gt;";
@@ -253,7 +254,7 @@ global $변수명;</p>
 <p>예제 파일 scope-03.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = "jiny";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = "jiny";
 $b = "lee";
 
 echo "글로벌 변수를 출력합니다. &lt;br&gt;";
@@ -311,7 +312,7 @@ static $변수명;</p>
 <p>예제 파일 scope-04.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function increment(){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function increment(){
 	// static 변수는 처음 한 번 선언 시에만 초기화 됩니다.
 	static $total = 0; 
 	return ++$total;
@@ -342,7 +343,7 @@ echo increment() . "&lt;br&gt;";
 		$bar++; 
     		echo “unset 실행 전: $bar, “;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 변수를 직접 해제합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 변수를 직접 해제합니다.
 		unset($bar); 
 		$bar = 21; 
 		echo "unset 실행 후: $bar &lt;br&gt;"; 
@@ -377,7 +378,7 @@ PHP내에서 생성된 모든 글로벌변수들은 내부에서 슈퍼 배열(s
 	$bbb = 20;
 	$ccc = 30;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($GLOBALS); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($GLOBALS); ?&gt;
 </code></pre></div></div>
 
 <p>결과
@@ -394,7 +395,7 @@ Array ( [_GET] =&gt; Array ( ) [_POST] =&gt; Array ( ) [_COOKIE] =&gt; Array ( )
     $x = 5;
     $y = 7;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
 	global $x,$y;
 	$y = $x + $y;
 }
@@ -415,7 +416,7 @@ echo $y; // outputs 15 ?&gt;
     $x = 5;
     $y = 10;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
   $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
 }
 
@@ -463,9 +464,9 @@ echo $y; // outputs 15 ?&gt;
 PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합니다. 이는 HTML폼 ACTION 스크립트 경로를 입력할 때 유용하게 사용을 합니다.</p>
 
 <p>예제 파일 server-01.php
-<?php
-	echo $_SERVER['PHP_SELF'];
-?></p>
+&lt;?php
+	echo $_SERVER[‘PHP_SELF’];
+?&gt;</p>
 
 <p>출력 화면</p>
 
@@ -491,7 +492,7 @@ PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합�
 	echo “<br />”;
 	echo “SERVER_SOFTWARE = “.$_SERVER[‘SERVER_SOFTWARE’];</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 echo "SERVER_PROTOCOL = ".$_SERVER['SERVER_PROTOCOL']; ?&gt;
 </code></pre></div></div>
 
@@ -519,7 +520,7 @@ echo "SERVER_PROTOCOL = ".$_SERVER['SERVER_PROTOCOL']; ?&gt;
 		echo “POST 방식으로 접속하였습니다.<br />”;		
 	} else {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>}
 
 echo "REQUEST_TIME = ".$_SERVER['REQUEST_TIME'];
 echo "&lt;br&gt;";
@@ -540,10 +541,10 @@ echo "&lt;br&gt;"; ?&gt;
 쿼리 문자열을 통해 페이지에 액세스한 경우 쿼리 문자열을 반환합니다.</p>
 
 <p>예제 파일 server-04.php
-<?php
-	echo "QUERY_STRING = ".$_SERVER['QUERY_STRING'];
-	echo "<br>";
-?></p>
+&lt;?php
+	echo “QUERY_STRING = “.$_SERVER[‘QUERY_STRING’];
+	echo “<br />”;
+?&gt;</p>
 
 <p>출력 화면
 스크립트 다음에 쿼리를 같이 입력합니다. server-05.php?a=1&amp;b=2</p>
@@ -579,7 +580,7 @@ echo "&lt;br&gt;"; ?&gt;
 	echo “HTTP_ACCEPT = “.$_SERVER[‘HTTP_ACCEPT’];
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "HTTP_ACCEPT_CHARSET = ".$_SERVER['HTTP_ACCEPT_CHARSET'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "HTTP_ACCEPT_CHARSET = ".$_SERVER['HTTP_ACCEPT_CHARSET'];
 echo "&lt;br&gt;";
 
 echo "HTTP_ACCEPT_ENCODING = ".$_SERVER['HTTP_ACCEPT_ENCODING'];
@@ -610,13 +611,13 @@ echo "&lt;br&gt;"; ?&gt;
 https 프로토콜 여부를 확인합니다.</p>
 
 <p>예제 파일 server-06.php
-<?php
-	if($_SERVER['HTTPS'] == "on"){
-		echo "https://";
+&lt;?php
+	if($_SERVER[‘HTTPS’] == “on”){
+		echo “https://”;
 	} else {
-		echo "http://";
+		echo “http://”;
 	}
-?></p>
+?&gt;</p>
 
 <p>$_SERVER[‘REMOTE_ADDR’]
 사용자 클라이언트가 접속한 IP 주소를 반환합니다. 예) 192.168.0.3</p>
@@ -631,7 +632,7 @@ https 프로토콜 여부를 확인합니다.</p>
 	echo “REMOTE_ADDR = “.$_SERVER[‘REMOTE_ADDR’];
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "REMOTE_HOST = ".$_SERVER['REMOTE_HOST'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "REMOTE_HOST = ".$_SERVER['REMOTE_HOST'];
 echo "&lt;br&gt;";
 
 echo "REMOTE_PORT = ".$_SERVER['REMOTE_PORT'];
@@ -660,7 +661,7 @@ echo "&lt;br&gt;";
 	echo “PATH_TRANSLATED = “.$_SERVER[‘PATH_TRANSLATED’];
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "SCRIPT_FILENAME = ".$_SERVER['SCRIPT_FILENAME'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "SCRIPT_FILENAME = ".$_SERVER['SCRIPT_FILENAME'];
 echo "&lt;br&gt;";
 
 echo "SCRIPT_NAME = ".$_SERVER['SCRIPT_NAME'];

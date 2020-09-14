@@ -113,8 +113,8 @@
 
 <h2 id="static">static</h2>
 <hr />
-<p><code class="highlighter-rouge">static</code> 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미입니다.<br />
-<code class="highlighter-rouge">static</code>으로 선언된 프로퍼티는 인스턴스를 생성하지 않아도 접근이 가능합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">static</code> 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미입니다.<br />
+<code class="language-plaintext highlighter-rouge">static</code>으로 선언된 프로퍼티는 인스턴스를 생성하지 않아도 접근이 가능합니다.</p>
 
 <p>하지만 인스턴스 객체변수로는 접근이 불가능합니다.</p>
 
@@ -125,20 +125,20 @@
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="k">static</span> <span class="nv">$aaa</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 	
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(){</span>
-			<span class="k">echo</span> <span class="s2">"show = "</span><span class="o">.</span> <span class="kt">self</span><span class="o">::</span><span class="nv">$aaa</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">show</span><span class="p">(){</span>
+			<span class="k">echo</span> <span class="s2">"show = "</span><span class="mf">.</span> <span class="k">self</span><span class="o">::</span><span class="nv">$aaa</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="s2">"aaa = "</span><span class="o">.</span> <span class="nx">Jiny</span><span class="o">::</span><span class="nv">$aaa</span> <span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"aaa = "</span><span class="mf">.</span> <span class="nc">Jiny</span><span class="o">::</span><span class="nv">$aaa</span> <span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="nx">Jiny</span><span class="o">::</span><span class="na">show</span><span class="p">();</span>
+	<span class="nc">Jiny</span><span class="o">::</span><span class="nf">show</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aaa = 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aaa = 10
 show = 10
 </code></pre></div></div>
 
@@ -146,11 +146,11 @@ show = 10
 
 <h2 id="호출">호출</h2>
 <hr />
-<p>정적 메서드와 프로퍼티의 호출은 <code class="highlighter-rouge">-&gt;</code> 기호 대신에 더블콜론(<code class="highlighter-rouge">::</code>)을 사용합니다.<br />
+<p>정적 메서드와 프로퍼티의 호출은 <code class="language-plaintext highlighter-rouge">-&gt;</code> 기호 대신에 더블콜론(<code class="language-plaintext highlighter-rouge">::</code>)을 사용합니다.<br />
 인스턴스의 객체가 없기 때문에 -&gt;를 사용할 수 없습니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스명::메서드();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스명::메서드();
 클래스명::$프로퍼티명
 </code></pre></div></div>
 
@@ -165,30 +165,30 @@ show = 10
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="k">static</span> <span class="nv">$my_static</span> <span class="o">=</span> <span class="s1">'jiny'</span><span class="p">;</span>
 		
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">staticValue</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">staticValue</span><span class="p">()</span>
 		<span class="p">{</span>
-			<span class="k">return</span> <span class="kt">self</span><span class="o">::</span><span class="nv">$my_static</span><span class="p">;</span>
+			<span class="k">return</span> <span class="k">self</span><span class="o">::</span><span class="nv">$my_static</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
 	<span class="c1">// 정적 프로퍼티를 출력합니다.</span>
-	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span> <span class="nx">Jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="mf">.</span> <span class="nc">Jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="nv">$jiny</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Jiny</span><span class="p">();</span>
-	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="o">.</span> <span class="nv">$jiny</span><span class="o">-&gt;</span><span class="na">staticValue</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$jiny</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Jiny</span><span class="p">();</span>
+	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="mf">.</span> <span class="nv">$jiny</span><span class="o">-&gt;</span><span class="nf">staticValue</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 정적 프로퍼티는 인스턴트화된 경우 -&gt;로 호출할 수 없습니다.  </span>
-	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="o">.</span><span class="nv">$jiny</span><span class="o">-&gt;</span><span class="na">my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// Undefined "Property" my_static </span>
+	<span class="k">print</span> <span class="s2">"인스턴스 ="</span><span class="mf">.</span><span class="nv">$jiny</span><span class="o">-&gt;</span><span class="n">my_static</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// Undefined "Property" my_static </span>
 
-	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span><span class="nv">$jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="mf">.</span><span class="nv">$jiny</span><span class="o">::</span><span class="nv">$my_static</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="nv">$classname</span> <span class="o">=</span> <span class="s1">'Jiny'</span><span class="p">;</span>
-	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="o">.</span><span class="nv">$classname</span><span class="o">::</span><span class="nv">$my_static</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// As of PHP 5.3.0</span>
+	<span class="k">print</span> <span class="s2">"정적 프로퍼티 ="</span><span class="mf">.</span><span class="nv">$classname</span><span class="o">::</span><span class="nv">$my_static</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// As of PHP 5.3.0</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정적 프로퍼티 =jiny
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정적 프로퍼티 =jiny
 인스턴스 =jiny
 인스턴스 =
 정적 프로퍼티 =jiny
@@ -208,17 +208,17 @@ show = 10
 
 <p>클래스 안에서 선언한 상수는 다음과 같이 호출하여 사용할 수 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">상수명</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">::</span><span class="n">상수명</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>클래스 안에 있는 프로퍼티 호출</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="nv">$변수명</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">::</span><span class="nv">$변수명</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>클래스 안에 있는 메서드 호출</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">메서드</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">::</span><span class="nf">메서드</span><span class="p">();</span>
 </code></pre></div></div>
 
                 </section>

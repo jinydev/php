@@ -1,4 +1,4 @@
-I"E&<h1 id="컴포저">컴포저</h1>
+I"�&<h1 id="컴포저">컴포저</h1>
 <hr />
 <p>PHP의 컴포저(composer)는 오토로드와 의존성을 관리할 수 있는 도구 입니다. npm이나 apt, pip같은 것들과 유사합니다. 컴포저는 PSR-4 AutoLoader 제안과 PSR를 준수하여 페키지 의존성을 관리합니다.
 컴포저를 PHP에서 사용하기 위해서는 PHP 5.3.2 이상의 버전이 필요로 합니다. 또한 컴포저는 멀티플레폼을 지원함으로 windows, linux, osx 등에서도 사용이 가능합니다.</p>
@@ -44,7 +44,7 @@
 
 <p>컴포넌트는 대부분 배포하는 사람의 벤더명과 패키지명으로 구성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>벤더명/패키지명
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>벤더명/패키지명
 </code></pre></div></div>
 
 <p>이러한 구조들은 서로 패키지들이 중첩되지 않고 각각의 관리를 하기 위함 입니다. 동일한</p>
@@ -64,12 +64,12 @@
 
 <p>필요한 패키지를 찾았으면 콘솔창에서 composer 명령을 통하여 패키지를 설치 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require jiny/routes
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require jiny/routes
 </code></pre></div></div>
 
 <p>패키지를 다운로드 하면 자동으로 최상의 디렉토리에 /vender 폴더가 하나 생성됩니다. /vender 폴더는 다운로드 받은 컨포넌트 패키지들을 저장 관리하는 폴더 입니다.</p>
 
-<p><code class="highlighter-rouge">/vander</code> 폴더 아래에 각각의 컴포넌트의 벤더명으로 폴더를 생성하고, 패키지 명으로 폴더를 생성합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">/vander</code> 폴더 아래에 각각의 컴포넌트의 벤더명으로 폴더를 생성하고, 패키지 명으로 폴더를 생성합니다.</p>
 
 <p>/vender / 페키지벤더명 / 패키지명
 또한 composer.json 과 composer.lock 파일을 생성하고 관리해 줍니다.</p>
@@ -93,7 +93,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>또는 콘솔상에서 composer 명령을 입력할때 직접 입력을 하거나 <code class="highlighter-rouge">--global</code> 명령을 통하여 글로벌 정보로 저장할 수 있습니다.</p>
+<p>또는 콘솔상에서 composer 명령을 입력할때 직접 입력을 하거나 <code class="language-plaintext highlighter-rouge">--global</code> 명령을 통하여 글로벌 정보로 저장할 수 있습니다.</p>
 
 <p>composer config 패키지명.도메인 아이디 페스워드</p>
 
@@ -107,19 +107,19 @@
 <h2 id="패키지-사용">패키지 사용</h2>
 <hr />
 
-<p>컴포저를 통하여 컴포넌트 패키지를 다운로드 하면 <code class="highlighter-rouge">/vender</code> 폴더에 자동적으로 저장이 됩니다. 컴포져는 모든 패키지들의 의존성과 호환이 되는 PSR-4 기준의 오토로더를 생성, 제공됩니다.</p>
+<p>컴포저를 통하여 컴포넌트 패키지를 다운로드 하면 <code class="language-plaintext highlighter-rouge">/vender</code> 폴더에 자동적으로 저장이 됩니다. 컴포져는 모든 패키지들의 의존성과 호환이 되는 PSR-4 기준의 오토로더를 생성, 제공됩니다.</p>
 
-<p>자동적으로 제공되는 오토로더를 프로그램 상단에 <code class="highlighter-rouge">require</code> 명령을 통하여 삽입하여 패키지들을 사용하시면 됩니다.</p>
+<p>자동적으로 제공되는 오토로더를 프로그램 상단에 <code class="language-plaintext highlighter-rouge">require</code> 명령을 통하여 삽입하여 패키지들을 사용하시면 됩니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span> <span class="err">“</span><span class="nx">vender</span><span class="o">/</span><span class="nx">autoload</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+<span class="k">require</span> <span class="err">“</span><span class="n">vender</span><span class="o">/</span><span class="n">autoload</span><span class="mf">.</span><span class="n">php</span><span class="err">”</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>설치된 패키지를 통하여 클래스의 인스턴스를 생성할때는 패키지의 벤더명과 네임스페이스를 같이 사용을 해 주셔야 합니다.</p>
 
-<p>만일 네임스페이스명이 길다고 하면 <code class="highlighter-rouge">use</code> 명령을 통하여 별칭 또는 현재의 네임스페이스 경로를 변경할 수도 있습니다.</p>
+<p>만일 네임스페이스명이 길다고 하면 <code class="language-plaintext highlighter-rouge">use</code> 명령을 통하여 별칭 또는 현재의 네임스페이스 경로를 변경할 수도 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\jiny\routes</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">jiny\routes</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p><br /><br /></p>

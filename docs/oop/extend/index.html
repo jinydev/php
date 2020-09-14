@@ -137,39 +137,39 @@ class 기존 클래스
 <p>처음에 만든 기존 클래스는 상속받은 추가클래스의 또 다른 클래스 상속의 부모로 사용할 수 있습니다. 추가 클래스2는 추가클래스를 상속받은 새로운 객체 입니다.</p>
 
 <p>예제 파일 extends-01.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="c1">// 기본 클래스 a를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">a</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">echo</span> <span class="s2">"Hello = "</span> <span class="o">.</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+        public function hello($string)
+        {
+            echo "Hello = " . $string . "&lt;br&gt;";
+        }
+    }
 
-    <span class="c1">// 기본 클래스 a를 상속하는 b 클래스를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">whatIs</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">echo</span> <span class="s2">"myName is: "</span> <span class="o">.</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+        public function whatIs($string)
+        {
+            echo "myName is: " . $string . "&lt;br&gt;";
+        }
+    }
 
-    <span class="c1">// 상속받은 b 클래스 인스턴스를 생성합니다.</span>
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">b</span><span class="p">();</span>
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
 
-    <span class="c1">// 상속받은 부모의 메서드 함수를 사용할 수 있습니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">hello</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
+    // 상속받은 부모의 메서드 함수를 사용할 수 있습니다.
+    $obj-&gt;hello("jiny");
 
-    <span class="c1">// 새롭게 추가한 메서드 함수를 사용할 수 있습니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">whatIs</span><span class="p">(</span><span class="s2">"hojinLee"</span><span class="p">);</span>
+    // 새롭게 추가한 메서드 함수를 사용할 수 있습니다.
+    $obj-&gt;whatIs("hojinLee");
 
-<span class="cp">?&gt;</span>
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello = jiny
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello = jiny
 myName is: hojinLee
 </code></pre></div></div>
 
@@ -192,17 +192,17 @@ myName is: hojinLee
 
 <h3 id="1513-부모-클래스">15.1.3 부모 클래스</h3>
 <hr />
-<p><code class="highlighter-rouge">extends</code>로 상속받는 이전의 클래스를 부모 클래스라고 합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">extends</code>로 상속받는 이전의 클래스를 부모 클래스라고 합니다.</p>
 
 <p>클래스 상속 시 부모의 메서드 및 프로퍼티를 별도의 특별한 표기 없이 쉽게 사용을할 수 있습니다. 
-하지만 부모 클래스의 프로퍼티와 메서드 기능을 꼭 선택해서 호출하고 싶을 때는 <code class="highlighter-rouge">parent::</code> 키워드를 이용하여 부모 클래스를 호출할 수 있습니다.</p>
+하지만 부모 클래스의 프로퍼티와 메서드 기능을 꼭 선택해서 호출하고 싶을 때는 <code class="language-plaintext highlighter-rouge">parent::</code> 키워드를 이용하여 부모 클래스를 호출할 수 있습니다.</p>
 
 <p>예제 파일 extends-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
     <span class="c1">// 기본 클래스 a를 생성합니다.</span>
     <span class="kd">class</span> <span class="nc">a</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="nv">$age</span><span class="o">&gt;=</span><span class="mi">18</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
         <span class="p">}</span>
@@ -210,13 +210,13 @@ myName is: hojinLee
     <span class="p">}</span>
 
     <span class="c1">// 기본 클래스 a를 상속하는 b 클래스를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
+    <span class="kd">class</span> <span class="nc">b</span> <span class="kd">extends</span> <span class="nc">a</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">whatIs</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="nv">$age</span><span class="p">)</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">whatIs</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="nv">$age</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">echo</span> <span class="s2">"myName is: "</span> <span class="o">.</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="s2">"myName is: "</span> <span class="mf">.</span> <span class="nv">$string</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="k">parent</span><span class="o">::</span><span class="na">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">parent</span><span class="o">::</span><span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)){</span>
                 <span class="k">echo</span> <span class="s2">"성인입니다.&lt;br&gt;"</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
                 <span class="k">echo</span> <span class="s2">"미성년입니다.&lt;br&gt;"</span><span class="p">;</span>
@@ -227,24 +227,24 @@ myName is: hojinLee
     <span class="p">}</span>
 
     <span class="c1">// 상속받은 b 클래스 인스턴스를 생성합니다.</span>
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">b</span><span class="p">();</span>
+    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">b</span><span class="p">();</span>
 
     <span class="c1">// 새롭게 추가한 메서드 함수를 사용할 수 있습니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">whatIs</span><span class="p">(</span><span class="s2">"hojinLee"</span><span class="p">,</span><span class="mi">18</span><span class="p">);</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">whatIs</span><span class="p">(</span><span class="s2">"hojinLee"</span><span class="p">,</span><span class="mi">18</span><span class="p">);</span>
 
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">whatIs</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span><span class="mi">17</span><span class="p">);</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">whatIs</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span><span class="mi">17</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myName is: hojinLee
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myName is: hojinLee
 성인입니다.
 myName is: jiny
 미성년입니다.
 </code></pre></div></div>
 
 <p>위의 예는 클래스 상속의 예입니다. 클래스 b는 클래스 a를 상속받은 클래스입니다. 
-<code class="highlighter-rouge">Parent::</code> 키워드를 이용하여 클래스 a의 메서드를 호출할 수 있습니다.</p>
+<code class="language-plaintext highlighter-rouge">Parent::</code> 키워드를 이용하여 클래스 a의 메서드를 호출할 수 있습니다.</p>
 
 <h3 id="1514-자식-클래스">15.1.4 자식 클래스</h3>
 <hr />
@@ -269,71 +269,71 @@ myName is: jiny
 오버라이딩 작성은 매우 간단합니다.</p>
 
 <p>예제 파일 override-01.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="c1">// 기본 클래스 a를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">a</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="nv">$age</span><span class="o">&gt;=</span><span class="mi">18</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    // 기본 클래스 a를 생성합니다.
+    class a
+    {
+        public function isAdult($age)
+        {
+            if($age&gt;=18) return true; else return false;
+        }
 
-    <span class="p">}</span>
+    }
 
-    <span class="c1">// 기본 클래스 a를 상속하는 b 클래스를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
-    <span class="p">{</span>
-        <span class="c1">// a의 메서드를 오버라이딩 다시 정의합니다.</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="nv">$age</span><span class="o">&gt;=</span><span class="mi">20</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
+    // 기본 클래스 a를 상속하는 b 클래스를 생성합니다.
+    class b extends a
+    {
+        // a의 메서드를 오버라이딩 다시 정의합니다.
+        public function isAdult($age)
+        {
+            if($age&gt;=20) return true; else return false;
+        }
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">whatIs</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="nv">$age</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">echo</span> <span class="s2">"myName is: "</span> <span class="o">.</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+        public function whatIs($string,$age)
+        {
+            echo "myName is: " . $string . "&lt;br&gt;";
 
-            <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)){</span>
-                <span class="k">echo</span> <span class="s2">"성인입니다.&lt;br&gt;"</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">echo</span> <span class="s2">"미성년입니다.&lt;br&gt;"</span><span class="p">;</span>
-            <span class="p">}</span>
+            if ($this-&gt;isAdult($age)){
+                echo "성인입니다.&lt;br&gt;";
+            } else {
+                echo "미성년입니다.&lt;br&gt;";
+            }
 
-        <span class="p">}</span>
+        }
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">old18</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="nv">$age</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">echo</span> <span class="s2">"myName is: "</span> <span class="o">.</span> <span class="nv">$string</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+        public function old18($string,$age)
+        {
+            echo "myName is: " . $string . "&lt;br&gt;";
 
-            <span class="k">if</span> <span class="p">(</span><span class="k">parent</span><span class="o">::</span><span class="na">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)){</span>
-                <span class="k">echo</span> <span class="s2">"성인입니다.&lt;br&gt;"</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">echo</span> <span class="s2">"미성년입니다.&lt;br&gt;"</span><span class="p">;</span>
-            <span class="p">}</span>
+            if (parent::isAdult($age)){
+                echo "성인입니다.&lt;br&gt;";
+            } else {
+                echo "미성년입니다.&lt;br&gt;";
+            }
 
-        <span class="p">}</span>
+        }
 
-    <span class="p">}</span>
+    }
 
-    <span class="c1">// 상속받은 b 클래스 인스턴스를 생성합니다.</span>
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">b</span><span class="p">();</span>
+    // 상속받은 b 클래스 인스턴스를 생성합니다.
+    $obj = new b();
 
-    <span class="k">echo</span> <span class="s2">"오버라이딩한 클래스의 결과&lt;br&gt;"</span><span class="p">;</span>
-    <span class="c1">// 새롭게 추가한 메서드 함수를 사용할 수 있습니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">whatIs</span><span class="p">(</span><span class="s2">"hojinLee"</span><span class="p">,</span><span class="mi">18</span><span class="p">);</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">whatIs</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span><span class="mi">17</span><span class="p">);</span>
+    echo "오버라이딩한 클래스의 결과&lt;br&gt;";
+    // 새롭게 추가한 메서드 함수를 사용할 수 있습니다.
+    $obj-&gt;whatIs("hojinLee",18);
+    $obj-&gt;whatIs("jiny",17);
 
-    <span class="c1">// 오버라이딩 이전의 메서드를 이용합니다.</span>
-    <span class="c1">// parent 키워드 이용</span>
-    <span class="k">echo</span> <span class="s2">"===== &lt;br&gt;"</span><span class="p">;</span>
-    <span class="k">echo</span> <span class="s2">"오버라이딩 이전의 클래스의 결과&lt;br&gt;"</span><span class="p">;</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">old18</span><span class="p">(</span><span class="s2">"hojinLee"</span><span class="p">,</span><span class="mi">18</span><span class="p">);</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">old18</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span><span class="mi">17</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
+    // 오버라이딩 이전의 메서드를 이용합니다.
+    // parent 키워드 이용
+    echo "===== &lt;br&gt;";
+    echo "오버라이딩 이전의 클래스의 결과&lt;br&gt;";
+    $obj-&gt;old18("hojinLee",18);
+    $obj-&gt;old18("jiny",17);
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>오버라이딩한 클래스의 결과
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>오버라이딩한 클래스의 결과
 myName is: hojinLee
 미성년입니다.
 myName is: jiny
@@ -372,7 +372,7 @@ myName is: jiny
     <span class="kd">class</span> <span class="nc">a</span>
     <span class="p">{</span>
 
-        <span class="k">final</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">copyright</span> <span class="p">(){</span>
+        <span class="k">final</span> <span class="k">public</span> <span class="k">function</span> <span class="n">copyright</span> <span class="p">(){</span>
             <span class="c1">// 본 메서드 함수는 대체되지 않습니다.</span>
             <span class="k">echo</span> <span class="s2">"copyright all Right JinyPHP"</span><span class="p">;</span>
         <span class="p">}</span>
@@ -380,10 +380,10 @@ myName is: jiny
     <span class="p">}</span>
 
     <span class="c1">// 기본 클래스 a를 상속하는 b 클래스를 생성합니다.</span>
-    <span class="kd">class</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
+    <span class="kd">class</span> <span class="nc">b</span> <span class="kd">extends</span> <span class="nc">a</span>
     <span class="p">{</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">copyright</span><span class="p">(){</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">copyright</span><span class="p">(){</span>
             <span class="c1">// 본 메서드 함수는 대체되지 않습니다.</span>
             <span class="k">echo</span> <span class="s2">"copyright all Right ..."</span><span class="p">;</span>
         <span class="p">}</span>
@@ -392,15 +392,15 @@ myName is: jiny
     <span class="p">}</span>
 
     <span class="c1">// 상속받은 b 클래스 인스턴스를 생성합니다.</span>
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">b</span><span class="p">();</span>
+    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">b</span><span class="p">();</span>
 
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">copyright</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">copyright</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>오류 메시지</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/jinyphp/final-01.php - Cannot override final method a::copyright() in C:\php-7.1.4-Win32-VC14-x86\jinyphp\final-01.php on line 27
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/jinyphp/final-01.php - Cannot override final method a::copyright() in C:\php-7.1.4-Win32-VC14-x86\jinyphp\final-01.php on line 27
 </code></pre></div></div>
 
 <p>위의 예제는 클래스의 오버라이딩 방지에 대한 예입니다. final키워드로설정된 메서드는 상속후 다시 오버라이딩을 할 수 없습니다. 만일 final로 선언된 메서드를 오버라이딩을 할 경우 “cannot override final method” 오류가 표시됩니다.</p>

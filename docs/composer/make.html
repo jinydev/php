@@ -119,7 +119,7 @@
 <p>페키지의 소스를 작성하기 전에 먼저 배포를 위한 임시 디렉토리를 하나 만들도록 합니다.<br />
 필자는 현재 프로젝트에서 /packages 라는 폴더를 하나 만들도록 하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir packages 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir packages 
 cd packages
 </code></pre></div></div>
 <p>폴더를 만들고 해당 폴더로 이동을 합니다.</p>
@@ -130,14 +130,14 @@ Vendor는 페키지들이 서로 충돌이 되지 않도록 구분하는 용도�
 
 <p>필자의 vendor 이름은 jiny 입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir jiny
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir jiny
 cd jiny
 </code></pre></div></div>
 <p>폴더를 만들고 해당 폴더로 이동을 합니다.</p>
 
 <p>이제 배포하고자 하는 페키지명에 대한 폴더를 생성을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir hello
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir hello
 cd hello
 </code></pre></div></div>
 <p>폴더를 만들고 해당 폴더로 이동을 합니다.</p>
@@ -159,12 +159,12 @@ cd hello
 
 <p>이를 위해서 컴포저는 json 파일을 쉽게 만들수 있도록 init 옵션을 제공합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer init
 </code></pre></div></div>
 
 <p>명령은 composer.json 파일을 쉽게 만들어 주는 역할을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;composer init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;composer init
   Welcome to the Composer config generator
 This command will guide you through creating your composer.json config.
 </code></pre></div></div>
@@ -174,7 +174,7 @@ This command will guide you through creating your composer.json config.
 <h3 id="1022-벤더명페키지">10.2.2 벤더명/페키지</h3>
 <hr />
 <p>먼저 패키지에 대한 벤더명과 이름을 물어봅니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package name (&lt;vendor&gt;/&lt;name&gt;) [infoh/hello]: jiny/hello
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package name (&lt;vendor&gt;/&lt;name&gt;) [infoh/hello]: jiny/hello
 </code></pre></div></div>
 
 <p>우리가 사전에 정한 이름을 적어 줍니다.<br />
@@ -186,7 +186,7 @@ This command will guide you through creating your composer.json config.
 <hr />
 <p>페키지에 대한 설명부분을 입력합니다. 제작하고 있는 페키지의 대하여 간략한 설명을 입력을 합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Description</span> <span class="p">[]</span><span class="o">:</span> <span class="nx">composer</span> <span class="nx">package</span> <span class="nx">make</span> <span class="nx">test</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Description</span> <span class="p">[]</span><span class="o">:</span> <span class="n">composer</span> <span class="n">package</span> <span class="n">make</span> <span class="n">test</span>
 </code></pre></div></div>
 
 <p>설명 부분은 별도로 composer.json 파일을 에디터로 수정하여 편집을 할 수도 있습니다.</p>
@@ -197,28 +197,28 @@ This command will guide you through creating your composer.json config.
 <hr />
 <p>페키지의 작성자 정보를 입력합니다. 개발자의 이름, 연락처 이메일 주소를 입력을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Author [hojinlee &lt;infohojin@gmail.com&gt;, n to skip]:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Author [hojinlee &lt;infohojin@gmail.com&gt;, n to skip]:
 </code></pre></div></div>
 
 <h3 id="1025-패키지-상태">10.2.5 패키지 상태</h3>
 <hr />
 <p>패키지의 현재의 상태에 대해서 표기를 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimum Stability []: stable
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimum Stability []: stable
 </code></pre></div></div>
 
 <h3 id="1026-패키지-타입">10.2.6 패키지 타입</h3>
 <hr />
 <p>패키지의 타입유형을 작성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package Type (e.g. library, project, metapackage, composer-plugin) []: library
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Package Type (e.g. library, project, metapackage, composer-plugin) []: library
 </code></pre></div></div>
 
 <h3 id="1027-라이센스">10.2.7 라이센스</h3>
 <hr />
 <p>페키지 소스에 대한 라이선스 타입을 지정하도록 합니다. 라이선스는 소프트웨어의 사용 권한을 의미합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>License []: MIT
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>License []: MIT
 </code></pre></div></div>
 
 <p>개인적으로 직접 라이선스를 기술할 수도 있지만, 오픈소스에는 여러 유형의 인기 라이선스를 따르기도 합니다.</p>
@@ -230,7 +230,7 @@ This command will guide you through creating your composer.json config.
 <p>페키지의 의존성을 정의 합니다.<br />
 이부분은 별도로 에디터를 통하여 추가하거나 수정하도록 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define your dependencies.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define your dependencies.
 
 Would you like to define your dependencies (require) interactively [yes]? no
 Would you like to define your dev dependencies (require-dev) interactively [yes]? no
@@ -258,7 +258,7 @@ Would you like to define your dev dependencies (require-dev) interactively [yes]
 </span><span class="err">Do</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">confirm</span><span class="w"> </span><span class="err">generation</span><span class="w"> </span><span class="p">[</span><span class="err">yes</span><span class="p">]</span><span class="err">?</span><span class="w"> </span><span class="err">yes</span><span class="w">
 </span></code></pre></div></div>
 
-<p><code class="highlighter-rouge">Yes</code>를 선택하시면 생성한 json정보를 composer.json 파일로 저장을 하게 됩니다.<br />
+<p><code class="language-plaintext highlighter-rouge">Yes</code>를 선택하시면 생성한 json정보를 composer.json 파일로 저장을 하게 됩니다.<br />
 이제 페키지를 배포하기 위해서 기본적인 정보를 만드는데 성공을 하였습니다.</p>
 
 <p><br /></p>
@@ -298,14 +298,14 @@ Would you like to define your dev dependencies (require-dev) interactively [yes]
     <span class="cd">/**
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">echo</span> <span class="k">__CLASS__</span><span class="o">.</span><span class="s2">" 객체가 생성이 되었습니다.&lt;br&gt;"</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="k">__CLASS__</span><span class="mf">.</span><span class="s2">" 객체가 생성이 되었습니다.&lt;br&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">sayHello</span><span class="p">(</span><span class="nv">$name</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">sayHello</span><span class="p">(</span><span class="nv">$name</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">"Hi! "</span><span class="o">.</span> <span class="nv">$name</span><span class="o">.</span> <span class="s2">"nice meet you.&lt;br&gt;"</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s2">"Hi! "</span><span class="mf">.</span> <span class="nv">$name</span><span class="mf">.</span> <span class="s2">"nice meet you.&lt;br&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -321,7 +321,7 @@ Would you like to define your dev dependencies (require-dev) interactively [yes]
 테스트를 위해서 위의 작성한 패키지를 임시로 오도로드 PSR4 등록을 해보도록 하겠습니다.</p>
 
 <p>메인 root 디렉토리에 있는 composer.json 파일을 에디터를 통해서 편집해 보도록 합니다. 
-설정 내용중에는 <code class="highlighter-rouge">utoload</code>필드 항목과 서브 <code class="highlighter-rouge">psr-4</code>항목을 찾아 볼 수 있습니다.</p>
+설정 내용중에는 <code class="language-plaintext highlighter-rouge">utoload</code>필드 항목과 서브 <code class="language-plaintext highlighter-rouge">psr-4</code>항목을 찾아 볼 수 있습니다.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -342,7 +342,7 @@ Would you like to define your dev dependencies (require-dev) interactively [yes]
 <p>수정한 컴포저의 오토로드를 갱신하기 위해서 dumpautoload 옵션을 실행하도록 합니다.<br />
 루트 디렉토리에서 명령을 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;cd ..
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\htdocs\composer\packages\jiny\hello&gt;cd ..
 D:\htdocs\composer\packages\jiny&gt;cd ..
 D:\htdocs\composer\packages&gt;cd ..
 D:\htdocs\composer&gt;composer dumpautoload
@@ -357,18 +357,18 @@ Generating autoload files
 <hr />
 <p>이제 실제 코드에서 앞에서 작성한 페키지를 삽입하여 코드를 작성해 보도록 하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
-<span class="k">echo</span> <span class="s2">"Composer Study&lt;br&gt;"</span><span class="p">;</span>
-<span class="k">require</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
+echo "Composer Study&lt;br&gt;";
+require "vendor/autoload.php";
 
-<span class="nv">$pack</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Jiny\Hello\HelloMessage</span><span class="p">;</span>
+$pack = new \Jiny\Hello\HelloMessage;
 
-<span class="nv">$pack</span><span class="o">-&gt;</span><span class="na">sayHello</span><span class="p">();</span>
+$pack-&gt;sayHello();
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Composer Study
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Composer Study
 Jiny\Hello\HelloMessage 객체가 생성이 되었습니다.
 Hi! nice meet you.
 </code></pre></div></div>

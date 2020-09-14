@@ -1,6 +1,6 @@
-I"!<h1 id="print">print</h1>
+I"K<h1 id="print">print</h1>
 <hr />
-<p>PHP는 echo 출력문 이외에 다른 언어에서 쉽게 접해볼 수 있었던 print 명령도 같이 지원합니다. print명령문 또한 화면에 출력하는 기능을 합니다. print 명령어는 echo와 같이 <code class="highlighter-rouge">()</code>를 사용해도 되고 생략해도 됩니다.</p>
+<p>PHP는 echo 출력문 이외에 다른 언어에서 쉽게 접해볼 수 있었던 print 명령도 같이 지원합니다. print명령문 또한 화면에 출력하는 기능을 합니다. print 명령어는 echo와 같이 <code class="language-plaintext highlighter-rouge">()</code>를 사용해도 되고 생략해도 됩니다.</p>
 
 <p>print 실습1)
 print() 함수를 이용하여 문자열을 화면에 출력할 수 있습니다. 사용법은 echo와 비슷합니다.</p>
@@ -29,7 +29,7 @@ print() 함수를 이용하여 문자열을 화면에 출력할 수 있습니다
 <p>예제파일: print-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
   <span class="nv">$txt</span> <span class="o">=</span> <span class="s2">"jinyPHP.com"</span><span class="p">;</span>
-  <span class="k">print</span> <span class="s2">"I love "</span> <span class="o">.</span> <span class="nv">$txt</span> <span class="o">.</span> <span class="s2">"!"</span><span class="p">;</span>
+  <span class="k">print</span> <span class="s2">"I love "</span> <span class="mf">.</span> <span class="nv">$txt</span> <span class="mf">.</span> <span class="s2">"!"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
@@ -51,15 +51,15 @@ print() 함수를 이용하여 문자열을 화면에 출력할 수 있습니다
 <p>예제 파일 print-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="k">if</span> <span class="p">(</span><span class="nv">$success</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s2">"hello World!"</span><span class="p">))</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="s2">"출력 성공 "</span><span class="o">.</span><span class="nv">$success</span><span class="p">;</span>
+		<span class="k">echo</span> <span class="s2">"출력 성공 "</span><span class="mf">.</span><span class="nv">$success</span><span class="p">;</span>
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="s2">"출력 실패 "</span><span class="o">.</span><span class="nv">$success</span><span class="p">;</span>
+		<span class="k">echo</span> <span class="s2">"출력 실패 "</span><span class="mf">.</span><span class="nv">$success</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello World!출력 성공 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello World!출력 성공 1
 </code></pre></div></div>
 
 <p>위의 예제는 print() 함수의 반환 값 성질을 이용한 예입니다. print 내장 함수를 통해 문자열을 출력하고 반환 값을 $success 변수에 저장합니다. $success 변수의 논리 값을 비교하여 출력 성공 메시지를 함께 출력합니다. 조건 문법 if의 자세한 개념은 다음 장에서 설명합니다.</p>

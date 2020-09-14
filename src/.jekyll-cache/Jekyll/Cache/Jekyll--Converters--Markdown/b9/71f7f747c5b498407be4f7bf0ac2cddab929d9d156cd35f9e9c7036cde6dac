@@ -1,10 +1,10 @@
-I"�<h1 id="빼기">빼기</h1>
+I"-<h1 id="빼기">빼기</h1>
 <hr />
-<p>컴퓨터 언어의 뺄셈 기호는 <code class="highlighter-rouge">-</code>를 사용합니다.</p>
+<p>컴퓨터 언어의 뺄셈 기호는 <code class="language-plaintext highlighter-rouge">-</code>를 사용합니다.</p>
 
 <p><br /></p>
 
-<h2 id="--연산기호"><code class="highlighter-rouge">-</code> 연산기호</h2>
+<h2 id="--연산기호"><code class="language-plaintext highlighter-rouge">-</code> 연산기호</h2>
 <hr />
 <p>뺄셈은 좌측의 값에서 우측의 값을 뺀 값을 출력합니다. 또한 뺄셈한 결과값을 왼쪽에 대입 연산자를 통해 변수에 저장할 수 있습니다.</p>
 
@@ -16,9 +16,9 @@
 
 <h2 id="뺄셈은-덧셈">뺄셈은 덧셈</h2>
 <hr />
-<p>컴퓨터는 CPU에 연산을 담당하는 <code class="highlighter-rouge">ALU</code>라는 반도체 로직이 설계되어 있습니다.<br />
+<p>컴퓨터는 CPU에 연산을 담당하는 <code class="language-plaintext highlighter-rouge">ALU</code>라는 반도체 로직이 설계되어 있습니다.<br />
 컴퓨터의 연산은 기본적으로 덧셈을 기준으로 설계를 합니다.<br />
-뺄셈은 즉 오른쪽의 값을 <code class="highlighter-rouge">음수로 변환</code>하여 덧셈을 하는 것과 비슷합니다.</p>
+뺄셈은 즉 오른쪽의 값을 <code class="language-plaintext highlighter-rouge">음수로 변환</code>하여 덧셈을 하는 것과 비슷합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$x</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span> <span class="nv">$y</span><span class="p">)</span>
 </code></pre></div></div>
@@ -27,7 +27,7 @@
 
 <h2 id="뺄셈의-원리">뺄셈의 원리</h2>
 <hr />
-<p>빼고자 하는 값의 데이터 <code class="highlighter-rouge">부호 비트</code>를 변경하여 덧셈을 처리하는 것이 뺄셈의 원리입니다.</p>
+<p>빼고자 하는 값의 데이터 <code class="language-plaintext highlighter-rouge">부호 비트</code>를 변경하여 덧셈을 처리하는 것이 뺄셈의 원리입니다.</p>
 
 <p>이러한 하드웨어적인 처리는 단일 설계로 덧셈과 뺄셈을 함께 할 수 있는 설계 기술입니다.<br />
 이러한 점을 프로그램 코딩 시 이해하면 보다 다양한 계산 로직을 만들어낼 수 있을 것입니다.</p>

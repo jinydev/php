@@ -1,4 +1,4 @@
-I"h�<h2 id="조건-제어문">조건 제어문</h2>
+I"N�<h2 id="조건-제어문">조건 제어문</h2>
 
 <p>우리 일상 생활은 알게 모르게 수많은 선택과 결정을 합니다. 컴퓨터 프로그램 또한 하나의 일을 처리할 때 사람처럼 수많은 선택의 조건을 처리하며 수행합니다. 하지만 컴퓨터 프로그램은 이러한 모든 선택 여부를 사용자에게 물어보지 않습니다.</p>
 
@@ -58,7 +58,7 @@
 &lt;?php
 	$country = “Korea”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자열을 비교합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자열을 비교합니다.
 if ($country == "Korea")  echo $country . "에 오신 것을";
 
 echo "환영합니다."; ?&gt;
@@ -78,7 +78,7 @@ Korea에 오신 것을 환영합니다.</p>
 &lt;?php
 	$age = 18;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 숫자를 비교합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 숫자를 비교합니다.
 if ($age &gt;= 18)  echo $age . "는 성인입니다.";
 
 // 숫자를 비교합니다.
@@ -110,7 +110,7 @@ if (조건 ) {
 &lt;?php
 	$num = “10”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "num 값은 " . $num . "입니다.";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "num 값은 " . $num . "입니다.";
 
 if ($num &gt;= 0 ) {
 	echo " (양수입니다.) &lt;br&gt;";
@@ -140,10 +140,10 @@ if (조건) 참 동작 실행 코드; else 거짓 동작 처리;</p>
 <p>거짓 조건 또한 단일 실행 코드로 작성할 수 있습니다. 만일 거짓 조건의 명령이 하나인 경우 한 줄에 모든 내용을 같이 작성을 할 수 있습니다.</p>
 
 <p>예제 파일) if-03.php
-<?php
-	if ($sex == "man") $sexKorean = "남자"; else  $sexKorean = "여자";
-	echo $sexKorean . "입니다. <br>";
-?></p>
+&lt;?php
+	if ($sex == “man”) $sexKorean = “남자”; else  $sexKorean = “여자”;
+	echo $sexKorean . “입니다. <br />”;
+?&gt;</p>
 
 <p>결과
 여자입니다.</p>
@@ -163,16 +163,16 @@ else {
 <p>다음은 성년 여부를 체크하는 간단한 조건 예제를 실행해봅니다.</p>
 
 <p>예제 파일 if-04.php
-<?php
+&lt;?php
 	$age = 20;
-	if ($age >= 20) {
-		echo $age.  "은";
-		echo "성인입니다.";
+	if ($age &gt;= 20) {
+		echo $age.  “은”;
+		echo “성인입니다.”;
 	} else {
-		echo $age.  "은";
-		echo "미성년자입니다.";
+		echo $age.  “은”;
+		echo “미성년자입니다.”;
 	}
-?></p>
+?&gt;</p>
 
 <p>결과
 20은 성인입니다.</p>
@@ -223,7 +223,7 @@ if ( 조건1 ) {
  &lt;?php
 	$num = 5;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($num &gt; 0) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($num &gt; 0) {
 	echo "양수입니다.";
 } else if ($num &lt; 0) {
 		echo "음수입니다.";
@@ -272,7 +272,7 @@ if ( 조건1 ) {
 <p>작성 |문법|
 if (조건1) {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>조건1 만족할 때 실행 코드;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>조건1 만족할 때 실행 코드;
 
 if (조건2) {
 	조건2 만족할 때 실행 코드;  
@@ -286,7 +286,7 @@ if (조건2) {
 <p>작성 |문법|
 if (조건1) {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>조건1 만족할 때 실행 코드;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>조건1 만족할 때 실행 코드;
 
 if (조건2) {
 	조건2 만족할 때 실행 코드;  
@@ -296,7 +296,7 @@ if (조건2) {
 <p>} else {
 	조건1 만족하자 않을 때 실행 코드;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (조건3) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (조건3) {
 	조건3 만족할 때 실행 코드;  
 }
 </code></pre></div></div>
@@ -313,7 +313,7 @@ if (조건2) {
 
   	if ($sex == “man”) {
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($age &gt;= 20) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($age &gt;= 20) {
   			echo "성인 남자입니다.";
 		} else {
   			echo "미성년자 남자입니다.";
@@ -322,7 +322,7 @@ if (조건2) {
 
   	} else if ($sex == “woman”) {
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if($age &gt;= 20){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if($age &gt;= 20){
   			echo "성인 여자입니다.";
 		} else {
   			echo "미성년자 여자입니다.";
@@ -331,7 +331,7 @@ if (조건2) {
 
   	} else if ($sex == “company”) {
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($type == "personal") {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($type == "personal") {
   			echo "개인 기업입니다.";
 		} else {
 			echo "법인 기업입니다.";
@@ -385,7 +385,7 @@ if (조건A &amp;&amp; 조건 B) {
 	$sex = “man”;
 	$age = 21;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($sex == "man" &amp;&amp; $age &gt;= 20) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($sex == "man" &amp;&amp; $age &gt;= 20) {
 	echo "20세 이상의 남성입니다.";
 }  ?&gt;
 </code></pre></div></div>
@@ -440,7 +440,7 @@ if (조건A || 조건 B) {
 &lt;?php
 	$age = 17;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($age &gt;= 18 || $age &lt;= 65) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($age &gt;= 18 || $age &lt;= 65) {
   		echo "18세 이상, 65세 이하의 경제 가능 나이 층입니다.";
 } ?&gt;
 </code></pre></div></div>
@@ -494,7 +494,7 @@ if ( !조건) {
 		// false 조건이 부정으로 true로 변경됨
 		echo “성년 판별 논리 값이 비어 있습니다.<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$age = 18;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$age = 18;
 
 	if($age &gt;= 18){
 		echo "성인입니다. &lt;br&gt;";	
@@ -563,7 +563,7 @@ if ( !조건) {
 &lt;?php
 	$debug = true;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($debug){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($debug){
   		echo "개발자 모드입니다.";
 } else {
   		echo "서비스 모드입니다.";
@@ -599,7 +599,7 @@ if ( !조건) {
 		echo “n 값이 label1일 경우 실행됩니다.”;
 		break;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case label2:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case label2:
 	echo "n 값이 label2일 경우 실행됩니다.";
 	break;
 
@@ -627,7 +627,7 @@ default 서브 명령 키워드는 switch에 입력된 값과 일치되는 case 
 &lt;?php
 	$n = “label2”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($n == "label1"){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($n == "label1"){
 	echo "n 값이 label1일 경우 실행됩니다.";
 
 } else if($n == "label2"){
@@ -656,7 +656,7 @@ n 값이 label2일 경우 실행됩니다.</p>
 &lt;?php
 	$n = “label1”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
 	case label1:
   		echo "n 값이 label1일 경우 실행됩니다.";
 		break;
@@ -704,7 +704,7 @@ break; 즉, 프로그램이 실행 도중에 break;를 만나게 되면 중괄�
 &lt;?php
 	$n = 1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
 	case 1:
 		echo "n값는 ".$n."입니다.&lt;br&gt;";
 	break;
@@ -738,7 +738,7 @@ switch문 종료</p>
 &lt;?php
 	$n = 1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
 	case 1:
 		echo "n값는 ".$n."입니다.&lt;br&gt;";
 
@@ -776,7 +776,7 @@ switch문 종료</p>
 &lt;?php
 	$n = “label2”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>switch ($n) {
 	case label1:
   		echo "n 값이 label1일 경우 실행됩니다.&lt;br&gt;";
 	break;
@@ -804,7 +804,7 @@ n 값이 label3일 경우 실행됩니다.</p>
 
 <p>하지만 $n 변수의 값이 label2인 경우 case label2 분기하여 echo “n 값이 label2일 경우 실행됩니다.”; 를 실행하고 break;가 없기 때문에 그 밑에 있는 case label3 부분도 같이 실행됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "n 값이 label3일 경우 실행됩니다.";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "n 값이 label3일 경우 실행됩니다.";
 break;
 </code></pre></div></div>
 
@@ -835,7 +835,7 @@ break;
 	$lang = “ko”;
 	$title = ($lang == “ko”) ? “한국어” : “korean”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $title; ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $title; ?&gt;
 </code></pre></div></div>
 
 <p>결과
@@ -855,7 +855,7 @@ break;
 <p>예제 파일 if-1211.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$title = $lang?:"english";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$title = $lang?:"english";
 echo $title;
 
 echo "&lt;br&gt;";

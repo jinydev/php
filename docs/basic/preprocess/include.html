@@ -155,7 +155,7 @@
 
 <p>예제 파일 include_lib.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">){</span>
 		<span class="k">return</span> <span class="nv">$x</span><span class="o">+</span><span class="nv">$y</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
@@ -167,12 +167,12 @@
 	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
 <p>위의 예제는 include 명령어를 통해 실행 파일을 2개로 분리했습니다. 
@@ -201,7 +201,7 @@ include-02.php에서 사용한 addPlus() 함수는 include_lib.php 파일에 정
 	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
@@ -209,9 +209,9 @@ include-02.php에서 사용한 addPlus() 함수는 include_lib.php 파일에 정
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">15
 </span></code></pre></div></div>
 
-<p>위의 예는 <code class="highlighter-rouge">include_one</code>을 이용한 실험입니다. 
-<code class="highlighter-rouge">include_once</code> 명령어는 두 번 삽입하는 실수를 방지할 수 있습니다. 
-중복하여 사용하는 경우 두 번째 <code class="highlighter-rouge">include_once</code>는 무시하게 됩니다.</p>
+<p>위의 예는 <code class="language-plaintext highlighter-rouge">include_one</code>을 이용한 실험입니다. 
+<code class="language-plaintext highlighter-rouge">include_once</code> 명령어는 두 번 삽입하는 실수를 방지할 수 있습니다. 
+중복하여 사용하는 경우 두 번째 <code class="language-plaintext highlighter-rouge">include_once</code>는 무시하게 됩니다.</p>
 
 <p><br /><br /></p>
 

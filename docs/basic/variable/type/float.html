@@ -128,7 +128,7 @@
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span> 
 <span class="nv">$b</span> <span class="o">=</span> <span class="mf">1.2e3</span><span class="p">;</span> 
-<span class="nv">$c</span> <span class="o">=</span> <span class="mi">7</span><span class="nx">E</span><span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+<span class="nv">$c</span> <span class="o">=</span> <span class="mi">7</span><span class="nc">E</span><span class="o">-</span><span class="mi">10</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>다음 예제는 실수변수를 화면에 출력하는 예제 입니다.</p>
@@ -141,7 +141,7 @@
 </code></pre></div></div>
 
 <p>결과화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(10.365) 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(10.365) 
 </code></pre></div></div>
 
 <p>다은 예제는 각도의 라디안 값 계산하는 실수형 예제 입니다.</p>
@@ -151,13 +151,13 @@
 	<span class="k">const</span> <span class="no">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 
 	<span class="nv">$deg</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
-	<span class="nv">$rad</span> <span class="o">=</span> <span class="nv">$deg</span> <span class="o">*</span> <span class="nb">PI</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">;</span>
+	<span class="nv">$rad</span> <span class="o">=</span> <span class="nv">$deg</span> <span class="o">*</span> <span class="no">PI</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">;</span>
 	<span class="nb">printf</span><span class="p">(</span><span class="s2">"DEG = %d, RAD = %f"</span><span class="p">,</span> <span class="nv">$deg</span><span class="p">,</span> <span class="nv">$rad</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEG = 30, RAD = 0.523333
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEG = 30, RAD = 0.523333
 </code></pre></div></div>
 
 <p><br /></p>
@@ -167,7 +167,7 @@
 <p>PHP는 생성한 변수가 실수변수를 확인할 수 있는 is_float()이라는 내부함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_float</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_float</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>매개변수값으로 변수를 전달하면 변수의 오브젝트 타입 여부를 논리값 형태로 반환합니다.</p>
@@ -178,13 +178,13 @@
 <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span> <span class="p">);</span>
 <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="p">);</span>
 <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mf">23.5</span><span class="p">)</span> <span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mi">1</span><span class="nx">e7</span><span class="p">)</span> <span class="p">);</span>  <span class="c1">//Scientific Notation</span>
+<span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="mi">1</span><span class="n">e7</span><span class="p">)</span> <span class="p">);</span>  <span class="c1">//Scientific Notation</span>
 <span class="nb">var_dump</span><span class="p">(</span> <span class="nb">is_float</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">);</span>
 <span class="cp">?&gt;</span> 
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool(true)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool(true)
 bool(false)
 bool(false)
 bool(true)
@@ -210,24 +210,24 @@ bool(false)
 	<span class="k">echo</span> <span class="s2">"pi = </span><span class="nv">$pi</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 정수로 형변환 합니다.</span>
-	<span class="nv">$a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="mf">5.14</span><span class="p">;</span>
+	<span class="nv">$a</span> <span class="o">=</span> <span class="p">(</span><span class="n">int</span><span class="p">)</span><span class="mf">5.14</span><span class="p">;</span>
 	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$a</span> <span class="p">);</span>
 	<span class="k">echo</span> <span class="s2">"a = </span><span class="nv">$a</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 더블형으로 형변환 합니다.</span>
-	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="nx">double</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
+	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="n">double</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
 	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">);</span>
 	<span class="k">echo</span> <span class="s2">"b = </span><span class="nv">$b</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 문자열로 형현환 합니다.</span>
-	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
+	<span class="nv">$b</span> <span class="o">=</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="mf">3.14</span><span class="p">;</span>
 	<span class="nb">var_dump</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">);</span>
 	<span class="k">echo</span> <span class="s2">"b = </span><span class="nv">$b</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span> 
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(3.14) pi = 3.14
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>float(3.14) pi = 3.14
 int(5) a = 5
 float(3.14) b = 3.14
 string(4) "3.14" b = 3.14
@@ -243,21 +243,21 @@ string(4) "3.14" b = 3.14
 
 <p>|관련함수|
 소수점 이하 올림</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nb">ceil</span> <span class="p">(</span> <span class="nx">실수값</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">float</span> <span class="nb">ceil</span> <span class="p">(</span> <span class="n">실수값</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>ceil() 함수는 입력된 실수값의 소수점 이하를 올림 처리한 값을 반환합니다.</p>
 
 <p>|관련함수|
 소수점 이하 버림</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mixed</span> <span class="nb">floor</span> <span class="p">(</span> <span class="nx">실수값</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mixed</span> <span class="nb">floor</span> <span class="p">(</span> <span class="n">실수값</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>floor() 함수는 입력된 실수값의 소수점 이하를 버림 처리한 값을 반환합니다.</p>
 
 <p>|관련함수|
 소수점 이하 반올림</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nb">round</span> <span class="p">(</span><span class="nx">실수값</span><span class="p">,</span> <span class="nx">자릿수</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">float</span> <span class="nb">round</span> <span class="p">(</span><span class="n">실수값</span><span class="p">,</span> <span class="n">자릿수</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>round() 함수는 입력된 실수값의 이하 반올림 처리한 값을 반환합니다.</p>
@@ -270,29 +270,29 @@ string(4) "3.14" b = 3.14
 	<span class="k">echo</span> <span class="nb">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">);</span>  <span class="c1">// -3</span>
 
 	<span class="c1">// 버림</span>
-	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>   <span class="c1">// 4</span>
-	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">9.999</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 9</span>
-	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -4</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">4.3</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>   <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="mf">9.999</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 9</span>
+	<span class="k">echo</span> <span class="nb">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// -4</span>
 
 	<span class="c1">// 반올림 처리</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 3</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 3</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>         <span class="c1">// 4</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>      <span class="c1">// 4</span>
 
 	<span class="c1">// 소수점 자리 반올림</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.95583</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>  <span class="c1">// 1.96</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.045</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.05</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.055</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.06</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">1.95583</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>  <span class="c1">// 1.96</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.045</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.05</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mf">5.055</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 5.06</span>
 
 	<span class="c1">// 소수점 위3자리에서 반올림</span>
-	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1241757</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1242000</span>
+	<span class="k">echo</span> <span class="nb">round</span><span class="p">(</span><span class="mi">1241757</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 1242000</span>
 	
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>510-34
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>510-34
 9
 -4
 3

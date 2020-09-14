@@ -1,4 +1,4 @@
-I"8<h1 id="산술-연산자arithmetic-operrator">산술 연산자(Arithmetic Operrator)</h1>
+I"�<h1 id="산술-연산자arithmetic-operrator">산술 연산자(Arithmetic Operrator)</h1>
 <hr />
 <p>산술 연산이란 일반적으로 숫자를 기준으로 더하거나 빼기, 곱하기, 나누기 등 사칙 연산을 말합니다.<br />
 사칙 연산은 프로그램의 가장 기본적인 연산 기호입니다.</p>
@@ -7,32 +7,32 @@
 
 <h2 id="더하기"><a href="add">더하기</a></h2>
 <hr />
-<p>컴퓨터 언어의 덧셈 기호는 <code class="highlighter-rouge">+</code>를 사용합니다.</p>
+<p>컴퓨터 언어의 덧셈 기호는 <code class="language-plaintext highlighter-rouge">+</code>를 사용합니다.</p>
 
 <p><br /></p>
 
 <h2 id="빼기"><a href="sub">빼기</a></h2>
 <hr />
-<p>컴퓨터 언어의 뺄셈 기호는 <code class="highlighter-rouge">-</code>를 사용합니다.</p>
+<p>컴퓨터 언어의 뺄셈 기호는 <code class="language-plaintext highlighter-rouge">-</code>를 사용합니다.</p>
 
 <p><br /></p>
 
 <h2 id="곱하기"><a href="multiply">곱하기</a></h2>
 <hr />
-<p>컴퓨터 언어의 곱셈 기호는 <code class="highlighter-rouge">*</code>를 사용합니다. 우리가 일반적으로 알고 있는 <code class="highlighter-rouge">×</code>를 사용하지 않습니다.</p>
+<p>컴퓨터 언어의 곱셈 기호는 <code class="language-plaintext highlighter-rouge">*</code>를 사용합니다. 우리가 일반적으로 알고 있는 <code class="language-plaintext highlighter-rouge">×</code>를 사용하지 않습니다.</p>
 
 <p><br /></p>
 
 <h2 id="나누기"><a href="division">나누기</a></h2>
 <hr />
-<p>컴퓨터 언어의 나눗셈 기호는 백슬레쉬(<code class="highlighter-rouge">/</code>)를 사용합니다.<br />
-우리가 일반적으로 사용하는 <code class="highlighter-rouge">÷</code>를 쓰지 않습니다.</p>
+<p>컴퓨터 언어의 나눗셈 기호는 백슬레쉬(<code class="language-plaintext highlighter-rouge">/</code>)를 사용합니다.<br />
+우리가 일반적으로 사용하는 <code class="language-plaintext highlighter-rouge">÷</code>를 쓰지 않습니다.</p>
 
 <p><br /></p>
 
 <h2 id="나머지"><a href="rest">나머지</a></h2>
 <hr />
-<p>컴퓨터는 프로그램 언어는 일반적인 사칙 연산 네 가지 이외에 나누기의 <code class="highlighter-rouge">나머지</code>를 계산할 수 있는 특수한 기호를 제공합니다.</p>
+<p>컴퓨터는 프로그램 언어는 일반적인 사칙 연산 네 가지 이외에 나누기의 <code class="language-plaintext highlighter-rouge">나머지</code>를 계산할 수 있는 특수한 기호를 제공합니다.</p>
 
 <p><br /></p>
 :ET

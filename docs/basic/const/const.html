@@ -107,7 +107,7 @@
 <p>PHP는 define() 함수 이외에 const 키워드를 사용해서도 상수를 선언할 수 있습니다. const는 키워드를 통해 상수를 설정합니다. 따라서 define()처럼 상수의 선언 오류 등을 함께 확인할 수 없는 단점을 가지고 있습니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const 상수명 = 값;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const 상수명 = 값;
 </code></pre></div></div>
 
 <p>const는 상수를 생성하는 시점이 PHP프로그램이 실행되면서 const 키워드를 만나는 시점에 생성됩니다. 따라서 소스에서 const 명령이 선언하기 이전에 상수명을 호출하게 되면 미정의 상수명 사용으로 인하여 오류가 발생할 수 있습니다.</p>
@@ -119,28 +119,28 @@
 	<span class="c1">// 상수를 선언합니다.</span>
 	<span class="k">const</span> <span class="no">DB_TYPE</span> <span class="o">=</span> <span class="s2">"mysql"</span><span class="p">;</span>
 	<span class="c1">// 상수를 출력합니다.</span>
-	<span class="k">echo</span> <span class="nx">DB_TYPE</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
 </code></pre></div></div>
 
 <p>위의 예에서 DB_TYPE이라는 상수를 선언하며, 상수값으로는 “mysql”을 대입합니다. 이처럼 생성한 상수값은 PHP에서 바로 사용하거나, 다른 변수에 값으로 대입할 수도 있습니다.</p>
 
 <p>예제 파일 const-02.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="c1">// 상수를 선언합니다.</span>
-	<span class="k">const</span> <span class="no">DB_TYPE</span> <span class="o">=</span> <span class="s2">"mysql"</span><span class="p">;</span>
-	<span class="nv">$dbTYPE</span> <span class="o">=</span> <span class="nx">DB_TYPE</span><span class="p">;</span>
-	<span class="c1">// 상수를 출력합니다.</span>
-	<span class="k">echo</span> <span class="nv">$dbTYPE</span><span class="p">;</span>
-<span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	// 상수를 선언합니다.
+	const DB_TYPE = "mysql";
+	$dbTYPE = DB_TYPE;
+	// 상수를 출력합니다.
+	echo $dbTYPE;
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
 </code></pre></div></div>
 
                 </section>

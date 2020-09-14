@@ -1,4 +1,4 @@
-I"k<ol>
+I"�<ol>
   <li>
     <h1 id="정규표현식">정규표현식</h1>
   </li>
@@ -26,7 +26,7 @@ int preg_match ( string $pattern , string $subject [, array &amp;$matches [, int
 <p>예제) preg-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "2017-06-33"; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "2017-06-33"; 
 $pattern = "/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/";
 
 if ( preg_match($pattern, $string,$matches) ) { 
@@ -63,7 +63,7 @@ mixed preg_replace ( mixed $pattern , mixed $replacement , mixed $subject [, int
 	echo preg_replace($pattern, $replacement, $string);
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = 'hello world! my name is jiny.';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = 'hello world! my name is jiny.';
 
 $patterns[0] = '/hello world/';
 $patterns[1] = '/my name is/';
@@ -97,7 +97,7 @@ rray preg_split ( string $pattern , string $subject [, int $limit [, int $flags 
 	print_r($keywords);
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$str = 'string';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$str = 'string';
 echo "문자 단위로 분리합니다. ";
 $chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
 print_r($chars);
@@ -123,7 +123,7 @@ string preg_quote ( string $str [, string $delimiter ] )</p>
 	echo $keywords;
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// preg_quote($word)는 정규 표현식에서 애스터라이크(*) 처리
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// preg_quote($word)는 정규 표현식에서 애스터라이크(*) 처리
 $body = "안녕하세요 본 책은 매우 *쉽게* 작성을 하였습니다.";
 $word = "*매우*";
 $body = preg_replace("/".preg_quote($word)."/", "&lt;i&gt;" . $word . "&lt;/i&gt;", $body);

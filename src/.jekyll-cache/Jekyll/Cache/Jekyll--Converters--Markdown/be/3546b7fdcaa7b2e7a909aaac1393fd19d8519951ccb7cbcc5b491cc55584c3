@@ -1,4 +1,4 @@
-I"h<h2 id="내장-함수">내장 함수</h2>
+I"�<h2 id="내장-함수">내장 함수</h2>
 <p>프로그램 코딩을 하다 보면 수많은 함수들이 등장합니다. 수많은 함수 중에서는 PHP에서 편의상 미리 만들어 놓은 함수인 내장 함수와 개발자가 자체적으로 만들어 사용하는 사용자 정의 함수 두 개로 구분할 수 있습니다.</p>
 
 <p>대부분의 초보 개발자들은 PHP의 내장 함수를 사용하는 경우가 많이 있습니다. 개발자로서 먼저 PHP에서 제공하는 내장 함수에는 어떤 것이 있는지를 확인하고 사용법을 습득하는 것은 매우 중요합니다. 이런 내장 함수들을 먼저 확인해야 하는 것은 추후 사용하는 사용자 정의 함수와 내장 함수를 구분하기 위해서입니다. PHP에서 제공하는 내장 함수들은 PHP 공식 사이트 www.php.net에서 확인할 수 있습니다.</p>
@@ -15,24 +15,24 @@
 PHP 공식 사이트를 통해 정의된 함수들을 확인할 수 있습니다. 또는 사용자 함수를 많이 만들었을 때 함수명이 중복되는지 어떻게 확인할 수 있을까요? PHP는 내장 함수 및 사용자가 생성하는 함수들이 존재하는지 프로그램에서 검색할 수 있는 내장 함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool function_exists ( string $function_name )
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool function_exists ( string $function_name )
 </code></pre></div></div>
 
 <p>function_exists() 내장 함수는 내장 함수와 사용자 함수 모두 함수명의 존재 여부를 확인하여 논리 값으로 반환합니다. 함수가 존재하면 true(1)과 없는 경우에는 false(0)을 반환합니다. 이렇게 반환된 값을 if 조건문을 통해 함수를 체크할 수 있습니다. 이처럼 함수 존재 여부를 체크하는 내장 함수를 통해 함수를 호출할 때 발생할 수 있는 호출 오류를 사전에 방지할 수 있습니다.</p>
 
 <p>예제 파일 func-01.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="nv">$functionName</span> <span class="o">=</span> <span class="s2">"intval"</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="nv">$functionName</span><span class="p">)){</span>
-    		<span class="k">echo</span> <span class="s2">"</span><span class="nv">$functionName</span><span class="s2"> 함수가 존재합니다. &lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    		<span class="k">echo</span> <span class="s2">"</span><span class="nv">$functionName</span><span class="s2"> 는 없는 함수입니다.&lt;br /&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	$functionName = "intval";
+	if (function_exists($functionName)){
+    		echo "$functionName 함수가 존재합니다. &lt;br /&gt;\n";
+	} else {
+    		echo "$functionName 는 없는 함수입니다.&lt;br /&gt;\n";
+	}
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intval 함수가 존재합니다. 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intval 함수가 존재합니다. 
 </code></pre></div></div>
 
 <h3 id="응용처리">응용처리</h3>

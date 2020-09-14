@@ -1,4 +1,4 @@
-I"X<h1 id="static-키워드">static 키워드</h1>
+I"�<h1 id="static-키워드">static 키워드</h1>
 <hr />
 
 <p>함수 안에 정의된 로컬변수는 휘발적인 특성이 있습니다. 즉, 함수가 종료되면 함수 내에서 사용된 변수들은 전부 자동 소멸하게 됩니다.</p>
@@ -6,7 +6,7 @@
 <p>하지만, 함수 내의 로컬변수의 자동 소멸을 방지할 수 있는 방법 또한 있습니다. static 키워드는 함수를 재사용을 하면서 함수 내에서 선언한 변수가 소멸하지 않도록 할 수 있습니다. 아래와 같이 함수 내에서,</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static $변수명;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static $변수명;
 </code></pre></div></div>
 
 <p>으로 선언을 하면, 함수가 종료된 후에도 해당 변수를 소멸하지 않고 변수를 남겨 놓을 수 있습니다.</p>
@@ -16,21 +16,21 @@
 <p>예제 파일 scope-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-	<span class="k">function</span> <span class="nf">increment</span><span class="p">(){</span>
+	<span class="k">function</span> <span class="n">increment</span><span class="p">(){</span>
 		<span class="c1">// static 변수는 처음 한 번 선언 시에만 초기화 됩니다.</span>
 		<span class="k">static</span> <span class="nv">$total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
 		<span class="k">return</span> <span class="o">++</span><span class="nv">$total</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nx">increment</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nf">increment</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nf">increment</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nf">increment</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 2
 3
 </code></pre></div></div>
@@ -41,7 +41,7 @@
 
 <p>예제 파일 scope-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
-	<span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+	<span class="k">function</span> <span class="n">foo</span><span class="p">()</span>
 	<span class="p">{</span>
 		<span class="c1">// 정적 변수를 선언합니다.</span>
 		<span class="k">static</span> <span class="nv">$bar</span><span class="p">;</span> 
@@ -54,19 +54,19 @@
     		<span class="k">echo</span> <span class="s2">"unset 실행 후: </span><span class="nv">$bar</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span> 
  	<span class="p">}</span>
 
- 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="nf">foo</span><span class="p">();</span>
  	<span class="c1">// 결과: unset 실행 전: 1, unset 실행 후: 21</span>
  	
- 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="nf">foo</span><span class="p">();</span>
  	<span class="c1">// 결과: unset 실행 전: 2, unset 실행 후: 21 </span>
  	
- 	<span class="nx">foo</span><span class="p">();</span>
+ 	<span class="nf">foo</span><span class="p">();</span>
  	<span class="c1">// 결과: unset 실행 전: 3, unset 실행 후: 21 </span>
  <span class="cp">?&gt;</span> 
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unset 실행 전: 1, unset 실행 후: 21
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unset 실행 전: 1, unset 실행 후: 21
 unset 실행 전: 2, unset 실행 후: 21
 unset 실행 전: 3, unset 실행 후: 21 
 </code></pre></div></div>

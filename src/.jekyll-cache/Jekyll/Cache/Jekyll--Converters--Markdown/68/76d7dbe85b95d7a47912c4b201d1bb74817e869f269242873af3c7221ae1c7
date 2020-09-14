@@ -1,4 +1,4 @@
-I"�)<ol>
+I"�0<ol>
   <li>
     <h1 id="문자열">문자열</h1>
   </li>
@@ -36,7 +36,7 @@ int strlen ( string $string )</p>
 	// 문자열 변수를 생성합니다.
 	$name = “Hello world!”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자의 갯수를 출력합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자의 갯수를 출력합니다.
 echo "문자의 갯수는 :".strlen($name); ?&gt;
 </code></pre></div></div>
 
@@ -50,7 +50,7 @@ echo "문자의 갯수는 :".strlen($name); ?&gt;
 	// 문자열 변수를 생성합니다.
 	$name = “Hello world!”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 한줄에 문자 한자씩 출력을 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 한줄에 문자 한자씩 출력을 합니다.
 for ($i=0;$i&lt;strlen($name);$i++) {
 	echo $name[$i]."&lt;br&gt;";
 } ?&gt;
@@ -86,7 +86,7 @@ int substr_count ( string $haystack , string $needle [, int $offset = 0 [, int $
 	$text = ‘This is a test’;
 	echo $text . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "원본 문자열 길이 = ". strlen($text) ."&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "원본 문자열 길이 = ". strlen($text) ."&lt;br&gt;";
 // 출력: 14
 
 // 'This is a test' 안에 is 두번 존재
@@ -130,10 +130,10 @@ mixed str_word_count ( string $string [, int $format = 0 [, string $charlist ]] 
 <p>내부함수 str_word_count()은 입력된 문자열에서 단어의 개수를 찾아서 개수를 반환합니다.</p>
 
 <p>예제파일) str_word_count.php
-<?php
-	$str = "I love you";
+&lt;?php
+	$str = “I love you”;
 	echo str_word_count($str);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 3</p>
@@ -153,7 +153,7 @@ string substr ( string $string , int $start [, int $length ] )</p>
 &lt;?php
 	$string = “abcdefghijklmnopqrstuvwxyz”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 1위치 이후부터 표시함
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 1위치 이후부터 표시함
 echo substr($string,1)."&lt;br&gt;";
 
 // 3위치 이후부터 5개 표시함
@@ -195,7 +195,7 @@ string ltrim ( string $str [, string $character_mask ] )</p>
 	$string = “   jiny   “;
 	echo “안녕하세요!”.$string.”입니다.<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 앞뒤 공백 문자열을 삭제합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 앞뒤 공백 문자열을 삭제합니다.
 echo "안녕하세요!".trim($string)."입니다.&lt;br&gt;";
 
 // 오른쪽 공백을 제거합니다.
@@ -232,7 +232,7 @@ string strstr ( string $haystack , mixed $needle [, bool $before_needle = false 
 	$str = “abcdeghijklem-abcdeghijklem-1234567”;
 	echo “원본 : “ . $str . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자열에서 em- 으로 시작하는 위치를 찾아
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 문자열에서 em- 으로 시작하는 위치를 찾아
 // 이후의 문자열을 반환합니다.
 $a = strstr($str,"em-");
 echo $a;  ?&gt;
@@ -255,10 +255,10 @@ string stristr ( string $haystack , mixed $needle [, bool $before_needle = false
 string strrchr ( string $haystack , mixed $needle )</p>
 
 <p>예제파일) strrchr.php
-<?php
-	$str = "abcdeghijklem-abcdeghijklem-1234567";
-	echo strrchr($str,"em"); 
-?></p>
+&lt;?php
+	$str = “abcdeghijklem-abcdeghijklem-1234567”;
+	echo strrchr($str,”em”); 
+?&gt;</p>
 
 <p>화면출력)
 em-1234567</p>
@@ -279,7 +279,7 @@ mixed strpos ( string $haystack , mixed $needle [, int $offset = 0 ] )</p>
 	if (($pos = strpos($string, $keyword)) === false) {
 		echo “Err] 찾는 문자열이 없습니다.”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>} else {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>} else {
 	echo "문자열 시작위치 $pos 존재&lt;br&gt;";
 } ?&gt;
 </code></pre></div></div>
@@ -300,12 +300,12 @@ mixed stripos ( string $haystack , string $needle [, int $offset = 0 ] )</p>
 int strrpos ( string $haystack , string $needle [, int $offset = 0 ] )</p>
 
 <p>예제파일) strrpos.php
-<?php
-	$str = "abcdeghijklem-abcdeghijklem-1234567";
-	echo "원본 : " . $str . "<br>";
-	$a = strrpos($str,"em-");
+&lt;?php
+	$str = “abcdeghijklem-abcdeghijklem-1234567”;
+	echo “원본 : “ . $str . “<br />”;
+	$a = strrpos($str,”em-“);
 	echo $a; 
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 원본 : abcdeghijklem-abcdeghijklem-1234567
@@ -330,7 +330,7 @@ int strspn ( string $subject , string $mask [, int $start [, int $length ]] )</p
 	$mask =  “1234567890abcdefhijslmnopqrstuvwxyz”;
 	$var = strspn($object, $mask);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $var; ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $var; ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -344,7 +344,7 @@ int strcspn ( string $subject , string $mask [, int $start [, int $length ]] )</
 <p>예제파일) strcspn.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = strcspn('abcd', 'apple');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = strcspn('abcd', 'apple');
 var_dump($a); //0
 
 $b = strcspn('abcd',  'banana');
@@ -381,7 +381,7 @@ string strpbrk ( string $haystack , string $char_list )</p>
 <p>예제파일) strpbrk.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$text = 'This is a Simple text.';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$text = 'This is a Simple text.';
 
 // "is is a Simple text." 를 출력합니다. 
 // 처음에 'i'가 먼저 매팅이 되었기 때문입니다.
@@ -415,7 +415,7 @@ int strcmp ( string $str1 , string $str2 )</p>
 	$str2 = “hello”;
 	$str3 = “word”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (strcmp($str1, $str2) == 0) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (strcmp($str1, $str2) == 0) {
 	echo $str1 ."== ". $str2 . "&lt;br&gt;";
 } else {
 	echo $str1 ."!= ". $str2 . "&lt;br&gt;";
@@ -442,14 +442,14 @@ int strcoll ( string $str1 , string $str2 )</p>
 <p>예제파일) strcoll.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = 'a';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = 'a';
 $b = 'A';
 </code></pre></div></div>
 
  	print strcmp ($a, $b) . “<br />”;
  	// prints 1
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setlocale (LC_COLLATE, 'C');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setlocale (LC_COLLATE, 'C');
  	print "Locale based C: " . strcoll ($a, $b) . "&lt;br&gt;";
  	// prints 1
 
@@ -486,7 +486,7 @@ int strncmp ( string $str1 , string $str2 , int $len )</p>
 	echo strncmp(“xybc”,”a3234”,0);
 	// 0</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 echo strncmp("blah123","hohoho", 0);
 //0  ?&gt;
@@ -502,13 +502,13 @@ int strcasecmp ( string $str1 , string $str2 )</p>
 <p>내부함수 strcasecmp()는 Binary safe 유형으로 대 / 소문자를 구분하지 않고 문자열을 비교 합니다.</p>
 
 <p>예제파일) strcasecmp.php
-<?php
-	$var1 = "Hello";
-	$var2 = "hello";
+&lt;?php
+	$var1 = “Hello”;
+	$var2 = “hello”;
 	if (strcasecmp($var1, $var2) == 0) {
-    	echo '$var1 와 $var2 은 대소문자를 구분하지 않고 동일한 문자열 입니다.';
+    	echo ‘$var1 와 $var2 은 대소문자를 구분하지 않고 동일한 문자열 입니다.’;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 $var1 와 $var2 은 대소문자를 구분하지 않고 동일한 문자열 입니다.</p>
@@ -519,15 +519,15 @@ int substr_compare ( string $main_str , string $str , int $offset [, int $length
 <p>내부함수 substr_compare()는 바이너리 세이프 형태로 오프셋의 두 문자열 비교, 최대 길이 문자 비교합니다. substr_compare ()는 오프셋 위치에서 main_str을 str과 최대 길이 문자를 비교합니다.</p>
 
 <p>예제파일) substr_compare.php
-<?php
-	echo substr_compare("abcde", "bc", 1, 2); // 0
-	echo substr_compare("abcde", "de", -2, 2); // 0
-	echo substr_compare("abcde", "bcg", 1, 2); // 0
-	echo substr_compare("abcde", "BC", 1, 2, true); // 0
-	echo substr_compare("abcde", "bc", 1, 3); // 1
-	echo substr_compare("abcde", "cd", 1, 2); // -1
-	echo substr_compare("abcde", "abc", 5, 1); // warning
-?></p>
+&lt;?php
+	echo substr_compare(“abcde”, “bc”, 1, 2); // 0
+	echo substr_compare(“abcde”, “de”, -2, 2); // 0
+	echo substr_compare(“abcde”, “bcg”, 1, 2); // 0
+	echo substr_compare(“abcde”, “BC”, 1, 2, true); // 0
+	echo substr_compare(“abcde”, “bc”, 1, 3); // 1
+	echo substr_compare(“abcde”, “cd”, 1, 2); // -1
+	echo substr_compare(“abcde”, “abc”, 5, 1); // warning
+?&gt;</p>
 
 <p>화면출력)
 0
@@ -553,7 +553,7 @@ int strnatcmp ( string $str1 , string $str2 )</p>
 	usort($arr1, “strcmp”);
 	print_r($arr1);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "\nNatural order string comparison\n";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "\nNatural order string comparison\n";
 usort($arr2, "strnatcmp");
 print_r($arr2); ?&gt; 
 </code></pre></div></div>
@@ -581,7 +581,7 @@ int similar_text ( string $first , string $second [, float &amp;$percent ] )</p>
 	$str1 = “안녕하세요! 지니 입니다.”;
 	$str2 = “안녕하세요! jiny 입니다.”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>similar_text($str1, $str2, $percent); 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>similar_text($str1, $str2, $percent); 
 echo "두 문장의 유사도는 $percent % 입니다.&lt;br&gt;";
 
 similar_text($str2, $str1, $percent); 
@@ -604,7 +604,7 @@ string soundex ( string $str )</p>
 	echo “Euler “.soundex(“Euler”) . “ == “ . 
 		“Ellery “. soundex(“Ellery”) . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Gauss ".soundex("Gauss") . " == " . 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Gauss ".soundex("Gauss") . " == " . 
 	"Ghosh ". soundex("Ghosh") . "&lt;br&gt;";
 
 echo "Hilbert ".soundex("Hilbert") . " == " . 
@@ -628,7 +628,7 @@ int levenshtein ( string $str1 , string $str2 )</p>
     // 당근 : carrot 의 스펠링을 잘 못 입력합니다.
     $input = ‘carrrot’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 단어 데이터들.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 단어 데이터들.
 $words  = array('apple','pineapple','banana','orange',
             'radish','carrot','pea','bean','potato');
 
@@ -676,16 +676,16 @@ string metaphone ( string $str [, int $phonemes = 0 ] )</p>
 <p>내부함수 metaphone()은 문자열의 메타 폰 키를 계산합니다.</p>
 
 <p>예제파일) metaphone.php
-<?php
-	var_dump(metaphone('programming'));
-	echo "<br>";
-	var_dump(metaphone('programmer'));
-	echo "<br>";
-	var_dump(metaphone('programming', 5));
-	echo "<br>";
-	var_dump(metaphone('programmer', 5));
-	echo "<br>";
-?></p>
+&lt;?php
+	var_dump(metaphone(‘programming’));
+	echo “<br />”;
+	var_dump(metaphone(‘programmer’));
+	echo “<br />”;
+	var_dump(metaphone(‘programming’, 5));
+	echo “<br />”;
+	var_dump(metaphone(‘programmer’, 5));
+	echo “<br />”;
+?&gt;</p>
 
 <p>화면출력)
 string(7) “PRKRMNK”
@@ -709,7 +709,7 @@ string strtr ( string $str , string $from , string $to )</p>
 	$str = “안녕하세요. jiny 입니다.!”;
 	echo $str.”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$src = "jiny";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$src = "jiny";
 $dst = "hojinlee";
 
 echo strtr($str, $src, $dst); ?&gt;
@@ -729,7 +729,7 @@ mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &amp;
 	$string = “abcdefg”;
 	$keyword = “cde”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$body = str_replace($keyword, " 111111 ", $string);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$body = str_replace($keyword, " 111111 ", $string);
 echo $body; ?&gt;
 </code></pre></div></div>
 
@@ -751,7 +751,7 @@ mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixe
 	$var = ‘ABCDEFGH:/MNRPQR/’;
 	echo “원본: $var&lt;hr/&gt;\n”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* 전제 문자열을 'bob'으로 변경합니다. */
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* 전제 문자열을 'bob'으로 변경합니다. */
 echo substr_replace($var, 'bob', 0) . "&lt;br /&gt;\n";
 echo substr_replace($var, 'bob', 0, strlen($var)) . "&lt;br /&gt;\n";
 
@@ -784,12 +784,12 @@ string chr ( int $ascii )</p>
 <p>내부함수 chr()는 아스키 코드값에 대한 문자를 출력합니다.</p>
 
 <p>예제파일) chr.php
-<?php
+&lt;?php
 	// 아스키 코드
-	echo "27 = ".chr(27)."<br>";
-	echo "65 = ".chr(65)."<br>";
-	echo "92 = ".chr(92)."<br>";
-?></p>
+	echo “27 = “.chr(27).”<br />”;
+	echo “65 = “.chr(65).”<br />”;
+	echo “92 = “.chr(92).”<br />”;
+?&gt;</p>
 
 <p>화면출력)
 27 =
@@ -808,7 +808,7 @@ int ord ( string $string )</p>
 	echo “65 = “.chr(65).”<br />”;
 	echo “92 = “.chr(92).”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 echo "A = ".ord('A')."&lt;br&gt;";
 echo "+ = ".ord('+')."&lt;br&gt;";
@@ -832,9 +832,9 @@ string str_repeat ( string $input , int $multiplier )</p>
 <p>내부함수 str_repeat()는 문자열을 지정한 횟수만큼 반복합니다.</p>
 
 <p>예제파일) str_repeat.php
-<?php
-	echo str_repeat("-=", 10);
-?></p>
+&lt;?php
+	echo str_repeat(“-=”, 10);
+?&gt;</p>
 
 <h2 id="화면출력">화면출력)</h2>
 
@@ -844,14 +844,14 @@ string str_pad ( string $input , int $pad_length [, string $pad_string = “ “
 <p>내부함수 str_pad()는 문자열을 다른 문자열로 특정 길이를 채 웁니다.</p>
 
 <p>예제파일) str_pad.php
-<?php
-	$input = "hojin";
-	echo str_pad($input, 10) ."<br>";                      
-	echo str_pad($input, 10, "-=", STR_PAD_LEFT) ."<br>";  
-	echo str_pad($input, 10, "_", STR_PAD_BOTH) ."<br>";   
-	echo str_pad($input,  6, "___") ."<br>";               
-	echo str_pad($input,  3, "*") ."<br>";                 
-?></p>
+&lt;?php
+	$input = “hojin”;
+	echo str_pad($input, 10) .”<br />”;                    <br />
+	echo str_pad($input, 10, “-=”, STR_PAD_LEFT) .”<br />”;<br />
+	echo str_pad($input, 10, “<em>”, STR_PAD_BOTH) .”<br />”; <br />
+	echo str_pad($input,  6, “</em>__”) .”<br />”;             <br />
+	echo str_pad($input,  3, “*”) .”<br />”;               <br />
+?&gt;</p>
 
 <p>화면출력)
 hojin
@@ -875,7 +875,7 @@ string strtok ( string $str , string $token )</p>
 &lt;?php
 	$str = “안녕하세요! 지니 PHP 코딩 입니다.”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 공백 문자로 문자열을 토큰화 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 공백 문자로 문자열을 토큰화 합니다.
 $aaa = strtok($str," ");
 
 $i=0;
@@ -908,7 +908,7 @@ string implode ( string $glue , array $pieces )</p>
 <p>예제파일) implode.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "aaa;bbb;ccc;ddd;eee";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "aaa;bbb;ccc;ddd;eee";
 $arr = explode(";", $string);
 
 foreach ($arr as $key =&gt; $value) {
@@ -937,10 +937,10 @@ aaa,bbb,ccc,ddd,eee</p>
 string chunk_split ( string $body [, int $chunklen = 76 [, string $end = “\r\n” ]] )</p>
 
 <p>예제파일) chunk_split.php
-<?php
-	$str = "abcdefghijklem";
-	echo chunk_split($str, 4) ."<br>";
-?></p>
+&lt;?php
+	$str = “abcdefghijklem”;
+	echo chunk_split($str, 4) .”<br />”;
+?&gt;</p>
 
 <p>화면출력)
 abcd efgh ijkl em</p>
@@ -953,7 +953,7 @@ array str_split ( string $string [, int $split_length = 1 ] )</p>
 <p>예제파일) str_split.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$str = "Hello Friend";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$str = "Hello Friend";
 
 // 한글자씩 배열로 변환 합니다.
 $arr1 = str_split($str);
@@ -983,7 +983,7 @@ string wordwrap ( string $str [, int $width = 75 [, string $break = “\n” [, 
 	$text = “The quick brown fox jumped over the lazy dog.”;
 	$newtext = wordwrap($text, 20, “<br />\n”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $newtext; ?&gt; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $newtext; ?&gt; 
 </code></pre></div></div>
 
 <p>화면출력)
@@ -1003,7 +1003,7 @@ void parse_str ( string $encoded_string [, array &amp;$result ] )</p>
 	$str = “name[]=jiny&amp;name[]=lee&amp;country=korea”;
 	parse_str($str);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $country . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $country . "&lt;br&gt;";
 
 echo $name[0]."&lt;br&gt;";
 echo $name[1]."&lt;br&gt;"; ?&gt;
@@ -1028,12 +1028,12 @@ lee</p>
 string strrev ( string $string )</p>
 
 <p>예제파일) strrev.php
-<?php
-	$str = "abcdeghijklem-abcdeghijklem-1234567";
-	echo "원본 : " . $str . "<br>";
+&lt;?php
+	$str = “abcdeghijklem-abcdeghijklem-1234567”;
+	echo “원본 : “ . $str . “<br />”;
 	$a = strrev($str);
 	echo $a; 
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 원본 : abcdeghijklem-abcdeghijklem-1234567
@@ -1058,7 +1058,7 @@ string strtoupper ( string $string )</p>
 	$lower = “ABCD”;
 	echo $lower. “=” . strtolower($lower). “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$upper = "abcd";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$upper = "abcd";
 echo $upper. "=" . strtoupper("abcd"). "&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -1084,7 +1084,7 @@ string ucfirst ( string $str )</p>
 &lt;?php
 	$string = “abcd ergh ijkl mnop”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 첫 단어들의  대문자로 변경합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 첫 단어들의  대문자로 변경합니다.
 echo ucwords($string) . "&lt;br&gt;";
 
 // 문자열 전체에서 첫단어만 대문자로 변경합니다.
@@ -1101,11 +1101,11 @@ string lcfirst ( string $str )</p>
 <p>내부함수 lcfirst()은 문자열의 첫 번째 문자를 소문자로 변환합니다.</p>
 
 <p>예제파일) lcfirst.php
-<?php
-	$str = 'HelloWorld';
+&lt;?php
+	$str = ‘HelloWorld’;
 	$str = lcfirst($str);
 	echo $str;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 helloWorld</p>
@@ -1130,7 +1130,7 @@ string number_format ( float $number [, int $decimals = 0 ] )</p>
 <p>예제파일) number_format.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$number = 1234.56;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$number = 1234.56;
 
 // 기본
 // 매개인자 1개만 전달할 경우 천단위 구분자 쉼표(,)로 포맷변경 됩니다.
@@ -1171,7 +1171,7 @@ string money_format ( string $format , float $number )</p>
 <p>예제파일) money_format.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$number = 1234.56;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$number = 1234.56;
 
 // 로컬설정 en_US
 setlocale(LC_MONETARY, 'en_US');
@@ -1229,7 +1229,7 @@ string iconv ( string $in_charset , string $out_charset , string $str )</p>
 &lt;?php
 	$text = “This is the Euro symbol ‘€’.”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'Original : ', $text, "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'Original : ', $text, "&lt;br&gt;";
 echo 'TRANSLIT : ', iconv("UTF-8", "ISO-8859-1//TRANSLIT", $text), "&lt;br&gt;";
 echo 'IGNORE   : ', iconv("UTF-8", "ISO-8859-1//IGNORE", $text), "&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
@@ -1245,13 +1245,13 @@ string convert_uuencode ( string $data )</p>
 <p>내부함수 convert_uuencode()은 문자열을 uuencode 알고리즘으로 인코딩 합니다.</p>
 
 <p>예제파일) convert_uuencode.php
-<?php
-	$string = "test\ntext text\r\n";
+&lt;?php
+	$string = “test\ntext text\r\n”;
 	echo convert_uuencode($string);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
-0=&amp;5S=<code class="highlighter-rouge">IT97AT('1E&gt;'0-"@</code><code class="highlighter-rouge"> </code></p>
+0=&amp;5S=<code class="language-plaintext highlighter-rouge">IT97AT('1E&gt;'0-"@</code><code class="language-plaintext highlighter-rouge"> </code></p>
 
 <p>|내부함수|
 string convert_uudecode ( string $data )</p>
@@ -1259,9 +1259,9 @@ string convert_uudecode ( string $data )</p>
 <p>내부함수 convert_uudecode()는 uuencode 된 문자열을 디코딩합니다.</p>
 
 <p>예제파일) convert_uudecode.php
-<?php
-	echo convert_uudecode("+22!L;W9E(%!(4\"$`\n`");
-?></p>
+&lt;?php
+	echo convert_uudecode(“+22!L;W9E(%!(4"$<code class="language-plaintext highlighter-rouge">\n</code>”);
+?&gt;</p>
 
 <p>화면출력)
 I love PHP!</p>
@@ -1291,10 +1291,10 @@ string convert_cyr_string ( string $str , string $from , string $to )</p>
 string random_bytes ( int $length )</p>
 
 <p>예제파일) random_bytes.php
-<?php
+&lt;?php
 	$bytes = random_bytes(5);
 	var_dump(bin2hex($bytes));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 string(10) “fab26daa1e”</p>
@@ -1309,7 +1309,7 @@ string str_shuffle ( string $str )</p>
 	$str = ‘abcdef’;
 	$shuffled = str_shuffle($str);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $shuffled; ?&gt; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $shuffled; ?&gt; 
 </code></pre></div></div>
 
 <p>화면출력)
@@ -1333,9 +1333,9 @@ string hash ( string $algo , string $data [, bool $raw_output = false ] )</p>
 <p>내부함수 hash()는 해시 값을 생성합니다. 첫번째 인자 $algo는 알고리즘의 타입을 선택합니다. 예로 “md5”, “sha256”, “haval160,4” 등 두번째 인자인 $data 는 해시를 적용할 메시지 입니다. 세번째 인자인 $raw_output 은 true 일때는 바이너리 형식, false는 소문자 hex로 반환합니다.</p>
 
 <p>예제파일) hash.php
-<?php
-	echo hash('ripemd160', 'hello world php!');
-?></p>
+&lt;?php
+	echo hash(‘ripemd160’, ‘hello world php!’);
+?&gt;</p>
 
 <p>화면출력)
 271ab7cf2239daa049877e8c6fc73cfc8097d0de</p>
@@ -1349,12 +1349,12 @@ resource hash_init ( string $algo [, int $options = 0 [, string $key = NULL ]] )
 	키 : 옵션 HASH_HMAC가 지정되면 HMAC 해시 메소드와 함께 사용할 공유 비밀 키를 매개 변수로 제공해야 합니다.</p>
 
 <p>예제파일) hash_init.php
-<?php
-	$ctx = hash_init('md5');
-	hash_update($ctx, 'hello world ');
-	hash_update($ctx, 'jinyPHP.');
+&lt;?php
+	$ctx = hash_init(‘md5’);
+	hash_update($ctx, ‘hello world ‘);
+	hash_update($ctx, ‘jinyPHP.’);
 	echo hash_final($ctx);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 c4009628bfac77c4060e51d14bd417a5</p>
@@ -1365,9 +1365,9 @@ array hash_algos ( void )</p>
 <p>내부함수 hash_algos()는 등록된 해시 알고리즘 목록을 반환합니다.</p>
 
 <p>예제파일) hash_algos.php
-<?php
+&lt;?php
 	print_r(hash_algos());
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; md2 [1] =&gt; md4 [2] =&gt; md5 [3] =&gt; sha1 [4] =&gt; sha224 [5] =&gt; sha256 [6] =&gt; sha384 [7] =&gt; sha512/224 [8] =&gt; sha512/256 [9] =&gt; sha512 [10] =&gt; sha3-224 [11] =&gt; sha3-256 [12] =&gt; sha3-384 [13] =&gt; sha3-512 [14] =&gt; ripemd128 [15] =&gt; ripemd160 [16] =&gt; ripemd256 [17] =&gt; ripemd320 [18] =&gt; whirlpool [19] =&gt; tiger128,3 [20] =&gt; tiger160,3 [21] =&gt; tiger192,3 [22] =&gt; tiger128,4 [23] =&gt; tiger160,4 [24] =&gt; tiger192,4 [25] =&gt; snefru [26] =&gt; snefru256 [27] =&gt; gost [28] =&gt; gost-crypto [29] =&gt; adler32 [30] =&gt; crc32 [31] =&gt; crc32b [32] =&gt; fnv132 [33] =&gt; fnv1a32 [34] =&gt; fnv164 [35] =&gt; fnv1a64 [36] =&gt; joaat [37] =&gt; haval128,3 [38] =&gt; haval160,3 [39] =&gt; haval192,3 [40] =&gt; haval224,3 [41] =&gt; haval256,3 [42] =&gt; haval128,4 [43] =&gt; haval160,4 [44] =&gt; haval192,4 [45] =&gt; haval224,4 [46] =&gt; haval256,4 [47] =&gt; haval128,5 [48] =&gt; haval160,5 [49] =&gt; haval192,5 [50] =&gt; haval224,5 [51] =&gt; haval256,5 )</p>
@@ -1384,7 +1384,7 @@ string md5 ( string $str [, bool $raw_output = false ] )</p>
 	$password = “abcd1234”;
 	echo “password = “ . $password . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "MD5 = " . md5($password) . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "MD5 = " . md5($password) . "&lt;br&gt;";
 echo "MD5 = " . md5($password) . "&lt;br&gt;";
 
 echo "랜덤생성 예 === &lt;br&gt;";
@@ -1404,10 +1404,10 @@ string md5_file ( string $filename [, bool $raw_output = false ] )</p>
 <p>내부함수 md5_file()은 주어진 파일에 대해서 MD5 해시값을 계산합니다.</p>
 
 <p>예제파일) md5_file.php
-<?php
-	$file = 'md5_file.php';
-	echo 'MD5 file hash of ' . $file . ': ' . md5_file($file);
-?></p>
+&lt;?php
+	$file = ‘md5_file.php’;
+	echo ‘MD5 file hash of ‘ . $file . ‘: ‘ . md5_file($file);
+?&gt;</p>
 
 <p>화면출력)
 MD5 file hash of md5_file.php: 25adcad58baa2a626dfa53b98dff0995</p>
@@ -1422,10 +1422,10 @@ int crc32 ( string $str )</p>
 <p>CRC32는 보통 데이터 전송시 무결성 검증을 위해서 사용을 합니다. 입력된 문자열 스트링의 32비트 순환 중복 검사에 대한 결과를 출력합니다.</p>
 
 <p>예제파일) crc32.php
-<?php
-	$checksum = crc32("hello php world");
-	printf("%u\n", $checksum);
-?></p>
+&lt;?php
+	$checksum = crc32(“hello php world”);
+	printf(“%u\n”, $checksum);
+?&gt;</p>
 
 <p>화면출력)
 2202403677</p>
@@ -1443,7 +1443,7 @@ string sha1 ( string $str [, bool $raw_output = false ] )</p>
 &lt;?php
 	$str = ‘apple’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 40 문자 16 진수
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 40 문자 16 진수
 echo $str ." = ". sha1($str). "&lt;br&gt;"; 
 
 // 길이가 20 인 원시 바이너리 형식
@@ -1462,7 +1462,7 @@ string sha1_file ( string $filename [, bool $raw_output = false ] )</p>
 <p>예제파일) sha1_file.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach(glob('*.exe') as $ent)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach(glob('*.exe') as $ent)
 {
 	if(is_dir($ent))
 	{
@@ -1492,7 +1492,7 @@ string crypt ( string $str [, string $salt ] )</p>
 <p>예제파일) crypt.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$password = "ABCD1234";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$password = "ABCD1234";
 echo "암호 = " . $password . "&lt;br&gt;";
 
 // salt 자동 생성
@@ -1518,9 +1518,9 @@ DES 기반 암호 =��mEIN4PXgIk.</p>
 string str_rot13 ( string $str )</p>
 
 <p>예제파일) str_rot13.php
-<?php
-	echo str_rot13('PHP 4.3.0'); // CUC 4.3.0
-?></p>
+&lt;?php
+	echo str_rot13(‘PHP 4.3.0’); // CUC 4.3.0
+?&gt;</p>
 
 <p>화면출력)
 CUC 4.3.0</p>
@@ -1537,9 +1537,9 @@ CUC 4.3.0</p>
 void echo ( string $arg1 [, string $… ] )</p>
 
 <p>예제파일) echo.php
-<?php
-	echo "hello world";
-?></p>
+&lt;?php
+	echo “hello world”;
+?&gt;</p>
 
 <p>화면출력)
 hello world</p>
@@ -1550,13 +1550,13 @@ int print ( string $arg )</p>
 <p>내부함수 print() 함수는 echo()함수와 다르게 문자열을 화면에 출력후 성공여부를 논리값을 반환 합니다. 반환값은 화면의 정상적인 출력여부를 확인할 때 편리합니다.</p>
 
 <p>예제파일) print.php
-<?php
-	if(print("안녕하세요!")){
-		echo ">true";
+&lt;?php
+	if(print(“안녕하세요!”)){
+		echo “&gt;true”;
 	} else {
-		echo ">false";
+		echo “&gt;false”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 안녕하세요!&gt;true</p>
@@ -1584,7 +1584,7 @@ int printf ( string $format [, mixed $args [, mixed $… ]] )</p>
 &lt;?php
 	$name = “jiny”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (printf("안녕하세요! %s 입니다.",$name)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (printf("안녕하세요! %s 입니다.",$name)) {
 	echo "&gt;true";
 } else {
 	echo "&gt;false";
@@ -1605,7 +1605,7 @@ int fprintf ( resource $handle , string $format [, mixed $args [, mixed $… ]] 
     	return;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 지정한 포맷으로 파일 스트림에 출력합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 지정한 포맷으로 파일 스트림에 출력합니다.
 fprintf($fp, "%04d-%02d-%02d", $year, $month, $day);
 </code></pre></div></div>
 
@@ -1617,9 +1617,9 @@ int vprintf ( string $format , array $args )</p>
 <p>내부함수 vprintf()는 형식화 된 문자열을 출력합니다.</p>
 
 <p>예제파일) vprintf.php
-<?php
-	vprintf("%04d-%02d-%02d", explode('-', '2017-8-6'));
-?></p>
+&lt;?php
+	vprintf(“%04d-%02d-%02d”, explode(‘-‘, ‘2017-8-6’));
+?&gt;</p>
 
 <p>화면출력)
 2017-08-06</p>
@@ -1634,7 +1634,7 @@ int vfprintf ( resource $handle , string $format , array $args )</p>
 	if (!($fp = fopen(‘date.txt’, ‘w’)))
     return;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vfprintf($fp, "%04d-%02d-%02d", array($year, $month, $day));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vfprintf($fp, "%04d-%02d-%02d", array($year, $month, $day));
 </code></pre></div></div>
 
 <p>?&gt;</p>
@@ -1645,11 +1645,11 @@ string sprintf ( string $format [, mixed $args [, mixed $… ]] )</p>
 <p>내부함수 sprintf() 는 printf() 함수와 달리 화면에 출력하지 않고 포맷형태로 변환하여 문자열을 반환합니다.</p>
 
 <p>예제파일) sprintf.php
-<?php
-	$name = "jiny";
-	$string = sprintf("안녕하세요! %s 입니다.",$name);
+&lt;?php
+	$name = “jiny”;
+	$string = sprintf(“안녕하세요! %s 입니다.”,$name);
 	echo $string;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 안녕하세요! jiny 입니다.</p>
@@ -1660,9 +1660,9 @@ string vsprintf ( string $format , array $args )</p>
 <p>내부함수 vsprintf()는 포맷 스트링을 반환합니다.</p>
 
 <p>예제파일) vsprintf.php
-<?php
-	echo vsprintf("%04d-%02d-%02d", explode('-', '2017-8-6')); 
-?></p>
+&lt;?php
+	echo vsprintf(“%04d-%02d-%02d”, explode(‘-‘, ‘2017-8-6’)); 
+?&gt;</p>
 
 <p>화면출력)
 2017-08-06</p>
@@ -1679,7 +1679,7 @@ mixed sscanf ( string $str , string $format [, mixed &amp;$… ] )</p>
 	// 시리얼 넘버를 읽어 옵니다. 
 	list($serial) = sscanf(“SN/123456”, “SN/%d”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$mandate = "july 06 2017";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$mandate = "july 06 2017";
 list($month, $day, $year) = sscanf($mandate, "%s %d %d");
 echo "Item $serial was manufactured on: $year-" . substr($month, 0, 3) . "-$day\n"; ?&gt;
 </code></pre></div></div>
@@ -1705,7 +1705,7 @@ string addslashes ( string $str )</p>
 	echo addslashes(“c:\aaa\bbb\ccc”);
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo addslashes("안녕하세요! 'jiny'님");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo addslashes("안녕하세요! 'jiny'님");
 echo "&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -1729,7 +1729,7 @@ string stripslashes ( string $str )</p>
 	$temp = addslashes($str);
 	echo $temp.”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$temp2 = stripslashes($temp);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$temp2 = stripslashes($temp);
 echo $temp2."&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -1754,9 +1754,9 @@ string nl2br ( string $string [, bool $is_xhtml = true ] )</p>
 <p>내부함수 nl2br()는 HTML 라인브레이크로 <br />테그를 사용합니다.</p>
 
 <p>예제파일) nl2br.php
-<?php
-	echo nl2br("안녕하세요!\n 지니입니다.");
-?></p>
+&lt;?php
+	echo nl2br(“안녕하세요!\n 지니입니다.”);
+?&gt;</p>
 
 <p>화면출력)
 안녕하세요!
@@ -1770,14 +1770,14 @@ string nl2br ( string $string [, bool $is_xhtml = true ] )</p>
 string strip_tags ( string $str [, string $allowable_tags ] )</p>
 
 <p>예제파일) strip_tags.php
-<?php
-	$html = "
-	<h1>안녕하세요!</h1>
-	<br>
-	<?php phpinfo(); ?>
+&lt;?php
+	$html = “
+	&lt;h1&gt;안녕하세요!&lt;/h1&gt;
+	<br />
+	&lt;?php phpinfo(); ?&gt;
 	“;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $html;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $html;
 
 echo "=============== &lt;br&gt;";
 
@@ -1825,7 +1825,7 @@ echo $temp;
 &lt;?php
 	$str = “A ‘quote’ is <b>bold</b>”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 출력: A 'quote' is &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 출력: A 'quote' is &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;
 echo htmlentities($str);
 echo "&lt;br&gt;";
 
@@ -1873,7 +1873,7 @@ A 'quote' is &lt;b&gt;bold&lt;/b&gt;
 	$str = “I’ll "walk" the <b>cat</b> now”;
 	echo $str.”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = htmlentities($str);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = htmlentities($str);
 echo $a."&lt;br&gt;";
 
 echo html_entity_decode($a);
@@ -1914,7 +1914,7 @@ I’ll “walk” the cat now</p>
 	$body = “&lt;h1 class="aaa" id=’bb’&gt;안녕하세요&lt;/h1&gt; <br />”;
 	echo $body;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo htmlspecialchars($body); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo htmlspecialchars($body); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)</p>
@@ -1941,7 +1941,7 @@ I’ll “walk” the cat now</p>
 &lt;?php
 	$str = “&lt;p&gt;this -&gt; "&lt;/p&gt;\n”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo htmlspecialchars_decode($str);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo htmlspecialchars_decode($str);
 
 echo htmlspecialchars_decode($str, ENT_NOQUOTES); ?&gt;
 </code></pre></div></div>
@@ -1966,9 +1966,9 @@ echo htmlspecialchars_decode($str, ENT_NOQUOTES); ?&gt;
 <p>내부함수 get_html_translation_table()은 htmlspecialchars () 및 htmlentities ()에서 사용하는 변환 테이블을 반환합니다.</p>
 
 <p>예제파일) get_html_translation_table.php
-<?php
+&lt;?php
 	var_dump(get_html_translation_table(HTML_ENTITIES, ENT_QUOTES | ENT_HTML5));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 array(1511) { 
@@ -1992,7 +1992,7 @@ array get_meta_tags ( string $filename [, bool $use_include_path = false ] )</p>
 	// html 파일
 	$tags = get_meta_tags(“sample.htm”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "META author = ". $tags['author'] ."&lt;br&gt;";       
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "META author = ". $tags['author'] ."&lt;br&gt;";       
 echo "META keywords = ". $tags['keywords'] ."&lt;br&gt;";     
 echo "META description = ". $tags['description'] ."&lt;br&gt;";  
 </code></pre></div></div>
@@ -2011,10 +2011,10 @@ string quotemeta ( string $str )</p>
 	메타문자:	. \ + * ? [ ^ ] ( $ )</p>
 
 <p>예제파일) quotemeta.php
-<?php
-	$str = "Hello world. (반가와요!)";
+&lt;?php
+	$str = “Hello world. (반가와요!)”;
 	echo quotemeta($str);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Hello world. (반가와요!)</p>
@@ -2043,7 +2043,7 @@ string escapeshellcmd ( string $command )</p>
 &lt;?php
 	$command = ‘./configure ‘.$_POST[‘options’];</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$escaped_command = escapeshellcmd($command);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$escaped_command = escapeshellcmd($command);
  
 system($escaped_command); ?&gt;
 </code></pre></div></div>
@@ -2060,9 +2060,9 @@ string escapeshellarg ( string $arg )</p>
 <p>Windows에서 escapeshellarg () 대신 백분율(%) 기호, 느낌표(!) 및 큰 따옴표를 공백으로 대체하고 문자열 주위에 큰 따옴표를 추가합니다.</p>
 
 <p>예제) escapeshellarg.php
-<?php
-	system('ls '.escapeshellarg($dir));
-?></p>
+&lt;?php
+	system(‘ls ‘.escapeshellarg($dir));
+?&gt;</p>
 
 <h1 id="0315-로케일-및-코드">03.15 로케일 및 코드</h1>
 
@@ -2070,11 +2070,11 @@ string escapeshellarg ( string $arg )</p>
 
 <p>IntlChar클래스를 사용하기 위해서는 Intl 확장기능이 설치되어 있어야 합니다.</p>
 
-<?php
-	printf('%x', IntlChar::CODEPOINT_MAX);
-	echo IntlChar::charName('@');
-	var_dump(IntlChar::ispunct('!'));
-?>
+<p>&lt;?php
+	printf(‘%x’, IntlChar::CODEPOINT_MAX);
+	echo IntlChar::charName(‘@’);
+	var_dump(IntlChar::ispunct(‘!’));
+?&gt;</p>
 
 <p>화면출력)
 10ffff
@@ -2083,11 +2083,11 @@ bool(true)</p>
 
 <p>Unicode codepoint 이스케이프 구문은 16 진수 형식의 유니 코드 코드 포인트를 사용할 경우 코드 포인트를 UTF-8로 큰 따옴표로 묶인 문자열 또는 heredoc으로 출력합니다.</p>
 
-<?php
-	echo "\u{aa}";
-	echo "\u{0000aa}";
-	echo "\u{9999}";
-?>
+<p>&lt;?php
+	echo “\u{aa}”;
+	echo “\u{0000aa}”;
+	echo “\u{9999}”;
+?&gt;</p>
 
 <p>|내부함수|
 string setlocale ( int $category , string $locale [, string $… ] )</p>
@@ -2103,7 +2103,7 @@ array localeconv ( void )</p>
 &lt;?php
 	setlocale(LC_ALL, ‘nl_NL.UTF-8@euro’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$locale_info = localeconv();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$locale_info = localeconv();
 print_r($locale_info);
 </code></pre></div></div>
 

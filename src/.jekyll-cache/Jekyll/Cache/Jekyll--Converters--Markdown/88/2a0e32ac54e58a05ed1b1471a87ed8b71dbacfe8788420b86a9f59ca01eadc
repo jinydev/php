@@ -1,4 +1,4 @@
-I"<h1 id="require">require</h1>
+I"<h1 id="require">require</h1>
 <hr />
 <p>PHP에서는 include와 비슷한 require 전처리 명령어를 지원합니다.<br />
 require 명령어를 제공하는 이유는 좀 더 유연한 소스 결합과 엄격한 소스 결합을 서로 구분하기 위함입니다.</p>
@@ -21,7 +21,7 @@ include와 require의 차이점은 삽입하고자 하는 파일의 존재 여�
 
 <p>예제 파일 include_lib.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">){</span>
 		<span class="k">return</span> <span class="nv">$x</span><span class="o">+</span><span class="nv">$y</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
@@ -33,12 +33,12 @@ include와 require의 차이점은 삽입하고자 하는 파일의 존재 여�
 	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
 <p>위의 예제는 분리된 2개의 소스를 require 명령으로 결합하는 예입니다. 
@@ -65,7 +65,7 @@ include와 require의 차이점은 삽입하고자 하는 파일의 존재 여�
 	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nx">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="nf">addPlus</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="nv">$y</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 

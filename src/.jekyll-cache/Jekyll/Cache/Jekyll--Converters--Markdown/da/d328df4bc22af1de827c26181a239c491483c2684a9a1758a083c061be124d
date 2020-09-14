@@ -1,4 +1,4 @@
-I"l<h1 id="array_diff_uassoc">array_diff_uassoc</h1>
+I"~<h1 id="array_diff_uassoc">array_diff_uassoc</h1>
 <hr />
 
 <p>array array_diff_uassoc ( array $array1 , array $array2 [, array $… ], callable $key_compare_func )</p>
@@ -9,7 +9,7 @@
 
 <p>예제파일) array-65.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">key_compare_func</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
+<span class="k">function</span> <span class="n">key_compare_func</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">===</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -25,6 +25,6 @@
 </code></pre></div></div>
 
 <p>화면출력)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [b] =&gt; brown [c] =&gt; blue [0] =&gt; red ) 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [b] =&gt; brown [c] =&gt; blue [0] =&gt; red ) 
 </code></pre></div></div>
 :ET

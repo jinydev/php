@@ -117,10 +117,10 @@ string apache_get_version ( void )</p>
 <p>내부함수 apache_get_version()는 아파치 버전을 확인합니다.</p>
 
 <p>예제) apache_get_version.php
-<?php
+&lt;?php
 	$version = apache_get_version();
-	echo "$version";
-?></p>
+	echo “$version”;
+?&gt;</p>
 
 <p>출력결과)
 Apache/2.2.29 (Unix) mod_ssl/2.2.29 OpenSSL/1.0.1e-fips DAV/2 PHP/5.3.29</p>
@@ -131,9 +131,9 @@ array apache_get_modules ( void )</p>
 <p>내부함수 apache_get_modules()는 적재된 아파치 모듈 목록을 얻습니다</p>
 
 <p>예제) apache_get_modules.php
-<?php
+&lt;?php
     print_r(apache_get_modules());
-?></p>
+?&gt;</p>
 
 <p>출력결과)
 Array ( [0] =&gt; core [1] =&gt; prefork [2] =&gt; http_core [3] =&gt; mod_so [4] =&gt; mod_authn_file [5] =&gt; mod_authn_dbm [6] =&gt; mod_authn_anon [7] =&gt; mod_authn_dbd [8] =&gt; mod_authn_default [9] =&gt; mod_authz_host [10] =&gt; mod_authz_groupfile [11] =&gt; mod_authz_user [12] =&gt; mod_authz_dbm [13] =&gt; mod_authz_owner [14] =&gt; mod_authz_default [15] =&gt; mod_auth_basic [16] =&gt; mod_auth_digest [17] =&gt; mod_dbd [18] =&gt; mod_dumpio [19] =&gt; mod_reqtimeout [20] =&gt; mod_ext_filter [21] =&gt; mod_include [22] =&gt; mod_filter [23] =&gt; mod_substitute [24] =&gt; mod_deflate [25] =&gt; mod_log_config [26] =&gt; mod_logio [27] =&gt; mod_env [28] =&gt; mod_expires [29] =&gt; mod_headers [30] =&gt; mod_ident [31] =&gt; mod_setenvif [32] =&gt; mod_version [33] =&gt; mod_ssl [34] =&gt; mod_mime [35] =&gt; mod_dav [36] =&gt; mod_status [37] =&gt; mod_autoindex [38] =&gt; mod_asis [39] =&gt; mod_info [40] =&gt; mod_cgi [41] =&gt; mod_dav_fs [42] =&gt; mod_vhost_alias [43] =&gt; mod_negotiation [44] =&gt; mod_dir [45] =&gt; mod_imagemap [46] =&gt; mod_actions [47] =&gt; mod_speling [48] =&gt; mod_userdir [49] =&gt; mod_alias [50] =&gt; mod_rewrite [51] =&gt; mod_php5 [52] =&gt; mod_ruid2 )</p>
@@ -144,11 +144,11 @@ string apache_getenv ( string $variable [, bool $walk_to_top ] )</p>
 <p>내부함수 apache_getenv()는 아파치 서브프로세스의 환경 변수를 가져옵니다. 아파치 2 버전 이상에서만 지원합니다.</p>
 
 <p>예제) apache_getenv.php
-<?php
+&lt;?php
     // 아파치 환경 변수 SERVER_ADDR을 가져오는 방볍.
-    $ret = apache_getenv("SERVER_ADDR");
+    $ret = apache_getenv(“SERVER_ADDR”);
     echo $ret;
-?></p>
+?&gt;</p>
 
 <p>출력결과)
 211.110.1.195</p>
@@ -162,7 +162,7 @@ bool apache_setenv ( string $variable , string $value [, bool $walk_to_top = fal
 &lt;?php
     apache_setenv(“EXAMPLE_VAR”, “Example Value”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ret = apache_getenv("EXAMPLE_VAR");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ret = apache_getenv("EXAMPLE_VAR");
 echo $ret; ?&gt;
 </code></pre></div></div>
 
@@ -179,7 +179,7 @@ object apache_lookup_uri ( string $filename )</p>
     $info = apache_lookup_uri(‘apache_getenv.php’);
     print_r($info);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($info-&gt;filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($info-&gt;filename)) {
     echo 'file exists!';
 } ?&gt;
 </code></pre></div></div>
@@ -202,7 +202,7 @@ array apache_request_headers ( void )</p>
 &lt;?php
     $headers = apache_request_headers();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach ($headers as $header =&gt; $value) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach ($headers as $header =&gt; $value) {
     echo "$header: $value &lt;br /&gt;\n";
 } ?&gt;
 </code></pre></div></div>
@@ -222,9 +222,9 @@ array apache_response_headers ( void )</p>
 <p>내부함수 apache_response_headers()는 모든 HTTP 응답 헤더를 가져옵니다</p>
 
 <p>예제) apache_response_headers.php
-<?php
+&lt;?php
     print_r(apache_response_headers());
-?></p>
+?&gt;</p>
 
 <p>출력결과)
 Array ( [X-Powered-By] =&gt; PHP/5.3.29 )</p>
@@ -237,13 +237,13 @@ bool virtual ( string $filename )</p>
 <p>virtual()은 mod_include의 <!--#include virtual...-->과 동일한 처리를 하는 아파치 함수입니다. 아파치 모듈로 설치하였을 때만 지원합니다.</p>
 
 <p>예제) virtual.php
-<?PHP
-    $file = '../images/logo.jpg';
+&lt;?PHP
+    $file = ‘../images/logo.jpg’;
     $file_info = apache_lookup_uri($file);
-    header('content-type: ' . $file_info -> content_type);
+    header(‘content-type: ‘ . $file_info -&gt; content_type);
     virtual($file);
     die();
-?></p>
+?&gt;</p>
 
 <p>|내부함수|
 bool apache_reset_timeout ( void )</p>

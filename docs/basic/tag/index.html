@@ -104,22 +104,22 @@
                 <section>
                     <h1 id="php-테그">PHP 테그</h1>
 <hr />
-<p>PHP 코드를 작성하는 방법은 자유롭습니다. PHP코드의 시작과 끝을 <code class="highlighter-rouge">표기</code>만 해주면 됩니다.<br />
-시작테그(<code class="highlighter-rouge"><span class="cp">&lt;?php</span></code>)와 종료테그(<code class="highlighter-rouge">?&gt;</code>)에 대해서 학습합니다.</p>
+<p>PHP 코드를 작성하는 방법은 자유롭습니다. PHP코드의 시작과 끝을 <code class="language-plaintext highlighter-rouge">표기</code>만 해주면 됩니다.<br />
+시작테그(<code class="language-plaintext highlighter-rouge">&lt;?php</code>)와 종료테그(<code class="language-plaintext highlighter-rouge">?&gt;</code>)에 대해서 학습합니다.</p>
 
 <p><br /></p>
 
-<h2 id="php-코드를-상징하는-기호-와-">PHP 코드를 상징하는 기호 <code class="highlighter-rouge">&lt;?</code>와 <code class="highlighter-rouge">?&gt;</code></h2>
+<h2 id="php-코드를-상징하는-기호-와-">PHP 코드를 상징하는 기호 <code class="language-plaintext highlighter-rouge">&lt;?</code>와 <code class="language-plaintext highlighter-rouge">?&gt;</code></h2>
 <hr />
-<p><code class="highlighter-rouge">PHP</code>는 소스상에서 파일의 <code class="highlighter-rouge">전부</code>를 PHP 코드로 인식하지는 않습니다.<br />
+<p><code class="language-plaintext highlighter-rouge">PHP</code>는 소스상에서 파일의 <code class="language-plaintext highlighter-rouge">전부</code>를 PHP 코드로 인식하지는 않습니다.<br />
 PHP 인터프리터는 소스 파일을 읽을 때 시작테크를 만날때 부터 php코드로 인식을 하고, 종료테그를 만날때 인식을 종료 합니다.</p>
 
 <ul>
   <li>
-    <p>시작 테그는 <code class="highlighter-rouge">&lt;?</code> 또는 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code> 기호를 사용합니다. PHP 인터프리터는 시작테그를 만나는 순간부터 PHP 소스로 인식합니다.</p>
+    <p>시작 테그는 <code class="language-plaintext highlighter-rouge">&lt;?</code> 또는 <code class="language-plaintext highlighter-rouge">&lt;?php</code> 기호를 사용합니다. PHP 인터프리터는 시작테그를 만나는 순간부터 PHP 소스로 인식합니다.</p>
   </li>
   <li>
-    <p>종료 테그는 <code class="highlighter-rouge">?&gt;</code> 기호를 사용합니다. 종료 테그를 만나면 PHP의 소스가 끝나는 것으로 해석합니다.</p>
+    <p>종료 테그는 <code class="language-plaintext highlighter-rouge">?&gt;</code> 기호를 사용합니다. 종료 테그를 만나면 PHP의 소스가 끝나는 것으로 해석합니다.</p>
   </li>
 </ul>
 
@@ -127,7 +127,7 @@ PHP 인터프리터는 소스 파일을 읽을 때 시작테크를 만날때 부
 
 <h2 id="html-코드와-혼합하여-사용하기">HTML 코드와 <a href="html">혼합하여 사용하기</a></h2>
 <hr />
-<p>이런 자유로운 PHP 프로그램 코딩 방식은 PHP 코드를 <code class="highlighter-rouge">다른 언어에 삽입</code>하여 혼합 사용 가능하다는 장점이 있습니다.<br />
+<p>이런 자유로운 PHP 프로그램 코딩 방식은 PHP 코드를 <code class="language-plaintext highlighter-rouge">다른 언어에 삽입</code>하여 혼합 사용 가능하다는 장점이 있습니다.<br />
 하나의 소스코드로 두개 이상의 언어를 사용할 수 있다는 것입니다.</p>
 
 <ul>
@@ -149,9 +149,9 @@ PHP 인터프리터는 소스 파일을 읽을 때 시작테크를 만날때 부
 
 <h2 id="단축테그">단축테그</h2>
 <hr />
-<p>PHP는 <code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 단축테그를 제공합니다. 단축테그는 <code class="highlighter-rouge"><span class="cp">&lt;?php</span></code> 보다 짧아서 html 문서안에 php 출력코드를 삽입할 때 많이 사용합니다.</p>
+<p>PHP는 <code class="language-plaintext highlighter-rouge">&lt;?=</code> 단축테그를 제공합니다. 단축테그는 <code class="language-plaintext highlighter-rouge">&lt;?php</code> 보다 짧아서 html 문서안에 php 출력코드를 삽입할 때 많이 사용합니다.</p>
 
-<p>만일 <code class="highlighter-rouge">$msg</code> 변수의 값을 html 문서내에 출력을 한다고 할때 다음과 같이 작성합니다.</p>
+<p>만일 <code class="language-plaintext highlighter-rouge">$msg</code> 변수의 값을 html 문서내에 출력을 한다고 할때 다음과 같이 작성합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>오류가 발생하였습니다.<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;p&gt;</span>
@@ -167,7 +167,7 @@ PHP 인터프리터는 소스 파일을 읽을 때 시작테크를 만날때 부
 <span class="nt">&lt;/p&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 단축코드는 오로지 출력만 가능합니다. 즉, <code class="highlighter-rouge"><span class="cp">&lt;?=</span></code> 뒤에 있는 문자열의 출력을 결합합니다.
+<p><code class="language-plaintext highlighter-rouge">&lt;?=</code> 단축코드는 오로지 출력만 가능합니다. 즉, <code class="language-plaintext highlighter-rouge">&lt;?=</code> 뒤에 있는 문자열의 출력을 결합합니다.
 단축코드는 if, for등의 제어구문은 사용할 수 없습니다.</p>
 
 <p><br /></p>

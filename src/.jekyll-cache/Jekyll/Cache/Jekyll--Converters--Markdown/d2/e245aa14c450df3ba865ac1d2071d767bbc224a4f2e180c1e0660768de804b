@@ -1,6 +1,6 @@
-I"*<h1 id="콘솔-옵션">콘솔 옵션</h1>
+I"=<h1 id="콘솔-옵션">콘솔 옵션</h1>
 <hr />
-<p>콘솔 창에서 php <code class="highlighter-rouge">-help 명령</code>을 입력하면 php 콘솔 실행과 관련된 여러 명령 옵션을 확인할 수 있습니다.</p>
+<p>콘솔 창에서 php <code class="language-plaintext highlighter-rouge">-help 명령</code>을 입력하면 php 콘솔 실행과 관련된 여러 명령 옵션을 확인할 수 있습니다.</p>
 
 <p>|명령|</p>
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php <span class="nt">-help</span>

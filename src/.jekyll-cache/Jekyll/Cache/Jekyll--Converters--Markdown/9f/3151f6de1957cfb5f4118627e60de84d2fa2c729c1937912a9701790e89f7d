@@ -1,6 +1,7 @@
-I"�	<h1 id="psr-php-standard-recommendation">PSR <small>(PHP Standard Recommendation)</small></h1>
+I"E
+<h1 id="psr-php-standard-recommendation">PSR <small>(PHP Standard Recommendation)</small></h1>
 <hr />
-<p>PHP는 <code class="highlighter-rouge">오픈소스</code>, <code class="highlighter-rouge">프레임워크</code> 등 공개로 인하여 여러 개발자들이 소스를 <code class="highlighter-rouge">공유</code>하고, 함께 개발하고 있습니다.<br />
+<p>PHP는 <code class="language-plaintext highlighter-rouge">오픈소스</code>, <code class="language-plaintext highlighter-rouge">프레임워크</code> 등 공개로 인하여 여러 개발자들이 소스를 <code class="language-plaintext highlighter-rouge">공유</code>하고, 함께 개발하고 있습니다.<br />
 또한 이러한 공유와 나눔으로 PHP는 많은 발전을 하고 있습니다.</p>
 
 <p><br /></p>
@@ -43,7 +44,7 @@ PSR 권고안은 함께 만들어가는 권고안입니다.</p>
 <h2 id="psr-아이디어">PSR 아이디어</h2>
 <hr />
 <p>지금도 새로운 아이디어가 제안되고 많은 개발자들의 의견을 받아들이고 있습니다.<br />
-이런 의견들은 <code class="highlighter-rouge">초안</code> → <code class="highlighter-rouge">리뷰</code> → <code class="highlighter-rouge">수용</code> 세 가지 상태로 구분됩니다.</p>
+이런 의견들은 <code class="language-plaintext highlighter-rouge">초안</code> → <code class="language-plaintext highlighter-rouge">리뷰</code> → <code class="language-plaintext highlighter-rouge">수용</code> 세 가지 상태로 구분됩니다.</p>
 
 <p>이외 리뷰 중인 제안과 다수의 초안 제안 등이 있습니다.<br />
 아직 수용되지 않은 초안과 리뷰 단계의 제안은 웹 사이트를 방문하면 확인할 수 있습니다.</p>

@@ -150,11 +150,11 @@ array filter_list ( void )</p>
 int filter_id ( string $filtername )</p>
 
 <p>예제파일) filter-01.php
-<?php
-	foreach (filter_list() as $id =>$filter) {
-		echo "필터명 =" . $filter . ', ID=' . filter_id($filter) . '<br>';
+&lt;?php
+	foreach (filter_list() as $id =&gt;$filter) {
+		echo “필터명 =” . $filter . ‘, ID=’ . filter_id($filter) . ‘<br />’;
 	}
- ?></p>
+ ?&gt;</p>
 
 <p>화면출력)
 필터명 =int, ID=257
@@ -202,7 +202,7 @@ mixed filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $opt
 &lt;?php
 	$int = 100;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
 		echo("정수가 유효합니다");
 } else {
 		echo("정수가 아닙니다");
@@ -228,7 +228,7 @@ mixed filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $opt
 &lt;?php
 	$int = 0;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (filter_var($int, FILTER_VALIDATE_INT) === 0 || 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (filter_var($int, FILTER_VALIDATE_INT) === 0 || 
 	!filter_var($int, FILTER_VALIDATE_INT) === false) {
 	echo("Integer is valid");
 } else {
@@ -253,7 +253,7 @@ Integer is valid</p>
 	$min = 1;
 	$max = 200;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$range = array("options" =&gt; array("min_range"=&gt;$min, "max_range"=&gt;$max);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$range = array("options" =&gt; array("min_range"=&gt;$min, "max_range"=&gt;$max);
  
 if (filter_var($int, FILTER_VALIDATE_INT, $range)) === false) {
 		echo("변수 값이 유효한 범위 내에 있지 않습니다.!");
@@ -282,7 +282,7 @@ if (filter_var($int, FILTER_VALIDATE_INT, $range)) === false) {
 &lt;?php
 	$ip = “127.0.0.1”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
 		echo("$ip 는 유효한 IP주소 입니다.");
 } else {
 		echo("$ip 는 유효하지 IP주소 입니다.");
@@ -299,7 +299,7 @@ if (filter_var($int, FILTER_VALIDATE_INT, $range)) === false) {
 &lt;?php
 	$ip = “2001:0db8:85a3:08d3:1319:8a2e:0370:7334”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
 	echo("$ip 는 유효한 IPv6 address");
 } else {
 	echo("$ip 는 유효하지 않는 IPv6 address");
@@ -317,7 +317,7 @@ if (filter_var($int, FILTER_VALIDATE_INT, $range)) === false) {
 &lt;?php
 	$url = “http://www.hojin.io”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED) === false) {
 	echo("$url 유효한 URL");
 } else {
 	echo("$url 유효하지 않은 URL");
@@ -333,7 +333,7 @@ http://www.hojin.io 유효하지 않은 URL</p>
 &lt;?php
 	$str = “&lt;h1&gt;Hello World!&lt;/h1&gt;”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$aaa = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$aaa = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 echo $aaa; ?&gt;
 </code></pre></div></div>
 
@@ -348,7 +348,7 @@ Hello World!</p>
 &lt;?php
 	$email = “infohojin@naver.com”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 이메일에 포함된 부정한 글자들은 제거를 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 이메일에 포함된 부정한 글자들은 제거를 합니다.
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
  
 // e-mail 유효성
@@ -372,11 +372,11 @@ james.lee@example.com is a valid email address</p>
 <p>입력한 값을 재출력하는 기능에서 잘못 입력되는 html 코드들은 오동작을 발생하게 됩니다. 내부함수 filter_var()를 통하여 입력된 문자열에서 HTML 코드를 제거할 수 있습니다.</p>
 
 <p>예제파일) filter-10.php
-<?php
-	$str = "<h1>Hello World!</h1>";
+&lt;?php
+	$str = “&lt;h1&gt;Hello World!&lt;/h1&gt;”;
 	$newstr = filter_var($str, FILTER_SANITIZE_STRING);
 	echo $newstr;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Hello World!</p>
@@ -391,7 +391,7 @@ Hello World!</p>
 &lt;?php
 	$url = “https://www.jinyphp.com”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Remove all illegal characters from a url
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Remove all illegal characters from a url
 $url = filter_var($url, FILTER_SANITIZE_URL);
  
 // Validate url
@@ -452,7 +452,7 @@ space	 	-	여백
 &lt;	&#60;	&lt;	보다 작은
 =	=	-	등호
         <blockquote>
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp;#62;	&amp;gt;	보다 큰 ?	&amp;#63;	-	물음표 @	&amp;#64;	-	Commercial at A - Z	&amp;#65;-&amp;#90;	-	A부터 Z까지 [	&amp;#91;	-	왼쪽 대괄호 \	&amp;#92;	-	역슬래쉬 ]	&amp;#93;	-	오른쪽 대괄호 ^	&amp;#94;	-	탈자부호 _	&amp;#95;	-	수평선 `	&amp;#96;	-	Acute accent a - z	&amp;#97;-&amp;#122;	-	a부터 z까지 {	&amp;#123;	-	왼쪽 중괄호 |	&amp;#124;	-	수직선 }	&amp;#125;	-	오른쪽 중괄호 ~	&amp;#126;	-	꼬리표
+          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp;#62;	&amp;gt;	보다 큰 ?	&amp;#63;	-	물음표 @	&amp;#64;	-	Commercial at A - Z	&amp;#65;-&amp;#90;	-	A부터 Z까지 [	&amp;#91;	-	왼쪽 대괄호 \	&amp;#92;	-	역슬래쉬 ]	&amp;#93;	-	오른쪽 대괄호 ^	&amp;#94;	-	탈자부호 _	&amp;#95;	-	수평선 `	&amp;#96;	-	Acute accent a - z	&amp;#97;-&amp;#122;	-	a부터 z까지 {	&amp;#123;	-	왼쪽 중괄호 |	&amp;#124;	-	수직선 }	&amp;#125;	-	오른쪽 중괄호 ~	&amp;#126;	-	꼬리표
 </code></pre></div>          </div>
         </blockquote>
       </dd>
@@ -578,10 +578,10 @@ bool filter_has_var ( int $type , string $variable_name )</p>
 	INPUT_SERVER, 또는 INPUT_ENV.</p>
 
 <p>예제파일) filter-12.php
-<?php
-    echo "INPUT_GET = ";
-    echo filter_has_var(INPUT_GET, 'aaa') ? 'Yes' : 'No';
-?></p>
+&lt;?php
+    echo “INPUT_GET = “;
+    echo filter_has_var(INPUT_GET, ‘aaa’) ? ‘Yes’ : ‘No’;
+?&gt;</p>
 
 <p>화면출력)
 INPUT_GET = Yes</p>
@@ -598,7 +598,7 @@ mixed filter_input ( int $type , string $variable_name [, int $filter = FILTER_D
     $search_html = filter_input(INPUT_GET, ‘search’, FILTER_SANITIZE_SPECIAL_CHARS);
     $search_url = filter_input(INPUT_GET, ‘search’, FILTER_SANITIZE_ENCODED);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "입력한 검색키워드는 $search_html 입니다.&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "입력한 검색키워드는 $search_html 입니다.&lt;br&gt;";
 echo "&lt;a href='?search=$search_url'&gt;재검색&lt;/a&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -610,16 +610,16 @@ mixed filter_input_array ( int $type [, mixed $definition [, bool $add_empty = t
 <p>내부함수 filter_input_array()는 필터를 처리하기 위한 배열 정보를 이용하여 다수의 외부변수를 일괄적으로 필터링합니다. 이 함수는 filter_input ()을 반복적으로 호출하지 않고도 많은 값을 검색 할 때 유용합니다.</p>
 
 <p>예제파일) filter-14.php
-<?php
+&lt;?php
     error_reporting(E_ALL | E_STRICT);
     $args = array(
-        'name'   => FILTER_SANITIZE_ENCODED,
-        'age' => FILTER_VALIDATE_INT,
-        'country'   => FILTER_SANITIZE_ENCODED
+        ‘name’   =&gt; FILTER_SANITIZE_ENCODED,
+        ‘age’ =&gt; FILTER_VALIDATE_INT,
+        ‘country’   =&gt; FILTER_SANITIZE_ENCODED
     );
     $myinputs = filter_input_array(INPUT_GET, $args);
     var_dump($myinputs);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 array(3) { [“name”]=&gt; string(4) “jiny” [“age”]=&gt; int(18) [“country”]=&gt; string(5) “korea” }</p>
@@ -642,7 +642,7 @@ mixed filter_var_array ( array $data [, mixed $definition [, bool $add_empty = t
         'testarray'     =&gt; '2',
     );</script></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$args = array(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$args = array(
 'product_id'   =&gt; FILTER_SANITIZE_ENCODED,
 'component'    =&gt; array('filter'    =&gt; FILTER_VALIDATE_INT,
                         'flags'     =&gt; FILTER_FORCE_ARRAY,

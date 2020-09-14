@@ -1,4 +1,4 @@
-I"R<h2 id="wapm">WAPM</h2>
+I"e<h2 id="wapm">WAPM</h2>
 <p>비트나미 사이트에서 아파치 + PHP + Mysql 패키지를 만들어 한번에 자동으로 설치를 할 수 있도록 만들어 배포하고 있습니다.</p>
 
 <p>다운로드 받은 설치파일을 실행합니다.</p>
@@ -53,7 +53,7 @@
 
 <p><img src="./img/wapm_13.png" alt="화면2" /></p>
 
-<p>위의 설정탭에서 <code class="highlighter-rouge">Manage Service</code>를 선택합니다.</p>
+<p>위의 설정탭에서 <code class="language-plaintext highlighter-rouge">Manage Service</code>를 선택합니다.</p>
 
 <p><img src="./img/wapm_14.png" alt="화면2" /></p>
 

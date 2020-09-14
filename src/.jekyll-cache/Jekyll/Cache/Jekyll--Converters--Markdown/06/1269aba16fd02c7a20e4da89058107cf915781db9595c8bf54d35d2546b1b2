@@ -1,4 +1,4 @@
-I"<h1 id="코딩하기">코딩하기</h1>
+I"3<h1 id="코딩하기">코딩하기</h1>
 <hr />
 <p>이번 장에서는 실제적인 페키지를 검색하여 설치하는 과정을 실습해 보도록 합니다.<br />
 또한 설치한 패키지를 코드로 옴겨서 실행하는 과정도 함께 실습을 해보도록 합니다.</p>
@@ -9,7 +9,7 @@
 <hr />
 <p>앞에서 검색한 컴포저 패키지를 추가로 설치해 보도록 하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require illuminate/support
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require illuminate/support
 </code></pre></div></div>
 
 <p>illuminate/support 페키지는 배열과 관련된 핼퍼들을 포함하고 있습니다.</p>
@@ -64,7 +64,7 @@
 <span class="k">echo</span> <span class="nv">$arr</span><span class="p">[</span><span class="s1">'admin'</span><span class="p">][</span><span class="s1">'first_name'</span><span class="p">];</span>
 <span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-<span class="nv">$first_name</span> <span class="o">=</span> <span class="nx">array_get</span><span class="p">(</span><span class="nv">$arr</span><span class="p">,</span> <span class="s1">'admin.first_name'</span><span class="p">);</span>
+<span class="nv">$first_name</span> <span class="o">=</span> <span class="nf">array_get</span><span class="p">(</span><span class="nv">$arr</span><span class="p">,</span> <span class="s1">'admin.first_name'</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$first_name</span><span class="p">;</span>
 </code></pre></div></div>
 
@@ -74,7 +74,7 @@
 <hr />
 <p>설치한 컴포저 페키지를 cli 명령어를 통하여 제거할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer remove illuminate/support
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer remove illuminate/support
 </code></pre></div></div>
 
 :ET

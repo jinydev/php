@@ -1,4 +1,4 @@
-I"�<h1 id="클래스">클래스</h1>
+I"�<h1 id="클래스">클래스</h1>
 <hr />
 <p>클래스는 기존 함수형 프로그램 코딩 개발 방법보다 향상된 객체지향형 프로그램 개발 방법론 및 환경을 지원합니다. PHP도 다양한 객체지향 방법론을 도입하여 최신 트렌드에 맞는 클래스 및 코딩 방법을 제공합니다.</p>
 
@@ -37,7 +37,7 @@
 <hr />
 <p>캡슐화는 객체지향 방법의 기본 개념입니다. 캡슐화의 목적은 ‘코드를 수없이 재사용’하는 것 입니다. 갭슐화는 프로그램 코드를 재사용하는 데 있어서 기능적인 부분과 데이터적인 부분을 한곳에 묶어서 관리할 필요성이 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>객체 = 변수 + 함수
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>객체 = 변수 + 함수
 </code></pre></div></div>
 
 <p>객체와 함수의 차이점은 데이터를 같이 관리하는지 여부입니다. 보통 변수는 프로퍼티(property), 함수는 메서드(method)라고 합니다.</p>
@@ -51,7 +51,7 @@
 <p>PHP 에서는 클래스 선언을 다음과 같이 할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class jiny {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class jiny {
 	클래스 내용 ...
 
 	public $username;
@@ -62,7 +62,7 @@
 }
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">class</code>라는 키워드를 사용하고 다음에 클래스 이름을 사용자가 지정할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">class</code>라는 키워드를 사용하고 다음에 클래스 이름을 사용자가 지정할 수 있습니다.</p>
 
 <p>클래스명은 영문 또는 언더바(_)로 시작합니다. 클래스의 내용은 중괄호 { } 안에 내용을 작성하면 됩니다.</p>
 

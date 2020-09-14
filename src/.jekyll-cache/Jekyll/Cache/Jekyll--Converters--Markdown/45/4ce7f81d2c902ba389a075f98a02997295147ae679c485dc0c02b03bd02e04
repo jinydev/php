@@ -1,4 +1,4 @@
-I"oR<h2 id="오류-및-예외-처리">오류 및 예외 처리</h2>
+I"S<h2 id="오류-및-예외-처리">오류 및 예외 처리</h2>
 
 <p>프로그램을 개발하다 보면 수많은 오류와 예외가 발생합니다. 보통 오류는 크게 코드상의 문법 오류와 소스상의 논리적인 오류로 구분할 수 있습니다. 문법적 오류는 PHP가 시작하기 전에 체크하여 알려주기 때문에 쉽게 문법적 오류를 해결할 수 있습니다. 하지만 논리적인 오류는 쉽게 찾을 수 있는 오류가 아닙니다. 또한 이러한 문제로 인해 프로그램은 정상적인 동작을 수행하지 못하고 중간에 중단되기도 합니다.</p>
 
@@ -30,7 +30,7 @@ void exit ([ string $status ] )</p>
 <p>예제 파일 exit-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = 'abcd.txt';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = 'abcd.txt';
 $file = fopen($filename, 'r') or exit("파일을 읽을 수 없습니다.");
 </code></pre></div></div>
 
@@ -46,9 +46,9 @@ $file = fopen($filename, 'r') or exit("파일을 읽을 수 없습니다.");
 <p>trigger_error() 함수를 이용하면 사용자가 직접 오류를 발생시킬 수 있습니다.</p>
 
 <p>예제 파일 error-01.php
-<?php
-	trigger_error("사용자 오류 발생", E_USER_ERROR);
-?></p>
+&lt;?php
+	trigger_error(“사용자 오류 발생”, E_USER_ERROR);
+?&gt;</p>
 
 <p>결과
 [Sun May 14 17:24:40 2017] PHP Fatal error: 사용자 오류 발생 in C:\php-7.1.4-Win32-VC14-x86\jinyphp\error-01.php on line 2
@@ -144,7 +144,7 @@ set_error_handler(오류 처리_함수);</p>
 	}
 	set_error_handler(“userError”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trigger_error("사용자 오류 발생", E_USER_ERROR); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trigger_error("사용자 오류 발생", E_USER_ERROR); ?&gt;
 </code></pre></div></div>
 
 <p>결과
@@ -170,7 +170,7 @@ PHP는 예외 처리를 위해서 특별한 Exception 클래스를 제공합니�
 	$code = 444;
 	$e = new Exception($msg,$code);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "예외 코드 = ".$e-&gt;getCode();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "예외 코드 = ".$e-&gt;getCode();
 echo "&lt;br&gt;";
 echo "예외 메시지 = ".$e-&gt;getMessage(); ?&gt;
 </code></pre></div></div>
@@ -227,9 +227,9 @@ abstract public string __toString ( void )
 ●	ErrorException</p>
 
 <p>예제 파일 exception-02.php
-<?php
-	throw new Exception("강제적 예외 발생");
-?></p>
+&lt;?php
+	throw new Exception(“강제적 예외 발생”);
+?&gt;</p>
 
 <p>결과
 [Sun May 14 16:21:35 2017] ::1:55806 [500]: /jinyphp/exception-02.php - Uncaught Exception: 강제적 예외 발생 in C:\php-7.1.4-Win32-VC14-x86\jinyphp\exception-02.php:2
@@ -256,7 +256,7 @@ class divException extends exception {}</p>
 		}
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$msg = "예외 클래스 오류 발생";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$msg = "예외 클래스 오류 발생";
 $code = 444;
 $e = new aaaEx($msg,$code);
 
@@ -311,7 +311,7 @@ catch(Exception $err){
 &lt;?php
 	try {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	throw new Exception("강제적 예외 발생");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	throw new Exception("강제적 예외 발생");
 
 } catch(Exception $err){
 	// Try {} 부분에 연산 오류로 인하여 예외 처리가 발생됨
@@ -348,7 +348,7 @@ try {
 		$username = “jiny”;
 		$pasword = “abcd1234”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 } catch (PDOException $e) {
 	echo "PDO 오류";
@@ -380,7 +380,7 @@ try {
 &lt;?php
 	try {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	throw new Exception("강제적 예외 발생");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	throw new Exception("강제적 예외 발생");
 
 } catch(Exception $err){
 	// Try {} 부분에 연산오류로 인하여 예외 처리가 발생됨
@@ -419,7 +419,7 @@ bool restore_exception_handler ( void )</p>
 		echo “예외 메시지 = “.$e-&gt;getMessage();
 	});</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>throw new Exception("강제적 예외 발생");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>throw new Exception("강제적 예외 발생");
 
 // 설정한 전역 처리기를 복원합니다.
 restore_exception_handler(); ?&gt;

@@ -127,7 +127,7 @@
 
 <span class="c1">// yield 키워드는 값을 반환한다는 측면에서 return 키워드와 비슷하면서도 다르다. </span>
 
-<span class="k">function</span> <span class="nf">myGen</span><span class="p">(){</span>
+<span class="k">function</span> <span class="n">myGen</span><span class="p">(){</span>
 	<span class="c1">// 호출 시 첫 번째 yield 키워드까지 실행한다.</span>
 	<span class="k">echo</span> <span class="s2">"첫 번째 호출="</span><span class="p">;</span>
 	<span class="k">yield</span> <span class="s2">"test1"</span><span class="p">;</span>
@@ -142,15 +142,15 @@
 	
 <span class="p">}</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nx">myGen</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nf">myGen</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="nv">$value</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>첫 번째 호출=test1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>첫 번째 호출=test1
 두 번째 호출=test2
 세 번째 호출=test3
 </code></pre></div></div>
@@ -165,27 +165,27 @@
 
 <p>예제 파일 generator-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">gen</span><span class="p">(){</span>
+<span class="k">function</span> <span class="n">gen</span><span class="p">(){</span>
 	<span class="k">yield</span> <span class="s2">"gen() 1 실행"</span><span class="p">;</span>
 	<span class="k">yield</span> <span class="s2">"gen() 2 실행"</span><span class="p">;</span>
 
 	<span class="c1">// 3번째 yield는 gen2() 제너레이터로 연결</span>
-	<span class="k">yield</span> <span class="k">from</span> <span class="nx">gen2</span><span class="p">();</span>
+	<span class="k">yield</span> <span class="n">from</span> <span class="nf">gen2</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">gen2</span><span class="p">(){</span>
+<span class="k">function</span> <span class="n">gen2</span><span class="p">(){</span>
 	<span class="k">yield</span> <span class="s2">"gen2() 3 실행"</span><span class="p">;</span>
 	<span class="k">yield</span> <span class="s2">"gen2() 4 실행"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nx">gen</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$val</span><span class="p">){</span>
-	<span class="k">echo</span> <span class="nv">$val</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nf">gen</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$val</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$val</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gen() 1 실행
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gen() 1 실행
 gen() 2 실행
 gen2() 3 실행
 gen2() 4 실행
@@ -202,21 +202,21 @@ gen() 함수에 yield 키워드 두 개와 gen2() 함수에 yield 키워드 두 
 
 <p>예제 파일 generator-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">rowsCount</span><span class="p">(</span><span class="nv">$count</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">rowsCount</span><span class="p">(</span><span class="nv">$count</span><span class="p">){</span>
 		<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$count</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
 			<span class="c1">// 반복문 안에도 yield를 넣어서 반복할 수 있습니다.</span>
 			<span class="k">yield</span> <span class="nv">$i</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="k">foreach</span> <span class="p">(</span><span class="nx">rowsCount</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$i</span><span class="p">){</span>
-		<span class="k">echo</span> <span class="s2">" 실행 ="</span><span class="o">.</span> <span class="nv">$i</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">foreach</span> <span class="p">(</span><span class="nf">rowsCount</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$i</span><span class="p">){</span>
+		<span class="k">echo</span> <span class="s2">" 실행 ="</span><span class="mf">.</span> <span class="nv">$i</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 =0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 =0
 실행 =1
 실행 =2
 실행 =3

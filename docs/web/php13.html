@@ -143,16 +143,16 @@ bool setcookie(name, value, expire, path, domain, secure, httponly);</p>
 <p>쿠키 이름은 아스키 코드 알파벳 및 숫자만 포함할 수 있습니다. 즉 콤마(,), 세미콜론(;), 공백(‘’) 등의 문자는 포함할 수 없습니다. 또한 $로 시작할 수 없습니다.</p>
 
 <p>예제 파일 cookie-01.php
-<?php
-	$cookie_name = "user";
-	$cookie_value = "jiny";
-	if (setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/")) {
+&lt;?php
+	$cookie_name = “user”;
+	$cookie_value = “jiny”;
+	if (setcookie($cookie_name, $cookie_value, time() + (86400 * 30), “/”)) {
 		// 86400 = 1 day
-		echo "쿠키 생성 성공";
+		echo “쿠키 생성 성공”;
 	} else {
-		echo "쿠키 생성 실패";
+		echo “쿠키 생성 실패”;
 	}
-?></p>
+?&gt;</p>
 
 <p>결과
 쿠키 생성 성공</p>
@@ -176,13 +176,13 @@ $_COOKIE[쿠키명];</p>
 <p>PHP에서 쿠키 값을 이용하는 방법은 위처럼 매우 간단합니다. 다음 예제는 설정한 쿠키 값을 슈퍼변수를 통하여 확인하는 방법입니다.</p>
 
 <p>예제 파일 cookie-02.php
-<?php
-	if (isset($_COOKIE['user'])) {
-		echo $_COOKIE['user'];
+&lt;?php
+	if (isset($_COOKIE[‘user’])) {
+		echo $_COOKIE[‘user’];
 	} else {
-		echo "쿠키가 없습니다.";
+		echo “쿠키가 없습니다.”;
 	}
-?></p>
+?&gt;</p>
 
 <p>결과
 jiny</p>
@@ -207,7 +207,7 @@ jiny</p>
 		echo “쿠키가 없습니다.”;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 $cookie_name = "user";
 $cookie_value = "jinyPHP";
@@ -240,7 +240,7 @@ jiny
 		echo “쿠키가 없습니다.”;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "현재의 쿠키 값 = $__cookie_user&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "현재의 쿠키 값 = $__cookie_user&lt;br&gt;";
 
 $cookie_name = "user";
 $__cookie_user = "jinyPHP";
@@ -284,14 +284,14 @@ setcookie(“user”, “”, time() - 3600);</p>
 
 <p>예제 파일 cookie-05.php</p>
 
-<?php
-	if (count($_COOKIE) > 0) {
-    		echo "Cookies 존재. <br>";
+<p>&lt;?php
+	if (count($_COOKIE) &gt; 0) {
+    		echo “Cookies 존재. <br />”;
     		print_r($_COOKIE);
 	} else {
-    		echo "Cookies 없음. <br>";
+    		echo “Cookies 없음. <br />”;
 	}
-?>
+?&gt;</p>
 
 <p>결과
 Cookies 존재.
@@ -310,7 +310,7 @@ function getCookie( cookieName ){
     var search = cookieName + “=”;
     var cookie = document.cookie;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 쿠키가 존재할 경우
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재 쿠키가 존재할 경우
 if( cookie.length &gt; 0 ){
     // 해당 쿠키명이 존재하는지 검색한 후 존재하면 위치를 리턴.
     startIndex = cookie.indexOf( cookieName );
@@ -345,7 +345,7 @@ function setCookie( cookieName, cookieValue, expireDate ){
     // @param cookieValue 쿠키 값
     // @param expireDay 쿠키 유효 날짜</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var today = new Date();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var today = new Date();
 today.setDate( today.getDate() + parseInt( expireDate ) );
 document.cookie = cookieName + "=" + escape( cookieValue ) + "; path=/; expires=" + today.toGMTString() + ";"; }
 </code></pre></div></div>
@@ -355,7 +355,7 @@ document.cookie = cookieName + "=" + escape( cookieValue ) + "; path=/; expires=
 function deleteCookie( cookieName ){
     // @param cookieName 삭제할 쿠키명</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var expireDate = new Date();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var expireDate = new Date();
 //어제 날짜를 쿠키 소멸 날짜로 설정한다.
 expireDate.setDate( expireDate.getDate() - 1 );
 document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + "; path=/"; }
@@ -377,10 +377,10 @@ document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + 
 <p>스크립트 실행 상단에 session_start()함수를 호출합니다. 세션 시작을 호출하면 이후 PHP 스크립트 전반에서 세션 기능을 사용할 수 있습니다.</p>
 
 <p>예제파일: session-01.php
-<?php
+&lt;?php
 	// 세션 시작
 	session_start();
-?></p>
+?&gt;</p>
 
 <p>세션 시작 함수는 HTML태그 출력 전에 실행되어야 합니다.</p>
 
@@ -400,7 +400,7 @@ PHP에서 세션 값을 설정하는 것은 쿠키 사용법 보다 더 매우 �
 &lt;?php
 	session_start();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_SESSION["user"] = "jiny";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_SESSION["user"] = "jiny";
 echo $_SESSION["user"]; ?&gt;
 </code></pre></div></div>
 
@@ -415,7 +415,7 @@ jiny</p>
 &lt;?php
 	session_start();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $_SESSION["user"]; ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $_SESSION["user"]; ?&gt;
 </code></pre></div></div>
 
 <p>결과
@@ -432,23 +432,23 @@ jiny</p>
 <p>13.3.5 세션 값 변경
 세션 값의 변경은 새로운 세션을 선언하는 것과 동일합니다. 세션을 설정하는 것처럼 슈퍼변수 값에 그냥 새로운 값을 저장하면 됩니다.
 예제파일:session-04.php
-<?php
+&lt;?php
 	session_start();
-	$_SESSION["user"] = "abcd";
-?></p>
+	$_SESSION[“user”] = “abcd”;
+?&gt;</p>
 
 <p>위의 예는 세션 user 의 값을 변경하는 것입니다. 만일 다른 페이지에서 설정한 값이 없다고 하면 처음으로 세션을 생성한 것으로 볼 수 있습니다.</p>
 
 <p>13.3.6 세션 삭제세션 값을 삭제하기 위해서는 session_unset() 함수와 session_destroy() 함수를 이용하면 됩니다.
 예제파일:session-05.php</p>
 
-<?php
+<p>&lt;?php
 	// remove all session variables
-	session_unset(); 
+	session_unset();</p>
 
-	// destroy the session 
-	session_destroy(); 
-?>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// destroy the session 
+session_destroy();  ?&gt;
+</code></pre></div></div>
 
 <p>위 함수를 실행하면 모든 세션의 값을 제거하거나 파괴할 수 있습니다. 만일 개별 세션만 삭제하고자 하는 경우에는 세션 값에 null 또는 다른 값을 넣어주면 됩니다.</p>
 
@@ -459,12 +459,12 @@ jiny</p>
 
 <p>예제파일:session-06.php</p>
 
-<?php
+<p>&lt;?php
 	session_start([
-    	'cache_limiter' => 'private',
-    	'read_and_close' => true,
+    	‘cache_limiter’ =&gt; ‘private’,
+    	‘read_and_close’ =&gt; true,
 	]);
-?>
+?&gt;</p>
 
 <p>예를 들어 session.cache_limiter 값을 ‘private’으로 변경하고 참조한 경우에 세션을 직접 종료할 수도 있습니다.</p>
 

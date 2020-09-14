@@ -1,4 +1,4 @@
-I"d<ol>
+I"�<ol>
   <li>
     <h1 id="csv">CSV</h1>
   </li>
@@ -26,7 +26,7 @@ int fputcsv ( resource $handle , array $fields [, string $delimiter = “,” [,
 <p>예제) csv_write.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$list = array (
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$list = array (
 	array(1, "aaa", 18, "Seoul"),
 	array(2, "bbb", 20, "Daejeon"),
 	array(3, "ccc", 30, "Incheon ")
@@ -77,7 +77,7 @@ array fgetcsv ( resource $handle [, int $length = 0 [, string $delimiter = “,�
 &lt;?php
 	$csvFile = “sample.csv”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 먼저 CSV 파일 존재 유무를 확인합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 먼저 CSV 파일 존재 유무를 확인합니다.
 if(!file_exists($csvFile)){
 	die("CVS 파일이 존재하지 않습니다.");
 } else {
@@ -130,7 +130,7 @@ array str_getcsv ( string $input [, string $delimiter = “,” [, string $enclo
 <p>예제) str_getcsv.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$csv = array_map('str_getcsv', file('sample.csv'));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$csv = array_map('str_getcsv', file('sample.csv'));
 print_r($csv); ?&gt; 
 </code></pre></div></div>
 

@@ -1,4 +1,4 @@
-I"�?<h1 id="_server">$_SERVER</h1>
+I"�@<h1 id="_server">$_SERVER</h1>
 <hr />
 <p>$_SERVER 슈퍼변수는 서버 정보를 저장합니다. 브라우저를 통하여 PHP 스크립트를 실행할 때 서버의 정보를 PHP에서 확인할 수 있도록 제공하는 배열변수입니다.</p>
 
@@ -16,7 +16,7 @@ PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합�
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <p>$_SERVER[‘GATEWAY_INTERFACE’]<br />
 사용 중인 CGI (Common Gateway Interface)의 버전을 반환합니다.</p>
@@ -35,19 +35,19 @@ PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합�
 
 <p>예제 파일 server-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">echo</span> <span class="s2">"SERVER_ADDR = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_ADDR'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_ADDR = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_ADDR'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"SERVER_NAME = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_NAME'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_NAME = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_NAME'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"SERVER_SOFTWARE = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_SOFTWARE'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_SOFTWARE = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_SOFTWARE'</span><span class="p">];</span>
 
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"SERVER_PROTOCOL = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_PROTOCOL'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_PROTOCOL = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_PROTOCOL'</span><span class="p">];</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <ul>
   <li>$_SERVER[‘REQUEST_METHOD’]<br />
@@ -76,35 +76,35 @@ PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합�
 
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="s2">"REQUEST_TIME = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_TIME'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REQUEST_TIME = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_TIME'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"REQUEST_URI = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_URI'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REQUEST_URI = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_URI'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_USER_AGENT = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_USER_AGENT'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_USER_AGENT = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_USER_AGENT'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"APPLPHYSICAL_PATH = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'APPLPHYSICAL_PATH'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"APPLPHYSICAL_PATH = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'APPLPHYSICAL_PATH'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <p>$_SERVER[‘QUERY_STRING’]<br />
 쿼리 문자열을 통해 페이지에 액세스한 경우 쿼리 문자열을 반환합니다.</p>
 
 <p>예제 파일 server-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">echo</span> <span class="s2">"QUERY_STRING = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'QUERY_STRING'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"QUERY_STRING = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'QUERY_STRING'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>스크립트 다음에 쿼리를 같이 입력합니다. server-05.php?a=1&amp;b=2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>스크립트 다음에 쿼리를 같이 입력합니다. server-05.php?a=1&amp;b=2
 </code></pre></div></div>
 
 <p>$_SERVER[‘HTTP_ACCEPT’]<br />
@@ -136,37 +136,37 @@ PHP_SELF는 현재 실행하고 있는 PHP 스크립트 파일명을 출력합�
 
 <p>예제 파일 server-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_CHARSET = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_CHARSET'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_CHARSET = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_CHARSET'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_ENCODING = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_ENCODING'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_ENCODING = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_ENCODING'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_LANGUAGE = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_LANGUAGE'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_ACCEPT_LANGUAGE = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_LANGUAGE'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_HOST = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_HOST = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"HTTP_REFERER = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_REFERER'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"HTTP_REFERER = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_REFERER'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SERVER_ADMIN= "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_ADMIN'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_ADMIN= "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_ADMIN'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SERVER_PORT = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_PORT'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_PORT = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_PORT'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SERVER_SIGNATURE = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_SIGNATURE'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SERVER_SIGNATURE = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SERVER_SIGNATURE'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <p>$_SERVER[‘HTTPS’]<br />
 https 프로토콜 여부를 확인합니다.</p>
@@ -192,16 +192,16 @@ https 프로토콜 여부를 확인합니다.</p>
 
 <p>예제 파일 server-07.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">echo</span> <span class="s2">"REMOTE_ADDR = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REMOTE_ADDR = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"REMOTE_HOST = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_HOST'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REMOTE_HOST = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_HOST'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"REMOTE_PORT = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_PORT'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REMOTE_PORT = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_PORT'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"REMOTE_ADDR = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"REMOTE_ADDR = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
@@ -221,22 +221,22 @@ https 프로토콜 여부를 확인합니다.</p>
 
 <p>예제 파일 server-08.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">echo</span> <span class="s2">"PATH_TRANSLATED = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'PATH_TRANSLATED'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"PATH_TRANSLATED = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'PATH_TRANSLATED'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SCRIPT_FILENAME = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SCRIPT_FILENAME = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SCRIPT_NAME = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_NAME'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SCRIPT_NAME = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_NAME'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"SCRIPT_URI = "</span><span class="o">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_URI'</span><span class="p">];</span>
+	<span class="k">echo</span> <span class="s2">"SCRIPT_URI = "</span><span class="mf">.</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_URI'</span><span class="p">];</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>출력 화면</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <p>이 책에서 설명하지 못하는 기능들과 슈퍼변수들은 공식 사이트 php.net의 정보를 확인하기를 바랍니다.</p>
 

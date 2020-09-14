@@ -1,4 +1,4 @@
-I"UU<ol>
+I"V<ol>
   <li>
     <h1 id="url">URL</h1>
   </li>
@@ -140,7 +140,7 @@ mixed parse_url ( string $url [, int $component = -1 ] )</p>
 	$url = ‘http://username:password@hostname:9090/path?arg=value#anchor’;</p>
 
  	// url을 분석하여 배열로 반환합니다.
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(parse_url($url));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(parse_url($url));
 echo "&lt;br&gt;";
 
 // 키값을 통해서 하나씩 추출이 가능합니다.
@@ -182,7 +182,7 @@ string http_build_query ( mixed $query_data [, string $numeric_prefix [, string 
     	‘php’ =&gt; ‘hypertext processor’
 	);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo http_build_query($data) . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo http_build_query($data) . "&lt;br&gt;";
 echo http_build_query($data, '', '&amp;amp;');
 </code></pre></div></div>
 
@@ -217,7 +217,7 @@ string urldecode ( string $str )</p>
 	echo “인코딩 = “. $encode.”<br />”;
 	echo “디코드 = “. urldecode($encode).”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$encode2 = urlencode("?aaa=1&amp;bbb=2");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$encode2 = urlencode("?aaa=1&amp;bbb=2");
 echo "인코딩 = ". $url.$encode2."&lt;br&gt;";
 echo "디코드 = ". $url.urldecode($encode2)."&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
@@ -248,7 +248,7 @@ string base64_decode ( string $data [, bool $strict = false ] )</p>
 	$encode = base64_encode($str);
 	echo “엔코딩 = “. $encode .”<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$decode = base64_decode($encode);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$decode = base64_decode($encode);
 echo "디코딩 = ". $decode ."&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -275,7 +275,7 @@ string rawurldecode ( string $str )</p>
 	$url=”http://www.jinyphp.com/?name=jiny&amp;country=korea”;
 	echo “URL = “ . $url . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$urlEncode = rawurlencode($url);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$urlEncode = rawurlencode($url);
 echo "엔코딩 : ". $urlEncode . "&lt;br&gt;";
 
 $urlDecode = rawurldecode($urlEncode);
@@ -301,10 +301,10 @@ URL = http://www.jinyphp.com/?name=jiny&amp;country=korea
 string gethostbyname ( string $hostname )</p>
 
 <p>예제) gethostbyname.php
-<?php
-    $ip = gethostbyname('www.example.com');
+&lt;?php
+    $ip = gethostbyname(‘www.example.com’);
     echo $ip;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 93.184.216.34</p>
@@ -315,10 +315,10 @@ array gethostbynamel ( string $hostname )</p>
 <p>내부함수 gethostbynamel()는 지정된 인터넷 호스트 이름에 해당하는 IPv4 주소 목록 가져옵니다.</p>
 
 <p>예제) gethostbynamel.php
-<?php
-    $hosts = gethostbynamel('www.example.com');
+&lt;?php
+    $hosts = gethostbynamel(‘www.example.com’);
     print_r($hosts);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; 93.184.216.34 )</p>
@@ -331,10 +331,10 @@ Array ( [0] =&gt; 93.184.216.34 )</p>
 string gethostbyaddr ( string $ip_address )</p>
 
 <p>예제) gethostbyaddr.php
-<?php
-	$hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+&lt;?php
+	$hostname = gethostbyaddr($_SERVER[‘REMOTE_ADDR’]);
 	echo $hostname;
-?></p>
+?&gt;</p>
 
 <p>|내부함수|
 string gethostname ( void )</p>
@@ -342,10 +342,10 @@ string gethostname ( void )</p>
 <p>내부함수 gethostname()는 호스트 이름을 가져옵니다.</p>
 
 <p>예제) gethostname.php
-<?php
+&lt;?php
     // 호스트 이름을 출력합니다.
     echo gethostname();
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 ns.dojangshop.com</p>
@@ -362,7 +362,7 @@ int getservbyname ( string $service , string $protocol )</p>
     $services = array(‘http’, ‘ftp’, ‘ssh’, ‘telnet’, ‘imap’,
         ‘smtp’, ‘nicname’, ‘gopher’, ‘finger’, ‘pop3’, ‘www’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach ($services as $service) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foreach ($services as $service) {
     $port = getservbyname($service, 'tcp');
     echo $service . ": " . $port . "&lt;br /&gt;\n";
 } ?&gt;
@@ -395,7 +395,7 @@ bool checkdnsrr ( string $host [, string $type = “MX” ] )</p>
     $email = “infohojin@naver.com”;
     $exp = “^[a-z'0-9]+([.<em>-][a-z'0-9]+)*@([a-z0-9]+([.</em>-][a-z0-9]+))+$”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(eregi($exp,$email)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(eregi($exp,$email)) {
     $emailAddr = explode("@",$email);
     if(checkdnsrr($emailAddr[1],"MX")) {
         echo "DNS 레코드 확인";
@@ -419,10 +419,10 @@ array dns_get_record ( string $hostname [, int $type = DNS_ANY [, array &amp;$au
 <p>내부함수 dns_get_record()는 호스트 이름과 관련된 DNS 리소스 레코드 가지고 옵니다.</p>
 
 <p>예제) dns_get_record.php
-<?php
-    $result = dns_get_record("php.net");
+&lt;?php
+    $result = dns_get_record(“php.net”);
     print_r($result);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; Array ( [host] =&gt; php.net [type] =&gt; AAAA [ipv6] =&gt; 2a02:cb41::7 [class] =&gt; IN [ttl] =&gt; 300 ) [1] =&gt; Array ( [host] =&gt; php.net [type] =&gt; A [ip] =&gt; 72.52.91.14 [class] =&gt; IN [ttl] =&gt; 300 ) [2] =&gt; Array ( [host] =&gt; php.net [type] =&gt; TXT [txt] =&gt; v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ?all [entries] =&gt; Array ( [0] =&gt; v=spf1 ip4:72.52.91.12 ip6:2a02:cb41::8 ip4:140.211.15.143 ?all ) [class] =&gt; IN [ttl] =&gt; 300 ) [3] =&gt; Array ( [host] =&gt; php.net [type] =&gt; MX [pri] =&gt; 0 [target] =&gt; php-smtp2.php.net [class] =&gt; IN [ttl] =&gt; 30 ) [4] =&gt; Array ( [host] =&gt; php.net [type] =&gt; SOA [mname] =&gt; ns1.php.net [rname] =&gt; admin.easydns.com [serial] =&gt; 1484930803 [refresh] =&gt; 16384 [retry] =&gt; 2048 [expire] =&gt; 1048576 [minimum-ttl] =&gt; 2560 [class] =&gt; IN [ttl] =&gt; 300 ) [5] =&gt; Array ( [host] =&gt; php.net [type] =&gt; NS [target] =&gt; dns2.easydns.net [class] =&gt; IN [ttl] =&gt; 300 ) [6] =&gt; Array ( [host] =&gt; php.net [type] =&gt; NS [target] =&gt; dns3.easydns.org [class] =&gt; IN [ttl] =&gt; 300 ) [7] =&gt; Array ( [host] =&gt; php.net [type] =&gt; NS [target] =&gt; dns1.easydns.com [class] =&gt; IN [ttl] =&gt; 300 ) [8] =&gt; Array ( [host] =&gt; php.net [type] =&gt; NS [target] =&gt; dns4.easydns.info [class] =&gt; IN [ttl] =&gt; 300 ) )</p>

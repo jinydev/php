@@ -1,6 +1,7 @@
-I"�	<h1 id="콘솔">콘솔</h1>
+I"
+<h1 id="콘솔">콘솔</h1>
 <hr />
-<p>PHP는 웹 브라우저를 통해 실행뿐만 아니라 콘솔에서 <code class="highlighter-rouge">직접 명령</code>으로 PHP를 실행할 수 있습니다.</p>
+<p>PHP는 웹 브라우저를 통해 실행뿐만 아니라 콘솔에서 <code class="language-plaintext highlighter-rouge">직접 명령</code>으로 PHP를 실행할 수 있습니다.</p>
 
 <p>콘솔 명령을 다른 말로는 CLI(command Line Interface)라고도 합니다.<br />
 PHP CLI 기능은 PHP 4.3.x 버전 이후부터 적용된 기능입니다. PHP CLI는 SAPI(Server Application Programming Interface) 형식을 지원합니다.</p>
@@ -19,7 +20,7 @@ PHP CLI 기능은 PHP 4.3.x 버전 이후부터 적용된 기능입니다. PHP C
 <h2 id="콘솔-실행"><a href="execute">콘솔 실행</a></h2>
 <hr />
 <p>작성한 PHP 코드는 콘솔에서 간단하게 실행을 할 수 있습니다.<br />
-<code class="highlighter-rouge">php</code>명령어 뒤에 작성한 php 코드의 파일명만을 적어 주시면 됩니다.</p>
+<code class="language-plaintext highlighter-rouge">php</code>명령어 뒤에 작성한 php 코드의 파일명만을 적어 주시면 됩니다.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">php 실행파일
 </span></code></pre></div></div>
@@ -28,7 +29,7 @@ PHP CLI 기능은 PHP 4.3.x 버전 이후부터 적용된 기능입니다. PHP C
 
 <h2 id="콘솔-옵션"><a href="option">콘솔 옵션</a></h2>
 <hr />
-<p>php는 다양한 콘솔 동작을 위해서 몇가지 옵션들을 제공합니다. 옵션은 콘솔 창에서 php <code class="highlighter-rouge">-help 명령</code> 입력을 통해서 알 수 있습니다.</p>
+<p>php는 다양한 콘솔 동작을 위해서 몇가지 옵션들을 제공합니다. 옵션은 콘솔 창에서 php <code class="language-plaintext highlighter-rouge">-help 명령</code> 입력을 통해서 알 수 있습니다.</p>
 
 <p><a href="option">옵션목록</a></p>
 

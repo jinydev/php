@@ -1,4 +1,4 @@
-I"r<h1 id="else-문">else 문</h1>
+I"Q<h1 id="else-문">else 문</h1>
 <hr />
 <p>지금까지 조건 설명의 조건은 참(true)인 경우의 처리를 설명을 했습니다.</p>
 
@@ -7,10 +7,10 @@ if 문법에서는 거짓에 대한 로직 부분을 else라는 명령으로 따
 즉 if 다음에 오는 else 이후 문장은 거짓으로 처리되는 코드입니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건</span><span class="p">)</span> <span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span> <span class="k">else</span> <span class="nx">거짓</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건</span><span class="p">)</span> <span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span> <span class="k">else</span> <span class="n">거짓</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>위의 문법을 보면 조건에 대해서 참 동작 코드와 거짓 동작 처리가 <code class="highlighter-rouge">else</code> 명령어로 구분이 되어 있습니다.</p>
+<p>위의 문법을 보면 조건에 대해서 참 동작 코드와 거짓 동작 처리가 <code class="language-plaintext highlighter-rouge">else</code> 명령어로 구분이 되어 있습니다.</p>
 
 <p>거짓 조건 또한 단일 실행 코드로 작성할 수 있습니다. 
 만일 거짓 조건의 명령이 하나인 경우 한 줄에 모든 내용을 같이 작성을 할 수 있습니다.</p>
@@ -18,50 +18,50 @@ if 문법에서는 거짓에 대한 로직 부분을 else라는 명령으로 따
 <p>예제 파일) if-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="k">if</span> <span class="p">(</span><span class="nv">$sex</span> <span class="o">==</span> <span class="s2">"man"</span><span class="p">)</span> <span class="nv">$sexKorean</span> <span class="o">=</span> <span class="s2">"남자"</span><span class="p">;</span> <span class="k">else</span>  <span class="nv">$sexKorean</span> <span class="o">=</span> <span class="s2">"여자"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$sexKorean</span> <span class="o">.</span> <span class="s2">"입니다. &lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$sexKorean</span> <span class="mf">.</span> <span class="s2">"입니다. &lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>여자입니다. 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>여자입니다. 
 </code></pre></div></div>
 
 <p>위의 예는 간단한 거짓 조건을 포함한 조건 처리입니다. 
-$sex 변수에는 영문 문자열 성별을 판별해서 $sexKorean변수에 한글로 성별을 입력 처리합니다. 만일 $sex 값이 <code class="highlighter-rouge">man</code>이면(참) 조건이 되어 $sexKorean에 <code class="highlighter-rouge">남자</code> 문자열을 대입하고, 아닌 거짓경우에는 $sexKorean 변수에 <code class="highlighter-rouge">여자</code> 문자열을 대입합니다.</p>
+$sex 변수에는 영문 문자열 성별을 판별해서 $sexKorean변수에 한글로 성별을 입력 처리합니다. 만일 $sex 값이 <code class="language-plaintext highlighter-rouge">man</code>이면(참) 조건이 되어 $sexKorean에 <code class="language-plaintext highlighter-rouge">남자</code> 문자열을 대입하고, 아닌 거짓경우에는 $sexKorean 변수에 <code class="language-plaintext highlighter-rouge">여자</code> 문자열을 대입합니다.</p>
 
 <p>조건 다중 실행문에서 여려 명령문을 묶어서 조건을 처리하는 것을 보았을 것입니다. 
-<code class="highlighter-rouge">else</code> 명령문 또한 필요 시 조건 다수 명령 형태로 거짓 조건에 대한 실행 코드를 중괄호 <code class="highlighter-rouge">{ }</code>를 묶어서 사용할 수도 있습니다.</p>
+<code class="language-plaintext highlighter-rouge">else</code> 명령문 또한 필요 시 조건 다수 명령 형태로 거짓 조건에 대한 실행 코드를 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code>를 묶어서 사용할 수도 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건</span><span class="p">)</span> <span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건</span><span class="p">)</span> <span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span> 
 <span class="k">else</span> <span class="p">{</span>
-  <span class="nx">거짓</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
-  <span class="nx">거짓</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
-  <span class="nx">거짓</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+  <span class="n">거짓</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
+  <span class="n">거짓</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
+  <span class="n">거짓</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>다음은 성년 여부를 체크하는 간단한 조건 예제를 실행해봅니다.</p>
 
 <p>예제 파일 if-04.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="nv">$age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="nv">$age</span><span class="o">.</span>  <span class="s2">"은"</span><span class="p">;</span>
-		<span class="k">echo</span> <span class="s2">"성인입니다."</span><span class="p">;</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="nv">$age</span><span class="o">.</span>  <span class="s2">"은"</span><span class="p">;</span>
-		<span class="k">echo</span> <span class="s2">"미성년자입니다."</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	$age = 20;
+	if ($age &gt;= 20) {
+		echo $age.  "은";
+		echo "성인입니다.";
+	} else {
+		echo $age.  "은";
+		echo "미성년자입니다.";
+	}
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20은 성인입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20은 성인입니다.
 </code></pre></div></div>
 
-<p>위의 예는 <code class="highlighter-rouge">$age</code>에 나이를 입력한 후에 변수 값에 따라서 성인 여부를 판별하는 조건문입니다. 
-<code class="highlighter-rouge">$age</code>의 값이 20을 포함한 이상의 값이 만족할 때 <code class="highlighter-rouge">성인입니다.</code> 문자열을 표기하고, 조건이 만족하지 않을 때는 <code class="highlighter-rouge">미성년자 입니다.</code>라고 문자열을 출력합니다.</p>
+<p>위의 예는 <code class="language-plaintext highlighter-rouge">$age</code>에 나이를 입력한 후에 변수 값에 따라서 성인 여부를 판별하는 조건문입니다. 
+<code class="language-plaintext highlighter-rouge">$age</code>의 값이 20을 포함한 이상의 값이 만족할 때 <code class="language-plaintext highlighter-rouge">성인입니다.</code> 문자열을 표기하고, 조건이 만족하지 않을 때는 <code class="language-plaintext highlighter-rouge">미성년자 입니다.</code>라고 문자열을 출력합니다.</p>
 
 <p>조건 제어문을 작성할 때 항상 참과 거짓에 대한 양쪽 사항에 대한 처리 로직을 같이 세트로 만드는 것이 좋습니다.</p>
 

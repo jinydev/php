@@ -1,4 +1,4 @@
-I"(<h1 id="오토로딩">오토로딩</h1>
+I")<h1 id="오토로딩">오토로딩</h1>
 <hr />
 <p>PHP는 소스파일을 나누어 작성할 수 있습니다. 분리된 파일은 include / require 와 같은 전처리 명령을 통하여 소스를 삽입 결합 할 수 있습니다.</p>
 
@@ -12,8 +12,8 @@
 <span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
 <span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
 <span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
-<span class="err">…</span><span class="o">.</span>
-<span class="err">…</span><span class="o">.</span>
+<span class="err">…</span><span class="mf">.</span>
+<span class="err">…</span><span class="mf">.</span>
 <span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
 <span class="k">include</span> <span class="p">(</span><span class="s1">'파일...'</span><span class="p">);</span>
 </code></pre></div></div>
@@ -32,8 +32,8 @@
 <p>Bascic.class.php 파일에</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">class</span> <span class="nc">basic</span> <span class="p">{</span>
-		<span class="k">function</span> <span class="nf">show</span> <span class="p">(){</span>
-			<span class="k">return</span> <span class="err">“</span><span class="nx">클래스입니다</span><span class="o">.</span><span class="err">”</span><span class="p">;</span>
+		<span class="k">function</span> <span class="n">show</span> <span class="p">(){</span>
+			<span class="k">return</span> <span class="err">“</span><span class="n">클래스입니다</span><span class="mf">.</span><span class="err">”</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
@@ -44,11 +44,11 @@
 <p>Test.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="c1">// 클래스파일을 삽입합니다.</span>
-	<span class="k">include</span> <span class="err">“</span><span class="nx">basic</span><span class="o">.</span><span class="k">class</span><span class="o">.</span><span class="nx">php</span><span class="err">”</span><span class="p">;</span>
+	<span class="k">include</span> <span class="err">“</span><span class="n">basic</span><span class="mf">.</span><span class="n">class</span><span class="mf">.</span><span class="n">php</span><span class="err">”</span><span class="p">;</span>
 	
-	<span class="nv">$basic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">basic</span><span class="p">;</span>
+	<span class="nv">$basic</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">basic</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nv">$basic</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="nv">$basic</span><span class="o">-&gt;</span><span class="nf">show</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 <p>파일에서 사전에 클래스 파일을 삽입을 합니다.</p>

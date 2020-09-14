@@ -103,7 +103,7 @@
                 <section>
                     <h1 id="구문규칙">구문규칙</h1>
 <hr />
-<p>프로그램 코딩을 할때 <code class="highlighter-rouge">구문 규칙</code>을 따라 작성을 하는 것이 중요하다.<br />
+<p>프로그램 코딩을 할때 <code class="language-plaintext highlighter-rouge">구문 규칙</code>을 따라 작성을 하는 것이 중요하다.<br />
 괄호, 세미콜론, 점과 같은 요소를 빼먹거나 위치가 틀려지면 많은 문법적 오류를 발생하게 됩니다.</p>
 
 <p>따라서 문법에 필요한 기호를 정확하게 익히고, 숙지하는 것이 중요합니다.<br />
@@ -111,13 +111,13 @@
 대부분의 많은 언어들은 비슷한 기호의 문법 규칙을 가지고 있습니다.</p>
 
 <p>잘 설계된 컴파일러나 인터프리터는 이러한 규칙에 맞지 않는 기호를 사용할때 오류를 검출하여 개발자에게 알려 줍니다.<br />
-또한, <code class="highlighter-rouge">IDE</code> 통합관리 도구는 개발자의 실수로 작성된 오류문법 규칙을 판단하여 경고를 발생해 주기도 합니다.<br />
+또한, <code class="language-plaintext highlighter-rouge">IDE</code> 통합관리 도구는 개발자의 실수로 작성된 오류문법 규칙을 판단하여 경고를 발생해 주기도 합니다.<br />
 <br /></p>
 
 <h2 id="기호">기호</h2>
 <hr />
 <p>PHP와 더불어 많은 프로그램 언어들은 문법을 구성하고 구분을 하는 기호를 사용합니다.<br />
-PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발되었고, 또한 문법적 표현과 기호들도 <code class="highlighter-rouge">C언어</code>와 유사한 <code class="highlighter-rouge">기호</code>들을 사용합니다.</p>
+PHP 인터프리터는 <code class="language-plaintext highlighter-rouge">C언어</code>로 개발되었고, 또한 문법적 표현과 기호들도 <code class="language-plaintext highlighter-rouge">C언어</code>와 유사한 <code class="language-plaintext highlighter-rouge">기호</code>들을 사용합니다.</p>
 
 <p>PHP 언어를 작성하기 위해서 사용하는 몇 가지 기호들에 대해서 먼저 살펴보도록 하겠습니다.</p>
 
@@ -125,7 +125,7 @@ PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발�
 
 <h2 id="소괄호-">소괄호 ()</h2>
 <hr />
-<p>소괄호 <code class="highlighter-rouge">()</code>는 대부분 값을 <code class="highlighter-rouge">전달</code>하는 경우에 많이 사용됩니다.</p>
+<p>소괄호 <code class="language-plaintext highlighter-rouge">()</code>는 대부분 값을 <code class="language-plaintext highlighter-rouge">전달</code>하는 경우에 많이 사용됩니다.</p>
 
 <p>조건문의 판단 값을 입력할 때와 함수호출을 위한 인자 값을 전달할 때 자주 접할 것입니다. 
 또한 소괄호는 일반적인 연산의 우선순위나 그룹을 지정할 때도 사용합니다.</p>
@@ -144,13 +144,13 @@ PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발�
 
 <h2 id="중괄호">중괄호</h2>
 <hr />
-<p>중괄호는 <code class="highlighter-rouge">{}</code>는 문법적인 코드의 그룹을 지정할 때 많이 사용합니다.<br />
+<p>중괄호는 <code class="language-plaintext highlighter-rouge">{}</code>는 문법적인 코드의 그룹을 지정할 때 많이 사용합니다.<br />
 여러 코드들을 묶어서 처리할 때 많이 사용합니다.</p>
 
 <p>프로그램은 하나의 문장씩 구분하여 프로그램을 실행합니다.<br />
 하지만 조건문, 반복문, 함수, 클래스 등 여러 줄의 문장을 하나의 그룹으로 지정하고자 할 때 위아래로 중괄호를 자주 접할 수 있습니다.</p>
 
-<p>중괄호는 반드시 <code class="highlighter-rouge">{}</code> 한 쌍으로 구성되어야 합니다. 만일 한 쌍으로 끝나지 않고 한쪽이 누락된다면 프로그램은 <code class="highlighter-rouge">오류</code>를 발생합니다.</p>
+<p>중괄호는 반드시 <code class="language-plaintext highlighter-rouge">{}</code> 한 쌍으로 구성되어야 합니다. 만일 한 쌍으로 끝나지 않고 한쪽이 누락된다면 프로그램은 <code class="language-plaintext highlighter-rouge">오류</code>를 발생합니다.</p>
 
 <p>중괄호는 계층화하여 작업이 가능합니다.<br />
 즉, 하나의 중괄호 안에 또 다른 문장과 중괄호를 입력할 수 있습니다. 이런 경우 중괄호의 위치와 코드를 이해하기 쉽게 하기 위해서 들여쓰기를 같이 사용합니다.</p>
@@ -159,16 +159,16 @@ PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발�
 
 <h2 id="대괄호">대괄호</h2>
 <hr />
-<p>대괄호 <code class="highlighter-rouge">[]</code>는 배열과 선택할 값의 인자로 전달할 때 주로 사용합니다.<br />
+<p>대괄호 <code class="language-plaintext highlighter-rouge">[]</code>는 배열과 선택할 값의 인자로 전달할 때 주로 사용합니다.<br />
 보통 변수명 뒤에 붙여서 사용합니다.</p>
 
-<p>대괄호 안에 값을 선택하고자 하는 <code class="highlighter-rouge">정수</code> 값 또는 <code class="highlighter-rouge">키</code> 값을 넣어서 선택할 수 있습니다.</p>
+<p>대괄호 안에 값을 선택하고자 하는 <code class="language-plaintext highlighter-rouge">정수</code> 값 또는 <code class="language-plaintext highlighter-rouge">키</code> 값을 넣어서 선택할 수 있습니다.</p>
 
 <p><br /></p>
 
 <h3 id="순차배열-선택">순차배열 선택</h3>
 <p>순차배열은 선택값이 숫자로 되어 있습니다. 배열의 숫자값은 0부터 시작됩니다.<br />
-<code class="highlighter-rouge">[]</code>안에 읽을 데이터가 존재하는 번호를 입력하면 됩니다.</p>
+<code class="language-plaintext highlighter-rouge">[]</code>안에 읽을 데이터가 존재하는 번호를 입력하면 됩니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$arr</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 </code></pre></div></div>
@@ -176,7 +176,7 @@ PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발�
 <p><br /></p>
 
 <h3 id="연상배열-선택">연상배열 선택</h3>
-<p>연상배열은 선택값으로 <code class="highlighter-rouge">문자</code>를 사용합니다. 문자열을 통하여 읽을 데이터를 선택합니다.</p>
+<p>연상배열은 선택값으로 <code class="language-plaintext highlighter-rouge">문자</code>를 사용합니다. 문자열을 통하여 읽을 데이터를 선택합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$arr</span><span class="p">[</span><span class="s1">'name'</span><span class="p">];</span>
 </code></pre></div></div>
@@ -184,7 +184,7 @@ PHP 인터프리터는 <code class="highlighter-rouge">C언어</code>로 개발�
 <p><br /></p>
 
 <h3 id="외부키값">외부키값</h3>
-<p>또는 변수에 <code class="highlighter-rouge">키</code> 값 또는 <code class="highlighter-rouge">정수</code> 값을 넣어서 사용할 수도 있습니다.</p>
+<p>또는 변수에 <code class="language-plaintext highlighter-rouge">키</code> 값 또는 <code class="language-plaintext highlighter-rouge">정수</code> 값을 넣어서 사용할 수도 있습니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$key</span> <span class="o">=</span> <span class="s2">"name"</span><span class="p">;</span>
 <span class="nv">$arr</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>

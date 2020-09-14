@@ -1,4 +1,4 @@
-I"�d<h1 id="배열-어레이">배열 어레이</h1>
+I"�e<h1 id="배열-어레이">배열 어레이</h1>
 <hr />
 <p>기존 모든 변수는 하나의 데이터 값을 가지고 있습니다. 배열이란? 이름 그대로 하나의 변수에 다수의 데이터를 가질 수 있는 특수한 변수 입니다.</p>
 
@@ -31,16 +31,16 @@
 <hr />
 <p>배열 변수는 array() 함수를 이용하여 변수 선언과 동시에 초기값을 설정할 수 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수명</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nx">데이터1</span><span class="p">,</span> <span class="nx">데이터2</span><span class="p">,</span> <span class="nx">데이터3</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수명</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="n">데이터1</span><span class="p">,</span> <span class="n">데이터2</span><span class="p">,</span> <span class="n">데이터3</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>array() 변수는 다양한 값을 콤마(,)로 구분하여 배열변수의 초기값을 설정할 수 있습니다.</p>
 
 <p>또는, 대괄호를 이용하여 쉽게 배열을 선언할 수 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수</span> <span class="o">=</span> <span class="p">[</span><span class="nx">데이터1</span><span class="p">,</span> <span class="nx">데이터2</span><span class="p">,</span> <span class="nx">데이터3</span><span class="p">];</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수</span> <span class="o">=</span> <span class="p">[</span><span class="n">데이터1</span><span class="p">,</span> <span class="n">데이터2</span><span class="p">,</span> <span class="n">데이터3</span><span class="p">];</span>
 </code></pre></div></div>
-<p>대괄호 (<code class="highlighter-rouge">[]</code>)를 이용한 배열의 선언은 php 5.4부터 지원하는 문법 입니다.</p>
+<p>대괄호 (<code class="language-plaintext highlighter-rouge">[]</code>)를 이용한 배열의 선언은 php 5.4부터 지원하는 문법 입니다.</p>
 
 <p>이렇게 생성된 배열은 기본적으로 indexed array 속성을 가집니다. indexed array는 $변수명 뒤에 배열 [번호] 형태로 접근할 수 있습니다.</p>
 
@@ -49,12 +49,12 @@
 <p>예제 파일 array-01.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
   <span class="nv">$cars</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Volvo"</span><span class="p">,</span> <span class="s2">"BMW"</span><span class="p">,</span> <span class="s2">"Toyota"</span><span class="p">);</span>
-  <span class="k">echo</span> <span class="s2">"I like "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s2">", "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s2">" and "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"."</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"I like "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">", "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" and "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">"."</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I like Volvo, BMW and Toyota.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I like Volvo, BMW and Toyota.
 </code></pre></div></div>
 
 <p>위의 예는 $cars 변수에 array() 함수를 통하여 3개의 값으로 초기화 하였습니다. $cars 는 indexed array 속성을 가지고 있습니다. 각각의 배열의 데이터는 $cars 변수명 뒤에 배열기호 [ ]를 통하여 번호로 접근할 수 있습니다.</p>
@@ -71,7 +71,7 @@
 </blockquote>
 
 <blockquote>
-  <p>note: 배열에 저장된 각각의 값을 <code class="highlighter-rouge">원소</code>라고 합니다.<br />
+  <p>note: 배열에 저장된 각각의 값을 <code class="language-plaintext highlighter-rouge">원소</code>라고 합니다.<br />
 <br /></p>
 </blockquote>
 
@@ -84,12 +84,12 @@
   <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Kia"</span><span class="p">;</span>
   <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"BMW"</span><span class="p">;</span>
   <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Toyota"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"I like "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s2">", "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.</span> <span class="s2">" and "</span> <span class="o">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.</span> <span class="s2">"."</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"I like "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">", "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" and "</span> <span class="mf">.</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">"."</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I like Kia, BMW and Toyota.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I like Kia, BMW and Toyota.
 </code></pre></div></div>
 
 <p>즉 처음에 배열을 선언하지 않고 변수명 뒤에 [ ]를 통해 배열화로 만들어 저장할 수 있습니다.</p>
@@ -100,17 +100,17 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="c1">// 배열값을 저장</span>
 	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nv">$cars</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"array"</span><span class="o">.</span><span class="nv">$i</span><span class="p">;</span>
+		<span class="nv">$cars</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"array"</span><span class="mf">.</span><span class="nv">$i</span><span class="p">;</span>
 	<span class="p">}</span>
 	<span class="c1">// 배열값을 출력</span>
 	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array0
 array1
 array2
 array3
@@ -131,11 +131,11 @@ array4
 
 <p>연상 배열 또한 배열을 생성 및 초기화 하는 방식으로 array()함수를 사용할 수 있습니다. 이전 indexed array와의 차이점이라면 배열 값을 입력 시 “이름”=&gt; 형태가 추가 되는 것입니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수명</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="nx">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="nx">데이터1</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="nx">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="nx">데이터2</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="nx">데이터3</span><span class="err">”</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$변수명</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="n">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="n">데이터1</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="n">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="n">데이터2</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">이름</span><span class="err">”</span><span class="o">=&gt;</span><span class="err">”</span><span class="n">데이터3</span><span class="err">”</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>또는</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$age['Peter'] = "35";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$age['Peter'] = "35";
 $age['Ben'] = "37";
 $age['Joe'] = "43";
 </code></pre></div></div>
@@ -144,12 +144,12 @@ $age['Joe'] = "43";
 <p>예제 파일 array-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
   <span class="nv">$age</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Jiny"</span><span class="o">=&gt;</span><span class="s2">"44"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="o">=&gt;</span><span class="s2">"37"</span><span class="p">,</span> <span class="s2">"Joe"</span><span class="o">=&gt;</span><span class="s2">"43"</span><span class="p">);</span>
-  <span class="k">echo</span> <span class="s2">"Jiny  is "</span> <span class="o">.</span> <span class="nv">$age</span><span class="p">[</span><span class="s1">'Jiny'</span><span class="p">]</span> <span class="o">.</span> <span class="s2">" years old."</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Jiny  is "</span> <span class="mf">.</span> <span class="nv">$age</span><span class="p">[</span><span class="s1">'Jiny'</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" years old."</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jiny is 44 years old.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jiny is 44 years old.
 </code></pre></div></div>
 
 <p>다음은 연상 배열을 이름 키 값을 통해 foreach 반복문을 이용하여 이름과 값을 출력하는 예입니다.</p>
@@ -159,14 +159,14 @@ $age['Joe'] = "43";
   <span class="nv">$age</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Peter"</span><span class="o">=&gt;</span><span class="s2">"40"</span><span class="p">,</span> <span class="s2">"joy"</span><span class="o">=&gt;</span><span class="s2">"35"</span><span class="p">,</span> <span class="s2">"jiny"</span><span class="o">=&gt;</span><span class="s2">"43"</span><span class="p">);</span>
 
   <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$age</span> <span class="k">as</span> <span class="nv">$x</span> <span class="o">=&gt;</span> <span class="nv">$x_value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Key="</span> <span class="o">.</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s2">", Value="</span> <span class="o">.</span> <span class="nv">$x_value</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Key="</span> <span class="mf">.</span> <span class="nv">$x</span> <span class="mf">.</span> <span class="s2">", Value="</span> <span class="mf">.</span> <span class="nv">$x_value</span><span class="p">;</span>
       <span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="cp">?&gt;</span> 
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Key=Peter, Value=40
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Key=Peter, Value=40
 Key=joy, Value=35
 Key=jiny, Value=43
 </code></pre></div></div>
@@ -190,15 +190,15 @@ Key=jiny, Value=43
 <p>이처럼 변수명 뒤에 배열 기호 [ ]를 중복하여 다차원 배열을 접근할 수 있습니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-  <span class="k">echo</span> <span class="nv">$age1</span><span class="p">[</span> <span class="err">‘</span><span class="nx">a</span><span class="err">’</span> <span class="p">];</span>
-  <span class="k">echo</span> <span class="nv">$age2</span><span class="p">[</span> <span class="err">‘</span><span class="nx">a</span><span class="err">’</span> <span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+  <span class="k">echo</span> <span class="nv">$age1</span><span class="p">[</span> <span class="err">‘</span><span class="n">a</span><span class="err">’</span> <span class="p">];</span>
+  <span class="k">echo</span> <span class="nv">$age2</span><span class="p">[</span> <span class="err">‘</span><span class="n">a</span><span class="err">’</span> <span class="p">][</span><span class="mi">0</span><span class="p">];</span>
   <span class="k">echo</span> <span class="nv">$age2</span><span class="p">[</span> <span class="err">‘</span><span class="mi">3</span><span class="err">’</span> <span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>다음과 같은 표를 이차원 배열로 생성해 볼 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>브랜드	재고수량	판매수량
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>브랜드	재고수량	판매수량
 Volvo	10	300
 BMW	11	250
 Saab	12	350
@@ -216,15 +216,15 @@ kia	13	200
   <span class="k">array</span><span class="p">(</span><span class="s2">"kia"</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
   <span class="p">);</span>
 
-<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="s2">": In stock: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s2">", sold: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="s2">": In stock: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s2">", sold: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="s2">": In stock: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s2">", sold: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="s2">": In stock: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s2">", sold: "</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="mf">.</span><span class="s2">": In stock: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="mf">.</span><span class="s2">", sold: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="mf">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="mf">.</span><span class="s2">": In stock: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="mf">.</span><span class="s2">", sold: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="mf">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="mf">.</span><span class="s2">": In stock: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="mf">.</span><span class="s2">", sold: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="mf">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="mf">.</span><span class="s2">": In stock: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="mf">.</span><span class="s2">", sold: "</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="mf">.</span><span class="s2">".&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Volvo: In stock: 10, sold: 300.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Volvo: In stock: 10, sold: 300.
 BMW: In stock: 11, sold: 250.
 Saab: In stock: 12, sold: 350.
 kia: In stock: 13, sold: 200.
@@ -246,7 +246,7 @@ kia: In stock: 13, sold: 200.
   <span class="k">echo</span> <span class="s2">"&lt;p&gt;&lt;b&gt;Row number </span><span class="nv">$row</span><span class="s2">&lt;/b&gt;&lt;/p&gt;"</span><span class="p">;</span>
   <span class="k">echo</span> <span class="s2">"&lt;ul&gt;"</span><span class="p">;</span>
   <span class="k">for</span> <span class="p">(</span><span class="nv">$col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$col</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nv">$col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"&lt;li&gt;"</span><span class="o">.</span><span class="nv">$cars</span><span class="p">[</span><span class="nv">$row</span><span class="p">][</span><span class="nv">$col</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/li&gt;"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"&lt;li&gt;"</span><span class="mf">.</span><span class="nv">$cars</span><span class="p">[</span><span class="nv">$row</span><span class="p">][</span><span class="nv">$col</span><span class="p">]</span><span class="mf">.</span><span class="s2">"&lt;/li&gt;"</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">echo</span> <span class="s2">"&lt;/ul&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
@@ -254,7 +254,7 @@ kia: In stock: 13, sold: 200.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Row number 0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Row number 0
 ●	Volvo
 ●	10
 ●	300
@@ -279,7 +279,7 @@ Row number 3
 <p>PHP는 생성한 변수가 배열변수를 확인할 수 있는 is_array()이라는 내부함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_array</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_array</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>매개변수 인자값으로 변수를 전달하면, 변수의 배열 타입 여부를 논리값 형태로 반환합니다.</p>
@@ -298,7 +298,7 @@ Row number 3
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array not an Array 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array not an Array 
 </code></pre></div></div>
 
 <p><br /></p>

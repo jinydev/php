@@ -150,7 +150,7 @@ bool is_dir ( string $filename )</p>
 <p>예제파일) file_dir-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$pathDir = "testing";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$pathDir = "testing";
 
 if (!is_dir($pathDir)) {
 	echo "Err] $pathDir 디렉토리가 존재하지 않습니다.&lt;br&gt;";
@@ -201,7 +201,7 @@ bool mkdir ( string $pathname [, int $mode = 0777 [, bool $recursive = false [, 
 &lt;?php
 	$pathDir = “aaa”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!is_dir($pathDir)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!is_dir($pathDir)) {
 	echo "Err] $pathDir 디렉토리가 존재하지 않습니다.&lt;br&gt;";
 
 	echo "새로운 디렉토리를 생성합니다.&lt;br&gt;";
@@ -237,7 +237,7 @@ aaa 디렉토리를 생성하였습니다.</p>
 &lt;?php
 	$pathDir = “aa/bb/cc”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!is_dir($pathDir)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!is_dir($pathDir)) {
 	echo "Err] $pathDir 디렉토리가 존재하지 않습니다.&lt;br&gt;";
 
 	echo "새로운 디렉토리를 생성합니다.&lt;br&gt;";
@@ -273,7 +273,7 @@ array scandir ( string $directory [, int $sorting_order = SCANDIR_SORT_ASCENDING
 &lt;?php
 	$pathDir = “./”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
 	echo "OK] $pathDir 디렉토리 작업이 가능합니다.&lt;br&gt;";
 
 	$dirARR = scandir($pathDir);
@@ -309,15 +309,15 @@ hello.txt</p>
 Directory dir ( string $directory [, resource $context ] )</p>
 
 <p>예제파일) dir.php
-<?php
-	$d = dir("/home/php7");
-	echo "Handle: " . $d->handle . "\n";
-	echo "Path: " . $d->path . "\n";
-	while (false !== ($entry = $d->read())) {
-		echo $entry."<br>";
+&lt;?php
+	$d = dir(“/home/php7”);
+	echo “Handle: “ . $d-&gt;handle . “\n”;
+	echo “Path: “ . $d-&gt;path . “\n”;
+	while (false !== ($entry = $d-&gt;read())) {
+		echo $entry.”<br />”;
 	}
-	$d->close();
-?></p>
+	$d-&gt;close();
+?&gt;</p>
 
 <p>화면출력)
 Handle: Resource id #3 Path: /home/php7 .
@@ -330,11 +330,11 @@ readme.txt</p>
 array glob ( string $pattern [, int $flags = 0 ] )</p>
 
 <p>예제) glob.php
-<?php
-	foreach (glob("*.exe") as $filename) {
-    		echo "$filename size " . filesize($filename) . "<br>";
+&lt;?php
+	foreach (glob(“*.exe”) as $filename) {
+    		echo “$filename size “ . filesize($filename) . “<br />”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 deplister.exe size 96768
@@ -364,7 +364,7 @@ string dirname ( string $path [, int $levels = 1 ] )</p>
 <p>예제파일) file_dir-05.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재의 디렉토리를 확인합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 현재의 디렉토리를 확인합니다.
 $path = getcwd();
 echo $path."&lt;br&gt;";
 echo "== 상위 디렉토리 패스 == ".dirname($path)."&lt;br&gt;";
@@ -418,9 +418,9 @@ string realpath ( string $path )</p>
 array realpath_cache_get ( void )</p>
 
 <p>예제파일) realpath_cache_get.php
-<?php
+&lt;?php
 	var_dump(realpath_cache_get());
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 array(3) { [“C:\php-7.1.4-Win32-VC14-x86\date_get_last_errors.php”]=&gt; array(8) { [“key”]=&gt; float(2823479507) [“is_dir”]=&gt; bool(false) [“realpath”]=&gt; string(52) “C:\php-7.1.4-Win32-VC14-x86\date_get_last_errors.php” [“expires”]=&gt; int(1502349080) [“is_rvalid”]=&gt; bool(false) [“is_wvalid”]=&gt; bool(false) [“is_readable”]=&gt; bool(false) [“is_writable”]=&gt; bool(false) } [“C:\php-7.1.4-Win32-VC14-x86\realpath_cache_get.php”]=&gt; array(8) { [“key”]=&gt; float(4089114914) [“is_dir”]=&gt; bool(false) [“realpath”]=&gt; string(50) “C:\php-7.1.4-Win32-VC14-x86\realpath_cache_get.php” [“expires”]=&gt; int(1502349085) [“is_rvalid”]=&gt; bool(false) [“is_wvalid”]=&gt; bool(false) [“is_readable”]=&gt; bool(false) [“is_writable”]=&gt; bool(false) } [“C:\php-7.1.4-Win32-VC14-x86”]=&gt; array(8) { [“key”]=&gt; float(3046037941) [“is_dir”]=&gt; bool(true) [“realpath”]=&gt; string(27) “C:\php-7.1.4-Win32-VC14-x86” [“expires”]=&gt; int(1502349080) [“is_rvalid”]=&gt; bool(false) [“is_wvalid”]=&gt; bool(false) [“is_readable”]=&gt; bool(false) [“is_writable”]=&gt; bool(false) } }</p>
@@ -431,9 +431,9 @@ array(3) { [“C:\php-7.1.4-Win32-VC14-x86\date_get_last_errors.php”]=&gt; arr
 int realpath_cache_size ( void )</p>
 
 <p>예제파일) realpath_cache_size.php
-<?php
+&lt;?php
 	var_dump(realpath_cache_size());
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 int(328)</p>
@@ -453,7 +453,7 @@ bool rmdir ( string $dirname )</p>
 &lt;?php
 	$pathDir = “aaa”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
 	echo "OK] $pathDir 디렉토리 작업이 가능합니다.&lt;br&gt;";		
 
 	echo "새로운 디렉토리를 삭제합니다.&lt;br&gt;";
@@ -487,9 +487,9 @@ bool rename ( string $oldname , string $newname [, resource $context ] )</p>
 <p>내장함수 rename()는 새로운 이름으로 디렉토리의 명을 바꾸고, 필요할 경우 디렉토리간 이동을 합니다.</p>
 
 <p>예제파일) rename.php
-<?php
-	rename("aaa", "bbb");
-?></p>
+&lt;?php
+	rename(“aaa”, “bbb”);
+?&gt;</p>
 
 <h1 id="529-경로변경">5.2.9 경로변경</h1>
 <p>내부함수 chdir() 는 현재의 실행되고 있는 스크립트 경로에서 다른 상태 디렉토리를 변경합니다. 이는 현재의 실행되는 스크립트의 경로를 내부적으로 변경합니다.</p>
@@ -505,10 +505,10 @@ bool chroot ( string $directory )</p>
 <p>윈도우 환경에서는 이 함수를 사용할 수 없습니다. 리눅스 계열의 운영체제에서만 사용이 가능합니다. 이 함수를 사용하기 위해서는 루트 권한이 필요로 합니다.</p>
 
 <p>예제파일) chroot.php
-<?php
-	chroot("/path/to/your/chroot/");
+&lt;?php
+	chroot(“/path/to/your/chroot/”);
 	echo getcwd();
-?></p>
+?&gt;</p>
 
 <h1 id="5210-디렉토리-접근">5.2.10 디렉토리 접근</h1>
 
@@ -530,7 +530,7 @@ void closedir ([ resource $dir_handle ] )</p>
 &lt;?php
 	$dir = “/home/php7/”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// O디렉토리를 열고 내용을 읽습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// O디렉토리를 열고 내용을 읽습니다.
 if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
     			while (($file = readdir($dh)) !== false) {
@@ -552,7 +552,7 @@ if (is_dir($dir)) {
 &lt;?php
 	$dir = “/home/php7/”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 디렉토리를 열고 디렉토리를 변수로 읽어 들인후에 닫습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 디렉토리를 열고 디렉토리를 변수로 읽어 들인후에 닫습니다.
 if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
     			$directory = readdir($dh);
@@ -569,7 +569,7 @@ string readdir ([ resource $dir_handle ] )</p>
 <p>예제파일) readdir.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($handle = opendir('/home/php7')) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($handle = opendir('/home/php7')) {
     echo "Directory handle: $handle &lt;br&gt;";
     echo "Entries:&lt;br&gt;";
 
@@ -604,7 +604,7 @@ void rewinddir ([ resource $dir_handle ] )</p>
 <p>예제파일) rewinddir.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($handle = opendir('/home/php7')) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($handle = opendir('/home/php7')) {
     echo "Directory handle: $handle &lt;br&gt;";
     echo "Entries:&lt;br&gt;";
 
@@ -665,7 +665,7 @@ float disk_total_space ( string $directory )</p>
 &lt;?php
 	$pathDir = “./”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_dir($pathDir)) {
 	echo "OK] $pathDir 디렉토리 작업이 가능합니다.&lt;br&gt;";		
 
 	$totalSapce = disk_total_space($pathDir);
@@ -701,7 +701,7 @@ bool chown ( string $filename , mixed $user )</p>
 <p>예제) chown.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 파일명과 사용자
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 파일명과 사용자
 $file_name= "test.php";
 $path = "/home/php7/" . $file_name ;
 $user_name = "root";
@@ -722,10 +722,10 @@ print_r(posix_getpwuid($stat['uid']));
 int fileowner ( string $filename )</p>
 
 <p>예제) fileowner.php
-<?php
-    $filename = 'fileowner.php';
+&lt;?php
+    $filename = ‘fileowner.php’;
     print_r(posix_getpwuid(fileowner($filename)));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [name] =&gt; jinyshop [passwd] =&gt; x [uid] =&gt; 519 [gid] =&gt; 520 [gecos] =&gt; [dir] =&gt; /home/jinyshop [shell] =&gt; /bin/bash )</p>
@@ -742,7 +742,7 @@ bool chmod ( string $filename , int $mode )</p>
 <p>예제) chmod.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (chmod("test.txt",0755)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (chmod("test.txt",0755)) {
 	echo "모드변경";
 } else {
 	echo "변경실패";
@@ -760,7 +760,7 @@ int umask ([ int $mask ] )</p>
 	chmod(“/path/some_dir/some_file.txt”, 0755);
 	umask($old);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Checking
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Checking
 if ($old != umask()) {
 	die('An error occurred while changing back the umask');
 } ?&gt;
@@ -776,7 +776,7 @@ int fileperms ( string $filename )</p>
     $permissions = fileperms(“fileperms.php”);
     echo “permissions = “ . $permissions . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Owner
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Owner
 $info .= (($permissions &amp; 0x0100) ? 'r' : '-');
 $info .= (($permissions &amp; 0x0080) ? 'w' : '-');
 $info .= (($permissions &amp; 0x0040) ?
@@ -814,7 +814,7 @@ bool is_executable ( string $filename )</p>
 <p>예제) is_executable.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$file = 'check.sh';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$file = 'check.sh';
 
 if (is_executable($file)) {
     echo $file.' is executable';
@@ -842,7 +842,7 @@ bool chgrp ( string $filename , mixed $group )</p>
 	$format = “%s’s Group ID @ %s: %d <br />”;
 	printf($format, $filename, date(‘r’), filegroup($filename));</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 100
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 100
 chgrp($filename, 8);
 
 // filegroup () 결과를 캐시하지 않습니다.
@@ -862,7 +862,7 @@ int filegroup ( string $filename )</p>
 	$filegroup_Id = filegroup($filename);
 	echo “filegroup ID = “ . $filegroup_Id . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(posix_getgrgid($filegroup_Id)); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(posix_getgrgid($filegroup_Id)); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -890,7 +890,7 @@ bool file_exists ( string $filename )</p>
 &lt;?php
 	$filename = “./readme.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 	echo $filename." 파일명이 존재합니다.&lt;br&gt;";
 } else {
 	echo "파일을 찾을 수 없습니다.&lt;br&gt;";
@@ -906,9 +906,9 @@ bool file_exists ( string $filename )</p>
 bool is_file ( string $filename )</p>
 
 <p>예제) is_file.php
-<?php
-    var_dump(is_file('is_file.php'));
-?></p>
+&lt;?php
+    var_dump(is_file(‘is_file.php’));
+?&gt;</p>
 
 <p>화면출력)
 bool(true)</p>
@@ -919,12 +919,12 @@ bool(true)</p>
 string filetype ( string $filename )</p>
 
 <p>예제) filetype.php
-<?php
-    echo filetype('/etc/passwd') ."<br>";  
+&lt;?php
+    echo filetype(‘/etc/passwd’) .”<br />”;<br />
     // file
-    echo filetype('/etc/') ."<br>";        
+    echo filetype(‘/etc/’) .”<br />”;      <br />
     // dir
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 file
@@ -949,7 +949,7 @@ int filemtime ( string $filename )</p>
 <p>예제파일) fileinfo-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = './readme.txt';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = './readme.txt';
 if (file_exists($filename)){
 	echo "$filename 마지막 접근일자: " . date("F d Y H:i:s.", fileatime($filename));
 	echo "&lt;br&gt;";
@@ -969,12 +969,12 @@ if (file_exists($filename)){
 int filectime ( string $filename )</p>
 
 <p>예제) filectime.php
-<?php
-	$filename = 'install.txt';
+&lt;?php
+	$filename = ‘install.txt’;
 	if (file_exists($filename)) {
-    	echo "$filename 의 변경시간 : " . date("F d Y H:i:s.", filectime($filename));
+    	echo “$filename 의 변경시간 : “ . date(“F d Y H:i:s.”, filectime($filename));
 	}
-?></p>
+?&gt;</p>
 
 <p>내부함수 touch()는 파일의 수정 시간을 재설정 할 수 있습니다.</p>
 
@@ -987,7 +987,7 @@ bool touch ( string $filename [, int $time = time() [, int $atime ]] )</p>
     // 과거 한 시간으로 설정.
     $time = time() - 3600;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 파일의 수정 시간을 재설정합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 파일의 수정 시간을 재설정합니다.
 if (!touch('touch.php', $time)) {
     echo 'wrong...';
 } else {
@@ -1038,10 +1038,10 @@ string basename ( string $path [, string $suffix ] )</p>
 <p>내부함수 basename()은 입력된 경로명에서 파일명 부분만을 추출하여 분리합니다.</p>
 
 <p>예제파일) basename.php
-<?php
-	$path = "./aa/bb/cc/eee/fff/thisfile.php";
+&lt;?php
+	$path = “./aa/bb/cc/eee/fff/thisfile.php”;
 	echo basename($path);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 thisfile.php</p>
@@ -1068,7 +1068,7 @@ dirname, basename, extension, filename 를 통하여 경로값을 분석할 수 
 &lt;?php
 	$path_parts = pathinfo(‘./readme.txt’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $path_parts['dirname'], "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $path_parts['dirname'], "&lt;br&gt;";
 echo $path_parts['basename'], "&lt;br&gt;";
 echo $path_parts['extension'], "&lt;br&gt;";
 echo $path_parts['filename'], "&lt;br&gt;"; // since PHP 5.2.0 ?&gt;
@@ -1093,7 +1093,7 @@ bool is_link ( string $filename )</p>
 &lt;?php
     $link = ‘symlink’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_link($link)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_link($link)) {
     echo $link . " is symbolic link";
 } else {
     echo $link . " is not symbolic link";
@@ -1109,12 +1109,12 @@ symlink is symbolic link</p>
 bool symlink ( string $target , string $link )</p>
 
 <p>예제) symlink.php
-<?php
-    $target = 'symlink.php';
-    $link = 'symlink';
+&lt;?php
+    $target = ‘symlink.php’;
+    $link = ‘symlink’;
     symlink($target, $link);
     echo readlink($link);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 symlink.php</p>
@@ -1134,7 +1134,7 @@ bool link ( string $target , string $link )</p>
     $target = ‘link.php’;
     $link = ‘hardlink.php’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>link($target, $link); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>link($target, $link); ?&gt;
 </code></pre></div></div>
 
 <p>내부함수 linkinfo()는 하드링크 파일의 정보를 반환합니다.</p>
@@ -1153,7 +1153,7 @@ bool lchgrp ( string $filename , mixed $group )</p>
 	$link = ‘output.html’;
 	symlink($target, $link);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lchgrp($link, 8); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lchgrp($link, 8); ?&gt;
 </code></pre></div></div>
 
 <p>내부함수 lchown()은 심볼링크의 사용자 소유권 변경합니다.</p>
@@ -1167,7 +1167,7 @@ bool lchown ( string $filename , mixed $user )</p>
 	$link = ‘output.html’;
 	symlink($target, $link);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lchown($link, 8); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lchown($link, 8); ?&gt;
 </code></pre></div></div>
 
 <h1 id="lstat">lstat()</h1>
@@ -1180,7 +1180,7 @@ bool lchown ( string $filename , mixed $user )</p>
 &lt;?php
 	symlink(‘uploads.php’, ‘uploads’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Contrast information for uploads.php and uploads
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Contrast information for uploads.php and uploads
 array_diff(stat('uploads'), lstat('uploads')); ?&gt;
 </code></pre></div></div>
 
@@ -1192,10 +1192,10 @@ array_diff(stat('uploads'), lstat('uploads')); ?&gt;
 int fileinode ( string $filename )</p>
 
 <p>예제) fileinode.php
-<?php
-    $filename = 'fileinode.php';
-    echo fileinode($filename)."<br>";
-?></p>
+&lt;?php
+    $filename = ‘fileinode.php’;
+    echo fileinode($filename).”<br />”;
+?&gt;</p>
 
 <p>화면출력)
 6961340</p>
@@ -1211,14 +1211,14 @@ void clearstatcache ([ bool $clear_realpath_cache = false [, string $filename ]]
 bool fnmatch ( string $pattern , string $string [, int $flags = 0 ] )</p>
 
 <p>예제) fnmatch.php
-<?php
-    $filename = "gray";
-    if (fnmatch("*gr[ae]y", $filename)) {
-        echo "some form of gray ...";
+&lt;?php
+    $filename = “gray”;
+    if (fnmatch(“*gr[ae]y”, $filename)) {
+        echo “some form of gray …”;
     } else {
-        echo "not match";
+        echo “not match”;
     }
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 some form of gray …</p>
@@ -1279,7 +1279,7 @@ bool fclose ( resource $handle )</p>
 <p>예제파일) fclose.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = './readme.txt';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$filename = './readme.txt';
 if (file_exists($filename)) {
 	if ($fp = fopen($filename, "r")) {
 		echo "파일 포인트를 읽기 전용으로 오픈합니다.&lt;br&gt;";
@@ -1324,7 +1324,7 @@ int fpassthru ( resource $handle )</p>
 <p>예제) fpassthru.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// open the file in a binary mode
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// open the file in a binary mode
 $name = './img/ok.png';
 $fp = fopen($name, 'rb');
 
@@ -1354,7 +1354,7 @@ string fgetc ( resource $handle )</p>
 &lt;?php
 	$filename = ‘./readme.txt’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$fp = fopen($filename, "r") or die("파일을 읽을 수 없습니다!");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$fp = fopen($filename, "r") or die("파일을 읽을 수 없습니다!");
 
 // EOF 체크
 while (!feof($fp)) {
@@ -1402,7 +1402,7 @@ string fgets ( resource $handle [, int $length ] )</p>
 &lt;?php
 	$filename = ‘./readme2.txt’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// @ 표시가 앞에 있으면 오류메시지를 표시하지 않겠다는 의미 입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// @ 표시가 앞에 있으면 오류메시지를 표시하지 않겠다는 의미 입니다.
 $fp = @fopen($filename, "r");
 
 if ($fp) {
@@ -1438,7 +1438,7 @@ $str = «&lt;EOD</p>
 EOD;
 	file_put_contents(‘sample.php’, $str);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = @fopen("sample.php", "r");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = @fopen("sample.php", "r");
 if ($handle) {
 	while (!feof($handle)) {
 		$buffer = fgetss($handle, 4096);
@@ -1464,7 +1464,7 @@ int filesize ( string $filename )</p>
 &lt;?php
 	$filename = “./readme.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 	echo $filename." 파일의 크기는".filesize($filename)." 입니다..&lt;br&gt;";
 } else {
 	echo "파일을 찾을 수 없습니다.&lt;br&gt;";
@@ -1496,7 +1496,7 @@ string fread ( resource $handle , int $length )</p>
 &lt;?php
 	$filename = “./readme.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 	if ($fp = fopen($filename, "r")) {
 		$contents = fread($fp, filesize($filename));
 		echo $contents;
@@ -1530,7 +1530,7 @@ int fseek ( resource $handle , int $offset [, int $whence = SEEK_SET ] )</p>
 &lt;?php
 	$filename = ‘./readme.txt’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($fp = fopen($filename, "r")){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($fp = fopen($filename, "r")){
 	$data = fgets($fp);
 	echo $data."&lt;br&gt;";
 	echo "파일포인트 = ".ftell($fp);
@@ -1565,9 +1565,9 @@ int readfile ( string $filename [, bool $use_include_path = false [, resource $c
 <p>readfile() 함수는 정상적으로 파일을 읽었을 경우에 컨텐츠의 바이트 수를 반환합니다.</p>
 
 <p>예제파일) readfile php
-<?php
-	echo readfile("log.txt");
-?></p>
+&lt;?php
+	echo readfile(“log.txt”);
+?&gt;</p>
 
 <h1 id="067-파일쓰기">06.7 파일쓰기</h1>
 
@@ -1579,7 +1579,7 @@ int readfile ( string $filename [, bool $use_include_path = false [, resource $c
 &lt;?php
 	$filename = “./log.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$fp = fopen($filename, "w");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$fp = fopen($filename, "w");
 if ($fp) {
 	echo "파일을 저장 할 수 있습니다.&lt;br&gt;";
 } else {
@@ -1605,7 +1605,7 @@ int fwrite ( resource $handle , string $string [, int $length ] )</p>
 &lt;?php
 	$filename = “log.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// W 모드는 새로운 파일을 생성합니다. 파일을 저장하는 위치는 처음 입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// W 모드는 새로운 파일을 생성합니다. 파일을 저장하는 위치는 처음 입니다.
 $fp = fopen($filename, "w");
 if ($fp) {
 	echo "파일 내용을 저장합니다.&lt;br&gt;";
@@ -1652,7 +1652,7 @@ bool is_readable( 파일명 )</p>
 &lt;?php
 	$filename = “log.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// a 모드는 기존 파일에 새로운 추가 내용을 삽입합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// a 모드는 기존 파일에 새로운 추가 내용을 삽입합니다.
 $fp = fopen($filename, "a");
 if ($fp) {
 
@@ -1690,13 +1690,13 @@ if ($fp) {
 resource tmpfile ( void )</p>
 
 <p>예제파일) tmpfile.php
-<?php
+&lt;?php
     $temp = tmpfile();
-    fwrite($temp, "writing to tempfile");
+    fwrite($temp, “writing to tempfile”);
     fseek($temp, 0);
     echo fread($temp, 1024);
     fclose($temp); // this removes the file
-?></p>
+?&gt;</p>
 
 <p>|내장함수|
 string tempnam ( string $dir , string $prefix )</p>
@@ -1707,7 +1707,7 @@ string tempnam ( string $dir , string $prefix )</p>
 &lt;?php
 	$tmpfname = tempnam(“/tmp”, “FOO”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = fopen($tmpfname, "w");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = fopen($tmpfname, "w");
 fwrite($handle, "writing to tempfile");
 fclose($handle);
 
@@ -1721,10 +1721,10 @@ string sys_get_temp_dir ( void )</p>
 <p>내부함수 sys_get_temp_dir ()는 임시 파일로 사용되는 디렉토리 경로를 반환합니다.</p>
 
 <p>예제) sys_get_temp_dir.php
-<?php
+&lt;?php
 	$temp_file = sys_get_temp_dir();
 	echo $temp_file;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 C:\Users\infoh\AppData\Local\Temp</p>
@@ -1754,7 +1754,7 @@ bool fflush ( resource $handle )</p>
 &lt;?php
 	$filename = “log.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_writeable($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_writeable($filename)) {
 	echo "파일 저장허용.&lt;br&gt;";
 
 	// a 모드는 기존 파일에 새로운 추가 내용을 삽입합니다.
@@ -1804,7 +1804,7 @@ bool unlink ( string $filename [, resource $context ] )</p>
 &lt;?php
 	$filename = “log.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 	if (is_writeable($filename)) {
 		unlink($filename);
 		echo $filename." 파일을 삭제합니다.&lt;br&gt;";
@@ -1836,7 +1836,7 @@ bool copy ( string $source , string $dest [, resource $context ] )</p>
 &lt;?php
 	$filename = “readme.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 
 	if (copy($filename, "readme_copy.txt")) {
 		echo "복사 성공!&lt;br&gt;";
@@ -1862,7 +1862,7 @@ bool is_uploaded_file ( string $filename )</p>
 <p>예제) is_uploaded_file.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 	echo "File ". $_FILES['userfile']['name'] ." uploaded successfully.\n";
 	echo "Displaying contents\n";
 	readfile($_FILES['userfile']['tmp_name']);
@@ -1885,7 +1885,7 @@ bool is_uploaded_file ( string $filename )</p>
     	if ($error == UPLOAD_ERR_OK) {
         	$tmp_name = $_FILES[“pictures”][“tmp_name”][$key];</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    	$name = basename($_FILES["pictures"]["name"][$key]);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    	$name = basename($_FILES["pictures"]["name"][$key]);
     	move_uploaded_file($tmp_name, "$uploads_dir/$name");
 	}
 } ?&gt;
@@ -1914,7 +1914,7 @@ int file_put_contents ( string $filename , mixed $data [, int $flags = 0 [, reso
 &lt;?php
 	$filename = “readme.txt”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (file_exists($filename)) {
 
 	// 파일 전체 출력
 	echo "=== 파일 전체 출력 ===&lt;br&gt;";	
@@ -1959,9 +1959,9 @@ Line #2 : 읽어 올 수 있습니다.</p>
 resource popen ( string $command , string $mode )</p>
 
 <p>예제) popen.php
-<?php
-$handle = popen("/bin/ls", "r");
-?></p>
+&lt;?php
+$handle = popen(“/bin/ls”, “r”);
+?&gt;</p>
 
 <p>내부함수 popen() 는 오픈된 파이프를 닫습니다.</p>
 
@@ -1969,10 +1969,10 @@ $handle = popen("/bin/ls", "r");
 int pclose ( resource $handle )</p>
 
 <p>예제) pclose.php
-<?php
-	$handle = popen('/bin/ls', 'r');
+&lt;?php
+	$handle = popen(‘/bin/ls’, ‘r’);
 	pclose($handle);
-?></p>
+?&gt;</p>
 
 <p>내부함수 fscanf()는 형식에 따라 파일에서 입력을 구문을 분석합니다.</p>
 
@@ -1980,14 +1980,14 @@ int pclose ( resource $handle )</p>
 mixed fscanf ( resource $handle , string $format [, mixed &amp;$… ] )</p>
 
 <p>예제) fscanf.php
-<?php
-	$handle = fopen("users.txt", "r");
-	while ($userinfo = fscanf($handle, "%s\t%s\t%s\n")) {
+&lt;?php
+	$handle = fopen(“users.txt”, “r”);
+	while ($userinfo = fscanf($handle, “%s\t%s\t%s\n”)) {
     	list ($name, $profession, $countrycode) = $userinfo;
-    	//... do something with the values
+    	//… do something with the values
 	}
 	fclose($handle);
-?></p>
+?&gt;</p>
 
 <p>내장함수 fstat()는 열린 파일에 대한 정보를 반환합니다.</p>
 
@@ -1997,7 +1997,7 @@ array fstat ( resource $handle )</p>
 <p>예제) fstat.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// open a file
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// open a file
 $fp = fopen("/etc/passwd", "r");
 
 // gather statistics
@@ -2021,7 +2021,7 @@ bool ftruncate ( resource $handle , int $size )</p>
 &lt;?php
 	$filename = ‘lorem_ipsum.txt’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = fopen($filename, 'r+');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$handle = fopen($filename, 'r+');
 ftruncate($handle, rand(1, filesize($filename)));
 rewind($handle);
 echo fread($handle, filesize($filename));
@@ -2036,7 +2036,7 @@ array parse_ini_file ( string $filename [, bool $process_sections = false [, int
 <p>예제) parse_ini_file.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define('BIRD', 'Dodo bird');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define('BIRD', 'Dodo bird');
 
 // Parse without sections
 $ini_array = parse_ini_file("sample.ini");

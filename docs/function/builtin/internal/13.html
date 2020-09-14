@@ -123,12 +123,12 @@ string exec ( string $command [, array &amp;$output [, int &amp;$return_var ]] )
 <p>output 인수가 있으면 지정된 배열은 명령의 모든 출력 행을 배열로 채워집니다. 하지만 \ n 같은 후행 공백은이 배열에 포함되지 않습니다. 만일 output 변수가 초기화 되어 있지 않는 값인경우에 배열 뒤에 추가로 연결이 됩니다.</p>
 
 <p>예제) exec.php
-<?php
-	$result = exec("dir",$output);
+&lt;?php
+	$result = exec(“dir”,$output);
 	echo $result;
-	echo "<br>";
+	echo “<br />”;
 	print_r($output);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 2개 디렉터리 84,432,617,472 바이트 남음
@@ -142,10 +142,10 @@ string system ( string $command [, int &amp;$return_var ] )</p>
 <p>내부함수 system()는 외부 프로그램을 실행합니다. 실행후 결과를 출력합니다. system()은 주어진 명령을 실행하고 결과를 출력한다는 점에서 함수의 C 버전과 같습니다.</p>
 
 <p>예제) system.php
-<?php 
-	$result = system("dir",$output); 
+&lt;?php 
+	$result = system(“dir”,$output); 
 	echo $result;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 C 드라이브의 볼륨: windows 볼륨 일련 번호: 447E-0DB0 C:\php-7.1.4-Win32-VC14-x86\sample1 디렉터리 2017-08-17 오후 06:20
@@ -158,10 +158,10 @@ string shell_exec ( string $cmd )</p>
 <p>내부함수 shell_exec()는 쉘을 통해 명령을 실행합니다. 실행한 전체 출력을 문자열로 반환합니다.</p>
 
 <p>예제) shell_exec.php
-<?php
-	$output = shell_exec('ls -lart');
-	echo "<pre>$output</pre>";
-?></p>
+&lt;?php
+	$output = shell_exec(‘ls -lart’);
+	echo “&lt;pre&gt;$output&lt;/pre&gt;”;
+?&gt;</p>
 
 <h1 id="132-프로세스">13.2 프로세스</h1>
 
@@ -224,7 +224,7 @@ bool proc_terminate ( resource $process [, int $signal = 15 ] )</p>
         2 =&gt; array(“file”, “/tmp/error-output.txt”, “a”) // stderr
     );</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$cwd = '/tmp';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$cwd = '/tmp';
 $env = array('some_option' =&gt; 'aeiou');
 
 $process = proc_open('php', $descriptorspec, $pipes, $cwd, $env);

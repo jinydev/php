@@ -241,11 +241,11 @@ for 반복 문법의 조건인자는 for문의 소스를 반복하는 조건 횟
 <p>몇 가지 예제를 통하여 for 반복문의 실행과 동작을 숙지하도록 하겠습니다. 반복문은 많이 사용해야만 익숙해지고 쉽게 소스 코드를 이해할 수 있습니다.</p>
 
 <p>예제 파일 for-01.php
-<?php
-    for ($i = 0; $i < 5; $i++) {
-      echo "The number is: $i <br>";
+&lt;?php
+    for ($i = 0; $i &lt; 5; $i++) {
+      echo “The number is: $i <br />”;
     }
-?></p>
+?&gt;</p>
 
 <p>결과
 The number is: 0
@@ -266,7 +266,7 @@ The number is: 4</p>
 	// for문 밖에서 초기값을 지정합니다.
 	$i=1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// for문에서는 초기값. 증가 값 설정 부분을 생략합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// for문에서는 초기값. 증가 값 설정 부분을 생략합니다.
 for ( ; $i &lt; 5; ) {
   		echo "The number is: $i &lt;br&gt;";
 
@@ -299,11 +299,11 @@ for 반복 문장은 프로그램에서 반복문의 가장 전형적인 문법�
 <p>예를 들어 “헬스장에서 코치가 윗몸 일으키기 50번 하세요”라고 한다면 윗몸 일으키기라는 코드를 50번 수행하게 되는 것입니다.</p>
 
 <p>예제 파일 for-03.php
-<?php
-	for ($i = 0; $i < 50; $i++) {
-		echo "윗몸 일으키기<br>";
+&lt;?php
+	for ($i = 0; $i &lt; 50; $i++) {
+		echo “윗몸 일으키기<br />”;
 	}
-?></p>
+?&gt;</p>
 
 <p>결과
 윗몸 일으키기
@@ -341,7 +341,7 @@ for (초기값 설정; 조건; 증가 연산자) {</p>
 	for ($i = 0; $i &lt; 5; $i++) {
 		echo “세트$i 시작 <br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 반복 루프2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 반복 루프2
 	for ($j = 0; $j &lt; 10; $j++) {
 		echo "윗몸 일으키기&lt;br&gt;";
 	}
@@ -394,7 +394,7 @@ for (초기값 설정; 조건; 증가 연산자) {</p>
 		array(“kia”,13,200)
 	);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for ($i = 0; $i &lt; 4; $i++) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for ($i = 0; $i &lt; 4; $i++) {
 
 	for ($j = 0; $j &lt; 3; $j++) {
 		echo $cars[ $i ][ $j ];
@@ -416,14 +416,14 @@ kia 13 200</p>
 <p>다음은 이중 반복문을 이용하여 삼각형 별을 만드는 전형적인 예제입니다.</p>
 
 <p>예제 파일 for-06.php
-<?php
-	for ($i=0;$i<5;$i++) {
-		for ($j=0;$j<$i;$j++) {
-			echo "*";
+&lt;?php
+	for ($i=0;$i&lt;5;$i++) {
+		for ($j=0;$j&lt;$i;$j++) {
+			echo “*”;
 		}
-		echo "<br>";
+		echo “<br />”;
 	}
-?></p>
+?&gt;</p>
 
 <p>결과
 *
@@ -440,7 +440,7 @@ kia 13 200</p>
 			echo “_”;
 		}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	for ($k=1; $k&lt;$i+1;$k++) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	for ($k=1; $k&lt;$i+1;$k++) {
 		echo "*";
 	}
 
@@ -481,7 +481,7 @@ foreach ($array as $value) {
 <p>예제 파일) foreach-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$colors = array("red", "green", "blue", "yellow");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$colors = array("red", "green", "blue", "yellow");
 foreach ($colors as $value) {
   echo "$value &lt;br&gt;";
 }
@@ -503,7 +503,7 @@ yellow</p>
 &lt;?php
 	$colors = array(“red”, “green”, “blue”, “yellow”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for($i=0;$i&lt;count($colors);$i++){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for($i=0;$i&lt;count($colors);$i++){
 		echo $colors[$i]."&lt;br&gt;";
 }
 </code></pre></div></div>
@@ -537,7 +537,7 @@ while (참 조건) {
 &lt;?php
     $i = 1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while($i &lt;= 5) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while($i &lt;= 5) {
   echo "The number is: $i &lt;br&gt;";
   $i++;
 }
@@ -560,7 +560,7 @@ The number is: 5</p>
 &lt;?php
     $i = 0;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for ( ; $i &lt; 5; ) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for ( ; $i &lt; 5; ) {
   $i++;
   echo "The number is: $i &lt;br&gt;";
 }
@@ -584,11 +584,11 @@ The number is: 5</p>
 <p>무한 반복 사용은 매우 주의하여 사용해야 합니다. 무한 루프를 사용하더라도 항상 무한 루프를 탈출할 수 있는 처리 로직도 같이 만들어주는 것이 좋습니다. 잘못 사용하면 컴퓨터에 과부하를 주거나, 프로그램이 중단되는 것 같이 보이는 문제가 발생합니다.</p>
 
 <p>예제 파일) while-03.php
-<?php
+&lt;?php
   While(1){
-    echo "무제한으로 반복합니다.";
+    echo “무제한으로 반복합니다.”;
   }
-?></p>
+?&gt;</p>
 
 <p>결과
 무제한으로 반복합니다
@@ -643,7 +643,7 @@ while (조건expression) {
 &lt;?php
 	$x = 1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do {
 	echo "The number is: $x &lt;br&gt;";
 	$x++;
 } while ($x &lt;= 5); ?&gt;
@@ -663,7 +663,7 @@ The number is: 5</p>
 	// 초기값을 6으로 설정합니다.
 	$x = 6;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do {
    		echo "The number is: $x &lt;br&gt;";
 	$x++;
 } while ($x &lt;= 5); ?&gt; 
@@ -686,7 +686,7 @@ while 반복문을 통해 무한 루프 동작을 하고 있을 때 프로그램
 &lt;?php
 	while(1){</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($i&lt;10) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		if ($i&lt;10) {
   			echo "10보다 작으면 무제한 반복합니다.&lt;br&gt;";
 		} else {
   			echo "조건이 10보다 크기 때문에 조건을 빠져나갑니다.&lt;br&gt;";
@@ -695,7 +695,7 @@ while 반복문을 통해 무한 루프 동작을 하고 있을 때 프로그램
 </code></pre></div></div>
 
   		$i++;
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>} ?&gt; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>} ?&gt; 
 </code></pre></div></div>
 
 <p>결과
@@ -721,7 +721,7 @@ while 반복문을 통해 무한 루프 동작을 하고 있을 때 프로그램
  &lt;?php
     $myfile = fopen(“readme.txt”, “r”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(1) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(1) {
     if (!feof($myfile)) {
         echo fgets($myfile) . "&lt;br&gt;";
     } else {
@@ -742,7 +742,7 @@ break;문은 while 반복문 이외에 for 반복문에서도 사용이 가능�
 &lt;?php
 	for ($i=0;$i&lt;10;$i++) {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	if ($i&gt;=6) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	if ($i&gt;=6) {
 		break;
 	}
 
@@ -778,7 +778,7 @@ continue;는 break;와 비슷하게 제어의 흐름을 변경할 수 있는 명
 &lt;?php
 	for ($i=0;$i&lt;10;$i++) {</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	if ($i%2 == 0) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	if ($i%2 == 0) {
 		continue;
 	}
 

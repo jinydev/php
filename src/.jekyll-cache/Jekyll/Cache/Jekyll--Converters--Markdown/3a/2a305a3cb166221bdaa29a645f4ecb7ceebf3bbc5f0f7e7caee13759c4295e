@@ -1,4 +1,4 @@
-I"I<h1 id="스칼라-타입">스칼라 타입</h1>
+I"o<h1 id="스칼라-타입">스칼라 타입</h1>
 <hr />
 <p>스칼라 타입은 두 가지 방식으로 사용할 수 있습니다. 
 기본적 선택인 강제적(coercive)인 방법과 엄격한(strict) 방법입니다.</p>
@@ -19,7 +19,7 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="c1">// Coercive 방법</span>
 	<span class="k">echo</span> <span class="s2">"정수 합계.&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">function</span> <span class="nf">sumOfInts</span><span class="p">(</span><span class="kt">int</span> <span class="o">...</span><span class="nv">$ints</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">sumOfInts</span><span class="p">(</span><span class="kt">int</span> <span class="mf">...</span><span class="nv">$ints</span><span class="p">){</span>
 		<span class="nb">print_r</span><span class="p">(</span><span class="nv">$ints</span><span class="p">);</span>
 		<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
@@ -27,11 +27,11 @@
     	<span class="k">return</span> <span class="nb">array_sum</span><span class="p">(</span><span class="nv">$ints</span><span class="p">);</span>
 	<span class="p">}</span>
 
-	<span class="nb">var_dump</span><span class="p">(</span><span class="nx">sumOfInts</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">));</span>
+	<span class="nb">var_dump</span><span class="p">(</span><span class="nf">sumOfInts</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">));</span>
 
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"실수 합계.&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">function</span> <span class="nf">sumOfFloat</span><span class="p">(</span><span class="kt">float</span> <span class="o">...</span><span class="nv">$ints</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">sumOfFloat</span><span class="p">(</span><span class="kt">float</span> <span class="mf">...</span><span class="nv">$ints</span><span class="p">){</span>
 		<span class="nb">print_r</span><span class="p">(</span><span class="nv">$ints</span><span class="p">);</span>
 		<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
@@ -39,13 +39,13 @@
     	<span class="k">return</span> <span class="nb">array_sum</span><span class="p">(</span><span class="nv">$ints</span><span class="p">);</span>
 	<span class="p">}</span>
 
-	<span class="nb">var_dump</span><span class="p">(</span><span class="nx">sumOfFloat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">));</span>
+	<span class="nb">var_dump</span><span class="p">(</span><span class="nf">sumOfFloat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">));</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정수 합계.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정수 합계.
 Array ( [0] =&gt; 2 [1] =&gt; 3 [2] =&gt; 4 )
 int(9)
 실수 합계.
@@ -56,19 +56,19 @@ float(9.1)
 <p>예제 파일 scalar-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="c1">// Coercive 방법</span>
-	<span class="k">function</span> <span class="nf">sumOfstr</span><span class="p">(</span><span class="kt">string</span> <span class="o">...</span><span class="nv">$strs</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">sumOfstr</span><span class="p">(</span><span class="kt">string</span> <span class="mf">...</span><span class="nv">$strs</span><span class="p">){</span>
 		<span class="nb">print_r</span><span class="p">(</span><span class="nv">$strs</span><span class="p">);</span>
 		<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="p">}</span>
 
-	<span class="nb">var_dump</span><span class="p">(</span><span class="nx">sumOfstr</span><span class="p">(</span><span class="s1">'호랑이'</span><span class="p">,</span> <span class="s1">'토끼'</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+	<span class="nb">var_dump</span><span class="p">(</span><span class="nf">sumOfstr</span><span class="p">(</span><span class="s1">'호랑이'</span><span class="p">,</span> <span class="s1">'토끼'</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [0] =&gt; 호랑이 [1] =&gt; 토끼 [2] =&gt; 4 )
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array ( [0] =&gt; 호랑이 [1] =&gt; 토끼 [2] =&gt; 4 )
 NULL 
 </code></pre></div></div>
 

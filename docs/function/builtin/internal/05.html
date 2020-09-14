@@ -129,7 +129,7 @@ string gmdate ( string $format [, int $timestamp = time() ] )</p>
 <p>예제파일) gmdate.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo date("Y-m-d H:i:s");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo date("Y-m-d H:i:s");
 echo "&lt;br&gt;";
 
 echo "GMT(greenwich Mean Time) 기준 = ".gmdate("Y-m-d H:i:s");
@@ -147,9 +147,9 @@ array date_parse ( string $date )</p>
 <p>지정한 날짜에 대해서 상세정보를 배열로 반환합니다.</p>
 
 <p>예제파일) date_parse.php
-<?php
-	print_r(date_parse("2017-08-07 10:00:00.5"));
-?></p>
+&lt;?php
+	print_r(date_parse(“2017-08-07 10:00:00.5”));
+?&gt;</p>
 
 <p>화면출력)
 Array ( [year] =&gt; 2017 [month] =&gt; 8 [day] =&gt; 7 [hour] =&gt; 10 [minute] =&gt; 0 [second] =&gt; 0 [fraction] =&gt; 0.5 [warning_count] =&gt; 0 [warnings] =&gt; Array ( ) [error_count] =&gt; 0 [errors] =&gt; Array ( ) [is_localtime] =&gt; )</p>
@@ -168,11 +168,11 @@ int time ( void )</p>
 <p>현재의 시간은 Unix epoch 이후의 시간을 timestamp 형식의 숫자 값으로 표기가 되는데 이를 가독성 있도록 표기를 하기 위해서는 date() 포맷함수를 이용하여 출력합니다.</p>
 
 <p>예제파일) time.php
-<?php
-	echo "현재의 시간은 = " . time() . "입니다. <br>";
+&lt;?php
+	echo “현재의 시간은 = “ . time() . “입니다. <br />”;
 	// 두번째 인자로 주어진 시간을 포맷에 맞게 출력합니다.
-	echo date("H:i:s",time());
-?></p>
+	echo date(“H:i:s”,time());
+?&gt;</p>
 
 <p>화면출력)
 현재의 시간은 = 1497766932입니다.
@@ -187,7 +187,7 @@ array getdate ([ int $timestamp = time() ] )</p>
 &lt;?php
 	$date = getdate();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "초 = ". $date['seconds'] . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "초 = ". $date['seconds'] . "&lt;br&gt;";
 echo "분 = ". $date['minutes'] . "&lt;br&gt;";
 echo "시 = ". $date['hours'] . "&lt;br&gt;";
 echo "달날짜 = ". $date['mday'] . "&lt;br&gt;";
@@ -222,7 +222,7 @@ mixed gettimeofday ([ bool $return_float = false ] )</p>
 &lt;?php
 	$time = gettimeofday();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "현재 초 = " . $time['sec'] . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "현재 초 = " . $time['sec'] . "&lt;br&gt;";
 echo "마이크로 초 = " . $time['usec'] . "&lt;br&gt;";
 echo "서부 Greenwich 표준 = " . $time['minuteswest'] . "&lt;br&gt;";
 echo "섬머타임 보정 = " . $time['dsttime'] . "&lt;br&gt;"; ?&gt;
@@ -240,11 +240,11 @@ string gmstrftime ( string $format [, int $timestamp = time() ] )</p>
 <p>내부함수 gmstrftime()는 로컬 설정에 따른 GMT / UTC 날짜 , 시간 형식을 지정합니다.</p>
 
 <p>예제파일) gmstrftime.php
-<?php
-	setlocale(LC_TIME, 'en_US');
-	echo strftime("%b %d %Y %H:%M:%S", mktime(20, 0, 0, 12, 31, 98)) . "\n";
-	echo gmstrftime("%b %d %Y %H:%M:%S", mktime(20, 0, 0, 12, 31, 98)) . "\n";
-?></p>
+&lt;?php
+	setlocale(LC_TIME, ‘en_US’);
+	echo strftime(“%b %d %Y %H:%M:%S”, mktime(20, 0, 0, 12, 31, 98)) . “\n”;
+	echo gmstrftime(“%b %d %Y %H:%M:%S”, mktime(20, 0, 0, 12, 31, 98)) . “\n”;
+?&gt;</p>
 
 <p>화면출력)
 Dec 31 1998 20:00:00 Dec 31 1998 20:00:00</p>
@@ -258,7 +258,7 @@ int idate ( string $format [, int $timestamp = time() ] )</p>
 &lt;?php
 	$timestamp = strtotime(‘1st January 2017’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// this prints the year in a two digit format
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// this prints the year in a two digit format
 // however, as this would start with a "0", it
 // only prints "4"
 echo idate('y', $timestamp); ?&gt;
@@ -273,12 +273,12 @@ array localtime ([ int $timestamp = time() [, bool $is_associative = false ]] )<
 <p>내부함수 localtime()는 현지 시간을 반환합니다</p>
 
 <p>예제파일) localtime.php
-<?php
+&lt;?php
 	$localtime = localtime();
 	$localtime_assoc = localtime(time(), true);
 	print_r($localtime);
 	print_r($localtime_assoc);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; 24 [1] =&gt; 6 [2] =&gt; 9 [3] =&gt; 7 [4] =&gt; 7 [5] =&gt; 117 [6] =&gt; 1 [7] =&gt; 218 [8] =&gt; 0 ) Array ( [tm_sec] =&gt; 24 [tm_min] =&gt; 6 [tm_hour] =&gt; 9 [tm_mday] =&gt; 7 [tm_mon] =&gt; 7 [tm_year] =&gt; 117 [tm_wday] =&gt; 1 [tm_yday] =&gt; 218 [tm_isdst] =&gt; 0 )</p>
@@ -295,10 +295,10 @@ mixed microtime ([ bool $get_as_float = false ] )</p>
 <p>내장함수 microtime()는 현재의 1/1000 초 단위로 출력합니다.</p>
 
 <p>예제파일) microtime.php
-<?php
+&lt;?php
 	$mtime = microtime();
 	echo $mtime;
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 0.14970800 1497771297</p>
@@ -313,10 +313,10 @@ int gmmktime ([ int $hour = gmdate(“H”) [, int $minute = gmdate(“i”) [, 
 <p>내부함수 gmmktime()는 GMT 기준으로 타임스탬프를 생성합니다.</p>
 
 <p>예제파일) gmmktime.php
-<?php
+&lt;?php
 	// Prints: jun 18, 2017 
-	echo "jun 18, 2017 is on a " . date("l", gmmktime(0, 0, 0, 6, 18, 2017));
-?></p>
+	echo “jun 18, 2017 is on a “ . date(“l”, gmmktime(0, 0, 0, 6, 18, 2017));
+?&gt;</p>
 
 <p>화면출력)
 jun 18, 2017 is on a Sunday</p>
@@ -335,7 +335,7 @@ int mktime ([ int $hour = date(“H”) [, int $minute = date(“i”) [, int $s
 	$day = date(“d”);
 	$year = date(“Y”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$timeStamp = mktime($hour, $minute, $second, $month, $day, $year);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$timeStamp = mktime($hour, $minute, $second, $month, $day, $year);
 
 // 두번째 인자로 주어진 시간을 포맷에 맞게 출력합니다.
 echo date("Y-m-d H:i:s",$timeStamp); ?&gt;
@@ -350,15 +350,15 @@ int strtotime ( string $time [, int $now = time() ] )</p>
 <p>영어 텍스트 datetime을 Unix 타임 스탬프로 구문 분석합니다.</p>
 
 <p>예제파일) strtotime.php
-<?php
-	echo strtotime("now"), "<br>";
-	echo strtotime("10 September 2000"), "<br>";
-	echo strtotime("+1 day"), "<br>";
-	echo strtotime("+1 week"), "<br>";
-	echo strtotime("+1 week 2 days 4 hours 2 seconds"), "<br>";
-	echo strtotime("next Thursday"), "<br>";
-	echo strtotime("last Monday"), "<br>";
-?></p>
+&lt;?php
+	echo strtotime(“now”), “<br />”;
+	echo strtotime(“10 September 2000”), “<br />”;
+	echo strtotime(“+1 day”), “<br />”;
+	echo strtotime(“+1 week”), “<br />”;
+	echo strtotime(“+1 week 2 days 4 hours 2 seconds”), “<br />”;
+	echo strtotime(“next Thursday”), “<br />”;
+	echo strtotime(“last Monday”), “<br />”;
+?&gt;</p>
 
 <p>화면출력)
 1502097067
@@ -377,12 +377,12 @@ int strtotime ( string $time [, int $now = time() ] )</p>
 array date_sun_info ( int $time , float $latitude , float $longitude )</p>
 
 <p>예제파일) date_sun_info.php
-<?php
-	$sun_info = date_sun_info(strtotime("2017-08-07"), 31.7667, 35.2333);
-	foreach ($sun_info as $key => $val) {
-    	echo "$key: " . date("H:i:s", $val) . "\n";
+&lt;?php
+	$sun_info = date_sun_info(strtotime(“2017-08-07”), 31.7667, 35.2333);
+	foreach ($sun_info as $key =&gt; $val) {
+    	echo “$key: “ . date(“H:i:s”, $val) . “\n”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 sunrise: 02:59:11 sunset: 16:30:21 transit: 09:44:46 civil_twilight_begin: 02:33:08 civil_twilight_end: 16:56:24 nautical_twilight_begin: 02:01:51 nautical_twilight_end: 17:27:41 astronomical_twilight_begin: 01:29:07 astronomical_twilight_end: 18:00:25</p>
@@ -395,7 +395,7 @@ mixed date_sunrise ( int $timestamp [, int $format = SUNFUNCS_RET_STRING [, floa
 <p>예제파일) date_sunrise.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* calculate the sunrise time for Lisbon, Portugal
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* calculate the sunrise time for Lisbon, Portugal
 Latitude: 38.4 North
 Longitude: 9 West
 Zenith ~= 90
@@ -468,7 +468,7 @@ string date ( string $format [, int $timestamp = time() ] )</p>
 	echo date(“Y-m-d H:i:s”);
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 두번째 인자로 주어진 시간을 포맷에 맞게 출력합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 두번째 인자로 주어진 시간을 포맷에 맞게 출력합니다.
 echo date("Y-m-d H:i:s",mktime(0,0,0,1,1,2017)); ?&gt;
 </code></pre></div></div>
 
@@ -482,10 +482,10 @@ array date_parse_from_format ( string $format , string $date )</p>
 <p>지정된 형식에 따른 날짜정보 읽어 옵니다.</p>
 
 <p>예제파일) date_parse_from_format.php
-<?php
-	$date = "6.1.2017 13:00+01:00";
-	print_r(date_parse_from_format("j.n.Y H:iP", $date));
-?></p>
+&lt;?php
+	$date = “6.1.2017 13:00+01:00”;
+	print_r(date_parse_from_format(“j.n.Y H:iP”, $date));
+?&gt;</p>
 
 <p>화면출력)
 Array ( [year] =&gt; 2017 [month] =&gt; 1 [day] =&gt; 6 [hour] =&gt; 13 [minute] =&gt; 0 [second] =&gt; 0 [fraction] =&gt; [warning_count] =&gt; 0 [warnings] =&gt; Array ( ) [error_count] =&gt; 0 [errors] =&gt; Array ( ) [is_localtime] =&gt; 1 [zone_type] =&gt; 1 [zone] =&gt; -60 [is_dst] =&gt; )</p>
@@ -555,7 +555,7 @@ string strftime ( string $format [, int $timestamp = time() ] )</p>
 <p>예제파일) strftime.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "축약된 요일이름 = ". strftime("%a") ."&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "축약된 요일이름 = ". strftime("%a") ."&lt;br&gt;";
 echo "요일이름 = ". strftime("%A") ."&lt;br&gt;";
 echo "날짜(10진수) = ". strftime("%d") ."&lt;br&gt;";
 
@@ -662,7 +662,7 @@ array strptime ( string $date , string $format )</p>
 	$format = ‘%d/%m/%Y %H:%M:%S’;
 	$strf = strftime($format);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "$strf\n";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "$strf\n";
 
 print_r(strptime($strf, $format)); ?&gt;
 </code></pre></div></div>
@@ -683,7 +683,7 @@ bool checkdate ( int $month , int $day , int $year )</p>
 <p>예제파일) checkdate.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$year = "2017";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$year = "2017";
 $month = "06";
 $day = "33";
 
@@ -721,7 +721,7 @@ if (checkdate($day,$month,$year)){
 	const string RSS = “D, d M Y H:i:s O” ;
 	const string W3C = “Y-m-d\TH:i:sP” ;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Methods */
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Methods */
 public __construct ([ string $time = "now" [, DateTimeZone $timezone = NULL ]] )
 public DateTime add ( DateInterval $interval )
 public static DateTime createFromFormat ( string $format , string $time [, DateTimeZone $timezone ] )
@@ -757,7 +757,7 @@ public DateInterval DateTime::diff ( DateTimeInterface $datetime2 [, bool $absol
 	$interval = $datetime1-&gt;diff($datetime2);
 	echo $interval-&gt;format(‘%R%a days’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 // Procedural style
 $datetime1 = date_create('2017-08-11');
 $datetime2 = date_create('2017-08-13');
@@ -781,7 +781,7 @@ public DateTime DateTime::sub ( DateInterval $interval )</p>
 	$date-&gt;sub(new DateInterval(‘P10D’));
 	echo $date-&gt;format(‘Y-m-d’) . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Procedural style
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Procedural style
 $date = date_create('2017-08-20');
 date_sub($date, date_interval_create_from_date_string('15 days'));
 echo date_format($date, 'Y-m-d'); ?&gt;
@@ -802,7 +802,7 @@ public string DateTime::format ( string $format )</p>
 	$date = new DateTime(‘2018-07-01’);
 	echo $date-&gt;format(‘Y-m-d H:i:s’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 // Procedural style
 $date = date_create('2018-08-01');
@@ -823,7 +823,7 @@ public DateTime DateTime::setISODate ( int $year , int $week [, int $day = 1 ] )
 	// Object oriented style
 	$date = new DateTime();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setISODate(2017, 2);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setISODate(2017, 2);
 echo $date-&gt;format('Y-m-d') . "&lt;br&gt;";
 
 $date-&gt;setISODate(2017, 2, 7);
@@ -855,7 +855,7 @@ public DateTime DateTime::setTime ( int $hour , int $minute [, int $second = 0 ]
 	// Object oriented style
 	$date = new DateTime(‘2017-08-08’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTime(14, 55);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTime(14, 55);
 echo $date-&gt;format('Y-m-d H:i:s') . "&lt;br&gt;";
 
 $date-&gt;setTime(14, 55, 24);
@@ -889,7 +889,7 @@ public DateTime DateTime::modify ( string $modify )</p>
 	$date-&gt;modify(‘+1 day’);
 	echo $date-&gt;format(‘Y-m-d’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 // Procedural style
 $date = date_create('2018-12-24');
@@ -912,7 +912,7 @@ public int DateTime::getTimestamp ( void )</p>
 	$date = new DateTime();
 	echo $date-&gt;getTimestamp();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 // Procedural style
 $date = date_create();
@@ -934,7 +934,7 @@ public DateTime DateTime::setTimestamp ( int $unixtimestamp )</p>
 	$date = new DateTime();
 	echo $date-&gt;format(‘U = Y-m-d H:i:s’) . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTimestamp(1502176161);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTimestamp(1502176161);
 echo $date-&gt;format('U = Y-m-d H:i:s') . "&lt;br&gt;";
 
 // Procedural style
@@ -962,7 +962,7 @@ public DateTime DateTime::setTimezone ( DateTimeZone $timezone )</p>
 	$date = new DateTime(‘2017-08-01’, new DateTimeZone(‘Asia/Seoul’));
 	echo $date-&gt;format(‘Y-m-d H:i:sP’) . “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTimezone(new DateTimeZone('Europe/London'));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$date-&gt;setTimezone(new DateTimeZone('Europe/London'));
 echo $date-&gt;format('Y-m-d H:i:sP') . "&lt;br&gt;";
 
 // Procedural style
@@ -991,7 +991,7 @@ public DateTimeZone DateTime::getTimezone ( void )</p>
 	$tz = $date-&gt;getTimezone();
 	echo $tz-&gt;getName();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt;";
 
 // Procedural style
 $date = date_create(null, timezone_open('America/New_York'));
@@ -1014,7 +1014,7 @@ public int DateTime::getOffset ( void )</p>
 	$winter = new DateTime(‘2018-12-21’, new DateTimeZone(‘America/New_York’));
 	$summer = new DateTime(‘2017-08-8’, new DateTimeZone(‘America/New_York’));</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $winter-&gt;getOffset() . "&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $winter-&gt;getOffset() . "&lt;br&gt;";
 echo $summer-&gt;getOffset() . "&lt;br&gt;";
 
 // Procedural style
@@ -1045,7 +1045,7 @@ public static array DateTime::getLastErrors ( void )</p>
     	// 데모 용..
     	print_r(DateTime::getLastErrors());</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 실제 객체 지향적 인 방법
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 실제 객체 지향적 인 방법
 	// echo $e-&gt;getMessage();
 }
 
@@ -1073,10 +1073,10 @@ int cal_days_in_month ( int $calendar , int $month , int $year )</p>
 <p>내부함수 cal_days_in_month()는 지정한 년도와 달의 마지막 일수를 반환합니다.</p>
 
 <p>예제파일) cal_days_in_month.php
-<?php
+&lt;?php
 	$number = cal_days_in_month(CAL_GREGORIAN, 8, 2017);
-	echo "2017년 8월의 마지막 일자는  {$number} 입니다.";
-?></p>
+	echo “2017년 8월의 마지막 일자는  {$number} 입니다.”;
+?&gt;</p>
 
 <p>화면출력)
 2017년 8월의 마지막 일자는 31 입니다.</p>
@@ -1087,10 +1087,10 @@ array cal_from_jd ( int $jd , int $calendar )</p>
 <p>내부함수 cal_from_jd()는 Julian Day Count를 지정된 달력의 날짜로 변환합니다.</p>
 
 <p>예제파일) cal_from_jd.php
-<?php
+&lt;?php
 	$today = unixtojd(mktime(0, 0, 0, 8, 6, 2017));
 	print_r(cal_from_jd($today, CAL_GREGORIAN));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [date] =&gt; 8/6/2017 [month] =&gt; 8 [day] =&gt; 6 [year] =&gt; 2017 [dow] =&gt; 0 [abbrevdayname] =&gt; Sun [dayname] =&gt; Sunday [abbrevmonth] =&gt; Aug [monthname] =&gt; August )</p>
@@ -1106,10 +1106,10 @@ array cal_info ([ int $calendar = -1 ] )</p>
 	3 또는 CAL_FRENCH - French Revolutionary Calendar</p>
 
 <p>예제파일) cal_info.php
-<?php
+&lt;?php
 	$info = cal_info(0);
 	print_r($info);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( 
@@ -1127,9 +1127,9 @@ Array (
 int cal_to_jd ( int $calendar , int $month , int $day , int $year )</p>
 
 <p>예제파일) cal_to_jd.php
-<?php
+&lt;?php
 	echo cal_to_jd( CAL_GREGORIAN , 8 , 6 , 2017 );
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 2457972</p>
@@ -1140,9 +1140,9 @@ int gregoriantojd ( int $month , int $day , int $year )</p>
 <p>내부함수 gregoriantojd()는 Gregorian Calendar 기준 Julian Day 수를 반환합니다.</p>
 
 <p>예제파일) gregoriantojd.php
-<?php
+&lt;?php
 	echo gregoriantojd( 8 , 6 , 2017 );
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 2457972</p>
@@ -1156,7 +1156,7 @@ mixed jddayofweek ( int $julianday [, int $mode = CAL_DOW_DAYNO ] )</p>
 &lt;?php
 	$julianday = gregoriantojd( 8 , 6 , 2017 );</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Return the day number as an int (0=Sunday, 1=Monday, etc)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Return the day number as an int (0=Sunday, 1=Monday, etc)
 echo jddayofweek($julianday) ."&lt;br&gt;";
 
 // 1	Returns string containing the day of week (English-Gregorian)
@@ -1180,7 +1180,7 @@ string jdmonthname ( int $julianday , int $mode )</p>
 &lt;?php
 	$julianday = gregoriantojd( 8 , 6 , 2017 );</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 0
 // Gregorian - abbreviated	Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 echo jdmonthname ( $julianday , 0 ) ."&lt;br&gt;";
 
@@ -1277,10 +1277,10 @@ string jdtofrench ( int $juliandaycount )</p>
 <p>French Republican Calendar 를 Julian 일수로 변환 합니다.</p>
 
 <p>예제파일) jdtofrench.php
-<?php
+&lt;?php
 	$julianday = gregoriantojd( 8 , 6 , 2017 );
 	echo jdtofrench($julianday);
-?></p>
+?&gt;</p>
 
 <p>|내부함수|
 int frenchtojd ( int $month , int $day , int $year )</p>
@@ -1288,9 +1288,9 @@ int frenchtojd ( int $month , int $day , int $year )</p>
 <p>내부함수 frenchtojd()는 French Revolutionary Calendar 기준 Julian Day 수를 반환합니다.</p>
 
 <p>예제파일) frenchtojd.php
-<?php
+&lt;?php
 	echo frenchtojd( 8 , 6 , 2017 );
-?></p>
+?&gt;</p>
 
 <h1 id="0566-부활절">05.6.6 부활절</h1>
 
@@ -1306,7 +1306,7 @@ int easter_date ([ int $year = date(“Y”) ] )</p>
 	echo “2000 부활절 자정 = “. date(“M-d-Y”, easter_date(2000));
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "2010 부활절 자정 = ". date("M-d-Y", easter_date(2010));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "2010 부활절 자정 = ". date("M-d-Y", easter_date(2010));
 echo "&lt;br&gt;"; 
 
 echo "2017 부활절 자정 = ". date("M-d-Y", easter_date(2017)); 
@@ -1328,7 +1328,7 @@ int easter_days ([ int $year = date(“Y”) [, int $method = CAL_EASTER_DEFAULT
 	echo easter_days(1999) .”<br />”;  <br />
 	// 14, i.e. April 4</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo easter_days(1492) ."&lt;br&gt;";        
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo easter_days(1492) ."&lt;br&gt;";        
 // 32, i.e. April 22
 
 echo easter_days(1913) ."&lt;br&gt;";        
@@ -1365,7 +1365,7 @@ echo easter_days(1913) ."&lt;br&gt;";
 	const integer ALL_WITH_BC = 4095 ;
 	const integer PER_COUNTRY = 4096 ;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Methods */
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Methods */
 public __construct ( string $timezone )
 public array getLocation ( void )
 public string getName ( void )
@@ -1406,11 +1406,11 @@ public array DateTimeZone::getLocation ( void )</p>
 <p>매서드 getLocation()는 시간대의 위치 정보를 반환합니다. timezone_location_get() 함수는 객체지향 클래스 DateTimeZone::getLocation 의 별칭입니다.  국가 코드, 위도 / 경도 및 주석을 포함하여 시간대의 위치 정보를 반환합니다.</p>
 
 <p>예제파일) timezone_location_get.php
-<?php
-	$tz = new DateTimeZone("Europe/Prague");
-	print_r($tz->getLocation());
+&lt;?php
+	$tz = new DateTimeZone(“Europe/Prague”);
+	print_r($tz-&gt;getLocation());
 	print_r(timezone_location_get($tz));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [country_code] =&gt; CZ [latitude] =&gt; 50.08333 [longitude] =&gt; 14.43333 [comments] =&gt; ) Array ( [country_code] =&gt; CZ [latitude] =&gt; 50.08333 [longitude] =&gt; 14.43333 [comments] =&gt; )</p>
@@ -1426,10 +1426,10 @@ public static array DateTimeZone::listAbbreviations ( void )</p>
 <p>매서드 listAbbreviations()는 dst, offset 및 시간대 이름이 들어있는 연관 배열을 반환합니다. timezone_abbreviations_list() 함수는 객체지향 클래스 DateTimeZone::listAbbreviations 의 별칭입니다.</p>
 
 <p>예제파일) timezone_abbreviations_list.php
-<?php
+&lt;?php
 	$timezone_abbreviations = DateTimeZone::listAbbreviations();
-	print_r($timezone_abbreviations["acst"]);
-?></p>
+	print_r($timezone_abbreviations[“acst”]);
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; Array ( [dst] =&gt; 1 [offset] =&gt; -14400 [timezone_id] =&gt; America/Porto_Acre ) [1] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/Adelaide ) [2] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/Adelaide ) [3] =&gt; Array ( [dst] =&gt; 1 [offset] =&gt; -14400 [timezone_id] =&gt; America/Eirunepe ) [4] =&gt; Array ( [dst] =&gt; 1 [offset] =&gt; -14400 [timezone_id] =&gt; America/Rio_Branco ) [5] =&gt; Array ( [dst] =&gt; 1 [offset] =&gt; -14400 [timezone_id] =&gt; Brazil/Acre ) [6] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/Broken_Hill ) [7] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/Darwin ) [8] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/North ) [9] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/South ) [10] =&gt; Array ( [dst] =&gt; [offset] =&gt; 32400 [timezone_id] =&gt; Australia/Yancowinna ) [11] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Asia/Jayapura ) [12] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/Broken_Hill ) [13] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/Darwin ) [14] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/North ) [15] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/South ) [16] =&gt; Array ( [dst] =&gt; [offset] =&gt; 34200 [timezone_id] =&gt; Australia/Yancowinna ) )</p>
@@ -1440,12 +1440,12 @@ public static array DateTimeZone::listIdentifiers ([ int $what = DateTimeZone::A
 <p>매서드 listIdentifiers()는 정의 된 모든 시간대 식별자가 포함 된 숫자로 색인 된 배열을 반환합니다. timezone_identifiers_list() 함수는 객체지향 클래스 DateTimeZone::listIdentifiers 의 별칭입니다.</p>
 
 <p>예제파일) timezone_identifiers_list.php
-<?php
+&lt;?php
 	$timezone_identifiers = DateTimeZone::listIdentifiers();
-	for ($i=0; $i < 5; $i++) {
-    	echo "$timezone_identifiers[$i]<br>";
+	for ($i=0; $i &lt; 5; $i++) {
+    	echo “$timezone_identifiers[$i]<br />”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Africa/Abidjan
@@ -1462,7 +1462,7 @@ public int DateTimeZone::getOffset ( DateTime $datetime )</p>
 <p>예제파일) timezone_offset_get.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$dateTimeZoneAmsterdam= new DateTimeZone("Europe/Amsterdam");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$dateTimeZoneAmsterdam= new DateTimeZone("Europe/Amsterdam");
 $dateTimeZoneSeoul = new DateTimeZone("Asia/Seoul");
 
 $dateTimeAmsterdam = new DateTime("now", $dateTimeZoneAmsterdam);
@@ -1482,11 +1482,11 @@ public array DateTimeZone::getTransitions ([ int $timestamp_begin [, int $timest
 <p>매서드 getTransitions()는 시간대의 모든 전환을 반환합니다.  timezone_transitions_get() 함수는 객체지향 클래스 DateTimeZone::getTransitions 의 별칭입니다.</p>
 
 <p>예제파일) timezone_transitions_get.php
-<?php
-	$timezone = new DateTimeZone("Europe/London");
-	$transitions = $timezone->getTransitions();
+&lt;?php
+	$timezone = new DateTimeZone(“Europe/London”);
+	$transitions = $timezone-&gt;getTransitions();
 	print_r(array_slice($transitions, 0, 3));
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [0] =&gt; Array ( [ts] =&gt; -2147483648 [time] =&gt; 1901-12-13T20:45:52+0000 [offset] =&gt; -75 [isdst] =&gt; [abbr] =&gt; LMT ) [1] =&gt; Array ( [ts] =&gt; -2147483648 [time] =&gt; 1901-12-13T20:45:52+0000 [offset] =&gt; 0 [isdst] =&gt; [abbr] =&gt; GMT ) [2] =&gt; Array ( [ts] =&gt; -1691964000 [time] =&gt; 1916-05-21T02:00:00+0000 [offset] =&gt; 3600 [isdst] =&gt; 1 [abbr] =&gt; BST ) )</p>
@@ -1497,9 +1497,9 @@ string timezone_version_get ( void )</p>
 <p>내부함수 timezone_version_get()는 timezonedb의 버전을 가져옵니다.</p>
 
 <p>예제파일) timezone_version_get.php
-<?php
+&lt;?php
 	echo timezone_version_get();
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 2017.2</p>
@@ -1518,7 +1518,7 @@ string date_default_timezone_get ( void )</p>
 &lt;?php
 	date_default_timezone_set(‘Asia/Seoul’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (date_default_timezone_get()) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (date_default_timezone_get()) {
 	echo 'date_default_timezone_set: ' . date_default_timezone_get() . '&lt;br /&gt;';
 }
 

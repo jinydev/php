@@ -1,4 +1,4 @@
-I"�d<ol>
+I"�e<ol>
   <li>
     <h1 id="curl">CURL</h1>
   </li>
@@ -39,13 +39,13 @@ extension=php_curl.dll</p>
 <p>프로그램 실행시 cURL미설치로 발생될 수 있는 오류를 사전에 방지하기 위하여 소스상에서  확장모듈을 확인할 수 있습니다.</p>
 
 <p>예제소스) curl.php
-<?php
-	if(extension_loaded("curl")){
-		echo "cURL extension is Loaded";
+&lt;?php
+	if(extension_loaded(“curl”)){
+		echo “cURL extension is Loaded”;
 	} else {
-		echo "cURL extension is not available";
+		echo “cURL extension is not available”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 cURL extension is Loaded</p>
@@ -68,7 +68,7 @@ resource curl_init ([ string $url = NULL ] )</p>
 <p>예제) curl_basic.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init("http://www.example.com/");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init("http://www.example.com/");
 $fp = fopen("example.txt", "w");
 
 curl_setopt($ch, CURLOPT_FILE, $fp);
@@ -160,7 +160,7 @@ void curl_share_close ( resource $sh )</p>
 	$sh = curl_share_init();
 	curl_share_setopt($sh, CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch1 = curl_init("http://example.com/");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch1 = curl_init("http://example.com/");
 // 공유 핸들의 옵션을 통하여 ch1의 curl 핸들 옵션을 설정합니다.
 curl_setopt($ch1, CURLOPT_SHARE, $sh);
 curl_exec($ch1);
@@ -216,7 +216,7 @@ void curl_multi_close ( resource $mh )</p>
 <p>예제) curl_multi.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// cURL 단일 핸들을 초기화 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// cURL 단일 핸들을 초기화 합니다.
 $ch1 = curl_init();
 // 각각의 핸들에 옵션값을 설정합니다.
 $url1 = "http://www.example.com/";
@@ -283,7 +283,7 @@ string curl_multi_getcontent ( resource $ch )</p>
 <p>예제) curl_multi_getcontent.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init('http://www.example.com/');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init('http://www.example.com/');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 // curl_exec()로 실행 된 핸들에 curl_multi_getcontent()를 사용할 수 있습니다.
@@ -315,7 +315,7 @@ array curl_multi_info_read ( resource $mh [, int &amp;$msgs_in_queue = NULL ] )<
 <p>예제) curl_multi_info_read.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$urls = array(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$urls = array(
 	"http://www.exsample.com/",
     "http://www.php.net/"
 );
@@ -360,7 +360,7 @@ string curl_multi_strerror ( int $errornum )</p>
 <p>예제) curl_multi_strerror.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch1 = curl_init("http://example.com");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch1 = curl_init("http://example.com");
 $ch2 = curl_init("http://www.php.net/");
 
 $mh = curl_multi_init();
@@ -406,7 +406,7 @@ string curl_strerror ( int $errornum )</p>
 	$ch = curl_init(‘http://404.php.net/’);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (curl_exec($ch) === false)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (curl_exec($ch) === false)
 {
 	// 오류 발생시 : 오류 메시지를 읽어옵니다.
 	echo "Curl error Message : ". curl_error($ch) ."&lt;br&gt;";
@@ -439,10 +439,10 @@ array curl_version ([ int $age = CURLVERSION_NOW ] )</p>
 <p>내부함수 curl_version()는 cURL 버전 정보를 가지고 옵니다. 버전 정보를 배열값으로 반환합니다.</p>
 
 <p>예제) curl_version.php
-<?php
+&lt;?php
 	$version = curl_version();
 	print_r($version);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [version_number] =&gt; 472321 [age] =&gt; 3 [features] =&gt; 2428829 [ssl_version_number] =&gt; 0 [version] =&gt; 7.53.1 [host] =&gt; i386-pc-win32 [ssl_version] =&gt; OpenSSL/1.0.2k [libz_version] =&gt; 1.2.8 [protocols] =&gt; Array ( [0] =&gt; dict [1] =&gt; file [2] =&gt; ftp [3] =&gt; ftps [4] =&gt; gopher [5] =&gt; http [6] =&gt; https [7] =&gt; imap [8] =&gt; imaps [9] =&gt; ldap [10] =&gt; pop3 [11] =&gt; pop3s [12] =&gt; rtsp [13] =&gt; scp [14] =&gt; sftp [15] =&gt; smtp [16] =&gt; smtps [17] =&gt; telnet [18] =&gt; tftp ) )</p>
@@ -455,7 +455,7 @@ string curl_escape ( resource $ch , string $str )</p>
 <p>예제) curl_escape.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
 
 // GET 파라미터로 사용되는 문자열 값을 RFC3986 인코딩 합니다.
 $location = curl_escape($ch, 'aaa / bbb');
@@ -477,7 +477,7 @@ string curl_unescape ( resource $ch , string $str )</p>
 <p>예제) curl_unescape.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
 
 // GET 파라미터로 사용되는 문자열 값을 RFC3986 인코딩 합니다.
 $location = curl_escape($ch, 'aaa / bbb');
@@ -546,7 +546,7 @@ mixed curl_getinfo ( resource $ch [, int $opt ] )</p>
 <p>예제) curl_getinfo.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init('http://www.example.com/');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init('http://www.example.com/');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 if ($response = curl_exec($ch))	{
@@ -588,7 +588,7 @@ resource curl_copy_handle ( resource $ch )</p>
 <p>예제) curl_copy_handle.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, 'http://www.example.com/');
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -608,7 +608,7 @@ curl_close($ch); ?&gt;
 <p>public function _curl_post($url, $postfild){
 	$ch = curl_init();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl_setopt($ch, CURLOPT_URL,$url);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$postfild);
 
@@ -627,7 +627,7 @@ return $server_output; }
 
 <p>function curl_upload($mode, $target_url, $path, $file){</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$file_name_with_full_path = realpath($file);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$file_name_with_full_path = realpath($file);
 
 $post = array('mode'=&gt;$mode, 'path'=&gt;$path, 'file_contents'=&gt;'@'.$file_name_with_full_path);
  

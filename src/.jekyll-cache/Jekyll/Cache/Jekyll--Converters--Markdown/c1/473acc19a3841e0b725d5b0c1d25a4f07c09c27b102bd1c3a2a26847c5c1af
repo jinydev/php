@@ -1,4 +1,4 @@
-I"�"<ol>
+I"Q#<ol>
   <li>
     <h1 id="함수">함수</h1>
   </li>
@@ -20,13 +20,13 @@ bool function_exists ( string $function_name )</p>
 <p>내부함수 function_exists()는 스크립트 내에 주어진 이름의 함수의 정의 되어 있는지를 확인합니다.</p>
 
 <p>예제) function_exists.php
-<?php
-	if (function_exists('str_replace')) {
-    	echo "함수가 정의 되어 있습니다.<br />\n";
+&lt;?php
+	if (function_exists(‘str_replace’)) {
+    	echo “함수가 정의 되어 있습니다.<br />\n”;
 	} else {
-    	echo "없는 함수 있습니다.<br />\n";
+    	echo “없는 함수 있습니다.<br />\n”;
 	}
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 함수가 정의 되어 있습니다.</p>
@@ -37,10 +37,10 @@ array get_defined_functions ([ bool $exclude_disabled = FALSE ] )</p>
 <p>내부함수 get_defined_functions()는 정의 된 모든 함수의 목록을 배열로 반환합니다.</p>
 
 <p>예제) get_defined_functions.php
-<?php
+&lt;?php
 	$arr = get_defined_functions();
 	print_r($arr);
-?></p>
+?&gt;</p>
 
 <h1 id="162-함수-인자">16.2 함수 인자</h1>
 
@@ -61,7 +61,7 @@ int func_num_args ( void )</p>
     	echo “Number of arguments: $numargs\n”;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo(1, 2, 3);    ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo(1, 2, 3);    ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -85,7 +85,7 @@ mixed func_get_arg ( int $arg_num )</p>
     	}
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo(1, 2, 3); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo(1, 2, 3); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -107,7 +107,7 @@ array func_get_args ( void )</p>
         	echo “Second argument is: “ . func_get_arg(1) . “<br />”;
     	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$arg_list = func_get_args();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$arg_list = func_get_args();
 	for ($i = 0; $i &lt; $numargs; $i++) {
     	echo "Argument $i is: " . $arg_list[$i] . "&lt;br&gt;";
 	}
@@ -137,7 +137,7 @@ mixed call_user_func_array ( callable $callback , array $param_arr )</p>
     echo <strong>FUNCTION</strong>, “ got $arg and $arg2 <br />”;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 함수명
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 함수명
 // 매개변수 매열
 call_user_func_array("foobar", array("one", "two"));
 
@@ -172,7 +172,7 @@ mixed call_user_func ( callable $callback [, mixed $parameter [, mixed $… ]] )
     	echo “You wanted a $type haircut <br />”;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>call_user_func('barber', "mushroom");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>call_user_func('barber', "mushroom");
 call_user_func('barber', "shave"); ?&gt;
 </code></pre></div></div>
 
@@ -190,7 +190,7 @@ mixed forward_static_call ( callable $function [, mixed $parameter [, mixed $…
 <p>예제) forward_static_call .php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A
 {
     const NAME = 'A';
     public static function test() {
@@ -233,7 +233,7 @@ mixed forward_static_call_array ( callable $function , array $parameters )</p>
 <p>예제) forward_static_call_array.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A
 {
     const NAME = 'A';
     public static function test() {
@@ -283,7 +283,7 @@ bool register_tick_function ( callable $function [, mixed $arg [, mixed $… ]] 
 &lt;?php
 	declare(ticks=1);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>register_tick_function('my_function', true);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>register_tick_function('my_function', true);
 
 $object = new my_class();
 register_tick_function(array(&amp;$object, 'my_method'), true); ?&gt;

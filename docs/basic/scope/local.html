@@ -142,19 +142,19 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//글로벌변수 </span>
 
-	<span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">function</span> <span class="n">test</span><span class="p">()</span> <span class="p">{</span>
 		<span class="c1">// 함수 내에서는 함수 외부에 있는 글로벌변수를 읽을 수 없습니다.</span>
 		<span class="k">echo</span> <span class="s2">"함수 안에서는 외부 변수를 사용할 수 없습니다. x = </span><span class="nv">$x</span><span class="s2">&lt;/p&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="nx">test</span><span class="p">();</span>
+	<span class="nf">test</span><span class="p">();</span>
 
 	<span class="k">echo</span> <span class="s2">"외부에서는 글로벌변수를 사용할 수 있습니다. x = </span><span class="nv">$x</span><span class="s2">&lt;/p&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span> 
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>함수 안에서는 외부 변수를 사용할 수 없습니다. x =
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>함수 안에서는 외부 변수를 사용할 수 없습니다. x =
 외부에서는 글로벌변수를 사용할 수 있습니다. x = 5
 </code></pre></div></div>
 
@@ -169,22 +169,22 @@
 	<span class="nv">$b</span> <span class="o">=</span> <span class="s2">"lee"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"글로벌 변수를 출력합니다. &lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$a</span> <span class="o">.</span> <span class="s2">" "</span> <span class="o">.</span> <span class="nv">$b</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$a</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$b</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	
 	<span class="c1">// 함수 정의</span>
-	<span class="k">function</span> <span class="nf">usersName</span><span class="p">(){</span>
+	<span class="k">function</span> <span class="n">usersName</span><span class="p">(){</span>
 		<span class="c1">// 로컬변수 선언</span>
 		<span class="nv">$title</span> <span class="o">=</span> <span class="s2">"jinyPHP"</span><span class="p">;</span>
 
 		<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"a ="</span><span class="o">.</span> <span class="nv">$a</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
+			<span class="k">echo</span> <span class="s2">"a ="</span><span class="mf">.</span> <span class="nv">$a</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 			<span class="k">echo</span> <span class="s2">"a 값이 없습니다. &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
 
 		<span class="k">if</span> <span class="p">(</span><span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"b ="</span><span class="o">.</span><span class="nv">$b</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+			<span class="k">echo</span> <span class="s2">"b ="</span><span class="mf">.</span><span class="nv">$b</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>			
 			<span class="k">echo</span> <span class="s2">"b 값이 없습니다. &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
@@ -193,13 +193,13 @@
 
 	<span class="c1">// 함수를 호출</span>
 	<span class="k">echo</span> <span class="s2">"함수를 호출합니다.&lt;br&gt;"</span><span class="p">;</span>
-	<span class="nx">usersName</span><span class="p">();</span>
+	<span class="nf">usersName</span><span class="p">();</span>
 
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"함수 안에 title 변수를 확인합니다.&lt;br&gt;"</span><span class="p">;</span>
 	<span class="k">if</span> <span class="p">(</span><span class="nv">$title</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="s2">"title ="</span><span class="o">.</span> <span class="nv">$title</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
+		<span class="k">echo</span> <span class="s2">"title ="</span><span class="mf">.</span> <span class="nv">$title</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 		<span class="k">echo</span> <span class="s2">"title 값이 없습니다. &lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
@@ -208,7 +208,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>글로벌 변수를 출력합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>글로벌 변수를 출력합니다.
 jiny lee
 함수를 호출합니다.
 a 값이 없습니다.
@@ -232,7 +232,7 @@ title 값이 없습니다.
 <p>PHP는 외부 글로벌변수를 함수 내에서 예외적으로 접근 사용할 수 있는 global 키워드를 제공합니다. 함수 내에서 아래와 같이 선언을 하면,</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>global $변수명;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>global $변수명;
 </code></pre></div></div>
 
 <p>함수 내에서 외부의 글로벌변수를 접근하여 사용할 수 있습니다.</p>
@@ -244,22 +244,22 @@ title 값이 없습니다.
 	<span class="nv">$b</span> <span class="o">=</span> <span class="s2">"lee"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"글로벌 변수를 출력합니다. &lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$a</span> <span class="o">.</span> <span class="s2">" "</span> <span class="o">.</span> <span class="nv">$b</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$a</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$b</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	
 	<span class="c1">// 함수 정의</span>
-	<span class="k">function</span> <span class="nf">usersName</span><span class="p">(){</span>
+	<span class="k">function</span> <span class="n">usersName</span><span class="p">(){</span>
 		<span class="c1">// 글로벌 키워드를 통하여 외부 변수를 함수 내부에서 사용 가능하도록 만듭니다.</span>
 		<span class="k">global</span> <span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">;</span>
 
 		<span class="k">if</span> <span class="p">(</span><span class="nv">$a</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"a ="</span><span class="o">.</span> <span class="nv">$a</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
+			<span class="k">echo</span> <span class="s2">"a ="</span><span class="mf">.</span> <span class="nv">$a</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>			
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 			<span class="k">echo</span> <span class="s2">"a 값이 없습니다. &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
 
 		<span class="k">If</span> <span class="p">(</span><span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"b ="</span><span class="o">.</span><span class="nv">$b</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+			<span class="k">echo</span> <span class="s2">"b ="</span><span class="mf">.</span><span class="nv">$b</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>			
 			<span class="k">echo</span> <span class="s2">"b 값이 없습니다. &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
@@ -268,13 +268,13 @@ title 값이 없습니다.
 
 	<span class="c1">// 함수를 호출</span>
 	<span class="k">echo</span> <span class="s2">"함수를 호출합니다.&lt;br&gt;"</span><span class="p">;</span>
-	<span class="nx">usersName</span><span class="p">();</span>
+	<span class="nf">usersName</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>글로벌변수를 출력합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>글로벌변수를 출력합니다.
 jiny lee
 함수를 호출합니다.
 a =jiny

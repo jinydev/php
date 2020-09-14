@@ -111,7 +111,7 @@
 <p>PHP언어에서는 기존에 미리 선언된 상수의 목록을 확인할 수 있는 내부 함수를 제공하고 있습니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">get_defined_constants</span> <span class="p">([</span> <span class="kt">bool</span> <span class="nv">$categorize</span> <span class="o">=</span> <span class="kc">false</span> <span class="p">]</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">get_defined_constants</span> <span class="p">([</span> <span class="n">bool</span> <span class="nv">$categorize</span> <span class="o">=</span> <span class="kc">false</span> <span class="p">]</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>위 함수의 반환값 형태는 배열인 것을 확인할 수 있습니다. get_define_constants() 함수는 PHP 내부 상수와 사용자가 개별적으로 선언한 모든 상수의 목록을 배열 형태로 반환받을 수 있습니다.</p>
@@ -201,60 +201,60 @@ PHP가 스크립트 실행에는 문제없으나 오류가 있음을 표시합�
 <p>예제 파일 const-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
 	<span class="c1">// 파일의 전체 경로와 파일명, 절대 경로를 표시합니다.</span>
-	<span class="k">echo</span> <span class="k">__FILE__</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="k">__FILE__</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 
 	<span class="c1">// 상수를 정의한 위치가 5 라인입니다. </span>
-	<span class="k">echo</span> <span class="k">__LINE__</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="k">__LINE__</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 
 	<span class="c1">// 서버에 설치된 PHP버전을 표시합니다.</span>
-	<span class="k">echo</span> <span class="kc">PHP_VERSION</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="kc">PHP_VERSION</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 
 	<span class="c1">// PHP가 실행 중인 OS의 이름을 표시합니다.</span>
-	<span class="k">echo</span> <span class="kc">PHP_OS</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="kc">PHP_OS</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="kc">TRUE</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="kc">TRUE</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="kc">FALSE</span> <span class="o">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>  
+	<span class="k">echo</span> <span class="kc">FALSE</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>  
 
 	<span class="c1">// 함수명 상수 정의 </span>
-	<span class="k">function</span> <span class="nf">functionname</span><span class="p">(){</span> 
-    		<span class="k">echo</span> <span class="k">__FUNCTION__</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> 
+	<span class="k">function</span> <span class="n">functionname</span><span class="p">(){</span> 
+    		<span class="k">echo</span> <span class="k">__FUNCTION__</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> 
 	<span class="p">}</span> 
 	
-	<span class="nx">functionname</span><span class="p">();</span>
+	<span class="nf">functionname</span><span class="p">();</span>
 
 	<span class="c1">// 클래스명 상수 정의 </span>
 	<span class="kd">class</span> <span class="nc">classtest</span>
 	<span class="p">{</span> 
     		<span class="k">var</span> <span class="nv">$test</span> <span class="o">=</span> <span class="k">__CLASS__</span><span class="p">;</span> 
-    		<span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    		<span class="k">function</span> <span class="n">test</span><span class="p">()</span>
     		<span class="p">{</span> 
-           			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span> 
+           			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">;</span> 
     		<span class="p">}</span> 
 	<span class="p">}</span> 
 
-	<span class="nv">$test</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">classtest</span><span class="p">;</span> 
-	<span class="k">echo</span> <span class="nv">$test</span><span class="o">-&gt;</span><span class="na">test</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$test</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">classtest</span><span class="p">;</span> 
+	<span class="k">echo</span> <span class="nv">$test</span><span class="o">-&gt;</span><span class="n">test</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 메서드명 상수 정의 </span>
 	<span class="kd">class</span> <span class="nc">classtest2</span>
 	<span class="p">{</span> 
     		<span class="k">var</span> <span class="nv">$test</span> <span class="o">=</span> <span class="k">__METHOD__</span><span class="p">;</span> 
-    		<span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    		<span class="k">function</span> <span class="n">test</span><span class="p">()</span>
     		<span class="p">{</span> 
-          			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span> 
+          			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">;</span> 
     		<span class="p">}</span> 
 	<span class="p">}</span> 
 
-	<span class="nv">$test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">classtest2</span><span class="p">;</span> 
-	<span class="k">echo</span> <span class="nv">$test2</span><span class="o">-&gt;</span><span class="na">test</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">classtest2</span><span class="p">;</span> 
+	<span class="k">echo</span> <span class="nv">$test2</span><span class="o">-&gt;</span><span class="n">test</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\const-03.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\const-03.php
 6
 7.1.4
 WINNT

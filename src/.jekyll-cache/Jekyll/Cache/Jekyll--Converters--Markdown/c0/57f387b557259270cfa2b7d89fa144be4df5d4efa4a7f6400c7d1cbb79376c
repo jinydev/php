@@ -1,4 +1,4 @@
-I"�<h1 id="php-정보-확인--i">PHP 정보 확인 -i</h1>
+I"�<h1 id="php-정보-확인--i">PHP 정보 확인 -i</h1>
 <hr />
 <p>웹에서는 phpinfo() 함수를 통하여 php의 환경설정 정보를 확인할 수 있습니다.</p>
 
@@ -6,7 +6,7 @@
 
 <h2 id="phpinfo">phpinfo()</h2>
 <hr />
-<p><code class="highlighter-rouge">phpinfo()</code> 함수는 웹서버를 통하여 php의 환경 정보를 브라우저로 확인할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">phpinfo()</code> 함수는 웹서버를 통하여 php의 환경 정보를 브라우저로 확인할 수 있습니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="nb">phpinfo</span><span class="p">();</span>
@@ -16,10 +16,10 @@
 
 <h2 id="-i-옵션">-i 옵션</h2>
 <hr />
-<p><code class="highlighter-rouge">-i</code> 옵션은 phpinfo() 함수와 동일하게 환경 설정 정보를 확인할 수 있는 콜솔 옵션 입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">-i</code> 옵션은 phpinfo() 함수와 동일하게 환경 설정 정보를 확인할 수 있는 콜솔 옵션 입니다.</p>
 
 <p>|명령|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php -i
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#] php -i
 C:\php-7.1.4-Win32-VC14-x86&gt;php -i
 phpinfo()
 PHP Version =&gt; 7.1.4

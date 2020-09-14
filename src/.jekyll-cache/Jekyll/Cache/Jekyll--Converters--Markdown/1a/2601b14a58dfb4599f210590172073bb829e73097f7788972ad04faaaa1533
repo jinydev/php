@@ -1,4 +1,4 @@
-I"�'<h1 id="null-값">NULL 값</h1>
+I"�#<h1 id="null-값">NULL 값</h1>
 <hr />
 <p>NULL은 프로그램에서 특수한 유형의 데이터입니다.</p>
 
@@ -10,32 +10,32 @@
 변수를 NULL로 설정하고 싶다면 특수 키워드 null을 대입하면 됩니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$변수명 = null;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$변수명 = null;
 </code></pre></div></div>
 
 <p>예제 파일 null-01.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="c1">// $x변수에는 Hello world! 문자열이 저장되어 있습니다.</span>
-	<span class="nv">$x</span> <span class="o">=</span> <span class="s2">"Hello world!"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	// $x변수에는 Hello world! 문자열이 저장되어 있습니다.
+	$x = "Hello world!";
+	echo $x;
 
-	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"====="</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	echo "&lt;br&gt;";
+	echo "=====";
+	echo "&lt;br&gt;";
 
-	<span class="c1">// $x 변수에 null값을 선언합니다.</span>
-	<span class="nv">$x</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-	<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
+	// $x 변수에 null값을 선언합니다.
+	$x = null;
+	var_dump($x);
+?&gt;
 </code></pre></div></div>
 
 <p>PHP에서는 변수를 생성하고 데이터 값을 할당하지 않은 경우에는 기본적으로 NULL 로 설정됩니다.</p>
 
 <p>예제 파일 null-02.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="nv">$x</span><span class="p">;</span>
-    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    $x;
+    var_dump($x);
+?&gt;
 </code></pre></div></div>
 <p><br /></p>
 
@@ -44,7 +44,7 @@
 <p>PHP는 생성한 변수가 NULL인지를 확인할 수 있는 is_null()이라는 내부 함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_null</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_null</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>is_null() 함수는 변수의 NULL 여부를 확인하여 논리값으로 결과를 반환합니다.</p>
@@ -65,7 +65,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
 NULL 
 </code></pre></div></div>
 
@@ -105,7 +105,7 @@ NULL
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
 username = nobody
 </code></pre></div></div>
 
@@ -118,8 +118,8 @@ username = nobody
 
 <p>예제 파일 null-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">_coalescing</span><span class="p">(</span><span class="nv">$var</span><span class="p">,</span> <span class="nv">$default</span><span class="p">){</span>
-		<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$var</span><span class="p">))</span> <span class="p">{</span>
+	<span class="k">function</span> <span class="n">_coalescing</span><span class="p">(</span><span class="nv">$var</span><span class="p">,</span> <span class="nv">$default</span><span class="p">){</span>
+		<span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$var</span><span class="p">))</span> <span class="p">{</span>
 			<span class="k">if</span> <span class="p">(</span><span class="nv">$var</span> <span class="o">==</span> <span class="kc">NULL</span><span class="p">)</span> <span class="p">{</span>
 				<span class="k">return</span> <span class="nv">$var</span><span class="p">;</span>
 			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -139,28 +139,28 @@ username = nobody
 
     <span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="nv">$username</span> <span class="o">=</span> <span class="nx">_coalescing</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="s2">"nobody"</span><span class="p">);</span>
+	<span class="nv">$username</span> <span class="o">=</span> <span class="nf">_coalescing</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span><span class="s2">"nobody"</span><span class="p">);</span>
 	<span class="k">echo</span> <span class="s2">"username = </span><span class="nv">$username</span><span class="s2">"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = NULL입니다.
 username = nobody
 </code></pre></div></div>
 <p>출력 결과를 동일하게 확인할 수 있습니다.</p>
 
 <p>?? 연산자는 삼항연산자(?)를 통해 응용할 수도 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
 </code></pre></div></div>
 
 <p>또한 ?? 연산자도 삼항연산자의 중복하여 연결하는 것처럼 ?? 연산자도 연결하여 사용할 수도 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="c1">// ?? 연산자는 연결을 하여 사용을 할 수 도 있습니다.</span>
-    <span class="nv">$username</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">??</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'nobody'</span><span class="p">;</span>
-<span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    // ?? 연산자는 연결을 하여 사용을 할 수 도 있습니다.
+    $username = $_GET['user'] ?? $_POST['user'] ?? 'nobody';
+?&gt;
 </code></pre></div></div>
 
 <p><br /></p>

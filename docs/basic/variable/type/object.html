@@ -115,23 +115,23 @@
 <p>예제 파일 obj-01.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="kd">class</span> <span class="nc">Car</span> <span class="p">{</span>
-        <span class="k">function</span> <span class="nf">Car</span><span class="p">()</span> 
+        <span class="k">function</span> <span class="n">Car</span><span class="p">()</span> 
 <span class="p">{</span>
-          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">model</span> <span class="o">=</span> <span class="s2">"Grandure"</span><span class="p">;</span>
+          <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">model</span> <span class="o">=</span> <span class="s2">"Grandure"</span><span class="p">;</span>
         <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// 객체 인스턴스를 생성하는 변수</span>
-<span class="nv">$hyndai</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">();</span>
+<span class="nv">$hyndai</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="p">();</span>
 
 <span class="c1">// 객체의 프로퍼티를 출력합니다.</span>
-<span class="k">echo</span> <span class="nv">$hyndai</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$hyndai</span><span class="o">-&gt;</span><span class="n">model</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grandure
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grandure
 </code></pre></div></div>
 
 <p>오브젝트 변수타입은 향후 객체지향 코딩을 할때 가장 많이 사용하는 변수 타입입니다.</p>
@@ -143,7 +143,7 @@
 <p>PHP는 생성한 변수가 객체변수를 확인할 수 있는 is_object()이라는 내부함수를 제공합니다.</p>
 
 <p>|관련함수|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">is_object</span> <span class="p">(</span> <span class="nx">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">is_object</span> <span class="p">(</span> <span class="n">mixed</span> <span class="nv">$var</span> <span class="p">)</span>
 </code></pre></div></div>
 
 <p>매개변수 인자값으로 변수를 전달하면 변수의 오브젝트 타입 여부를 논리값 형태로 반환합니다.</p>
@@ -160,7 +160,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>객체입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>객체입니다.
 </code></pre></div></div>
 
 <p><br /></p>

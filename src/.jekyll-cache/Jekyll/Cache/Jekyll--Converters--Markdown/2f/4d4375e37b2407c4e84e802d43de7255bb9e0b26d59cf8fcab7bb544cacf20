@@ -1,8 +1,8 @@
-I"n<h1 id="php-모듈-출력--m">PHP 모듈 출력 -m</h1>
+I"�<h1 id="php-모듈-출력--m">PHP 모듈 출력 -m</h1>
 <hr />
 <p>-m 옵션은 PHP의 내장된 PHP모듈과 Zend 모듈을 출력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86&gt;php -m
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86&gt;php -m
 [PHP Modules]
 bcmath
 calendar

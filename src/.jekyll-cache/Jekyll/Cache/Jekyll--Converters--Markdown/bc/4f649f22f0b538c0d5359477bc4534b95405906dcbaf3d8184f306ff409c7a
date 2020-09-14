@@ -1,4 +1,4 @@
-I"�<h1 id="컴파일러란">컴파일러란?</h1>
+I"<h1 id="컴파일러란">컴파일러란?</h1>
 <hr />
 <p>우리가 작성한 코드는 컴퓨터에서 실행할 수 있는 코드로 변환되어 동작하게 됩니다. 이러한 변환 작업을 컴파일한다고 표현합니다.</p>
 
@@ -6,23 +6,23 @@
 
 <h2 id="기계어">기계어</h2>
 <hr />
-<p><code class="highlighter-rouge">컴파일</code> 작업을 한 번하게 되면 소스 코드 이외에 컴퓨터 실행 코드로 된 <code class="highlighter-rouge">기계어</code> 파일이 추가로 생성됩니다. <br />
+<p><code class="language-plaintext highlighter-rouge">컴파일</code> 작업을 한 번하게 되면 소스 코드 이외에 컴퓨터 실행 코드로 된 <code class="language-plaintext highlighter-rouge">기계어</code> 파일이 추가로 생성됩니다. <br />
 실제적인 프로그램 동작은 이 기계어 파일이 됩니다.</p>
 
 <p><br /></p>
 
 <h2 id="재컴파일">재컴파일</h2>
 <hr />
-<p>만일 소스를 <code class="highlighter-rouge">수정</code>하게 되면 다시 컴파일 과정을 거쳐서 실행되는 기계어 파일을 <code class="highlighter-rouge">다시 생성</code>해야만 합니다.</p>
+<p>만일 소스를 <code class="language-plaintext highlighter-rouge">수정</code>하게 되면 다시 컴파일 과정을 거쳐서 실행되는 기계어 파일을 <code class="language-plaintext highlighter-rouge">다시 생성</code>해야만 합니다.</p>
 
 <p><br /></p>
 
 <h2 id="컴파일의-장점">컴파일의 장점</h2>
 <hr />
-<p>컴파일된 기계어 파일은 한 번의 언어 변환을 했기 때문에 <code class="highlighter-rouge">빠른 실행</code>이 가능합니다.<br />
+<p>컴파일된 기계어 파일은 한 번의 언어 변환을 했기 때문에 <code class="language-plaintext highlighter-rouge">빠른 실행</code>이 가능합니다.<br />
 하지만 매번 소스 변경할 때마다 컴파일해야 하는 불편함이 있습니다.</p>
 
-<p>대표적인 컴파일 언어로는 <code class="highlighter-rouge">C언어</code>가 있습니다.</p>
+<p>대표적인 컴파일 언어로는 <code class="language-plaintext highlighter-rouge">C언어</code>가 있습니다.</p>
 
 <h2 id="quiz">Quiz</h2>
 <hr />

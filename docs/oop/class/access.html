@@ -121,12 +121,12 @@
 <p>프로퍼티에 값을 저장하거나 읽어오기 위해서는 객체 접근이 필요합니다. 접근 기호를 통해 객체변수의 프로퍼티에 접근할 수 있습니다. 앞에서 설명한 것처럼 아래와 같이 작성하면 됩니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$객체변수-&gt;프로퍼티;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$객체변수-&gt;프로퍼티;
 </code></pre></div></div>
 
 <p>하지만 프로퍼티 이름 앞에 $ 기호는 사용하지 않습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$jiny-&gt;username = "hojin lee";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$jiny-&gt;username = "hojin lee";
 
 $name = $jiny-&gt;username;
 </code></pre></div></div>
@@ -151,13 +151,13 @@ $name = $jiny-&gt;username;
 		<span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
 	
 	<span class="c1">// 프로퍼티에 값을 저장</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
 
 	<span class="c1">// 프로퍼티의 값을 읽어옵니다.</span>
-	<span class="k">echo</span> <span class="s2">"나이는 "</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">age</span><span class="o">.</span><span class="s2">" 입니다.&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"나이는 "</span><span class="mf">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">age</span><span class="mf">.</span><span class="s2">" 입니다.&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 간접 프로퍼티 접근</span>
 	<span class="c1">// aaa 변수에 프로퍼티명을 설정 후에 간접적으로 접근함</span>
@@ -165,13 +165,13 @@ $name = $jiny-&gt;username;
 	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nv">$aaa</span> <span class="o">=</span> <span class="s2">"jiny"</span><span class="p">;</span>
 
 	<span class="c1">// 프로퍼티의 값을 읽어옵니다.</span>
-	<span class="k">echo</span> <span class="s2">"내 이름은 "</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="nv">$aaa</span><span class="o">.</span><span class="s2">" 입니다.&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"내 이름은 "</span><span class="mf">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="nv">$aaa</span><span class="mf">.</span><span class="s2">" 입니다.&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나이는 18입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나이는 18입니다.
 내 이름은 jiny입니다.
 </code></pre></div></div>
 
@@ -187,7 +187,7 @@ $name = $jiny-&gt;username;
 <p>클래스의 함수인 메서드 접근은 프로퍼티 접근 방식과 유사합니다. 객체변수 뒤에 접근 연산자 -&gt;를 통해 메서드를 호출할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">-&gt;</span><span class="na">메서드</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">-&gt;</span><span class="nf">메서드</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>예제 파일 class-05.php</p>
@@ -196,30 +196,30 @@ $name = $jiny-&gt;username;
 	<span class="p">{</span>
 		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">setMessage</span><span class="p">(</span><span class="nv">$msg</span><span class="p">){</span>
-			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="nv">$msg</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">setMessage</span><span class="p">(</span><span class="nv">$msg</span><span class="p">){</span>
+			<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">message</span> <span class="o">=</span> <span class="nv">$msg</span><span class="p">;</span>
 		<span class="p">}</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">showMessage</span><span class="p">(){</span>
-			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">showMessage</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">;</span>
 		<span class="p">}</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
 
 	<span class="c1">// 메서드를 호출합니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">);</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">setMessage</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">);</span>
 
 	<span class="c1">// 메서드 호출 및 반환값</span>
-	<span class="nv">$msg</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">();</span>
-	<span class="k">echo</span> <span class="nv">$msg</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nv">$msg</span> <span class="o">=</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">showMessage</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="nv">$msg</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world!
 </code></pre></div></div>
 
 <p>위의 예처럼 메서드를 단독으로 호출할 수 있습니다. 

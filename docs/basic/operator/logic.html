@@ -103,7 +103,7 @@
                 <section>
                     <h1 id="논리-연산자">논리 연산자</h1>
 <hr />
-<p>컴퓨터의 디지털 논리 회로 <code class="highlighter-rouge">and</code>와 <code class="highlighter-rouge">or</code>의 처리 로직을 프로그램에도 적용할 수 있습니다.</p>
+<p>컴퓨터의 디지털 논리 회로 <code class="language-plaintext highlighter-rouge">and</code>와 <code class="language-plaintext highlighter-rouge">or</code>의 처리 로직을 프로그램에도 적용할 수 있습니다.</p>
 
 <p>기존 모든 연산자는 단일 연산 후 결과를 참(true)과 거짓(false)로 판별할 수 있었습니다.<br />
 하지만 두 가지의 조건을 같이 판별을 하고자 할 때 논리 연산자를 이용하여 두 가지의 조건을 결합할 수 있습니다.</p>
@@ -150,7 +150,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x &amp;&amp; y = true
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x &amp;&amp; y = true
 x &amp;&amp; y &amp;&amp; z = false 
 </code></pre></div></div>
 
@@ -166,14 +166,14 @@ x &amp;&amp; y &amp;&amp; z = false
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$result</span> <span class="o">=</span> <span class="kc">true</span> <span class="o">+</span> <span class="kc">false</span> <span class="o">+</span> <span class="kc">true</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>즉 <code class="highlighter-rouge">1 + 0 + 1</code>은 <code class="highlighter-rouge">0</code>보다 크기 때문에 <code class="highlighter-rouge">1</code>과 같은 참(true)이 됩니다.</p>
+<p>즉 <code class="language-plaintext highlighter-rouge">1 + 0 + 1</code>은 <code class="language-plaintext highlighter-rouge">0</code>보다 크기 때문에 <code class="language-plaintext highlighter-rouge">1</code>과 같은 참(true)이 됩니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$result</span> <span class="o">=</span> <span class="kc">false</span> <span class="o">*</span> <span class="kc">false</span> <span class="o">*</span> <span class="kc">false</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>즉 <code class="highlighter-rouge">0 + 0 + 0</code>은 <code class="highlighter-rouge">0</code>이기 때문에 거짓(false)이 됩니다.</p>
+<p>즉 <code class="language-plaintext highlighter-rouge">0 + 0 + 0</code>은 <code class="language-plaintext highlighter-rouge">0</code>이기 때문에 거짓(false)이 됩니다.</p>
 
-<p>프로그램 언어에서는 <code class="highlighter-rouge">OR</code> 연산을 <code class="highlighter-rouge">||</code>로 표시합니다.</p>
+<p>프로그램 언어에서는 <code class="language-plaintext highlighter-rouge">OR</code> 연산을 <code class="language-plaintext highlighter-rouge">||</code>로 표시합니다.</p>
 
 <p>예제 파일 logic-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -196,7 +196,7 @@ x &amp;&amp; y &amp;&amp; z = false
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x || y = false
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x || y = false
 x || y || z = true 
 </code></pre></div></div>
 
@@ -229,7 +229,7 @@ x || y || z = true
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x xor y = false 두 개의 논리가 같습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x xor y = false 두 개의 논리가 같습니다.
 x xor z = true 두 개의 논리가 틀립니다.
 </code></pre></div></div>
 
@@ -239,7 +239,7 @@ x xor z = true 두 개의 논리가 틀립니다.
 <hr />
 <p>NOT은 논리 값을 반대의 값으로 변경합니다. 즉 참(true)은 거짓(false)으로, 거짓(false)은 참(true)으로 변경됩니다.</p>
 
-<p>NOT은 변수명 앞에 느낌표 <code class="highlighter-rouge">!</code>로 사용합니다.</p>
+<p>NOT은 변수명 앞에 느낌표 <code class="language-plaintext highlighter-rouge">!</code>로 사용합니다.</p>
 
 <p>예제 파일 logic-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -263,7 +263,7 @@ x xor z = true 두 개의 논리가 틀립니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x는 참입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x는 참입니다.
 x는 거짓입니다.
 </code></pre></div></div>
 

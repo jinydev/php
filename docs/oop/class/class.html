@@ -138,7 +138,7 @@
 방대한 기능의 프로그램 동작 다수의 사람들이 팀원을 위하여 서로 이해하고 내용을 공유하는 것은 매우 어렵습니다. 
 또한 순서도를 통하여 쉽게 표현하기도 어려울 것입니다. 
 이러한 문제점들은 소프트웨어를 고도화하고 유지 보수하는 데 매우 어렵습니다. 
-구조적 프로그램은 이러한 문제점을 보완하고자 1968년 에츠러르 다익스트라가 자신의 논문 <code class="highlighter-rouge">&lt;GOTO문의 해로움&gt;(GO To statement considered Harmful)</code>에서 프로그램을 함수(프로시저) 단위로 나눠서 프로시저 간에 연관과 호출을 통해 구조적 프로그램 방법을 제안한 것이 계기가 되었습니다.</p>
+구조적 프로그램은 이러한 문제점을 보완하고자 1968년 에츠러르 다익스트라가 자신의 논문 <code class="language-plaintext highlighter-rouge">&lt;GOTO문의 해로움&gt;(GO To statement considered Harmful)</code>에서 프로그램을 함수(프로시저) 단위로 나눠서 프로시저 간에 연관과 호출을 통해 구조적 프로그램 방법을 제안한 것이 계기가 되었습니다.</p>
 
 <p>하지만 기존의 함수 방식의 개발 방법은 데이터 처리 등을 구조화하여 처리하는 반면에, 실제적으로 데이터 자체까지는 구조적으로 해결을 하지 못했습니다. 또한 외부 변수들을 많이 쓰는 바람에 사용 가능한 변수 이름을 다 써버리는 등 프로그램의 크기가 커질수록 개발할 수 있는 환경은 포화되어 갔습니다.</p>
 
@@ -148,10 +148,10 @@
 
 <h2 id="캡슐화">캡슐화</h2>
 <hr />
-<p>캡슐화는 객체지향 방법의 기본 개념입니다. 캡슐화의 목적은 <code class="highlighter-rouge">코드를 수없이 재사용</code>하는 것 입니다.<br />
+<p>캡슐화는 객체지향 방법의 기본 개념입니다. 캡슐화의 목적은 <code class="language-plaintext highlighter-rouge">코드를 수없이 재사용</code>하는 것 입니다.<br />
 갭슐화는 프로그램 코드를 재사용하는 데 있어서 기능적인 부분과 데이터적인 부분을 한곳에 묶어서 관리할 필요성이 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">객체</span> <span class="o">=</span> <span class="nx">변수</span> <span class="o">+</span> <span class="nx">함수</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">객체</span> <span class="o">=</span> <span class="n">변수</span> <span class="o">+</span> <span class="n">함수</span>
 </code></pre></div></div>
 
 <p>객체와 함수의 차이점은 데이터를 같이 관리하는지 여부입니다.<br />
@@ -168,12 +168,12 @@
 
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">jiny</span> <span class="p">{</span>
-	<span class="nx">클래스</span> <span class="nx">내용</span> <span class="o">...</span>
+	<span class="n">클래스</span> <span class="n">내용</span> <span class="mf">...</span>
 
 	<span class="k">public</span> <span class="nv">$username</span><span class="p">;</span>
 
-	<span class="k">public</span> <span class="k">function</span> <span class="nf">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
-		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">username</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+	<span class="k">public</span> <span class="k">function</span> <span class="n">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -219,9 +219,9 @@
 <hr />
 <p>클래스의 정의는 class 키워드를 통해 클래스를 선언할 수 있습니다. 클래스의 선언 방법은 class 키워드 다음에 클래스명을 작성을 합니다. 클래스명은 PSR-1 표준 코딩 스타일 방식을 따르면 클래스명은 낙타 표기법 (StudlyCaps) 스타일로 작성을 권장합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">예</span><span class="p">)</span> 
-<span class="nx">StudyCaffe</span>
-<span class="nx">JinyPhp</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">예</span><span class="p">)</span> 
+<span class="nc">StudyCaffe</span>
+<span class="nc">JinyPhp</span>
 </code></pre></div></div>
 
 <p>위의 예처럼 낙타 표기법(StudlyCaps) 방식은 첫 문자는 대문자로 표기하는 스타일입니다.</p>
@@ -235,9 +235,9 @@
     <span class="k">public</span> <span class="nv">$var</span> <span class="o">=</span> <span class="err">“</span><span class="k">default</span><span class="err">”'</span><span class="p">;</span>
 
     <span class="c1">// 메서드 함수 선언</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">함수명</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">함수명</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nx">메서드</span> <span class="nx">함수</span> <span class="nx">내용들</span><span class="o">...</span>
+        <span class="n">메서드</span> <span class="n">함수</span> <span class="n">내용들</span><span class="mf">...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -262,9 +262,9 @@
     <span class="k">const</span> <span class="no">DATE_APPROVED</span> <span class="o">=</span> <span class="s1">'2017-05-17'</span><span class="p">;</span>
 
     <span class="c1">// 메서드 함수 선언</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">함수명</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">함수명</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nx">메서드</span> <span class="nx">함수</span> <span class="nx">내용들</span><span class="o">...</span>
+        <span class="n">메서드</span> <span class="n">함수</span> <span class="n">내용들</span><span class="mf">...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -291,15 +291,15 @@
 <p>|문법|</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ClassName</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">메서드_함수명1</span><span class="p">(</span><span class="nx">매개변수</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">메서드_함수명1</span><span class="p">(</span><span class="kt">매개변수</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// method body</span>
     <span class="p">}</span>
 
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">메서드_함수명2</span><span class="p">(</span>
-    	<span class="nx">매개변수1</span><span class="p">,</span>
-    	<span class="nx">매개변수2</span><span class="p">,</span>
-    	<span class="nx">매개변수3</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="n">메서드_함수명2</span><span class="p">(</span>
+    	<span class="kt">매개변수1</span><span class="p">,</span>
+    	<span class="kt">매개변수2</span><span class="p">,</span>
+    	<span class="kt">매개변수3</span>
     <span class="p">)</span> <span class="p">{</span>
         <span class="c1">// method body</span>
     <span class="p">}</span>
@@ -310,7 +310,7 @@
 
 <p>메서드 이름은 PSR 권장 표준 코딩 스타일을 따라서 낙타 표기법(camelCase) 스타일로 작성을 권고합니다. 또한 메서드 이름의 첫 시작 문자는 소문자 사용 할 것을 권장합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) camelCase (), loveStudy()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예) camelCase (), loveStudy()
 </code></pre></div></div>
 
 <p>객체 내에서 메서드를 선언할 때는 PSR 권장 코딩 스타일 방식으로 중괄호 본체 안에서 들여쓰기 하여 작성할 것을 권고합니다.</p>
@@ -339,16 +339,16 @@
 <p>클래스 안에 상수를 쓸 때는 PSR-2 코딩 스타일 방식으로 들여쓰기를 하여 작성합니다.<br />
 PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(_)을 통해 구분하여 상수명을 작성할 수도 있습니다.</p>
 
-<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(<code class="highlighter-rouge">::</code>) 기호로 사용할 수 있습니다.</p>
+<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(<code class="language-plaintext highlighter-rouge">::</code>) 기호로 사용할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">::</span><span class="na">상수명</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">::</span><span class="n">상수명</span>
 </code></pre></div></div>
 
 <p>클래스 내부적으로 사용을 할 때는 다음과 같은 형태로 사용 가능합니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">상수명</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">::</span><span class="n">상수명</span>
 </code></pre></div></div>
 
 <p>예제 파일 class-01.php</p>
@@ -357,24 +357,24 @@ PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상�
 		<span class="k">const</span> <span class="no">ENGLISH</span> <span class="o">=</span> <span class="s2">"en"</span><span class="p">;</span>
 		<span class="k">const</span> <span class="no">KOREAN</span> <span class="o">=</span> <span class="s2">"ko"</span><span class="p">;</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getEnglish</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getEnglish</span><span class="p">()</span>
 		<span class="p">{</span>
-			<span class="k">return</span> <span class="kt">self</span><span class="o">::</span><span class="na">ENGLISH</span><span class="p">;</span>
+			<span class="k">return</span> <span class="k">self</span><span class="o">::</span><span class="no">ENGLISH</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">language</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">language</span><span class="p">();</span>
 
 	<span class="k">echo</span> <span class="s2">"클래스 상수 출력&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"KOREAN = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">::</span><span class="na">KOREAN</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"KOREAN = "</span> <span class="mf">.</span> <span class="nv">$obj</span><span class="o">::</span><span class="no">KOREAN</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"메서드를 이용한 상수 출력&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"ENGLISH = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getEnglish</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"ENGLISH = "</span> <span class="mf">.</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getEnglish</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 상수 출력
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 상수 출력
 KOREAN = ko
 메서드를 이용한 상수 출력
 ENGLISH = en
@@ -401,7 +401,7 @@ ENGLISH = en
 <p>정의한 클래스를 객체 인스턴스 형태로 생성하는 방법은 매우 간단합니다. 단지 정의한 클래스명 앞에 new 키워드를 통해 변수에 대입하면 됩니다.</p>
 
 <p>문법)</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$인스턴스</span> <span class="nx">변수</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">클래스명</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$인스턴스</span> <span class="n">변수</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">클래스명</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>new 키워드로 대입한 변수는 객체 데이터 타입으로 생성됩니다.</p>
@@ -411,29 +411,29 @@ ENGLISH = en
 	<span class="kd">class</span> <span class="nc">JinyClass</span>
 	<span class="p">{</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nv">$msg</span><span class="p">)</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">test</span><span class="p">(</span><span class="nv">$msg</span><span class="p">)</span>
 		<span class="p">{</span>
 			<span class="k">return</span> <span class="nv">$msg</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">();</span>
+	<span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">();</span>
 	<span class="k">echo</span> <span class="s2">"JinyClass 인스턴스&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$JinyClass</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="s2">"JinyClass"</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$JinyClass</span><span class="o">-&gt;</span><span class="nf">test</span><span class="p">(</span><span class="s2">"JinyClass"</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
-	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
+	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"클래스 인스턴스1&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj1</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj1</span><span class="o">-&gt;</span><span class="nf">test</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"클래스 인스턴스2&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="nf">test</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JinyClass 인스턴스
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JinyClass 인스턴스
 JinyClass
 클래스 인스턴스1
 1
@@ -443,7 +443,7 @@ JinyClass
 
 <p>위의 예제는 클래스 객체를 생성하는 예제입니다. 예제 소스를 살펴보면 아래와 같이 클래스를 인스턴스화하여 객체를 생성할 때 어떤 예는 변수명과 클래스명이 같은 경우를 종종 볼 수 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">();</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$JinyClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>인스턴스 객체변수로 클래스명과 같은 이름을 사용할 수도 있습니다. 
@@ -455,8 +455,8 @@ JinyClass
 
 <p>선언된 클래스는 new 키워드를 통해 객체를 생성하면 객체는 클래스의 선언된 타입과 같습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
-<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$obj1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
+<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JinyClass</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>위의 예처럼 한 개의 클래스를 통해 동일한 객체 내용을 가지고 있는 데이터 타입 변수 두 개를 생성할 수 있습니다. 
@@ -475,35 +475,35 @@ $obj1과 $obj2는 서로 다른 객체변수입니다. 하지만 동일한 클�
 <p>하지만 지금 사용 중인 객체를 복제하여 사용하려고 하면 clone 키워드를 사용해야 합니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj2 = clone $obj;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj2 = clone $obj;
 </code></pre></div></div>
 
 <p>clone 키워드는 현재의 객체의 상태를 포함하여 객체를 복사합니다.</p>
 
 <p>예제 파일 class-03.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="kd">class</span> <span class="nc">JinyClass</span>
-	<span class="p">{</span>
-		<span class="k">public</span> <span class="nv">$message</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	class JinyClass
+	{
+		public $message;
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">showMessage</span><span class="p">(){</span>
-			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">;</span>
-		<span class="p">}</span>
+		public function showMessage(){
+			return $this-&gt;message;
+		}
 
-	<span class="p">}</span>
+	}
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JinyClass</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">message</span> <span class="o">=</span> <span class="s2">"testing clone"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	$obj = new JinyClass;
+	$obj-&gt;message = "testing clone";
+	echo $obj-&gt;showMessage() . "&lt;br&gt;";
 
-	<span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj2</span><span class="o">-&gt;</span><span class="na">showMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	$obj2 = clone $obj;
+	echo $obj2-&gt;showMessage() . "&lt;br&gt;";
 
-<span class="cp">?&gt;</span>
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testing clone
 testing clone
 </code></pre></div></div>
 
@@ -560,7 +560,7 @@ $객체변수-&gt;프로퍼티;</p>
 		public $name;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new JinyClass;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new JinyClass;
 
 // 프로퍼티에 값을 저장
 $obj-&gt;age = 18;
@@ -599,7 +599,7 @@ $객체변수-&gt;메서드();</p>
 	{
 		public $message;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function setMessage($msg){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function setMessage($msg){
 		$this-&gt;message = $msg;
 	}
 
@@ -639,7 +639,7 @@ hello world!</p>
 	{
 		public $message;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
 		// 내부 메서드를 호출합니다.
 		echo $this-&gt;getMessage();
 	}
@@ -698,7 +698,7 @@ echo $obj-&gt;show() . "&lt;br&gt;"; ?&gt;
 		private $user_age;
 		private $user_sex;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 이름을 설정합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 이름을 설정합니다.
 	public function setUserName($name)
 	{
 		$this-&gt;user_name = $name;
@@ -807,7 +807,7 @@ static 키워드는 프로퍼티를 정적 타입으로 선언한다는 의미�
 	{
 		public static $aaa = 10;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show(){
 		echo "show = ". self::$aaa;
 	}
 }
@@ -841,7 +841,7 @@ show = 10</p>
 	{
 		public static $my_static = ‘jiny’;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function staticValue()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function staticValue()
 	{
 		return self::$my_static;
 	}
@@ -900,7 +900,7 @@ self::메서드();</p>
         public function log(string $msg);
     }</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Application
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Application
 {
     private $logger;
 
@@ -971,7 +971,7 @@ class 클래스명
 		// 부모의 초기값을 실행합니다.
 		parent::__construct();</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 개별 초기값을 설정합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	// 개별 초기값을 설정합니다.
 } }
 </code></pre></div></div>
 
@@ -987,7 +987,7 @@ class 클래스명
 		}
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class SubClass extends BaseClass
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class SubClass extends BaseClass
 {
 	function __construct($a1,$a2,$a3)
 	{
@@ -1048,7 +1048,7 @@ class 클래스명
 			echo “BaseClass 초기화<br />”;
 		}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function show()
 	{
 		echo "hello world! &lt;br&gt;";
 	}
@@ -1085,7 +1085,7 @@ BaseClass 소멸</p>
 		}
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 인스턴스 생성
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 인스턴스 생성
 $obj = new BaseClass();
 $obj-&gt;show("a1","a2","a3"); ?&gt;
 </code></pre></div></div>
@@ -1106,7 +1106,7 @@ __toString() 매직 매서드는 클래스가 문자열로 변환하여 처리�
 	{
     		public $foo;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		public function __construct($foo)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		public function __construct($foo)
 		{
     		$this-&gt;foo = $foo;
 		}
@@ -1140,7 +1140,7 @@ Hello</p>
     		}
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new dataInt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$obj = new dataInt;
 
 $obj(5);
 
@@ -1157,7 +1157,7 @@ int(5) bool(true)</p>
 <p>예제파일) class-17.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class MyClass
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class MyClass
 {
     public $instance;
 
@@ -1186,7 +1186,7 @@ clone object</p>
 	class MyClass
 	{</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function __set($name, $value) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	public function __set($name, $value) {
 		echo "Setting '$name' to '$value' &lt;br&gt;";
 	}
 

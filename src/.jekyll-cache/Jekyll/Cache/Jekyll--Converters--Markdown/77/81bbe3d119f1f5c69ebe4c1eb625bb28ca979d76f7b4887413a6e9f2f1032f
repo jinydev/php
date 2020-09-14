@@ -1,4 +1,4 @@
-I"K<h1 id="json-파일">JSON 파일</h1>
+I"�<h1 id="json-파일">JSON 파일</h1>
 <hr />
 <p>컴포저의 패키지들은 JSON형태의 데이터 구조 파일로 되어 있습니다.</p>
 
@@ -13,18 +13,18 @@
 <h3 id="0811-name">08.1.1 Name</h3>
 <hr />
 <p>스페이스를 포함하지 않습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"name": "infoh/composer",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"name": "infoh/composer",
 </code></pre></div></div>
 <h3 id="0812-description">08.1.2 Description</h3>
 <hr />
 <p>설명문구를 추가할 수 있습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"description":"jiny composer website study",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"description":"jiny composer website study",
 </code></pre></div></div>
 
 <h3 id="0813-authors">08.1.3 authors</h3>
 <hr />
 <p>저자부분은 배열객체 형태의 값으로 가지고 있습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"authors": [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"authors": [
         {
             "name": "hojinlee",
             "email": "infohojin@gmail.com"
@@ -45,7 +45,7 @@
 <hr />
 <p>패키지 배포와 관련된 홈페이지의 주소를 같이 작성할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"homepage": "https://hojin.io",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"homepage": "https://hojin.io",
 </code></pre></div></div>
 
 <h3 id="0815-require">08.1.5 require</h3>
@@ -54,7 +54,7 @@
 
 <p>다음은 illuminate/support 패키지의 require부분입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"require": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"require": {
         "php": "^7.1.3",
         "ext-mbstring": "*",
         "doctrine/inflector": "~1.1",
@@ -82,7 +82,7 @@
 <hr />
 <p>오토로드 필드를 추가할 수 있습니다. 오토로드 필드는 몇 개의 키를 같이 작성하여 사용을 합니다. 약간의 키값이 있습니다.
 예를 들어</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload":{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload":{
         "psr-4":{
 
         },
@@ -104,14 +104,14 @@
 
 <p>App\function.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="k">function</span> <span class="nf">bindString</span><span class="p">(</span><span class="nv">$str1</span><span class="p">,</span> <span class="nv">$str2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$str1</span> <span class="o">.</span> <span class="nv">$str2</span><span class="p">;</span>
+    <span class="k">function</span> <span class="n">bindString</span><span class="p">(</span><span class="nv">$str1</span><span class="p">,</span> <span class="nv">$str2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$str1</span> <span class="mf">.</span> <span class="nv">$str2</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>생성한 파일의 정보를 composer.json 의 오토로드 필드 항목에 추가합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"files": [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"files": [
             "app/function.php"
         ]
 </code></pre></div></div>
@@ -119,16 +119,16 @@
 <p>Dumpautoload를 실행하여 컴포저를 갱신합니다.</p>
 
 <p>func.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
-<span class="k">require</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
+require "vendor/autoload.php";
 
-<span class="nv">$strings</span> <span class="o">=</span> <span class="nx">bindString</span><span class="p">(</span><span class="s2">"hello "</span><span class="p">,</span> <span class="s2">"world"</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$strings</span><span class="p">;</span>
+$strings = bindString("hello ", "world");
+echo $strings;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world
 </code></pre></div></div>
 
 <h3 id="0823-classmap">08.2.3 ClassMap</h3>
@@ -139,18 +139,18 @@
 
 <p>하지만 클래스맵은 재귀적으로 클래스 디렉토리를</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"classmap": [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"classmap": [
             "app/classes"
         ]
 </code></pre></div></div>
 <p>와 같이 추가하고 dumpautoload를 실행합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">require</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+require "vendor/autoload.php";
 
-<span class="nv">$class1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Class1</span><span class="p">();</span>
-<span class="nv">$class2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Class2</span><span class="p">();</span>
-<span class="nv">$class3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Class3</span><span class="p">();</span>
+$class1 = new Class1();
+$class2 = new Class2();
+$class3 = new Class3();
 </code></pre></div></div>
 
 <p>클래스맵은 /vendor/composer/autoload_classmap.php 파일을 생성하여 관리하게 됩니다.</p>

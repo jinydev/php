@@ -1,4 +1,4 @@
-I"�<h1 id="클래스-상수">클래스 상수</h1>
+I"3<h1 id="클래스-상수">클래스 상수</h1>
 <hr />
 <p>객체 클래스만의 상수를 선언할 수 있습니다. 객체 클래스 내에 상수를 선언하는 것은 프로그램 소스 전체에서 사용이 가능한 공용 상수가 아닙니다. 이 상수는 객체 클래스 안에서만 사용할 수 있는 상수 코드로 독립적인 효과가 있습니다.</p>
 
@@ -11,22 +11,22 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>객체 클래스 본문 중괄호 <code class="highlighter-rouge">{ }</code> 안에 <code class="highlighter-rouge">const</code>를 사용하여 상수를 선언하면 됩니다.<br />
+<p>객체 클래스 본문 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code> 안에 <code class="language-plaintext highlighter-rouge">const</code>를 사용하여 상수를 선언하면 됩니다.<br />
 상수를 선언하는 문법과 방식은 기존 PHP 상수 설정과 같지만 클래스 본문 안에 작성한다는 것이 차이점입니다.</p>
 
 <p>클래스 안에 상수를 쓸 때는 PSR-2 코딩 스타일 방식으로 들여쓰기를 하여 작성합니다.<br />
-PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(<code class="highlighter-rouge">_</code>)을 통해 구분하여 상수명을 작성할 수도 있습니다.</p>
+PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(<code class="language-plaintext highlighter-rouge">_</code>)을 통해 구분하여 상수명을 작성할 수도 있습니다.</p>
 
-<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(<code class="highlighter-rouge">::</code>) 기호로 사용할 수 있습니다.</p>
+<p>클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(<code class="language-plaintext highlighter-rouge">::</code>) 기호로 사용할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">::</span><span class="na">상수명</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$객체변수</span><span class="o">::</span><span class="n">상수명</span>
 </code></pre></div></div>
 
 <p>클래스 내부적으로 사용을 할 때는 다음과 같은 형태로 사용 가능합니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">self</span><span class="o">::</span><span class="na">상수명</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">::</span><span class="n">상수명</span>
 </code></pre></div></div>
 
 <p>예제 파일 class-01.php</p>
@@ -35,24 +35,24 @@ PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상�
 		<span class="k">const</span> <span class="no">ENGLISH</span> <span class="o">=</span> <span class="s2">"en"</span><span class="p">;</span>
 		<span class="k">const</span> <span class="no">KOREAN</span> <span class="o">=</span> <span class="s2">"ko"</span><span class="p">;</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getEnglish</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getEnglish</span><span class="p">()</span>
 		<span class="p">{</span>
-			<span class="k">return</span> <span class="kt">self</span><span class="o">::</span><span class="na">ENGLISH</span><span class="p">;</span>
+			<span class="k">return</span> <span class="k">self</span><span class="o">::</span><span class="no">ENGLISH</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">language</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">language</span><span class="p">();</span>
 
 	<span class="k">echo</span> <span class="s2">"클래스 상수 출력&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"KOREAN = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">::</span><span class="na">KOREAN</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"KOREAN = "</span> <span class="mf">.</span> <span class="nv">$obj</span><span class="o">::</span><span class="no">KOREAN</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="k">echo</span> <span class="s2">"메서드를 이용한 상수 출력&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"ENGLISH = "</span> <span class="o">.</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getEnglish</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"ENGLISH = "</span> <span class="mf">.</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getEnglish</span><span class="p">()</span> <span class="mf">.</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 상수 출력
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스 상수 출력
 KOREAN = ko
 메서드를 이용한 상수 출력
 ENGLISH = en

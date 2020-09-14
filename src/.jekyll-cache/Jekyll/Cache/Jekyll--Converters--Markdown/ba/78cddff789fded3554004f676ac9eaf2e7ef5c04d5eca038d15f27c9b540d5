@@ -1,19 +1,19 @@
-I"�G<h1 id="비교-연산자">비교 연산자</h1>
+I"�J<h1 id="비교-연산자">비교 연산자</h1>
 <hr />
-<p>비교란 2개의 값의 크기를 판별하여 상태값을 <code class="highlighter-rouge">true</code>/<code class="highlighter-rouge">false</code> 논리값으로 판단할 수 있는 연산자입니다.</p>
+<p>비교란 2개의 값의 크기를 판별하여 상태값을 <code class="language-plaintext highlighter-rouge">true</code>/<code class="language-plaintext highlighter-rouge">false</code> 논리값으로 판단할 수 있는 연산자입니다.</p>
 
 <p><br /></p>
 
 <h2 id="동일-비교-연산자">동일 비교 연산자</h2>
 <hr />
 <p>동일 비교란 서로의 값이 같은지를 판별하는 것입니다.<br />
-우리가 알고 있는 같다는 의미의 <code class="highlighter-rouge">=</code> 기호는 프로그램 언어에서 대입 연산자로 이미 사용을 하고 있습니다.<br />
-따라서 프로그램 언어에서는 서로 같은지 판단하는 기호로 <code class="highlighter-rouge">=</code>를 두 번 표기한 <code class="highlighter-rouge">==</code>로 사용합니다.</p>
+우리가 알고 있는 같다는 의미의 <code class="language-plaintext highlighter-rouge">=</code> 기호는 프로그램 언어에서 대입 연산자로 이미 사용을 하고 있습니다.<br />
+따라서 프로그램 언어에서는 서로 같은지 판단하는 기호로 <code class="language-plaintext highlighter-rouge">=</code>를 두 번 표기한 <code class="language-plaintext highlighter-rouge">==</code>로 사용합니다.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$x</span> <span class="o">==</span> <span class="nv">$y</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">==</code> 기호를 중심으로 좌우의 값이 같은 경우 참(true)을 반환하고, 같지 않은 겨우 거짓(false)을 나타냅니다.</p>
+<p><code class="language-plaintext highlighter-rouge">==</code> 기호를 중심으로 좌우의 값이 같은 경우 참(true)을 반환하고, 같지 않은 겨우 거짓(false)을 나타냅니다.</p>
 
 <p>예제 파일 op-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -30,13 +30,13 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = y 는 같은 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = y 는 같은 값입니다.
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">==</code> 기호는 프로그램의 조건문에서 가장 많이 사용하는 기호입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">==</code> 기호는 프로그램의 조건문에서 가장 많이 사용하는 기호입니다.</p>
 
 <blockquote>
-  <p>Note: 다음과 같이 실수로 <code class="highlighter-rouge">if($a=3)</code> 이라 할때 <code class="highlighter-rouge">$a</code>와 <code class="highlighter-rouge">3</code>을 비교하지 않고, <code class="highlighter-rouge">$a</code>에 <code class="highlighter-rouge">3</code>을 대입하게 됩니다.<br />
+  <p>Note: 다음과 같이 실수로 <code class="language-plaintext highlighter-rouge">if($a=3)</code> 이라 할때 <code class="language-plaintext highlighter-rouge">$a</code>와 <code class="language-plaintext highlighter-rouge">3</code>을 비교하지 않고, <code class="language-plaintext highlighter-rouge">$a</code>에 <code class="language-plaintext highlighter-rouge">3</code>을 대입하게 됩니다.<br />
 그리고 대입한 값이 0보다 큰 값이기 대문에 참 조건이 됩니다.</p>
 </blockquote>
 
@@ -44,10 +44,10 @@
 
 <h2 id="타입값-비교">타입값 비교</h2>
 <hr />
-<p>고전적인 프로그램 언어에서는 서로의 값을 비교하는 연산자 <code class="highlighter-rouge">==</code>만 사용이 가능했습니다.<br />
-하지만 PHP는 확장된 비교 연산자 <code class="highlighter-rouge">===</code>를 지원합니다.</p>
+<p>고전적인 프로그램 언어에서는 서로의 값을 비교하는 연산자 <code class="language-plaintext highlighter-rouge">==</code>만 사용이 가능했습니다.<br />
+하지만 PHP는 확장된 비교 연산자 <code class="language-plaintext highlighter-rouge">===</code>를 지원합니다.</p>
 
-<p><code class="highlighter-rouge">=</code> 기호를 세 번 연결한 <code class="highlighter-rouge">===</code> 기호는 변수의 값과 더불어 형 타입까지 비교하는 연산자입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">=</code> 기호를 세 번 연결한 <code class="language-plaintext highlighter-rouge">===</code> 기호는 변수의 값과 더불어 형 타입까지 비교하는 연산자입니다.</p>
 
 <p>예제 파일 op-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -64,22 +64,22 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x === y는 서로 틀립니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x === y는 서로 틀립니다.
 </code></pre></div></div>
 
-<p>위의 예제 <code class="highlighter-rouge">$x</code> 는 <code class="highlighter-rouge">123</code> 값을 가지고 있는 정수형 타입입니다.<br />
-그리고 <code class="highlighter-rouge">$y</code>는 <code class="highlighter-rouge">123.0</code>으로 실수의 값을 가지고 있습니다.<br />
+<p>위의 예제 <code class="language-plaintext highlighter-rouge">$x</code> 는 <code class="language-plaintext highlighter-rouge">123</code> 값을 가지고 있는 정수형 타입입니다.<br />
+그리고 <code class="language-plaintext highlighter-rouge">$y</code>는 <code class="language-plaintext highlighter-rouge">123.0</code>으로 실수의 값을 가지고 있습니다.<br />
 수학적으로 값은 같을 수 있겠지만 타입으로는 정수와 실수로 다릅니다.</p>
 
-<p><code class="highlighter-rouge">==</code> 기호로는 정수든 실수든 값의 크기가 같기 때문에 참(false)을 출력하지만, <code class="highlighter-rouge">===</code> 기호로는 변수 타입까지 비교하기 때문에 거짓(false)을 반환합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">==</code> 기호로는 정수든 실수든 값의 크기가 같기 때문에 참(false)을 출력하지만, <code class="language-plaintext highlighter-rouge">===</code> 기호로는 변수 타입까지 비교하기 때문에 거짓(false)을 반환합니다.</p>
 
 <p><br /></p>
 
 <h2 id="같지-않은-">같지 않은 !</h2>
 <hr />
-<p>프로그램 언어에서는 느낌표(<code class="highlighter-rouge">!</code>)는 부정을 나타냅니다. 논리 기호 <code class="highlighter-rouge">not</code> 을 뜻합니다.</p>
+<p>프로그램 언어에서는 느낌표(<code class="language-plaintext highlighter-rouge">!</code>)는 부정을 나타냅니다. 논리 기호 <code class="language-plaintext highlighter-rouge">not</code> 을 뜻합니다.</p>
 
-<p>앞에서 배운 <code class="highlighter-rouge">==</code> 기호는 두 개의 값이 동일한지를 비교하는 연산자이지만 <code class="highlighter-rouge">!</code>를 앞에 붙이면 <code class="highlighter-rouge">같지 않은</code> 조건을 판별할 수 있습니다.</p>
+<p>앞에서 배운 <code class="language-plaintext highlighter-rouge">==</code> 기호는 두 개의 값이 동일한지를 비교하는 연산자이지만 <code class="language-plaintext highlighter-rouge">!</code>를 앞에 붙이면 <code class="language-plaintext highlighter-rouge">같지 않은</code> 조건을 판별할 수 있습니다.</p>
 
 <p>예제 파일 op-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -96,10 +96,10 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x(hello) !== y(abcd)는 같은 값이 아닙니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x(hello) !== y(abcd)는 같은 값이 아닙니다.
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">!==</code> 연산자 이외에 <code class="highlighter-rouge">&lt;&gt;</code> 기호를 사용할 수도 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">!==</code> 연산자 이외에 <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> 기호를 사용할 수도 있습니다.</p>
 
 <p>예제 파일 op-06.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -124,7 +124,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x !== y 는 같은 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x !== y 는 같은 값입니다.
 x &lt;&gt; y 는 같은 값입니다.
 </code></pre></div></div>
 
@@ -136,7 +136,7 @@ x &lt;&gt; y 는 같은 값입니다.
 <hr />
 <p>크기 비교 연산자는 우측의 값을 기준으로 판단합니다.</p>
 
-<p><code class="highlighter-rouge">&gt;</code> 기호는 우측 값보다 좌측 값이 클 때를 비교하는 연산자입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">&gt;</code> 기호는 우측 값보다 좌측 값이 클 때를 비교하는 연산자입니다.</p>
 
 <p>예제 파일 op-07.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -160,7 +160,7 @@ x &lt;&gt; y 는 같은 값입니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 120보다 큰 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 120보다 큰 값입니다.
 123 크지 않습니다.
 </code></pre></div></div>
 
@@ -172,7 +172,7 @@ x &lt;&gt; y 는 같은 값입니다.
 <h2 id="-작다">&lt; 작다</h2>
 <hr />
 <p>크기 비교 연산자는 우측의 값을 기준으로 판단합니다.<br />
-<code class="highlighter-rouge">&lt;</code> 기호는 우측의 값보다 좌측의 값이 작을 때를 비교하는 연산자입니다.</p>
+<code class="language-plaintext highlighter-rouge">&lt;</code> 기호는 우측의 값보다 좌측의 값이 작을 때를 비교하는 연산자입니다.</p>
 
 <p>예제 파일 op-08.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -197,7 +197,7 @@ x &lt;&gt; y 는 같은 값입니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 150보다 작은 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 150보다 작은 값입니다.
 123 작지 않습니다.
 </code></pre></div></div>
 
@@ -208,9 +208,9 @@ x &lt;&gt; y 는 같은 값입니다.
 <h2 id="-크거나-같다">&gt;= 크거나 같다</h2>
 <hr />
 <p>크기 비교 연산자는 우측의 값을 기준으로 판단합니다.<br />
-<code class="highlighter-rouge">&gt;</code> 기호는 우측의 값보다 좌측의 값이 클 때를 비교하는 연산자입니다.</p>
+<code class="language-plaintext highlighter-rouge">&gt;</code> 기호는 우측의 값보다 좌측의 값이 클 때를 비교하는 연산자입니다.</p>
 
-<p>크거나 같다는 표현은 같은 값을 포함하기 때문에 <code class="highlighter-rouge">==</code> 같은 값과 <code class="highlighter-rouge">&gt;</code> 큰 값을 확인하는 두 가지 조건을 모두 포함합니다.</p>
+<p>크거나 같다는 표현은 같은 값을 포함하기 때문에 <code class="language-plaintext highlighter-rouge">==</code> 같은 값과 <code class="language-plaintext highlighter-rouge">&gt;</code> 큰 값을 확인하는 두 가지 조건을 모두 포함합니다.</p>
 
 <p>예제 파일 op-09.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -234,7 +234,7 @@ x &lt;&gt; y 는 같은 값입니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 120보다 큰 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 120보다 큰 값입니다.
 123는 123보다 큰 값입니다.
 </code></pre></div></div>
 
@@ -243,9 +243,9 @@ x &lt;&gt; y 는 같은 값입니다.
 <h2 id="-작거나-같다">&lt;= 작거나 같다</h2>
 <hr />
 <p>크기 비교 연산자는 우측의 값을 기준으로 판단합니다.<br />
-<code class="highlighter-rouge">&lt;</code> 기호는 우측의 값보다 좌측의 값이 작을 때를 비교하는 연산자입니다.</p>
+<code class="language-plaintext highlighter-rouge">&lt;</code> 기호는 우측의 값보다 좌측의 값이 작을 때를 비교하는 연산자입니다.</p>
 
-<p>작거나 같다는 표현은 같은 값을 포함하기 때문에 <code class="highlighter-rouge">==</code> 같은 값과 <code class="highlighter-rouge">&lt;</code> 큰 값을 확인하는 두 가지 조건을 모두 포함합니다.</p>
+<p>작거나 같다는 표현은 같은 값을 포함하기 때문에 <code class="language-plaintext highlighter-rouge">==</code> 같은 값과 <code class="language-plaintext highlighter-rouge">&lt;</code> 큰 값을 확인하는 두 가지 조건을 모두 포함합니다.</p>
 
 <p>예제 파일 op-10.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -269,7 +269,7 @@ x &lt;&gt; y 는 같은 값입니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 150보다 작은 값입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123는 150보다 작은 값입니다.
 123는 123보다 작은 값입니다.
 </code></pre></div></div>
 

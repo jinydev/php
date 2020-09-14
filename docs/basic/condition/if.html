@@ -116,7 +116,7 @@
 즉, 조건이 참(true)일 경우에 뒤에 있는 실행 코드를 실행합니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">작성</span> <span class="nx">문법</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">조건</span> <span class="p">)</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">작성</span> <span class="n">문법</span> <span class="k">if</span> <span class="p">(</span> <span class="n">조건</span> <span class="p">)</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>if라는 키워드는 C 언어 스타일의 조건 제어문으로 이미 많은 프로그램 언어에서 유사하게 사용하고 있습니다. 
@@ -131,7 +131,7 @@ PHP 언어에서도 쉬운 언어 학습을 위해 동일한 형태의 키워드
 	<span class="nv">$country</span> <span class="o">=</span> <span class="s2">"Korea"</span><span class="p">;</span>
 
 	<span class="c1">// 문자열을 비교합니다.</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nv">$country</span> <span class="o">==</span> <span class="s2">"Korea"</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$country</span> <span class="o">.</span> <span class="s2">"에 오신 것을"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$country</span> <span class="o">==</span> <span class="s2">"Korea"</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$country</span> <span class="mf">.</span> <span class="s2">"에 오신 것을"</span><span class="p">;</span>
 	
 	<span class="k">echo</span> <span class="s2">"환영합니다."</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
@@ -148,7 +148,7 @@ if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다.
 <p>만약 값이 틀리면 다음과 같이 출력됩니다.</p>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>환영합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>환영합니다.
 </code></pre></div></div>
 
 <p>예제 파일 if-01-1.php</p>
@@ -156,15 +156,15 @@ if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다.
 	<span class="nv">$age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
 
 	<span class="c1">// 숫자를 비교합니다.</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="o">.</span> <span class="s2">"는 성인입니다."</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="mf">.</span> <span class="s2">"는 성인입니다."</span><span class="p">;</span>
 	
 	<span class="c1">// 숫자를 비교합니다.</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="o">.</span> <span class="s2">"는 미성년입니다."</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span>  <span class="k">echo</span> <span class="nv">$age</span> <span class="mf">.</span> <span class="s2">"는 미성년입니다."</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18는 성인입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18는 성인입니다.
 </code></pre></div></div>
 
 <p>단일 실행은 조건이 간단한 작업을 처리할 때 매우 유용합니다. 
@@ -182,11 +182,11 @@ if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다.
 한 개 이상의 다수의 실행 코드를 처리하기 위해서는 중괄호 { } 기호로 실행할 코드를 감싸주면 됩니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="nx">조건이</span> <span class="nx">만족을</span> <span class="nx">하면</span> <span class="nx">실행됩니다</span><span class="err">…</span>
-  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
-  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
-  <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">조건이</span> <span class="n">만족을</span> <span class="n">하면</span> <span class="n">실행됩니다</span><span class="err">…</span>
+  <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
+  <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
+  <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -198,7 +198,7 @@ if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다.
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$num</span> <span class="o">=</span> <span class="s2">"10"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">"num 값은 "</span> <span class="o">.</span> <span class="nv">$num</span> <span class="o">.</span> <span class="s2">"입니다."</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"num 값은 "</span> <span class="mf">.</span> <span class="nv">$num</span> <span class="mf">.</span> <span class="s2">"입니다."</span><span class="p">;</span>
 
 	<span class="k">if</span> <span class="p">(</span><span class="nv">$num</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
 		<span class="k">echo</span> <span class="s2">" (양수입니다.) &lt;br&gt;"</span><span class="p">;</span>
@@ -209,7 +209,7 @@ if 조건문과 같은 줄에 한 줄의 명령문만 위치하고 있습니다.
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num 값은 10입니다. (양수입니다.)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num 값은 10입니다. (양수입니다.)
 값을 하나 감소합니다 (9)
 </code></pre></div></div>
 

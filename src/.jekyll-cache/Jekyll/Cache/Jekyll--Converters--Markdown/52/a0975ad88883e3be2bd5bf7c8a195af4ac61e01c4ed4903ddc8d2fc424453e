@@ -1,4 +1,4 @@
-I"�?<ol>
+I"@A<ol>
   <li>
     <h1 id="오토로딩">오토로딩</h1>
   </li>
@@ -12,42 +12,39 @@
 
 <p>파일을 분리하는 것은 의존성만 잘 관리를 한다면, 매우 유용한 소스관리 방법입니다. 하지만, 너무 많은 파일로 소스가 분리되어 있을 경우 모든 의존성을 체크하여 처리하는 것은 힘이 듭니다.</p>
 
-<?php
-include (‘파일...’);
-include (‘파일...’);
-include (‘파일...’);
+<p>&lt;?php
+include (‘파일…’);
+include (‘파일…’);
+include (‘파일…’);
 ….
 ….
-include (‘파일...’);
-include (‘파일...’);
+include (‘파일…’);
+include (‘파일…’);</p>
 
+<p>소스 상단에 많은 include 문을 포함할 것입니다. 이러한 복잡한 의존관계를 쉽게 해결하기 위해서 PHP는 오토로드 라는 기능을 적용하였습니다. 오토로드는 PHP에서 의존성이 있는 소스를 실행할 때 먼저 실행되어 소스결합을 처리를 하게 됩니다.</p>
 
-소스 상단에 많은 include 문을 포함할 것입니다. 이러한 복잡한 의존관계를 쉽게 해결하기 위해서 PHP는 오토로드 라는 기능을 적용하였습니다. 오토로드는 PHP에서 의존성이 있는 소스를 실행할 때 먼저 실행되어 소스결합을 처리를 하게 됩니다.
+<h1 id="201-클래스-의존성">20.1 클래스 의존성</h1>
 
+<p>클래스는 인스턴스를 생성하거나 정적으로 클래스를 사용하기 전에 반드시 클래스가 정의 되어 있어야 합니다. 또한, 클래스를 상속을 받을 때에도 상속되는 부모의 클래스는 반드시 사용전에 정의가 되어 있어야 합니다.</p>
 
-20.1 클래스 의존성
-====================
+<p>이처럼 PHP가 클래스를 사용하기 전에 연관된 클래스의 관계를 클래스 의존성이라고 합니다. 프로그램의 커지고 클래스의 관계가 복잡할 수록 클래스의 의존성을 확인하는 것은 매우 중요합니다.</p>
 
-클래스는 인스턴스를 생성하거나 정적으로 클래스를 사용하기 전에 반드시 클래스가 정의 되어 있어야 합니다. 또한, 클래스를 상속을 받을 때에도 상속되는 부모의 클래스는 반드시 사용전에 정의가 되어 있어야 합니다.
-
-이처럼 PHP가 클래스를 사용하기 전에 연관된 클래스의 관계를 클래스 의존성이라고 합니다. 프로그램의 커지고 클래스의 관계가 복잡할 수록 클래스의 의존성을 확인하는 것은 매우 중요합니다.
-
-Bascic.class.php 파일에
-<?php
+<p>Bascic.class.php 파일에
+&lt;?php
 	class basic {
 		function show (){
 			return “클래스입니다.”;
 		}
 	}
-?>
-<p>클래스를 생성한 후에</p>
+?&gt;
+클래스를 생성한 후에</p>
 
 <p>Test.php
 &lt;?php
 	// 클래스파일을 삽입합니다.
 	include “basic.class.php”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basic = new basic;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basic = new basic;
 
 echo $basic-&gt;show(); ?&gt; 파일에서 사전에 클래스 파일을 삽입을 합니다.
 </code></pre></div></div>
@@ -64,12 +61,12 @@ echo $basic-&gt;show(); ?&gt; 파일에서 사전에 클래스 파일을 삽입�
 
 <p>Php5로 버전업이 되면서 php가 클래스 또는 인터페이스를 호출할 때, 자동으로 실행되는 함수가 있습니다.</p>
 
-<?php
+<p>&lt;?php
 	function __autoload($className){
 		include $className.”.class.php”;
 	}
 	$basic = new Basic;
-?>
+?&gt;</p>
 
 <p>__autoload() 함수는 위의 예처럼 new basic 형태로 클래스를 선언할 때, __autoload함수가 실행되고, 클래스 이름이 __autoload의 $className 으로 인자로 전달하게 됩니다. __autoload 함수는 전달된 클래스명 인자를 이용하여 클래스 파일을 include하여 정상적으로 클래스가 선언이 되도록 합니다.</p>
 
@@ -90,7 +87,7 @@ echo $basic-&gt;show(); ?&gt; 파일에서 사전에 클래스 파일을 삽입�
 &lt;?
 	// 오토로드 처리흘 위한 파일</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 클래스 파일을 구분하기 위한 사용자 정의 확장자를 사용하시면 , php 실행파일과 클래스파일 을 좀 더 쉽게 구분을 할 수 있습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 클래스 파일을 구분하기 위한 사용자 정의 확장자를 사용하시면 , php 실행파일과 클래스파일 을 좀 더 쉽게 구분을 할 수 있습니다.
 $classExt = ".class.php"; 
 
 // 클래스를 호출하면 클래스명이 인자로 전달됩니다.
@@ -114,13 +111,13 @@ function spl_autoload_register($className){
 <p>이렇게 미리 만들어 놓은 클래스 오토로드 처리 파일을 프로그램작성시 먼저 한번 불러오고, 클래스를 선언을 하여 사용하면 자동으로 php가 선언되지 않은 클래스를 파일을 찾아 불러오고
 사용을 할 수 있도록 처리를 해줍니다.</p>
 
-<?php 
+<p>&lt;?php 
 	// 오토로드 처리를 위한 파일을 불러옵니다.
-	require autoload.php;
+	require autoload.php;</p>
 
-	// 오토로드 파일을 통하여, jiny클래스가 정의된 클래스파일을 불러와 클래스를 오류없이 선언하여 사용을 할 수 있습니다.
-	$jiny = new jiny;
-?>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 오토로드 파일을 통하여, jiny클래스가 정의된 클래스파일을 불러와 클래스를 오류없이 선언하여 사용을 할 수 있습니다.
+$jiny = new jiny; ?&gt;
+</code></pre></div></div>
 
 <h1 id="204-psr-4-autoloading">20.4 PSR-4 Autoloading</h1>
 
@@ -133,24 +130,25 @@ function spl_autoload_register($className){
 	네임스페이스 와 클래스 파일을 불러올 때 .php 를 확장자로 불러 온다.
 	벤더, 네임스페이스, 클래스 는 대소문자를 구분한다.</Classname></namespace></p>
 
-<?php
-	function autoload($className) {
-		
-		$className = ltrim($className, '\\');
-		$fileName = '';
+<p>&lt;?php
+	function autoload($className) {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	$className = ltrim($className, '\\');
+	$fileName = '';
  		$namespace = '';
 
-		if ($lastNsPos = strpos($className, '\\')) {
-			$namespace = substr($className, 0, $lastNsPos);
-			$className = substr($className, $lastNsPos + 1);
-			$fileName = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
-		}
-
-		$fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
-		require $fileName;
+	if ($lastNsPos = strpos($className, '\\')) {
+		$namespace = substr($className, 0, $lastNsPos);
+		$className = substr($className, $lastNsPos + 1);
+		$fileName = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
 	}
 
-?>
+	$fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+	require $fileName;
+}
+</code></pre></div></div>
+
+<p>?&gt;</p>
 
 <h1 id="205-컴포저">20.5 컴포저</h1>
 

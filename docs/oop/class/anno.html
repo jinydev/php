@@ -113,7 +113,7 @@
     <span class="c1">// 인터페이스를 설정</span>
     <span class="kd">interface</span> <span class="nc">Logger</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">);</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="kd">class</span> <span class="nc">Application</span>
@@ -121,37 +121,37 @@
         <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
         <span class="c1">// 반환 타입은 logger입니다.</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">getLogger</span><span class="p">()</span><span class="o">:</span> <span class="nx">Logger</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">getLogger</span><span class="p">():</span> <span class="kt">Logger</span>
         <span class="p">{</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="p">;</span>
         <span class="p">}</span>
 
     	<span class="c1">// 인자값으로 클래스를 입력을 받습니다.</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">setLogger</span><span class="p">(</span><span class="nx">Logger</span> <span class="nv">$logger</span><span class="p">)</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">setLogger</span><span class="p">(</span><span class="kt">Logger</span> <span class="nv">$logger</span><span class="p">)</span>
         <span class="p">{</span>
-        	<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+        	<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     	<span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">;</span>
+    <span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="p">;</span>
 
     <span class="c1">// 인자값을 익명의 클래스로 만들어서 전달합니다.</span>
-    <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">setLogger</span><span class="p">(</span>
-        <span class="k">new</span> <span class="kd">class</span> <span class="nc">implements</span> <span class="nx">Logger</span> <span class="p">{</span>
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span>
+    <span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">setLogger</span><span class="p">(</span>
+        <span class="k">new</span> <span class="kd">class</span> <span class="kd">implements</span> <span class="nc">Logger</span> <span class="p">{</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span>
             <span class="p">{</span>
         	   <span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span>
     		<span class="p">}</span>
 	   <span class="p">}</span>
     <span class="p">);</span>
 
-    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">getLogger</span><span class="p">());</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">getLogger</span><span class="p">());</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object(class@anonymous)#2 (0) { } 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object(class@anonymous)#2 (0) { } 
 </code></pre></div></div>
 
 <p>위의 예제는 php.net에서 php7.x 새로운 익명 함수에 대한 간단한 설명 예제를 발췌했습니다.<br />
@@ -162,8 +162,8 @@ Application이라는 클래스는 한 개의 프로퍼티 변수와 두 개의 �
 
 <p>매번 일회성의 객체변수를 생성하는 것은 불필요할 수 있습니다. 이런 경우 익명 클래스를 통해 매개변수 입력 부분에 직접 클래스를 선언하여 전달합니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="kd">class</span> <span class="nc">implements</span> <span class="nx">Logger</span> <span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="kd">class</span> <span class="kd">implements</span> <span class="nc">Logger</span> <span class="p">{</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span> <span class="p">{</span>
             	<span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span>
     	<span class="p">}</span>
 <span class="p">}</span>

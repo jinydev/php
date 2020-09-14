@@ -107,21 +107,21 @@
 함수의 작업을 의해서 기초 데이터 값을 전달해야 할 경우가 발생합니다. 
 이렇게 함수를 호출하는 데 필요한 기초 데이터 값을 전달해주는 것을 인자값이라고 합니다.</p>
 
-<p>인자값은 함수에 임의의 값을 전달합니다. 인자 선언 방법은 함수 이름 다음에 오는 <code class="highlighter-rouge">소괄호()</code> 안에 필요한 기초 데이터 값을 나열하여 전달할 수 있습니다. 인자값은 직접 값을 넣을 수도 있지만 변수를 통하여 전달을 할 수도 있습니다.</p>
+<p>인자값은 함수에 임의의 값을 전달합니다. 인자 선언 방법은 함수 이름 다음에 오는 <code class="language-plaintext highlighter-rouge">소괄호()</code> 안에 필요한 기초 데이터 값을 나열하여 전달할 수 있습니다. 인자값은 직접 값을 넣을 수도 있지만 변수를 통하여 전달을 할 수도 있습니다.</p>
 
 <p>함수 선언 문법</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">함수명</span> <span class="p">(</span><span class="nx">인자1</span><span class="p">,</span> <span class="nx">인자2</span><span class="p">,</span> <span class="nx">인자3</span> <span class="o">...</span><span class="p">)</span> <span class="p">{</span>
-<span class="nx">함수</span> <span class="nx">정의</span> <span class="nx">몸체</span> <span class="o">...</span> 
-<span class="nx">소스</span> <span class="nx">코드</span> <span class="nx">내용</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">함수명</span> <span class="p">(</span><span class="kt">인자1</span><span class="p">,</span> <span class="kt">인자2</span><span class="p">,</span> <span class="kt">인자3</span> <span class="mf">...</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>앞의 함수 선언부를 다시 한번 확인해 봅시다. 함수명 뒤에 괄호 <code class="highlighter-rouge">()</code> 부분이 있습니다.<br />
-함수명 뒤에는 꼭 괄호 <code class="highlighter-rouge">()</code> 부분이 같이 정의되는데 이 부분을 인자값을 지정하는 것입니다.<br />
+<p>앞의 함수 선언부를 다시 한번 확인해 봅시다. 함수명 뒤에 괄호 <code class="language-plaintext highlighter-rouge">()</code> 부분이 있습니다.<br />
+함수명 뒤에는 꼭 괄호 <code class="language-plaintext highlighter-rouge">()</code> 부분이 같이 정의되는데 이 부분을 인자값을 지정하는 것입니다.<br />
 또한 함수 측면에서는 외부에서 들어오는 값을 매개변수라고 표현 합니다.</p>
 
 <p>즉 함수가 처리를 하기 위한 데이터 값을 전달 하는 부분 입니다.<br />
-만일 전달하고자 하는 값이 여러 개인 경우에 콤마(<code class="highlighter-rouge">,</code>)로 구분하여 여러 개의 기초 데이터 값을 전달할 수 있습니다.</p>
+만일 전달하고자 하는 값이 여러 개인 경우에 콤마(<code class="language-plaintext highlighter-rouge">,</code>)로 구분하여 여러 개의 기초 데이터 값을 전달할 수 있습니다.</p>
 
 <p>또한 함수는 처리 또는 호출 결과를 반환하여 이를 받아 다시 프로그램 실행에 필요한 처리를 할 수 있습니다.</p>
 
@@ -132,15 +132,15 @@
 <p>함수는 외부로 들어오는 기초 데이터 값을 변수 형태로 입력받습니다.<br />
 외부에서 입력된 값을 전달받는 변수를 매개변수라고 합니다. 매개변수는 함수내에서 지역변수로 사용됩니다.</p>
 
-<p>함수의 매개변수 선언는 소괄호 <code class="highlighter-rouge">()</code> 안에 인자값으로 받는 변수명을 넣으면 됩니다.</p>
+<p>함수의 매개변수 선언는 소괄호 <code class="language-plaintext highlighter-rouge">()</code> 안에 인자값으로 받는 변수명을 넣으면 됩니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-<span class="nx">함수</span> <span class="nx">정의</span> <span class="nx">몸체</span> <span class="o">...</span> 
-<span class="nx">소스</span> <span class="nx">코드</span> <span class="nx">내용</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
 
-<span class="k">echo</span> <span class="nv">$name</span> <span class="o">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
 
-<span class="k">echo</span> <span class="nv">$age</span> <span class="o">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$age</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -148,14 +148,14 @@
 매개변수는 이미 함수 안에 정의 및 사용된 변수로 인식합니다.</p>
 
 <p>인자로 전달되는 매개변수 데이터 값은 한 개 또는 여러 개를 사용할 수 있습니다.<br />
-만일 인자값이 다수일 때는 콤마(<code class="highlighter-rouge">,</code>)로 구분하여 여러 타입의 다수 데이터를 입력할 수 있습니다.<br />
-PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤마(<code class="highlighter-rouge">,</code>)를 추가하며 다음 번 변수명 사이에 공백을 하나 추가합니다.</p>
+만일 인자값이 다수일 때는 콤마(<code class="language-plaintext highlighter-rouge">,</code>)로 구분하여 여러 타입의 다수 데이터를 입력할 수 있습니다.<br />
+PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤마(<code class="language-plaintext highlighter-rouge">,</code>)를 추가하며 다음 번 변수명 사이에 공백을 하나 추가합니다.</p>
 
 <p>어떤 함수들은 매개변수 인자가 없는 경우도 있을 수 있습니다.<br />
-단순 기능만 수행하는 함수들이 그럴 수 있는데, 이때 함수가 매개변수가 없더라도 선언할 때 중괄호 <code class="highlighter-rouge">()</code>는 작성을 해야 합니다
+단순 기능만 수행하는 함수들이 그럴 수 있는데, 이때 함수가 매개변수가 없더라도 선언할 때 중괄호 <code class="language-plaintext highlighter-rouge">()</code>는 작성을 해야 합니다
 (생략이 불가능하다고 생각하면 됩니다).</p>
 
-<p>또한 함수를 호출할 때도, 인자값이 없는 함수는 호출할 때 꼭 소괄호 <code class="highlighter-rouge">()</code>를 같이 붙여서 함수를 호출해야 합니다.</p>
+<p>또한 함수를 호출할 때도, 인자값이 없는 함수는 호출할 때 꼭 소괄호 <code class="language-plaintext highlighter-rouge">()</code>를 같이 붙여서 함수를 호출해야 합니다.</p>
 
 <p><br /></p>
 
@@ -172,7 +172,7 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
  이는 코드를 시각화로 편하게 하기 위해서 비슷한 이름을 사용하는 것이지 엄밀히 말하면 모두 각각 이름만 같은 다른 변수입니다.</p>
 
 <p>내부변수와 매개변수가 다르다는 것은 함수의 호출에서 사용되는 변수와 함수 안에서 사용되는 변수가 서로 독립된 다른 변수라는 것입니다. 
-이 개념은 약간 혼동이 될 수도 있는데 이를 정확히 표현하는 명칭으로 함수를 호출할 때 이용하는 변수 이름을 <code class="highlighter-rouge">실행 인자</code>라고 부르고, 함수 안에서 받은 변수의 이름을 <code class="highlighter-rouge">매개변수</code>라고 표현을 구분하면 이해하기 더 쉬울 것입니다.</p>
+이 개념은 약간 혼동이 될 수도 있는데 이를 정확히 표현하는 명칭으로 함수를 호출할 때 이용하는 변수 이름을 <code class="language-plaintext highlighter-rouge">실행 인자</code>라고 부르고, 함수 안에서 받은 변수의 이름을 <code class="language-plaintext highlighter-rouge">매개변수</code>라고 표현을 구분하면 이해하기 더 쉬울 것입니다.</p>
 
 <p>매개변수: 함수에서 인자값으로 받아 들이는 변수 값<br />
 실행 인자: 함수를 호출할 때 전달하는 값</p>
@@ -180,22 +180,22 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 <p>예제 파일 func-05.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-<span class="nv">$name</span> <span class="o">=</span> <span class="err">“</span><span class="nx">jiny</span><span class="err">”</span><span class="p">;</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="err">“</span><span class="n">jiny</span><span class="err">”</span><span class="p">;</span>
 
-<span class="k">function</span> <span class="nf">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="o">.</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">echo</span> <span class="nv">$name</span> <span class="o">.</span><span class="err">”</span><span class="nx">는</span> <span class="nv">$age</span> <span class="nx">입니다</span><span class="o">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="mf">.</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span><span class="err">”</span><span class="n">는</span> <span class="nv">$age</span> <span class="n">입니다</span><span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">function</span> <span class="nf">setUserName</span> <span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">echo</span> <span class="nv">$name</span> <span class="o">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="k">function</span> <span class="n">setUserName</span> <span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>위의 예를 보면 함수 외부에 선언되어 있는 <code class="highlighter-rouge">$name</code> 변수와 두 개의 함수의 매개변수로 선언된 <code class="highlighter-rouge">$name</code> 변수는 모두 각각의 다른 변수입니다.</p>
+<p>위의 예를 보면 함수 외부에 선언되어 있는 <code class="language-plaintext highlighter-rouge">$name</code> 변수와 두 개의 함수의 매개변수로 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수는 모두 각각의 다른 변수입니다.</p>
 
-<p>함수 외부에 선언된 <code class="highlighter-rouge">$name</code> 변수는 hellowWorld 함수와 <code class="highlighter-rouge">setUserName 함수</code>에 있는 <code class="highlighter-rouge">$name 변수</code>는 다른 메모리 영역입니다. 또한 두 개의 함수에서도 외부에 선언된 <code class="highlighter-rouge">$name</code> 변수로 접근 할 수 없습니다.</p>
+<p>함수 외부에 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수는 hellowWorld 함수와 <code class="language-plaintext highlighter-rouge">setUserName 함수</code>에 있는 <code class="language-plaintext highlighter-rouge">$name 변수</code>는 다른 메모리 영역입니다. 또한 두 개의 함수에서도 외부에 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수로 접근 할 수 없습니다.</p>
 
 <p>또한 hellowWorld 함수의 $name 변수를 setUserName 함수에서 참조하거나 사용할 수도 없습니다.<br />
 즉 서로 다르게 분리된 변수라고 보면 됩니다.</p>
@@ -213,21 +213,21 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 <p>예제 파일 func-06.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
-	<span class="k">function</span> <span class="nf">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">echo</span> <span class="nv">$name</span> <span class="o">.</span><span class="s2">"는 </span><span class="nv">$age입니다</span><span class="s2">. &lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span><span class="s2">"는 </span><span class="nv">$age입니다</span><span class="s2">. &lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 
 	<span class="c1">// 문자열 상수 실행 인자와, 정수형 상수 실행 인자를 전달합니다.</span>
-	<span class="nx">hellowWorld</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+	<span class="nf">hellowWorld</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny는 20입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny는 20입니다.
 </code></pre></div></div>
 
-<p>위의 예제를 보면 hellowWorld 함수를 호출할 때 입력받는 함수의 매개변수 <code class="highlighter-rouge">$name</code>과 <code class="highlighter-rouge">$age</code> 값을 직접 문자열 및 정수로 데이터를 전달 합니다.</p>
+<p>위의 예제를 보면 hellowWorld 함수를 호출할 때 입력받는 함수의 매개변수 <code class="language-plaintext highlighter-rouge">$name</code>과 <code class="language-plaintext highlighter-rouge">$age</code> 값을 직접 문자열 및 정수로 데이터를 전달 합니다.</p>
 
 <p><br /></p>
 
@@ -239,9 +239,9 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 
 <p>예제 파일 func-07.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">function</span> <span class="n">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
 		<span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$s</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-    	<span class="k">echo</span> <span class="nv">$sum</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+    	<span class="k">echo</span> <span class="nv">$sum</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	<span class="p">}</span>
 
 	<span class="c1">// 변수에 값을 설정합니다.</span>
@@ -249,25 +249,25 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
 	<span class="c1">// 함수를 호출합니다.</span>
-	<span class="nx">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">);</span> 
+	<span class="nf">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">);</span> 
 
 	<span class="nv">$value1</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
 	<span class="nv">$value2</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
 
 	<span class="c1">// 함수를 호출합니다.</span>
-	<span class="nx">addSum</span><span class="p">(</span><span class="nv">$value1</span><span class="p">,</span> <span class="nv">$value2</span><span class="p">);</span> 
+	<span class="nf">addSum</span><span class="p">(</span><span class="nv">$value1</span><span class="p">,</span> <span class="nv">$value2</span><span class="p">);</span> 
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
 25
 </code></pre></div></div>
 
-<p>위의 예제를 보면 addSum 함수는 두 개의 정수 값을 입력받아 합계를 구합니다. 함수 외부에 선언된 <code class="highlighter-rouge">$x</code>와 <code class="highlighter-rouge">$y</code>에 대입 연산자를 통해 값을 설정합니다.</p>
+<p>위의 예제를 보면 addSum 함수는 두 개의 정수 값을 입력받아 합계를 구합니다. 함수 외부에 선언된 <code class="language-plaintext highlighter-rouge">$x</code>와 <code class="language-plaintext highlighter-rouge">$y</code>에 대입 연산자를 통해 값을 설정합니다.</p>
 
-<p>함수 외부의 <code class="highlighter-rouge">$x</code>, <code class="highlighter-rouge">$y</code>와 함수 매개변수 <code class="highlighter-rouge">$x</code>, <code class="highlighter-rouge">$y</code>는 다른 변수입니다.<br />
+<p>함수 외부의 <code class="language-plaintext highlighter-rouge">$x</code>, <code class="language-plaintext highlighter-rouge">$y</code>와 함수 매개변수 <code class="language-plaintext highlighter-rouge">$x</code>, <code class="language-plaintext highlighter-rouge">$y</code>는 다른 변수입니다.<br />
 함수를 호출할 때 인자값을 변수로 대입하여 데이터를 전송합니다.</p>
 
 <p>변수의 값은 같을 수도 있지만 정확한 의미로는,</p>
@@ -289,9 +289,9 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 초기값 설정 기능을 통해 함수의 오동작을 줄여주고 함수의 매개변수 초기화 기능을 생략함으로써 소스의 코드를 줄일 수 있는 기능이 됩니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">함수명</span> <span class="p">(</span><span class="nx">인자1</span><span class="o">=</span><span class="err">”</span><span class="nx">초기값</span><span class="err">”</span><span class="p">)</span> <span class="p">{</span>
-<span class="nx">함수</span> <span class="nx">정의</span> <span class="nx">몸체</span> <span class="o">...</span> 
-<span class="nx">소스</span> <span class="nx">코드</span> <span class="nx">내용</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">함수명</span> <span class="p">(</span><span class="kt">인자1</span><span class="o">=</span><span class="err">”</span><span class="n">초기값</span><span class="err">”</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -300,21 +300,21 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 
 <p>예제 파일 func-08.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">setHeight</span><span class="p">(</span><span class="nv">$minheight</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">function</span> <span class="n">setHeight</span><span class="p">(</span><span class="nv">$minheight</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">echo</span> <span class="s2">"The height is : </span><span class="nv">$minheight</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// 함수 호출 시 매개변수 값 250을 입력합니다.</span>
-<span class="nx">setHeight</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
+<span class="nf">setHeight</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
 
 <span class="c1">// 매개변수 값이 없습니다.</span>
 <span class="c1">// 기본값 50이 적용됩니다.</span>
-<span class="nx">setHeight</span><span class="p">();</span>
+<span class="nf">setHeight</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The height is : 250
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The height is : 250
 The height is : 50 
 </code></pre></div></div>
 
@@ -345,29 +345,29 @@ The height is : 50
 
 <p>예제 파일 func-09.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="kt">int</span> <span class="nv">$x</span><span class="p">){</span>
-	<span class="k">echo</span> <span class="nv">$x</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">function</span> <span class="n">test</span><span class="p">(</span><span class="kt">int</span> <span class="nv">$x</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$x</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="nx">test</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nf">test</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="k">function</span> <span class="nf">test2</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$x</span><span class="p">){</span>
-	<span class="k">echo</span> <span class="nv">$x</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">function</span> <span class="n">test2</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$x</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$x</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="nx">test2</span><span class="p">(</span><span class="s2">"문자열"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nf">test2</span><span class="p">(</span><span class="s2">"문자열"</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 문자열
 </code></pre></div></div>
 
-<p>위의 예제에서 첫 번째 <code class="highlighter-rouge">test(1);</code> 은 실행 인자로 정수 값을 전달하고 함수도 타입 힌트를 통하여 정수 값을 받았기 때문에 오류 없이 입력한 정수 값을 출력합니다.</p>
+<p>위의 예제에서 첫 번째 <code class="language-plaintext highlighter-rouge">test(1);</code> 은 실행 인자로 정수 값을 전달하고 함수도 타입 힌트를 통하여 정수 값을 받았기 때문에 오류 없이 입력한 정수 값을 출력합니다.</p>
 
-<p>하지만 만일 타입이 틀린 형태 <code class="highlighter-rouge">test("a");</code>로 함수를 호출하는 경우에는 실행 인자가 문자열이고 입력 받는 매개변수의 타입이 정수이기 때문에 데이터 타입이 일치하지 않습니다. 이런 경우에는 PHP에서는 오류 메시지를 출력하게 됩니다.</p>
+<p>하지만 만일 타입이 틀린 형태 <code class="language-plaintext highlighter-rouge">test("a");</code>로 함수를 호출하는 경우에는 실행 인자가 문자열이고 입력 받는 매개변수의 타입이 정수이기 때문에 데이터 타입이 일치하지 않습니다. 이런 경우에는 PHP에서는 오류 메시지를 출력하게 됩니다.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">C:\php-7.1.4-Win32-VC14-x86\jinyphp\func-22.php:2
 Stack trace:
@@ -380,33 +380,33 @@ Stack trace:
 
 <h2 id="참조-매개변수">참조 매개변수</h2>
 <hr />
-<p><code class="highlighter-rouge">C언어</code>와 같은 low-Level 언어에는 매개변수로 인수의 참조(call by reference) 형태로 매개변수를 전달할 수 있습니다.<br />
+<p><code class="language-plaintext highlighter-rouge">C언어</code>와 같은 low-Level 언어에는 매개변수로 인수의 참조(call by reference) 형태로 매개변수를 전달할 수 있습니다.<br />
 이를 또 다른 말로 참조에 의한 전달(passing by reference)이라고도 합니다.<br />
-PHP에서도 이와 같은 형태의 실행 인자 전달과 참조 매개변수를 선언하여 사용할 수 있습니다. <code class="highlighter-rouge">C언어</code>에서 포인터와 같은 개념이라고 생각하면 됩니다.</p>
+PHP에서도 이와 같은 형태의 실행 인자 전달과 참조 매개변수를 선언하여 사용할 수 있습니다. <code class="language-plaintext highlighter-rouge">C언어</code>에서 포인터와 같은 개념이라고 생각하면 됩니다.</p>
 
-<p>참조 매개변수는 변수명 앞에 <code class="highlighter-rouge">&amp;</code> 기호를 붙여줍니다.</p>
+<p>참조 매개변수는 변수명 앞에 <code class="language-plaintext highlighter-rouge">&amp;</code> 기호를 붙여줍니다.</p>
 
 <p>예제 파일 func-### 10.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="k">function</span> <span class="nf">drink</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$name</span><span class="p">){</span>
+	<span class="k">function</span> <span class="n">drink</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$name</span><span class="p">){</span>
 		<span class="nv">$name</span> <span class="o">=</span> <span class="s2">"사이다"</span><span class="p">;</span>
 	<span class="p">}</span>
 
 	<span class="nv">$drinkName</span> <span class="o">=</span> <span class="s2">"콜라"</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"음료수 이름 = </span><span class="nv">$drinkName</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="nx">drink</span><span class="p">(</span><span class="nv">$drinkName</span><span class="p">);</span>
+	<span class="nf">drink</span><span class="p">(</span><span class="nv">$drinkName</span><span class="p">);</span>
 	<span class="k">echo</span> <span class="s2">"음료수 이름 = </span><span class="nv">$drinkName</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>음료수 이름 = 콜라
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>음료수 이름 = 콜라
 음료수 이름 = 사이다 
 </code></pre></div></div>
 
-<p>위의 예를 보면 <code class="highlighter-rouge">$drinkName</code> 변수에는 <code class="highlighter-rouge">콜라</code> 값이 저장되어 있습니다.<br />
+<p>위의 예를 보면 <code class="language-plaintext highlighter-rouge">$drinkName</code> 변수에는 <code class="language-plaintext highlighter-rouge">콜라</code> 값이 저장되어 있습니다.<br />
 이때 drink() 함수를 호출할 때 drink() 함수의 매개변수 인자는 입력받는 변수의 참조 주소 값으로 받습니다.<br />
 매개변수를 참조변수 형태로 받게 되면 drink() 함수의 $name 변수는 함수 외부에 있는 $drinkName 변수를 가리키게 됩니다.</p>
 
@@ -428,32 +428,32 @@ PHP언어는 가변 매개변수로 함수 정의와 호출 시 한 쌍씩 호�
 
 <p>이러한 가변 매개변수를 이용하는 것은 좀 더 유연한 함수를 생성하고 처리하는 데 매우 유용합니다.</p>
 
-<p>심지어 매개변수를 하나도 지정하지 않아도 함수에 매개변수를 전달할 수 있습니다. 이런 경우 함수를 실행할 때 매개변수의 개수를 확인할 수 있는 func_num_args() 내부 함수와 매개변수의 데이터를 배열로 가지고 올 수 있는 <code class="highlighter-rouge">func_get_args()</code> 내부 함수 두 개를 사용하여 처리할 수 있습니다.</p>
+<p>심지어 매개변수를 하나도 지정하지 않아도 함수에 매개변수를 전달할 수 있습니다. 이런 경우 함수를 실행할 때 매개변수의 개수를 확인할 수 있는 func_num_args() 내부 함수와 매개변수의 데이터를 배열로 가지고 올 수 있는 <code class="language-plaintext highlighter-rouge">func_get_args()</code> 내부 함수 두 개를 사용하여 처리할 수 있습니다.</p>
 
 <p>예제 파일 func-11.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">setting</span><span class="p">(){</span>
+<span class="k">function</span> <span class="n">setting</span><span class="p">(){</span>
 	<span class="nv">$num</span> <span class="o">=</span> <span class="nb">func_num_args</span><span class="p">();</span>
 	<span class="k">echo</span> <span class="s2">"실행 인자 개수 = </span><span class="nv">$num</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="nv">$args</span> <span class="o">=</span> <span class="nb">func_get_args</span><span class="p">();</span>
-	<span class="k">foreach</span><span class="p">(</span><span class="nv">$args</span> <span class="k">as</span> <span class="nv">$arg</span><span class="p">)</span> <span class="k">echo</span> <span class="nv">$arg</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">foreach</span><span class="p">(</span><span class="nv">$args</span> <span class="k">as</span> <span class="nv">$arg</span><span class="p">)</span> <span class="k">echo</span> <span class="nv">$arg</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 	
 <span class="p">}</span>
 
-<span class="nx">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">);</span>
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">);</span>
 <span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
 
-<span class="nx">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">);</span>
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">);</span>
 <span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
 
-<span class="nx">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">,</span><span class="s2">"ccc"</span><span class="p">);</span>
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">,</span><span class="s2">"ccc"</span><span class="p">);</span>
 <span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 인자 개수 = 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 인자 개수 = 1
 aaa
 ====
 실행 인자 개수 = 2
@@ -469,7 +469,7 @@ ccc
 
 <p>예제 파일 :func-12.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">sum</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">function</span> <span class="n">sum</span><span class="p">()</span> <span class="p">{</span>
 	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 	<span class="c1">// func_get_args 함수를 통해 매개변수를 읽어옵니다.</span>
 	<span class="k">foreach</span> <span class="p">(</span><span class="nb">func_get_args</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
@@ -478,12 +478,12 @@ ccc
 	<span class="k">return</span> <span class="nv">$a</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
 <p><br /></p>
@@ -492,16 +492,16 @@ ccc
 <h2 id="가변-인자">가변 인자</h2>
 <hr />
 <p>가변 매개변수에서 func_get_args() 함수를 통해 입력되는 변수들을 배열로 입력 처리한 예를 보았을 것입니다.<br />
-PHP 5.6 이상의 버전에서는 <code class="highlighter-rouge">…</code> 와 같은 인수의 변수 번호 기능을 지원합니다.</p>
+PHP 5.6 이상의 버전에서는 <code class="language-plaintext highlighter-rouge">…</code> 와 같은 인수의 변수 번호 기능을 지원합니다.</p>
 
-<p>함수가 가변 인자를 받을 목적으로 <code class="highlighter-rouge">…</code> 키워드를 포함할 수 있습니다. <code class="highlighter-rouge">…</code> 키워드는 배열은 아니나 인수를 배열 형태로 전달됩니다.</p>
+<p>함수가 가변 인자를 받을 목적으로 <code class="language-plaintext highlighter-rouge">…</code> 키워드를 포함할 수 있습니다. <code class="language-plaintext highlighter-rouge">…</code> 키워드는 배열은 아니나 인수를 배열 형태로 전달됩니다.</p>
 
-<p><code class="highlighter-rouge">…</code> 키워드 가변인자는 함수의 인자값의 개수를 예측하기 어려울 때 매우 유용합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">…</code> 키워드 가변인자는 함수의 인자값의 개수를 예측하기 어려울 때 매우 유용합니다.</p>
 
 <p>예제 파일 scalar-13.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="c1">// 가변 인자로 받습니다.</span>
-<span class="k">function</span> <span class="nf">sum</span><span class="p">(</span><span class="o">...</span><span class="nv">$numbers</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">function</span> <span class="n">sum</span><span class="p">(...</span><span class="nv">$numbers</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nv">$acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 	<span class="k">foreach</span> <span class="p">(</span><span class="nv">$numbers</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
 			<span class="nv">$acc</span> <span class="o">+=</span> <span class="nv">$n</span><span class="p">;</span>
@@ -509,39 +509,39 @@ PHP 5.6 이상의 버전에서는 <code class="highlighter-rouge">…</code> 와
 	<span class="k">return</span> <span class="nv">$acc</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
-<p>위의 예에서 <code class="highlighter-rouge">sum()</code>함수는 가변 인자값으로 매개변수를 전달받습니다.<br />
+<p>위의 예에서 <code class="language-plaintext highlighter-rouge">sum()</code>함수는 가변 인자값으로 매개변수를 전달받습니다.<br />
 하지만 개수는 정의되지 않는다는 것입니다.</p>
 
-<p><code class="highlighter-rouge">sum(1, 2, 3, 4, 5);</code>처럼 여러 개의 값을 콤마(,)로 구분하여 다수의 인자값을 전달할 수 있습니다.<br />
-또한 전달된 인자값들은 가변변수 <code class="highlighter-rouge">$numbers</code> 로 받아 배열로 구분하여 각각의 값을 처리합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">sum(1, 2, 3, 4, 5);</code>처럼 여러 개의 값을 콤마(,)로 구분하여 다수의 인자값을 전달할 수 있습니다.<br />
+또한 전달된 인자값들은 가변변수 <code class="language-plaintext highlighter-rouge">$numbers</code> 로 받아 배열로 구분하여 각각의 값을 처리합니다.</p>
 
 <p>예제 파일 scalar-14.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">function</span> <span class="n">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="nx">add</span><span class="p">(</span><span class="o">...</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nf">add</span><span class="p">(</span><span class="mf">...</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 <span class="nv">$a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="k">echo</span> <span class="nx">add</span><span class="p">(</span><span class="o">...</span><span class="nv">$a</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nf">add</span><span class="p">(</span><span class="mf">...</span><span class="nv">$a</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
 9
 </code></pre></div></div>
 
-<p>위의 <code class="highlighter-rouge">add()</code> 함수는 두 개의 값을 더하는 기능을 합니다.<br />
+<p>위의 <code class="language-plaintext highlighter-rouge">add()</code> 함수는 두 개의 값을 더하는 기능을 합니다.<br />
 함수 호출 시 배열 형태의 값으로 가변변수를 호출할 수도 있습니다.<br />
 또한 배열 변수를 가변변수의 인자값으로 전달할 수도 있습니다.</p>
 

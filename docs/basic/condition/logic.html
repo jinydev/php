@@ -126,10 +126,10 @@
 <p>&amp;&amp; 조건 연산 결합은 다음과 같은 문법으로 작성할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건A</span> <span class="o">&amp;&amp;</span> <span class="nx">조건</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건A</span> <span class="o">&amp;&amp;</span> <span class="n">조건</span> <span class="nc">B</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-	<span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span> <span class="p">;</span>
+	<span class="n">거짓일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span> <span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -145,12 +145,12 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20세 이상의 남성입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20세 이상의 남성입니다.
 </code></pre></div></div>
 
 <p>위 예제는 이중 조건처리를 하지 않고 두 가지 조건을 동시에 검사하여 성별과 성년을 모두 한 번에 조건을 검사할 수 있습니다. &amp;&amp; 조건의 입력은 A, B 두 개 값보다 더 많이 연결하여 아래와 같이 작성할 수 도 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">조건A</span> <span class="o">&amp;&amp;</span> <span class="nx">조건B</span> <span class="o">&amp;&amp;</span> <span class="nx">조건C</span> <span class="o">&amp;&amp;</span> <span class="nx">조건D</span> <span class="err">…</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">조건A</span> <span class="o">&amp;&amp;</span> <span class="n">조건B</span> <span class="o">&amp;&amp;</span> <span class="n">조건C</span> <span class="o">&amp;&amp;</span> <span class="n">조건D</span> <span class="err">…</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>필요한 만큼 연결하여 사용하면 됩니다.</p>
@@ -173,25 +173,25 @@
 </table>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건A</span> <span class="o">||</span> <span class="nx">조건</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건A</span> <span class="o">||</span> <span class="n">조건</span> <span class="nc">B</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-	<span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span> <span class="p">;</span>
+	<span class="n">거짓일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span> <span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>예제 파일 if-08.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="nv">$age</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	$age = 17;
 	
-	<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="o">||</span> <span class="nv">$age</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">)</span> <span class="p">{</span>
-  		<span class="k">echo</span> <span class="s2">"18세 이상, 65세 이하의 경제 가능 나이 층입니다."</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="cp">?&gt;</span>
+	if ($age &gt;= 18 || $age &lt;= 65) {
+  		echo "18세 이상, 65세 이하의 경제 가능 나이 층입니다.";
+	}
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18세 이상, 65세 이하의 경제 가능 나이 층입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18세 이상, 65세 이하의 경제 가능 나이 층입니다.
 </code></pre></div></div>
 
 <table>
@@ -204,7 +204,7 @@
   </tbody>
 </table>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(조건A || 조건B || 조건C || 조건D …)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(조건A || 조건B || 조건C || 조건D …)
 </code></pre></div></div>
 
 <p>필요한 만큼 연결하여 사용을 하면 됩니다.</p>
@@ -216,10 +216,10 @@
 <p>조건 제어문의 문법 if는 조건이 참(true)이면 다음 실행문을 동작하고, 거짓이면 else 이후의 실행문이 동작합니다. 하지만, 논리표현 NOT의 ! 기호를 사용하여 조건 부정문을 통해 조건 결과의 참과 거짓을 뒤집어서 반대로 동작을 하게 만들 수 있습니다.</p>
 
 <p>작성 문법</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">조건</span><span class="p">)</span> <span class="p">{</span>
- <span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">조건</span><span class="p">)</span> <span class="p">{</span>
+ <span class="n">거짓일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
- <span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
+ <span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -258,7 +258,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>성년 판별 논리 값이 비어 있습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>성년 판별 논리 값이 비어 있습니다.
 성인입니다. 
 </code></pre></div></div>
 
@@ -269,13 +269,13 @@
 <h2 id="조건-혼용">조건 혼용</h2>
 <hr />
 <p>앞의 세 개의 논리표현 결합은 하나의 기호만 가지고 조건을 결합했습니다. 
-하지만 조건 결합은 서로 다른 논리 조건 <code class="highlighter-rouge">&amp;&amp;</code>와 <code class="highlighter-rouge">||</code>, <code class="highlighter-rouge">!</code>를 소괄호<code class="highlighter-rouge">()</code>를 통해 각각의 다른 논리 값을 결합할 수 있습니다.</p>
+하지만 조건 결합은 서로 다른 논리 조건 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>와 <code class="language-plaintext highlighter-rouge">||</code>, <code class="language-plaintext highlighter-rouge">!</code>를 소괄호<code class="language-plaintext highlighter-rouge">()</code>를 통해 각각의 다른 논리 값을 결합할 수 있습니다.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nx">조건</span> <span class="nx">A</span> <span class="o">&amp;&amp;</span> <span class="nx">조건B</span><span class="p">)</span> <span class="o">||</span> <span class="nx">조건</span> <span class="nx">C</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">조건</span> <span class="nc">A</span> <span class="o">&amp;&amp;</span> <span class="n">조건B</span><span class="p">)</span> <span class="o">||</span> <span class="n">조건</span> <span class="nc">C</span>
 </code></pre></div></div>
 
 <p>위의 예는 조건 C가 참(true)이거나, 조건 A나 조건 B 모두 참(true)이어야 결과를 참(true)으로 출력합니다. 
-만일 서로 다른 논리표현으로 다수의 조건을 결합할 때는 이렇게 산술 연산 우선순위 기호로 사용하는 소괄호를 통해 <code class="highlighter-rouge">()</code>를  결합이나 우선순위를 정할 수 있습니다.</p>
+만일 서로 다른 논리표현으로 다수의 조건을 결합할 때는 이렇게 산술 연산 우선순위 기호로 사용하는 소괄호를 통해 <code class="language-plaintext highlighter-rouge">()</code>를  결합이나 우선순위를 정할 수 있습니다.</p>
 
 <p><br /></p>
 

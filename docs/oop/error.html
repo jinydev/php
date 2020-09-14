@@ -129,7 +129,7 @@ int error_reporting ([ int $level ] )</p>
 <p>예제) error_report.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Turn off all error reporting
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Turn off all error reporting
 error_reporting(0);
 
 // Report simple running errors
@@ -169,11 +169,11 @@ bool error_log ( string $message [, int $message_type = 0 [, string $destination
 	타입3:	지정한 파일로 출력합니다.</p>
 
 <p>예제) error_log.php
-<?php
+&lt;?php
 	// 지정한 로그파일에 에러를 출력합니다.
-	$errFile = "./my-errors.log";
-	error_log("You messed up!", 3, $errFile);
-?></p>
+	$errFile = “./my-errors.log”;
+	error_log(“You messed up!”, 3, $errFile);
+?&gt;</p>
 
 <p>|내부함수|
 array error_get_last ( void )</p>
@@ -181,10 +181,10 @@ array error_get_last ( void )</p>
 <p>내부함수 error_get_last()는 마지막으로 발생한 오류 가지고 옵니다.</p>
 
 <p>예제) error_get_last.php
-<?php
+&lt;?php
 	echo $a;
 	print_r(error_get_last());
-?></p>
+?&gt;</p>
 
 <p>|내부함수|
 void error_clear_last ( void )</p>
@@ -197,7 +197,7 @@ void error_clear_last ( void )</p>
 	error_clear_last();
 	var_dump(error_get_last());</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@$a = $b;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@$a = $b;
 
 var_dump(error_get_last());
 error_clear_last();
@@ -210,9 +210,9 @@ bool trigger_error ( string $error_msg [, int $error_type = E_USER_NOTICE ] )</p
 <p>내부함수 trigger_error()는 사용자 수준의 오류 / 경고 / 통지 메시지를 생성합니다.</p>
 
 <p>예제) trigger_error.php
-<?php
-    trigger_error("Cannot divide by zero", E_USER_ERROR);
-?></p>
+&lt;?php
+    trigger_error(“Cannot divide by zero”, E_USER_ERROR);
+?&gt;</p>
 
 <p>콘솔출력)
 [Mon Aug 21 16:59:44 2017] ::1:57186 [500]: /trigger_error.php - Cannot divide by zero in C:\php-7.1.4-Win32-VC14-x86\trigger_error.php on line 3</p>
@@ -234,7 +234,7 @@ array debug_backtrace ([ int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT [, int $l
     	var_dump(debug_backtrace());
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test('jiny'); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test('jiny'); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -249,7 +249,7 @@ void debug_print_backtrace ([ int $options = 0 [, int $limit = 0 ]] )</p>
 <p>예제) debug_print_backtrace.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function a() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function a() {
 	b();
 }
 

@@ -106,7 +106,7 @@
 <p>변수를 사용하기 위해서는 변수명을 같이 정의해야 했습니다. 가변변수란 변수의 이름을 다른 변수의 이름을 통해 변수의 이름을 가변적으로 사용할 수 있는 PHP의 기능입니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="p">{</span> <span class="nx">변수</span> <span class="p">}</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="p">{</span> <span class="n">변수</span> <span class="p">}</span>
 </code></pre></div></div>
 <p>변수명 앞에 ${ 와 뒤에 } 를 적어서 사용을 하면, 변수명의 값을 가지는 변수와 동일합니다.</p>
 
@@ -115,11 +115,11 @@
 <h2 id="개념">개념</h2>
 <hr />
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$aaa = “홍길동”;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$aaa = “홍길동”;
 </code></pre></div></div>
 <p>$aaa 변수는 “홍길동”이라는 값을 가지고 있습니다. $aaa 변수를 ${“aaa”}로 가리킬 수도 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo ${"aaa"}; 는 echo $aaa; 와 같습니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo ${"aaa"}; 는 echo $aaa; 와 같습니다.
 $bbb = "aaa";
 </code></pre></div></div>
 
@@ -130,17 +130,17 @@ $bbb = "aaa";
 	<span class="nv">$abc</span> <span class="o">=</span> <span class="s2">"123"</span><span class="p">;</span>
 	<span class="nv">$bbb</span> <span class="o">=</span> <span class="s2">"abc"</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="nv">$bbb</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// abc라고 출력됩니다.</span>
-	<span class="k">echo</span> <span class="nv">$$bbb</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123이라고 출력됩니다.</span>
+	<span class="k">echo</span> <span class="nv">$bbb</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// abc라고 출력됩니다.</span>
+	<span class="k">echo</span> <span class="nv">$$bbb</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123이라고 출력됩니다.</span>
 
-	<span class="k">echo</span> <span class="nv">${$bbb}</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123</span>
-	<span class="k">echo</span> <span class="err">$</span><span class="p">{</span><span class="s2">"abc"</span><span class="p">}</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123</span>
+	<span class="k">echo</span> <span class="nv">${$bbb}</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123</span>
+	<span class="k">echo</span> <span class="err">$</span><span class="p">{</span><span class="s2">"abc"</span><span class="p">}</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> <span class="c1">// 123</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abc
 123
 123
 123
@@ -164,14 +164,14 @@ $bbb = "aaa";
 	<span class="nb">printf</span><span class="p">(</span><span class="s2">"배열값 = %s &lt;br&gt;"</span><span class="p">,</span> <span class="nv">$var</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">][</span><span class="s1">'bar'</span><span class="p">]);</span>
 
 	<span class="c1">// 이전 PHP 5.x</span>
-	<span class="k">echo</span> <span class="s2">"가변변수(name)값  = "</span> <span class="o">.</span> <span class="err">$</span><span class="p">{</span><span class="nv">$var</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">][</span> <span class="s1">'bar'</span><span class="p">]};</span>
+	<span class="k">echo</span> <span class="s2">"가변변수(name)값  = "</span> <span class="mf">.</span> <span class="err">$</span><span class="p">{</span><span class="nv">$var</span><span class="p">[</span><span class="s1">'foo'</span><span class="p">][</span> <span class="s1">'bar'</span><span class="p">]};</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;&lt;br&gt;"</span><span class="p">;</span>
 	
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name 변수값 = jiny
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name 변수값 = jiny
 배열값 = name
 가변변수(name)값 = jiny
 </code></pre></div></div>

@@ -113,24 +113,24 @@
 <p>else if는 else 거짓 조건에 또 다른 조건문을 연장하는 것입니다. 즉, 거짓일 때의 코드 블록이 또 하나의 조건문인 것입니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건1</span><span class="p">)</span> <span class="p">{</span>
- <span class="nx">조건1</span> <span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행</span> <span class="nx">코드</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">조건2</span><span class="p">)</span> <span class="p">{</span>
- <span class="nx">조건1이</span> <span class="nx">거짓이고</span><span class="p">,</span> <span class="nx">조건2가</span> <span class="nx">참일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">조건1</span><span class="p">)</span> <span class="p">{</span>
+ <span class="n">조건1</span> <span class="n">참</span> <span class="n">동작</span> <span class="n">실행</span> <span class="n">코드</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">조건2</span><span class="p">)</span> <span class="p">{</span>
+ <span class="n">조건1이</span> <span class="n">거짓이고</span><span class="p">,</span> <span class="n">조건2가</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
- <span class="nx">조건1과</span> <span class="nx">조건2가</span> <span class="nx">모두</span> <span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+ <span class="n">조건1과</span> <span class="n">조건2가</span> <span class="n">모두</span> <span class="n">거짓일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>else if를 기존 방법으로 다시 풀어서 설명하면</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="nx">조건1</span> <span class="p">)</span> <span class="p">{</span>
-	<span class="nx">조건1</span>  <span class="nx">참</span> <span class="nx">동작</span> <span class="nx">실행코드실행</span> <span class="nx">코드</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="n">조건1</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="n">조건1</span>  <span class="n">참</span> <span class="n">동작</span> <span class="n">실행코드실행</span> <span class="n">코드</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span> <span class="nx">조건2</span> <span class="p">){</span>
-		<span class="nx">조건1이</span> <span class="nx">거짓이고</span><span class="p">,</span> <span class="nx">조건2가</span> <span class="nx">참일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">조건2</span> <span class="p">){</span>
+		<span class="n">조건1이</span> <span class="n">거짓이고</span><span class="p">,</span> <span class="n">조건2가</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span><span class="p">;</span>
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="nx">조건1과</span> <span class="nx">조건2가</span> <span class="nx">모두</span> <span class="nx">거짓일</span> <span class="nx">때</span> <span class="nx">동작</span> <span class="nx">처리</span> <span class="p">;</span>
+		<span class="n">조건1과</span> <span class="n">조건2가</span> <span class="n">모두</span> <span class="n">거짓일</span> <span class="n">때</span> <span class="n">동작</span> <span class="n">처리</span> <span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -161,7 +161,7 @@
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>양수입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>양수입니다.
 </code></pre></div></div>
 
 <p>위의 예는 간단하게 두 개의 조건 체인을 통해 값을 판별하는 예제입니다. 

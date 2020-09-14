@@ -1,4 +1,4 @@
-I"� <ol>
+I"F!<ol>
   <li>
     <h1 id="통신">통신</h1>
   </li>
@@ -26,7 +26,7 @@ resource fsockopen ( string $hostname [, int $port = -1 [, int &amp;$errno [, st
         $out .= “Connection: Close\r\n\r\n”;
         fwrite($fp, $out);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    while (!feof($fp)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    while (!feof($fp)) {
         echo fgets($fp, 128);
     }
     fclose($fp);
@@ -41,7 +41,7 @@ resource pfsockopen ( string $hostname [, int $port = -1 [, int &amp;$errno [, s
 <p>예제) pfsockopen.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 
 $host = 'www.example.com';
 $service_uri = '/cgi/proACT';
@@ -136,7 +136,7 @@ if (!$fp) {
 &lt;?php
 	$email = $_GET[‘q’];</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 		echo "$email 정상적인 이메일 주소 입니다.";
 } else {
 		echo "$email 는 잘못된 이메일 주소 입니다.";
@@ -201,7 +201,7 @@ if (!$fp) {
 &lt;?php
 	$email = $_POST[‘email’];</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 		echo "$email 정상적인 이메일 주소 입니다.";
 } else {
 		echo "$email 는 잘못된 이메일 주소 입니다.";

@@ -1,5 +1,6 @@
-I"M]<h1 id="트레이트">트레이트</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스의 상속 기능은 기존의 코드들을 재사용하면서 새로운 클래스를 생성하기 위한 코딩 방법론이었습니다. 하지만 상속이라는 개념은 클래스의 계층화로 항상 부모가 존재합니다. 
+I"
+Z<h1 id="트레이트">트레이트</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>클래스의 상속 기능은 기존의 코드들을 재사용하면서 새로운 클래스를 생성하기 위한 코딩 방법론이었습니다. 하지만 상속이라는 개념은 클래스의 계층화로 항상 부모가 존재합니다. 
 
 클래스의 상속, 오버라이딩, 인터페이스, 추상화 등 객체들을 계층적으로 생성하고 정의하여 사용했습니다. 기존 방식과 같이 만일 클래스 A 기능과, 클래스 B의 기능을 가진 클래스 C를 만들고 한다면 어떻게 해야 할까요?
 
@@ -36,7 +37,7 @@ class c extend b {
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
 
-  <span class="kn">use</span> <span class="nn">myTrait</span><span class="p">;</span> 
+  <span class="kn">use</span> <span class="n">myTrait</span><span class="p">;</span> 
 
   <span class="c1">// 클래스 내용 구현</span>
 <span class="p">}</span>
@@ -54,12 +55,12 @@ class c extend b {
 	<span class="c1">// 기존 클래스 작성하는 것과 같이 트레이트를 작성합니다.</span>
 	<span class="kd">trait</span> <span class="nc">geoLocation</span>
 	<span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getLatitude</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getLatitude</span><span class="p">()</span>
 		<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"좌표  Latitude&lt;br&gt;"</span><span class="p">;</span>
   		<span class="p">}</span>
 
- 		<span class="k">public</span> <span class="k">function</span> <span class="nf">getLongtitude</span><span class="p">()</span>
+ 		<span class="k">public</span> <span class="k">function</span> <span class="n">getLongtitude</span><span class="p">()</span>
  		<span class="p">{</span>
 			<span class="k">echo</span> <span class="s2">"좌표  Longtitude&lt;br&gt;"</span><span class="p">;</span>
  		<span class="p">}</span>
@@ -70,10 +71,10 @@ class c extend b {
 	<span class="kd">class</span> <span class="nc">mapping</span>
 	<span class="p">{</span>
 		<span class="c1">// use키워드로 트레이드를 삽입합니다.</span>
-  		<span class="kn">use</span> <span class="nn">geoLocation</span><span class="p">;</span>
+  		<span class="kn">use</span> <span class="n">geoLocation</span><span class="p">;</span>
   		
   		<span class="c1">// 추가 클래스…. 구현</span>
-  		<span class="k">public</span> <span class="k">function</span> <span class="nf">copyright</span><span class="p">()</span>
+  		<span class="k">public</span> <span class="k">function</span> <span class="n">copyright</span><span class="p">()</span>
         		<span class="p">{</span>
             		<span class="c1">// 본 메서드 함수는 대체되지 않습니다.</span>
             		<span class="k">echo</span> <span class="s2">"copyright all Right JinyPHP"</span><span class="p">;</span>
@@ -81,20 +82,20 @@ class c extend b {
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapping</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">mapping</span><span class="p">();</span>
 
 	<span class="c1">// 트레이트로 삽입한 메서드를 실행합니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getLatitude</span><span class="p">();</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getLongtitude</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getLatitude</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getLongtitude</span><span class="p">();</span>
 
 	<span class="c1">// 자체 선언 메서드를 출력합니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">copyright</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">copyright</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좌표 Latitude
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좌표 Latitude
 좌표 Longtitude
 copyright all Right JinyPHP
 </code></pre></div></div>
@@ -110,7 +111,7 @@ copyright all Right JinyPHP
 <p>트레이트는 콤마(,)를 통하여 다중 트레이트를 적용할 수 있습니다.</p>
 
 <p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nn">trait1</span><span class="err">, trait2</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="n">trait1</span><span class="p">,</span> <span class="n">trait2</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>예제 파일 trait-02.php</p>
@@ -119,7 +120,7 @@ copyright all Right JinyPHP
 	<span class="c1">// 기존 클래스 작성하는 것 과 같이 트레이트를 작성합니다.</span>
 	<span class="kd">trait</span> <span class="nc">Latitude</span>
 	<span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getLatitude</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getLatitude</span><span class="p">()</span>
 		<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"좌표  Latitude&lt;br&gt;"</span><span class="p">;</span>
   		<span class="p">}</span>
@@ -128,7 +129,7 @@ copyright all Right JinyPHP
 
 	<span class="kd">trait</span> <span class="nc">Longtitude</span>
 	<span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">getLongtitude</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">getLongtitude</span><span class="p">()</span>
  		<span class="p">{</span>
 			<span class="k">echo</span> <span class="s2">"좌표  Longtitude&lt;br&gt;"</span><span class="p">;</span>
  		<span class="p">}</span>
@@ -139,10 +140,10 @@ copyright all Right JinyPHP
 	<span class="p">{</span>
 		<span class="c1">// use키워드로 트레이드를 삽입합니다.</span>
 		<span class="c1">// 콤마로 구분하여 다중 트레이트를 구현합니다.</span>
-  		<span class="kn">use</span> <span class="nn">Latitude</span><span class="err">, Longtitude</span><span class="p">;</span>
+  		<span class="kn">use</span> <span class="nc">Latitude</span><span class="p">,</span> <span class="nc">Longtitude</span><span class="p">;</span>
   		
   		<span class="c1">// 추가 클래스…. 구현</span>
-  		<span class="k">public</span> <span class="k">function</span> <span class="nf">copyright</span><span class="p">()</span>
+  		<span class="k">public</span> <span class="k">function</span> <span class="n">copyright</span><span class="p">()</span>
         		<span class="p">{</span>
             		<span class="c1">// 본 매메서드 함수는 대체되지 않습니다.</span>
             		<span class="k">echo</span> <span class="s2">"copyright all Right JinyPHP"</span><span class="p">;</span>
@@ -150,20 +151,20 @@ copyright all Right JinyPHP
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mapping</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">mapping</span><span class="p">();</span>
 
 	<span class="c1">// 트레이트로 삽입한 매메소드메서드를 실행합니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getLatitude</span><span class="p">();</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getLongtitude</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getLatitude</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getLongtitude</span><span class="p">();</span>
 
 	<span class="c1">// 자체 선언 메소드메서드를 출력합니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">copyright</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">copyright</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좌표 Latitude
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좌표 Latitude
 좌표 Longtitude
 copyright all Right JinyPHP
 </code></pre></div></div>
@@ -178,45 +179,45 @@ copyright all Right JinyPHP
 <p>예제 파일 trait-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
     <span class="kd">trait</span> <span class="nc">a</span> <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">name</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"trait A name&lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">age</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">age</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"trait A age&lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="kd">trait</span> <span class="nc">b</span> <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">name</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">name</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"trait B name&lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">age</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">age</span><span class="p">()</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"trait B age&lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="kd">class</span> <span class="nc">members</span> <span class="p">{</span>
-        <span class="kn">use</span> <span class="nn">a</span><span class="err">, b {
-            b::name insteadof a</span><span class="p">;</span>
-            <span class="nx">a</span><span class="o">::</span><span class="na">age</span> <span class="k">insteadof</span> <span class="nx">b</span><span class="p">;</span>
-            <span class="nx">b</span><span class="o">::</span><span class="na">name</span> <span class="k">as</span> <span class="nx">name2</span><span class="p">;</span>
+        <span class="kn">use</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">{</span>
+            <span class="n">b</span><span class="o">::</span><span class="n">name</span> <span class="k">insteadof</span> <span class="n">a</span><span class="p">;</span>
+            <span class="n">a</span><span class="o">::</span><span class="n">age</span> <span class="k">insteadof</span> <span class="n">b</span><span class="p">;</span>
+            <span class="n">b</span><span class="o">::</span><span class="n">name</span> <span class="k">as</span> <span class="n">name2</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">members</span><span class="p">;</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">();</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">age</span><span class="p">();</span>
+    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">members</span><span class="p">;</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">age</span><span class="p">();</span>
 
     <span class="c1">// as 별칭 메서드</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">name2</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">name2</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trait B name
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>trait B name
 trait A age
 trait B name
 </code></pre></div></div>
@@ -233,29 +234,29 @@ trait B name
 <p>예제 파일 trait-04.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">trait</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">sayHello</span><span class="p">()</span> <span class="p">{</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">sayHello</span><span class="p">()</span> <span class="p">{</span>
         			<span class="k">echo</span> <span class="s2">"Hello World!"</span><span class="p">;</span>
     		<span class="p">}</span>
 	<span class="p">}</span>
 
 	<span class="c1">// sayHello 속성을 변경</span>
 	<span class="kd">class</span> <span class="nc">MyClass1</span> <span class="p">{</span>
-    		<span class="kn">use</span> <span class="nn">HelloWorld</span><span class="err"> { sayHello</span> <span class="k">as</span> <span class="n">protected</span><span class="p">;</span> <span class="p">}</span>
+    		<span class="kn">use</span> <span class="nc">HelloWorld</span> <span class="p">{</span> <span class="n">sayHello</span> <span class="k">as</span> <span class="k">protected</span><span class="p">;</span> <span class="p">}</span>
 
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">(){</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">hello</span><span class="p">(){</span>
     			<span class="k">echo</span> <span class="s2">"protect method call &lt;br&gt;"</span><span class="p">;</span>
-    			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sayHello</span><span class="p">();</span>
+    			<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">sayHello</span><span class="p">();</span>
     		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass1</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">hello</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MyClass1</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">hello</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protect method call 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protect method call 
 Hello World!
 </code></pre></div></div>
 
@@ -266,36 +267,36 @@ Hello World!
 <p>하나의 트레이트에서는 또 다른 트레이트를 연결하여 조합할 수 있습니다.</p>
 
 <p>예제 파일 trait-05.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-	<span class="kd">trait</span> <span class="nc">a</span> <span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
-        	<span class="k">echo</span> <span class="s2">"Trait Method foo!&lt;br&gt;"</span><span class="p">;</span>
-    	<span class="p">}</span>
-	<span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	trait a {
+    	public function foo() {
+        	echo "Trait Method foo!&lt;br&gt;";
+    	}
+	}
 
-	<span class="kd">trait</span> <span class="nc">b</span> <span class="p">{</span>
+	trait b {
 		
-		<span class="c1">// 트레이트 a 를 조합</span>
-		<span class="kn">use</span> <span class="nn">a</span><span class="p">;</span>
+		// 트레이트 a 를 조합
+		use a;
 
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
-        	<span class="k">echo</span> <span class="s2">"Trait Method bar!&lt;br&gt;"</span><span class="p">;</span>
-    	<span class="p">}</span>
-	<span class="p">}</span>
+    	public function bar() {
+        	echo "Trait Method bar!&lt;br&gt;";
+    	}
+	}
 
-	<span class="kd">class</span> <span class="nc">myClass</span> <span class="p">{</span>
-		<span class="kn">use</span> <span class="nn">b</span><span class="p">;</span>
-	<span class="p">}</span>
+	class myClass {
+		use b;
+	}
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">();</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">bar</span><span class="p">();</span>
+	$obj = new myClass;
+	$obj-&gt;foo();
+	$obj-&gt;bar();
 
-<span class="cp">?&gt;</span>
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Trait Method foo!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Trait Method foo!
 Trait Method bar!
 </code></pre></div></div>
 
@@ -307,39 +308,39 @@ abstract로 선언된 메서드는 use 키워드를 통해 트레이트 적용 �
 <p>예제 파일 trait-06.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">trait</span> <span class="nc">Hello</span> <span class="p">{</span>
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
-        			<span class="k">echo</span> <span class="s2">"Hello "</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getWorld</span><span class="p">();</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+        			<span class="k">echo</span> <span class="s2">"Hello "</span><span class="mf">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getWorld</span><span class="p">();</span>
     		<span class="p">}</span>
 
-    		<span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">getWorld</span><span class="p">();</span>
+    		<span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="n">getWorld</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="kd">class</span> <span class="nc">MyHelloWorld</span> <span class="p">{</span>
     		<span class="k">private</span> <span class="nv">$world</span><span class="p">;</span>
     	
-    		<span class="kn">use</span> <span class="nn">Hello</span><span class="p">;</span>
+    		<span class="kn">use</span> <span class="nc">Hello</span><span class="p">;</span>
     	
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">getWorld</span><span class="p">()</span> <span class="p">{</span>
-        			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">world</span><span class="p">;</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">getWorld</span><span class="p">()</span> <span class="p">{</span>
+        			<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">world</span><span class="p">;</span>
     		<span class="p">}</span>
     
-    		<span class="k">public</span> <span class="k">function</span> <span class="nf">setWorld</span><span class="p">(</span><span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
-        			<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">world</span> <span class="o">=</span> <span class="nv">$val</span><span class="p">;</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="n">setWorld</span><span class="p">(</span><span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
+        			<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">world</span> <span class="o">=</span> <span class="nv">$val</span><span class="p">;</span>
     		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyHelloWorld</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">setWorld</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MyHelloWorld</span><span class="p">;</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">setWorld</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
 
-	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">getWorld</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">getWorld</span><span class="p">();</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">sayHelloWorld</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">sayHelloWorld</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny
 Hello jiny
 </code></pre></div></div>
 
@@ -350,21 +351,21 @@ Hello jiny
 <p>예제 파일 trait-07.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">trait</span> <span class="nc">Hello</span> <span class="p">{</span>
-    	<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+    	<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
         	<span class="k">return</span> <span class="s2">"Hello World!"</span><span class="p">;</span>
     	<span class="p">}</span>
 	<span class="p">}</span>
 
 	<span class="kd">class</span> <span class="nc">MyHelloWorld</span> <span class="p">{</span>
-    	<span class="kn">use</span> <span class="nn">Hello</span><span class="p">;</span>
+    	<span class="kn">use</span> <span class="nc">Hello</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="nx">MyHelloWorld</span><span class="o">::</span><span class="na">sayHelloWorld</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="nc">MyHelloWorld</span><span class="o">::</span><span class="nf">sayHelloWorld</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello World!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello World!
 </code></pre></div></div>
 
 <h3 id="1558--트레이트-프로퍼티">15.5.8  트레이트 프로퍼티</h3>
@@ -378,15 +379,15 @@ Hello jiny
 	<span class="p">}</span>
 
 	<span class="kd">class</span> <span class="nc">myClass</span> <span class="p">{</span>
-    	<span class="kn">use</span> <span class="nn">PropertiesTrait</span><span class="p">;</span>
+    	<span class="kn">use</span> <span class="nc">PropertiesTrait</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">x</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">myClass</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 </code></pre></div></div>
 :ET

@@ -1,12 +1,12 @@
-I"�<h1 id="define">define()</h1>
+I"�<h1 id="define">define()</h1>
 <hr />
-<p>내장 함수 <code class="highlighter-rouge">define()</code>은 PHP언어에서 상수를 설정할 수 있도록 사전에 미리 만들어 제공되는 함수입니다.</p>
+<p>내장 함수 <code class="language-plaintext highlighter-rouge">define()</code>은 PHP언어에서 상수를 설정할 수 있도록 사전에 미리 만들어 제공되는 함수입니다.</p>
 
 <p><br /></p>
 
 <h2 id="define-함수">define() 함수</h2>
 <hr />
-<p><code class="highlighter-rouge">define()</code> 함수는 세 개의 실행 인자 값을 입력할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">define()</code> 함수는 세 개의 실행 인자 값을 입력할 수 있습니다.</p>
 
 <ul>
   <li>첫 번째는 상수명</li>
@@ -14,10 +14,10 @@
   <li>세 번째는 대소문자 구분 여부</li>
 </ul>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nb">define</span><span class="p">(</span><span class="s2">"상수명"</span><span class="p">,</span> <span class="s2">"상수값"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">define</span><span class="p">(</span><span class="s2">"상수명"</span><span class="p">,</span> <span class="s2">"상수값"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </code></pre></div></div>
 <p>실행 인자 중 세 번째 인자는 생략할 수 있습니다.<br />
-세 번째 인자를 생략할 경우에는 기본적으로는 <code class="highlighter-rouge">true</code> 로 설정된 것으로 간주합니다.</p>
+세 번째 인자를 생략할 경우에는 기본적으로는 <code class="language-plaintext highlighter-rouge">true</code> 로 설정된 것으로 간주합니다.</p>
 
 <p><br /></p>
 
@@ -29,16 +29,16 @@
 	<span class="c1">// 상수를 정의합니다.</span>
 	<span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">);</span>
 	<span class="c1">// 설정한 상수를 출력합니다.</span>
-	<span class="k">echo</span> <span class="nx">DB_TYPE</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mysql
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mysql
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">define()</code> 함수는 실행 후 결과값으로 <code class="highlighter-rouge">논리값</code>을 반환합니다.<br />
-상수 설정이 성공한 경우 <code class="highlighter-rouge">true</code>, 실패할 경우 <code class="highlighter-rouge">false</code>를 반환함으로 상수 설정의 성공 여부를 확인할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">define()</code> 함수는 실행 후 결과값으로 <code class="language-plaintext highlighter-rouge">논리값</code>을 반환합니다.<br />
+상수 설정이 성공한 경우 <code class="language-plaintext highlighter-rouge">true</code>, 실패할 경우 <code class="language-plaintext highlighter-rouge">false</code>를 반환함으로 상수 설정의 성공 여부를 확인할 수 있습니다.</p>
 
 <p><br /></p>
 
@@ -49,7 +49,7 @@
 	<span class="c1">// 상수를 정의합니다.</span>
 	<span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">);</span>
 	<span class="c1">// 설정한 상수를 출력합니다.</span>
-	<span class="k">echo</span> <span class="nx">DB_TYPE</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
 	<span class="c1">// 상수를 중복 정의해 봅니다.</span>
 	<span class="k">if</span><span class="p">(</span><span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">)){</span>
@@ -61,11 +61,11 @@
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
 상수 설정 실패
 </code></pre></div></div>
 
-<p>위의 두 번째 예는 동일한 이름의 상수를 중복으로 선언하기 때문에 <code class="highlighter-rouge">define()</code> 함수는 상수의 설정 <code class="highlighter-rouge">false</code>를 반환합니다.</p>
+<p>위의 두 번째 예는 동일한 이름의 상수를 중복으로 선언하기 때문에 <code class="language-plaintext highlighter-rouge">define()</code> 함수는 상수의 설정 <code class="language-plaintext highlighter-rouge">false</code>를 반환합니다.</p>
 
 <p><br /></p>
 
@@ -85,13 +85,13 @@
     	<span class="s1">'bird'</span>
 	<span class="p">]);</span>
 
-	<span class="k">echo</span> <span class="nx">ANIMALS</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// outputs "cat"</span>
+	<span class="k">echo</span> <span class="no">ANIMALS</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// outputs "cat"</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat
 </code></pre></div></div>
 
 <p>배열 상수도 배열 변수처럼 상수명 뒤에 []를 붙여서 배열 접근 및 처리를 할 수 있습니다.</p>

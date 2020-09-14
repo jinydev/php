@@ -110,13 +110,13 @@
  	<span class="k">echo</span> <span class="s2">"casting &lt;br&gt;"</span><span class="p">;</span>
 
  	<span class="nv">$a</span> <span class="o">=</span> <span class="s2">"변수를 삭제합니다."</span><span class="p">;</span> 
- 	<span class="k">echo</span> <span class="nv">$a</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
- 	<span class="k">echo</span> <span class="s2">"변수 삭제 = "</span><span class="o">.</span><span class="p">(</span><span class="nb">unset</span><span class="p">)</span><span class="nv">$a</span><span class="p">;</span> <span class="c1">// 결과:  </span>
+ 	<span class="k">echo</span> <span class="nv">$a</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+ 	<span class="k">echo</span> <span class="s2">"변수 삭제 = "</span><span class="mf">.</span><span class="p">(</span><span class="n">unset</span><span class="p">)</span><span class="nv">$a</span><span class="p">;</span> <span class="c1">// 결과:  </span>
  <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>화면 출력</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 
 <p>자동 전역변수는 PHP에서 미리 설정되어 있는 변수입니다. 하지만 전역변수들은 서버의 정보를 포함한 보완적인 민감한 내용도 같이 출력됩니다.</p>
 

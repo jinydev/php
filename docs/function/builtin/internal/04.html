@@ -141,7 +141,7 @@
 <p>예제파일) json-01.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
 	[10, {\"a\":20}, [30,\"서른\"] ]
 ";
 
@@ -177,7 +177,7 @@ Array ( [0] =&gt; 10 [1] =&gt; stdClass Object ( [a] =&gt; 20 ) [2] =&gt; Array 
 <p>예제파일) json-02.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$string = "
 	{\"name1\":10,\"name2\":\"안녕하세요\",\"name3\":true}
 ";
 
@@ -256,7 +256,7 @@ string json_encode ( mixed $value [, int $options = 0 [, int $depth = 512 ]] )</
 <p>예제파일) json-03.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
 $arr['LastName'] = "hojin";
 
 $json = json_encode($arr);
@@ -273,7 +273,7 @@ echo $json;
 <p>예제파일) json-04.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr['FirstName'] = "lee";
 $arr['LastName'] = "hojin";
 $user['1'] = $arr;
 
@@ -317,7 +317,7 @@ mixed json_decode ( string $json [, bool $assoc = false [, int $depth = 512 [, i
 <p>예제파일) json-05.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
 $string = "
 { 
 	\"Id\":\"01\", 
@@ -377,7 +377,7 @@ Country==&gt;Korea</p>
 <p>예제파일) json-06.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 쌍따옴표를 사용하기 위해서 백슬래쉬를 추가
 $string = "
 
 	[
@@ -451,7 +451,7 @@ string serialize ( mixed $value )</p>
 <p>class A {
       public $one = 1;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  public function show_one() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  public function show_one() {
       echo $this-&gt;one;
   }   }
 </code></pre></div></div>
@@ -477,7 +477,7 @@ mixed unserialize ( string $str [, array $options ] )</p>
 <p>예제) unserialize.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
 	public $one = 1;
 
 	public function show_one() {

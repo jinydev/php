@@ -1,4 +1,4 @@
-I"#n<h1 id="인터페이스">인터페이스</h1>
+I"rg<h1 id="인터페이스">인터페이스</h1>
 <hr />
 <p>클래스가 상속될 때 부모의 메서드나 프로퍼티는 자식 클래스에 전달됩니다. 또한 메서드가 변경된 경우 오버라이딩되어 다시 재정의 사용할 수 있었습니다.</p>
 
@@ -27,7 +27,7 @@
 <p>인터페이스 문법</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">pages</span> 
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">();</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -46,26 +46,26 @@
 	<span class="kd">interface</span> <span class="nc">pages</span>
 	<span class="p">{</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">();</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">();</span>
 
 	<span class="p">}</span>
 
-	<span class="kd">class</span> <span class="nc">intro</span> <span class="k">implements</span> <span class="nx">pages</span>
+	<span class="kd">class</span> <span class="nc">intro</span> <span class="kd">implements</span> <span class="nc">pages</span>
 	<span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">()</span>
 		<span class="p">{</span>
 			<span class="k">echo</span> <span class="s2">"인터페이스 소개 &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">intro</span><span class="p">();</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">intro</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">index</span><span class="p">();</span>
 	
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>인터페이스 소개 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>인터페이스 소개 
 </code></pre></div></div>
 
 <p>위의 예제는 클래스의 인터페이스에 대한 예입니다. 먼저 pages 라는 이름의 인터페이스 규약을 정의합니다. intro라는 클래스를 생성할 때 이전에 정의한 pages라는 인터페이스 규약을 따릅니다.</p>
@@ -77,22 +77,22 @@
 	<span class="kd">interface</span> <span class="nc">pages</span>
 	<span class="p">{</span>
 
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">();</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">();</span>
 
 	<span class="p">}</span>
 
-	<span class="kd">class</span> <span class="nc">intro</span> <span class="k">implements</span> <span class="nx">pages</span>
+	<span class="kd">class</span> <span class="nc">intro</span> <span class="kd">implements</span> <span class="nc">pages</span>
 	<span class="p">{</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">intro</span><span class="p">();</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">intro</span><span class="p">();</span>
 	
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Fri May 12 15:43:33 2017] ::1:51820 [500]: /jinyphp/interface-02.php - Class intro contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (pages::index) in C:\php-7.1.4-Win32-VC14-x86\jinyphp\interface-02.php on line 9
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Fri May 12 15:43:33 2017] ::1:51820 [500]: /jinyphp/interface-02.php - Class intro contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (pages::index) in C:\php-7.1.4-Win32-VC14-x86\jinyphp\interface-02.php on line 9
 </code></pre></div></div>
 
 <p>두 번째 예제는 선언된 인터페이스를 구현하지 않은 경우입니다. 인터페이스를 적용하면서 인터페이스에서 규약한 방식대로 사용하지 않을 때 PHP는 에러를 출력하고 실행을 중단합니다.</p>
@@ -107,43 +107,43 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">interface</span> <span class="nc">a</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="c1">// a 인터페이스를 상속 받습니다.</span>
-	<span class="kd">interface</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
+	<span class="kd">interface</span> <span class="nc">b</span> <span class="kd">extends</span> <span class="nc">a</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="c1">// 상속받은 b 인터페이스로 구현합니다.</span>
-	<span class="kd">class</span> <span class="nc">c</span> <span class="k">implements</span> <span class="nx">b</span>
+	<span class="kd">class</span> <span class="nc">c</span> <span class="kd">implements</span> <span class="nc">b</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is foo &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
 
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is bar &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
     	
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">c</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">c</span><span class="p">;</span>
 
 	<span class="c1">// 인터페이스 a의 메서드입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">foo</span><span class="p">();</span>
 
 	<span class="c1">// 인터페이스 b의 메서드입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">bar</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">bar</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method is foo 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method is foo 
 method is bar
 </code></pre></div></div>
 
@@ -159,53 +159,53 @@ method is bar
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
     <span class="kd">interface</span> <span class="nc">a</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">();</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">interface</span> <span class="nc">b</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">();</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="kd">interface</span> <span class="nc">c</span> <span class="k">extends</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span>
+    <span class="kd">interface</span> <span class="nc">c</span> <span class="kd">extends</span> <span class="nc">a</span><span class="p">,</span> <span class="n">b</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">baz</span><span class="p">();</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">baz</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="kd">class</span> <span class="nc">d</span> <span class="k">implements</span> <span class="nx">c</span>
+    <span class="kd">class</span> <span class="nc">d</span> <span class="kd">implements</span> <span class="nc">c</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"method is foo &lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"method is bar &lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">baz</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">baz</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">"method is baz &lt;br&gt;"</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">d</span><span class="p">;</span>
+    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">d</span><span class="p">;</span>
 
     <span class="c1">// 인터페이스 a의 메서드입니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">foo</span><span class="p">();</span>
 
     <span class="c1">// 인터페이스 b의 메서드입니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">bar</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">bar</span><span class="p">();</span>
 
     <span class="c1">// 인터페이스 c의 메서드입니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">baz</span><span class="p">();</span>
+    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">baz</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method is foo 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method is foo 
 method is bar 
 method is baz
 </code></pre></div></div>
@@ -223,53 +223,53 @@ method is baz
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">interface</span> <span class="nc">a</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="c1">// a 인터페이스를 상속 받습니다.</span>
-	<span class="kd">interface</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
+	<span class="kd">interface</span> <span class="nc">b</span> <span class="kd">extends</span> <span class="nc">a</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="kd">class</span> <span class="nc">Bird</span> <span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">info</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"I am a </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">info</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"I am a </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 			<span class="k">echo</span> <span class="s2">"I am an bird &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="kd">class</span> <span class="nc">Penguin</span> <span class="k">extends</span> <span class="nx">Bird</span> <span class="k">implements</span> <span class="nx">b</span> <span class="p">{</span>
+	<span class="kd">class</span> <span class="nc">Penguin</span> <span class="kd">extends</span> <span class="nc">Bird</span> <span class="kd">implements</span> <span class="nc">b</span> <span class="p">{</span>
 		<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s2">"Penguin"</span><span class="p">;</span>
 		
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is foo &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
 
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is bar &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Penguin</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Penguin</span><span class="p">;</span>
 
 	<span class="c1">// 상속 메서드입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">info</span><span class="p">();</span>
 
 	<span class="c1">// 인터페이스 a의 메서드입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">foo</span><span class="p">();</span>
 
 	<span class="c1">// 인터페이스 b의 메서드입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">bar</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">bar</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am a Penguin 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am a Penguin 
 I am an bird 
 method is foo 
 method is bar
@@ -282,52 +282,52 @@ method is bar
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="kd">interface</span> <span class="nc">a</span>
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="kd">interface</span> <span class="nc">b</span> 
 	<span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">();</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">();</span>
 	<span class="p">}</span>
 
 	<span class="kd">class</span> <span class="nc">Bird</span> <span class="p">{</span>
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">info</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">echo</span> <span class="s2">"I am a </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">info</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"I am a </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span><span class="si">}</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
 			<span class="k">echo</span> <span class="s2">"I am an bird &lt;br&gt;"</span><span class="p">;</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="kd">class</span> <span class="nc">Penguin</span> <span class="k">extends</span> <span class="nx">Bird</span> <span class="k">implements</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">{</span>
+	<span class="kd">class</span> <span class="nc">Penguin</span> <span class="kd">extends</span> <span class="nc">Bird</span> <span class="kd">implements</span> <span class="nc">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">{</span>
 		<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s2">"Penguin"</span><span class="p">;</span>
 		
-		<span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+		<span class="k">public</span> <span class="k">function</span> <span class="n">foo</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is foo &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
 
-    	<span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span>
+    	<span class="k">public</span> <span class="k">function</span> <span class="n">bar</span><span class="p">()</span>
     	<span class="p">{</span>
     		<span class="k">echo</span> <span class="s2">"method is bar &lt;br&gt;"</span><span class="p">;</span>
     	<span class="p">}</span>
 
 	<span class="p">}</span>
 
-	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Penguin</span><span class="p">;</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Penguin</span><span class="p">;</span>
 
 	<span class="c1">// 상속 메서드 입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">info</span><span class="p">();</span>
 
 	<span class="c1">// 인터페이스 a의 메서드 입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">foo</span><span class="p">();</span>
 
 	<span class="c1">// 인터페이스 b의 메서드 입니다.</span>
-	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">bar</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="nf">bar</span><span class="p">();</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am a Penguin 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am a Penguin 
 I am an bird 
 method is foo 
 method is bar
@@ -351,26 +351,26 @@ method is bar
     	<span class="k">const</span> <span class="no">name</span> <span class="o">=</span> <span class="s2">"interface a const"</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="nx">a</span><span class="o">::</span><span class="na">name</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="n">a</span><span class="o">::</span><span class="n">name</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 
-	<span class="kd">class</span> <span class="nc">b</span> <span class="k">implements</span> <span class="nx">a</span>
+	<span class="kd">class</span> <span class="nc">b</span> <span class="kd">implements</span> <span class="nc">a</span>
 	<span class="p">{</span>
 
 	<span class="p">}</span>
 
-	<span class="kd">class</span> <span class="nc">c</span> <span class="k">extends</span> <span class="nx">b</span>
+	<span class="kd">class</span> <span class="nc">c</span> <span class="kd">extends</span> <span class="nc">b</span>
 	<span class="p">{</span>
     	<span class="k">const</span> <span class="no">age</span> <span class="o">=</span> <span class="s1">'Class c constant'</span><span class="p">;</span>
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="nx">c</span><span class="o">::</span><span class="na">age</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="n">c</span><span class="o">::</span><span class="n">age</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interface a const
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interface a const
 Class c constant
 </code></pre></div></div>
 
@@ -380,12 +380,12 @@ Class c constant
 
 <p>이 두 개를 서로 같이 사용할 수 없는 이유는 상속과 인터페이스는 문법이 서로 매우 비슷합니다. 클래스명과 키워드 그리고 상속, 인터페이스명입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class 클래스명 extends 상속 클래스
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class 클래스명 extends 상속 클래스
 {
 }
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class 클래스명 implements 인터페이스
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class 클래스명 implements 인터페이스
 {
 }
 </code></pre></div></div>
@@ -402,7 +402,7 @@ Class c constant
 <p>클래스에 추상화 사용법 또한 매우 간단합니다. 추상화 설정은  클래스명 또는 메서드 앞에 새로운 추상화 키워드 abstract를 같이 선언만 해주면 됩니다.</p>
 
 <p>|문법|</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abstract class 추상화 클래스
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abstract class 추상화 클래스
 {
     // 추상화: 인터페이스
     abstract public function 메서드();
@@ -424,54 +424,54 @@ class 클래스명 extends 추상화 클래스
 <p>클래스를 정의할 때 abstract 키워드를 이용하여 추상화 클래스와 메서드 등을 생성합니다.<br />
 추상화로 선언한 메서드들은 인터페이스와 같이 자식 클래스에서 반드시 선언해야 합니다.</p>
 
-<p>추상화 클래스를 적용하는 방법은 상속과 같이 <code class="highlighter-rouge">extends</code> 키워드로 사용합니다.</p>
+<p>추상화 클래스를 적용하는 방법은 상속과 같이 <code class="language-plaintext highlighter-rouge">extends</code> 키워드로 사용합니다.</p>
 
 <p><br /></p>
 
 <h3 id="1542-추상화-예제">15.4.2 추상화 예제</h3>
 
 <p>예제 파일 abstract-01.php</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
-    <span class="c1">// 추상화 클래스를 선언합니다.</span>
-    <span class="k">abstract</span> <span class="kd">class</span> <span class="nc">a</span>
-    <span class="p">{</span>
-        <span class="c1">// 확장 시 구현부가 필요한 메서드 정의</span>
-        <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">);</span>
+    // 추상화 클래스를 선언합니다.
+    abstract class a
+    {
+        // 확장 시 구현부가 필요한 메서드 정의
+        abstract public function isAdult($age);
         
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">copyright</span> <span class="p">()</span>
-        <span class="p">{</span>
-            <span class="c1">// 본 메서드 함수는 대체되지 않습니다.</span>
-            <span class="k">echo</span> <span class="s2">"copyright all Right JinyPHP"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+        public function copyright ()
+        {
+            // 본 메서드 함수는 대체되지 않습니다.
+            echo "copyright all Right JinyPHP";
+        }
+    }
 
-    <span class="c1">// 추상화 적용</span>
-    <span class="kd">class</span> <span class="nc">b</span> <span class="k">extends</span> <span class="nx">a</span>
-    <span class="p">{</span>
-        <span class="c1">// 추상화 인터페이스를 구현</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">isAdult</span><span class="p">(</span><span class="nv">$age</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nv">$age</span><span class="o">&gt;=</span><span class="mi">18</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    // 추상화 적용
+    class b extends a
+    {
+        // 추상화 인터페이스를 구현
+        public function isAdult($age)
+        {
+            if ($age&gt;=18) return true; else return false;
+        }
+    }
 
-    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">b</span><span class="p">();</span>
+    $obj = new b();
 
-    <span class="c1">// 추상화에 선언된 일반 메서드를 상속, 호출 가능합니다.</span>
-    <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">copyright</span><span class="p">();</span>
+    // 추상화에 선언된 일반 메서드를 상속, 호출 가능합니다.
+    $obj-&gt;copyright();
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">isAdult</span><span class="p">(</span><span class="mi">18</span><span class="p">)){</span>
-        <span class="k">echo</span> <span class="s2">"성인입니다."</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">"미성년입니다."</span><span class="p">;</span>
-    <span class="p">}</span>
+    if ($obj-&gt;isAdult(18)){
+        echo "성인입니다.";
+    } else {
+        echo "미성년입니다.";
+    }
 
-<span class="cp">?&gt;</span>
+?&gt;
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>copyright all Right JinyPHP 성인입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>copyright all Right JinyPHP 성인입니다.
 </code></pre></div></div>
 
 <p>위의 예제를 보면 추상화 클래스는 일반 클래스처럼 프로퍼티와 메서드 등을 구현할 수 있습니다. 

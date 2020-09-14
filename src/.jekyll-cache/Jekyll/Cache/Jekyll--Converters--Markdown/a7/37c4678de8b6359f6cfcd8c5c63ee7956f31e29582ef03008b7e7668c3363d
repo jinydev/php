@@ -1,4 +1,4 @@
-I"�<h1 id="파일-업로드">파일 업로드</h1>
+I"�<h1 id="파일-업로드">파일 업로드</h1>
 <hr />
 <p>PHP는 HTML FORM 요소를 통해 파일 업로드가 가능합니다.</p>
 
@@ -6,7 +6,7 @@
 
 <h2 id="허용">허용</h2>
 <p>PHP form 태그를 사용하여 서버로 바이너리 파일을 전송 가능하게 하는 설정입니다. 
-이를 가능하게 하기 위해서는 php.ini에서 <code class="highlighter-rouge">file_uploads</code> 속성을 <code class="highlighter-rouge">On</code>으로 해주어야 합니다.</p>
+이를 가능하게 하기 위해서는 php.ini에서 <code class="language-plaintext highlighter-rouge">file_uploads</code> 속성을 <code class="language-plaintext highlighter-rouge">On</code>으로 해주어야 합니다.</p>
 
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">file_uploads</span> <span class="p">=</span> <span class="s">On</span>
 </code></pre></div></div>

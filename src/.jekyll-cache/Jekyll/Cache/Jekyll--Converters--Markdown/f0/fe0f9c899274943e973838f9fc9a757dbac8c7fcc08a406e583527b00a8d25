@@ -1,7 +1,8 @@
-I"�	<h1 id="array_diff_key">array_diff_key</h1>
+I"
+<h1 id="array_diff_key">array_diff_key</h1>
 <hr />
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">array_diff_key</span> <span class="p">(</span> <span class="k">array</span> <span class="nv">$array1</span> <span class="p">,</span> <span class="k">array</span> <span class="nv">$array2</span> <span class="p">[,</span> <span class="k">array</span> <span class="err">$</span><span class="o">...</span> <span class="p">]</span> <span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">array_diff_key</span> <span class="p">(</span> <span class="k">array</span> <span class="nv">$array1</span> <span class="p">,</span> <span class="k">array</span> <span class="nv">$array2</span> <span class="p">[,</span> <span class="k">array</span> <span class="err">$</span><span class="mf">...</span> <span class="p">]</span> <span class="p">)</span>
 </code></pre></div></div>
 <p>내부함수 array_diff_key()는 키를 사용하여 배열의 차이점을 계산합니다.</p>
 
@@ -17,7 +18,7 @@
 </code></pre></div></div>
 
 <p>화면출력)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(3) { 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(3) { 
     ["blue"]=&gt; int(1) 
     ["red"]=&gt; int(2) 
     ["purple"]=&gt; int(4) 

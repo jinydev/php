@@ -105,12 +105,12 @@
                     <h1 id="liquid">Liquid</h1>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 테스트1</span>
-<span class="nv">$liquid</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Jiny\Liquid\Template</span><span class="p">;</span>
-<span class="k">return</span> <span class="nv">$liquid</span><span class="o">-&gt;</span><span class="na">liquid</span><span class="p">(</span><span class="s2">"Hello,!"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Alex'</span><span class="p">));</span>
+<span class="nv">$liquid</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nc">Jiny\Liquid\Template</span><span class="p">;</span>
+<span class="k">return</span> <span class="nv">$liquid</span><span class="o">-&gt;</span><span class="nf">liquid</span><span class="p">(</span><span class="s2">"Hello,!"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Alex'</span><span class="p">));</span>
 </code></pre></div></div>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 테스트2</span>
-<span class="k">return</span> <span class="nx">\jiny\liquid</span><span class="p">(</span><span class="s2">"Hello,!"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'hojin'</span><span class="p">]);</span>
+<span class="k">return</span> <span class="err">\</span><span class="nf">jiny\liquid</span><span class="p">(</span><span class="s2">"Hello,!"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'hojin'</span><span class="p">]);</span>
 </code></pre></div></div>
 
                 </section>

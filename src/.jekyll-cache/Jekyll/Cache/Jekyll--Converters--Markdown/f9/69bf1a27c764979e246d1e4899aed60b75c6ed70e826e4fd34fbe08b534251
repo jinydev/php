@@ -1,4 +1,4 @@
-I"�$<h2 id="콘솔">콘솔</h2>
+I"�$<h2 id="콘솔">콘솔</h2>
 
 <p>PHP는 웹 브라우저를 통해 실행뿐만 아니라 콘솔에서 직접 명령으로 PHP를 실행할 수 있습니다.</p>
 
@@ -35,7 +35,7 @@
   -i               PHP information
   -l               Syntax check only (lint)
   -m               Show compiled in modules
-  -r <code>        Run PHP <code> without using script tags <?..?>
+  -r <code>        Run PHP <code> without using script tags &lt;?..?&gt;
   -B <begin_code>  Run PHP <begin_code> before processing input lines
   -R <code>        Run PHP <code> for every input line
   -F <file>        Parse and execute <file> for every input line
@@ -97,10 +97,10 @@ Configuration File (php.ini) Path =&gt; C:\Windows
 <p>-s 옵션은 PHP 소스의 문법을 강조하여 HTML 파일 형태로 출력합니다.</p>
 
 <p>예제 파일 index.php
-<?php
-echo "PHP LocalServer Test";
+&lt;?php
+echo “PHP LocalServer Test”;
 phpinfo();
-?></p>
+?&gt;</p>
 
 <p>C:\php-7.1.4-Win32-VC14-x86&gt;php -s index.php
 <code><span style="color: #000000">
@@ -114,8 +114,8 @@ phpinfo();
 -w 옵션은 소스의 주석과 공백을 제거한 소스를 다시 출력합니다.</p>
 
 <p>C:\php-7.1.4-Win32-VC14-x86&gt;php -w index.php
-<?php
-echo "PHP LocalServer Test"; phpinfo(); ?></p>
+&lt;?php
+echo “PHP LocalServer Test”; phpinfo(); ?&gt;</p>
 
 <p>PHP 명령행 실행 -r
 -r 옵션은 php 콘솔상에서 PHP의 명령어를 직접 입력하여 실행할 수 있습니다.</p>
@@ -187,9 +187,9 @@ PHP 소스를 실행할 때 외부에서 입력하는 데이터 값을 입력 �
 <p>콘솔에서 PHP 스크립트 실행과 더불어 인자도 같이 전달 가능합니다. 이것을 외부 실행 인자라고 이야기합니다.</p>
 
 <p>예제 파일 consol-01.php
-<?php
+&lt;?php
 	var_dump($argv);
-?></p>
+?&gt;</p>
 
 <p>위와 같은 예제가 있습니다. 예제는 외부에서 입력된 배열변수의 값 $argv 를 출력하는 것입니다.</p>
 

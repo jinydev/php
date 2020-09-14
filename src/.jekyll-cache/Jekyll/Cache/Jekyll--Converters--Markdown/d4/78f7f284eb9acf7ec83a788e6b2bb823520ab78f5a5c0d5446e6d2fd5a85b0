@@ -1,4 +1,4 @@
-I"�<ol>
+I"P<ol>
   <li>
     <h1 id="배열">배열</h1>
   </li>
@@ -27,7 +27,7 @@ array array ([ mixed $… ] )</p>
 	// 입력한 값에 대한 배열 값을 반환 합니다.
 	$arr1 = array(“hojin”,”jiny”,”james”,”eric”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열값을 foreach 를 통하여 하나씩 출력을 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열값을 foreach 를 통하여 하나씩 출력을 합니다.
 foreach ($arr1 as $value) {
 	echo "$value &lt;br&gt;";
 }
@@ -64,7 +64,7 @@ array list ( mixed $var1 [, mixed $… ] )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열의 값을 각각의 변수에 값을 매칭하여 대입합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열의 값을 각각의 변수에 값을 매칭하여 대입합니다.
 list($orage, $apple, $grape) = $arr;
 
 echo "변수 orage = $orage &lt;br&gt;";
@@ -95,12 +95,12 @@ array array_fill ( int $start_index , int $num , mixed $value )</p>
 <p>내부함수 array_fill()는 지정한 값으로 배열 채우기 합니다. 지정한 값을 배열의 시작위치(start_index) 부터 반복횟수(num) 만큼 반복하여 배열을 생성합니다.</p>
 
 <p>예제파일) array-03.php
-<?php
-	$a = array_fill(5, 6, 'aaa');
-	$b = array_fill(-2, 4, 'bbb');
+&lt;?php
+	$a = array_fill(5, 6, ‘aaa’);
+	$b = array_fill(-2, 4, ‘bbb’);
 	print_r($a);
 	print_r($b);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [5] =&gt; aaa [6] =&gt; aaa [7] =&gt; aaa [8] =&gt; aaa [9] =&gt; aaa [10] =&gt; aaa )
@@ -112,11 +112,11 @@ array array_fill_keys ( array $keys , mixed $value )</p>
 <p>내부함수 array_fill_keys()는 입력받은 배열의 값을 키 값으로 사용하여 배열의 데이터를 채우기 합니다.</p>
 
 <p>예제파일) array-04.php
-<?php
-	$keys = array('foo', 5, 10, 'bar');
-	$a = array_fill_keys($keys, 'banana');
+&lt;?php
+	$keys = array(‘foo’, 5, 10, ‘bar’);
+	$a = array_fill_keys($keys, ‘banana’);
 	print_r($a);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [foo] =&gt; banana [5] =&gt; banana [10] =&gt; banana [bar] =&gt; banana )</p>
@@ -135,7 +135,7 @@ array each ( array &amp;$array )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$test = each($arr);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$test = each($arr);
 echo "원소 0= ".$test[0]."&lt;br&gt;";
 echo "원소 1= ".$test[1]."&lt;br&gt;";
 echo "원소 key= ".$test[key]."&lt;br&gt;";
@@ -175,7 +175,7 @@ array array_values ( array $array )</p>
 	}
 	echo “<br /> ==== <br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr2 = array_values($arr);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr2 = array_values($arr);
 while(list($key,$val) = each($arr2)){
 	echo $key. "==&gt;" .$val. ", ";
 } ?&gt;
@@ -196,7 +196,7 @@ array array_keys ( array $array [, mixed $search_value = null [, bool $strict = 
 	$arr = array(‘firstname’ =&gt; “hojin”, ‘lastname’ =&gt; “lee” );
 	$index = array_keys($arr);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($index)){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($index)){
 	echo $key. "==&gt;" .$val. "&lt;br&gt;";
 } ?&gt;
 </code></pre></div></div>
@@ -247,7 +247,7 @@ array array_flip ( array $array )</p>
 	$input = array(“a”=&gt;”oranges”, “b”=&gt;”apples”, “c”=&gt;”pears”);
 	$flipped = array_flip($input);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($flipped); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($flipped); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -263,7 +263,7 @@ array compact ( mixed $varname1 [, mixed $… ] )</p>
 <p>예제파일) array-10.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$one = "하나";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$one = "하나";
 $two = "두개";
 $three = "세개";
 $four = "네게";
@@ -296,7 +296,7 @@ int extract ( array &amp;$array [, int $flags = EXTR_OVERWRITE [, string $prefix
 &lt;?php
 	$arr = array(“blue”=&gt;”파랑색”,”red”=&gt;”발강색”,”black”=&gt;”검정색”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열을 변수로 생성합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열을 변수로 생성합니다.
 extract($arr);
 
 echo "blue = ".$blue ."&lt;br&gt;";
@@ -322,7 +322,7 @@ array array_merge ( array $array1 [, array $… ] )</p>
 	$arr2 = array(‘철수’, ‘영수’);
 	$arr3 = array(‘제니퍼’, ‘홍길동’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr = array_merge($arr1, $arr2, $arr3);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr = array_merge($arr1, $arr2, $arr3);
 
 while(list($key,$val) = each($arr)){
 	echo $key. "==&gt;" .$val. "&lt;br&gt;";
@@ -352,7 +352,7 @@ array array_merge_recursive ( array $array1 [, array $… ] )</p>
 	$ar2 = array(10, “color” =&gt; array(“favorite” =&gt; “green”, “blue”));
 	$result = array_merge_recursive($ar1, $ar2);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($result); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($result); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -368,7 +368,7 @@ array array_combine ( array $keys , array $values )</p>
 	$a = array(‘green’, ‘red’, ‘yellow’);
 	$b = array(‘avocado’, ‘apple’, ‘banana’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $a 배열은 키명으로 사용고, $b는 데이터로 사용합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $a 배열은 키명으로 사용고, $b는 데이터로 사용합니다.
 // 두개의 배열을 연상배열 형태로 결합니다.
 $arr = array_combine($a, $b);
 print_r($arr); ?&gt;
@@ -390,7 +390,7 @@ array array_slice ( array $array , int $offset [, int $length = NULL [, bool $pr
  	// 첫번째 인자: 추출 시작값
  	// 처음 2부터 끝까지.
  	$slice = array_slice($arr, 2);
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($slice)){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($slice)){
 	echo $key. "==&gt;" .$val. ", ";
 }
 
@@ -431,7 +431,7 @@ array array_chunk ( array $array , int $size [, bool $preserve_keys = false ] )<
 	print_r(array_chunk($array, 2));
 	echo “<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(array_chunk($array, 3));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r(array_chunk($array, 3));
 echo "&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
@@ -451,7 +451,7 @@ array array_reverse ( array $array [, bool $preserve_keys = false ] )</p>
 	$arr = array(“hojin”,”jiny”,”james”,”eric”); 
 	$reverse = array_reverse($arr);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($reverse)){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($reverse)){
 	echo $key. "==&gt;" .$val. "&lt;br&gt;";
 }
 </code></pre></div></div>
@@ -476,7 +476,7 @@ int array_push ( array &amp;$array , mixed $value1 [, mixed $… ] )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $arr 배열에 두개의 원소를 추가합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $arr 배열에 두개의 원소를 추가합니다.
 array_push($arr, 'banana', 'tomato');
 
 while(list($key,$val) = each($arr)){
@@ -501,7 +501,7 @@ mixed array_pop ( array &amp;$array )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 마지막 배열 원소를 삭제 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 마지막 배열 원소를 삭제 합니다.
 $temp = array_pop($arr);
 echo "배열에서 마지막 $temp 요소 하나를 제거합니다.&lt;br&gt; ";
 
@@ -525,7 +525,7 @@ int array_unshift ( array &amp;$array , mixed $value1 [, mixed $… ] )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $arr 배열에 두개의 원소를 추가합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// $arr 배열에 두개의 원소를 추가합니다.
 array_unshift($arr, 'banana', 'tomato');
  
 while(list($key,$val) = each($arr)){
@@ -550,7 +550,7 @@ mixed array_shift ( array &amp;$array )</p>
 	// 배열을 생성합니다.
 	$arr = array(‘orage’, ‘apple’, ‘grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열 원소를 삭제 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열 원소를 삭제 합니다.
 $temp = array_shift($arr);
 echo "배열에서 처음 $temp 요소 하나를 제거합니다.&lt;br&gt; ";
  
@@ -582,7 +582,7 @@ array array_splice ( array &amp;$input , int $offset [, int $length = count($inp
  	// 첫번째 인자: 삭제 시작값
  	// 2까지의 원소를 삭제하고 반환
  	$slice = array_splice($arr, 7);
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($slice)){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(list($key,$val) = each($slice)){
 	echo $key. "==&gt;" .$val. ", ";
 }
 echo "를 삭제하였습니다.&lt;br&gt;";
@@ -623,7 +623,7 @@ bool in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] )</p>
 &lt;?php
 	$arr = array(“blue”=&gt;”파랑색”,”red”=&gt;”발강색”,”black”=&gt;”검정색”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(in_array("파랑색",$arr)){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(in_array("파랑색",$arr)){
 	echo "값이 존재합니다.";
 } else {
 	echo "배열 값이 없습니다.";
@@ -642,7 +642,7 @@ bool array_key_exists ( mixed $key , array $array )</p>
 &lt;?php
 	$array = array(‘first’ =&gt; null, ‘second’ =&gt; 4);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// returns true
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// returns true
 if (array_key_exists('first', $array)){
 	echo "배열에 키 값이 존재합니다.";
 } else {
@@ -662,7 +662,7 @@ mixed array_search ( mixed $needle , array $haystack [, bool $strict = false ] )
 &lt;?php
 	$array = array(0 =&gt; ‘blue’, 1 =&gt; ‘red’, 2 =&gt; ‘green’, 3 =&gt; ‘red’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$key = array_search('green', $array);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$key = array_search('green', $array);
 // $key = 2;
 print_r($key);
 echo "&lt;br&gt;";
@@ -687,7 +687,7 @@ array array_count_values ( array $array )</p>
 &lt;?php
 	$arr = array(‘orage’, ‘apple’, ‘grape’, ‘orage’, ‘apple’, ‘grape’, ‘orage’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr_count = array_count_values($arr);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr_count = array_count_values($arr);
 while(list($key,$val) = each($arr_count)){
 	echo $key. "==&gt;" .$val. "&lt;br&gt;";
 }
@@ -706,11 +706,11 @@ array array_unique ( array $array [, int $sort_flags = SORT_STRING ] )</p>
 <p>내부함수 array_unique()는 입력된 배열값 중에서 중복된 내용은 제거합니다.</p>
 
 <p>예제파일) array-27.php
-<?php
-	$arr = array("a" => "green", "red", "b" => "green", "blue", "red");
+&lt;?php
+	$arr = array(“a” =&gt; “green”, “red”, “b” =&gt; “green”, “blue”, “red”);
 	$result = array_unique($arr);
 	print_r($result);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [a] =&gt; green [0] =&gt; red [1] =&gt; blue )</p>
@@ -753,7 +753,7 @@ mixed prev ( array &amp;$array )</p>
 	}
 	echo “<br /> ======================= <br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열의 포인터를 처음으로 이동합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열의 포인터를 처음으로 이동합니다.
 reset($arr);
 
 // 디음 배열의 포인터를 이동합니다.
@@ -804,7 +804,7 @@ mixed key ( array &amp;$array )</p>
 &lt;?php
 	$arr = array( ‘fruit1’ =&gt; ‘apple’, ‘fruit2’ =&gt; ‘orange’, ‘fruit3’ =&gt; ‘grape’, ‘fruit4’ =&gt; ‘apple’, ‘fruit5’ =&gt; ‘apple’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while ($name = current($arr)) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while ($name = current($arr)) {
 	if ($name == 'apple') {
     	echo key($arr).'&lt;br&gt;';
 	}
@@ -863,7 +863,7 @@ bool arsort ( array &amp;$array [, int $sort_flags = SORT_REGULAR ] )</p>
 <p>예제파일) array-30.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr = array('one'=&gt;'하나', 'two'=&gt;'둘', 'three'=&gt;'셋', 'four'=&gt;'넷', 'five'=&gt;'다섯', 'six'=&gt;'여섯', 'seven'=&gt;'일곱');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$arr = array('one'=&gt;'하나', 'two'=&gt;'둘', 'three'=&gt;'셋', 'four'=&gt;'넷', 'five'=&gt;'다섯', 'six'=&gt;'여섯', 'seven'=&gt;'일곱');
 
 echo "오름차순 정렬&lt;br&gt;";
 sort($arr);
@@ -927,7 +927,7 @@ bool natsort ( array &amp;$array )</p>
 &lt;?php
 	$array1 = $array2 = array(“img12.png”, “img10.png”, “img2.png”, “img1.png”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "기본 정렬&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "기본 정렬&lt;br&gt;";
 asort($array1);
 print_r($array1);
 
@@ -955,7 +955,7 @@ bool natcasesort ( array &amp;$array )</p>
 &lt;?php
 	$array1 = $array2 = array(‘IMG0.png’, ‘img12.png’, ‘img10.png’, ‘img2.png’, ‘img1.png’, ‘IMG3.png’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "기본 정렬&lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "기본 정렬&lt;br&gt;";
 sort($array1);
 print_r($array1);
 
@@ -1010,7 +1010,7 @@ bool array_walk ( array &amp;$array , callable $callback [, mixed $userdata = NU
 &lt;?php
 	$arr = array(‘하나’=&gt;’orage’, ‘둘’=&gt;’apple’, ‘셋’=&gt;’grape’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function arr_print($arr1, $key){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function arr_print($arr1, $key){
 	// 호출된 배열의 값을 출력합니다.
 	echo $key ." = ". $arr1."&lt;br&gt;";
 }
@@ -1055,7 +1055,7 @@ bool array_walk_recursive ( array &amp;$array , callable $callback [, mixed $use
 	$sweet = array(‘a’ =&gt; ‘apple’, ‘b’ =&gt; ‘banana’);
 	$fruits = array(‘sweet’ =&gt; $sweet, ‘sour’ =&gt; ‘lemon’);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($fruits);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_r($fruits);
 echo "&lt;br&gt;";
 
 function test_print($item, $key)
@@ -1091,7 +1091,7 @@ bool uasort ( array &amp;$array , callable $value_compare_func )</p>
     	else return ($a &lt; $b) ? -1 : 1;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
 $array = array('a' =&gt; 5, 'b' =&gt; 7, 'c' =&gt; -1, 'd' =&gt; -6, 'e' =&gt; 3, 'f' =&gt; 2, 'g' =&gt; 8, 'h' =&gt; -3);
 print_r($array);
 
@@ -1120,7 +1120,7 @@ bool uksort ( array &amp;$array , callable $key_compare_func )</p>
     	else return ($a &lt; $b) ? -1 : 1;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
 $array = array('a' =&gt; 5, 'b' =&gt; 7, 'c' =&gt; -1, 'd' =&gt; -6, 'e' =&gt; 3, 'f' =&gt; 2, 'g' =&gt; 8, 'h' =&gt; -3);
 print_r($array);
 
@@ -1150,7 +1150,7 @@ bool usort ( array &amp;$array , callable $value_compare_func )</p>
     	else return ($a &lt; $b) ? -1 : 1;
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열
 $array = array('a' =&gt; 5, 'b' =&gt; 7, 'c' =&gt; -1, 'd' =&gt; -6, 'e' =&gt; 3, 'f' =&gt; 2, 'g' =&gt; 8, 'h' =&gt; -3);
 print_r($array);
 
@@ -1183,7 +1183,7 @@ array array_filter ( array $array [, callable $callback [, int $flag = 0 ]] )</p
     	return($var &amp; 1);
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function even($var) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function even($var) {
 	// returns whether the input integer is even
 	return(!($var &amp; 1));
 }
@@ -1214,7 +1214,7 @@ array array_map ( callable $callback , array $array1 [, array $… ] )</p>
     	return($n * $n * $n);
 	}</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array(1, 2, 3, 4, 5);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array(1, 2, 3, 4, 5);
 $b = array_map("cube", $a);
 print_r($b); ?&gt;
 </code></pre></div></div>
@@ -1285,7 +1285,7 @@ int count ( mixed $array_or_countable [, int $mode = COUNT_NORMAL ] )</p>
 	$arr = array(“hojin”,”jiny”,”james”,”eric”); 
 	echo “배열의 갯수는 = “. count($arr) . “ 입니다.<br />”;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "배열의 갯수는 = ". sizeof($arr) . " 입니다.&lt;br&gt;"; ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "배열의 갯수는 = ". sizeof($arr) . " 입니다.&lt;br&gt;"; ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -1338,7 +1338,7 @@ array range ( mixed $start , mixed $end [, number $step = 1 ] )</p>
 	// 배열
 	$array = array(‘a’ =&gt; 5, ‘b’ =&gt; 7, ‘c’ =&gt; -1, ‘d’ =&gt; -6, ‘e’ =&gt; 3, ‘f’ =&gt; 2, ‘g’ =&gt; 8, ‘h’ =&gt; -3);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = range(3,10);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = range(3,10);
 print_r($a);
 </code></pre></div></div>
 
@@ -1359,7 +1359,7 @@ number array_sum ( array $array )</p>
 	// 배열
 	$array = array(‘a’ =&gt; 5, ‘b’ =&gt; 7, ‘c’ =&gt; -1, ‘d’ =&gt; -6, ‘e’ =&gt; 3, ‘f’ =&gt; 2, ‘g’ =&gt; 8, ‘h’ =&gt; -3);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array_sum($array);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array_sum($array);
 echo "배열의 합 = ".$a;
 </code></pre></div></div>
 
@@ -1376,7 +1376,7 @@ number array_product ( array $array )</p>
 <p>예제파일) array-46.php
 &lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array(1, 2, 3, 4, 5);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a = array(1, 2, 3, 4, 5);
 echo "배열의 곱 = " . array_product($a); ?&gt;
 </code></pre></div></div>
 
@@ -1400,7 +1400,7 @@ bool shuffle ( array &amp;$array )</p>
 	$array = array(‘a’ =&gt; 5, ‘b’ =&gt; 7, ‘c’ =&gt; -1, ‘d’ =&gt; -6, ‘e’ =&gt; 3, ‘f’ =&gt; 2, ‘g’ =&gt; 8, ‘h’ =&gt; -3);
 	print_r($array);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt; === 배열 뒤썩음 === &lt;br&gt;";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "&lt;br&gt; === 배열 뒤썩음 === &lt;br&gt;";
 
 shuffle($array);
 print_r($array);
@@ -1422,7 +1422,7 @@ mixed array_rand ( array $array [, int $num = 1 ] )</p>
 &lt;?php
 	$country = array(“korea”, “usa”, “japan”, “china”, “frach”, “canada”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열에서 임의 값 2개를 추출 합니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 배열에서 임의 값 2개를 추출 합니다.
 $keys = array_rand($country, 2);
 
 echo $country[$keys[0]] . "\n";
@@ -1444,7 +1444,7 @@ array array_replace ( array $array1 , array $array2 [, array $… ] )</p>
 	$base = array(“orange”, “banana”, “apple”, “raspberry”);
 	$replacements = array(0 =&gt; “pineapple”, 4 =&gt; “cherry”);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basket = array_replace($base, $replacements);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basket = array_replace($base, $replacements);
 print_r($basket); ?&gt;
 </code></pre></div></div>
 
@@ -1465,7 +1465,7 @@ array array_replace_recursive ( array $array1 , array $array2 [, array $… ] )<
 	$base = array(‘citrus’ =&gt; array( “orange”) , ‘berries’ =&gt; array(“blackberry”, “raspberry”), );
 	$replacements = array(‘citrus’ =&gt; array(‘pineapple’), ‘berries’ =&gt; array(‘blueberry’));</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basket = array_replace_recursive($base, $replacements);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$basket = array_replace_recursive($base, $replacements);
 print_r($basket);
 echo "&lt;br&gt;";
 
@@ -1488,7 +1488,7 @@ array array_change_key_case ( array $array [, int $case = CASE_LOWER ] )</p>
 &lt;?php
 	$arr = array(“FirSt” =&gt; 1, “SecOnd” =&gt; 4);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 대문자
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 대문자
 $UPPER = array_change_key_case($arr, CASE_UPPER);
 print_r($UPPER);
 
@@ -1511,12 +1511,12 @@ Array ( [first] =&gt; 1 [second] =&gt; 4 )</p>
 array array_intersect ( array $array1 , array $array2 [, array $… ] )</p>
 
 <p>예제파일) array-52.php
-<?php
-	$array1 = array("a" => "green", "red", "blue");
-	$array2 = array("b" => "green", "yellow", "red");
+&lt;?php
+	$array1 = array(“a” =&gt; “green”, “red”, “blue”);
+	$array2 = array(“b” =&gt; “green”, “yellow”, “red”);
 	$result = array_intersect($array1, $array2);
 	print_r($result);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [a] =&gt; green [0] =&gt; red )</p>
@@ -1527,12 +1527,12 @@ array array_intersect_assoc ( array $array1 , array $array2 [, array $… ] )</p
 <p>내부함수 array_intersect_assoc ()는 array_intersect ()와 달리 키값도 같이 비교를 하는데 사용을 합니다. 두개의 배열을 비교하여 교차부분(교집합)만 배열로 반환을 합니다.</p>
 
 <p>예제파일) array-53.php
-<?php
-	$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
-	$array2 = array("a" => "green", "b" => "yellow", "blue", "red");
+&lt;?php
+	$array1 = array(“a” =&gt; “green”, “b” =&gt; “brown”, “c” =&gt; “blue”, “red”);
+	$array2 = array(“a” =&gt; “green”, “b” =&gt; “yellow”, “blue”, “red”);
 	$result_array = array_intersect_assoc($array1, $array2);
 	print_r($result_array);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [a] =&gt; green )</p>
@@ -1547,7 +1547,7 @@ array array_intersect_key ( array $array1 , array $array2 [, array $… ] )</p>
 	$array1 = array(‘blue’  =&gt; 1, ‘red’  =&gt; 2, ‘green’  =&gt; 3, ‘purple’ =&gt; 4);
 	$array2 = array(‘green’ =&gt; 5, ‘blue’ =&gt; 6, ‘yellow’ =&gt; 7, ‘cyan’   =&gt; 8);</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var_dump(array_intersect_key($array1, $array2)); ?&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var_dump(array_intersect_key($array1, $array2)); ?&gt;
 </code></pre></div></div>
 
 <p>화면출력)
@@ -1694,7 +1694,7 @@ $array2[1]-&gt;width = 9;  $array2[1]-&gt;height = 2;</p>
     $areaA = $a-&gt;width * $a-&gt;height;
     $areaB = $b-&gt;width * $b-&gt;height;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($areaA &lt; $areaB) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($areaA &lt; $areaB) {
     return -1;
 } elseif ($areaA &gt; $areaB) {
     return 1;
@@ -1717,12 +1717,12 @@ array array_diff_assoc ( array $array1 , array $array2 [, array $… ] )</p>
 <p>array1과 array2를 비교하여 차이를 반환합니다. 비교후에 array1에 있고 다른 배열에는 없는 값들을 반환합니다. array_diff ()와 달리 배열 키도 비교에 사용합니다.</p>
 
 <p>예제파일) array-62.php
-<?php
-$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
-$array2 = array("a" => "green", "yellow", "red");
+&lt;?php
+$array1 = array(“a” =&gt; “green”, “b” =&gt; “brown”, “c” =&gt; “blue”, “red”);
+$array2 = array(“a” =&gt; “green”, “yellow”, “red”);
 $result = array_diff_assoc($array1, $array2);
 print_r($result);
-?></p>
+?&gt;</p>
 
 <p>화면출력)
 Array ( [b] =&gt; brown [c] =&gt; blue [0] =&gt; red )</p>
@@ -1741,7 +1741,7 @@ class cr {
         $this-&gt;priv_member = $val;
     }</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static function comp_func_cr($a, $b)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static function comp_func_cr($a, $b)
 {
     if ($a-&gt;priv_member === $b-&gt;priv_member) return 0;
     return ($a-&gt;priv_member &gt; $b-&gt;priv_member)? 1:-1;
@@ -1776,7 +1776,7 @@ array array_udiff_uassoc ( array $array1 , array $array2 [, array $… ],
         $this-&gt;priv_member = $val;
     }</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static function comp_func_cr($a, $b)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static function comp_func_cr($a, $b)
 {
     if ($a-&gt;priv_member === $b-&gt;priv_member) return 0;
     return ($a-&gt;priv_member &gt; $b-&gt;priv_member)? 1:-1;

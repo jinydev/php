@@ -1,11 +1,11 @@
-I"h<h1 id="나누기">나누기</h1>
+I"e<h1 id="나누기">나누기</h1>
 <hr />
-<p>컴퓨터 언어의 나눗셈 기호는 백슬레쉬(<code class="highlighter-rouge">/</code>)를 사용합니다.<br />
-우리가 일반적으로 사용하는 <code class="highlighter-rouge">÷</code>를 쓰지 않습니다.</p>
+<p>컴퓨터 언어의 나눗셈 기호는 백슬레쉬(<code class="language-plaintext highlighter-rouge">/</code>)를 사용합니다.<br />
+우리가 일반적으로 사용하는 <code class="language-plaintext highlighter-rouge">÷</code>를 쓰지 않습니다.</p>
 
 <p><br /></p>
 
-<h2 id="-연산기호"><code class="highlighter-rouge">/</code> 연산기호</h2>
+<h2 id="-연산기호"><code class="language-plaintext highlighter-rouge">/</code> 연산기호</h2>
 <hr />
 <p>나눗셈은 좌측의 값에서 우측의 값을 나눈 값을 출력합니다.<br />
 또한 나눗셈한 결과값을 왼쪽에 대입 연산자를 통해 변수에 저장할 수 있습니다.</p>
@@ -21,15 +21,15 @@
 <p>예제 파일 div-01.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"나눗셈 10 / 3 = "</span><span class="o">.</span><span class="nv">$a</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"나눗셈 10 / 3 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나눗셈 10 / 3 = 3.3333333333333
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나눗셈 10 / 3 = 3.3333333333333
 </code></pre></div></div>
 
-<p>PHP의 변수는 타입이 자유롭기 때문에 나눗셈을 처리한 <code class="highlighter-rouge">$a</code> 변수는 <code class="highlighter-rouge">실수</code>타입으로 출력이 됩니다.</p>
+<p>PHP의 변수는 타입이 자유롭기 때문에 나눗셈을 처리한 <code class="language-plaintext highlighter-rouge">$a</code> 변수는 <code class="language-plaintext highlighter-rouge">실수</code>타입으로 출력이 됩니다.</p>
 
 <p><br /></p>
 
@@ -41,14 +41,14 @@
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
 	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"나눗셈 10 / 3 = "</span><span class="o">.</span><span class="nv">$a</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"나눗셈 10 / 3 = "</span><span class="mf">.</span><span class="nv">$a</span><span class="p">;</span>
 	<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">"나누기의 몫 = "</span><span class="o">.</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"나누기의 몫 = "</span><span class="mf">.</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나눗셈 10 / 3 = 3.3333333333333
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나눗셈 10 / 3 = 3.3333333333333
 나누기의 몫 = 3
 </code></pre></div></div>
 
@@ -56,8 +56,8 @@
 
 <h2 id="연습문제3-나누기의-원리">연습문제3: 나누기의 원리</h2>
 <hr />
-<p>나누기 또한 곱셈과 비슷하게 좌측의 값을 오른쪽의 값으로 반복적으로 <code class="highlighter-rouge">뺄셈</code>을 반복하는 것과 같습니다.<br />
-뺄셈을 반복하면서 결과값이 빼고자 하는 값보다 크면 반복을 하고, 작으면 <code class="highlighter-rouge">반복을 중단</code>합니다.</p>
+<p>나누기 또한 곱셈과 비슷하게 좌측의 값을 오른쪽의 값으로 반복적으로 <code class="language-plaintext highlighter-rouge">뺄셈</code>을 반복하는 것과 같습니다.<br />
+뺄셈을 반복하면서 결과값이 빼고자 하는 값보다 크면 반복을 하고, 작으면 <code class="language-plaintext highlighter-rouge">반복을 중단</code>합니다.</p>
 
 <p>반복한 횟수를 몫으로 표기하고 더 이상 뺄셈을 반복을 할 수 없는 조건으로 값이 뺄셈보다 작은 값을 가질 때 나머지로 합니다.</p>
 
@@ -82,12 +82,12 @@
 		
 	<span class="p">}</span>
 
-	<span class="k">echo</span> <span class="s2">"나누기 몫 = "</span><span class="o">.</span> <span class="nv">$div</span> <span class="o">.</span> <span class="s2">", 나머지 = "</span> <span class="o">.</span> <span class="nv">$x</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"나누기 몫 = "</span><span class="mf">.</span> <span class="nv">$div</span> <span class="mf">.</span> <span class="s2">", 나머지 = "</span> <span class="mf">.</span> <span class="nv">$x</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 10
 x = 7 , div = 1
 x = 4 , div = 2
 x = 1 , div = 3
@@ -96,7 +96,7 @@ x = 1 , div = 3
 
 <p>위의 예는 나눗셈의 원리를 프로그램 코딩한 것입니다.</p>
 
-<p><code class="highlighter-rouge">10</code>을 <code class="highlighter-rouge">3</code>으로 나누는 것은 먼저 10에서 3을 <code class="highlighter-rouge">뺄셈</code>을 합니다.<br />
+<p><code class="language-plaintext highlighter-rouge">10</code>을 <code class="language-plaintext highlighter-rouge">3</code>으로 나누는 것은 먼저 10에서 3을 <code class="language-plaintext highlighter-rouge">뺄셈</code>을 합니다.<br />
 그 결과가 3보다 크면 못을 1을 더하고 또다시 결과값에서 3을 뺄셈합니다. 결과값이 3보다 작을 때까지 이 동작을 반복하면 됩니다.<br />
 만일 결과값이 3보다 작을 때 그 값은 나머지가 됩니다.</p>
 

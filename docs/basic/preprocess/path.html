@@ -103,20 +103,20 @@
                 <section>
                     <h1 id="파일-경로">파일 경로</h1>
 <hr />
-<p>전처리기 명령 <code class="highlighter-rouge">include</code> 및 <code class="highlighter-rouge">require</code>은 삽입하고자 하는 파일의 위치가 매우 중요합니다. 
+<p>전처리기 명령 <code class="language-plaintext highlighter-rouge">include</code> 및 <code class="language-plaintext highlighter-rouge">require</code>은 삽입하고자 하는 파일의 위치가 매우 중요합니다. 
 PHP의 include와 require명령은 현재 실행되고 있는 PHP 스크립트의 경로를 기준으로 결합하고자 하는 소스파일의 위치를 찾습니다.</p>
 
 <p>만일 실행하고 있는 스크립트와 동일한 폴더 경로에 있는 다른 소스를 사용할 때는 그냥 이름만 넣어도 됩니다. 
 하지만 다른 폴더나 하위 폴더에 있는 경우에는 상대 경로 또는 절대 경로 형태로 바르게 입력해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/text.php  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/text.php  
 /lib.php  
 </code></pre></div></div>
 
 <p>위처럼 1개의 실행 스크립트 소스파일이 같은 폴더 안에 있습니다. 
 text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경로를 설정하면 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/text.php  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/text.php  
 /lib.php  
 </code></pre></div></div>
 
@@ -133,17 +133,17 @@ text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경
 <p>상대 경로란 현재 디렉터리를 기준으로 파일의 위치를 판별합니다.<br />
 자신의 하위 디렉터리에 있는 경우에는 현재 디렉터리(./)를 기준으로 작성하면 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./ 파일명 		→ 현재 디렉터리의 파일명  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./ 파일명 		→ 현재 디렉터리의 파일명  
 ./폴더1/파일명 	→ 현재 디렉터리의 하부 폴더1 의 파일  
 </code></pre></div></div>
 
-<p>상위 폴더를 선택할 때는 <code class="highlighter-rouge">../</code>를 사용하면 됩니다.</p>
+<p>상위 폴더를 선택할 때는 <code class="language-plaintext highlighter-rouge">../</code>를 사용하면 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../파일명		→ 현재 디렉터리 상위 폴더의 파일명  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../파일명		→ 현재 디렉터리 상위 폴더의 파일명  
 ../../파일명	→ 현재 디렉터리의 상위/상위 폴더의 파일명  
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">../</code>상위 폴더명/하부 폴더명/파일명 → 현재 디렉터리의 상위 폴더로 이동한 다음, 상위 폴더명의 하부 폴더명 안에 있는 파일명</p>
+<p><code class="language-plaintext highlighter-rouge">../</code>상위 폴더명/하부 폴더명/파일명 → 현재 디렉터리의 상위 폴더로 이동한 다음, 상위 폴더명의 하부 폴더명 안에 있는 파일명</p>
 
 <p><br /></p>
 
@@ -154,14 +154,14 @@ text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경
 
 <p>윈도우의 경우,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\web\webdoc\test.php  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\web\webdoc\test.php  
 </code></pre></div></div>
 
 <p>와 같이 드라이브명부터 시작합니다.</p>
 
 <p>리눅스의 경우,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\home\web\webdoc\test.php  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\home\web\webdoc\test.php  
 </code></pre></div></div>
 
 <p>와 같이 루트()부터 시작합니다.</p>
@@ -175,8 +175,8 @@ text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경
 <h2 id="dir"><strong>DIR</strong></h2>
 <hr />
 <p>PHP 는 현재 자신의 스크립트가 실행되는 경로를 출력해주는 특별한 상수명이 있습니다.<br />
-<code class="highlighter-rouge">__DIR__</code> 은 현재 실행되는 스크립트의 경로를 출력합니다. 
-<code class="highlighter-rouge">__DIR__</code> 은 현재 실행되고 있는 스크립트의 서브 디렉터리 경로명까지 포함하여 출력합니다.</p>
+<code class="language-plaintext highlighter-rouge">__DIR__</code> 은 현재 실행되는 스크립트의 경로를 출력합니다. 
+<code class="language-plaintext highlighter-rouge">__DIR__</code> 은 현재 실행되고 있는 스크립트의 서브 디렉터리 경로명까지 포함하여 출력합니다.</p>
 
 <p>예제 파일 path-01.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -185,18 +185,18 @@ text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp
 </code></pre></div></div>
 
 <p>위의 예에서 __DIR__은 현재 실행하고 있는 스크립트의 유효한 파일 경로를 출력합니다. 
-<code class="highlighter-rouge">__DIR__</code> 상수를 통해 상태 경로를 계산하여 사용하면 유연하게 경로 계산을 할 수 있습니다.</p>
+<code class="language-plaintext highlighter-rouge">__DIR__</code> 상수를 통해 상태 경로를 계산하여 사용하면 유연하게 경로 계산을 할 수 있습니다.</p>
 
 <p><br /></p>
 
 <h2 id="documentroot">DocumentRoot</h2>
 <hr />
 <p>PHP는 슈퍼 글로벌 서버 변수를 통해 현재 PHP가 실행되는 절대 상위 폴더를 출력합니다.
-이전 <code class="highlighter-rouge">__DIR__</code>는 실행되는 서브 폴더까지 표시가 되지만, <code class="highlighter-rouge">$_SERVER['DOCUMENT_ROOT']</code>는 실행 폴더의 root만 표시됩니다.</p>
+이전 <code class="language-plaintext highlighter-rouge">__DIR__</code>는 실행되는 서브 폴더까지 표시가 되지만, <code class="language-plaintext highlighter-rouge">$_SERVER['DOCUMENT_ROOT']</code>는 실행 폴더의 root만 표시됩니다.</p>
 
 <p>예제 파일 path-02.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -205,7 +205,7 @@ text.php 소스파일은 include(lib.php); 형태로 다른 소스 파일의 경
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86
 </code></pre></div></div>
 
 <p>위의 예는 root 경로를 출력합니다. 
@@ -216,7 +216,7 @@ PHP의 내부 서버 실행의 문서 루트 경로, 아차피 웹 서버의 문
 <h2 id="file"><strong>FILE</strong></h2>
 <hr />
 
-<p><code class="highlighter-rouge">__FILE__</code> 함수는 현재 실행하고 있는 스크립트의 소스 파일 정보를 출력합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">__FILE__</code> 함수는 현재 실행하고 있는 스크립트의 소스 파일 정보를 출력합니다.</p>
 
 <p>예제 파일 path-03.php</p>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -235,7 +235,7 @@ PHP의 내부 서버 실행의 문서 루트 경로, 아차피 웹 서버의 문
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\path-03.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\path-03.php
 C:\php-7.1.4-Win32-VC14-x86\jinyphp\path-03.php
 path-03.php
 </code></pre></div></div>
@@ -256,19 +256,19 @@ PHP 7.x부터는 입력된 path에서 디렉터리 경로를 추출할 때 경�
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 	<span class="nv">$path</span> <span class="o">=</span> <span class="s2">"/dir1/dir2/dir3/3text.txt"</span><span class="p">;</span>
 	
-	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/dir2/dir3
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dir1/dir2/dir3
 /dir1/dir2
 /dir1
 </code></pre></div></div>
 
-<p>위의 예는 입력한 <code class="highlighter-rouge">$path</code> 경로를 슬래시(/) 기호로 구분하여 각각 접근할 수 있습니다.</p>
+<p>위의 예는 입력한 <code class="language-plaintext highlighter-rouge">$path</code> 경로를 슬래시(/) 기호로 구분하여 각각 접근할 수 있습니다.</p>
 
 <p><br /><br /></p>
 
