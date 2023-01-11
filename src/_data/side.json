@@ -1,0 +1,22 @@
+[
+    {
+        "header": "true",
+        "title":"시작하기전에",
+        "href":""
+    },
+    {
+        "header": "",
+        "title":"설정",
+        "href":"/setup"
+    },
+    {
+        "header": "",
+        "title":"자바스크립트란?",
+        "href":"/javascript"
+    },
+    {
+        "header": "",
+        "title":"---",
+        "href":""
+    }
+] 

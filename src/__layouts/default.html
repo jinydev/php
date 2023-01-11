@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO-->
+        {%- if page.title -%}
+            <title>{{ page.title }}</title>
+            <meta name="title" content="{{ page.title }}" />
+        {%- else -%}
+            <title>Learn PHP</title>
+        {%- endif -%}
+
+        {%- if page.description -%}
+            <meta name="description" content="{{ page.description }}" />
+        {%- endif -%}
+
+        {%- if page.keyword -%}
+            <meta name="keyword" content="{{ page.keyword }}" />
+        {%- endif -%}
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+
+        <!--에드센스-->
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+        <style>
+            /*
+            h1  a {
+                color: black;
+            }
+            h1 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h2  a {
+                color: black;
+            }
+            h2 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h3  a {
+                color: black;
+            }
+            h3 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+
+            h4  a {
+                color: black;
+            }
+            h4 a:hover {
+                color: blue;
+                text-decoration: none;
+            }
+            */
+
+
+        </style>
+    </head>
+    <body>
+        <!--네비게이션-->
+        {%- include navigation.html -%}
+
+        {{ content }}
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

@@ -19,6 +19,10 @@ breadcrumb:
 
 프로그램 언어에서 반복문을 사용하는 이유는 연속하여 발생한 중복 코드의 양을 줄이고 소스의 가독성을 향상하는 데 목적이 있습니다.  
 
+<jiny-book-mark>종류</jiny-book-mark>
+<br>
+
+## 반복문의 종류
 PHP언어 에서는 반복 처리를 위해 네 가지의 명령 및 문법을 제공합니다.  
 
 * for
@@ -32,16 +36,39 @@ PHP언어 에서는 반복 처리를 위해 네 가지의 명령 및 문법을 �
 
 반복문은 프로그램에서 if 조건문 다음으로 가장 많이 사용을 하는 명령 기능입니다. 반복문을 잘 이용하면 보다 구조적이고 간략하게 프로그램 코드를 작성할 수 있습니다.  
 
+
+<jiny-book-mark>For</jiny-book-mark>
 <br>
 
-## 학습내용
----
+## for
+`for`는 가장 일반적인 반복문 입니다. 많은 언어에서 지원하는 예약어며, 사용법도 다른 언어와 유사합니다.
 
 * [for](for)
+
+for를 여러개 중첩하여 `다중 반목문`을 구현하여 복한한 데이터를 처리 가능합니다.
+
 * [다중 반복문](multi)
+
+<jiny-book-mark>Foreach</jiny-book-mark>
+<br>
+
+## foreach
+
 * [foreach](foreach)
+
+<jiny-book-mark>While</jiny-book-mark>
+<br>
+
+## while
+
 * [while](while)
 * [do..while](dowhile)
+
+<jiny-book-mark>제어</jiny-book-mark>
+<br>
+
+## 루프 제어
+* break
 * [continue](continue)
 
 <br><br>

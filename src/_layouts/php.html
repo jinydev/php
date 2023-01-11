@@ -1,59 +1,65 @@
 ---
 layout: default
---- 
-<div class="bg-light">
-    <div class="container">
-        {%- include breadcrumb.html -%}
+---
+<div class="row">
+    <div class="col-xl-10 col-md-12 col-sm-12 col-12 ">
+		<!-- Breadcrumb -->
+		<nav aria-label="breadcrumb" style="margin-top: 50px; padding: 0 10px 0 10px;">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<!--breadcrumb loop-->
+				{%- for breadcrumb in page.breadcrumb -%}
+					{%- if breadcrumb == page.breadcrumb.last -%}
+						<li class="breadcrumb-item active">{{ breadcrumb }}</li>
+					{%- else -%}
+						<li class="breadcrumb-item "><a href="../">{{ breadcrumb }}</a></li>
+					{%- endif-%}
+				{%- endfor -%}
+			</ol>    
+		</nav>
+		
+		<!-- Content -->
+		<div class="docs-content mx-xxl-9">
+			<div class="markdown">
+				{{content}}
+			</div>			
+		</div>
     </div>
-</div>
+    
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12  d-none d-xl-block position-fixed end-0">
+      <!-- sidebar nav fixed -->
+      <div class="sidebar-nav-fixed">
+        <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semi-bold fs-6">목차</span>
+        <ul class="list-unstyled" id="book-mark">
 
+        </ul>
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-9">
-			<main role="main">
-                <section>
-                    {{ content }}
-                </section>
-			</main>
-			
-			<!--구글 애드센스-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-fb+5w+4e-db+86"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="6043271504"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
+        <div>
+          <!--구글 애드센스1-->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-format="fluid"
+              data-ad-layout-key="-fb+5w+4e-db+86"
+              data-ad-client="ca-pub-3321560028329475"
+              data-ad-slot="6043271504"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <br>
         </div>
 
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-			<aside>
-				{%- include menu.html -%}
-			</aside>			
-			
-			<!--구글 애드센스2-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-ef+6k-30-ac+ty"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="7661682925"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
-
+      </div>
     </div>
-    <!-- /.row -->
+
+	<!-- Bookmark Components -->
+	<script src="/assets/jiny/js/bookmark.js"></script>	
+
+	<script>
+		window.addEventListener('DOMContentLoaded', function(){
+			let current_url = window.location.pathname.slice(0, -1);
+			let current_page = document.querySelector('a[href="'+current_url+'"]');
+			current_page.classList.add('active');
+		});		
+	</script>
 </div>
-<!-- /.container -->

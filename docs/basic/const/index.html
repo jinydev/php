@@ -1,108 +1,223 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <!--SEO--><title>상수</title>
-            <meta name="title" content="상수" /><meta name="description" content="php 상수에 대해서 학습합니다. 삼수는 고정된 값입니다." /><meta name="keyword" content="const, php" /><!--부트스트랩4-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <style>
-            img {
-                max-width:100%;
-            }
-        </style>
-
-        <link rel="stylesheet" href="/assets/highlight.css">
-        <link rel="stylesheet" href="/assets/style.css">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Geeks is a fully responsive and yet modern premium bootstrap 5 template & snippets. Geek is feature-rich components and beautifully designed pages that help you create the best possible website and web application projects. Bootstrap Snippet " />
+		<meta name="keywords" content="Geeks UI, bootstrap, bootstrap 5, Course, Sass, landing, Marketing, admin themes, bootstrap admin, bootstrap dashboard, ui kit, web app, dash ui, admin dashboard, HTML5, multipurpose" />
 
 
-        <!--에드센스-->
-        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-        <style>
-            /*
-            h1  a {
-                color: black;
-            }
-            h1 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h2  a {
-                color: black;
-            }
-            h2 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h3  a {
-                color: black;
-            }
-            h3 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h4  a {
-                color: black;
-            }
-            h4 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-            */
 
 
-        </style>
-    </head>
-    <body>
-        <!--네비게이션--><!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-    	<a class="navbar-brand" href="/">Learn PHP</a>
-    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    		<span class="navbar-toggler-icon"></span>
-    	</button>
-    	<div class="collapse navbar-collapse" id="navbarResponsive">
-    		<ul class="navbar-nav ml-auto">
-    			<li class="nav-item">
-        			<a class="nav-link" href="/php">소개</a>
-        		</li>
-        		<li class="nav-item active">
-        			<a class="nav-link" href="/setup">설치</a>
-        		</li>
-        		<li class="nav-item">
-        			<a class="nav-link" href="/basic">기본문법</a>
-				</li>
-				<li class="nav-item">
-        			<a class="nav-link" href="/function">함수</a>
-				</li>
-				<li class="nav-item">
-        			<a class="nav-link" href="/oop">객체지향</a>
-        		</li>
-        	</ul>
-    	</div>
-    </div>
-  </nav><div class="bg-light">
-    <div class="container"><nav aria-label="breadcrumb">
-    <ol class="breadcrumb  bg-light">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item active">const</li></ol>    
-</nav></div>
-</div>
+		<!-- Favicon icon-->
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
 
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-9">
-			<main role="main">
-                <section>
-                    <h1 id="상수">상수</h1>
+		<!-- Libs CSS -->
+		<link href="/assets/fonts/feather/feather.css" rel="stylesheet">
+		<link href="/assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+		<link href="/assets/libs/dragula/dist/dragula.min.css" rel="stylesheet" />
+		<link href="/assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+		<link href="/assets/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
+		<link href="/assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
+		<link href="/assets/libs/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+		<link href="/assets/libs/@yaireo/tagify/dist/tagify.css" rel="stylesheet">
+		<link href="/assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet">
+		<link href="/assets/libs/tippy.js/dist/tippy.css" rel="stylesheet">
+		<link href="/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+		<link href="/assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+		<link href="/assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+		<link href="/assets/libs/nouislider/dist/nouislider.min.css" rel="stylesheet">
+		<link href="/assets/libs/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/assets/css/theme.min.css">
+		<link rel="stylesheet" href="/assets/css/jiny.css">
+		
+
+		<!--SEO--><title>Rust | 상수</title>
+            <meta name="title" content="상수" /><meta name="description" content="php 상수에 대해서 학습합니다. 삼수는 고정된 값입니다." /><meta name="keyword" content="const, php" /></head>
+
+<body class="bg-white">
+  <!-- Main wrapper -->
+  <div class="docs-main-wrapper">
+    <!-- Docs header --><div class="docs-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ms-0">
+         <a class="navbar-brand" href="/">
+            JinyPHP
+         </a>
+
+         <ul class="navbar-nav ms-auto flex-row">
+            <li class="nav-item docs-header-btn">
+               <a target="_blank" href="">Github</a>
+            </li>
+
+            <li class="nav-item d-md-none">
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"  
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+            </li>
+         </ul>
+
+    </nav>
+</div><!-- left sidebar -->
+	<!-- Nav Sidebar -->
+	<div class="docs-nav-sidebar">
+		<div class="py-5"></div>
+		<div class="docs-nav" data-simplebar>
+			<nav class="navbar navbar-expand-md">
+			<div class="collapse navbar-collapse " id="navbarNav"><ul class="navbar-nav flex-column" id="sidebarnav">
+
+    <!-- Getting Started -->
+    <li class="navbar-header">
+        <h5 class="heading">시작하기</h5>
+    </li>
+    <li class="nav-item">
+        <a href="/php" class="nav-link">PHP소개</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup" class="nav-link">설치</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup/console" class="nav-link">콘솔</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup/env" class="nav-link">환경설정</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">기본문법</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic">코드작성</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/const">상수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/variable">변수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/operator">연산자</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/condition">조건문</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/loop">반복문</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/preprocess">전처리기</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/scope">유효범위</a>
+    </li>
+    
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/function">함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/generator">제너레이터</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/annon">익명함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/variable">가변함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/builtin">내부함수</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">객체지향</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop">객체지향</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/extend">상속</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/interface">인터페이스</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/abstract">추상화</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/trait">Trait</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/pettern">디자인패턴</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">패키지</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/autoload">오토로딩</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/composer">컴포저</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">라라벨</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/jinyphp">지니PHP</a>
+    </li>
+    
+
+
+
+
+</ul></div>
+			</nav>
+		</div>
+		<div class="nav-footer">
+			<p class="mb-0"> Developed by JinyDev</p>
+		</div>
+	</div>
+
+    <!-- Wrapper  -->
+    <div class="docs-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+    <div class="col-xl-10 col-md-12 col-sm-12 col-12 ">
+		<!-- Breadcrumb -->
+		<nav aria-label="breadcrumb" style="margin-top: 50px; padding: 0 10px 0 10px;">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">basic</a></li><li class="breadcrumb-item active">const</li></ol>    
+		</nav>
+		
+		<!-- Content -->
+		<div class="docs-content mx-xxl-9">
+			<div class="markdown">
+				<jiny-book-mark>상수</jiny-book-mark>
+
+<h1 id="상수">상수</h1>
 <hr />
 <p>컴퓨터는 다양한 데이터 값을 처리합니다.<br />
 <code class="language-plaintext highlighter-rouge">정수값</code>, <code class="language-plaintext highlighter-rouge">실수값</code> 및 <code class="language-plaintext highlighter-rouge">문자열</code> 등 프로그램 언어들은 이러한 다양한 데이터 값을 연산하고 결과를 화면에 출력합니다.</p>
@@ -146,22 +261,84 @@
 
 <p><br /></p>
 
-<h2 id="상수의-특징"><a href="character">상수의 특징</a></h2>
+<jiny-book-mark>상수의 특징</jiny-book-mark>
+
+<h2 id="상수의-특징">상수의 특징</h2>
+<hr />
+
+<p><br /></p>
+
+<h3 id="상수의-위치">상수의 위치</h3>
+<hr />
+<p>상수는 다음 장에 배울 변수와는 다릅니다.<br />
+변수는 메모리 영역과 사용에 대해서 관련이 있지만 상수는 메모리와는 상관이 없습니다.</p>
+
+<p>또한 상수를 많이 사용한다는 것은 프로그램에 들어가는 고정 데이터 값이 많아진다는 의미와 같습니다.<br />
+고정 데이터의 사용으로 인해 <code class="language-plaintext highlighter-rouge">프로그램의 크기</code>는 커질 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="상수의-특성">상수의 특성</h3>
+<hr />
+<p>상수명은 고정된 데이터의 <code class="language-plaintext highlighter-rouge">별칭</code>과 같습니다.<br />
+따라서 상수명은 프로그램 안에서 실행이 시작되기 전에 미리 선언하는 것이 일반적입니다.</p>
+
+<p>PHP 인터프리터 언어는 프로그램 실행 전에 상수명에 대해서 정의한 데이터 값을 다 치환 적용한 후에 프로그램이 실행됩니다.<br />
+따라서 상수명의 <code class="language-plaintext highlighter-rouge">갯수</code>와 <code class="language-plaintext highlighter-rouge">크기</code>는 프로그램 실행 파일에 영향을 줍니다.</p>
+
+<p>프로그램은 컴파일/인터프리터(소스), ROM(롬)/하드디스크 등에 저장되어 실행됩니다.<br />
+또한 상수명는 프로그램의 <code class="language-plaintext highlighter-rouge">소스의 일부분</code>이며 데이터의 <code class="language-plaintext highlighter-rouge">값</code>이 됩니다.<br />
+즉, 프로그램의 소스 자체가 큰 상태에서 실행되는 특성을 가지고 있습니다.</p>
+
+<p>반면, 뒤에서 배울 <code class="language-plaintext highlighter-rouge">변수</code>는 메모리에 적재되어 실행되므로 프로그램의 <code class="language-plaintext highlighter-rouge">소스 크기</code>와는 상관이 없습니다.</p>
+
+<p><br /></p>
+
+<h2 id="상수의-종류">상수의 종류</h2>
+<hr />
+<p>상수는 값의 형태에 따라서 다양한 타입으로 분류 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="정수형-상수">정수형 상수</h3>
 <hr />
 <ul>
-  <li>상수의 위치</li>
-  <li>상수의 특성</li>
+  <li>소수점 이하 부분이 없는 음수(-), 0, 양수(+)</li>
+  <li>signed 및 unsigned 수로 구분되며 8진수, 10진수, 16진수의 값을 가집니다( O로 시작하면 8진수 형태, Ox로 시작하면 16진수 형태).</li>
+  <li>정수 상수는 컴퓨터 비트(bit)에 따라 다르지만 1byte 또는 2byte 크기로 표현됩니다.</li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="상수의-타입"><a href="type">상수의 타입</a></h2>
+<h3 id="실수형-상수">실수형 상수</h3>
 <hr />
 <ul>
-  <li>정수형 상수</li>
-  <li>실수형 상수</li>
-  <li>문자 상수</li>
+  <li>소수점이나 지수가 있는 데이터를 의미합니다.</li>
+  <li>실수 상수는 8byte, 4byte에 표현하고자 할 때는 실수 상수 뒤에 f자를 표시합니다.</li>
+  <li>Long double 유형의 실수 상수를 사용하고자 할 때에는 끝에 l이나 L자를 표시합니다.</li>
+  <li>소수점이 있는 수치로 음수(-), 양수(+)로 구성됩니다.
+예) 0.34, 5.58f</li>
 </ul>
+
+<p><br /></p>
+
+<h3 id="문자-상수">문자 상수</h3>
+<hr />
+<h4 id="단일문자">단일문자</h4>
+<ul>
+  <li>하나의 단일 문자 즉 알파벳 한 글자를 의미합니다. 문자 상수는 (‘ ‘) 안에 단일 문자로 표기합니다.</li>
+</ul>
+
+<h4 id="문자열-상수">문자열 상수</h4>
+<ul>
+  <li>두 개 이상의 문자가 모여 있는 문자열을 이중 인용부호 (“ “ )를 사용하여 표시합니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="스칼라-값">스칼라 값</h3>
+<hr />
+<p>스칼라 값은 문자열, 정수, 부동소수점, 논리값을 의미합니다.</p>
 
 <p><br /></p>
 
@@ -182,10 +359,146 @@
 <p>PHP언어 에서는 두 가지 방식으로 상수를 설정할 수 있습니다.<br />
 내장 함수 <code class="language-plaintext highlighter-rouge">define()</code> 과 상수 키워드 <code class="language-plaintext highlighter-rouge">const</code>를 통하여 상수를 선언할 수 있습니다.</p>
 
+<h4 id="define">define()</h4>
+<hr />
+<p>내장 함수 <code class="language-plaintext highlighter-rouge">define()</code>은 PHP언어에서 상수를 설정할 수 있도록 사전에 미리 만들어 제공되는 함수입니다.</p>
+
+<p><br /></p>
+
+<h5 id="define-함수">define() 함수</h5>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">define()</code> 함수는 세 개의 실행 인자 값을 입력할 수 있습니다.</p>
+
 <ul>
-  <li><a href="define">define()</a></li>
-  <li><a href="const">const 키워드</a></li>
+  <li>첫 번째는 상수명</li>
+  <li>두 번째는 상수의 스칼라 값</li>
+  <li>세 번째는 대소문자 구분 여부</li>
 </ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">define</span><span class="p">(</span><span class="s2">"상수명"</span><span class="p">,</span> <span class="s2">"상수값"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</code></pre></div></div>
+<p>실행 인자 중 세 번째 인자는 생략할 수 있습니다.<br />
+세 번째 인자를 생략할 경우에는 기본적으로는 <code class="language-plaintext highlighter-rouge">true</code> 로 설정된 것으로 간주합니다.</p>
+
+<p><br /></p>
+
+<h5 id="실습예제1">실습예제1</h5>
+<hr />
+
+<p>예제 파일 define-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 상수를 정의합니다.</span>
+	<span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">);</span>
+	<span class="c1">// 설정한 상수를 출력합니다.</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mysql
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">define()</code> 함수는 실행 후 결과값으로 <code class="language-plaintext highlighter-rouge">논리값</code>을 반환합니다.<br />
+상수 설정이 성공한 경우 <code class="language-plaintext highlighter-rouge">true</code>, 실패할 경우 <code class="language-plaintext highlighter-rouge">false</code>를 반환함으로 상수 설정의 성공 여부를 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h5 id="실습예제2">실습예제2</h5>
+<hr />
+<p>예제 파일 define-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 상수를 정의합니다.</span>
+	<span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">);</span>
+	<span class="c1">// 설정한 상수를 출력합니다.</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 상수를 중복 정의해 봅니다.</span>
+	<span class="k">if</span><span class="p">(</span><span class="nb">define</span><span class="p">(</span><span class="s2">"DB_TYPE"</span><span class="p">,</span><span class="s2">"mysql"</span><span class="p">)){</span>
+		<span class="k">echo</span> <span class="s2">"상수 설정 성공"</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="s2">"상수 설정 실패"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+상수 설정 실패
+</code></pre></div></div>
+
+<p>위의 두 번째 예는 동일한 이름의 상수를 중복으로 선언하기 때문에 <code class="language-plaintext highlighter-rouge">define()</code> 함수는 상수의 설정 <code class="language-plaintext highlighter-rouge">false</code>를 반환합니다.</p>
+
+<p><br /></p>
+
+<h5 id="배열-상수">배열 상수</h5>
+<hr />
+<p>배열 상수 설정 기능은 PHP 7.x부터의 새로운 기능입니다.<br />
+기존 PHP 5.6 까지는 상수의 값은 단지 한 개의 값으로만 정의가 가능했습니다.</p>
+
+<p>PHP 7.x 은 기존 define() 내장 함수를 개량하여 비슷한 문법적 처리를 통해 배열 상수를 설정할 수 있습니다.</p>
+
+<p>예제 파일 define-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 배열 상수를 선언합니다.</span>
+	<span class="nb">define</span><span class="p">(</span><span class="s1">'ANIMALS'</span><span class="p">,</span> <span class="p">[</span>
+    	<span class="s1">'dog'</span><span class="p">,</span>
+    	<span class="s1">'cat'</span><span class="p">,</span>
+    	<span class="s1">'bird'</span>
+	<span class="p">]);</span>
+
+	<span class="k">echo</span> <span class="no">ANIMALS</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// outputs "cat"</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat
+</code></pre></div></div>
+
+<p>배열 상수도 배열 변수처럼 상수명 뒤에 []를 붙여서 배열 접근 및 처리를 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h4 id="const-키워드">const 키워드</h4>
+<hr />
+<p>PHP는 define() 함수 이외에 const 키워드를 사용해서도 상수를 선언할 수 있습니다. const는 키워드를 통해 상수를 설정합니다. 따라서 define()처럼 상수의 선언 오류 등을 함께 확인할 수 없는 단점을 가지고 있습니다.</p>
+
+<p>|문법|</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const 상수명 = 값;
+</code></pre></div></div>
+
+<p>const는 상수를 생성하는 시점이 PHP프로그램이 실행되면서 const 키워드를 만나는 시점에 생성됩니다. 따라서 소스에서 const 명령이 선언하기 이전에 상수명을 호출하게 되면 미정의 상수명 사용으로 인하여 오류가 발생할 수 있습니다.</p>
+
+<p>const 상수 선언 키워드는 함수나 반복문 loop 또는 if문 안에서는 사용할 수 없습니다. 함수 호출이나 반복문과 같은 곳에서는 중복된 상수명 선언을 시도할 수 있기 때문입니다.</p>
+
+<p>예제 파일 const-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 상수를 선언합니다.</span>
+	<span class="k">const</span> <span class="no">DB_TYPE</span> <span class="o">=</span> <span class="s2">"mysql"</span><span class="p">;</span>
+	<span class="c1">// 상수를 출력합니다.</span>
+	<span class="k">echo</span> <span class="no">DB_TYPE</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+</code></pre></div></div>
+
+<p>위의 예에서 DB_TYPE이라는 상수를 선언하며, 상수값으로는 “mysql”을 대입합니다. 이처럼 생성한 상수값은 PHP에서 바로 사용하거나, 다른 변수에 값으로 대입할 수도 있습니다.</p>
+
+<p>예제 파일 const-02.php</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+	// 상수를 선언합니다.
+	const DB_TYPE = "mysql";
+	$dbTYPE = DB_TYPE;
+	// 상수를 출력합니다.
+	echo $dbTYPE;
+?&gt;
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -198,83 +511,296 @@
 
 <p><br /></p>
 
-<h2 id="상수-존재-여부-확인"><a href="defined">상수 존재 여부 확인</a></h2>
+<h2 id="상수-존재-여부-확인">상수 존재 여부 확인</h2>
 <hr />
-<p>상수명은 중복하여 사용할 수 없습니다.<br />
-상수의 중복 사용을 방지하기 위해 또는 상수값 참조 오류를 방지하기 위해 기존 상수값이 선언되었는지 확인이 필요합니다.</p>
+<p>상수명은 중복하여 사용할 수 없습니다.</p>
+
+<p>상수의 중복 사용을 방지하기 위해 또는 상수값 참조 오류를 방지하기 위해 기존 상수값이 선언되었는지 확인이 필요합니다.</p>
 
 <p><br /></p>
 
-<h2 id="미리-정의된-상수"><a href="reserved">미리 정의된 상수</a></h2>
+<h3 id="상수확인">상수확인</h3>
 <hr />
+<p>PHP는 내부의 상수값이 존재하는지 확인할 수 있는 <code class="language-plaintext highlighter-rouge">defined()</code> 내부 함수를 제공합니다.<br />
+defined() 함수는 내부의 상수 목록에서 입력한 상수의 값이 존재하는지 여부를 <code class="language-plaintext highlighter-rouge">논리값</code>으로 결과를 반환합니다.</p>
 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nb">defined</span> <span class="p">(</span> <span class="n">string</span> <span class="nv">$name</span> <span class="p">)</span>
+</code></pre></div></div>
 
-                </section>
-			</main>
-			
-			<!--구글 애드센스-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-fb+5w+4e-db+86"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="6043271504"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
+<p><br /></p>
 
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-			<aside><ul class="list-group">
-    <li class="list-group-item"><a href="/php">php 언어</a></li>
-    <li class="list-group-item"><a href="/setup">설치</a></li>
-    <li class="list-group-item"><a href="/basic">기본문법</a></li>
-    <li class="list-group-item"><a href="/function">함수</a></li>
-    <li class="list-group-item"><a href="/oop">객체지향</a></li>
-    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
-    <li class="list-group-item"><a href="/composer">컴포저</a></li>
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    
-</ul>
+<h3 id="실습예제1-1">실습예제1</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">defined("상수명")</code>을 입력하면 상수 존재 여부를 <code class="language-plaintext highlighter-rouge">true</code> 또는 <code class="language-plaintext highlighter-rouge">false</code> 형태의 논리값으로 결과를 반환합니다.</p>
 
-<br>
+<p>예제 파일 defined.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">defined</span><span class="p">(</span><span class="s1">'TEST'</span><span class="p">))</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="s2">"상수가 존재합니다."</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="s2">"상수가 없습니다."</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="예약된-상수-목록">예약된 상수 목록</h2>
+<hr />
+<p>모든 언어들이 그러하듯이 사전에 많은 상수를 포함하고 있습니다. 상수를 선언하여 사용할 때 실수로 상수명이 중복되어 프로그램의 오작동을 발생할 수도 있습니다.</p>
+
+<p>상수를 선언하기 전에는 PHP에서 미리 사용된 상수명인지 확인하고 중복되지 않게 쓰는 것이 중요합니다. 또는 앞에 개인적인 접두어를 붙여서 사용하는 것도 또 다른 방법일 수 있습니다.</p>
+
+<p>PHP언어에서는 기존에 미리 선언된 상수의 목록을 확인할 수 있는 내부 함수를 제공하고 있습니다.</p>
+
+<p>|관련함수|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span> <span class="nb">get_defined_constants</span> <span class="p">([</span> <span class="n">bool</span> <span class="nv">$categorize</span> <span class="o">=</span> <span class="kc">false</span> <span class="p">]</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>위 함수의 반환값 형태는 배열인 것을 확인할 수 있습니다. get_define_constants() 함수는 PHP 내부 상수와 사용자가 개별적으로 선언한 모든 상수의 목록을 배열 형태로 반환받을 수 있습니다.</p>
+
+<p>예제 파일 get_defined_constants.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="c1">// 상수를 정의합니다.</span>
+	<span class="nb">define</span><span class="p">(</span><span class="s2">"MY_CONSTANT"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="c1">// 정의된 모든 상수들을 출력합니다.</span>
+	<span class="c1">// 카테고리도 같이 출력합니다.</span>
+	<span class="nb">print_r</span><span class="p">(</span> <span class="nb">get_defined_constants</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">);</span>
+<span class="cp">?&gt;</span> 
+</code></pre></div></div>
+
+<p>위의 예제는 get_defined_constants() 함수로 PHP의 내부 상수와 사용자 정의 상수의 목록을 출력하는 것입니다. 출력 결과는 내용이 많아서 지면상 생략하도록 하겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="미리-정의된-상수">미리 정의된 상수</h3>
+<hr />
+<p>PHP는 개발자가 선언하지 않아도 이미 미리 정의된 상수들이 있습니다. 
+대부분의 프로그램 언어 또한 사전에 내장된 상수들은 다수 존재합니다.</p>
 
 <ul>
-    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
-    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
-    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
-    <li><a href="https://git.jiny.dev">깃(git)</a></li>
+  <li>
+    <p><strong>FILE</strong>
+파일의 전체 경로와 파일명, 절대 경로를 표시합니다.</p>
+  </li>
+  <li>
+    <p><strong>LINE</strong>
+파일의 현재 줄을 표시합니다.</p>
+  </li>
+  <li>
+    <p><strong>DIR</strong>
+현재 디렉터리 경로를 출력합니다.(PHP 5.3에 추가)</p>
+  </li>
+  <li>
+    <p><strong>FUNCTION</strong>
+함수명을 표시합니다. (PHP 5에 추가)</p>
+  </li>
+  <li>
+    <p><strong>CLASS</strong>
+클래스명을 표시합니다. (PHP 5에 추가)</p>
+  </li>
+  <li>
+    <p><strong>METHOD</strong>
+클래스 메서드명을 표시합니다. (PHP 5에 추가)</p>
+  </li>
+  <li>
+    <p><strong>NAMESPACE</strong>
+이 상수는 컴파일 시에 정의됩니다. (PHP 5.3에 추가)</p>
+  </li>
+  <li>
+    <p>PHP_VERSION
+서버에 설치된 PHP 버전을 표시합니다.</p>
+  </li>
+  <li>
+    <p>PHP_OS
+PHP가 실행 중인 OS의 이름을 표시합니다.</p>
+  </li>
+  <li>
+    <p>TRUE
+TRUE (참), 1을 의미합니다.</p>
+  </li>
+  <li>
+    <p>FALSE
+FALSE (거짓), 빈 값을 의미합니다.</p>
+  </li>
+  <li>
+    <p>E_ERROR
+문법 오류가 아닌 복구가 불가능한 에러를 표시합니다.</p>
+  </li>
+  <li>
+    <p>E_WARNING
+PHP가 스크립트 실행에는 문제없으나 오류가 있음을 표시합니다.</p>
+  </li>
+  <li>
+    <p>E_PARSE
+스크립트에서 문법적으로 잘못된 명령을 만난 경우 표시합니다.</p>
+  </li>
+  <li>
+    <p>E_NOTICE
+에러는 아니지만 알릴 사항이 있음을 표시합니다.</p>
+  </li>
 </ul>
 
-</aside>			
-			
-			<!--구글 애드센스2-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-ef+6k-30-ac+ty"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="7661682925"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
+<p>예제 파일 const-03.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+	<span class="c1">// 파일의 전체 경로와 파일명, 절대 경로를 표시합니다.</span>
+	<span class="k">echo</span> <span class="k">__FILE__</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="c1">// 상수를 정의한 위치가 5 라인입니다. </span>
+	<span class="k">echo</span> <span class="k">__LINE__</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="c1">// 서버에 설치된 PHP버전을 표시합니다.</span>
+	<span class="k">echo</span> <span class="kc">PHP_VERSION</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="c1">// PHP가 실행 중인 OS의 이름을 표시합니다.</span>
+	<span class="k">echo</span> <span class="kc">PHP_OS</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="kc">TRUE</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+	<span class="k">echo</span> <span class="kc">FALSE</span> <span class="mf">.</span> <span class="s2">"&lt;br/&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>  
+
+	<span class="c1">// 함수명 상수 정의 </span>
+	<span class="k">function</span> <span class="n">functionname</span><span class="p">(){</span> 
+    		<span class="k">echo</span> <span class="k">__FUNCTION__</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span> 
+	<span class="p">}</span> 
+	
+	<span class="nf">functionname</span><span class="p">();</span>
+
+	<span class="c1">// 클래스명 상수 정의 </span>
+	<span class="kd">class</span> <span class="nc">classtest</span>
+	<span class="p">{</span> 
+    		<span class="k">var</span> <span class="nv">$test</span> <span class="o">=</span> <span class="k">__CLASS__</span><span class="p">;</span> 
+    		<span class="k">function</span> <span class="n">test</span><span class="p">()</span>
+    		<span class="p">{</span> 
+           			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">;</span> 
+    		<span class="p">}</span> 
+	<span class="p">}</span> 
+
+	<span class="nv">$test</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">classtest</span><span class="p">;</span> 
+	<span class="k">echo</span> <span class="nv">$test</span><span class="o">-&gt;</span><span class="n">test</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="c1">// 메서드명 상수 정의 </span>
+	<span class="kd">class</span> <span class="nc">classtest2</span>
+	<span class="p">{</span> 
+    		<span class="k">var</span> <span class="nv">$test</span> <span class="o">=</span> <span class="k">__METHOD__</span><span class="p">;</span> 
+    		<span class="k">function</span> <span class="n">test</span><span class="p">()</span>
+    		<span class="p">{</span> 
+          			<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">;</span> 
+    		<span class="p">}</span> 
+	<span class="p">}</span> 
+
+	<span class="nv">$test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">classtest2</span><span class="p">;</span> 
+	<span class="k">echo</span> <span class="nv">$test2</span><span class="o">-&gt;</span><span class="n">test</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\php-7.1.4-Win32-VC14-x86\jinyphp\const-03.php
+6
+7.1.4
+WINNT
+1
+
+functionname
+classtest
+classtest2
+</code></pre></div></div>
+
+<p>위의 예제는 다양한 내부 상수들을 확인하고 출력하는 예제입니다.</p>
+
+<p><br /><br /></p>
+
+
+			</div>			
+		</div>
+    </div>
+    
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12  d-none d-xl-block position-fixed end-0">
+      <!-- sidebar nav fixed -->
+      <div class="sidebar-nav-fixed">
+        <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semi-bold fs-6">목차</span>
+        <ul class="list-unstyled" id="book-mark">
+
+        </ul>
+
+        <div>
+          <!--구글 애드센스1-->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-format="fluid"
+              data-ad-layout-key="-fb+5w+4e-db+86"
+              data-ad-client="ca-pub-3321560028329475"
+              data-ad-slot="6043271504"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <br>
         </div>
 
+      </div>
     </div>
-    <!-- /.row -->
+
+	<!-- Bookmark Components -->
+	<script src="/assets/jiny/js/bookmark.js"></script>	
+
+	<script>
+		window.addEventListener('DOMContentLoaded', function(){
+			let current_url = window.location.pathname.slice(0, -1);
+			let current_page = document.querySelector('a[href="'+current_url+'"]');
+			current_page.classList.add('active');
+		});		
+	</script>
 </div>
-<!-- /.container -->
+      </div>
+    </div>
+  </div>
 
-        <!--부트스트랩4-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Scripts -->
+	<!-- Libs JS -->
+	<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+	<script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/libs/odometer/odometer.min.js"></script>
+	<script src="/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="/assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+	<script src="/assets/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 
-    </body>
+	<script src="/assets/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
+	<script src="/assets/libs/dragula/dist/dragula.min.js"></script>
+	<script src="/assets/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script src="/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+	<script src="/assets/libs/jQuery.print/jQuery.print.js"></script>
+	<script src="/assets/libs/prismjs/prism.js"></script>
+	<script src="/assets/libs/prismjs/components/prism-scss.min.js"></script>
+	<script src="/assets/libs/@yaireo/tagify/dist/tagify.min.js"></script>
+	<script src="/assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script src="/assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script src="/assets/libs/typed.js/lib/typed.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/maps/world.js"></script>
+	<script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script src="/assets/libs/fullcalendar/main.min.js"></script>
+	<script src="/assets/libs/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+	<script src="/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="/assets/libs/nouislider/dist/nouislider.min.js"></script>
+	<script src="/assets/libs/wnumb/wNumb.min.js"></script>
+	<script src="/assets/libs/glightbox/dist/js/glightbox.min.js"></script>
+
+	<!-- CDN File for moment -->
+	<script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js'></script>
+
+	<!-- Theme JS -->
+	<script src="/assets/js/theme.min.js"></script>
+</body>
 
 </html>

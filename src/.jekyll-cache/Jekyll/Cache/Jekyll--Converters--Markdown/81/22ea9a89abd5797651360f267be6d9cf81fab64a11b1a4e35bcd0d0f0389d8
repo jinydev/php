@@ -1,4 +1,4 @@
-I"�<h1 id="static-키워드">static 키워드</h1>
+I"�<h1 id="static-키워드">static 키워드</h1>
 <hr />
 
 <p>함수 안에 정의된 로컬변수는 휘발적인 특성이 있습니다. 즉, 함수가 종료되면 함수 내에서 사용된 변수들은 전부 자동 소멸하게 됩니다.</p>
@@ -49,7 +49,7 @@
     		<span class="k">echo</span> <span class="s2">"unset 실행 전: </span><span class="nv">$bar</span><span class="s2">, "</span><span class="p">;</span> 
     	
 		<span class="c1">// 변수를 직접 해제합니다.</span>
-    		<span class="nb">unset</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span> 
+    		<span class="k">unset</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span> 
     		<span class="nv">$bar</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span> 
     		<span class="k">echo</span> <span class="s2">"unset 실행 후: </span><span class="nv">$bar</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span> 
  	<span class="p">}</span>

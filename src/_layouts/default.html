@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <!--SEO-->
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Geeks is a fully responsive and yet modern premium bootstrap 5 template & snippets. Geek is feature-rich components and beautifully designed pages that help you create the best possible website and web application projects. Bootstrap Snippet " />
+		<meta name="keywords" content="Geeks UI, bootstrap, bootstrap 5, Course, Sass, landing, Marketing, admin themes, bootstrap admin, bootstrap dashboard, ui kit, web app, dash ui, admin dashboard, HTML5, multipurpose" />
+
+
+
+
+		<!-- Favicon icon-->
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
+
+
+		<!-- Libs CSS -->
+		<link href="/assets/fonts/feather/feather.css" rel="stylesheet">
+		<link href="/assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+		<link href="/assets/libs/dragula/dist/dragula.min.css" rel="stylesheet" />
+		<link href="/assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+		<link href="/assets/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
+		<link href="/assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
+		<link href="/assets/libs/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+		<link href="/assets/libs/@yaireo/tagify/dist/tagify.css" rel="stylesheet">
+		<link href="/assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet">
+		<link href="/assets/libs/tippy.js/dist/tippy.css" rel="stylesheet">
+		<link href="/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+		<link href="/assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+		<link href="/assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+		<link href="/assets/libs/nouislider/dist/nouislider.min.css" rel="stylesheet">
+		<link href="/assets/libs/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/assets/css/theme.min.css">
+		<link rel="stylesheet" href="/assets/css/jiny.css">
+		
+
+		<!--SEO-->
         {%- if page.title -%}
-            <title>{{ page.title }}</title>
+            <title>Rust | {{ page.title }}</title>
             <meta name="title" content="{{ page.title }}" />
         {%- else -%}
-            <title>Learn PHP</title>
+            <title>{{ site.title }}</title>
         {%- endif -%}
 
         {%- if page.description -%}
@@ -18,72 +52,84 @@
 
         {%- if page.keyword -%}
             <meta name="keyword" content="{{ page.keyword }}" />
+        {%- else -%}
+            <meta name="keyword" content="javascript" />
         {%- endif -%}
+	</head>
 
-        <!--부트스트랩4-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <style>
-            img {
-                max-width:100%;
-            }
-        </style>
+<body class="bg-white">
+  <!-- Main wrapper -->
+  <div class="docs-main-wrapper">
+    <!-- Docs header -->
+	{%- include header.html -%} 
 
-        <link rel="stylesheet" href="/assets/highlight.css">
-        <link rel="stylesheet" href="/assets/style.css">
+    <!-- left sidebar -->
+	<!-- Nav Sidebar -->
+	<div class="docs-nav-sidebar">
+		<div class="py-5"></div>
+		<div class="docs-nav" data-simplebar>
+			<nav class="navbar navbar-expand-md">
+			<div class="collapse navbar-collapse " id="navbarNav">
+				{%- include nav.html -%} 
+			</div>
+			</nav>
+		</div>
+		<div class="nav-footer">
+			<p class="mb-0"> Developed by JinyDev</p>
+		</div>
+	</div>
 
+    <!-- Wrapper  -->
+    <div class="docs-wrapper">
+      <div class="container-fluid">
+        {{content}}
+      </div>
+    </div>
+  </div>
 
-        <!--에드센스-->
-        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Scripts -->
+	<!-- Libs JS -->
+	<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+	<script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/libs/odometer/odometer.min.js"></script>
+	<script src="/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="/assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+	<script src="/assets/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 
-        <style>
-            /*
-            h1  a {
-                color: black;
-            }
-            h1 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
+	<script src="/assets/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
+	<script src="/assets/libs/dragula/dist/dragula.min.js"></script>
+	<script src="/assets/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script src="/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+	<script src="/assets/libs/jQuery.print/jQuery.print.js"></script>
+	<script src="/assets/libs/prismjs/prism.js"></script>
+	<script src="/assets/libs/prismjs/components/prism-scss.min.js"></script>
+	<script src="/assets/libs/@yaireo/tagify/dist/tagify.min.js"></script>
+	<script src="/assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script src="/assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script src="/assets/libs/typed.js/lib/typed.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/maps/world.js"></script>
+	<script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script src="/assets/libs/fullcalendar/main.min.js"></script>
+	<script src="/assets/libs/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+	<script src="/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="/assets/libs/nouislider/dist/nouislider.min.js"></script>
+	<script src="/assets/libs/wnumb/wNumb.min.js"></script>
+	<script src="/assets/libs/glightbox/dist/js/glightbox.min.js"></script>
 
-            h2  a {
-                color: black;
-            }
-            h2 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
+	<!-- CDN File for moment -->
+	<script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js'></script>
 
-            h3  a {
-                color: black;
-            }
-            h3 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h4  a {
-                color: black;
-            }
-            h4 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-            */
-
-
-        </style>
-    </head>
-    <body>
-        <!--네비게이션-->
-        {%- include navigation.html -%}
-
-        {{ content }}
-
-        <!--부트스트랩4-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    </body>
+	<!-- Theme JS -->
+	<script src="/assets/js/theme.min.js"></script>
+</body>
 
 </html>

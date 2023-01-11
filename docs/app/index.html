@@ -1,108 +1,221 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <!--SEO--><title>PHP 응용 프로그래밍</title>
-            <meta name="title" content="PHP 응용 프로그래밍" /><!--부트스트랩4-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <style>
-            img {
-                max-width:100%;
-            }
-        </style>
-
-        <link rel="stylesheet" href="/assets/highlight.css">
-        <link rel="stylesheet" href="/assets/style.css">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Geeks is a fully responsive and yet modern premium bootstrap 5 template & snippets. Geek is feature-rich components and beautifully designed pages that help you create the best possible website and web application projects. Bootstrap Snippet " />
+		<meta name="keywords" content="Geeks UI, bootstrap, bootstrap 5, Course, Sass, landing, Marketing, admin themes, bootstrap admin, bootstrap dashboard, ui kit, web app, dash ui, admin dashboard, HTML5, multipurpose" />
 
 
-        <!--에드센스-->
-        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-        <style>
-            /*
-            h1  a {
-                color: black;
-            }
-            h1 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h2  a {
-                color: black;
-            }
-            h2 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h3  a {
-                color: black;
-            }
-            h3 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-
-            h4  a {
-                color: black;
-            }
-            h4 a:hover {
-                color: blue;
-                text-decoration: none;
-            }
-            */
 
 
-        </style>
-    </head>
-    <body>
-        <!--네비게이션--><!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-    	<a class="navbar-brand" href="/">Learn PHP</a>
-    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    		<span class="navbar-toggler-icon"></span>
-    	</button>
-    	<div class="collapse navbar-collapse" id="navbarResponsive">
-    		<ul class="navbar-nav ml-auto">
-    			<li class="nav-item">
-        			<a class="nav-link" href="/php">소개</a>
-        		</li>
-        		<li class="nav-item active">
-        			<a class="nav-link" href="/setup">설치</a>
-        		</li>
-        		<li class="nav-item">
-        			<a class="nav-link" href="/basic">기본문법</a>
-				</li>
-				<li class="nav-item">
-        			<a class="nav-link" href="/function">함수</a>
-				</li>
-				<li class="nav-item">
-        			<a class="nav-link" href="/oop">객체지향</a>
-        		</li>
-        	</ul>
-    	</div>
-    </div>
-  </nav><div class="bg-light">
-    <div class="container"><nav aria-label="breadcrumb">
-    <ol class="breadcrumb  bg-light">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">app</a></li><li class="breadcrumb-item active">board</li></ol>    
-</nav></div>
-</div>
+		<!-- Favicon icon-->
+		<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico">
 
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-9">
-			<main role="main">
-                <section>
-                    <h1 id="계시판-만들기">계시판 만들기</h1>
+		<!-- Libs CSS -->
+		<link href="/assets/fonts/feather/feather.css" rel="stylesheet">
+		<link href="/assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+		<link href="/assets/libs/dragula/dist/dragula.min.css" rel="stylesheet" />
+		<link href="/assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+		<link href="/assets/libs/dropzone/dist/dropzone.css" rel="stylesheet" />
+		<link href="/assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
+		<link href="/assets/libs/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+		<link href="/assets/libs/@yaireo/tagify/dist/tagify.css" rel="stylesheet">
+		<link href="/assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet">
+		<link href="/assets/libs/tippy.js/dist/tippy.css" rel="stylesheet">
+		<link href="/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+		<link href="/assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+		<link href="/assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+		<link href="/assets/libs/nouislider/dist/nouislider.min.css" rel="stylesheet">
+		<link href="/assets/libs/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="/assets/css/theme.min.css">
+		<link rel="stylesheet" href="/assets/css/jiny.css">
+		
+
+		<!--SEO--><title>Rust | PHP 응용 프로그래밍</title>
+            <meta name="title" content="PHP 응용 프로그래밍" /><meta name="keyword" content="javascript" /></head>
+
+<body class="bg-white">
+  <!-- Main wrapper -->
+  <div class="docs-main-wrapper">
+    <!-- Docs header --><div class="docs-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ms-0">
+         <a class="navbar-brand" href="/">
+            JinyPHP
+         </a>
+
+         <ul class="navbar-nav ms-auto flex-row">
+            <li class="nav-item docs-header-btn">
+               <a target="_blank" href="">Github</a>
+            </li>
+
+            <li class="nav-item d-md-none">
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"  
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+            </li>
+         </ul>
+
+    </nav>
+</div><!-- left sidebar -->
+	<!-- Nav Sidebar -->
+	<div class="docs-nav-sidebar">
+		<div class="py-5"></div>
+		<div class="docs-nav" data-simplebar>
+			<nav class="navbar navbar-expand-md">
+			<div class="collapse navbar-collapse " id="navbarNav"><ul class="navbar-nav flex-column" id="sidebarnav">
+
+    <!-- Getting Started -->
+    <li class="navbar-header">
+        <h5 class="heading">시작하기</h5>
+    </li>
+    <li class="nav-item">
+        <a href="/php" class="nav-link">PHP소개</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup" class="nav-link">설치</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup/console" class="nav-link">콘솔</a>
+    </li>
+    <li class="nav-item">
+        <a href="/setup/env" class="nav-link">환경설정</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">기본문법</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic">코드작성</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/const">상수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/variable">변수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/operator">연산자</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/condition">조건문</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/loop">반복문</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/preprocess">전처리기</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/scope">유효범위</a>
+    </li>
+    
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/function">함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/generator">제너레이터</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/annon">익명함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/variable">가변함수</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/function/builtin">내부함수</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">객체지향</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop">객체지향</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/extend">상속</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/interface">인터페이스</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/abstract">추상화</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/trait">Trait</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/pettern">디자인패턴</a>
+    </li>
+
+    <li>
+        <div class="navbar-border"></div>
+    </li>
+
+    <li class="navbar-header">
+        <h5 class="heading">패키지</h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/autoload">오토로딩</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/composer">컴포저</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">라라벨</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/jinyphp">지니PHP</a>
+    </li>
+    
+
+
+
+
+</ul></div>
+			</nav>
+		</div>
+		<div class="nav-footer">
+			<p class="mb-0"> Developed by JinyDev</p>
+		</div>
+	</div>
+
+    <!-- Wrapper  -->
+    <div class="docs-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+    <div class="col-xl-10 col-md-12 col-sm-12 col-12 ">
+		<!-- Breadcrumb -->
+		<nav aria-label="breadcrumb" style="margin-top: 50px; padding: 0 10px 0 10px;">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">app</a></li><li class="breadcrumb-item active">board</li></ol>    
+		</nav>
+		
+		<!-- Content -->
+		<div class="docs-content mx-xxl-9">
+			<div class="markdown">
+				<h1 id="계시판-만들기">계시판 만들기</h1>
 <hr />
 <p>계시판은 웹프로그래밍에 있어서 다양한 기능을 학습하기 위한 좋은 예제 입니다.</p>
 
@@ -125,72 +238,94 @@
 </code></pre></div></div>
 
 
-                </section>
-			</main>
-			
-			<!--구글 애드센스-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-fb+5w+4e-db+86"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="6043271504"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
-
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-			<aside><ul class="list-group">
-    <li class="list-group-item"><a href="/php">php 언어</a></li>
-    <li class="list-group-item"><a href="/setup">설치</a></li>
-    <li class="list-group-item"><a href="/basic">기본문법</a></li>
-    <li class="list-group-item"><a href="/function">함수</a></li>
-    <li class="list-group-item"><a href="/oop">객체지향</a></li>
-    <li class="list-group-item"><a href="/pettern">디자인패턴</a></li>
-    <li class="list-group-item"><a href="/composer">컴포저</a></li>
-    <li class="list-group-item"><a href="/web">웹개발</a></li>
-    
-</ul>
-
-<br>
-
-<ul>
-    <li><a href="https://mysql.jiny.dev">데이터베이스</a></li>
-    <li><a href="https://html5.jiny.dev">HTML/CSS</a></li>
-    <li><a href="https://javascript.jiny.dev">자바스크립트</a></li>
-    <li><a href="https://git.jiny.dev">깃(git)</a></li>
-</ul>
-
-</aside>			
-			
-			<!--구글 애드센스2-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-ef+6k-30-ac+ty"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="7661682925"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
-
+			</div>			
+		</div>
     </div>
-    <!-- /.row -->
+    
+    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12  d-none d-xl-block position-fixed end-0">
+      <!-- sidebar nav fixed -->
+      <div class="sidebar-nav-fixed">
+        <span class="px-4 mb-2 d-block text-uppercase ls-md fw-semi-bold fs-6">목차</span>
+        <ul class="list-unstyled" id="book-mark">
+
+        </ul>
+
+        <div>
+          <!--구글 애드센스1-->
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-format="fluid"
+              data-ad-layout-key="-fb+5w+4e-db+86"
+              data-ad-client="ca-pub-3321560028329475"
+              data-ad-slot="6043271504"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <br>
+        </div>
+
+      </div>
+    </div>
+
+	<!-- Bookmark Components -->
+	<script src="/assets/jiny/js/bookmark.js"></script>	
+
+	<script>
+		window.addEventListener('DOMContentLoaded', function(){
+			let current_url = window.location.pathname.slice(0, -1);
+			let current_page = document.querySelector('a[href="'+current_url+'"]');
+			current_page.classList.add('active');
+		});		
+	</script>
 </div>
-<!-- /.container -->
+      </div>
+    </div>
+  </div>
 
-        <!--부트스트랩4-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Scripts -->
+	<!-- Libs JS -->
+	<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+	<script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/libs/odometer/odometer.min.js"></script>
+	<script src="/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/libs/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="/assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+	<script src="/assets/libs/inputmask/dist/jquery.inputmask.min.js"></script>
+	<script src="/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 
-    </body>
+	<script src="/assets/libs/file-upload-with-preview/dist/file-upload-with-preview.iife.js"></script>
+	<script src="/assets/libs/dragula/dist/dragula.min.js"></script>
+	<script src="/assets/libs/bs-stepper/dist/js/bs-stepper.min.js"></script>
+	<script src="/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+	<script src="/assets/libs/jQuery.print/jQuery.print.js"></script>
+	<script src="/assets/libs/prismjs/prism.js"></script>
+	<script src="/assets/libs/prismjs/components/prism-scss.min.js"></script>
+	<script src="/assets/libs/@yaireo/tagify/dist/tagify.min.js"></script>
+	<script src="/assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+	<script src="/assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+	<script src="/assets/libs/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+	<script src="/assets/libs/typed.js/lib/typed.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+	<script src="/assets/libs/jsvectormap/dist/maps/world.js"></script>
+	<script src="/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+	<script src="/assets/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<script src="/assets/libs/fullcalendar/main.min.js"></script>
+	<script src="/assets/libs/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+	<script src="/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="/assets/libs/nouislider/dist/nouislider.min.js"></script>
+	<script src="/assets/libs/wnumb/wNumb.min.js"></script>
+	<script src="/assets/libs/glightbox/dist/js/glightbox.min.js"></script>
+
+	<!-- CDN File for moment -->
+	<script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js'></script>
+
+	<!-- Theme JS -->
+	<script src="/assets/js/theme.min.js"></script>
+</body>
 
 </html>

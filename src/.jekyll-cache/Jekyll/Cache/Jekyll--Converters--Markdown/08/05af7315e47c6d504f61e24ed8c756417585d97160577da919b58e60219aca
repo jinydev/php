@@ -1,4 +1,4 @@
-I"�N<h1 id="매직-메서드">매직 메서드</h1>
+I"�N<h1 id="매직-메서드">매직 메서드</h1>
 <hr />
 <p>클래스는 매직 메서드라는 몇 개의 미리 사전에 정의한 특수한 메서드가 있습니다.<br />
 클래스를 생성할 때 초기값을 설정하거나 오류 동작 등 실행되는 특별한 메서드입니다.</p>
@@ -306,9 +306,9 @@ __unset() 매직 매서드는 접근할 수 없는 프로퍼티를 unset() 함�
 
 	<span class="k">isset</span><span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
 
-	<span class="nb">empty</span><span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+	<span class="k">empty</span><span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
 
-	<span class="nb">unset</span><span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+	<span class="k">unset</span><span class="p">(</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
 
 
 	<span class="c1">// 접근 불가 프로퍼티에 값을 읽을때 매직 매소드 __get() 호출</span>

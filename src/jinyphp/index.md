@@ -3,5 +3,9 @@ layout: php
 title: "jinyPHP"
 ---
 
+## JinyPHP
+---
+지니PHP는 MVC 기반의 웹프레임워크입니다. 아직 개발기간이 짧아 경쟁의 유사 프레임워크 처럼 다양한 기능을 제공하지는 못합니다. 하지만, 최신의 개발트랜드와 모던PHP의 코드를 학습하기에는 좋습니다. 또한, 컴포저를 이용하기 때문에 쉽게 확장을 할 수 있습니다. 
+
 * [frontmatter](frontmatter)
 * [view](view)

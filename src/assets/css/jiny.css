@@ -1,0 +1,9 @@
+/* Markdown */
+blockquote {
+    border-left: 5px solid #cccccc;
+    padding-left: 1rem;
+}
+
+.markdown img {
+    max-width:100%;
+}
