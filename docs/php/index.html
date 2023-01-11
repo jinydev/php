@@ -51,7 +51,7 @@
 
          <ul class="navbar-nav ms-auto flex-row">
             <li class="nav-item docs-header-btn">
-               <a target="_blank" href="">Github</a>
+               <a target="_blank" href="https://github.com/jinydev/php">Github</a>
             </li>
 
             <li class="nav-item d-md-none">
@@ -119,13 +119,18 @@
     <li class="nav-item">
         <a class="nav-link" href="/basic/scope">유효범위</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/error">오류</a>
+    </li>
     
     <li>
         <div class="navbar-border"></div>
     </li>
-
+    <li class="navbar-header">
+        <a class="heading" href="/function">함수+</a>
+    </li>
     <li class="nav-item">
-        <a class="nav-link" href="/function">함수</a>
+        <a class="nav-link" href="/function/function">함수구조</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/function/generator">제너레이터</a>
@@ -140,15 +145,16 @@
         <a class="nav-link" href="/function/builtin">내부함수</a>
     </li>
 
+
     <li>
         <div class="navbar-border"></div>
     </li>
 
     <li class="navbar-header">
-        <h5 class="heading">객체지향</h5>
+        <a class="heading" href="/oop">객체지향+</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/oop">객체지향</a>
+        <a class="nav-link" href="/oop/class">클래스</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/oop/extend">상속</a>
@@ -161,6 +167,20 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/oop/trait">Trait</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/namespace">네임스페이스</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/closure">closure</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/exception">예외처리</a>
+    </li>
+
+    
+    <li>
+        <div class="navbar-border"></div>
     </li>
 
     <li class="nav-item">
@@ -214,11 +234,14 @@
 		<!-- Content -->
 		<div class="docs-content mx-xxl-9">
 			<div class="markdown">
-				<h1 id="서버사이드-웹프로그래밍">서버사이드 웹프로그래밍</h1>
+				<jiny-book-mark>웹프로그래밍</jiny-book-mark>
+
+<h1 id="웹프로그래밍">웹프로그래밍</h1>
 <hr />
 <p>PHP는 동적 웹사이트를 제작할 수 있는 <code class="language-plaintext highlighter-rouge">서버사이트 웹 프로그래밍</code> 언어 입니다. 페이스북, 마젠토, cafe24등
 수많은 서비스들이 PHP 언어로 운영되고 있습니다.</p>
 
+<jiny-book-mark>PHP소개</jiny-book-mark>
 <p><br /></p>
 
 <h2 id="php-소개">PHP 소개</h2>
@@ -233,20 +256,15 @@
 
 <p>또한 네임스페이스, 오토로딩 및 컴포저 등을 통해 최신 스타일의 언어와 개발 생태계를 만들어가고 있습니다. 웹 분야에서 PHP의 전성기가 다시 돌아올 것으로 예상합니다</p>
 
+<jiny-book-mark>PHP 역사</jiny-book-mark>
 <p><br /></p>
 
-<h2 id="php-역사"><a href="history">PHP 역사</a></h2>
+<h2 id="php-역사">PHP 역사</h2>
 <hr />
-<p>PHP는 1995년 <code class="language-plaintext highlighter-rouge">Rasmus Lerdorf</code>에 의해서 <code class="language-plaintext highlighter-rouge">PHP/FI</code>라는 이름으로 시작했습니다.</p>
-<ul>
-  <li>PHP의 시작</li>
-  <li>PHP 2.0</li>
-  <li>PHP 3.0</li>
-  <li>PHP 4.0</li>
-  <li>PHP 5.0</li>
-  <li>PHP 7.0</li>
-</ul>
+<p>PHP는 1995년 <code class="language-plaintext highlighter-rouge">Rasmus Lerdorf</code>에 의해서 <code class="language-plaintext highlighter-rouge">PHP/FI</code>라는 이름으로 시작했습니다. 최신의 PHP 버젼은 8.x 입니다.<br />
+<a href="history">+더보기</a></p>
 
+<jiny-book-mark>특징</jiny-book-mark>
 <p><br /></p>
 
 <h2 id="특징">특징</h2>
@@ -258,6 +276,7 @@
   <li><a href="interpreter">인터프리터</a></li>
 </ul>
 
+<jiny-book-mark>PHP 엔진</jiny-book-mark>
 <p><br /></p>
 
 <h2 id="php-엔진"><a href="engine">PHP 엔진</a></h2>
@@ -269,6 +288,7 @@
   <li>HVVM</li>
 </ul>
 
+<jiny-book-mark>오피케시</jiny-book-mark>
 <p><br /></p>
 
 <h2 id="젠드-오피캐시"><a href="opcashe">젠드 오피캐시</a></h2>

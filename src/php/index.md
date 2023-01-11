@@ -4,11 +4,14 @@ breadcrumb:
 - php
 ---
 
-# 서버사이드 웹프로그래밍
+<jiny-book-mark>웹프로그래밍</jiny-book-mark>
+
+# 웹프로그래밍
 ---
 PHP는 동적 웹사이트를 제작할 수 있는 `서버사이트 웹 프로그래밍` 언어 입니다. 페이스북, 마젠토, cafe24등
 수많은 서비스들이 PHP 언어로 운영되고 있습니다.
 
+<jiny-book-mark>PHP소개</jiny-book-mark>
 <br>
 
 ## PHP 소개
@@ -23,18 +26,15 @@ PHP 언어는 발표 초기부터 한 시대를 주름잡았던 웹 개발 언�
 
 또한 네임스페이스, 오토로딩 및 컴포저 등을 통해 최신 스타일의 언어와 개발 생태계를 만들어가고 있습니다. 웹 분야에서 PHP의 전성기가 다시 돌아올 것으로 예상합니다
 
+<jiny-book-mark>PHP 역사</jiny-book-mark>
 <br>
 
-## [PHP 역사](history)
+## PHP 역사
 ---
-PHP는 1995년 `Rasmus Lerdorf`에 의해서 `PHP/FI`라는 이름으로 시작했습니다.
-* PHP의 시작
-* PHP 2.0
-* PHP 3.0
-* PHP 4.0
-* PHP 5.0
-* PHP 7.0
+PHP는 1995년 `Rasmus Lerdorf`에 의해서 `PHP/FI`라는 이름으로 시작했습니다. 최신의 PHP 버젼은 8.x 입니다.  
+[+더보기](history)
 
+<jiny-book-mark>특징</jiny-book-mark>
 <br>
 
 ## 특징
@@ -44,6 +44,7 @@ PHP언어의 주요적 특징들에 대해서 알아 봅니다.
 * [서버 사이드](serverside)
 * [인터프리터](interpreter)
 
+<jiny-book-mark>PHP 엔진</jiny-book-mark>
 <br>
 
 ## [PHP 엔진](engine)
@@ -53,6 +54,7 @@ PHP 엔진이란 PHP 스크립트을 분석하고 실행을 동작 처리하는 
 * Zend
 * HVVM
 
+<jiny-book-mark>오피케시</jiny-book-mark>
 <br>
 
 ## [젠드 오피캐시](opcashe)

@@ -51,7 +51,7 @@
 
          <ul class="navbar-nav ms-auto flex-row">
             <li class="nav-item docs-header-btn">
-               <a target="_blank" href="">Github</a>
+               <a target="_blank" href="https://github.com/jinydev/php">Github</a>
             </li>
 
             <li class="nav-item d-md-none">
@@ -119,13 +119,18 @@
     <li class="nav-item">
         <a class="nav-link" href="/basic/scope">유효범위</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/basic/error">오류</a>
+    </li>
     
     <li>
         <div class="navbar-border"></div>
     </li>
-
+    <li class="navbar-header">
+        <a class="heading" href="/function">함수+</a>
+    </li>
     <li class="nav-item">
-        <a class="nav-link" href="/function">함수</a>
+        <a class="nav-link" href="/function/function">함수구조</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/function/generator">제너레이터</a>
@@ -140,15 +145,16 @@
         <a class="nav-link" href="/function/builtin">내부함수</a>
     </li>
 
+
     <li>
         <div class="navbar-border"></div>
     </li>
 
     <li class="navbar-header">
-        <h5 class="heading">객체지향</h5>
+        <a class="heading" href="/oop">객체지향+</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/oop">객체지향</a>
+        <a class="nav-link" href="/oop/class">클래스</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/oop/extend">상속</a>
@@ -161,6 +167,20 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/oop/trait">Trait</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/namespace">네임스페이스</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/closure">closure</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/oop/exception">예외처리</a>
+    </li>
+
+    
+    <li>
+        <div class="navbar-border"></div>
     </li>
 
     <li class="nav-item">
@@ -337,7 +357,7 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny는 20입니다.
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny는 20입니다.
 </code></pre></div></div>
 
 <p>위의 예제를 보면 hellowWorld 함수를 호출할 때 입력받는 함수의 매개변수 <code class="language-plaintext highlighter-rouge">$name</code>과 <code class="language-plaintext highlighter-rouge">$age</code> 값을 직접 문자열 및 정수로 데이터를 전달 합니다.</p>
@@ -374,7 +394,7 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
 25
 </code></pre></div></div>
 
@@ -427,7 +447,7 @@ PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤�
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The height is : 250
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The height is : 250
 The height is : 50 
 </code></pre></div></div>
 
@@ -474,7 +494,7 @@ The height is : 50
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 문자열
 </code></pre></div></div>
 
@@ -515,7 +535,7 @@ PHP에서도 이와 같은 형태의 실행 인자 전달과 참조 매개변수
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>음료수 이름 = 콜라
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>음료수 이름 = 콜라
 음료수 이름 = 사이다 
 </code></pre></div></div>
 
@@ -566,7 +586,7 @@ PHP언어는 가변 매개변수로 함수 정의와 호출 시 한 쌍씩 호�
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 인자 개수 = 1
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 인자 개수 = 1
 aaa
 ====
 실행 인자 개수 = 2
@@ -596,7 +616,7 @@ ccc
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
 <p><br /></p>
@@ -627,7 +647,7 @@ PHP 5.6 이상의 버전에서는 <code class="language-plaintext highlighter-ro
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
 </code></pre></div></div>
 
 <p>위의 예에서 <code class="language-plaintext highlighter-rouge">sum()</code>함수는 가변 인자값으로 매개변수를 전달받습니다.<br />
@@ -650,7 +670,7 @@ PHP 5.6 이상의 버전에서는 <code class="language-plaintext highlighter-ro
 </code></pre></div></div>
 
 <p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
 9
 </code></pre></div></div>
 
