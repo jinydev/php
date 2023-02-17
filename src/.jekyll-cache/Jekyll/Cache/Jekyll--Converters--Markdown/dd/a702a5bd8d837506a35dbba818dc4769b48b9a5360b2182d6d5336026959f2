@@ -1,4 +1,4 @@
-I"C<h1 id="계시판-만들기">계시판 만들기</h1>
+I"D<h1 id="계시판-만들기">계시판 만들기</h1>
 <hr />
 <p>계시판은 웹프로그래밍에 있어서 다양한 기능을 학습하기 위한 좋은 예제 입니다.</p>
 
@@ -12,9 +12,9 @@
 
 <p>id값으로 board_new로 설정하게 되면, 자동으로 생성된 자바스크립트 함수를 통하여 url 이동을 할 수 있습니다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">board_new</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">board_new</span><span class="dl">'</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">board_new</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">board_new</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">board_new</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">board_new</span><span class="dl">'</span><span class="p">);</span>
+<span class="nf">if </span><span class="p">(</span><span class="nx">board_new</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">board_new</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/board3/new</span><span class="dl">'</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>

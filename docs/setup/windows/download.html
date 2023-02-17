@@ -234,29 +234,31 @@
 		<!-- Content -->
 		<div class="docs-content mx-xxl-9">
 			<div class="markdown">
-				<h1 id="실행파일-다운로드">실행파일 다운로드</h1>
-<hr />
-<p>windows 운영체제는 개발자, 일반인등 다양한 사람들이 폭넓게 가장 많이 사용을 하고 있는 운영체제 입니다.</p>
+				<h1 id="윈도우-php-설치">윈도우 PHP 설치</h1>
 
-<p><br /></p>
+<p>PHP는 백엔드 서버용 웹 프로그램을 개발하는 언어로 주로 Linux 와 같은 운영체제 상에서 설치되어 동작되는 경우가 많습니다. 하지만, 개발을 위하여 윈도우 컴퓨터에도 설치가 필요하기도 합니다. 이런 경우에는 직접 소스코드를 설치하지 않고, 컴파일된 파일을 다운로드 받아 사용합니다.</p>
 
 <h2 id="다운로드">다운로드</h2>
-<hr />
-<p>php 공식사이트로 접속을 합니다. <code class="language-plaintext highlighter-rouge">downloads</code>를 클릭하여 다운로드 화면으로 이동을 합니다.</p>
+
+<p>PHP 공식사이트는 각각의 버젼별로 윈도우에 설치가 가능하도록 컴파일된 압축파일을 제공합니다.</p>
+
+<p>php 공식사이트의 downloads로 이동을 합니다.</p>
 
 <p><img src="../img/php_download.jpg" alt="php_download_page" /></p>
 
-<p>페이지 상단에는 최신 버젼의 php 파일을 다운로드 받을 수 있는 링크들이 모여 있습니다.
-목록에서 <code class="language-plaintext highlighter-rouge">windows downloads</code>를 클릭합니다. 컴퓨터로 실행용 <code class="language-plaintext highlighter-rouge">zip</code>파일이 다운로드 됩니다.</p>
+<p>각각의 버젼별 하단에 <code class="language-plaintext highlighter-rouge">windows downloads</code> 링크를 제공하고 있습니다.  원하는 버젼의 zip 파일을 다운로드 받습니다.</p>
 
-<p><br /></p>
+<blockquote>
+  <p>PHP는 스레드 지원 버젼과 지원하지 않는 버젼으로 나누어져 있습니다. 일반적으로는 스레드를 지원하지 않는 버젼을 다운로드 하여 설치합니다.</p>
+</blockquote>
 
-<h2 id="압축풀기">압축풀기</h2>
-<hr />
-<p>php <code class="language-plaintext highlighter-rouge">zip</code> 설치파일을 다운로드 받았다면, 적절한 폴더에 압축을 해제합니다.<br />
-압축을 해제하기 위해서는 별도의 압축 응용프로그램이 필요할 수 있습니다.</p>
+<p>zip 파일을 다운로드 받았다면, 적절한 폴더에 압축을 해제합니다.  압축을 해제하기 위해서는 별도의 압축 응용프로그램이 필요할 수 있습니다.</p>
 
-<p>압축을 해제하였다면, 폴더의 파일을 확인합니다. <code class="language-plaintext highlighter-rouge">cmd 창</code>에서 <code class="language-plaintext highlighter-rouge">dir 명령</code>을 사용하면 됩니다.</p>
+<blockquote>
+  <p>최신의 윈도우 버젼은 자체적으로 압축을 해제할 수 있는 기능이 있습니다. 파일을 선택하고, 마우스 오른쪽 버튼을 클릭합니다. 압축해제하기 목록을 확인할 수 있습니다.</p>
+</blockquote>
+
+<p>압축을 해제하였다면, 폴더의 파일을 확인합니다.  브라우저 및 윈도우 터미널 창에서  <code class="language-plaintext highlighter-rouge">dir 명령</code>을 실행합니다.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">D:\php\php-7.4.0&gt;</span><span class="nb">dir</span>/w
 <span class="go">[.]                      [..]                     deplister.exe            [dev]
@@ -273,15 +275,18 @@ README.md                [sasl2]                  snapshot.txt
                7개 디렉터리  946,800,377,856 바이트 남음
 </span></code></pre></div></div>
 
-<p>폴더안에 <code class="language-plaintext highlighter-rouge">php.exe</code> 파일을 찾아 볼 수 있습니다.</p>
-
-<p><br /></p>
+<p>다양한 파일들이 존재하지만, 여기서 PHP를 실행하는 파일은  <code class="language-plaintext highlighter-rouge">php.exe</code>  입니다.</p>
 
 <h2 id="php-실행하기">PHP 실행하기</h2>
-<hr />
-<p>윈도우에서 압축을 해제한 PHP 파일들은 별도의 설치과정 없이 바로 실행이 가능합니다.</p>
+<p>윈도우에서 별도의 설치과정 없이 압축을 해제하는 것은,바로 실행이 가능하다는 의미 입니다.</p>
 
-<p>php를 실행해 보도록 합니다. 이때, php.exe 파일이 위치한 <code class="language-plaintext highlighter-rouge">동일한 디렉토리</code>에서 명령을 입력합니다.</p>
+<p>윈도우 터미널에서 PHP 압축이 해제되어 있는 폴더로 이동을 합니다. 그리고, php 명령을 입력합니다.</p>
+
+<blockquote>
+  <p>이때, php.exe 파일이 위치한 <code class="language-plaintext highlighter-rouge">동일한 디렉토리</code>에서 명령을 입력합니다.</p>
+</blockquote>
+
+<h3 id="버젼확인하기">버젼확인하기</h3>
 
 <p><code class="language-plaintext highlighter-rouge">php</code> 명령뒤에 <code class="language-plaintext highlighter-rouge">--version</code> 옵션을 같이 입력합니다. <code class="language-plaintext highlighter-rouge">--version</code> 옵션은 현재의 php 버전정보를 출력합니다.</p>
 
@@ -291,15 +296,39 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 </span></code></pre></div></div>
 
-<p>정상적으로 PHP가 실행이 되는 것을 확인할 수 있습니다.</p>
-
-<h2 id="path-설정">path 설정</h2>
+<h3 id="path-설정">path 설정</h3>
 <hr />
-<p>설치된 php는 압축 해제된 디렉토리에서만 실행이 됩니다. 컴퓨터의 모든 폴더에서 php를 실행을 하기 위해서는 시스템 path 설정을 해주어야 합니다.</p>
+<p>우리는 php를 실행하기 위하여 압축파일이 해제된 폴더로 이동을 하였습니다. 다른 폴더로 이동후에 php 명령을 다시 실행해 봅니다. 이전과 달리 PHP가 실행이 되지 않는 것을 확인할 수 있습니다.</p>
 
-<ul>
-  <li>윈도우 &gt; 설정 &gt; 시스템</li>
-</ul>
+<p>윈도우에서는 프로그램을 실행하기 위해서는 동일한 폴더 안에 실행파일이 존재하거나, 실행 파일을 찾을 수 있는 경로를 추가해 주어야 합니다. 일반적인 설치프로그램과 달리 우리는 압축 파일을 해제하여 PHP를 복사하였기 때문에 경로 설정이 되어 있지 않습니다.</p>
+
+<p>PHP 파일이 모든 곳에서 실행이 가능하도록 경로를 추가합니다. 경로의 추가는 윈도우 &gt; 설정 &gt; 시스템  &gt; 고급설정 에서 설정할 수 있습니다.</p>
+
+<h2 id="ini-파일-생성-및-설정">ini 파일 생성 및 설정</h2>
+
+<p>PHP는 다양한 확장 모듈들을 가지고 있습니다. 또한, PHP의 동작의 실행환경을 설정하기 위하여 ini 환경설정 파일이 필요합니다.</p>
+
+<p>압축을 해제한 폴더로 이동하면 <code class="language-plaintext highlighter-rouge">php.ini</code> 파일이 존재하지 않습니다. 대신,  <code class="language-plaintext highlighter-rouge">php.ini-development</code> 예제 파일을 볼 수 있습니다. 이 파일을 <code class="language-plaintext highlighter-rouge">php.ini</code> 파일로 복사하면 됩니다.</p>
+
+<h3 id="확장기능-설정">확장기능 설정</h3>
+
+<p>PHP의 확장 모듈들은 미리 컴파일 되어 <code class="language-plaintext highlighter-rouge">ext</code> 서브 폴더안에 <code class="language-plaintext highlighter-rouge">*.dll</code> 파일로 존재합니다.</p>
+
+<p>먼저 php.ini 파일에서 확장 폴더의 경로를 활성화 해줍니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">; On windows:
+</span><span class="py">extension_dir</span> <span class="p">=</span> <span class="s">"ext"</span>
+</code></pre></div></div>
+
+<p>이제 서브폴더인 <code class="language-plaintext highlighter-rouge">ext</code>에서 확장모듈을 찾아 로드할 수 있습니다.</p>
+
+<p>두번째는 사용하고자 하는 확장 모듈의 주석을 해제합니다. ini 파일에서 주석은 세미콜론<code class="language-plaintext highlighter-rouge">;</code>입니다. 앞에있는 세미콜론을 제거하면 됩니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">extension</span><span class="p">=</span><span class="s">pdo_mysql</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">pdo_mysql</code>은 mysql 데이터데이스에 접속을 할 수 있도록 제공되는 확장 드라이버 모듈입니다.</p>
+
 
 			</div>			
 		</div>
