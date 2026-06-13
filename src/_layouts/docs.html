@@ -1,0 +1,49 @@
+---
+layout: bootstrap
+---
+
+<div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                {% include nav.html %}
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        {% include breadcrumb.html %}
+        <div class="bd-content ps-lg-2">
+            {{content}}
+
+            <!-- 다음/이전 학습 페이지네이션 -->
+            {% include pagination.html %}
+
+            <div class="mt-10">
+                <!-- 구글 에스센스 광고 -->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+                    crossorigin="anonymous"></script>
+                <!-- jinydev-java -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                    data-ad-slot="9323221865" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+        </div>
+
+        {% include bookmark.html %}
+    </main>
+
+
+</div>

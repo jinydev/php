@@ -1,0 +1,69 @@
+main:
+  - title: "Part 01. 시작하기"
+    subitems:
+      - title: "PHP 소개"
+        url: /php
+      - title: "설치"
+        url: /setup
+      - title: "콘솔"
+        url: /setup/console
+      - title: "환경설정"
+        url: /setup/env
+  - title: "Part 02. 기본문법"
+    subitems:
+      - title: "코드작성"
+        url: /basic
+      - title: "상수"
+        url: /basic/const
+      - title: "변수"
+        url: /basic/variable
+      - title: "연산자"
+        url: /basic/operator
+      - title: "조건문"
+        url: /basic/condition
+      - title: "반복문"
+        url: /basic/loop
+      - title: "전처리기"
+        url: /basic/preprocess
+      - title: "유효범위"
+        url: /basic/scope
+      - title: "오류"
+        url: /basic/error
+  - title: "Part 03. 함수"
+    subitems:
+      - title: "함수구조"
+        url: /function/function
+      - title: "제너레이터"
+        url: /function/generator
+      - title: "익명함수"
+        url: /function/annon
+      - title: "가변함수"
+        url: /function/variable
+      - title: "내부함수"
+        url: /function/builtin
+  - title: "Part 04. 객체지향"
+    subitems:
+      - title: "클래스"
+        url: /oop/class
+      - title: "상속"
+        url: /oop/extend
+      - title: "인터페이스"
+        url: /oop/interface
+      - title: "추상화"
+        url: /oop/abstract
+      - title: "Trait"
+        url: /oop/trait
+      - title: "네임스페이스"
+        url: /oop/namespace
+      - title: "closure"
+        url: /oop/closure
+      - title: "예외처리"
+        url: /oop/exception
+  - title: "Part 05. 패키지"
+    subitems:
+      - title: "오토로딩"
+        url: /autoload
+      - title: "컴포저"
+        url: /composer
+      - title: "지니PHP"
+        url: /jinyphp

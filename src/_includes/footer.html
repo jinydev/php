@@ -1,0 +1,13 @@
+<footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      {% for item in site.data.footer_nav %}
+      <a href="{{ item.url }}" class="text-decoration-none text-secondary ms-3">{{ item.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

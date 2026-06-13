@@ -2,10 +2,49 @@ title: JinyPHP
 lang: ko
 email: infohojin@naver.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://php.jiny.dev"
 twitter_username: infohojin
 github_username:  infohojin@gmail.com
 github_url: https://github.com/jinydev/php
 
-source: src
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-gist
+
+# Navigation
+nav_sort: 'priorities'
+
+# Build Settings
 destination: docs
+source: src
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "docs"
+
+# Sass 설정
+sass:
+  load_paths:
+    - _sass
+    - ../node_modules/bootstrap/scss
+
+# GitHub Pages 호환성을 위한 설정
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .github/
+  - .git/
+  - README.md
+  - package.json
+  - package-lock.json
+  - AI_GUIDE.md
+  - "**/*_src.md"
