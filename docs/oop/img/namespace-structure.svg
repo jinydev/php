@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">네임스페이스(Namespace) 가상 폴더 및 물리적 경로 바인딩</text>
+
+  <!-- Virtual Namespace Structure -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <rect width="240" height="260" rx="16" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="2" />
+    <rect width="240" height="45" rx="16" fill="#f5f3ff" />
+    <rect y="35" width="240" height="10" fill="#f5f3ff" />
+    <text x="120" y="28" fill="#6d28d9" font-family="'Inter', sans-serif" font-weight="800" font-size="13" text-anchor="middle">가상 논리 구조 (Namespace)</text>
+    
+    <text x="30" y="80" fill="#6d28d9" font-family="monospace" font-size="13" font-weight="bold">namespace Jiny\Core;</text>
+    
+    <rect x="25" y="110" width="190" height="120" rx="8" fill="#ffffff" stroke="#e9d5ff" />
+    <text x="40" y="135" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold">class Database</text>
+    <text x="40" y="165" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold">class Router</text>
+    <text x="40" y="195" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold">class Config</text>
+  </g>
+
+  <!-- Physical File Structure -->
+  <g transform="translate(460, 80)" filter="url(#shadow)">
+    <rect width="240" height="260" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+    <rect width="240" height="45" rx="16" fill="#cbd5e1" />
+    <rect y="35" width="240" height="10" fill="#cbd5e1" />
+    <text x="120" y="28" fill="#334155" font-family="'Inter', sans-serif" font-weight="800" font-size="13" text-anchor="middle">실제 물리 디스크 구조 (File Path)</text>
+    
+    <text x="30" y="80" fill="#334155" font-family="monospace" font-size="13" font-weight="bold">src/Jiny/Core/</text>
+    
+    <rect x="25" y="110" width="190" height="120" rx="8" fill="#ffffff" stroke="#e2e8f0" />
+    <text x="40" y="135" fill="#475569" font-family="monospace" font-size="12">Database.php</text>
+    <text x="40" y="165" fill="#475569" font-family="monospace" font-size="12">Router.php</text>
+    <text x="40" y="195" fill="#475569" font-family="monospace" font-size="12">Config.php</text>
+  </g>
+
+  <!-- Mapping Line -->
+  <path d="M 340,210 L 448,210" fill="none" stroke="#0d9488" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="394" y="195" fill="#0d9488" font-family="'Inter', sans-serif" font-weight="700" font-size="10" text-anchor="middle">PSR-4 오토로딩</text>
+</svg>

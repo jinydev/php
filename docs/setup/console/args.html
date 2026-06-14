@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/console/args.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP CLI 실행 인자 ($argv, $argc) 처리 가이드</title>
+  <meta name="title" content="PHP CLI 실행 인자 ($argv, $argc) 처리 가이드" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP CLI 실행 인자 ($argv, $argc) 처리 가이드"><meta property="og:description" content="터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/console/args.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/console/args.html">
+  <link rel="canonical" href="https://php.jiny.dev/setup/console/args.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP CLI 실행 인자 ($argv, $argc) 처리 가이드"><meta property="twitter:description" content="터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="PHP CLI 실행 인자 ($argv, $argc) 처리 가이드" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/console/args.html" />
-<meta property="og:url" content="http://localhost:4000/setup/console/args.html" />
+<meta name="description" content="터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다." />
+<meta property="og:description" content="터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/console/args.html" />
+<meta property="og:url" content="https://php.jiny.dev/setup/console/args.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="PHP CLI 실행 인자 ($argv, $argc) 처리 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/console/args.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"터미널 환경에서 PHP 스크립트 실행 시 외부에서 주입되는 파라미터 배열 $argv와 전체 인자 개수 변수 $argc의 활용법 및 php.ini 관련 권장 설정을 정리합니다.","headline":"PHP CLI 실행 인자 ($argv, $argc) 처리 가이드","url":"https://php.jiny.dev/setup/console/args.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -640,7 +968,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">PHP CLI 실행 인자 ($argv, $argc) 처리 가이드</li>
         
         
         
@@ -648,77 +976,80 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="실행-인자">실행 인자</h1>
+            <h1 id="php-cli-실행-인자-argv-argc-처리">PHP CLI 실행 인자 ($argv, $argc) 처리</h1>
 <hr />
-<p>PHP 소스를 실행할 때 외부에서 입력하는 데이터 값을 입력 받아 처리를 할 수 있습니다.</p>
+<p>웹 프라우저 환경에서 작동하는 PHP는 HTTP 프로토콜 규격에 맞춰 클라이언트가 질의한 데이터 값을 <code class="language-plaintext highlighter-rouge">GET</code> 또는 <code class="language-plaintext highlighter-rouge">POST</code> 글로벌 배열 변수를 통해 넘겨받아 연산합니다.</p>
 
-<h2 id="외부의-값">외부의 값</h2>
-<hr />
-<p>웹서버에서 PHP 코드를 실행할때, 브라우저로 부터 전달받은 값을 HTTP 규약에 맞게 웹서버는 PHP 코드로 전달합니다.<br />
-대표적으로 <code class="language-plaintext highlighter-rouge">GET</code> 과 <code class="language-plaintext highlighter-rouge">POST</code>가 있습니다.</p>
+<p>반면 터미널 콘솔창(CLI) 환경에서는 스크립트 실행 시 키보드로 직접 텍스트 인자를 나열하여 값을 주입합니다. 이를 <strong>외부 실행 인자(Command Line Arguments)</strong>라고 하며, PHP는 전용으로 선언된 특수 내장 변수인 <strong><code class="language-plaintext highlighter-rouge">$argv</code></strong>와 <strong><code class="language-plaintext highlighter-rouge">$argc</code></strong>를 통해 이 데이터를 수신합니다.</p>
 
 <p><br /></p>
 
-<h2 id="외부인자">외부인자</h2>
+<h3 id="1-외부-인자-전달-및-배열-매핑-원리">1. 외부 인자 전달 및 배열 매핑 원리</h3>
 <hr />
-<p>콘솔에서 PHP 스크립트 실행과 더불어 인자도 같이 전달 가능합니다.<br />
-이것을 외부 실행 인자라고 이야기합니다.</p>
+<p>터미널에서 php 명령과 스크립트 뒤에 빈칸으로 구분하여 임의의 문자열 인자들을 적어 실행하면, 엔진은 차례대로 이를 메모리 배열에 담아 소스코드 내부에 적재합니다.</p>
 
-<p>다음과 같이 간단한 예제 코드를 작성해 봅시다.</p>
-
-<p>예제 파일 consol-01.php</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">&lt;?php
-</span><span class="gp">	var_dump($</span>argv<span class="o">)</span><span class="p">;</span>
-<span class="gp">?&gt;</span><span class="w">
-</span></code></pre></div></div>
-
-<p>예제코드는 단순하게 <code class="language-plaintext highlighter-rouge">$argv</code>라는 변수를 출력하는 코드 입니다.
-그리고 콘솔에서 다음과 같이 실행을 해보도록 합니다.</p>
-
-<p>|명령|</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php consol-01.php arg1 arg2 arg3
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>php app.php <span class="nt">--verbose</span> update db_user
 </code></pre></div></div>
 
-<p>먼저 실행 결과를 확인해 봅시다.</p>
-
-<p>결과)</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">array(4) {
-</span><span class="gp">  [0]=&gt;</span><span class="w">
-</span><span class="go">  string(23) "./jinyphp/consol-01.php"
-</span><span class="gp">  [1]=&gt;</span><span class="w">
-</span><span class="go">  string(4) "arg1"
-</span><span class="gp">  [2]=&gt;</span><span class="w">
-</span><span class="go">  string(4) "arg2"
-</span><span class="gp">  [3]=&gt;</span><span class="w">
-</span><span class="go">  string(4) "agr3"
-}
-</span></code></pre></div></div>
-
-<p>콘솔에서 나열한 값이 PHP 코드의 <code class="language-plaintext highlighter-rouge">$argv</code> 변수를 통하여 전달되어 출력되는 것을 확인할 수 있습니다.</p>
-
-<p><br /></p>
-
-<h2 id="argv-변수">$argv 변수</h2>
-<hr />
-<p><code class="language-plaintext highlighter-rouge">$argv</code> 변수는 PHP 내부적으로 예약된 특수한 변수명 입니다.<br />
-<code class="language-plaintext highlighter-rouge">$argv</code> 변수는 콘솔에서 전달되는 값을 담아 php 내부코드로 전달하는 역할을 합니다.</p>
-
-<p><br /></p>
-
-<h3 id="배열타입">배열타입</h3>
-<hr />
-<p><code class="language-plaintext highlighter-rouge">$argv</code> 변수는 배열 타입입니다. 배열의 타입은 indexed array 입니다.</p>
+<p>이때, PHP 엔진 내부에서는 아래와 같이 데이터 구조가 자동으로 설계 및 매핑됩니다.</p>
 
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">첫번째</code> 인자로는 실행되는 자신의 스크립트 경로명을 전달 합니다.</p>
+  <li><strong><code class="language-plaintext highlighter-rouge">$argv</code></strong>: 명령줄에서 전달받은 모든 문자열 인자들을 인덱스 순서대로 보관하는 <strong>1차원 순차 배열(Indexed Array)</strong>입니다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$argv[0]</code>: <strong>실행 중인 자기 자신의 스크립트 상대 경로</strong>가 무조건 최우선 할당됩니다. (여기서는 <code class="language-plaintext highlighter-rouge">"app.php"</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">$argv[1]</code>: 첫 번째 실 매개 변수가 담깁니다. (여기서는 <code class="language-plaintext highlighter-rouge">"--verbose"</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">$argv[2]</code>: 두 번째 변수가 담깁니다. (여기서는 <code class="language-plaintext highlighter-rouge">"update"</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">$argv[3]</code>: 세 번째 변수가 담깁니다. (여기서는 <code class="language-plaintext highlighter-rouge">"db_user"</code>)</li>
+    </ul>
   </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">두번째</code> 이후로는 콘솔에서 입력된 정보들을 하나씩 가지고 있습니다. 
- 변수는 콘솔을 통하여 스크립트를 실행할 때 외부에서 입력된 값을 배열 형태로 참조할 수 있는 특별한 변수입니다.</p>
-  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">$argc</code></strong>: 실행 중인 파일 경로(<code class="language-plaintext highlighter-rouge">$argv[0]</code>)를 포함하여 전달받은 <strong>전체 인자의 개수를 나타내는 정수형(Integer) 변수</strong>입니다. (위 예제의 경우 값은 <code class="language-plaintext highlighter-rouge">4</code>가 됩니다.)</li>
 </ul>
 
+<p><br /></p>
+
+<h3 id="2-가독성-높은-실무-실습-예제">2. 가독성 높은 실무 실습 예제</h3>
+<hr />
+<p>인자 수신 과정을 테스트하기 위해 <code class="language-plaintext highlighter-rouge">cli-test.php</code> 파일을 생성하고 아래 소스를 구현해 봅니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// 1. 전체 매개변수 수신량 체크</span>
+<span class="k">echo</span> <span class="s2">"전달받은 전체 인자 개수 (</span><span class="se">\$</span><span class="s2">argc) : "</span> <span class="mf">.</span> <span class="nv">$argc</span> <span class="mf">.</span> <span class="kc">PHP_EOL</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"호출된 스크립트 물리 경로 (</span><span class="se">\$</span><span class="s2">argv[0]) : "</span> <span class="mf">.</span> <span class="nv">$argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="kc">PHP_EOL</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"----------------------------------------"</span> <span class="mf">.</span> <span class="kc">PHP_EOL</span><span class="p">;</span>
+
+<span class="c1">// 2. 스크립트 파일명을 제외한 순수 인자값 순회 출력</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$argc</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"매개변수 인덱스 [</span><span class="si">{</span><span class="nv">$i</span><span class="si">}</span><span class="s2">] ➡️ "</span> <span class="mf">.</span> <span class="nv">$argv</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="mf">.</span> <span class="kc">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"⚠️ 스크립트 파일명 외에 전달된 외부 매개 변수가 없습니다."</span> <span class="mf">.</span> <span class="kc">PHP_EOL</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="터미널-실행-및-결과-화면">터미널 실행 및 결과 화면</h4>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>php cli-test.php apple banana cherry
+<span class="gp">전달받은 전체 인자 개수 ($</span>argc<span class="o">)</span> : 4
+<span class="gp">호출된 스크립트 물리 경로 ($</span>argv[0]<span class="o">)</span> : cli-test.php
+<span class="go">----------------------------------------
+매개변수 인덱스 [1] ➡️ apple
+매개변수 인덱스 [2] ➡️ banana
+매개변수 인덱스 [3] ➡️ cherry
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="3-phpini-설정과의-연계-register_argc_argv">3. php.ini 설정과의 연계 (<code class="language-plaintext highlighter-rouge">register_argc_argv</code>)</h3>
+<hr />
+<p>PHP 동작을 정의하는 <code class="language-plaintext highlighter-rouge">php.ini</code> 설정 파일에는 <code class="language-plaintext highlighter-rouge">$argv</code> 및 <code class="language-plaintext highlighter-rouge">$argc</code> 등록 여부를 관할하는 속성이 들어있습니다.</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">register_argc_argv</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">On</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>CLI 가동 모드</strong>: 이 설정의 On/Off 여부와 상관없이 PHP CLI SAPI 엔진은 <strong>항상 이 값을 <code class="language-plaintext highlighter-rouge">On</code>으로 고정</strong>하여 동작하게 만듭니다. 따라서 CLI 상에서는 언제나 이 배열을 참조하여 스케줄러 등을 가동할 수 있습니다.</li>
+  <li><strong>웹 서버 가동 모드</strong>: 웹서버 연동 시에는 기본적으로 이 값이 <code class="language-plaintext highlighter-rouge">Off</code>로 꺼져 있는 경우가 대부분입니다. 웹 요청 시 쓸데없는 오버헤드와 전역 데이터 오염을 예방하기 위함입니다. 만약 HTTP GET 쿼리 스트링(예: <code class="language-plaintext highlighter-rouge">?a=1&amp;b=2</code>)을 마치 CLI 인자처럼 배열로 바인딩하여 복고풍으로 읽고 싶다면 On으로 활성화할 수도 있으나, 보안 및 현대 MVC 프레임워크 설계 흐름상 권장하지 않습니다.</li>
+</ul>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -939,13 +1270,139 @@
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

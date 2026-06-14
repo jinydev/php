@@ -10,31 +10,59 @@ main:
     url: /php/history
   - title: PHP 특징
     url: /php/feature
+  - title: PHP 7.x 신규 문법
+    url: /php/php7
+  - title: PHP 8.x 신규 문법
+    url: /php/php8
   - title: PHP 인터프리터
     url: /php/interpreter
   - title: PHP 엔진
     url: /php/engine
   - title: OpCache
     url: /php/opcashe
-- title: 설치
+  - title: JIT 컴파일러
+    url: /php/jit
+- title: 기본 설치
   url: /setup
   subitems:
   - title: PHP 설치하기
     url: /setup
   - title: 공식 사이트
     url: /setup/phpnet
-  - title: Windows 설치
+- title: Windows 설치
+  url: /setup/windows
+  subitems:
+  - title: Windows 설치 개요
     url: /setup/windows
-  - title: Bitnami 사용하기
-    url: /setup/windows/bitnami
+  - title: XAMPP 사용하기
+    url: /setup/windows/xampp
   - title: Windows 직접 다운로드
     url: /setup/windows/download
-  - title: Mac 설치
+- title: Mac 설치
+  url: /setup/mac
+  subitems:
+  - title: Mac 설치하기
     url: /setup/mac
-  - title: Linux 설치
+- title: Linux 설치
+  url: /setup/linux
+  subitems:
+  - title: Linux 설치 개요
     url: /setup/linux
-  - title: LAPM 구축
-    url: /setup/linux/lapm
+  - title: Ubuntu 설치
+    url: /setup/linux/ubuntu
+  - title: Rocky Linux 설치
+    url: /setup/linux/rocky
+- title: Docker 설치
+  url: /setup/docker
+  subitems:
+  - title: Docker 환경 구축 개요
+    url: /setup/docker
+  - title: Compose 웹 서버 구축
+    url: /setup/docker/compose
+  - title: 볼륨과 데이터 보존
+    url: /setup/docker/volume
+  - title: 컨테이너 포트 및 보안
+    url: /setup/docker/security
 - title: 콘솔(CLI)
   url: /setup/console
   subitems:
@@ -63,3 +91,43 @@ main:
     url: /setup/env/upload
   - title: 에러 출력 설정
     url: /setup/env/error
+  - title: PHP 보안 설정
+    url: /setup/env/security
+- title: 서버 구축
+  url: /setup/server
+  subitems:
+  - title: 서버 구축 개요
+    url: /setup/server
+  - title: LAPM 구축
+    url: /setup/server/lapm
+  - title: Apache 연동 가이드
+    url: /setup/server/apache
+  - title: Nginx 연동 가이드
+    url: /setup/server/nginx
+  - title: AWS 클라우드 설치
+    url: /setup/server/aws
+  - title: Vultr VPS 설치
+    url: /setup/server/vultr
+- title: 배포 가이드
+  url: /setup/deploy
+  subitems:
+  - title: 배포 개요 및 FTP
+    url: /setup/deploy
+  - title: Git 배포 및 롤백
+    url: /setup/deploy/git
+  - title: Docker 컨테이너 배포
+    url: /setup/deploy/docker
+- title: 응용프로그램
+  url: /setup/apps
+  subitems:
+  - title: 애플리케이션 개요
+    url: /setup/apps
+  - title: 워드프레스 (WordPress)
+    url: /setup/apps/wordpress
+  - title: 무들 (Moodle)
+    url: /setup/apps/moodle
+  - title: 넥스트클라우드 (Nextcloud)
+    url: /setup/apps/nextcloud
+  - title: 프레스타숍 (PrestaShop)
+    url: /setup/apps/prestashop
+

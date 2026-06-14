@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="localGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="registryGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 500; fill: #334155; }
+    .text-center { text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 9px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .panel-local { fill: url(#localGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 12px; }
+    .panel-registry { fill: url(#registryGrad); stroke: #bae6fd; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    .panel-prod { fill: url(#prodGrad); stroke: #a7f3d0; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    
+    .box-container { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+    
+    .line-blue { stroke: #0284c7; stroke-width: 1.8; fill: none; }
+    .line-green { stroke: #16a34a; stroke-width: 1.8; fill: none; }
+    .line-dashed { stroke: #94a3b8; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="430" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="48" class="title">도커 컨테이너 빌드 및 운영 배포 파이프라인</text>
+  <text x="35" y="68" class="subtitle">로컬 개발 코드를 규격화된 이미지로 빌드하고, 중앙 레지스트리를 통해 안전하게 운영 서버에 롤링 배포하는 구조</text>
+
+  <!-- 1. Developer Workspace (로컬 개발 환경) -->
+  <rect x="35" y="95" width="220" height="325" class="panel-local" />
+  <text x="145" y="120" class="panel-title" fill="#1e293b">1. 개발 PC (Local Workspace)</text>
+
+  <rect x="50" y="145" width="190" height="90" class="box-container" />
+  <text x="145" y="167" class="heading" fill="#0f172a">PHP 소스코드 파일</text>
+  <text x="145" y="187" class="text-normal text-center">Dockerfile 작성</text>
+  <text x="145" y="207" class="text-normal text-center" fill="#475569">컴포저 벤더 의존성 패키징</text>
+
+  <rect x="50" y="255" width="190" height="145" class="box-container" />
+  <text x="145" y="277" class="heading" fill="#0f172a">도커 이미지 빌드</text>
+  <text x="145" y="302" class="text-normal text-center" font-family="monospace" fill="#0284c7">docker build -t \</text>
+  <text x="145" y="322" class="text-normal text-center" font-family="monospace" fill="#0284c7">  myapp:v1.0 .</text>
+  <text x="145" y="347" class="heading" fill="#059669">빌드 완료: myapp:v1.0</text>
+  <text x="145" y="367" class="text-normal text-center" font-size="9" fill="#64748b">(엔진, 런타임, 소스가 하나로 묶임)</text>
+
+  <!-- Push Connection -->
+  <path d="M 255 322 L 295 322" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="275" y="312" class="arrow-text" fill="#0284c7">Push</text>
+
+  <!-- 2. Docker Registry (도커 이미지 저장소) -->
+  <rect x="295" y="95" width="220" height="325" class="panel-registry" />
+  <text x="405" y="120" class="panel-title" fill="#0369a1">2. 이미지 저장소 (Docker Registry)</text>
+
+  <rect x="310" y="145" width="190" height="255" class="box-container" />
+  <text x="405" y="172" class="heading" fill="#0f172a">도커 허브 &amp; 사설 레지스트리</text>
+  <text x="405" y="197" class="text-normal text-center" fill="#64748b">(Docker Hub / AWS ECR 등)</text>
+  
+  <rect x="325" y="222" width="160" height="60" rx="4" fill="#faf5ff" stroke="#cbd5e1" />
+  <text x="405" y="242" class="heading" font-size="10" fill="#7c3aed">myapp:v1.0 (Active)</text>
+  <text x="405" y="262" class="text-normal text-center" font-size="9" fill="#7c3aed">보안 스캔 및 해시 서명</text>
+
+  <rect x="325" y="297" width="160" height="50" rx="4" fill="#f8fafc" stroke="#cbd5e1" />
+  <text x="405" y="317" class="text-normal text-center" font-size="10" fill="#64748b">myapp:v0.9 (Backup)</text>
+  <text x="405" y="333" class="text-normal text-center" font-size="8" fill="#64748b">이전 배포 이력 이미지</text>
+
+  <!-- Pull Connection -->
+  <path d="M 515 322 L 550 322" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="532" y="312" class="arrow-text" fill="#16a34a">Pull</text>
+
+  <!-- 3. Production Server (실운영 인프라) -->
+  <rect x="550" y="95" width="215" height="325" class="panel-prod" />
+  <text x="657" y="120" class="panel-title" fill="#065f46">3. 운영 서버 (Production Server)</text>
+
+  <rect x="565" y="145" width="185" height="255" class="box-container" />
+  <text x="657" y="167" class="heading" fill="#047857">도커 호스트 (Docker Host)</text>
+  
+  <rect x="580" y="197" width="155" height="70" rx="6" fill="#f0fdf4" stroke="#86efac" />
+  <text x="657" y="217" class="heading" fill="#16a34a">컨테이너 A (신버전)</text>
+  <text x="657" y="235" class="text-normal text-center" font-size="9" fill="#15803d">myapp:v1.0 (구동)</text>
+  <text x="657" y="250" class="text-normal text-center" font-size="8" fill="#15803d">포트 80 수신 중</text>
+
+  <rect x="580" y="287" width="155" height="70" rx="6" fill="#fff5f5" stroke="#fecaca" />
+  <text x="657" y="307" class="heading" fill="#dc2626">컨테이너 B (이전버전)</text>
+  <text x="657" y="325" class="text-normal text-center" font-size="9" fill="#991b1b">myapp:v0.9 (파기 대기)</text>
+  <text x="657" y="340" class="text-normal text-center" font-size="8" fill="#991b1b">트래픽 전송 중지</text>
+
+  <text x="657" y="382" class="heading" font-size="10" fill="#0284c7">무중단 롤링 업데이트 기법</text>
+
+</svg>

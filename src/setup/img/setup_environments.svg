@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="localGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+    <linearGradient id="badgeBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0f7ff" />
+    </linearGradient>
+    <linearGradient id="badgeOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fff8f0" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ea580c" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-local { fill: url(#localGrad); stroke: #93c5fd; stroke-width: 1.5; rx: 16px; }
+    .box-prod { fill: url(#prodGrad); stroke: #fdba74; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-blue { fill: url(#badgeBlue); stroke: #3b82f6; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-orange { fill: url(#badgeOrange); stroke: #f97316; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-blue { stroke: #3b82f6; stroke-width: 1.5; fill: none; }
+    .line-orange { stroke: #f97316; stroke-width: 1.5; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP 설치 및 실행 환경 구축 아키텍처</text>
+  <text x="35" y="72" class="subtitle">로컬 개발 및 가상화 빌드 환경에서부터 실서비스 리눅스 서버와 AWS 클라우드 연동 환경 개요</text>
+
+  <!-- Left Column: Local Dev Environment (Center X = 210) -->
+  <rect x="40" y="100" width="340" height="330" class="box-local" />
+  <text x="210" y="130" class="section-title" fill="#1e40af">로컬 개발 환경 (Local Dev)</text>
+
+  <!-- Windows -->
+  <rect x="60" y="150" width="135" height="50" class="badge-blue" />
+  <text x="127" y="172" class="heading" fill="#1e293b">1. Windows 설치</text>
+  <text x="127" y="188" class="arrow-text" font-size="9" fill="#94a3b8">수동 압축해제 / APM 통합</text>
+
+  <!-- macOS -->
+  <rect x="225" y="150" width="135" height="50" class="badge-blue" />
+  <text x="292" y="172" class="heading" fill="#1e293b">2. macOS 설치</text>
+  <text x="292" y="188" class="arrow-text" font-size="9" fill="#94a3b8">Homebrew (brew install php)</text>
+
+  <!-- Down Arrows -->
+  <path d="M 127 200 L 127 235" class="line-blue" marker-end="url(#arrow-blue)" />
+  <path d="M 292 200 L 292 235" class="line-blue" marker-end="url(#arrow-blue)" />
+
+  <!-- Local Server CLI -->
+  <rect x="60" y="240" width="135" height="50" class="badge-blue" />
+  <text x="127" y="262" class="heading" fill="#1e293b">3. 로컬 CLI 서버</text>
+  <text x="127" y="278" class="arrow-text" font-size="9" fill="#2563eb">php -S localhost:8000</text>
+
+  <!-- Docker VM -->
+  <rect x="225" y="240" width="135" height="50" class="badge-blue" />
+  <text x="292" y="262" class="heading" fill="#1e293b">4. Docker 컨테이너</text>
+  <text x="292" y="278" class="arrow-text" font-size="9" fill="#2563eb">Docker Compose / fpm</text>
+
+  <!-- Down Arrows to integration -->
+  <path d="M 127 290 L 127 340 A 10 10 0 0 0 137 350 L 282 350 A 10 10 0 0 0 292 340 L 292 290" class="line-blue" />
+  
+  <!-- Final Local Output -->
+  <rect x="110" y="365" width="200" height="45" class="badge-blue" />
+  <text x="210" y="385" class="heading" fill="#1e40af">빠른 로컬 피드백 루프 완료</text>
+  <text x="210" y="399" class="arrow-text" font-size="9" fill="#94a3b8">(개발 및 즉각 테스트)</text>
+
+
+  <!-- Bridge Link (Local to Prod) -->
+  <path d="M 380 265 L 420 265" class="line-gray" marker-end="url(#arrow-gray)" />
+  <text x="400" y="255" class="arrow-text">배포</text>
+
+
+  <!-- Right Column: Production Server Environment (Center X = 590) -->
+  <rect x="420" y="100" width="340" height="330" class="box-prod" />
+  <text x="590" y="130" class="section-title" fill="#c2410c">실서비스 운영 서버 환경 (Production)</text>
+
+  <!-- Linux Server -->
+  <rect x="440" y="150" width="135" height="50" class="badge-orange" />
+  <text x="507" y="172" class="heading" fill="#1e293b">5. Linux 서버 설치</text>
+  <text x="507" y="188" class="arrow-text" font-size="9" fill="#ea580c">Ubuntu (apt) / Rocky (dnf)</text>
+
+  <!-- AWS Cloud -->
+  <rect x="605" y="150" width="135" height="50" class="badge-orange" />
+  <text x="672" y="172" class="heading" fill="#1e293b">6. AWS 클라우드</text>
+  <text x="672" y="188" class="arrow-text" font-size="9" fill="#ea580c">EC2 가상서버 + RDS 연동</text>
+
+  <!-- Down Arrows -->
+  <path d="M 507 200 L 507 235" class="line-orange" marker-end="url(#arrow-orange)" />
+  <path d="M 672 200 L 672 235" class="line-orange" marker-end="url(#arrow-orange)" />
+
+  <!-- Web Servers (Apache) -->
+  <rect x="440" y="240" width="135" height="50" class="badge-orange" />
+  <text x="507" y="262" class="heading" fill="#1e293b">7. Apache 웹서버</text>
+  <text x="507" y="278" class="arrow-text" font-size="9" fill="#c2410c">mod_php 모듈 결합</text>
+
+  <!-- Web Servers (Nginx) -->
+  <rect x="605" y="240" width="135" height="50" class="badge-orange" />
+  <text x="672" y="262" class="heading" fill="#1e293b">7. Nginx 웹서버</text>
+  <text x="672" y="278" class="arrow-text" font-size="9" fill="#c2410c">FastCGI / PHP-FPM 연동</text>
+
+  <!-- Down Arrows to integration -->
+  <path d="M 507 290 L 507 340 A 10 10 0 0 0 517 350 L 662 350 A 10 10 0 0 0 672 340 L 672 290" class="line-orange" />
+
+  <!-- Final Prod Output -->
+  <rect x="490" y="365" width="200" height="45" class="badge-orange" />
+  <text x="590" y="385" class="heading" fill="#c2410c">엔터프라이즈 실서비스 구축</text>
+  <text x="590" y="399" class="arrow-text" font-size="9" fill="#94a3b8">(고성능, 고가용성 보장)</text>
+
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="unsafeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff5f5" />
+      <stop offset="100%" stop-color="#fed7d7" />
+    </linearGradient>
+    <linearGradient id="safeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="dockerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #334155; }
+    .text-center { text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 9px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .panel-unsafe { fill: url(#unsafeGrad); stroke: #fca5a5; stroke-width: 1.5; rx: 12px; }
+    .panel-safe { fill: url(#safeGrad); stroke: #6ee7b7; stroke-width: 1.5; rx: 12px; }
+    .panel-docker { fill: url(#dockerGrad); stroke: #bae6fd; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    
+    .box-container { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+    
+    .line-blue { stroke: #0284c7; stroke-width: 1.8; fill: none; }
+    .line-red { stroke: #dc2626; stroke-width: 1.8; fill: none; }
+    .line-green { stroke: #16a34a; stroke-width: 1.8; fill: none; }
+    .line-dashed { stroke: #94a3b8; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="430" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="48" class="title">도커 포트 격리 및 네트워크 보안 설계</text>
+  <text x="35" y="68" class="subtitle">외부 접속은 루프백 IP로 묶고, 데이터베이스는 호스트 포트 개방 없이 가상 내부 브릿지망에 전면 격리합니다.</text>
+
+  <!-- Left Side: External Internet Network (위험 노출구역) -->
+  <rect x="35" y="95" width="335" height="150" class="panel-unsafe" />
+  <text x="202" y="120" class="panel-title" fill="#991b1b">외부 인터넷망 (0.0.0.0 Open 상태의 위험성)</text>
+  
+  <rect x="50" y="140" width="130" height="85" class="box-container" />
+  <text x="115" y="162" class="heading" fill="#e11d48">무단 외부 침입자</text>
+  <text x="115" y="182" class="text-normal text-center">(해커/스캐너)</text>
+  <text x="115" y="202" class="text-normal text-center" font-size="10" fill="#dc2626">포트 스캔 공격 감행</text>
+
+  <rect x="220" y="140" width="130" height="85" class="box-container" />
+  <text x="285" y="162" class="heading" fill="#475569">취약한 포트 노출</text>
+  <text x="285" y="182" class="text-normal text-center" fill="#991b1b">ports: - "3306:3306"</text>
+  <text x="285" y="202" class="text-normal text-center" font-size="9" fill="#dc2626">무차별 대입 대공격 대상</text>
+
+  <!-- Attack Line -->
+  <path d="M 180 182 L 210 182" class="line-red" marker-end="url(#arrow-red)" />
+
+  <!-- Right Side: localhost Locked System (안전 통제구역) -->
+  <rect x="35" y="260" width="335" height="170" class="panel-safe" />
+  <text x="202" y="285" class="panel-title" fill="#065f46">로컬호스트 전용 잠금 (127.0.0.1 루프백)</text>
+
+  <rect x="50" y="305" width="130" height="105" class="box-container" />
+  <text x="115" y="327" class="heading" fill="#334155">호스트 로컬 PC</text>
+  <text x="115" y="347" class="text-normal text-center">나의 PC 화면</text>
+  <text x="115" y="367" class="heading" fill="#0284c7">localhost:8080</text>
+  <text x="115" y="387" class="text-normal text-center" font-size="9">정상 브라우징 접속</text>
+
+  <rect x="220" y="305" width="130" height="105" class="box-container" />
+  <text x="285" y="327" class="heading" fill="#047857">보안 강화 포트 설정</text>
+  <text x="285" y="347" class="text-normal text-center" font-size="10" fill="#047857">"127.0.0.1:8080:80"</text>
+  <text x="285" y="367" class="text-normal text-center" font-size="9">외부의 모든</text>
+  <text x="285" y="387" class="text-normal text-center" font-size="9" fill="#059669">포트 스캔 접근 차단</text>
+
+  <!-- Connection Line (Green) -->
+  <path d="M 180 355 L 210 355" class="line-green" marker-end="url(#arrow-green)" />
+
+  <!-- Right Part: Docker Bridge Internal Net (도커 브릿지 내부 격리 공간) -->
+  <rect x="385" y="95" width="380" height="335" class="panel-docker" />
+  <text x="575" y="120" class="panel-title" fill="#0369a1">도커 브릿지 네트워크 격리 존 (Private Bridge)</text>
+
+  <!-- Nginx Container Box -->
+  <rect x="405" y="145" width="155" height="95" class="box-container" />
+  <text x="482" y="167" class="heading" fill="#16a34a">Nginx (웹서버)</text>
+  <text x="482" y="187" class="text-normal text-center" fill="#4b5563">ports:</text>
+  <text x="482" y="202" class="text-normal text-center" fill="#16a34a">"127.0.0.1:8080:80"</text>
+  <text x="482" y="222" class="text-normal text-center" font-size="9" fill="#64748b">외부 트래픽 수신(80)</text>
+
+  <!-- PHP Container Box -->
+  <rect x="590" y="145" width="155" height="95" class="box-container" />
+  <text x="667" y="167" class="heading" fill="#7c3aed">PHP-FPM (WAS)</text>
+  <text x="667" y="187" class="text-normal text-center" fill="#4b5563">Port: 9000</text>
+  <text x="667" y="207" class="text-normal text-center" font-size="9" fill="#7c3aed">Nginx가 FastCGI 프록시로</text>
+  <text x="667" y="222" class="text-normal text-center" font-size="9" fill="#7c3aed">소환하여 PHP 해석</text>
+
+  <!-- MySQL Container Box (No Port Mapping!) -->
+  <rect x="497" y="305" width="170" height="105" class="box-container" stroke="#f43f5e" stroke-width="1.5" />
+  <text x="582" y="327" class="heading" fill="#b91c1c">MySQL (보안 격리 DB)</text>
+  <text x="582" y="347" class="text-normal text-center" font-weight="bold" fill="#be123c">포트 매핑 없음 (ports 제거)</text>
+  <text x="582" y="367" class="text-normal text-center" font-size="9">호스트 OS 및 외부에서 무단</text>
+  <text x="582" y="382" class="text-normal text-center" font-size="9" fill="#e11d48">접근 절대 불가 (네트워크 차단)</text>
+
+  <!-- Internal Bridge Network Arrow -->
+  <path d="M 667 240 L 667 300" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="715" y="275" class="arrow-text" fill="#0284c7">내부망 db:3306</text>
+
+  <!-- Host redirection line -->
+  <path d="M 350 355 L 405 192" class="line-green" stroke-dasharray="3 3" />
+  
+  <!-- Blocking hacker line -->
+  <path d="M 350 182 L 497 357" class="line-red" stroke-dasharray="3 3" />
+  
+  <!-- Red Cross for Hacker block -->
+  <line x1="420" y1="262" x2="436" y2="278" stroke="#ef4444" stroke-width="3" />
+  <line x1="436" y1="262" x2="420" y2="278" stroke="#ef4444" stroke-width="3" />
+  <text x="455" y="274" class="heading" fill="#ef4444">차단됨</text>
+
+</svg>

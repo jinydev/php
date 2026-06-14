@@ -1,0 +1,1930 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>개발자를 위한 리눅스</title>
+  <meta name="title" content="개발자를 위한 리눅스" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="개발자를 위한 리눅스"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/syntax/function/builtin/internal/01.html">
+  <!-- 대표 URL (캐노니컬) -->
+  <link rel="canonical" href="https://php.jiny.dev/syntax/function/builtin/internal/01.html">
+
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="개발자를 위한 리눅스"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyPHP" />
+<meta property="og:locale" content="ko" />
+<link rel="canonical" href="https://php.jiny.dev/syntax/function/builtin/internal/01.html" />
+<meta property="og:url" content="https://php.jiny.dev/syntax/function/builtin/internal/01.html" />
+<meta property="og:site_name" content="JinyPHP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyPHP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"https://php.jiny.dev/syntax/function/builtin/internal/01.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/php">PHP소개</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/setup">설치</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/oop">객체지향</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/datas" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        강의 목차
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        
+        
+
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-1"
+            aria-expanded="false">
+            코드 작성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-1">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax"
+                  class="bd-links-link d-inline-block rounded ">
+                  기본문법 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            상수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/const"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/type"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수의 타입
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/define"
+                  class="bd-links-link d-inline-block rounded ">
+                  define() 함수
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/const"
+                  class="bd-links-link d-inline-block rounded ">
+                  const 키워드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/defined"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수 존재 확인
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/reserved"
+                  class="bd-links-link d-inline-block rounded ">
+                  예약된 상수
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            변수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/variable"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/name"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수명 작성 규칙
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/memory"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수와 메모리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/declare"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 선언
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/type"
+                  class="bd-links-link d-inline-block rounded ">
+                  데이터 형식(타입)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/scalar"
+                  class="bd-links-link d-inline-block rounded ">
+                  스칼라 타입
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/ref"
+                  class="bd-links-link d-inline-block rounded ">
+                  가변 변수
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/unset"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 삭제
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/global"
+                  class="bd-links-link d-inline-block rounded ">
+                  전역 변수
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            연산자
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/operator"
+                  class="bd-links-link d-inline-block rounded ">
+                  연산자 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/operator/spaceship"
+                  class="bd-links-link d-inline-block rounded ">
+                  우주선 연산자 (<=>)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/operator/coalescing"
+                  class="bd-links-link d-inline-block rounded ">
+                  Null 병합 연산자 (??)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            조건문
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/condition"
+                  class="bd-links-link d-inline-block rounded ">
+                  조건제어문
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/condition/ternary"
+                  class="bd-links-link d-inline-block rounded ">
+                  3항 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/condition/match"
+                  class="bd-links-link d-inline-block rounded ">
+                  Match 표현식
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            반복문
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/loop"
+                  class="bd-links-link d-inline-block rounded ">
+                  반복문 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            전처리기
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/preprocess"
+                  class="bd-links-link d-inline-block rounded ">
+                  전처리기 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            유효범위
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/scope"
+                  class="bd-links-link d-inline-block rounded ">
+                  유효범위 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            오류
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/error"
+                  class="bd-links-link d-inline-block rounded ">
+                  에러 처리 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            함수 기초
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수란 무엇인가
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/func"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수의 개념과 구조
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/function"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수구조
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            함수 요소
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function/param"
+                  class="bd-links-link d-inline-block rounded ">
+                  매개변수 (Param)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/param/types"
+                  class="bd-links-link d-inline-block rounded ">
+                  타입 선언 (Types)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/param/named"
+                  class="bd-links-link d-inline-block rounded ">
+                  네임드 인자 (Named)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/return"
+                  class="bd-links-link d-inline-block rounded ">
+                  반환값 (Return)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/declare"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수 선언 (Declare)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-12"
+            aria-expanded="false">
+            고급 함수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-12">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function/generator"
+                  class="bd-links-link d-inline-block rounded ">
+                  제너레이터
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/annon"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명함수 (Annonymous)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/variable"
+                  class="bd-links-link d-inline-block rounded ">
+                  가변함수 (Variable)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/builtin"
+                  class="bd-links-link d-inline-block rounded ">
+                  내부함수 (Built-in)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/">Syntax</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/function/">Function</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/function/builtin/">Builtin</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/function/builtin/internal/">Internal</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page"></li>
+        
+        
+        
+    </ol>
+</nav>
+
+        <div class="bd-content ps-lg-2">
+            <ol>
+  <li>
+    <h1 id="필터">필터</h1>
+  </li>
+</ol>
+
+<p>안정적인 프로그램의 동작을 위해서는 기반이 되는 정확한 값의 안전한 데이터가 중요합니다. 잘못된 데이터들을 프로그램의 예상치 않은 오동작을 발생시킬 수 있습니다.</p>
+
+<p>프로그램 코드를 작성하다 보면 데이터의 정확한 유효성을 체크하는 작업을 자주합니다. 데이터를 일정한 패턴으로 검사를 하는 것은 그렇게 간단하지 않습니다. PHP는 데이터의 유효한 형식을 분석하고 패턴을 검사할 수 있는 필터 함수들을 제공합니다.</p>
+
+<p>또한, 웹서비스 용도로 많이 사용하는 PHP 언어의 특성상 데이터는 외부의 HTML 폼 입력을 통하여도 많이 입력이 됩니다. 불특정한 다수의 사람들로부터 데이터를 입력을 받을 때 이러한 데이터의 유효성과 패턴은 더욱더 중요합니다.</p>
+
+<p>일부 악의적인 사용자가 잘못된 코드로 프로그램의 오류를 발생시키거나, SQL 쿼리 기호들을 썩어서 입력함으로써 데이터베이스의 내용을 해킹할 수도 있습니다.</p>
+
+<p>PHP는 제공되는 필터 내부함수를 통하여 간단하게 데이터의 패턴을 검사하여 유효성을 확인 할 수 있습니다. 필터 함수 기능들은 PHP 5.2.0부터는 기본적으로 설치가 되어 있습니다. 하지만, 필터 기능과 동작은  php.ini의 환경설정에 의해 약간의 영향을 받습니다  ini 설정은 다음과 같습니다:</p>
+
+<p>filter.default
+filter.default 환경설정은 모든 $ _GET, $ _POST, $ _COOKIE, $ _REQUEST 및 $ _SERVER 데이터를 필터링 합니다. 필터 이름을  기본적으로 사용허용합니다.</p>
+
+<p>filter.default_flags
+filter.default_flags 환경설정은 기본 필터로 설정이 된 경우 적용할 필터를 지정합니다. 이전 버전과의 호환성을 위해 기본적으로 FILTER_FLAG_NO_ENCODE_QUOTES로 설정됩니다.</p>
+
+<h1 id="011-필터의-유용성">01.1 필터의 유용성</h1>
+
+<p>필터는 데이터의 유효한 값을 간단하게 패턴 형태로 유효성 검사합니다. 필터 기능을 자주 적용하는 분야로는 웹을 데이터값을 입력 받는 분야일 것입니다. 웹서비스와 같은 응용서비스는 다양한 타입의 수많은 외부 데이터를 입력 받아 처리합니다.</p>
+
+<p>	HTML 폼 입력값
+	쿠키값
+	API 데이터
+	서버 변수들
+	데이터베이스 결과값</p>
+
+<p>위의 같은 값들은 외부로 입력 받을 수 있는 데이터의 유형들 입니다. 이러한 외부입력과 연관되는 데이터들을 항상 유효성 검사를 같이 하여 사용을 하는 것을 권장합니다. 유효성 검사 없이 데이터를 바로 사용을 할 경우에는, 악의적인 사용자로부터 입력 받은 데이터 값들이 프로그램의 문제를 발생하거나 해킹에 노출되게 됩니다.</p>
+
+<h1 id="0111-필터목록">01.1.1 필터목록</h1>
+
+<p>PHP의 필터들은 다양한 형태의 패턴들을 검사할 수 있습니다. 패턴을 검사 유형은 필터이름으로 구분을 합니다. 내부함수 filter_list()는 PHP 에서 지원하는 내장필터 목록을 출력합니다.</p>
+
+<p>|내부함수|
+array filter_list ( void )</p>
+
+<p>내부함수 filter_list()를 사용할때는 전달되는 입력 매개변수는 없습니다. 내장된 필터의 목록들을 배열형태로 반환을 합니다.</p>
+
+<p>또한 내장된 필터명은 개발자들이 알기 쉽게 정의한 이름입니다. 이름들은 내부적으로 처리하는 고유의 ID값들로 다시 매칭이 되어 있씁니다. 내부함수 filter_id()는 입력된 필터명에 대해서 고유의 상수 ID 값을 확인할 수 있습니다.</p>
+
+<p>|내부함수|
+int filter_id ( string $filtername )</p>
+
+<p>예제파일) filter-01.php
+&lt;?php
+	foreach (filter_list() as $id =&gt;$filter) {
+		echo “필터명 =” . $filter . ‘, ID=’ . filter_id($filter) . ‘<br />’;
+	}
+ ?&gt;</p>
+
+<p>화면출력)
+필터명 =int, ID=257
+필터명 =boolean, ID=258
+필터명 =float, ID=259
+필터명 =validate_regexp, ID=272
+필터명 =validate_domain, ID=277
+필터명 =validate_url, ID=273
+필터명 =validate_email, ID=274
+필터명 =validate_ip, ID=275
+필터명 =validate_mac, ID=276
+필터명 =string, ID=513
+필터명 =stripped, ID=513
+필터명 =encoded, ID=514
+필터명 =special_chars, ID=515
+필터명 =full_special_chars, ID=522
+필터명 =unsafe_raw, ID=516
+필터명 =email, ID=517
+필터명 =url, ID=518
+필터명 =number_int, ID=519
+필터명 =number_float, ID=520
+필터명 =magic_quotes, ID=521
+필터명 =callback, ID=1024</p>
+
+<p>위의 실습코드는 내장된 필터의 목록과 필터명에 대한 고유한 ID값을 확인하는 예제 입니다. 이처럼 다양한 형태의 데이터 유효성을 검사할 수 있는 필터들을 제공합니다.</p>
+
+<h1 id="0112-유효성검사">01.1.2 유효성검사</h1>
+
+<p>내부함수 filter_var()는 입력된 데이터를 지정한 필터형태의 패턴으로 데이터 유효성을 검사합니다.</p>
+
+<p>|내부함수|
+mixed filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $options ]] )</p>
+
+<p>함수의 매개변수 입력 값으로 두개의 값을 전달받습니다. 첫번째는 데이터 값은 검사유형 입니다. filter_var() 함수는 지정된 필터로 단일 변수만 필터링합니다.</p>
+
+<h1 id="012-필터상수">01.2 필터상수</h1>
+
+<p>PHP는 filter_var() 함수를 통하여 필터링을 하기 위한 패턴유형을 상수명으로 제공합니다. 알기 쉬운 패턴코드들을 상수이름으로 정의하여 제공을 하는 것인 코드를 작성하는 측면에서 매우 유용합니다.</p>
+
+<h1 id="0121-정수-확인--filter_validate_int">01.2.1 정수 확인 : FILTER_VALIDATE_INT</h1>
+
+<p>내부 필터함수 filter_var()는 입력되는 데이터 값이 정수형 타입인지를 확인할 수도 있습니다. 함수를 호출할 때 두번째 인자값으로 필터유형 FILTER_VALIDATE_INT를 사용하면 됩니다. 값의 정수 여부 판단은 논리값으로 반환을 합니다.</p>
+
+<p>예제파일) filter-02.php
+&lt;?php
+	$int = 100;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+		echo("정수가 유효합니다");
+} else {
+		echo("정수가 아닙니다");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+정수가 유효합니다</p>
+
+<p>위의 실험은 입력 변수 $int의 데이터 값이  정수값 인지를 필터를 통하여 확인을 합니다. 만일 정수의 값이면 ture 반환값을 출력합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>수학에서 정수는 양수,0,음수 3가지로 구분을 합니다. ilter_var()는 양수와 음수만 정수값을 판별할 수 있습니다. 즉, 0의 값은 정수로 인식을 하지 못합니다. 따라서 이와 관련된 부가적인 코드를 같이 작성을 해야 합니다. 정수값 필터 사용시 === 0 조건과</td>
+      <td> </td>
+      <td>연결을 결합하여 사용하는 것을 권장합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예제파일) filter-03.php
+&lt;?php
+	$int = 0;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (filter_var($int, FILTER_VALIDATE_INT) === 0 || 
+	!filter_var($int, FILTER_VALIDATE_INT) === false) {
+	echo("Integer is valid");
+} else {
+	echo("Integer is not valid");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+Integer is valid</p>
+
+<p>위 실험은 0의 정수값을 같이 판별을 하는 예제코드 입니다.</p>
+
+<h1 id="522-정수-확인-및-범위">5.2.2 정수 확인 및 범위</h1>
+
+<p>컴퓨터에서 정수값을 사용할 때 표현을 할 수 있는 최대치의 범위가 있습니다. 또한 프로그램에서 입력의 임계치등의 범위가 필요할 경우가 있습니다. 이러한 경우에는 FILTER_VALIDATE_INT 값과 같이 세번째 매개변수를 통하여 범위값을 같이 전달할 수 있습니다.</p>
+
+<p>배열 값을 응용하여 정수값 판별과 값의 범위 여부 내에 있는지 확인 할 수 있습니다.</p>
+
+<p>예제파일) filter-04.php
+&lt;?php
+	$int = 122;
+	$min = 1;
+	$max = 200;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$range = array("options" =&gt; array("min_range"=&gt;$min, "max_range"=&gt;$max);
+ 
+if (filter_var($int, FILTER_VALIDATE_INT, $range)) === false) {
+		echo("변수 값이 유효한 범위 내에 있지 않습니다.!");
+} else {
+		echo("변수 값이 유효한 범위 내에 있습니다.!");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+변수 값이 유효한 범위 내에 있습니다.!</p>
+
+<p>위의 실험은 필터함수 filter_var()를 사용하여 입력되는 데이터가 정수유형 인지와 1에서 200 사이의 값을 가지는지를 확인합니다.</p>
+
+<p>그외 참고하여 같이 사용할 수 있는 필터상수는 다음과 같습니다:</p>
+
+<p>	FILTER_VALIDATE_BOOLEAN : 논리값을 검사합니다.
+	FILTER_VALIDATE_FLOAT : float의 유효성을 검사합니다.
+	FILTER_SANITIZE_NUMBER_FLOAT : 숫자, + - 및 .e를 제외한 모든 문자를 제거합니다.
+	FILTER_SANITIZE_NUMBER_INT : 숫자와 + -를 제외한 모든 문자를 제거합니다.</p>
+
+<h1 id="0123--ip주소-유효성--filter_validate_ip">01.2.3  IP주소 유효성 : FILTER_VALIDATE_IP</h1>
+
+<p>필터함수 filter_var()는 인터넷 IP 주소의 유형을 검사할 수 있습니다. 필터 상수명으로 FILTER_VALIDATE_IP 를 사용하게 되면 입력한 데이터가 IP 주소인지를 검사할 수 있습니다.</p>
+
+<p>예제파일) filter-05.php
+&lt;?php
+	$ip = “127.0.0.1”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+		echo("$ip 는 유효한 IP주소 입니다.");
+} else {
+		echo("$ip 는 유효하지 IP주소 입니다.");
+} ?&gt; 
+</code></pre></div></div>
+
+<p>화면출력)
+127.0.0.1 는 유효한 IP주소 입니다.</p>
+
+<h1 id="524--ipv6-주소-유효성">5.2.4  IPv6 주소 유효성</h1>
+<p>IP에 대해서 IPv6 주소 타입 및 유효성을 같이 검사를 할 수 있습니다. IPv6 주소를 검사할때는 FILTER_VALIDATE_IP와  FILTER_FLAG_IPV6 두개의 값을 같이 이용을 합니다.</p>
+
+<p>예제파일) filter-06.php
+&lt;?php
+	$ip = “2001:0db8:85a3:08d3:1319:8a2e:0370:7334”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
+	echo("$ip 는 유효한 IPv6 address");
+} else {
+	echo("$ip 는 유효하지 않는 IPv6 address");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+2001:0db8:85a3:08d3:1319:8a2e:0370:7334 는 유효한 IPv6 address</p>
+
+<h1 id="0125--쿼리-스트링과-url-유효성-검사--filter_validate_url">01.2.5  쿼리 스트링과 URL 유효성 검사 : FILTER_VALIDATE_URL</h1>
+
+<p>검사유형 FILTER_VALIDATE_URL 와 FILTER_FLAG_QUERY_REQUIRED 두개의 값을 통하여 URL 유효성과 이후 입력되는 GET 쿼리 스트링 데이터 값의 유효성 까지 함께 확인을 할 수 있습니다.</p>
+
+<p>예제파일) filter-07.php
+&lt;?php
+	$url = “http://www.hojin.io”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED) === false) {
+	echo("$url 유효한 URL");
+} else {
+	echo("$url 유효하지 않은 URL");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+http://www.hojin.io 유효하지 않은 URL</p>
+
+<p>다음 실험은 filter_var() 함수를 사용하여 문자열을 삭제합니다. 다음과 같이 문자열에서 모든 HTML 태그와 ASCII 값이 127보다 큰 모든 문자를 제거합니다.</p>
+
+<p>예제파일) filter-08.php
+&lt;?php
+	$str = “&lt;h1&gt;Hello World!&lt;/h1&gt;”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$aaa = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+echo $aaa; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+Hello World!</p>
+
+<h1 id="0126--이메일-주소-검사">01.2.6  이메일 주소 검사</h1>
+
+<p>내부함수 filter_var()를 통하여 이메일의 유효성을 검사할 수 있습니다. 이메일의 유효성을 검사할때는 필터상수 FILTER_VALIDATE_EMAIL를 사용합니다.</p>
+
+<p>예제파일) filter-09.php
+&lt;?php
+	$email = “infohojin@naver.com”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 이메일에 포함된 부정한 글자들은 제거를 합니다.
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+ 
+// e-mail 유효성
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+	echo("$email is a valid email address");
+} else {
+	echo("$email is not a valid email address");
+} ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+james.lee@example.com is a valid email address</p>
+
+<p>그외 참고하여 같이 사용할 수 있는 필터상수는 다음과 같습니다:</p>
+
+<p>	FILTER_SANITIZE_EMAIL : 부정한 글자를 제거합니다.
+	FILTER_VALIDATE_EMAIL : 전자 메일 주소 유효성 검사</p>
+
+<h1 id="0127-문자열-체크--filter_sanitize_string">01.2.7 문자열 체크 : FILTER_SANITIZE_STRING</h1>
+
+<p>입력한 값을 재출력하는 기능에서 잘못 입력되는 html 코드들은 오동작을 발생하게 됩니다. 내부함수 filter_var()를 통하여 입력된 문자열에서 HTML 코드를 제거할 수 있습니다.</p>
+
+<p>예제파일) filter-10.php
+&lt;?php
+	$str = “&lt;h1&gt;Hello World!&lt;/h1&gt;”;
+	$newstr = filter_var($str, FILTER_SANITIZE_STRING);
+	echo $newstr;
+?&gt;</p>
+
+<p>화면출력)
+Hello World!</p>
+
+<p>필터상수 FILTER_SANITIZE_STRIPPED은 FILTER_SANITIZE_STRING의 별칭 입니다.</p>
+
+<h1 id="0128-url-유효성-검사">01.2.8 URL 유효성 검사</h1>
+
+<p>필터상수 FILTER_SANITIZE_URL 는 입력값의 URL 유효성 검사를 확인할 수 있습니다.</p>
+
+<p>예제파일) filter-11.php
+&lt;?php
+	$url = “https://www.jinyphp.com”;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Remove all illegal characters from a url
+$url = filter_var($url, FILTER_SANITIZE_URL);
+ 
+// Validate url
+if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+		echo("$url is a valid URL");
+} else {
+		echo("$url is not a valid URL");
+} ?&gt; 
+</code></pre></div></div>
+
+<p>화면출력)
+https://www. hojin.io is a valid URL</p>
+
+<h1 id="0129-정규표현">01.2.9 정규표현</h1>
+
+<p>필터상수 FILTER_VALIDATE_REGEXP는 입력된 데이터의 정규 표현식 유효성을 검사합니다.</p>
+
+<h1 id="01210-특수문자">01.2.10 특수문자</h1>
+
+<p>다음과 같은 필터상수를 통하여 입력되는 데이터의 특수문자들을 처리할 수 있습니다:</p>
+
+<p>	FILTER_SANITIZE_ENCODED : 특수 문자를 제거 / 인코딩합니다.
+	FILTER_SANITIZE_SPECIAL_CHARS : 특수 문자를 제거합니다.
+	FILTER_UNSAFE_RAW : 별도의 작업없이, 선택적으로 특수 문자만 제거 / 인코딩합니다.
+	FILTER_SANITIZE_FULL_SPECIAL_CHARS</p>
+
+<p>HTML 특수문자코드표</p>
+
+<p>표현문자	숫자표현	문자표현	설명</p>
+<ul>
+  <li> -	-	사용하지 않음
+space			-	수평탭
+space	
+	-	줄 삽입</li>
+  <li>-	-	사용하지 않음
+space	 	-	여백
+!	!	-	느낌표
+“	"	"	따옴표
+    <h1 id="---숫자기호">#	-	숫자기호</h1>
+    <p>$	$	-	달러
+%	%	-	백분율 기호
+&amp;	&#38;	&amp;	Ampersand
+‘	'	-	작은 따옴표
+(	(	-	왼쪽 괄호
+)	)	-	오른쪽 괄호</p>
+  </li>
+  <li>*	-	아스트릭</li>
+  <li>+	-	더하기 기호
+,	,	-	쉼표</li>
+  <li>
+    <dl>
+      <dt>-	-	Hyphen</dt>
+      <dt>.	.	-	마침표</dt>
+      <dt>/	/	-	Solidus (slash)</dt>
+      <dt>0 - 9	0-9	-	0부터 9까지</dt>
+      <dd>:	-	콜론
+;	;	-	세미콜론
+&lt;	&#60;	&lt;	보다 작은
+=	=	-	등호
+        <blockquote>
+          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp;#62;	&amp;gt;	보다 큰 ?	&amp;#63;	-	물음표 @	&amp;#64;	-	Commercial at A - Z	&amp;#65;-&amp;#90;	-	A부터 Z까지 [	&amp;#91;	-	왼쪽 대괄호 \	&amp;#92;	-	역슬래쉬 ]	&amp;#93;	-	오른쪽 대괄호 ^	&amp;#94;	-	탈자부호 _	&amp;#95;	-	수평선 `	&amp;#96;	-	Acute accent a - z	&amp;#97;-&amp;#122;	-	a부터 z까지 {	&amp;#123;	-	왼쪽 중괄호 |	&amp;#124;	-	수직선 }	&amp;#125;	-	오른쪽 중괄호 ~	&amp;#126;	-	꼬리표
+</code></pre></div>          </div>
+        </blockquote>
+      </dd>
+    </dl>
+  </li>
+  <li>-Ÿ	-	사용하지 않음
+ 	 	Non-breaking space
+¡	¡	¡	거꾸로된 느낌표
+￠	¢	¢	센트 기호
+￡	£	£	파운드
+¤	¤	¤	현재 환율
+￥	¥	¥	엔
+|	¦	¦	끊어진 수직선
+§	§	§	섹션 기호
+¨	¨	¨	움라우트
+ⓒ	©	©	저작권
+ª	ª	ª	Feminine ordinal
+≪	«	«	왼쪽 꺾인 괄호
+￢	¬	¬	부정
+­	­	­	Soft hyphen
+?	®	®	등록상표
+&amp;hibar;	¯	¯	Macron accent
+°	°	°	Degree sign
+±	±	±	Plus or minus
+²	²	²	Superscript two
+³	³	³	Superscript three
+´	´	´	Acute accent
+μ	µ	µ	Micro sign (Mu)
+¶	¶	¶	문단기호
+·	·	·	Middle dot
+¸	¸	¸	Cedilla
+¹	¹	¹	Superscript one
+º	º	º	Masculine ordinal
+≫	»	»	오른쪽 꺾인 괄호
+¼	¼	¼	4분의 1
+½	½	½	2분의 1
+¾	¾	¾	4분의 3
+¿	¿	¿	거꾸로된 물음표
+A	À	À	Capital A, grave accent
+A	Á	Á	Capital A, acute accent
+A	Â	Â	Capital A, circumflex accent
+A	Ã	Ã	Capital A, tilde
+A	Ä	Ä	Capital A, dieresis or umlaut mark
+A	Å	Å	Capital A, ring (Angstrom)
+Æ	Æ	Æ	Capital AE diphthong (ligature)
+C	Ç	Ç	Capital C, cedilla
+E	È	È	Capital E, grave accent
+E	É	É	Capital E, acute accent
+E	Ê	Ê	Capital E, circumflex accent
+E	Ë	Ë	Capital E, dieresis or umlaut mark
+I	Ì	Ì	Capital I, grave accent
+I	Í	Í	Capital I, acute accent
+I	Î	Î	Capital I, circumflex accent
+I	Ï	Ï	Capital I, dieresis or umlaut mark
+Ð	Ð	Ð	Capital Eth, Icelandic
+N	Ñ	Ñ	Capital N, tilde
+O	Ò	Ò	Capital O, grave accent
+O	Ó	Ó	Capital O, acute accent
+O	Ô	Ô	Capital O, circumflex accent
+O	Õ	Õ	Capital O, tilde
+O	Ö	Ö	Capital O, dieresis or umlaut mark
+×	×	×	Multiply sign
+Ø	Ø	Ø	width=”130”Capital O, slash
+U	Ù	Ù	Capital U, grave accent
+U	Ú	Ú	Capital U, acute accent
+U	Û	Û	Capital U, circumflex accent
+U	Ü	Ü	Capital U, dieresis or umlaut mark
+Y	Ý	Ý	Capital Y, acute accent
+Þ	Þ	Þ	Capital Thorn, Icelandic
+ß	ß	ß	Small sharp s, German (sz ligature)
+a	à	à	Small a, grave accent
+a	á	á	Small a, acute accent
+a	â	â	Small a, circumflex accent
+a	ã	ã	Small a, tilde
+a	ä	ä	Small a, dieresis or umlaut mark
+a	å	å	Small a, ring
+æ	æ	æ	Small ae diphthong (ligature)
+c	ç	ç	Small c, cedilla
+e	è	è	Small e, grave accent
+e	é	é	Small e, acute accent
+e	ê	ê	Small e, circumflex accent
+e	ë	ë	Small e, dieresis or umlaut mark
+i	ì	ì	Small i, grave accent
+i	í	í	Small i, acute accent
+i	î	î	Small i, circumflex accent
+i	ï	ï	Small i, dieresis or umlaut mark
+ð	ð	ð	Small eth, Icelandic
+n	ñ	ñ	Small n, tilde
+o	ò	ò	Small o, grave accent
+o	ó	ó	Small o, acute accent
+o	ô	ô	Small o, circumflex accent
+o	õ	õ	Small o, tilde
+o	ö	ö	Small o, dieresis or umlaut mark
+÷	÷	÷	Division sign
+ø	ø	ø	Small o, slash
+u	ù	ù	Small u, grave accent
+u	ú	ú	Small u, acute accent
+u	û	û	Small u, circumflex accent
+u	ü	ü	Small u, dieresis or umlaut mark
+y	ý	ý	Small y, acute accent
+þ	þ	þ	Small thorn, Icelandic
+y	ÿ	ÿ	Small y, dieresis or umlaut mark</li>
+</ul>
+
+<h1 id="01211-함수적용">01.2.11 함수적용</h1>
+
+<p>다음과 같은 필터 상수들은 함수를 별도의 함수를 적용하거나 호출을 할 수 있습니다.</p>
+
+<p>	FILTER_SANITIZE_MAGIC_QUOTES: addslashes() 함수를 적용합니다.
+	FILTER_CALLBACK : 데이터 필터링을  위한 사용자 정의 함수를 호출합니다.</p>
+
+<h1 id="013-필터함수">01.3 필터함수</h1>
+
+<p>PHP는 필터기능을 좀더 다양하게 처리를 하기 위해서 추가로 몇 개의 내부함수들을 제공합니다. 추가 함수들을 이용하면 복잡한 필터처리들을 보다 쉽게 구현을 할 수 있습니다.</p>
+
+<p>|내부함수|
+bool filter_has_var ( int $type , string $variable_name )</p>
+
+<p>내부함수 filter_has_var()는 지정된 타입유형의 변수가 있는지 확인합니다. 타입의 종류는 다음과 같습니다 :
+	INPUT_GET
+	INPUT_POST
+	INPUT_COOKIE
+	INPUT_SERVER, 또는 INPUT_ENV.</p>
+
+<p>예제파일) filter-12.php
+&lt;?php
+    echo “INPUT_GET = “;
+    echo filter_has_var(INPUT_GET, ‘aaa’) ? ‘Yes’ : ‘No’;
+?&gt;</p>
+
+<p>화면출력)
+INPUT_GET = Yes</p>
+
+<p>위의 실습은 타입유형의 변수 존재 유무를 확인합니다. filter-12.php?aaa=test 형태로 GET 데이터를 추가하여 스크립트를 호출합니다. GET 방식으로 데이터를 전달과 변수명이 aaa 이기 때문 filter_has_var() 함수는 결과를 ‘참’ 으로 출력합니다.</p>
+
+<p>|내부함수|
+mixed filter_input ( int $type , string $variable_name [, int $filter = FILTER_DEFAULT [, mixed $options ]] )</p>
+
+<p>내부함수 filter_input()는 양식 입력등 처럼 외부 변수를 읽어와서 선택적으로 필터링합니다.</p>
+
+<p>예제파일) filter-13.php
+&lt;?php
+    $search_html = filter_input(INPUT_GET, ‘search’, FILTER_SANITIZE_SPECIAL_CHARS);
+    $search_url = filter_input(INPUT_GET, ‘search’, FILTER_SANITIZE_ENCODED);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "입력한 검색키워드는 $search_html 입니다.&lt;br&gt;";
+echo "&lt;a href='?search=$search_url'&gt;재검색&lt;/a&gt;"; ?&gt;
+</code></pre></div></div>
+
+<p>위의 실험은 filter-13.php?search=jiny 형태로 GET 데이터를 추가하여 스크립트를 호출합니다.</p>
+
+<p>|내부함수|
+mixed filter_input_array ( int $type [, mixed $definition [, bool $add_empty = true ]] )</p>
+
+<p>내부함수 filter_input_array()는 필터를 처리하기 위한 배열 정보를 이용하여 다수의 외부변수를 일괄적으로 필터링합니다. 이 함수는 filter_input ()을 반복적으로 호출하지 않고도 많은 값을 검색 할 때 유용합니다.</p>
+
+<p>예제파일) filter-14.php
+&lt;?php
+    error_reporting(E_ALL | E_STRICT);
+    $args = array(
+        ‘name’   =&gt; FILTER_SANITIZE_ENCODED,
+        ‘age’ =&gt; FILTER_VALIDATE_INT,
+        ‘country’   =&gt; FILTER_SANITIZE_ENCODED
+    );
+    $myinputs = filter_input_array(INPUT_GET, $args);
+    var_dump($myinputs);
+?&gt;</p>
+
+<p>화면출력)
+array(3) { [“name”]=&gt; string(4) “jiny” [“age”]=&gt; int(18) [“country”]=&gt; string(5) “korea” }</p>
+
+<p>위의 실험은 filter-14.php?name=jiny&amp;age=18&amp;country=korea 형태로 GET 데이터를 추가하여 스크립트를 호출합니다.</p>
+
+<p>|내부함수|
+mixed filter_var_array ( array $data [, mixed $definition [, bool $add_empty = true ]] )</p>
+
+<p>내부변수 filter_var_array()는 여러개의  변수를  필터링합니다. 이 함수는 filter_var ()를 반복적으로 호출하지 않고도 많은 값을 검색하는 데 유용합니다. 아래 예제는 공식사이트에 있는 예제입니다.</p>
+
+<p>예제파일) filter-15.php
+&lt;?php
+    error_reporting(E_ALL | E_STRICT);
+    $data = array(
+        ‘product_id’    =&gt; ‘libgd<script>',
+        'component'     =&gt; '10',
+        'versions'      =&gt; '2.0.33',
+        'testscalar'    =&gt; array('2', '23', '10', '12'),
+        'testarray'     =&gt; '2',
+    );</script></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$args = array(
+'product_id'   =&gt; FILTER_SANITIZE_ENCODED,
+'component'    =&gt; array('filter'    =&gt; FILTER_VALIDATE_INT,
+                        'flags'     =&gt; FILTER_FORCE_ARRAY,
+                        'options'   =&gt; array('min_range' =&gt; 1, 'max_range' =&gt; 10)
+                       ),
+'versions'     =&gt; FILTER_SANITIZE_ENCODED,
+'doesnotexist' =&gt; FILTER_VALIDATE_INT,
+'testscalar'   =&gt; array(
+                        'filter' =&gt; FILTER_VALIDATE_INT,
+                        'flags'  =&gt; FILTER_REQUIRE_SCALAR,
+                       ),
+'testarray'    =&gt; array(
+                        'filter' =&gt; FILTER_VALIDATE_INT,
+                        'flags'  =&gt; FILTER_FORCE_ARRAY,
+                       )
+
+                   );
+
+$myinputs = filter_var_array($data, $args);
+
+var_dump($myinputs);
+echo "\n"; ?&gt;
+</code></pre></div></div>
+
+<p>화면출력)
+array(6) { [“product_id”]=&gt; string(17) “libgd%3Cscript%3E” [“component”]=&gt; array(1) { [0]=&gt; int(10) } [“versions”]=&gt; string(6) “2.0.33” [“doesnotexist”]=&gt; NULL [“testscalar”]=&gt; bool(false) [“testarray”]=&gt; array(1) { [0]=&gt; int(2) } }</p>
+
+<p><br /><br /></p>
+
+
+            <!-- 다음/이전 학습 페이지네이션 -->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+
+<div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
+  <div>
+    
+      <span class="text-muted small me-2">이전 학습</span>
+      <a href="/syntax/function/builtin" class="text-decoration-none fw-semibold">
+        &laquo; 내부함수 (Built-in)
+      </a>
+    
+  </div>
+
+  <div class="text-end">
+    
+  </div>
+</div>
+
+
+            <div class="mt-10">
+                <!-- 구글 에스센스 광고 -->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+                    crossorigin="anonymous"></script>
+                <!-- jinydev-java -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                    data-ad-slot="9323221865" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+
+
+</div>
+
+  <footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      
+      <a href="https://datas.jiny.dev" class="text-decoration-none text-secondary ms-3">빅데이터</a>
+      
+      <a href="https://mysql.jiny.dev" class="text-decoration-none text-secondary ms-3">MySQL</a>
+      
+      <a href="https://php.jiny.dev" class="text-decoration-none text-secondary ms-3">PHP</a>
+      
+      <a href="https://java.jiny.dev" class="text-decoration-none text-secondary ms-3">자바</a>
+      
+      <a href="https://git.jiny.dev" class="text-decoration-none text-secondary ms-3">깃&깃허브</a>
+      
+      <a href="https://linux.jiny.dev" class="text-decoration-none text-secondary ms-3">리눅스</a>
+      
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+  <script src="/assets/js/sidebar.js"></script>
+
+</body>
+
+</html>

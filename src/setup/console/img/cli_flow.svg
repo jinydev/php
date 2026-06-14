@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cliGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f3ff" />
+      <stop offset="100%" stop-color="#edd9ff" />
+    </linearGradient>
+    <linearGradient id="badgeIndigo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+    <linearGradient id="badgePurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f3e8ff" />
+    </linearGradient>
+    <linearGradient id="badgeBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f46e5" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9333ea" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#cliGrad); stroke: #ddd6fe; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-indigo { fill: url(#badgeIndigo); stroke: #4f46e5; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-purple { fill: url(#badgePurple); stroke: #9333ea; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-blue { fill: url(#badgeBlue); stroke: #0284c7; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-indigo { stroke: #4f46e5; stroke-width: 1.5; fill: none; }
+    .line-purple { stroke: #9333ea; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP CLI (콘솔) 실행 구조 및 옵션 맵</text>
+  <text x="35" y="72" class="subtitle">터미널 환경에서 입력받은 명령어 형태와 옵션에 따라 작동하는 다양한 인터프리터 구동 방식</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#5b21b6">PHP CLI Execution Architecture &amp; Argument Passing</text>
+
+  <!-- 1. CLI Input Terminal -->
+  <rect x="60" y="210" width="130" height="60" class="badge-indigo" />
+  <text x="125" y="235" class="heading" fill="#0f172a">터미널 명령어 입력</text>
+  <text x="125" y="250" class="arrow-text" font-size="8" fill="#4338ca">php [옵션] [파일] [인자]</text>
+
+  <!-- Branch lines for modes -->
+  <!-- Line to Mode 1 (Script execution) -->
+  <path d="M 190 230 L 260 165" class="line-indigo" marker-end="url(#arrow-indigo)" />
+  <!-- Line to Mode 2 (Interactive) -->
+  <path d="M 190 240 L 260 215" class="line-indigo" marker-end="url(#arrow-indigo)" />
+  <!-- Line to Mode 3 (Direct Run) -->
+  <path d="M 190 250 L 260 265" class="line-indigo" marker-end="url(#arrow-indigo)" />
+  <!-- Line to Mode 4 (Built-in Server) -->
+  <path d="M 190 260 L 260 325" class="line-indigo" marker-end="url(#arrow-indigo)" />
+
+  <!-- Mode 1: Run Script File -->
+  <rect x="270" y="140" width="160" height="45" class="badge-purple" />
+  <text x="350" y="158" class="heading" fill="#0f172a">1. 파일 직접 실행</text>
+  <text x="350" y="172" class="arrow-text" font-size="9" fill="#7e22ce">php script.php</text>
+
+  <!-- Mode 2: Interactive REPL -->
+  <rect x="270" y="195" width="160" height="45" class="badge-purple" />
+  <text x="350" y="213" class="heading" fill="#0f172a">2. 대화형 쉘 (-a)</text>
+  <text x="350" y="227" class="arrow-text" font-size="9" fill="#7e22ce">Interactive php &gt; shell</text>
+
+  <!-- Mode 3: Inline Execution -->
+  <rect x="270" y="250" width="160" height="45" class="badge-purple" />
+  <text x="350" y="268" class="heading" fill="#0f172a">3. 코드 즉시 실행 (-r)</text>
+  <text x="350" y="282" class="arrow-text" font-size="9" fill="#7e22ce">php -r "echo 'Test';"</text>
+
+  <!-- Mode 4: Built-in Web Server -->
+  <rect x="270" y="305" width="160" height="45" class="badge-purple" />
+  <text x="350" y="323" class="heading" fill="#0f172a">4. 내장 웹 서버 (-S)</text>
+  <text x="350" y="337" class="arrow-text" font-size="9" fill="#7e22ce">php -S localhost:8000</text>
+
+  <!-- Flow connecting script and inline run to Zend VM -->
+  <path d="M 430 162 L 480 162 A 10 10 0 0 1 490 172 L 490 220" class="line-purple" />
+  <path d="M 430 272 L 480 272 A 10 10 0 0 0 490 262 L 490 220" class="line-purple" />
+
+  <!-- Zend VM Node -->
+  <rect x="490" y="195" width="110" height="70" class="badge-purple" />
+  <text x="545" y="225" class="heading" fill="#581c87">Zend 엔진 컴파일</text>
+  <text x="545" y="242" class="arrow-text" font-size="9" fill="#7e22ce">OPcode 컴파일 및 실행</text>
+
+  <!-- Flow from Zend VM & Terminal to Arguments mapping -->
+  <path d="M 600 230 L 630 230" class="line-purple" marker-end="url(#arrow-purple)" />
+
+  <!-- Arguments Array Mapping ($argv / $argc) -->
+  <rect x="630" y="165" width="115" height="135" class="badge-blue" />
+  <text x="687" y="188" class="heading" fill="#0369a1">실행 인자 전달</text>
+  <text x="687" y="210" class="heading" font-size="10" fill="#0e7490">배열 $argv</text>
+  <text x="687" y="228" class="arrow-text" font-size="8" fill="#475569">[0] : 파일 경로</text>
+  <text x="687" y="240" class="arrow-text" font-size="8" fill="#475569">[1] : 첫번째 인자</text>
+  <text x="687" y="252" class="arrow-text" font-size="8" fill="#475569">[2] : 두번째 인자</text>
+  <text x="687" y="272" class="heading" font-size="10" fill="#0e7490">변수 $argc</text>
+  <text x="687" y="286" class="arrow-text" font-size="8" fill="#475569">전체 인자 개수</text>
+
+</svg>

@@ -1,829 +1,2233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://localhost:4000/function/builtin/internal/01.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/02.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/03.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/04.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/05.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/06.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/07.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/08.7.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/08.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/09.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/10.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/11.1.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/11.2.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/11.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/12.4.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/12.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/13/13.1.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/13/13.2.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/13/13.3.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/13.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/14.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/15.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/16.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/17.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/18.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/19.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/20.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/a.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/access.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/add.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/anno.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/assignment/apply.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/args.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/array.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_diff.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_diff_assoc.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_diff_key.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_diff_uassoc.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_diff_ukey.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_udiff.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_udiff_assoc.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/diff/array_udiff_uassoc.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arrayop.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/autoload/autoload.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/autoload.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/background.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/bit.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/windows/bitnami.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/bool.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/bool.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/bracket.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/break.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/declare/call.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/class.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/clone.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/closure/closure.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/code.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/compare.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/compiler.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/autoload/composer.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/execute/console.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/const.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/const/const.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/continue.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/declare.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/declear.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/deploy.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/division.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/execute/domain.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/dowhile.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/windows/download.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/output/echo.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/edit.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/else.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/elseif.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/engine.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/assignment/equal.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/error.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/env/error.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/error.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/error.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/execute.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/extension.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/feature.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/float.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/folder.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/for.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/foreach.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/function.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/global.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/global.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/jinyphp/view/helper.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/output/here.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/history.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/tag/html.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/html.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/i.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/if.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/ifif.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/incdec.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/include.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/const/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/lecture/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/jinyphp/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/jinyphp/view/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/jinyphp/liquid/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/assignment/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/jinyphp/frontmatter/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/env/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/variable/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/return/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/install/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/package/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/setup/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/tag/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/linux/lapm/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/closure/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/exception/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/rescure/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/param/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/generator/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/func/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/console/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/annon/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/02.1/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/app/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/const/define/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/name/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/extend/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/ternary/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/array/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/template/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/13/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/windows/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/pettern/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/abstract/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/template/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/output/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/execute/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/linux/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/comment/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/autoload/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/internal/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/declare/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/psr/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/env/ini.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/interface.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/interpreter.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/interpreter.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/intiger.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/execute/ip.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/json.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/declare/keyword.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/l.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/local.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/execute/localhost.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/logic.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/logic.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/m.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/mac.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/magic.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/make.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/memory.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/menu.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/method.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/multi.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/multiply.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/declare/name.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/namespace.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/new.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/null.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/object.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/opcashe.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/option.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/path.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/about/pear.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/psr/php04.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/php08.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/php09.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/php11.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/php12.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/php13.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/php18.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/php19.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php52.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php53.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php54.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php55.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php56.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php57.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php58.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php59.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php60.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php61.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php62.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php63.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php65.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/web/php66.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php67.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php68.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/builtin/php69.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/phpinfo.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/phpnet.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/pos.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/function/declare/position.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/output/print.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/property.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/psr/psr1.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/psr/psr2.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/psr4.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/r.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/ref.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/reference.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/composer/repository.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/preprocess/require.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/const/reserved.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/resource.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/rest.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/rule.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/rule1.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/rule2.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/s.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/sample1.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/priority/sample2.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/sapceship.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/scalar.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/semicolon.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/server.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/code/serverside.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/php/serverside.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/tag/standard.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/static.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/static.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/abstract/static.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/type/string.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/stringop.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/arithmetic/sub.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/scope/super.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/condition/switch.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/class/this.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/exception/throw.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/oop/trait.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/variable/unset.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/env/upload.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/v.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/operator/assignment/value.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/setup/console/w.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/basic/loop/while.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/assets/images/pdf/invoiceFile.pdf</loc>
-<lastmod>2026-02-26T13:21:20+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/assets/libs/@mdi/font/preview.html</loc>
-<lastmod>2026-02-26T13:21:20+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/assets/libs/bootstrap-icons/font/</loc>
-<lastmod>2026-02-26T13:21:20+09:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/assets/libs/typed.js/</loc>
-<lastmod>2026-02-26T13:21:21+09:00</lastmod>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/01.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/02.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/03.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/04.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/05.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/06.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/07.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/08.7.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/08.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/09.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/10.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/11.1.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/11.2.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/11.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/12.4.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/12.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/13/13.1.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/13/13.2.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/13/13.3.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/13.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/14.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/15.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/16.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/17.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/18.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/19.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/20.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/a.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/framework/about.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/about.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/access.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/add.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/anno.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/apache.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/assignment/apply.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/args.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_diff.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_diff_assoc.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_diff_key.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_diff_uassoc.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_diff_ukey.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_udiff.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_udiff_assoc.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/diff/array_udiff_uassoc.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arrayop.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/autoload/autoload.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/autoload.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/aws.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/background.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/bit.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/bool.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/bracket.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/break.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/declare/call.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/class.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/clone.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/closure/closure.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/coalescing.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/code.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/compare.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/compiler.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/docker/compose.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/autoload/composer.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/const.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/const.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/constructor-promotion.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/continue.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/cookie-session.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/declear.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/defined.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/deploy.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/division.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/deploy/docker.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/dowhile.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/windows/download.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/output/echo.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/edit.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/else.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/elseif.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/engine.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/enum.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/assignment/equal.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/env/error.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/error.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/error.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/execute.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/extension.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/feature.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/folder.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/for.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/foreach.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/function.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/deploy/git.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/global.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/jinyphp/view/helper.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/output/here.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/history.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/tag/html.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/html.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/http.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/i.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/if.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/ifif.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/incdec.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/include.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/board/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/template/template/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/template/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/13/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/docker/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/deploy/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/env/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/linux/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/windows/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/apps/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/abstract/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/closure/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/extend/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/pattern/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/exception/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/framework/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/install/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/setup/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/about/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/package/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/jinyphp/liquid/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/jinyphp/frontmatter/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/jinyphp/view/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/jinyphp/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/autoload/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/practice/file/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/practice/curl/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/practice/console/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/practice/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/unset/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/ref/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/memory/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/declare/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/intiger/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/array/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/null/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/object/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/float/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/bool/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/string/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/resource/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/type/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/name/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/scalar/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/global/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/variable/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/comment/line/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/comment/block/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/comment/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/output/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/execute/domain/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/execute/console/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/execute/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/rescure/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/variable/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/return/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/declare/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/param/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/generator/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/02.1/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/array/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/internal/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/annon/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/func/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/define/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/ternary/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/psr/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/error/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/tag/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/assignment/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/env/ini.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/interface.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/interpreter.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/interpreter.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/execute/ip.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/jit/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/json.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/declare/keyword.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/l.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/lapm.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/framework/laravel.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/local.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/execute/localhost.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/logic.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/logic.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/m.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/mac.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/magic.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/make.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/match.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/method.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/apps/moodle.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/multi.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/multiply.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/framework/mvc.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/declare/name.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/param/named.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/namespace.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/new.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/apps/nextcloud.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/nginx.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/nullsafe.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/opcashe.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/option.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/path.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/pdo.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/about/pear.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/psr/php04.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/php08.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/php09.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/php11.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/php12.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/php13.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/php18.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/php19.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php52.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php53.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php54.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php55.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php56.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php57.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php58.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php59.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php60.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php61.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php62.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php63.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php65.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/web/php66.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php67.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php68.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/builtin/php69.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/php7/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/php8/</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/phpinfo.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/phpnet.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/pos.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/declare/position.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/apps/prestashop.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/output/print.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/property.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/psr/psr1.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/psr/psr2.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/psr4.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/r.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/reference.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/composer/repository.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/preprocess/require.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/reserved.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/rest.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/linux/rocky.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/rule.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/rule1.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/rule2.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/s.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/sample1.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/priority/sample2.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/env/security.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/docker/security.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/semicolon.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/server.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/php/serverside.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/code/serverside.html</loc>
+        
+      </url>
+    
+  
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/spaceship.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/tag/standard.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/static.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/abstract/static.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/static.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/stringop.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/assets/css/styles.css</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/arithmetic/sub.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/scope/super.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/condition/switch.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/class/this.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/exception/throw.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/oop/trait.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/const/type.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/function/param/types.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/packages/framework/types.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/linux/ubuntu.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/env/upload.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/v.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/operator/assignment/value.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/docker/volume.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/server/vultr.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/console/w.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/syntax/loop/while.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/apps/wordpress.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/setup/windows/xampp.html</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/feed.xml</loc>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://php.jiny.dev/robots.txt</loc>
+        
+      </url>
+    
+  
 </urlset>

@@ -1,3 +1,16 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+node_modules/
+vendor/
+.DS_Store
+*.pdf
+source/
+
 /data
 /temp
 /write
+
+# Custom Exclusions
+/quiz/

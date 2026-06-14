@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/console/l.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP CLI 문법 검사 옵션 (-l) 활용 가이드</title>
+  <meta name="title" content="PHP CLI 문법 검사 옵션 (-l) 활용 가이드" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP CLI 문법 검사 옵션 (-l) 활용 가이드"><meta property="og:description" content="PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/console/l.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/console/l.html">
+  <link rel="canonical" href="https://php.jiny.dev/setup/console/l.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP CLI 문법 검사 옵션 (-l) 활용 가이드"><meta property="twitter:description" content="PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="PHP CLI 문법 검사 옵션 (-l) 활용 가이드" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/console/l.html" />
-<meta property="og:url" content="http://localhost:4000/setup/console/l.html" />
+<meta name="description" content="PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다." />
+<meta property="og:description" content="PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/console/l.html" />
+<meta property="og:url" content="https://php.jiny.dev/setup/console/l.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="PHP CLI 문법 검사 옵션 (-l) 활용 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/console/l.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"PHP CLI의 -l(Lint) 옵션을 사용하여 소스코드 구동 없이 문법적 에러(Syntax Error)를 고속 검사하고, CI/CD 배포 파이프라인 및 Git Hook에 이식하는 법을 다룹니다.","headline":"PHP CLI 문법 검사 옵션 (-l) 활용 가이드","url":"https://php.jiny.dev/setup/console/l.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -640,7 +968,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">PHP CLI 문법 검사 옵션 (-l) 활용 가이드</li>
         
         
         
@@ -648,13 +976,81 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="php-문법-검사--l">PHP 문법 검사 -l</h1>
+            <h1 id="php-문법-검사-옵션--l">PHP 문법 검사 옵션 (<code class="language-plaintext highlighter-rouge">-l</code>)</h1>
 <hr />
-<p>-l 옵션은 PHP의 문법적 오류를 체크합니다. 오류가 없는 경우에는 No syntax errors를 출력합니다.</p>
+<p>PHP <strong><code class="language-plaintext highlighter-rouge">-l</code></strong> 옵션은 <strong>‘Lint(린트)’</strong>의 머리글자에서 따온 옵션으로, 해당 PHP 파일을 실제로 <strong>실행하지 않고 오직 문법적 오류(Syntax Error)가 존재하는지 여부만 해석</strong>하여 판별해 줍니다.</p>
 
-<p>```
-C:\php-7.1.4-Win32-VC14-x86&gt;php -l index.php
-No syntax errors detected in index.php</p>
+<p>잘못된 코드를 서버에 올려 웹 애플리케이션 전체가 화이트스크린(먹통)이 되거나 작동이 중단되는 런타임 사고를 예방하기 위한 1차 방어선 역할을 수행합니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-사용법-및-결과-식별">1. 사용법 및 결과 식별</h3>
+<hr />
+<p>검증하고 싶은 스크립트 파일명 앞에 <code class="language-plaintext highlighter-rouge">-l</code> 플래그를 할당하여 명령을 처리합니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">php -l [검사할_파일명.php]
+</span></code></pre></div></div>
+
+<h4 id="1-문법에-이상이-없는-경우-정상">1) 문법에 이상이 없는 경우 (정상)</h4>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>php <span class="nt">-l</span> index.php
+<span class="go">No syntax errors detected in index.php
+</span></code></pre></div></div>
+<p>에러가 감지되지 않으면 <code class="language-plaintext highlighter-rouge">No syntax errors detected</code> 메시지와 함께 종료 코드 <code class="language-plaintext highlighter-rouge">0</code>을 반환합니다.</p>
+
+<h4 id="2-오타나-기호-누락-등-문법-오류가-있는-경우">2) 오타나 기호 누락 등 문법 오류가 있는 경우</h4>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>php <span class="nt">-l</span> index.php
+<span class="gp">Parse error: syntax error, unexpected identifier "echo", expecting ";</span><span class="s2">" or "</span>,<span class="s2">" in index.php on line 5
+</span><span class="go">Errors parsing index.php
+</span></code></pre></div></div>
+<p>문법 위반 사항이 감지되면 컴파일 에러 원인(<code class="language-plaintext highlighter-rouge">Parse error</code>) 및 잘못된 기호, 그리고 에러가 발생한 <strong>정확한 코드 행수(Line Number)</strong>를 가르쳐주며 비정상 종료 코드(주로 <code class="language-plaintext highlighter-rouge">255</code>)를 던집니다.</p>
+
+<p><br /></p>
+
+<h3 id="2-중요-린트lint의-한계점-인지">2. 중요: 린트(Lint)의 한계점 인지</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">-l</code> 문법 검사는 파싱 단계에서 소스코드의 구문적 구조 규칙만 확인합니다. 따라서 다음과 같은 <strong>실행 시점의 논리적 오류(Runtime Error)는 탐지할 수 없음</strong>을 반드시 인지해야 합니다.</p>
+
+<ul>
+  <li>정의되지 않은 함수 호출 (<code class="language-plaintext highlighter-rouge">Call to undefined function</code>)</li>
+  <li>선언되지 않은 클래스 인스턴스화</li>
+  <li>0으로 나누기 연산 오류 (<code class="language-plaintext highlighter-rouge">Division by zero</code>)</li>
+  <li>데이터베이스 비밀번호 오입력 등 환경 연결 문제</li>
+</ul>
+
+<p>이러한 로직 결함은 PHPUnit을 통한 단위 테스트나 정적 분석 도구(PHPStan, Psalm)를 추가 동원하여 보정해야 합니다.</p>
+
+<p><br /></p>
+
+<h3 id="3-실무-전역-다중-파일-일괄-린트-검사">3. 실무: 전역 다중 파일 일괄 린트 검사</h3>
+<hr />
+<p>리눅스/macOS 셸 환경에서 특정 디렉터리 하위의 모든 PHP 소스 코드를 스캔하여 오타가 난 파일들만 추출해 내는 파이프라인 응용식입니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 하위 폴더 전체에서 .php 파일을 찾아 개별 문법 검사를 실행하되, 에러가 난 파일 목록만 추려냄</span>
+find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.php"</span> <span class="nt">-exec</span> php <span class="nt">-l</span> <span class="o">{}</span> <span class="se">\;</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"No syntax errors"</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="4-git-pre-commit-hook-자동화-연동">4. Git Pre-Commit Hook 자동화 연동</h3>
+<hr />
+<p>개발자가 코드를 커밋(<code class="language-plaintext highlighter-rouge">git commit</code>)하기 직전에 오타를 감지해 아예 커밋 처리를 반려하도록 만들어 실수 배포를 원천 차단하는 로컬 환경설정 방식입니다.</p>
+
+<p>프로젝트 폴더의 <code class="language-plaintext highlighter-rouge">.git/hooks/pre-commit</code> 실행 스크립트 파일 내부에 아래 쉘 코드를 삽입합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># 커밋 대기 상태(Staged)인 PHP 파일만 필터링하여 루프 스캔</span>
+<span class="k">for </span>file <span class="k">in</span> <span class="si">$(</span>git diff <span class="nt">--cached</span> <span class="nt">--name-only</span> <span class="nt">--diff-filter</span><span class="o">=</span>ACMR | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">'\.php$'</span><span class="si">)</span>
+<span class="k">do</span>
+    <span class="c"># 개별 린트 수행</span>
+    php <span class="nt">-l</span> <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span> <span class="o">&gt;</span> /dev/null 2&gt;&amp;1
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"❌ [Lint Error] </span><span class="nv">$file</span><span class="s2"> 파일에 문법 오류가 존재합니다. 커밋이 거부되었습니다."</span>
+        <span class="nb">exit </span>1
+    <span class="k">fi
+done
+</span><span class="nb">exit </span>0
+</code></pre></div></div>
+<p>이 설정을 추가해 두면, 문법적으로 깨진 PHP 코드는 깃 커밋 자체가 막혀 협업 브랜치가 오염되는 상황을 완벽하게 방지해 줍니다.</p>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -875,13 +1271,139 @@ No syntax errors detected in index.php</p>
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="ifGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="switchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f3ff" />
+      <stop offset="100%" stop-color="#edd8ff" />
+    </linearGradient>
+    <linearGradient id="matchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 800; text-anchor: middle; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 9px; fill: #334155; }
+    .code-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; fill: #0f172a; }
+    
+    .panel-if { fill: url(#ifGrad); stroke: #bae6fd; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .panel-switch { fill: url(#switchGrad); stroke: #d8b4fe; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .panel-match { fill: url(#matchGrad); stroke: #6ee7b7; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .box-white { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="320" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="45" class="title">PHP 조건 제어 메커니즘 비교 (if-else vs switch vs match)</text>
+  <text x="35" y="63" class="subtitle">느슨한/엄격한 타입 비교 및 리턴 여부에 따른 제어문들의 문법적 차이</text>
+
+  <!-- 1. if-else -->
+  <rect x="35" y="85" width="230" height="235" class="panel-if" />
+  <text x="150" y="108" class="panel-title" fill="#0369a1">if - else (조건문)</text>
+  
+  <rect x="45" y="125" width="210" height="90" class="box-white" />
+  <text x="55" y="142" class="code-text" fill="#0369a1">if ($val == 1) {</text>
+  <text x="55" y="160" class="code-text">    // 참(True) 코드 블록</text>
+  <text x="55" y="178" class="code-text" fill="#0369a1">} else {</text>
+  <text x="55" y="196" class="code-text">    // 거짓(False) 코드 블록</text>
+  
+  <text x="45" y="235" class="text-normal">✔ 동치 연산 이외의 대소 비교, 범위 평가 가능</text>
+  <text x="45" y="250" class="text-normal">✔ 위에서 아래로 순차적인 조건식 평가 수행</text>
+  <text x="45" y="265" class="text-normal">✔ 평가지가 거짓일 때 다음 branch로 분기</text>
+  <text x="45" y="280" class="text-normal" fill="#0284c7">✔ 느슨한 비교(==) 및 엄격한 비교(===) 선택 가능</text>
+
+  <!-- 2. switch -->
+  <rect x="285" y="85" width="230" height="235" class="panel-switch" />
+  <text x="400" y="108" class="panel-title" fill="#6b21a8">switch (다중 선택지)</text>
+
+  <rect x="295" y="125" width="210" height="90" class="box-white" />
+  <text x="305" y="142" class="code-text" fill="#7c3aed">switch ($val) {</text>
+  <text x="305" y="160" class="code-text">    case 1: doSomething(); break;</text>
+  <text x="305" y="178" class="code-text">    default: fallback();</text>
+  <text x="305" y="196" class="code-text" fill="#7c3aed">}</text>
+
+  <text x="295" y="235" class="text-normal">✔ 값의 동치 일치 여부 위주로 평가</text>
+  <text x="295" y="250" class="text-normal">⚠ 주의: **느슨한 타입 비교(==)**가 동작함</text>
+  <text x="295" y="265" class="text-normal">⚠ `break` 문 누락 시 하위 case로 자동 통과</text>
+  <text x="295" y="280" class="text-normal" fill="#7c3aed">✔ 복잡한 다중 코드 블록 실행 시 적합</text>
+
+  <!-- 3. match -->
+  <rect x="535" y="85" width="230" height="235" class="panel-match" />
+  <text x="650" y="108" class="panel-title" fill="#047857">match (식 - Expression)</text>
+
+  <rect x="545" y="125" width="210" height="90" class="box-white" />
+  <text x="555" y="142" class="code-text" fill="#059669">$res = match ($val) {</text>
+  <text x="555" y="160" class="code-text">    1 => 'One',</text>
+  <text x="555" y="178" class="code-text">    default => 'Other',</text>
+  <text x="555" y="196" class="code-text" fill="#059669">};</text>
+
+  <text x="545" y="235" class="text-normal">✔ **PHP 8.0 이상**에서 도입된 최신 표현식</text>
+  <text x="545" y="250" class="text-normal">✔ **엄격한 타입 비교(===)**를 강제 적용</text>
+  <text x="545" y="265" class="text-normal">✔ 연산 결과를 즉시 반환하여 변수에 바인딩 가능</text>
+  <text x="545" y="280" class="text-normal">✔ `break` 필요 없음, 미일치 시 예외 에러 발생</text>
+  <text x="545" y="295" class="text-normal" fill="#16a34a">✔ 조건식 매칭 시 한 줄로 깔끔하게 정리 가능</text>
+</svg>

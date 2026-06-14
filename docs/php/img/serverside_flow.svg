@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #64748b; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; text-anchor: middle; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 11px; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #475569; text-anchor: middle; }
+    
+    .box-client { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 10px; }
+    .box-webserver { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 10px; }
+    .box-was { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 10px; }
+    .box-db { fill: #fdf4ff; stroke: #a855f7; stroke-width: 2; rx: 10px; }
+    .badge { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; rx: 4px; }
+
+    .line { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2; fill: none; }
+    .line-purple { stroke: #a855f7; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a855f7" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title Section -->
+  <text x="30" y="45" class="title">서버 사이드 스크립트 실행 메커니즘 (Server-Side Execution)</text>
+  <text x="30" y="65" class="subtitle">모든 코드 연산과 DB 결합이 서버에서 완료된 후, 브라우저에는 정적 HTML만 전송됩니다.</text>
+
+  <!-- Left: Client Browser (Center X = 110) -->
+  <rect x="30" y="110" width="160" height="260" class="box-client" />
+  <text x="110" y="140" class="heading" fill="#047857">클라이언트 (Browser)</text>
+  <text x="110" y="160" class="label" fill="#059669" font-size="11">사용자 단말 장치</text>
+  
+  <!-- UI representation inside browser -->
+  <rect x="45" y="180" width="130" height="170" class="badge" stroke="#a7f3d0" />
+  <rect x="52" y="190" width="116" height="15" fill="#e2e8f0" rx="3" />
+  <circle cx="60" cy="197" r="3" fill="#ef4444" />
+  <circle cx="70" cy="197" r="3" fill="#eab308" />
+  <circle cx="80" cy="197" r="3" fill="#22c55e" />
+  
+  <text x="110" y="240" class="label" font-size="11">정적 데이터 렌더링</text>
+  <text x="110" y="270" class="code" fill="#059669">&lt;html&gt;&lt;body&gt;</text>
+  <text x="110" y="290" class="code" font-weight="bold">Hello jiny!</text>
+  <text x="110" y="310" class="code" fill="#059669">&lt;/body&gt;&lt;/html&gt;</text>
+  <text x="110" y="335" class="arrow-text" fill="#64748b">(PHP 원본 노출 없음)</text>
+
+
+  <!-- Center Top: Web Server (Center X = 390) -->
+  <rect x="290" y="110" width="200" height="75" class="box-webserver" />
+  <text x="390" y="135" class="heading" fill="#1d4ed8">웹 서버 (Nginx / Apache)</text>
+  <text x="390" y="160" class="label" fill="#2563eb">HTTP 요청 접수 및 최종 정적 파일 응답</text>
+
+
+  <!-- Center Bottom: PHP Engine WAS (Center X = 390) -->
+  <rect x="290" y="250" width="200" height="120" class="box-was" />
+  <text x="390" y="275" class="heading" fill="#b45309">WAS (PHP-FPM / Engine)</text>
+  <text x="390" y="295" class="label" fill="#d97706">소스 코드 해석 및 데이터 가공</text>
+  <rect x="305" y="315" width="170" height="40" class="badge" stroke="#fde68a" />
+  <text x="390" y="330" class="code" fill="#b45309">echo "&lt;h1&gt;Hello ".$name."&lt;/h1&gt;";</text>
+  <text x="390" y="348" class="arrow-text" fill="#b45309" font-weight="bold">동적 HTML 문서 생성 조립</text>
+
+
+  <!-- Right: Database Server (Center X = 670) -->
+  <rect x="590" y="160" width="160" height="150" class="box-db" />
+  <text x="670" y="190" class="heading" fill="#7e22ce">데이터베이스 (MySQL)</text>
+  <text x="670" y="215" class="label" fill="#9333ea">데이터 원본 보관소</text>
+  
+  <!-- DB Cylinders decoration -->
+  <path d="M 630 240 C 630 230, 710 230, 710 240 L 710 280 C 710 290, 630 290, 630 280 Z" fill="#faf5ff" stroke="#c084fc" stroke-width="1.5" />
+  <ellipse cx="670" cy="240" rx="40" ry="8" fill="#f3e8ff" stroke="#c084fc" stroke-width="1.5" />
+  <line x1="630" y1="255" x2="710" y2="255" stroke="#c084fc" stroke-dasharray="2 2" />
+  <line x1="630" y1="270" x2="710" y2="270" stroke="#c084fc" stroke-dasharray="2 2" />
+  <text x="670" y="270" class="code" fill="#7e22ce" font-size="10">USER: jiny</text>
+
+
+  <!-- Flow lines with labels -->
+  <!-- 1. Request: Client to Web Server -->
+  <path d="M 190 145 L 280 145" class="line-active" marker-end="url(#arrow-blue)" />
+  <text x="235" y="135" class="arrow-text" fill="#2563eb" font-weight="bold">1. HTTP Request</text>
+
+  <!-- 2. Delegation: Web Server to WAS -->
+  <path d="M 360 185 L 360 240" class="line-active" marker-end="url(#arrow-blue)" />
+  <text x="320" y="215" class="arrow-text" fill="#2563eb">2. PHP 실행 위임</text>
+
+  <!-- 3. DB Query: WAS to DB -->
+  <path d="M 490 295 L 580 295" class="line-purple" marker-end="url(#arrow-purple)" />
+  <text x="535" y="285" class="arrow-text" fill="#7e22ce">3. SQL 쿼리</text>
+
+  <!-- 4. DB Data return: DB to WAS -->
+  <path d="M 580 270 L 498 270" class="line-purple" marker-end="url(#arrow-purple)" />
+  <text x="535" y="260" class="arrow-text" fill="#7e22ce">4. 데이터 반환</text>
+
+  <!-- 5. Return Rendered: WAS to Web Server -->
+  <path d="M 420 250 L 420 195" class="line-active" marker-end="url(#arrow-blue)" />
+  <text x="465" y="215" class="arrow-text" fill="#2563eb">5. HTML 응답 반환</text>
+
+  <!-- 6. Response: Web Server to Client -->
+  <path d="M 290 330 L 200 330" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="245" y="320" class="arrow-text" fill="#047857" font-weight="bold">6. HTML Response</text>
+
+</svg>

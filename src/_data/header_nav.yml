@@ -3,10 +3,12 @@
 - title: 설치
   url: /setup
 - title: 기본문법
-  url: /basic
-- title: 함수
-  url: /function
+  url: /syntax
 - title: 객체지향
   url: /oop
+- title: 응용실습
+  url: /practice
 - title: 패키지
-  url: /composer
+  url: /packages
+- title: 웹프로젝트
+  url: /web

@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/env/ini.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석</title>
+  <meta name="title" content="php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석"><meta property="og:description" content="php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/env/ini.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/env/ini.html">
+  <link rel="canonical" href="https://php.jiny.dev/setup/env/ini.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석"><meta property="twitter:description" content="php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/env/ini.html" />
-<meta property="og:url" content="http://localhost:4000/setup/env/ini.html" />
+<meta name="description" content="php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다." />
+<meta property="og:description" content="php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/env/ini.html" />
+<meta property="og:url" content="https://php.jiny.dev/setup/env/ini.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/env/ini.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"php.ini 파일의 기초 문법 규칙, 세미콜론 주석 처리법, 설정 범위(Scope) 규격 및 개발용(development)과 운영용(production) 템플릿의 보완 차이점을 정리합니다.","headline":"php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석","url":"https://php.jiny.dev/setup/env/ini.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -640,7 +968,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">php.ini 설정 파일 문법 및 Dev vs Prod 사양 분석</li>
         
         
         
@@ -648,29 +976,76 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="ini-설정">ini 설정</h1>
+            <h1 id="phpini-설정-규칙-및-dev-vs-prod-차이">php.ini 설정 규칙 및 Dev vs Prod 차이</h1>
 <hr />
-<p>php.ini는 PHP의 환경 설정 파일입니다. php.ini이 변경되면 서버의 모든 PHP 스크립트 파일에 영향을 주면서 실행하게 됩니다.<br />
-php.ini 파일에는 매우 다양한 값이 설정되어 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">php.ini</code> 파일은 단순해 보이지만, 구문 규칙을 오입력하면 PHP 파서가 로딩 도중 멈추거나 기본값으로 롤백되는 오류가 발생합니다.</p>
+
+<p>이 문서에서는 <code class="language-plaintext highlighter-rouge">php.ini</code> 파일의 작성 규칙, 소스 배포 파일에 담겨오는 개발용과 운영용 설정 템플릿의 본질적인 보안 설정 차이, 그리고 동적 제어 범위에 대해 깊이 있게 알아봅니다.</p>
 
 <p><br /></p>
 
-<h2 id="값-설정">값 설정</h2>
+<h3 id="1-phpini-파일의-문법-규칙">1. php.ini 파일의 문법 규칙</h3>
 <hr />
-<p>php는 ini 타입으로 환경값을 설정합니다.<br />
-ini는 키와 값으로 구성되며, 관계는 <code class="language-plaintext highlighter-rouge">=</code>로 설정을 합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">php.ini</code>는 표준 INI 파일 포맷을 따릅니다.</p>
 
-<p>|설정|</p>
-<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">설정</span><span class="w"> </span><span class="na">항목</span><span class="w"> </span><span class="na">=</span><span class="w"> </span><span class="na">값</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">; 1. 주석 처리 규칙
+; 이 줄은 세미콜론(;)으로 시작하므로 파서가 완전히 무시합니다.
+; 설정 설명이나 비활성화할 옵션을 주석 처리할 때 사용합니다.
+</span><span class="w">
+</span><span class="c"># (주의: 구버전에서는 # 기호도 주석으로 지원했으나, PHP 7.0 이후부터는 사용이 불가하므로 반드시 세미콜론을 써야 합니다.)
+</span><span class="w">
+</span><span class="c"># 2. 키와 값의 작성 규격
+# 대소문자를 구분(Case-Sensitive)하므로 오타에 극히 주의해야 합니다.
+# 등호(=)를 기준으로 설정 항목과 지정값을 연결합니다. 공백은 무시됩니다.
+</span><span class="py">memory_limit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">256M</span>
+<span class="w">
+</span><span class="c"># 3. 논리값(Boolean) 대입
+# 논리 참/거짓은 On/Off, True/False, Yes/No 중 어떤 것을 기입해도 동일하게 작동합니다. (통상 On/Off 사용)
+</span><span class="py">display_errors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">On</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
-<h2 id="주석">주석</h2>
+<h3 id="2-중요-phpini-development-vs-phpini-production">2. 중요: php.ini-development vs php.ini-production</h3>
 <hr />
-<p>ini 설정 파일에서 세미콜론(;)으로 시작하는 행은 주석으로 처리합니다.</p>
+<p>PHP를 공식 배포 사이트에서 내려받아 압축을 풀면 실 작동용 <code class="language-plaintext highlighter-rouge">php.ini</code>는 없고, 대신 두 개의 용도별 템플릿 파일이 제공됩니다. 서비스 용도에 맞춰 복사하여 실제 <code class="language-plaintext highlighter-rouge">php.ini</code>로 작명해 가동합니다.</p>
+
+<h4 id="1-phpini-development-개발-서버용">1) <code class="language-plaintext highlighter-rouge">php.ini-development</code> (개발 서버용)</h4>
+<ul>
+  <li><strong>목표</strong>: 오타 및 에러를 실시간으로 빠르게 인지하여 원활하게 디버깅할 수 있도록 편의성을 최적화한 파일입니다.</li>
+  <li><strong>주요 속성</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">display_errors = On</code> (에러 메시지를 클라이언트 브라우저 화면에 실시간으로 출력)</li>
+      <li><code class="language-plaintext highlighter-rouge">display_startup_errors = On</code> (엔진 로딩 시점에 발생하는 초기화 오류도 즉시 모니터에 출력)</li>
+      <li><code class="language-plaintext highlighter-rouge">error_reporting = E_ALL</code> (가벼운 경고(Notice)나 권장 개선안(Deprecated)을 포함한 모든 레벨의 진단 메시지를 노출)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-phpini-production-운영-서버용">2) <code class="language-plaintext highlighter-rouge">php.ini-production</code> (운영 서버용)</h4>
+<ul>
+  <li><strong>목표</strong>: 보안 강화와 연산 가속화에 초점을 맞추어 잠금 설계된 실 서비스 배포용 템플릿 파일입니다.</li>
+  <li><strong>주요 속성</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">display_errors = Off</code> (오류가 나더라도 해커나 일반 방문자에게 내부 DB 쿼리나 스크립트 파일 시스템 절대 경로 등이 노출되는 것을 막기 위해 화면 에러 전송을 차단)</li>
+      <li><code class="language-plaintext highlighter-rouge">log_errors = On</code> (화면에 뿌리지 않는 대신, 서버 보안 로그 파일(<code class="language-plaintext highlighter-rouge">/var/log/php_errors.log</code> 등)로 내부 기록하여 관리자만 SSH 상에서 은밀히 디버깅할 수 있도록 격리)</li>
+      <li><code class="language-plaintext highlighter-rouge">opcache.validate_timestamps = Off</code> (실서버 파일 수정 여부를 정기 검증하는 단계를 비활성화하여 오버헤드를 없애고 속도를 극한으로 상향)</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
+
+<h3 id="3-지시어-설정-변경-범위-scope">3. 지시어 설정 변경 범위 (Scope)</h3>
+<hr />
+<p>모든 <code class="language-plaintext highlighter-rouge">php.ini</code> 옵션들이 코드 상의 <code class="language-plaintext highlighter-rouge">ini_set()</code> 함수나 디렉터리의 <code class="language-plaintext highlighter-rouge">.user.ini</code>를 통해 마음대로 바뀔 수 있는 것은 아닙니다. 시스템의 보안 위협을 방지하기 위해 옵션마다 허용되는 수정 권한 범위가 정해져 있습니다.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">INI_USER</code></strong>: 사용자의 PHP 코드 레벨(<code class="language-plaintext highlighter-rouge">ini_set()</code>)이나 세션 변수단에서 동적으로 자유롭게 오버라이드할 수 있습니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">INI_PERDIR</code></strong>: 디렉터리 기반 설정 파일(<code class="language-plaintext highlighter-rouge">.htaccess</code>, <code class="language-plaintext highlighter-rouge">.user.ini</code>)이나 웹 서버 호스트 구성 파일단에서 변경이 허용됩니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">INI_SYSTEM</code></strong>: 오직 메인 환경설정 파일인 시스템 전역 <code class="language-plaintext highlighter-rouge">php.ini</code> 파일을 직접 열어서 수정해야만 작동하는 중요 코어 설정입니다. (예: <code class="language-plaintext highlighter-rouge">memory_limit</code>, <code class="language-plaintext highlighter-rouge">open_basedir</code> 등)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">INI_ALL</code></strong>: 위의 세 가지 모든 범위 어디서든 자유롭게 덮어쓰기가 허용되는 일반 지시어 옵션입니다.</li>
+</ul>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -891,13 +1266,139 @@ ini는 키와 값으로 구성되며, 관계는 <code class="language-plaintext 
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

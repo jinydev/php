@@ -5,25 +5,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
-  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/oop/class/clone.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
+  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/oop/class/clone.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/oop/class/clone.html">
+  <link rel="canonical" href="https://php.jiny.dev/oop/class/clone.html">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="PHP" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/oop/class/clone.html" />
-<meta property="og:url" content="http://localhost:4000/oop/class/clone.html" />
+<link rel="canonical" href="https://php.jiny.dev/oop/class/clone.html" />
+<meta property="og:url" content="https://php.jiny.dev/oop/class/clone.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PHP" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"http://localhost:4000/oop/class/clone.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"https://php.jiny.dev/oop/class/clone.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +248,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +256,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -336,7 +340,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-1"
             aria-expanded="false">
-            객체지향 기초
+            객체지향 프로그래밍
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -353,12 +357,79 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            클래스 및 객체 생성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/class"
                   class="bd-links-link d-inline-block rounded ">
-                  클래스
+                  클래스 개요
                 </a>
               </li>
+              
+              <li>
+                <a href="/oop/class/constructor-promotion"
+                  class="bd-links-link d-inline-block rounded ">
+                  생성자 프로퍼티 프로모션
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/nullsafe"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nullsafe 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/anno"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명 클래스
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            상속
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/extend"
@@ -378,16 +449,16 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
             aria-expanded="false">
-            객체지향 고급
+            인터페이스
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-2">
+          <div class="collapse " id="collapse-4">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -397,12 +468,58 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            추상화
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/abstract"
                   class="bd-links-link d-inline-block rounded ">
                   추상화 (Abstract)
                 </a>
               </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            객체지향 고급
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/trait"
@@ -425,10 +542,93 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            예외처리
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/exception"
                   class="bd-links-link d-inline-block rounded ">
                   예외처리
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            디자인 패턴
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/pattern"
+                  class="bd-links-link d-inline-block rounded ">
+                  디자인 패턴 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            열거형 (Enum)
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/enum"
+                  class="bd-links-link d-inline-block rounded ">
+                  열거형 (Enum)
                 </a>
               </li>
               
@@ -531,6 +731,43 @@ testing clone
 
 <p>복제는 이전 객체에 어떠한 프로퍼티 값이 설정이 되어 있다면 이 설정값까지 모두 복제를 합니다.</p>
 
+<p><br /></p>
+
+<h2 id="clone-with-표현식을-통한-프로퍼티-수정-복제--php-85"><code class="language-plaintext highlighter-rouge">clone with</code> 표현식을 통한 프로퍼티 수정 복제 — [PHP 8.5+]</h2>
+<hr />
+<p>최신 PHP 애플리케이션 개발에서는 상태가 변하지 않는 불변 객체(Immutable Object)나 읽기 전용 클래스(Readonly Class)를 사용하는 디자인 패턴이 널리 쓰입니다. 이러한 객체의 상태를 일부만 변경하고 싶을 때는 기존 객체를 복사(clone)하면서 특정 속성 값만 갱신하는 이른바 <strong>“With-er” 메서드 패턴</strong>을 흔히 구현해야 했습니다.</p>
+
+<p><strong>PHP 8.5부터는 복제와 속성 값 수정을 한 번에 직관적으로 처리할 수 있는 <code class="language-plaintext highlighter-rouge">clone with</code> 표현식이 전격 도입</strong>되었습니다. 복제 구문 뒤에 <code class="language-plaintext highlighter-rouge">with { 프로퍼티: 값 }</code> 형태의 코드 블록을 작성하여 복사와 동시에 특정 프로퍼티 값을 변경할 수 있습니다.</p>
+
+<p>예제:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="k">readonly</span> <span class="kd">class</span> <span class="nc">UserProfile</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+            <span class="k">public</span> <span class="kt">string</span> <span class="nv">$name</span><span class="p">,</span>
+            <span class="k">public</span> <span class="kt">string</span> <span class="nv">$role</span>
+        <span class="p">)</span> <span class="p">{}</span>
+    <span class="p">}</span>
+
+    <span class="nv">$admin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UserProfile</span><span class="p">(</span><span class="n">name</span><span class="o">:</span> <span class="s2">"이순신"</span><span class="p">,</span> <span class="n">role</span><span class="o">:</span> <span class="s2">"Admin"</span><span class="p">);</span>
+
+    <span class="c1">// $admin 객체를 복제하면서, role 프로퍼티만 'Manager'로 안전하게 수정합니다.</span>
+    <span class="c1">// 기존 객체인 $admin의 상태는 훼손되지 않고 보존됩니다.</span>
+    <span class="nv">$manager</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$admin</span> <span class="n">with</span> <span class="p">{</span> <span class="n">role</span><span class="o">:</span> <span class="s2">"Manager"</span> <span class="p">};</span>
+
+    <span class="k">echo</span> <span class="s2">"원본 역할: </span><span class="si">{</span><span class="nv">$admin</span><span class="o">-&gt;</span><span class="n">role</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>    <span class="c1">// 출력: 원본 역할: Admin</span>
+    <span class="k">echo</span> <span class="s2">"복제 역할: </span><span class="si">{</span><span class="nv">$manager</span><span class="o">-&gt;</span><span class="n">role</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>  <span class="c1">// 출력: 복제 역할: Manager</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">clone with</code> 표현식을 사용하면 다음과 같은 장점이 있습니다:</p>
+<ol>
+  <li><strong>불변성(Immutability) 유지</strong>: 원본 객체를 손상시키지 않고 새로운 상태의 객체 사본을 안전하게 생성할 수 있습니다.</li>
+  <li><strong>보일러플레이트 제거</strong>: 개별 프로퍼티를 변경하기 위해 수동으로 여러 개의 <code class="language-plaintext highlighter-rouge">withX()</code> 메서드를 작성하거나 런타임에 리플렉션(Reflection)을 사용할 필요가 없습니다.</li>
+</ol>
+
+<p><br /></p>
+
 
             <!-- 다음/이전 학습 페이지네이션 -->
             
@@ -610,13 +847,48 @@ testing clone
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/oop/exception" class="text-decoration-none fw-semibold">
-        &laquo; 예외처리
+      <a href="/oop/enum" class="text-decoration-none fw-semibold">
+        &laquo; 열거형 (Enum)
       </a>
     
   </div>

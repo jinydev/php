@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="devGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="prodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .column-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; }
+    .text-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #334155; }
+    
+    .panel-dev { fill: url(#devGrad); stroke: #bae6fd; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    .panel-prod { fill: url(#prodGrad); stroke: #a7f3d0; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    
+    .badge-on { fill: #ef4444; rx: 4px; }
+    .badge-off { fill: #10b981; rx: 4px; }
+    .badge-warn { fill: #f59e0b; rx: 4px; }
+    .badge-safe { fill: #06b6d4; rx: 4px; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 800; fill: #ffffff; text-anchor: middle; }
+    
+    .line-divider { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4 4; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="490" class="bg-inner" rx="12" />
+
+  <!-- Header Section -->
+  <text x="35" y="52" class="title">PHP 환경 모드별 php.ini 설정 비교 (Dev vs Prod)</text>
+  <text x="35" y="74" class="subtitle">개발 편의성(디버깅) 중심 설정과 운영 프로덕션의 강력한 보안(취약점 차단) 가이드 비교</text>
+
+  <!-- 1. Development Mode (Left Panel) -->
+  <rect x="40" y="105" width="340" height="375" class="panel-dev" />
+  <rect x="55" y="115" width="310" height="30" rx="6" fill="#0284c7" />
+  <text x="210" y="134" class="column-title" fill="#ffffff">Development Mode (개발 환경)</text>
+  
+  <!-- Dev Options -->
+  <!-- Option 1 -->
+  <rect x="55" y="160" width="310" height="50" rx="6" fill="#ffffff" stroke="#e0f2fe" />
+  <text x="70" y="180" class="heading" fill="#0369a1">display_errors = On</text>
+  <text x="70" y="198" class="text-normal">코딩 도중 즉각 화면에 에러 트레이스 출력 (디버깅)</text>
+  <rect x="300" y="170" width="50" height="18" class="badge-warn" />
+  <text x="325" y="183" class="badge-text">편의성</text>
+
+  <!-- Option 2 -->
+  <rect x="55" y="220" width="310" height="50" rx="6" fill="#ffffff" stroke="#e0f2fe" />
+  <text x="70" y="240" class="heading" fill="#0369a1">expose_php = On</text>
+  <text x="70" y="258" class="text-normal">HTTP 응답 헤더에 PHP 버전 정보 노출</text>
+  <rect x="300" y="230" width="50" height="18" class="badge-warn" />
+  <text x="325" y="243" class="badge-text">노출</text>
+
+  <!-- Option 3 -->
+  <rect x="55" y="280" width="310" height="50" rx="6" fill="#ffffff" stroke="#e0f2fe" />
+  <text x="70" y="300" class="heading" fill="#0369a1">allow_url_include = On / fopen = On</text>
+  <text x="70" y="318" class="text-normal">외부 URL을 통한 파일 인클루드 임시 허용</text>
+  <rect x="300" y="290" width="50" height="18" class="badge-warn" />
+  <text x="325" y="303" class="badge-text">미격리</text>
+
+  <!-- Option 4 -->
+  <rect x="55" y="340" width="310" height="50" rx="6" fill="#ffffff" stroke="#e0f2fe" />
+  <text x="70" y="360" class="heading" fill="#0369a1">disable_functions = &lt;비어있음&gt;</text>
+  <text x="70" y="378" class="text-normal">exec, shell_exec 등 호스트 시스템 제어 허용</text>
+  <rect x="300" y="350" width="50" height="18" class="badge-warn" />
+  <text x="325" y="363" class="badge-text">허용</text>
+
+  <!-- Option 5 -->
+  <rect x="55" y="400" width="310" height="65" rx="6" fill="#ffffff" stroke="#e0f2fe" />
+  <text x="70" y="418" class="heading" fill="#0369a1">session.cookie_secure = Off</text>
+  <text x="70" y="435" class="text-normal">HTTP 개발 환경에서도 세션이 동작하도록 허용</text>
+  <text x="70" y="450" class="text-normal">cookie_httponly = Off</text>
+  
+  <!-- 2. Production Mode (Right Panel) -->
+  <rect x="420" y="105" width="340" height="375" class="panel-prod" />
+  <rect x="435" y="115" width="310" height="30" rx="6" fill="#047857" />
+  <text x="590" y="134" class="column-title" fill="#ffffff">Production Mode (실운영 환경)</text>
+  
+  <!-- Prod Options -->
+  <!-- Option 1 -->
+  <rect x="435" y="160" width="310" height="50" rx="6" fill="#ffffff" stroke="#d1fae5" />
+  <text x="450" y="180" class="heading" fill="#0f766e">display_errors = Off / log_errors = On</text>
+  <text x="450" y="198" class="text-normal">화면 에러 전송 차단, 내부 로그 파일로 은밀히 수집</text>
+  <rect x="680" y="170" width="50" height="18" class="badge-off" />
+  <text x="705" y="183" class="badge-text">보안필수</text>
+
+  <!-- Option 2 -->
+  <rect x="435" y="220" width="310" height="50" rx="6" fill="#ffffff" stroke="#d1fae5" />
+  <text x="450" y="240" class="heading" fill="#0f766e">expose_php = Off</text>
+  <text x="450" y="258" class="text-normal">PHP 헤더 정보를 숨겨 타겟 지향형 해킹 공격 방어</text>
+  <rect x="680" y="230" width="50" height="18" class="badge-off" />
+  <text x="705" y="243" class="badge-text">은닉</text>
+
+  <!-- Option 3 -->
+  <rect x="435" y="280" width="310" height="50" rx="6" fill="#ffffff" stroke="#d1fae5" />
+  <text x="450" y="300" class="heading" fill="#0f766e">allow_url_include = Off (RFI 방어)</text>
+  <text x="450" y="318" class="text-normal">외부 악성 스크립트 강제 인젝션 파일 삽입 차단</text>
+  <rect x="680" y="290" width="50" height="18" class="badge-off" />
+  <text x="705" y="303" class="badge-text">차단</text>
+
+  <!-- Option 4 -->
+  <rect x="435" y="340" width="310" height="50" rx="6" fill="#ffffff" stroke="#d1fae5" />
+  <text x="450" y="360" class="heading" fill="#0f766e">disable_functions = exec,system...</text>
+  <text x="450" y="378" class="text-normal">웹셸 침투 시 시스템 장악 위험 함수 비활성화</text>
+  <rect x="680" y="350" width="50" height="18" class="badge-off" />
+  <text x="705" y="363" class="badge-text">제한</text>
+
+  <!-- Option 5 -->
+  <rect x="435" y="400" width="310" height="65" rx="6" fill="#ffffff" stroke="#d1fae5" />
+  <text x="450" y="418" class="heading" fill="#0f766e">session.cookie_secure = On (HTTPS Only)</text>
+  <text x="450" y="435" class="text-normal">암호화 연결에서만 쿠키 전송, HttpOnly=On 으로</text>
+  <text x="450" y="450" class="text-normal">자바스크립트 세션 쿠키 탈취 차단 (XSS 예방)</text>
+
+  <!-- Divider Line -->
+  <line x1="400" y1="110" x2="400" y2="470" class="line-divider" />
+</svg>

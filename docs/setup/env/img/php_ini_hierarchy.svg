@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="iniGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2" />
+      <stop offset="100%" stop-color="#ffe4e6" />
+    </linearGradient>
+    <linearGradient id="badgeRose" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#ffe4e6" />
+    </linearGradient>
+    <linearGradient id="badgeSlate" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#e11d48" />
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#iniGrad); stroke: #fecdd3; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-rose { fill: url(#badgeRose); stroke: #e11d48; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    .badge-slate { fill: url(#badgeSlate); stroke: #475569; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-rose { stroke: #e11d48; stroke-width: 1.8; fill: none; }
+    .line-slate { stroke: #475569; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP 환경설정(php.ini) 적용 우선순위 계층도</text>
+  <text x="35" y="72" class="subtitle">시스템 기본값부터 개별 소스코드 런타임까지 설정이 누적 및 덮어쓰기(Override) 되는 위계 관계</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#be123c">PHP Environment Configuration Override Hierarchy</text>
+
+  <!-- 1. System Default (Lowest Priority) -->
+  <rect x="60" y="150" width="220" height="50" class="badge-slate" />
+  <text x="170" y="172" class="heading" fill="#0f172a">Level 1. 컴파일 기본값 (Built-in)</text>
+  <text x="170" y="188" class="arrow-text" font-size="9" fill="#475569">소스코드 레벨에 정의된 최초 기본값</text>
+
+  <path d="M 170 200 L 170 240" class="line-slate" marker-end="url(#arrow-slate)" />
+  <text x="210" y="225" class="arrow-text" fill="#64748b">1차 덮어쓰기</text>
+
+  <!-- 2. System php.ini -->
+  <rect x="60" y="240" width="220" height="50" class="badge-slate" />
+  <text x="170" y="262" class="heading" fill="#0f172a">Level 2. 시스템 php.ini 설정</text>
+  <text x="170" y="278" class="arrow-text" font-size="9" fill="#475569">서버 전역 적용 (fpm/php.ini 등)</text>
+
+  <path d="M 170 290 L 170 330" class="line-slate" marker-end="url(#arrow-slate)" />
+  <text x="210" y="315" class="arrow-text" fill="#64748b">2차 덮어쓰기</text>
+
+  <!-- 3. Web Server Directives -->
+  <rect x="60" y="330" width="220" height="60" class="badge-slate" />
+  <text x="170" y="352" class="heading" fill="#0f172a">Level 3. 웹서버 설정 (Host)</text>
+  <text x="170" y="368" class="arrow-text" font-size="8" fill="#475569">Nginx: fastcgi_param PHP_VALUE ...</text>
+  <text x="170" y="378" class="arrow-text" font-size="8" fill="#475569">Apache: php_value / php_admin_value</text>
+
+
+  <!-- Bridge Link (Left column to Right Column) -->
+  <path d="M 280 360 L 320 360 A 10 10 0 0 0 330 350 L 330 190 A 10 10 0 0 1 340 180 L 460 180" class="line-rose" marker-end="url(#arrow-rose)" />
+  <text x="365" y="170" class="arrow-text" fill="#e11d48">3차 덮어쓰기</text>
+
+
+  <!-- 4. Directory Specific Config (.user.ini / .htaccess) -->
+  <rect x="480" y="150" width="220" height="60" class="badge-slate" />
+  <text x="590" y="172" class="heading" fill="#0f172a">Level 4. 디렉터리 설정 (Local)</text>
+  <text x="590" y="188" class="arrow-text" font-size="9" fill="#475569">.user.ini (Nginx/FPM) / .htaccess (Apache)</text>
+  <text x="590" y="198" class="arrow-text" font-size="8" fill="#94a3b8">특정 하위 폴더에만 개별 선언</text>
+
+  <path d="M 590 210 L 590 260" class="line-rose" marker-end="url(#arrow-rose)" />
+  <text x="635" y="240" class="arrow-text" fill="#e11d48">최종 덮어쓰기</text>
+
+  <!-- 5. Code Level ini_set (Highest Priority) -->
+  <rect x="480" y="260" width="220" height="65" class="badge-rose" />
+  <text x="590" y="282" class="heading" fill="#9f1239">Level 5. 코드 레벨 실행 (Runtime)</text>
+  <text x="590" y="298" class="heading" font-size="11" fill="#be123c">ini_set('display_errors', '1');</text>
+  <text x="590" y="312" class="arrow-text" font-size="8" fill="#e11d48">프로그램이 실행될 때 실시간 동적 적용</text>
+
+  <!-- Notice Section -->
+  <rect x="480" y="340" width="220" height="55" fill="#fff5f5" stroke="#fecdd3" rx="6" />
+  <text x="590" y="356" class="heading" font-size="10" fill="#9f1239">⚠️ 주의 (Restriction)</text>
+  <text x="590" y="372" class="arrow-text" font-size="8" fill="#be123c">PHP_INI_SYSTEM 지시어는 Level 4, 5에서</text>
+  <text x="590" y="384" class="arrow-text" font-size="8" fill="#be123c">동적으로 수정할 수 없습니다 (예: memory_limit 불가)</text>
+
+</svg>

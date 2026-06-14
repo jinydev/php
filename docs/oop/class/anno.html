@@ -5,25 +5,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
-  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/oop/class/anno.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>익명 클래스 (Anonymous Classes) - PHP 프로그래밍</title>
+  <meta name="title" content="익명 클래스 (Anonymous Classes) - PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="익명 클래스 (Anonymous Classes) - PHP 프로그래밍"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/oop/class/anno.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/oop/class/anno.html">
+  <link rel="canonical" href="https://php.jiny.dev/oop/class/anno.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="익명 클래스 (Anonymous Classes) - PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="PHP" />
+<meta property="og:title" content="익명 클래스 (Anonymous Classes) - PHP 프로그래밍" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/oop/class/anno.html" />
-<meta property="og:url" content="http://localhost:4000/oop/class/anno.html" />
+<link rel="canonical" href="https://php.jiny.dev/oop/class/anno.html" />
+<meta property="og:url" content="https://php.jiny.dev/oop/class/anno.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PHP" />
+<meta property="twitter:title" content="익명 클래스 (Anonymous Classes) - PHP 프로그래밍" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"http://localhost:4000/oop/class/anno.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"익명 클래스 (Anonymous Classes) - PHP 프로그래밍","url":"https://php.jiny.dev/oop/class/anno.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +248,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +256,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -336,7 +340,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-1"
             aria-expanded="false">
-            객체지향 기초
+            객체지향 프로그래밍
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -353,12 +357,79 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            클래스 및 객체 생성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/class"
                   class="bd-links-link d-inline-block rounded ">
-                  클래스
+                  클래스 개요
                 </a>
               </li>
+              
+              <li>
+                <a href="/oop/class/constructor-promotion"
+                  class="bd-links-link d-inline-block rounded ">
+                  생성자 프로퍼티 프로모션
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/nullsafe"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nullsafe 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/anno"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명 클래스
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            상속
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/extend"
@@ -378,16 +449,16 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
             aria-expanded="false">
-            객체지향 고급
+            인터페이스
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-2">
+          <div class="collapse " id="collapse-4">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -397,12 +468,58 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            추상화
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/abstract"
                   class="bd-links-link d-inline-block rounded ">
                   추상화 (Abstract)
                 </a>
               </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            객체지향 고급
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/trait"
@@ -425,10 +542,93 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            예외처리
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/exception"
                   class="bd-links-link d-inline-block rounded ">
                   예외처리
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            디자인 패턴
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/pattern"
+                  class="bd-links-link d-inline-block rounded ">
+                  디자인 패턴 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            열거형 (Enum)
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/enum"
+                  class="bd-links-link d-inline-block rounded ">
+                  열거형 (Enum)
                 </a>
               </li>
               
@@ -475,7 +675,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">PHP</li>
+        <li class="breadcrumb-item active" aria-current="page">익명 클래스 (Anonymous Classes) - PHP 프로그래밍</li>
         
         
         
@@ -483,75 +683,114 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="익명-클래스">익명 클래스</h1>
+            <h1 id="익명-클래스-anonymous-classes">익명 클래스 (Anonymous Classes)</h1>
 <hr />
-<p>클래스를 선언할 때는 클래스명이 있어야 합니다. 함수에서 도 익명 함수가 있듯이 클래스에서도 클래스명을 생략한 익명 클래스를 사용할 수 있습니다.</p>
+<p>일반적으로 객체지향 프로그래밍에서는 클래스라는 명확한 설계 도면을 미리 정의하고, 이를 기반으로 <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용하여 실시간 메모리에 인스턴스(객체)를 복제하여 사용합니다.</p>
 
-<p>익명 함수 기능은 PHP 7.x으로 업그레이드되면서 새롭게 추가된 기능입니다.</p>
+<p>그러나 프로그램 동작 도중 <strong>“단 한 번만 사용하고 재사용할 계획이 없는 일회성 객체”</strong>를 위해 매번 새로운 물리적 클래스 파일을 만들고 선언하는 것은 리소스 낭비이자 코드 설계의 복잡도를 높이는 원인이 됩니다.</p>
 
-<p>예제 파일 class-11.php</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-    <span class="c1">// 인터페이스를 설정</span>
-    <span class="kd">interface</span> <span class="nc">Logger</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">);</span>
+<p>PHP 7.0부터는 클래스 명칭을 사전에 정의하지 않고 즉석에서 실시간 인스턴스화하여 임시로 사용할 수 있는 <strong>익명 클래스(Anonymous Classes)</strong>를 지원합니다.</p>
+
+<p><br /></p>
+
+<h2 id="1-익명-클래스-선언-문법">1. 익명 클래스 선언 문법</h2>
+<hr />
+<p>익명 클래스는 <code class="language-plaintext highlighter-rouge">new class</code> 구문을 사용하여 즉석에서 필요한 상속 및 인터페이스 구현체 코드를 구성합니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$instance</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">class</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">doSomething</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 일회성 로직 수행...</span>
     <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
-    <span class="kd">class</span> <span class="nc">Application</span>
-    <span class="p">{</span>
-        <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
+<p>익명 클래스는 일반 클래스와 동일하게 생성자(<code class="language-plaintext highlighter-rouge">__construct</code>)를 가질 수 있으며, 매개변수를 넘겨받는 것도 지원합니다.</p>
 
-        <span class="c1">// 반환 타입은 logger입니다.</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="n">getLogger</span><span class="p">():</span> <span class="kt">Logger</span>
-        <span class="p">{</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="p">;</span>
+<p>예제 파일 anonymous-01.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="c1">// 즉석에서 1회성 객체 생성 및 인자 주입</span>
+    <span class="nv">$temporaryUser</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">class</span><span class="p">(</span><span class="s1">'홍길동'</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="nv">$name</span><span class="p">;</span>
+        <span class="k">private</span> <span class="kt">int</span> <span class="nv">$age</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$name</span><span class="p">,</span> <span class="kt">int</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">age</span> <span class="o">=</span> <span class="nv">$age</span><span class="p">;</span>
         <span class="p">}</span>
 
-    	<span class="c1">// 인자값으로 클래스를 입력을 받습니다.</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="n">setLogger</span><span class="p">(</span><span class="kt">Logger</span> <span class="nv">$logger</span><span class="p">)</span>
-        <span class="p">{</span>
-        	<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
-    	<span class="p">}</span>
-    <span class="p">}</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">printInfo</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">"임시 사용자 이름: "</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span> <span class="mf">.</span> <span class="s2">" (나이: "</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">age</span> <span class="mf">.</span> <span class="s2">")&lt;br&gt;"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
 
-    <span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="p">;</span>
-
-    <span class="c1">// 인자값을 익명의 클래스로 만들어서 전달합니다.</span>
-    <span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">setLogger</span><span class="p">(</span>
-        <span class="k">new</span> <span class="kd">class</span> <span class="kd">implements</span> <span class="nc">Logger</span> <span class="p">{</span>
-    		<span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span>
-            <span class="p">{</span>
-        	   <span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span>
-    		<span class="p">}</span>
-	   <span class="p">}</span>
-    <span class="p">);</span>
-
-    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">getLogger</span><span class="p">());</span>
-
+    <span class="nv">$temporaryUser</span><span class="o">-&gt;</span><span class="nf">printInfo</span><span class="p">();</span>
 <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>결과</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object(class@anonymous)#2 (0) { } 
+<p>실행 결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>임시 사용자 이름: 홍길동 (나이: 30)
 </code></pre></div></div>
 
-<p>위의 예제는 php.net에서 php7.x 새로운 익명 함수에 대한 간단한 설명 예제를 발췌했습니다.<br />
-Application이라는 클래스는 한 개의 프로퍼티 변수와 두 개의 메서드 함수를 가지고 있습니다.</p>
+<p><br /></p>
 
-<p>그중 setLogger() 메서드 함수는 매개변수 인자로 Logger 클래스 객체 타입의 변수를 전달받습니다.<br />
-기존의 경우 클래스 객체변수를 전달하기 위해서는 new를 통해서 Logger 클래스를 인스턴스화하여 객체변수를 생성 후에 매개변수로 사용해야 했습니다.</p>
+<h2 id="2-인터페이스-및-상속-결합-implements--extends">2. 인터페이스 및 상속 결합 (implements &amp; extends)</h2>
+<hr />
+<p>익명 클래스의 가장 강력한 면모는 특정 인터페이스(Interface)를 즉석에서 통과시키거나, 기존 부모 클래스를 즉시 확장하여 다형성을 충족해야 하는 경우에 나타냅니다.</p>
 
-<p>매번 일회성의 객체변수를 생성하는 것은 불필요할 수 있습니다. 이런 경우 익명 클래스를 통해 매개변수 입력 부분에 직접 클래스를 선언하여 전달합니다.</p>
+<p><img src="./img/anno_flow.svg" alt="익명 클래스 주입 구조도" /></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="kd">class</span> <span class="kd">implements</span> <span class="nc">Logger</span> <span class="p">{</span>
-    	<span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$msg</span><span class="p">)</span> <span class="p">{</span>
-            	<span class="k">echo</span> <span class="nv">$msg</span><span class="p">;</span>
-    	<span class="p">}</span>
-<span class="p">}</span>
+<p>예제 파일 anonymous-02.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+    <span class="c1">// 공통 로깅 인터페이스 정의</span>
+    <span class="kd">interface</span> <span class="nc">Logger</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$message</span><span class="p">):</span> <span class="kt">void</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">class</span> <span class="nc">Application</span> <span class="p">{</span>
+        <span class="k">private</span> <span class="kt">Logger</span> <span class="nv">$logger</span><span class="p">;</span>
+
+        <span class="c1">// Logger 인터페이스를 구현하는 모든 객체를 주입받는 세터 메서드</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">setLogger</span><span class="p">(</span><span class="kt">Logger</span> <span class="nv">$logger</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nb">log</span><span class="p">(</span><span class="s2">"어플리케이션이 실행되었습니다."</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="p">();</span>
+
+    <span class="c1">// Logger 인터페이스를 별도의 클래스 파일 생성 없이 즉석 구현(implements)하여 </span>
+    <span class="c1">// 일회성 인스턴스 형태로 setLogger() 메서드 매개변수에 주입합니다.</span>
+    <span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">setLogger</span><span class="p">(</span><span class="k">new</span> <span class="kd">class</span> <span class="kd">implements</span> <span class="nc">Logger</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$message</span><span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+            <span class="c1">// 주입된 익명 클래스의 실제 비즈니스 로직 실행</span>
+            <span class="k">echo</span> <span class="s2">"[LOGGING]: "</span> <span class="mf">.</span> <span class="nv">$message</span> <span class="mf">.</span> <span class="s2">" (시간: "</span> <span class="mf">.</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'Y-m-d'</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">")&lt;br&gt;"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nv">$app</span><span class="o">-&gt;</span><span class="nf">run</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
-<p>매개변수로 전달되는 객체변수를 위와 같이 클래스명이 생략된 형태로 객체 선언으로 대체할 수 있습니다.</p>
+<p>실행 결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[LOGGING]: 어플리케이션이 실행되었습니다. (시간: 2026-06-13)
+</code></pre></div></div>
 
+<p><br /></p>
+
+<h2 id="3-실무에서의-활용-분야">3. 실무에서의 활용 분야</h2>
+<hr />
+
+<h3 id="1-단위-테스트-unit-testing의-mocking">1) 단위 테스트 (Unit Testing)의 Mocking</h3>
+<p>테스트 코드를 작성할 때, 특정 외부 API 인터페이스를 테스트 환경에 맞게 대체하는 모의(Mock) 객체를 즉석에서 가짜로 정의하고 동작시킬 수 있어 매우 유용합니다.</p>
+
+<h3 id="2-일회성-이벤트-리스너-및-콜백">2) 일회성 이벤트 리스너 및 콜백</h3>
+<p>특정 이벤트가 발송될 때 한 번 실행되고 소멸할 콜백 리스너 객체를 전달할 때, 코드 응집도를 비약적으로 극대화할 수 있습니다.</p>
+
+<p>익명 클래스는 겉보기에 이름이 없지만, PHP 내부적으로는 고유한 가상의 주소 기반 임시 클래스명을 생성하여 관리하므로 타입 판별(<code class="language-plaintext highlighter-rouge">instanceof</code>) 등 객체지향의 모든 속성을 완전하게 충족합니다.</p>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -608,42 +847,25 @@ Application이라는 클래스는 한 개의 프로퍼티 변수와 두 개의 �
   
 
   
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
+    
+    
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/oop/exception" class="text-decoration-none fw-semibold">
-        &laquo; 예외처리
+      <a href="/oop/class/nullsafe" class="text-decoration-none fw-semibold">
+        &laquo; Nullsafe 연산자
       </a>
     
   </div>
 
   <div class="text-end">
+    
+      <span class="text-muted small me-2">다음 학습</span>
+      <a href="/oop/extend" class="text-decoration-none fw-semibold">
+        상속 (Extend) &raquo;
+      </a>
     
   </div>
 </div>

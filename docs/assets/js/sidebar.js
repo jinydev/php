@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error decoding URL:", e);
     }
 
+    // Remove trailing slash for comparison if needed
+    // currentUrl = currentUrl.replace(/\/$/, ""); 
+
     var navLinks = document.querySelectorAll('.bd-links-nav a.bd-links-link');
 
     navLinks.forEach(function (link) {
@@ -22,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
             linkUrl = decodeURIComponent(linkUrl);
         } catch (e) { }
 
+        // Logic:
+        // 1. Exact match
+        // 2. Current URL starts with link URL (parent directory case)
+        // Note: Avoid matching root '/' or '#' loosely
+
         var isMatch = false;
 
         if (currentUrl === linkUrl) {
@@ -31,12 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (isMatch) {
+            // Mark the link itself as active
             link.classList.add('active');
 
+            // Find parent collapse div
             var collapseDiv = link.closest('.collapse');
             if (collapseDiv) {
+                // Expand the dropdown
                 collapseDiv.classList.add('show');
 
+                // Update the toggle button state
                 var collapseId = collapseDiv.id;
                 var toggler = document.querySelector('button[data-bs-target="#' + collapseId + '"]');
                 if (toggler) {
@@ -44,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     toggler.setAttribute('aria-expanded', 'true');
                 }
 
+                // If there are nested dropdowns (grandparents), expand them too
                 var parentCollapse = collapseDiv.parentElement.closest('.collapse');
                 if (parentCollapse) {
                     parentCollapse.classList.add('show');

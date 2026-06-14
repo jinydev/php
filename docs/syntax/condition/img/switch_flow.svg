@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    
+    .box-input { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-cond { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 8px; }
+    .box-case { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 8px; }
+    .box-default { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 8px; }
+    .box-action { fill: #faf5ff; stroke: #a855f7; stroke-width: 2; rx: 8px; }
+    
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="40" y="45" class="title">1. if-else 조건 분기 (2방향 구조)</text>
+  <text x="440" y="45" class="title">2. switch 멀티 분기 (다방향 구조)</text>
+
+  <!-- IF-ELSE FLOW -->
+  <rect x="130" y="80" width="100" height="40" class="box-input" />
+  <text x="180" y="105" class="label">입력값 ($n)</text>
+  
+  <path d="M 180 120 L 180 155" class="line-active" marker-end="url(#arrow-blue)" />
+
+  <rect x="110" y="160" width="140" height="50" class="box-cond" />
+  <text x="180" y="190" class="label">$n == 'label1' ?</text>
+
+  <path d="M 110 185 L 60 185 L 60 245" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="80" y="175" class="arrow-text" fill="#10b981">YES</text>
+
+  <rect x="10" y="250" width="100" height="40" class="box-action" />
+  <text x="60" y="275" class="label">Action 1</text>
+
+  <path d="M 250 185 L 300 185 L 300 245" class="line" marker-end="url(#arrow)" />
+  <text x="280" y="175" class="arrow-text">NO</text>
+
+  <rect x="250" y="250" width="100" height="40" class="box-default" />
+  <text x="300" y="275" class="label">Action 2</text>
+
+  <path d="M 60 290 L 60 340 L 170 340" class="line" />
+  <path d="M 300 290 L 300 340 L 190 340" class="line" marker-end="url(#arrow)" />
+  
+  <circle cx="180" cy="340" r="5" fill="#94a3b8" />
+  <path d="M 180 345 L 180 375" class="line" marker-end="url(#arrow)" />
+  
+  <rect x="130" y="380" width="100" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="6" />
+  <text x="180" y="400" class="label" font-size="12">종료</text>
+
+  <!-- SWITCH FLOW -->
+  <rect x="550" y="80" width="100" height="40" class="box-input" />
+  <text x="600" y="105" class="label">입력값 ($n)</text>
+  
+  <path d="M 600 120 L 600 155" class="line-active" marker-end="url(#arrow-blue)" />
+  
+  <rect x="520" y="160" width="160" height="50" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8" />
+  <text x="600" y="190" class="label" fill="#0369a1">switch ($n)</text>
+
+  <path d="M 520 185 L 440 185 L 440 245" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="470" y="175" class="arrow-text" fill="#10b981">== 'label1'</text>
+
+  <rect x="390" y="250" width="100" height="40" class="box-action" />
+  <text x="440" y="275" class="label">Action 1</text>
+
+  <path d="M 600 210 L 600 245" class="line" marker-end="url(#arrow)" />
+  <text x="635" y="230" class="arrow-text">== 'label2'</text>
+
+  <rect x="550" y="250" width="100" height="40" class="box-action" />
+  <text x="600" y="275" class="label">Action 2</text>
+
+  <path d="M 680 185 L 750 185 L 750 245" class="line" marker-end="url(#arrow)" />
+  <text x="720" y="175" class="arrow-text">일치 없음</text>
+
+  <rect x="700" y="250" width="100" height="40" class="box-default" />
+  <text x="750" y="275" class="label">Default Action</text>
+
+  <path d="M 440 290 L 440 340 L 590 340" class="line" />
+  <path d="M 600 290 L 600 340" class="line" />
+  <path d="M 750 290 L 750 340 L 610 340" class="line" marker-end="url(#arrow)" />
+
+  <circle cx="600" cy="340" r="5" fill="#94a3b8" />
+  <path d="M 600 345 L 600 375" class="line" marker-end="url(#arrow)" />
+  
+  <rect x="550" y="380" width="100" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="6" />
+  <text x="600" y="400" class="label" font-size="12">종료</text>
+</svg>

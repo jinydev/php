@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <linearGradient id="opcacheMemoryGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="slowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#fde68a" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; text-anchor: middle; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#mainGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 16px; }
+    .box-memory { fill: url(#opcacheMemoryGrad); stroke: #34d399; stroke-width: 2; rx: 16px; }
+    
+    .badge { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-decision { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 8px; filter: url(#shadow); }
+    .badge-blue { fill: url(#blueGrad); stroke: #3b82f6; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+    .badge-amber { fill: url(#slowGrad); stroke: #f59e0b; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+    .badge-green { fill: #ffffff; stroke: #10b981; stroke-width: 2; rx: 8px; filter: url(#shadow); }
+
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+    .line-green { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-amber { stroke: #f59e0b; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">Zend OpCache 작동 매커니즘 및 속도 개선 흐름도</text>
+  <text x="35" y="72" class="subtitle">최초 1회 번역된 Opcodes(바이트코드)를 가상 공유 메모리에 상주시켜 Disk I/O 및 컴파일 오버헤드를 배제</text>
+
+  <!-- Left: Slow Compilation Pipeline (Center X = 220) -->
+  <rect x="40" y="100" width="340" height="290" class="box-container" />
+  <text x="210" y="125" class="heading" fill="#475569">컴파일러 파이프라인 (캐시 미스 / 캐시 비활성)</text>
+
+  <!-- 1. Disk I/O -->
+  <rect x="110" y="145" width="200" height="40" class="badge-amber" />
+  <text x="210" y="169" class="heading" fill="#92400e" font-size="12">1. Disk I/O: PHP 소스 로드</text>
+
+  <path d="M 210 185 L 210 215" class="line-amber" marker-end="url(#arrow-amber)" />
+
+  <!-- 2. Scanning & Parsing -->
+  <rect x="110" y="220" width="200" height="40" class="badge" />
+  <text x="210" y="244" class="heading" fill="#475569" font-size="12">2. 어휘 &amp; 구문 분석 (AST)</text>
+
+  <path d="M 210 260 L 210 290" class="line-amber" marker-end="url(#arrow-amber)" />
+
+  <!-- 3. Opcode Compilation -->
+  <rect x="110" y="295" width="200" height="40" class="badge" />
+  <text x="210" y="319" class="heading" fill="#475569" font-size="12">3. 오피코드(Opcode) 번역</text>
+
+  <!-- Save to Memory Arrow -->
+  <path d="M 310 315 L 420 315" class="line-amber" stroke-dasharray="3 3" marker-end="url(#arrow-amber)" />
+  <text x="365" y="305" class="arrow-text" fill="#d97706">메모리에 복사</text>
+
+
+  <!-- Right: Shared Memory and execution (Center X = 580) -->
+  <rect x="420" y="100" width="340" height="290" class="box-memory" />
+  <text x="590" y="125" class="heading" fill="#065f46">Zend OpCache 공유 메모리 (캐시 활성화)</text>
+
+  <!-- Shared Memory Cache space -->
+  <rect x="490" y="145" width="200" height="115" class="badge-green" />
+  <text x="590" y="175" class="heading" fill="#047857" font-size="13">Opcodes 가상 메모리 풀</text>
+  <rect x="505" y="195" width="170" height="25" fill="#f0fdf4" rx="4" stroke="#a7f3d0" />
+  <text x="590" y="212" class="badge-text" fill="#065f46">Cached Opcodes [FileA.php]</text>
+  <rect x="505" y="225" width="170" height="25" fill="#f0fdf4" rx="4" stroke="#a7f3d0" />
+  <text x="590" y="242" class="badge-text" fill="#065f46">Cached Opcodes [FileB.php]</text>
+
+  <path d="M 590 260 L 590 290" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="645" y="280" class="arrow-text" fill="#047857">컴파일 과정 생략</text>
+
+  <!-- VM Executor -->
+  <rect x="490" y="295" width="200" height="40" class="badge-blue" />
+  <text x="590" y="319" class="heading" fill="#1e40af" font-size="12">Zend VM 실행기 (Executor)</text>
+
+
+  <!-- Web Request entry & decision -->
+  <!-- Web Request -->
+  <rect x="300" y="405" width="200" height="35" class="badge" />
+  <text x="400" y="427" class="heading" fill="#1e293b" font-size="12">웹 요청 수신 (Nginx/Apache ➡️ FPM)</text>
+
+  <!-- Connect request to Decision & VM execution -->
+  <path d="M 300 422 L 80 422 L 80 165 L 110 165" class="line-gray" marker-end="url(#arrow-gray)" />
+  <text x="65" y="380" class="arrow-text" transform="rotate(-90 65 380)">캐시 없음 (Disk 로드)</text>
+
+  <path d="M 500 422 L 720 422 L 720 202 L 690 202" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="735" y="380" class="arrow-text" fill="#047857" transform="rotate(90 735 380)">캐시 존재 (고속 실행)</text>
+
+  <path d="M 590 335 L 590 395 L 435 395" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="545" y="388" class="arrow-text" fill="#047857">결과 반환</text>
+
+</svg>

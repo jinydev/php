@@ -1,0 +1,31 @@
+main:
+- title: 웹 개발 기초
+  url: /web
+  subitems:
+  - title: 웹 개발 개요
+    url: /web
+  - title: 웹 개발이란
+    url: /web/about.html
+  - title: HTTP의 이해
+    url: /web/http.html
+- title: 웹 상태 관리
+  url: /web/cookie-session.html
+  subitems:
+  - title: 쿠키와 세션
+    url: /web/cookie-session.html
+- title: 화면 구현 및 구조
+  url: /web/template/
+  subitems:
+  - title: 템플릿 및 MVC
+    url: /web/template/
+- title: 데이터베이스 연동
+  url: /web/pdo.html
+  subitems:
+  - title: PDO 데이터베이스 연동
+    url: /web/pdo.html
+- title: 실무 프로젝트 실습
+  url: /web/board/
+  subitems:
+  - title: 게시판 만들기
+    url: /web/board/
+

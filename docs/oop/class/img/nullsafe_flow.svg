@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    
+    .box-input { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-cond { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 8px; }
+    .box-action { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 8px; }
+    .box-null { fill: #fef2f2; stroke: #ef4444; stroke-width: 2; rx: 8px; }
+    
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-error { stroke: #ef4444; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="700" height="340" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="30" y="45" class="title">Nullsafe 연산자 ($session?-&gt;user?-&gt;getCountry()) 작동 흐름도</text>
+
+  <!-- Node 1: session -->
+  <rect x="40" y="80" width="140" height="40" class="box-input" />
+  <text x="110" y="105" class="label">객체 ($session)</text>
+  
+  <path d="M 110 120 L 110 155" class="line-active" marker-end="url(#arrow-blue)" />
+
+  <rect x="30" y="160" width="160" height="50" class="box-cond" />
+  <text x="110" y="190" class="label">$session === null ?</text>
+
+  <!-- Node 1 -> Null (YES) -->
+  <path d="M 110 210 L 110 290" class="line-error" marker-end="url(#arrow-red)" />
+  <text x="135" y="240" class="arrow-text" fill="#ef4444">YES (참)</text>
+
+  <!-- Node 1 -> Node 2 (NO) -->
+  <path d="M 190 185 L 290 185" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="240" y="170" class="arrow-text" fill="#10b981">NO</text>
+
+  <!-- Node 2: user -->
+  <rect x="300" y="160" width="160" height="50" class="box-input" style="fill: #faf5ff; stroke: #a855f7;" />
+  <text x="380" y="190" class="label" fill="#701a75">$user 객체 획득</text>
+
+  <path d="M 380 210 L 380 235" class="line-active" marker-end="url(#arrow-blue)" />
+
+  <rect x="300" y="240" width="160" height="50" class="box-cond" />
+  <text x="380" y="270" class="label"> $user === null ?</text>
+
+  <!-- Node 2 -> Null (YES) -->
+  <path d="M 300 265 L 230 265 L 230 310 L 190 310" class="line-error" marker-end="url(#arrow-red)" />
+  <text x="250" y="250" class="arrow-text" fill="#ef4444">YES (참)</text>
+
+  <!-- Node 2 -> Output (NO) -->
+  <path d="M 460 265 L 530 265" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="495" y="250" class="arrow-text" fill="#10b981">NO</text>
+
+  <!-- Node 3: getCountry() -->
+  <rect x="540" y="240" width="140" height="50" class="box-action" />
+  <text x="610" y="265" class="label" fill="#16803d">getCountry() 실행</text>
+
+  <!-- Null Terminal -->
+  <rect x="30" y="295" width="150" height="30" class="box-null" />
+  <text x="105" y="315" class="label" fill="#b91c1c" font-weight="700">null 즉시 반환 (종료)</text>
+</svg>

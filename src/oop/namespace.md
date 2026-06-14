@@ -1,13 +1,14 @@
 ---
 layout: php
-title: "PHP"
-keyword: "jinyphp, php"
+title: "네임스페이스 (Namespace)"
+keyword: "php namespace, use, alias, psr-4 autoloading, vendor path"
+description: "클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다."
 breadcrumb:
-- "oop"
-- "namespace"
+- oop
+- namespace
 ---
 
-# 네임스페이스
+# 네임스페이스 (Namespace)
 ---
 네임스페이스는 같은 유형의 클래스들을 그룹으로 묶어 관리할 수 있는 가상의 폴더와 같습니다. 다른 고급 언어에서는 네임스페이스 기능을 도입하여 클래스 패키지 방법을 제공했지만 PHP는 약간 늦게 지원된 감이 있습니다. 네임스페이스 기능은 PHP의 다양한 오픈소스 프로젝트를 통해 인기를 얻고 있는 기능입니다. 또한 PHP 패키지들을 만들 때 매우 중요하게 사용되는 개념이기도 합니다.
 
@@ -17,6 +18,12 @@ breadcrumb:
 
 ### 15.6.1 네임스페이스의 개념
 ---
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/namespace-structure.svg" alt="PHP Namespace and PSR-4 Autoloading Map" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 가상 논리 구조(Namespace)와 물리 디스크 상의 파일 경로 간 PSR-4 표준 매핑 관계</p>
+</div>
+
 PHP를 포함한 프로그램 언어는 동일한 이름의 클래스명의 중복을 허용하지 않습니다. 즉, 실행 스크립트 안에 클래스명은 유일한 한 개의 이름만 사용 가능합니다. 중복해서 사용할 수 없습니다.
 
 개발자에게 이름을 정의하는 것이란 쉽지 않습니다. 각각의 의미를 부여함과 동시에 실행 스크립트 안에서 동일한 이름이 중복되지 않아야 합니다. 이러한 이름의 규칙은 개발자 한 명일 때는 큰 영향이 없습니다. 만일 다수의 개발자들이 공동으로 대형 프로젝트를 제작할 때 클래스의 이름은 중복될 여지가 있습니다. 하지만 여러 개발자들이 함께 협업하여 만들거나, 공개된 소스들과 결합하기 위해서는 클래스 이름의 중복 문제가 자주 발생하곤 했습니다.

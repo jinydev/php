@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <style>
+    .bg { fill: #f8fafc; }
+    .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #334155; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #0f172a; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #1e293b; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    
+    .box-container { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+    .box-anon { fill: #fdf4ff; stroke: #d946ef; stroke-width: 2; rx: 8px; }
+    .box-var { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    
+    .line-flow { stroke: #d946ef; stroke-width: 2; fill: none; }
+    .line-flow-blue { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    .line-seq { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow-magenta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#d946ef" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg" rx="16" />
+  <rect x="10" y="10" width="780" height="460" class="card" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">익명 함수의 변수 바인딩 및 콜백 흐름 (Anonymous Function Binding &amp; Callback)</text>
+
+  <!-- Left Side: Variable Binding -->
+  <rect x="40" y="80" width="340" height="360" class="box-container" />
+  <text x="210" y="110" class="subtitle" fill="#2563eb" text-anchor="middle">1. 변수 바인딩 (Variable Binding)</text>
+  <text x="210" y="130" class="label" fill="#475569" text-anchor="middle">익명 함수 정의를 변수에 대입하여 참조</text>
+
+  <!-- Code Block (Left) -->
+  <rect x="60" y="160" width="300" height="110" class="box-anon" />
+  <text x="75" y="185" class="code" fill="#701a75">$meeting = function($name) {</text>
+  <text x="95" y="210" class="code" fill="#a21caf">printf("Hello %s", $name);</text>
+  <text x="75" y="235" class="code" fill="#701a75">};</text>
+  <text x="75" y="255" class="label" fill="#a21caf" font-size="10">◀ 함수명 생략 (익명 / 람다)</text>
+
+  <!-- Execution block (Left) -->
+  <rect x="60" y="310" width="300" height="90" class="box-var" />
+  <text x="75" y="335" class="code" fill="#1e40af">$meeting('jiny');</text>
+  <text x="75" y="360" class="label" fill="#1d4ed8">◀ 가변 함수처럼 변수명으로 직접 실행</text>
+  <text x="75" y="380" class="label" fill="#475569">결과: "Hello jiny" 출력</text>
+
+  <!-- Arrow between definition and call -->
+  <path d="M 210 270 L 210 300" class="line-flow-blue" marker-end="url(#arrow-blue)" />
+
+
+  <!-- Right Side: Higher-Order Function Callback -->
+  <rect x="420" y="80" width="340" height="360" class="box-container" />
+  <text x="590" y="110" class="subtitle" fill="#c026d3" text-anchor="middle">2. 콜백 함수 주입 (Inline Callback)</text>
+  <text x="590" y="130" class="label" fill="#475569" text-anchor="middle">다른 함수의 인자로 익명 함수 전달</text>
+
+  <!-- Code Block (Right) -->
+  <rect x="440" y="160" width="300" height="160" fill="#fcf6ff" stroke="#d946ef" stroke-width="1.5" rx="6" />
+  <text x="455" y="185" class="code" fill="#1e293b">preg_replace_callback(</text>
+  <text x="475" y="205" class="code" fill="#0f172a">'|&lt;p&gt;\s*\w|',</text>
+  
+  <!-- Highlighted Callback Slot -->
+  <rect x="475" y="215" width="250" height="65" fill="#fae8ff" stroke="#d946ef" stroke-width="1" rx="4" />
+  <text x="485" y="235" class="code" fill="#a21caf">function ($matches) {</text>
+  <text x="505" y="250" class="code" fill="#a21caf">return strtolower(...);</text>
+  <text x="485" y="268" class="code" fill="#a21caf">},</text>
+  
+  <text x="475" y="300" class="code" fill="#0f172a">$line</text>
+  <text x="455" y="313" class="code" fill="#1e293b">);</text>
+
+  <!-- Step illustration (Right) -->
+  <rect x="440" y="335" width="300" height="85" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+  <text x="590" y="355" class="label-bold" fill="#701a75" text-anchor="middle">매칭 발생 시마다 콜백 실행</text>
+  <text x="590" y="375" class="label" fill="#475569" text-anchor="middle">외부 함수가 내부 익명 함수를 호출하여</text>
+  <text x="590" y="392" class="label" fill="#475569" text-anchor="middle">결과 값을 동적으로 치환 및 반환</text>
+
+  <!-- Connection line -->
+  <path d="M 360 215 C 400 215, 400 245, 470 245" class="line-flow" marker-end="url(#arrow-magenta)" stroke-dasharray="3 3" />
+</svg>

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="linuxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff8f1" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+    <linearGradient id="badgeWeb" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+    <linearGradient id="badgeFpm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#eff6ff" />
+    </linearGradient>
+    <linearGradient id="badgeClient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#linuxGrad); stroke: #fed7aa; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-client { fill: url(#badgeClient); stroke: #94a3b8; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-web { fill: url(#badgeWeb); stroke: #16a34a; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-fpm { fill: url(#badgeFpm); stroke: #2563eb; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-green { stroke: #16a34a; stroke-width: 1.5; fill: none; }
+    .line-blue { stroke: #2563eb; stroke-width: 1.5; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">Linux 환경의 Web Server와 PHP-FPM 연동 아키텍처</text>
+  <text x="35" y="72" class="subtitle">클라이언트 요청을 정적/동적으로 나누어 FastCGI(유닉스 소켓/TCP) 프로토콜을 통해 PHP-FPM으로 전달하는 구조</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#c2410c">Linux Production Environment (Nginx/Apache &amp; PHP-FPM Integration)</text>
+
+  <!-- 1. Client Browser -->
+  <rect x="60" y="170" width="130" height="60" class="badge-client" />
+  <text x="125" y="195" class="heading" fill="#0f172a">클라이언트 브라우저</text>
+  <text x="125" y="212" class="arrow-text" font-size="9" fill="#475569">HTTP Request</text>
+
+  <!-- Arrow Client -> Web Server -->
+  <path d="M 190 200 L 250 200" class="line-gray" marker-end="url(#arrow-gray)" />
+
+  <!-- 2. Web Server (Nginx / Apache) -->
+  <rect x="250" y="150" width="160" height="180" class="badge-web" />
+  <text x="330" y="175" class="heading" fill="#14532d">웹 서버 (Nginx / Apache)</text>
+  
+  <rect x="265" y="195" width="130" height="45" fill="#f0fdf4" stroke="#86efac" rx="6" />
+  <text x="330" y="213" class="heading" font-size="10" fill="#166534">정적 컨텐츠 (HTML, PNG)</text>
+  <text x="330" y="226" class="arrow-text" font-size="8" fill="#15803d">웹서버가 직접 전송 (매우 빠름)</text>
+
+  <rect x="265" y="265" width="130" height="45" fill="#fffbeb" stroke="#fef08a" rx="6" />
+  <text x="330" y="283" class="heading" font-size="10" fill="#854d0e">동적 컨텐츠 (.php)</text>
+  <text x="330" y="296" class="arrow-text" font-size="8" fill="#a16207">FastCGI 프로토콜 라우팅</text>
+
+  <!-- Static Return to Client -->
+  <path d="M 265 210 L 190 210" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="225" y="200" class="arrow-text" fill="#16a34a">정적 응답</text>
+
+  <!-- Route Dynamic Request -->
+  <path d="M 395 288 L 470 288" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="435" y="278" class="arrow-text" fill="#2563eb">FastCGI</text>
+
+  <!-- 3. FastCGI Connection Option -->
+  <rect x="470" y="240" width="120" height="90" class="badge-fpm" />
+  <text x="530" y="260" class="heading" fill="#1e3a8a">연동 프로토콜</text>
+  <text x="530" y="280" class="arrow-text" font-size="9" fill="#1d4ed8">1. UNIX Socket</text>
+  <text x="530" y="292" class="arrow-text" font-size="8" fill="#3b82f6">(unix:/run/php/php.sock)</text>
+  <text x="530" y="305" class="arrow-text" font-size="9" fill="#1d4ed8">2. TCP Port</text>
+  <text x="530" y="317" class="arrow-text" font-size="8" fill="#3b82f6">(127.0.0.1:9000)</text>
+
+  <!-- Connection to PHP-FPM Master -->
+  <path d="M 590 288 L 620 288" class="line-blue" marker-end="url(#arrow-blue)" />
+
+  <!-- 4. PHP-FPM Engine -->
+  <rect x="620" y="150" width="120" height="180" class="badge-fpm" />
+  <text x="680" y="175" class="heading" fill="#1e3a8a">PHP-FPM</text>
+
+  <rect x="630" y="190" width="100" height="40" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+  <text x="680" y="206" class="heading" font-size="10" fill="#1d4ed8">Master Process</text>
+  <text x="680" y="220" class="arrow-text" font-size="8" fill="#1e40af">프로세스 관리 및 제어</text>
+
+  <rect x="630" y="245" width="100" height="70" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+  <text x="680" y="262" class="heading" font-size="10" fill="#1d4ed8">Worker Pool</text>
+  <text x="680" y="278" class="arrow-text" font-size="8" fill="#1e40af">Worker 1 (php-cgi)</text>
+  <text x="680" y="290" class="arrow-text" font-size="8" fill="#1e40af">Worker 2 (php-cgi)</text>
+  <text x="680" y="302" class="arrow-text" font-size="8" fill="#1e40af">Worker 3 (php-cgi)</text>
+
+  <!-- Process execution & HTML Return path -->
+  <path d="M 620 185 A 15 15 0 0 0 605 185 L 605 210 A 10 10 0 0 1 595 220 L 410 220" class="line-green" stroke-dasharray="3 3" marker-end="url(#arrow-green)" />
+  <text x="500" y="215" class="arrow-text" fill="#16a34a">동적 처리결과 반환 (HTML)</text>
+
+</svg>

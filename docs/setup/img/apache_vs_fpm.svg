@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="modPhpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef2f2" />
+      <stop offset="100%" stop-color="#fee2e2" />
+    </linearGradient>
+    <linearGradient id="fpmGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#dcfce7" />
+    </linearGradient>
+    <linearGradient id="badgeRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fecaca" />
+    </linearGradient>
+    <linearGradient id="badgeGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#bbf7d0" />
+    </linearGradient>
+    <linearGradient id="badgeBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#bfdbfe" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-red { fill: url(#modPhpGrad); stroke: #fca5a5; stroke-width: 1.5; rx: 16px; }
+    .box-green { fill: url(#fpmGrad); stroke: #86efac; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-red { fill: url(#badgeRed); stroke: #ef4444; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-green { fill: url(#badgeGreen); stroke: #22c55e; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-blue { fill: url(#badgeBlue); stroke: #3b82f6; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-red { stroke: #dc2626; stroke-width: 1.5; fill: none; }
+    .line-green { stroke: #16a34a; stroke-width: 1.5; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP 연동 방식 진화: mod_php (내장형) vs PHP-FPM (독립형)</text>
+  <text x="35" y="72" class="subtitle">구식 프로세스 내장 방식과 현대적인 프로세스 분리 격리 가동 방식의 자원 효율 비교</text>
+
+  <!-- Left Side: Apache + mod_php (Old) -->
+  <rect x="40" y="100" width="340" height="330" class="box-red" />
+  <text x="210" y="130" class="section-title" fill="#991b1b">과거: 내장형 모듈 방식 (mod_php)</text>
+
+  <rect x="60" y="160" width="300" height="90" class="badge-red" />
+  <text x="210" y="180" class="heading" fill="#7f1d1d">Apache Process (HTTPD)</text>
+  <text x="210" y="198" class="arrow-text" font-size="9" fill="#991b1b">아파치 프로세스 내부에 PHP 번역기 탑재</text>
+  <!-- Nested inner module box -->
+  <rect x="80" y="210" width="260" height="30" rx="4" fill="#fee2e2" stroke="#f87171" />
+  <text x="210" y="229" class="heading" font-size="11" fill="#dc2626">Embedded PHP Interpreter (mod_php.so)</text>
+
+  <!-- Down Arrow -->
+  <path d="M 210 250 L 210 290" class="line-red" marker-end="url(#arrow-red)" />
+  <text x="250" y="275" class="arrow-text" fill="#b91c1c">비효율성 발생</text>
+
+  <!-- Description of Issue -->
+  <rect x="60" y="295" width="300" height="110" class="badge-red" />
+  <text x="210" y="318" class="heading" fill="#7f1d1d">자원 낭비 및 동시성 저하</text>
+  <text x="210" y="338" class="arrow-text" font-size="9" fill="#4b5563">1. 정적 파일(이미지/CSS) 요청 시에도 무거운</text>
+  <text x="210" y="352" class="arrow-text" font-size="9" fill="#4b5563">   PHP 엔진 메모리가 통째로 중복 복사 적재됨.</text>
+  <text x="210" y="368" class="arrow-text" font-size="9" fill="#4b5563">2. 트래픽 폭증 시 메모리 고갈로 서버 전체 다운.</text>
+  <text x="210" y="384" class="arrow-text" font-size="9" fill="#b91c1c">3. Apache MPM Worker/Event 성능 최적화 불가.</text>
+
+
+  <!-- Right Side: Nginx/Apache + PHP-FPM (Modern) -->
+  <rect x="420" y="100" width="340" height="330" class="box-green" />
+  <text x="590" y="130" class="section-title" fill="#166534">현대: 프로세스 격리 연동 (PHP-FPM)</text>
+
+  <!-- Web Server (Lightweight) -->
+  <rect x="440" y="150" width="300" height="65" class="badge-green" />
+  <text x="590" y="172" class="heading" fill="#14532d">Web Server (Nginx / Apache Event)</text>
+  <text x="590" y="190" class="arrow-text" font-size="9" fill="#16a34a">정적 파일 직접 초고속 처리 (PHP 엔진 개입 없음)</text>
+
+  <!-- Unix Socket Bridge -->
+  <path d="M 590 215 L 590 255" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="650" y="240" class="arrow-text" fill="#15803d">FastCGI Socket / Port</text>
+
+  <!-- PHP-FPM Process Pool -->
+  <rect x="440" y="260" width="300" height="145" class="badge-blue" />
+  <text x="590" y="280" class="heading" fill="#1e3a8a">PHP-FPM (독립된 데몬 프로세스)</text>
+  <text x="590" y="295" class="arrow-text" font-size="8" fill="#2563eb">오직 .php 동적 해석 요청만 소켓으로 수신 처리</text>
+
+  <!-- FPM Master and workers -->
+  <rect x="455" y="310" width="120" height="35" rx="5" fill="#eff6ff" stroke="#93c5fd" />
+  <text x="515" y="331" class="heading" font-size="10" fill="#1d4ed8">FPM Master</text>
+
+  <rect x="585" y="310" width="140" height="80" rx="5" fill="#eff6ff" stroke="#93c5fd" />
+  <text x="655" y="330" class="heading" font-size="10" fill="#1d4ed8">FPM Worker Pool</text>
+  <text x="655" y="348" class="arrow-text" font-size="8" fill="#1e40af">Worker 1 (php-cgi)</text>
+  <text x="655" y="360" class="arrow-text" font-size="8" fill="#1e40af">Worker 2 (php-cgi)</text>
+  <text x="655" y="372" class="arrow-text" font-size="8" fill="#1e40af">Worker 3 (php-cgi)</text>
+
+  <path d="M 515 345 L 515 370 A 5 5 0 0 0 520 375 L 585 375" class="line-blue" stroke-dasharray="2 2" />
+
+</svg>

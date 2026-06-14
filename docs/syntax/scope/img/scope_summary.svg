@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #475569; }
+    .subtitle-center { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #475569; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .code-center { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    
+    .box-global { fill: #f0f7ff; stroke: #3b82f6; stroke-width: 2; rx: 12px; }
+    .box-local { fill: #fdf4ff; stroke: #a855f7; stroke-width: 2; rx: 12px; }
+    .box-var { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 6px; }
+    .box-var-static { fill: #fef3c7; stroke: #f59e0b; stroke-width: 1.5; rx: 6px; }
+    
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-blocked { stroke: #ef4444; stroke-width: 2; stroke-dasharray: 4 4; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">변수 유효 범위 (Variable Scope) 구조</text>
+
+  <!-- Left: Global Space (Center X = 195) -->
+  <rect x="35" y="80" width="320" height="320" class="box-global" />
+  <text x="195" y="110" class="subtitle-center" fill="#1d4ed8">글로벌 영역 (Global Space)</text>
+  <text x="195" y="130" class="arrow-text" fill="#2563eb">스크립트 전체에서 기본 접근 가능한 공간</text>
+
+  <!-- Global Variable Box -->
+  <rect x="60" y="160" width="270" height="60" class="box-var" />
+  <text x="195" y="185" class="code-center" fill="#1e293b">$global_val = 100;</text>
+  <text x="195" y="205" class="arrow-text" fill="#64748b">(글로벌 변수)</text>
+
+  <!-- Superglobals Box -->
+  <rect x="60" y="255" width="270" height="125" class="box-var" stroke="#3b82f6" stroke-dasharray="3 3" />
+  <text x="195" y="280" class="subtitle-center" font-size="12" fill="#1d4ed8">슈퍼 전역 변수 (Superglobals)</text>
+  <text x="195" y="305" class="code-center" fill="#0f172a">$GLOBALS['global_val']</text>
+  <text x="195" y="330" class="code-center" fill="#475569">$_GET, $_POST, $_SERVER 등</text>
+  <text x="195" y="355" class="arrow-text" fill="#64748b">(어디서나 제약 없이 즉시 접근 가능)</text>
+
+
+  <!-- Right: Local Space (Function) (Center X = 605) -->
+  <rect x="445" y="80" width="320" height="320" class="box-local" />
+  <text x="605" y="110" class="subtitle-center" fill="#7e22ce">지역 영역 (Local Space) - test() 내부</text>
+  <text x="605" y="130" class="arrow-text" fill="#7e22ce">함수가 실행될 때 할당되고 종료 시 소멸</text>
+
+  <!-- Local Variable Box -->
+  <rect x="470" y="160" width="270" height="60" class="box-var" />
+  <text x="605" y="185" class="code-center" fill="#1e293b">$local_val = 20;</text>
+  <text x="605" y="205" class="arrow-text" fill="#64748b">(지역 변수)</text>
+
+  <!-- Static Variable Box -->
+  <rect x="470" y="235" width="270" height="60" class="box-var-static" />
+  <text x="605" y="260" class="code-center" fill="#b45309">static $static_val = 0;</text>
+  <text x="605" y="280" class="arrow-text" fill="#b45309">(정적 변수 - 값 보존)</text>
+
+  <!-- Global Keyword Box -->
+  <rect x="470" y="310" width="270" height="70" class="box-var" stroke="#10b981" />
+  <text x="605" y="335" class="code-center" fill="#047857">global $global_val;</text>
+  <text x="605" y="360" class="code-center" fill="#0f172a">echo $global_val; // 100</text>
+
+
+  <!-- Connections and boundaries -->
+  <!-- Blocked direct access from Local to Global -->
+  <path d="M 470 180 L 340 180" class="line-blocked" marker-end="url(#arrow-red)" />
+  <rect x="360" y="165" width="70" height="20" fill="#fee2e2" stroke="#ef4444" stroke-width="1" rx="4" />
+  <text x="395" y="179" class="arrow-text" fill="#b91c1c" font-weight="bold">접근 불가</text>
+
+  <!-- global keyword bridge -->
+  <path d="M 470 335 C 390 335, 390 205, 340 205" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="395" y="250" class="arrow-text" fill="#047857" font-weight="bold">global 다리 연결</text>
+
+  <!-- SUPERGLOBALS Access -->
+  <path d="M 470 360 C 420 360, 420 330, 340 330" class="line-active" marker-end="url(#arrow-blue)" />
+  <text x="400" y="380" class="arrow-text" fill="#2563eb" font-weight="bold">즉시 접근</text>
+
+</svg>

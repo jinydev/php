@@ -1,0 +1,1758 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>개발자를 위한 리눅스</title>
+  <meta name="title" content="개발자를 위한 리눅스" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="개발자를 위한 리눅스"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/syntax/function/param/">
+  <!-- 대표 URL (캐노니컬) -->
+  <link rel="canonical" href="https://php.jiny.dev/syntax/function/param/">
+
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="개발자를 위한 리눅스"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyPHP" />
+<meta property="og:locale" content="ko" />
+<link rel="canonical" href="https://php.jiny.dev/syntax/function/param/" />
+<meta property="og:url" content="https://php.jiny.dev/syntax/function/param/" />
+<meta property="og:site_name" content="JinyPHP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyPHP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"https://php.jiny.dev/syntax/function/param/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/docs.css" rel="stylesheet" />
+  <link href="/assets/css/highlight.css" rel="stylesheet" />
+
+  <style>
+    blockquote {
+      border-left: solid 5px #dee2e6;
+      padding: 5px 10px;
+      background-color: #f8f9fa;
+    }
+  </style>
+
+  <style>
+    h1 a {
+      text-decoration: none;
+    }
+
+    h2 a {
+      text-decoration: none;
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    h4 a {
+      text-decoration: none;
+    }
+
+    h5 a {
+      text-decoration: none;
+    }
+
+    h6 a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: top
+    }
+
+    strong a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 스크롤바 커스텀 */
+    /* 임의의 영역 생성 */
+    .scrollBar {}
+
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    .scrollBar::-webkit-scrollbar {
+      width: 7px;
+      /* 스크롤바의 너비 */
+    }
+
+    .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%;
+      /* 스크롤바의 길이 */
+      background: #cccccc;
+      /* 스크롤바의 색상 */
+
+      border-radius: 5px;
+    }
+
+    .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);
+      /*스크롤바 뒷 배경 색상*/
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-R4VBPCT3CR');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container bd-gutter flex-wrap flex-lg-nowrap position-relative" aria-label="Main navigation">
+
+      <!-- Mobile: Left Toggle (Browse) -->
+      <div class="bd-navbar-toggle d-lg-none">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+          aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+            </path>
+          </svg>
+          <span class="d-none fs-6 pe-1">Browse</span>
+        </button>
+      </div>
+
+      <!-- Brand: Desktop (Static), Mobile (Absolute Center) -->
+      <a class="navbar-brand p-0 me-0 me-lg-2 ms-lg-0 d-none d-lg-inline-block" href="/" aria-label="jinydev">
+        <svg width="32" height="26" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <a class="navbar-brand p-0 me-0 position-absolute top-50 start-50 translate-middle d-lg-none" href="/"
+        aria-label="jinydev">
+        <svg width="100" height="26" viewBox="0 0 112 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2746 5.33377C25.8486 7.33981 25.1183 11.1792 24.3961 13.0177C24.4028 13.0199 24.4094 13.0221 24.4161 13.0243L24.4013 13.0248L22.649 12.9082C22.649 12.9053 22.6488 12.9013 22.649 12.8993C22.9902 8.93373 22.5975 7.34575 22.2147 7.07677C17.6316 10.3896 13.5379 9.33658 12.2725 9.01111C11.928 8.9225 11.7932 8.88781 11.9152 9.00988C12.2872 9.38185 13.1336 9.82821 13.7371 10.1465H13.7372L13.7376 10.1467C13.8743 10.2188 13.9985 10.2843 14.1019 10.3409C9.12673 10.3984 7.12659 8.00279 6.53855 7.29846C6.47859 7.22664 6.4333 7.1724 6.40105 7.14015C6.11408 6.85318 4.49961 5.87252 3.99256 7.74227C3.50142 9.55335 3.81246 11.6775 3.97665 12.7988C3.99089 12.896 3.99257 12.8981 3.99257 12.9298L2.37635 13.0248L2.37213 13.0247C0.223493 8.05534 1.83854 5.26971 3.29536 4.2246C3.29536 1.78444 6.27428 -0.592359 10.0455 0.263262C14.8768 1.64043 16.3468 1.18409 18.0759 0.647278C18.774 0.430562 19.5143 0.200726 20.5351 0.073124C25.2219 -0.512739 26.7993 2.56612 27 4.16122C26.2141 3.70487 24.8556 4.73165 24.2746 5.33377ZM12.3374 1.5872C11.1225 1.16466 7.99257 0.717209 6.3478 2.41116C5.98397 2.78587 5.55554 3.48864 5.55554 3.48864C5.55554 3.48864 4.82665 4.81961 4.25622 4.24919C3.68579 3.67878 5.0168 1.96749 6.06259 1.46044C7.10838 0.953388 9.70703 0.0660505 12.3374 1.5872Z"
+            fill="currentColor" />
+          <path
+            d="M10.078 13.5002H3.10601C2.2309 13.5002 1.52148 14.2097 1.52148 15.0848V18.3172C1.52148 19.1923 2.2309 19.9018 3.10601 19.9018H10.078C10.9531 19.9018 11.6625 19.1923 11.6625 18.3172V15.0848C11.6625 14.2097 10.9531 13.5002 10.078 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M0.823513 14.6094H0.379847C0.187322 14.6094 0.03125 14.7654 0.03125 14.958V15.9721C0.03125 16.1646 0.187322 16.3207 0.379847 16.3207H0.823513C1.01604 16.3207 1.17211 16.1646 1.17211 15.9721V14.958C1.17211 14.7654 1.01604 14.6094 0.823513 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M16.7326 13.5002H23.7045C24.5796 13.5002 25.2891 14.2097 25.2891 15.0848V18.3172C25.2891 19.1923 24.5796 19.9018 23.7045 19.9018H16.7326C15.8575 19.9018 15.1481 19.1923 15.1481 18.3172V15.0848C15.1481 14.2097 15.8575 13.5002 16.7326 13.5002Z"
+            stroke="currentColor" stroke-width="1.26763" />
+          <path
+            d="M25.9861 14.6094H26.4297C26.6222 14.6094 26.7783 14.7654 26.7783 14.958V15.9721C26.7783 16.1646 26.6222 16.3207 26.4297 16.3207H25.9861C25.7935 16.3207 25.6375 16.1646 25.6375 15.9721V14.958C25.6375 14.7654 25.7935 14.6094 25.9861 14.6094Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M12.2954 15.5601H14.5137C14.7062 15.5601 14.8623 15.7161 14.8623 15.9087V16.9228C14.8623 17.1153 14.7062 17.2713 14.5137 17.2713H12.2954C12.1028 17.2713 11.9468 17.1153 11.9468 16.9228V15.9087C11.9468 15.7161 12.1028 15.5601 12.2954 15.5601Z"
+            fill="currentColor" stroke="currentColor" stroke-width="0.0633813" />
+          <path
+            d="M9.93343 16.3937C9.93343 16.7087 9.76317 16.9641 9.55314 16.9641C9.34311 16.9641 9.17285 16.7087 9.17285 16.3937C9.17285 16.0786 9.34311 15.8232 9.55314 15.8232C9.76317 15.8232 9.93343 16.0786 9.93343 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M16.9688 16.3937C16.9688 16.7087 17.139 16.9641 17.3491 16.9641C17.5591 16.9641 17.7293 16.7087 17.7293 16.3937C17.7293 16.0786 17.5591 15.8232 17.3491 15.8232C17.139 15.8232 16.9688 16.0786 16.9688 16.3937Z"
+            fill="currentColor" />
+          <path
+            d="M14.2758 20.1016C13.642 20.6086 12.7863 20.3551 12.5645 20.1016C12.6278 20.4185 12.8687 20.8622 13.4518 20.8622C14.0349 20.8622 14.2441 20.3551 14.2758 20.1016Z"
+            fill="currentColor" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.1312 22.411C12.1575 22.2914 12.2759 22.2157 12.3956 22.2421L14.6347 22.735C14.7544 22.7614 14.83 22.8797 14.8036 22.9994C14.7773 23.119 14.659 23.1947 14.5393 23.1683L12.3002 22.6753C12.1805 22.649 12.1049 22.5307 12.1312 22.411Z"
+            fill="currentColor" />
+          <path
+            d="M13.4203 27.6754C9.00897 27.7261 5.77228 23.6613 4.70536 21.6225C4.54691 21.3197 4.42016 21.2739 4.32509 21.3373C4.17297 21.4387 4.28282 21.6437 4.32507 21.7493C4.85747 22.9916 5.58213 24.0416 5.87791 24.4113C4.83846 26.1353 4.49409 27.855 4.45183 28.4994C6.1758 26.8008 7.91668 26.8832 8.57162 27.1367C13.7055 29.7987 16.5577 27.929 18.1739 27.1367C19.4669 26.5029 21.4803 27.7388 22.3254 28.436C22.224 26.8642 21.3747 25.1402 20.9627 24.4747C21.6282 23.5873 22.1669 22.5099 22.4522 21.9711C22.6803 21.5401 22.6106 21.369 22.5472 21.3373C22.3951 21.2613 22.2092 21.4958 22.1353 21.6225C21.6599 22.4148 18.9345 27.6121 13.4203 27.6754Z"
+            fill="currentColor" />
+          <text x="32" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="22"
+            fill="currentColor">Jiny</text>
+        </svg>
+      </a>
+
+      <!-- Mobile: Right Toggle (Menu) -->
+      <div class="d-flex d-lg-none ms-auto">
+        <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar"
+          aria-controls="bdNavbar" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid"
+            viewBox="0 0 16 16">
+            <path
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- OffCanvas -->
+      <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+        aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+        <!-- OffCanver Header -->
+        <div class="offcanvas-header px-4 pb-0">
+          <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Jiny</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+          </button>
+        </div>
+
+        <!-- OffCanver Body -->
+        <div class="offcanvas-body p-4 pt-0 p-lg-0">
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-column flex-lg-row bd-navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/php">PHP소개</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/setup">설치</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/oop">객체지향</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
+            </li>
+            
+          </ul>
+
+          <hr class="d-lg-none text-white-50">
+
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/datas" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 512 499.36" role="img">
+                  <title>GitHub</title>
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                  </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+              </a>
+            </li>
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+
+            <li class="nav-item col-6 col-lg-auto">
+              <a class="nav-link py-2 px-0 px-lg-2" href="https://jiny.dev" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                  viewBox="0 0 16 16" role="img">
+                  <title>Home</title>
+                  <path fill="currentColor"
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                </svg>
+                <small class="d-lg-none ms-2">Home</small>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+            aria-labelledby="bdSidebarOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    data-bs-target="#bdSidebar"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <!-- 네비게이션 -->
+                <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
+  <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        강의 목차
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        
+        
+
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-1"
+            aria-expanded="false">
+            코드 작성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-1">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax"
+                  class="bd-links-link d-inline-block rounded ">
+                  기본문법 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            상수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/const"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/type"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수의 타입
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/define"
+                  class="bd-links-link d-inline-block rounded ">
+                  define() 함수
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/const"
+                  class="bd-links-link d-inline-block rounded ">
+                  const 키워드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/defined"
+                  class="bd-links-link d-inline-block rounded ">
+                  상수 존재 확인
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/const/reserved"
+                  class="bd-links-link d-inline-block rounded ">
+                  예약된 상수
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            변수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/variable"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/name"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수명 작성 규칙
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/memory"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수와 메모리
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/declare"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 선언
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/type"
+                  class="bd-links-link d-inline-block rounded ">
+                  데이터 형식(타입)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/scalar"
+                  class="bd-links-link d-inline-block rounded ">
+                  스칼라 타입
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/ref"
+                  class="bd-links-link d-inline-block rounded ">
+                  가변 변수
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/unset"
+                  class="bd-links-link d-inline-block rounded ">
+                  변수 삭제
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/variable/global"
+                  class="bd-links-link d-inline-block rounded ">
+                  전역 변수
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            연산자
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/operator"
+                  class="bd-links-link d-inline-block rounded ">
+                  연산자 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/operator/spaceship"
+                  class="bd-links-link d-inline-block rounded ">
+                  우주선 연산자 (<=>)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/operator/coalescing"
+                  class="bd-links-link d-inline-block rounded ">
+                  Null 병합 연산자 (??)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            조건문
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/condition"
+                  class="bd-links-link d-inline-block rounded ">
+                  조건제어문
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/condition/ternary"
+                  class="bd-links-link d-inline-block rounded ">
+                  3항 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/condition/match"
+                  class="bd-links-link d-inline-block rounded ">
+                  Match 표현식
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            반복문
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/loop"
+                  class="bd-links-link d-inline-block rounded ">
+                  반복문 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            전처리기
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/preprocess"
+                  class="bd-links-link d-inline-block rounded ">
+                  전처리기 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            유효범위
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/scope"
+                  class="bd-links-link d-inline-block rounded ">
+                  유효범위 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            오류
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/error"
+                  class="bd-links-link d-inline-block rounded ">
+                  에러 처리 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            함수 기초
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수란 무엇인가
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/func"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수의 개념과 구조
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/function"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수구조
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            함수 요소
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function/param"
+                  class="bd-links-link d-inline-block rounded ">
+                  매개변수 (Param)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/param/types"
+                  class="bd-links-link d-inline-block rounded ">
+                  타입 선언 (Types)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/param/named"
+                  class="bd-links-link d-inline-block rounded ">
+                  네임드 인자 (Named)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/return"
+                  class="bd-links-link d-inline-block rounded ">
+                  반환값 (Return)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/declare"
+                  class="bd-links-link d-inline-block rounded ">
+                  함수 선언 (Declare)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-12"
+            aria-expanded="false">
+            고급 함수
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-12">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/syntax/function/generator"
+                  class="bd-links-link d-inline-block rounded ">
+                  제너레이터
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/annon"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명함수 (Annonymous)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/variable"
+                  class="bd-links-link d-inline-block rounded ">
+                  가변함수 (Variable)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/syntax/function/builtin"
+                  class="bd-links-link d-inline-block rounded ">
+                  내부함수 (Built-in)
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <nav aria-label="breadcrumb" class="mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/">Syntax</a></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item"><a href="/syntax/function/">Function</a></li>
+        
+        
+        
+        
+        
+        
+        <li class="breadcrumb-item active" aria-current="page"></li>
+        
+        
+        
+    </ol>
+</nav>
+
+        <div class="bd-content ps-lg-2">
+            <h1 id="인자-매개변수">인자 매개변수</h1>
+<hr />
+<p>함수는 마치 코드의 블랙박스와 같습니다.<br />
+함수의 작업을 의해서 기초 데이터 값을 전달해야 할 경우가 발생합니다. 
+이렇게 함수를 호출하는 데 필요한 기초 데이터 값을 전달해주는 것을 인자값이라고 합니다.</p>
+
+<p>인자값은 함수에 임의의 값을 전달합니다. 인자 선언 방법은 함수 이름 다음에 오는 <code class="language-plaintext highlighter-rouge">소괄호()</code> 안에 필요한 기초 데이터 값을 나열하여 전달할 수 있습니다. 인자값은 직접 값을 넣을 수도 있지만 변수를 통하여 전달을 할 수도 있습니다.</p>
+
+<p>함수 선언 문법</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">함수명</span> <span class="p">(</span><span class="kt">인자1</span><span class="p">,</span> <span class="kt">인자2</span><span class="p">,</span> <span class="kt">인자3</span> <span class="mf">...</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>앞의 함수 선언부를 다시 한번 확인해 봅시다. 함수명 뒤에 괄호 <code class="language-plaintext highlighter-rouge">()</code> 부분이 있습니다.<br />
+함수명 뒤에는 꼭 괄호 <code class="language-plaintext highlighter-rouge">()</code> 부분이 같이 정의되는데 이 부분을 인자값을 지정하는 것입니다.<br />
+또한 함수 측면에서는 외부에서 들어오는 값을 매개변수라고 표현 합니다.</p>
+
+<p>즉 함수가 처리를 하기 위한 데이터 값을 전달 하는 부분 입니다.<br />
+만일 전달하고자 하는 값이 여러 개인 경우에 콤마(<code class="language-plaintext highlighter-rouge">,</code>)로 구분하여 여러 개의 기초 데이터 값을 전달할 수 있습니다.</p>
+
+<p>또한 함수는 처리 또는 호출 결과를 반환하여 이를 받아 다시 프로그램 실행에 필요한 처리를 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="매개변수-선언">매개변수 선언</h2>
+<hr />
+<p>함수는 외부로 들어오는 기초 데이터 값을 변수 형태로 입력받습니다.<br />
+외부에서 입력된 값을 전달받는 변수를 매개변수라고 합니다. 매개변수는 함수내에서 지역변수로 사용됩니다.</p>
+
+<p>함수의 매개변수 선언는 소괄호 <code class="language-plaintext highlighter-rouge">()</code> 안에 인자값으로 받는 변수명을 넣으면 됩니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
+
+<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nv">$age</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>매개변수로 선언된 변수는 함수 몸체 안에서 별도의 선언 등을 하지 않고도 사용할 수 있습니다.<br />
+매개변수는 이미 함수 안에 정의 및 사용된 변수로 인식합니다.</p>
+
+<p>인자로 전달되는 매개변수 데이터 값은 한 개 또는 여러 개를 사용할 수 있습니다.<br />
+만일 인자값이 다수일 때는 콤마(<code class="language-plaintext highlighter-rouge">,</code>)로 구분하여 여러 타입의 다수 데이터를 입력할 수 있습니다.<br />
+PSR 코딩 스타일 규칙에 따르면 변수명 뒤에는 공백 없이 콤마(<code class="language-plaintext highlighter-rouge">,</code>)를 추가하며 다음 번 변수명 사이에 공백을 하나 추가합니다.</p>
+
+<p>어떤 함수들은 매개변수 인자가 없는 경우도 있을 수 있습니다.<br />
+단순 기능만 수행하는 함수들이 그럴 수 있는데, 이때 함수가 매개변수가 없더라도 선언할 때 중괄호 <code class="language-plaintext highlighter-rouge">()</code>는 작성을 해야 합니다
+(생략이 불가능하다고 생각하면 됩니다).</p>
+
+<p>또한 함수를 호출할 때도, 인자값이 없는 함수는 호출할 때 꼭 소괄호 <code class="language-plaintext highlighter-rouge">()</code>를 같이 붙여서 함수를 호출해야 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="내부변수와-매개변수">내부변수와 매개변수</h2>
+<hr />
+<p>함수의 매개변수로 선언된 변수의 이름은 약간의 독립된 변수입니다. 
+각각의 함수에 선언된 매개변수는 외부의 변수명과는 상관없습니다. 
+함수 밖에서 정의한 변수와 함수의 매개변수로 작성한 이름이 같다고 해서 동일한 변수는 아닙니다.</p>
+
+<p>만일 동일한 함수를 두 번 이상 호출한다고 했을 때, 각각 호출할 때 생성된 변수들은 각각의 독립성을 가지고 있습니다. 
+1차 함수 호출 시 사용된 매개변수가 두 번째 호출될 때 영향을 주지 않습니다.</p>
+
+<p>종종 우리는 코드에서 외부의 변수와 함수 안에 쓰이는 변수 이름이 같은 경우를 보는 경우가 있습니다. 
+ 이는 코드를 시각화로 편하게 하기 위해서 비슷한 이름을 사용하는 것이지 엄밀히 말하면 모두 각각 이름만 같은 다른 변수입니다.</p>
+
+<p>내부변수와 매개변수가 다르다는 것은 함수의 호출에서 사용되는 변수와 함수 안에서 사용되는 변수가 서로 독립된 다른 변수라는 것입니다. 
+이 개념은 약간 혼동이 될 수도 있는데 이를 정확히 표현하는 명칭으로 함수를 호출할 때 이용하는 변수 이름을 <code class="language-plaintext highlighter-rouge">실행 인자</code>라고 부르고, 함수 안에서 받은 변수의 이름을 <code class="language-plaintext highlighter-rouge">매개변수</code>라고 표현을 구분하면 이해하기 더 쉬울 것입니다.</p>
+
+<p>매개변수: 함수에서 인자값으로 받아 들이는 변수 값<br />
+실행 인자: 함수를 호출할 때 전달하는 값</p>
+
+<p>예제 파일 func-05.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$name</span> <span class="o">=</span> <span class="err">“</span><span class="n">jiny</span><span class="err">”</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="mf">.</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span><span class="err">”</span><span class="n">는</span> <span class="nv">$age</span> <span class="n">입니다</span><span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">setUserName</span> <span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span> <span class="err">“</span><span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="err">”</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>위의 예를 보면 함수 외부에 선언되어 있는 <code class="language-plaintext highlighter-rouge">$name</code> 변수와 두 개의 함수의 매개변수로 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수는 모두 각각의 다른 변수입니다.</p>
+
+<p>함수 외부에 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수는 hellowWorld 함수와 <code class="language-plaintext highlighter-rouge">setUserName 함수</code>에 있는 <code class="language-plaintext highlighter-rouge">$name 변수</code>는 다른 메모리 영역입니다. 또한 두 개의 함수에서도 외부에 선언된 <code class="language-plaintext highlighter-rouge">$name</code> 변수로 접근 할 수 없습니다.</p>
+
+<p>또한 hellowWorld 함수의 $name 변수를 setUserName 함수에서 참조하거나 사용할 수도 없습니다.<br />
+즉 서로 다르게 분리된 변수라고 보면 됩니다.</p>
+
+<p>이런 변수를 접근할 수 있는 권한을 각각이 분리하는 것은 절차적 프로그램과 함수 프로그램 간의 변수의 중복 및 처리에 대한 오류를 방지하기 위함입니다.</p>
+
+<p><br /></p>
+
+<h2 id="상수-실행-인자">상수 실행 인자</h2>
+<hr />
+<p>함수를 호출할 때 전달되는 실행 인자값을 변수 형태 이외에 직접 값을 입력하는 상수 형태로도 전달할 수 있습니다.</p>
+
+<p>실행 인자를 변수 형태가 아니라 상수값 형태로 전달하는 방식은 함수의 값을 테스트하거나, 직관적으로 데이터 값을 전달할 때 편리합니다. 또한 고정된 기능을 처리하는 함수를 만들 때 편리합니다.</p>
+
+<p>예제 파일 func-06.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+	<span class="k">function</span> <span class="n">hellowWorld</span> <span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">echo</span> <span class="nv">$name</span> <span class="mf">.</span><span class="s2">"는 </span><span class="nv">$age입니다</span><span class="s2">. &lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// 문자열 상수 실행 인자와, 정수형 상수 실행 인자를 전달합니다.</span>
+	<span class="nf">hellowWorld</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jiny는 20입니다.
+</code></pre></div></div>
+
+<p>위의 예제를 보면 hellowWorld 함수를 호출할 때 입력받는 함수의 매개변수 <code class="language-plaintext highlighter-rouge">$name</code>과 <code class="language-plaintext highlighter-rouge">$age</code> 값을 직접 문자열 및 정수로 데이터를 전달 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="변수로-실행-인자-전달">변수로 실행 인자 전달</h2>
+<hr />
+<p>상수값을 실행 인자로 전달하는 경우는 테스트 등의 작업 이외에는 별로 없습니다.<br />
+대부분 소스들은 데이터를 처리하고 값을 가공합니다. 또한 수많은 변수들을 통해 처리된 값들을 저장하고 실행 인자값으로 사용합니다. 
+변수로 실행 인자값을 전달한다는 표현은 함수 실행 시 호출하면서 상수값 형태로 전달하는 것과 달리 대부분은 변수에 데이터 값을 넣어서 값을 전달합니다.</p>
+
+<p>예제 파일 func-07.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="n">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$sum</span> <span class="o">=</span> <span class="nv">$s</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
+    	<span class="k">echo</span> <span class="nv">$sum</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// 변수에 값을 설정합니다.</span>
+	<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="nv">$y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+	<span class="c1">// 함수를 호출합니다.</span>
+	<span class="nf">addSum</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">);</span> 
+
+	<span class="nv">$value1</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+	<span class="nv">$value2</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+
+	<span class="c1">// 함수를 호출합니다.</span>
+	<span class="nf">addSum</span><span class="p">(</span><span class="nv">$value1</span><span class="p">,</span> <span class="nv">$value2</span><span class="p">);</span> 
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+25
+</code></pre></div></div>
+
+<p>위의 예제를 보면 addSum 함수는 두 개의 정수 값을 입력받아 합계를 구합니다. 함수 외부에 선언된 <code class="language-plaintext highlighter-rouge">$x</code>와 <code class="language-plaintext highlighter-rouge">$y</code>에 대입 연산자를 통해 값을 설정합니다.</p>
+
+<p>함수 외부의 <code class="language-plaintext highlighter-rouge">$x</code>, <code class="language-plaintext highlighter-rouge">$y</code>와 함수 매개변수 <code class="language-plaintext highlighter-rouge">$x</code>, <code class="language-plaintext highlighter-rouge">$y</code>는 다른 변수입니다.<br />
+함수를 호출할 때 인자값을 변수로 대입하여 데이터를 전송합니다.</p>
+
+<p>변수의 값은 같을 수도 있지만 정확한 의미로는,</p>
+
+<p>addsum 함수의 $x 변수 = 함수 외부의 $x</p>
+
+<p>값을 대입하여 전송하는 것과 같은 의미입니다.<br />
+즉, 함수 호출 시 입력하는 매개변수 값은 함수 내부의 변수에게 대입 연산을 하는 것과 같습니다.</p>
+
+<p><br /></p>
+
+<h2 id="매개변수-초기값">매개변수 초기값</h2>
+<hr />
+<p>함수의 매개변수를 선언했을 경우 매개변수는 반드시 값을 지정하여 함수를 호출하는 것을 기본으로 합니다. 또한 PHP는 특성상 매개변수에 실행 인자값을 생략하여 호출할 수도 있습니다. 생략하거나 미지정된 매개변수 값을 함수 내에서 호출할 때 데이터 처리 오류가 발생할 수 있습니다.</p>
+
+<p>이러한 점들을 미리 방지하기 위해서 PHP는 함수 매개변수를 선언할 때 초기값을 같이 선언을 할 수 있습니다.</p>
+
+<p>만일 이러한 매개변수 초기값을 설정하는 기능이 없다면 함수 초기에 매개변수의 유효성을 체크하는 기능을 매번 만들어야 될 것입니다.<br />
+초기값 설정 기능을 통해 함수의 오동작을 줄여주고 함수의 매개변수 초기화 기능을 생략함으로써 소스의 코드를 줄일 수 있는 기능이 됩니다.</p>
+
+<p>|문법|</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">함수명</span> <span class="p">(</span><span class="kt">인자1</span><span class="o">=</span><span class="err">”</span><span class="n">초기값</span><span class="err">”</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">함수</span> <span class="n">정의</span> <span class="n">몸체</span> <span class="mf">...</span> 
+<span class="n">소스</span> <span class="n">코드</span> <span class="n">내용</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>PHP의 매개변수의 초기값은 매우 직관적입니다.<br />
+매개변수를 선언할 때 변수명 = “기본값” 형태로 지정하면 됩니다.</p>
+
+<p>예제 파일 func-08.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="n">setHeight</span><span class="p">(</span><span class="nv">$minheight</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">echo</span> <span class="s2">"The height is : </span><span class="nv">$minheight</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 함수 호출 시 매개변수 값 250을 입력합니다.</span>
+<span class="nf">setHeight</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
+
+<span class="c1">// 매개변수 값이 없습니다.</span>
+<span class="c1">// 기본값 50이 적용됩니다.</span>
+<span class="nf">setHeight</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The height is : 250
+The height is : 50 
+</code></pre></div></div>
+
+<p>위의 예제를 보면 높이를 설정하는 사용자 함수가 있습니다. 본 함수는 매개변수를 선언할 때 = 50으로 초기값이 설정되어 있습니다.</p>
+
+<p>함수를 호출할 때 매개변수 값을 입력하면 입력된 매개변수 값이 전달되어 화면에 출력됩니다.<br />
+하지만 매개변수 값을 입력하지 않고 호출하면 기본값으로 설정된 값으로 화면에 출력됩니다.</p>
+
+<p>보통 함수를 선언하고 실행 호출을 할 때 매개변수의 개수와 형식을 유지하여 작성해야 합니다.<br />
+하지만 PHP는 함수에서 선언한 매개변수를 생략하여 호출할 수 있는 특징이 있습니다.<br />
+이렇게 생략 처리된 경우에는 초기값으로 전달됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="타입-힌트-및-타입-선언">타입 힌트 및 타입 선언</h2>
+<hr />
+<p>PHP는 변수의 타입을 특별히 지정하지 않아도 쓸 수 있는 유연한 언어입니다.<br />
+하지만 함수의 매개변수의 데이터 값을 입력받을 때 오류를 방지하고 정확한 값을 받고 싶을 경우에는 변수의 타입 힌트 기능을 통해 값의 유형을 지정할 수 있습니다.</p>
+
+<blockquote>
+  <p>[!NOTE]
+PHP 7.x 및 8.x부터는 스칼라 타입 힌팅 외에 엄격한 타입 검사(<code class="language-plaintext highlighter-rouge">strict_types</code>), 여러 타입을 동시에 허용하는 유니온 타입(<code class="language-plaintext highlighter-rouge">Union Types</code>) 등을 활용할 수 있는 더욱 고도화된 정적 타입 시스템을 지원합니다. 자세한 내용은 <strong><a href="types">매개변수 및 반환값 타입 선언</a></strong> 페이지에서 깊이 있게 다룹니다.</p>
+</blockquote>
+
+<p>변수의 타입 힌트로 사용할 수 있는 형식은 다음과 같습니다:</p>
+
+<ul>
+  <li>Bool : 논리값</li>
+  <li>Float : 실수형 자료</li>
+  <li>Int : 정수형 자료</li>
+  <li>String : 문자열 자료</li>
+</ul>
+
+<p>예제 파일 func-09.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="n">test</span><span class="p">(</span><span class="kt">int</span> <span class="nv">$x</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$x</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nf">test</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="n">test2</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$x</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$x</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nf">test2</span><span class="p">(</span><span class="s2">"문자열"</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+문자열
+</code></pre></div></div>
+
+<p>위의 예제에서 첫 번째 <code class="language-plaintext highlighter-rouge">test(1);</code> 은 실행 인자로 정수 값을 전달하고 함수도 타입 힌트를 통하여 정수 값을 받았기 때문에 오류 없이 입력한 정수 값을 출력합니다.</p>
+
+<p>하지만 만일 타입이 틀린 형태 <code class="language-plaintext highlighter-rouge">test("a");</code>로 함수를 호출하는 경우에는 실행 인자가 문자열이고 입력 받는 매개변수의 타입이 정수이기 때문에 데이터 타입이 일치하지 않습니다. 이런 경우에는 PHP에서는 오류 메시지를 출력하게 됩니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">C:\php-7.1.4-Win32-VC14-x86\jinyphp\func-22.php:2
+Stack trace:
+</span><span class="gp">#</span>0 C:<span class="se">\p</span>hp-7.1.4-Win32-VC14-x86<span class="se">\j</span>inyphp<span class="se">\f</span>unc-22.php<span class="o">(</span>8<span class="o">)</span>: <span class="nb">test</span><span class="o">(</span><span class="s1">'a'</span><span class="o">)</span>
+<span class="gp">#</span>1 <span class="o">{</span>main<span class="o">}</span>
+<span class="go">thrown in C:\php-7.1.4-Win32-VC14-x86\jinyphp\func-22.php on line 2
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="참조-매개변수">참조 매개변수</h2>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">C언어</code>와 같은 low-Level 언어에는 매개변수로 인수의 참조(call by reference) 형태로 매개변수를 전달할 수 있습니다.<br />
+이를 또 다른 말로 참조에 의한 전달(passing by reference)이라고도 합니다.<br />
+PHP에서도 이와 같은 형태의 실행 인자 전달과 참조 매개변수를 선언하여 사용할 수 있습니다. <code class="language-plaintext highlighter-rouge">C언어</code>에서 포인터와 같은 개념이라고 생각하면 됩니다.</p>
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/call_by_reference_cartoon.png" alt="Call by Value vs Call by Reference Cartoon" style="max-width: 80%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 값 복사 전달(Call by Value, 복사본 전달)과 참조 주소 전달(Call by Reference, 원본 전달)의 대조</p>
+</div>
+
+<p>참조 매개변수는 변수명 앞에 <code class="language-plaintext highlighter-rouge">&amp;</code> 기호를 붙여줍니다.</p>
+
+<p>예제 파일 func-### 10.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+	<span class="k">function</span> <span class="n">drink</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$name</span><span class="p">){</span>
+		<span class="nv">$name</span> <span class="o">=</span> <span class="s2">"사이다"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="nv">$drinkName</span> <span class="o">=</span> <span class="s2">"콜라"</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="s2">"음료수 이름 = </span><span class="nv">$drinkName</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nf">drink</span><span class="p">(</span><span class="nv">$drinkName</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"음료수 이름 = </span><span class="nv">$drinkName</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>음료수 이름 = 콜라
+음료수 이름 = 사이다 
+</code></pre></div></div>
+
+<p>위의 예를 보면 <code class="language-plaintext highlighter-rouge">$drinkName</code> 변수에는 <code class="language-plaintext highlighter-rouge">콜라</code> 값이 저장되어 있습니다.<br />
+이때 drink() 함수를 호출할 때 drink() 함수의 매개변수 인자는 입력받는 변수의 참조 주소 값으로 받습니다.<br />
+매개변수를 참조변수 형태로 받게 되면 drink() 함수의 $name 변수는 함수 외부에 있는 $drinkName 변수를 가리키게 됩니다.</p>
+
+<p>즉, drink() 함수는 실행 인자로 전달된 변수의 주소를 참조하여 전달한 변수값 자체를 변경하게 됩니다.<br />
+그래서 두 번째 출력에서는 “사이다”로 변경되어 출력됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="가변-매개변수">가변 매개변수</h2>
+<hr />
+<p>함수를 선언할 때 다수의 매개변수 인자값 선언을 했을 경우에 함수 호출도 동일한 수량의 인자값을 포함하여 함수를 호출해야 합니다.<br />
+모든 매개변수와 함수의 실행 인자의 개수는 한 쌍으로 맞추어 전달되게 됩니다.</p>
+
+<p>함수를 선언할 때 매개변수의 개수는 선언 시 정의해야 합니다.<br />
+하지만 함수의 사용을 좀 더 유연적으로 처리하기 위해서 가변적으로 매개변수의 개수를 조절해야 하는 경우가 있습니다.<br />
+PHP언어는 가변 매개변수로 함수 정의와 호출 시 한 쌍씩 호출하는 규칙을 유연하게 처리를 할 수 있습니다.<br />
+즉, 함수의 정의된 매개변수의 개수보다 호출하는 인자의 수가 적어도 오류를 발생하기 않습니다.<br />
+매칭되지 않는 변수들은 NULL 또는 기본값으로 처리됩니다.</p>
+
+<p>이러한 가변 매개변수를 이용하는 것은 좀 더 유연한 함수를 생성하고 처리하는 데 매우 유용합니다.</p>
+
+<p>심지어 매개변수를 하나도 지정하지 않아도 함수에 매개변수를 전달할 수 있습니다. 이런 경우 함수를 실행할 때 매개변수의 개수를 확인할 수 있는 func_num_args() 내부 함수와 매개변수의 데이터를 배열로 가지고 올 수 있는 <code class="language-plaintext highlighter-rouge">func_get_args()</code> 내부 함수 두 개를 사용하여 처리할 수 있습니다.</p>
+
+<p>예제 파일 func-11.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="n">setting</span><span class="p">(){</span>
+	<span class="nv">$num</span> <span class="o">=</span> <span class="nb">func_num_args</span><span class="p">();</span>
+	<span class="k">echo</span> <span class="s2">"실행 인자 개수 = </span><span class="nv">$num</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
+
+	<span class="nv">$args</span> <span class="o">=</span> <span class="nb">func_get_args</span><span class="p">();</span>
+	<span class="k">foreach</span><span class="p">(</span><span class="nv">$args</span> <span class="k">as</span> <span class="nv">$arg</span><span class="p">)</span> <span class="k">echo</span> <span class="nv">$arg</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+	
+<span class="p">}</span>
+
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="nf">setting</span><span class="p">(</span><span class="s2">"aaa"</span><span class="p">,</span><span class="s2">"bbb"</span><span class="p">,</span><span class="s2">"ccc"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">"====&lt;br&gt;"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 인자 개수 = 1
+aaa
+====
+실행 인자 개수 = 2
+aaa
+bbb
+====
+실행 인자 개수 = 3
+aaa
+bbb
+ccc
+====
+</code></pre></div></div>
+
+<p>예제 파일 :func-12.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="n">sum</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nv">$a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="c1">// func_get_args 함수를 통해 매개변수를 읽어옵니다.</span>
+	<span class="k">foreach</span> <span class="p">(</span><span class="nb">func_get_args</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$a</span> <span class="o">+=</span> <span class="nv">$n</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+</code></pre></div></div>
+
+<p><br /></p>
+<hr />
+
+<h2 id="가변-인자">가변 인자</h2>
+<hr />
+<p>가변 매개변수에서 func_get_args() 함수를 통해 입력되는 변수들을 배열로 입력 처리한 예를 보았을 것입니다.<br />
+PHP 5.6 이상의 버전에서는 <code class="language-plaintext highlighter-rouge">…</code> 와 같은 인수의 변수 번호 기능을 지원합니다.</p>
+
+<p>함수가 가변 인자를 받을 목적으로 <code class="language-plaintext highlighter-rouge">…</code> 키워드를 포함할 수 있습니다. <code class="language-plaintext highlighter-rouge">…</code> 키워드는 배열은 아니나 인수를 배열 형태로 전달됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">…</code> 키워드 가변인자는 함수의 인자값의 개수를 예측하기 어려울 때 매우 유용합니다.</p>
+
+<p>예제 파일 scalar-13.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// 가변 인자로 받습니다.</span>
+<span class="k">function</span> <span class="n">sum</span><span class="p">(...</span><span class="nv">$numbers</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">foreach</span> <span class="p">(</span><span class="nv">$numbers</span> <span class="k">as</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nv">$acc</span> <span class="o">+=</span> <span class="nv">$n</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nv">$acc</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+</code></pre></div></div>
+
+<p>위의 예에서 <code class="language-plaintext highlighter-rouge">sum()</code>함수는 가변 인자값으로 매개변수를 전달받습니다.<br />
+하지만 개수는 정의되지 않는다는 것입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sum(1, 2, 3, 4, 5);</code>처럼 여러 개의 값을 콤마(,)로 구분하여 다수의 인자값을 전달할 수 있습니다.<br />
+또한 전달된 인자값들은 가변변수 <code class="language-plaintext highlighter-rouge">$numbers</code> 로 받아 배열로 구분하여 각각의 값을 처리합니다.</p>
+
+<p>예제 파일 scalar-14.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="n">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nf">add</span><span class="p">(</span><span class="mf">...</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="mf">.</span><span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="k">echo</span> <span class="nf">add</span><span class="p">(</span><span class="mf">...</span><span class="nv">$a</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+9
+</code></pre></div></div>
+
+<p>위의 <code class="language-plaintext highlighter-rouge">add()</code> 함수는 두 개의 값을 더하는 기능을 합니다.<br />
+함수 호출 시 배열 형태의 값으로 가변변수를 호출할 수도 있습니다.<br />
+또한 배열 변수를 가변변수의 인자값으로 전달할 수도 있습니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>[!TIP]
+<strong>PHP 8.0 이상을 사용하고 계신가요?</strong><br />
+인자 값의 개수가 많거나 기본값(Default)을 가진 인자들을 효율적으로 지정해서 넘겨주고 싶다면, 매개변수 이름을 명시하여 호출하는 <strong><a href="named">네임드 인자 (Named Arguments)</a></strong> 단원을 학습해 보세요.</p>
+</blockquote>
+
+<p><br /><br /></p>
+
+
+            <!-- 다음/이전 학습 페이지네이션 -->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+    
+    
+
+<div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
+  <div>
+    
+      <span class="text-muted small me-2">이전 학습</span>
+      <a href="/syntax/function/function" class="text-decoration-none fw-semibold">
+        &laquo; 함수구조
+      </a>
+    
+  </div>
+
+  <div class="text-end">
+    
+      <span class="text-muted small me-2">다음 학습</span>
+      <a href="/syntax/function/param/types" class="text-decoration-none fw-semibold">
+        타입 선언 (Types) &raquo;
+      </a>
+    
+  </div>
+</div>
+
+
+            <div class="mt-10">
+                <!-- 구글 에스센스 광고 -->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+                    crossorigin="anonymous"></script>
+                <!-- jinydev-java -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                    data-ad-slot="9323221865" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+        </div>
+
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+    data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+    서브목차
+    <svg class="bi d-md-none ms-2" aria-hidden="true">
+      <use xlink:href="#chevron-expand"></use>
+    </svg>
+  </button>
+
+  <strong class="d-none d-md-block h6 my-2">서브목차</strong>
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <nav id="TableOfContents">
+      <!--
+      <ul>
+        <li><a href="#quick-start">Quick start</a></li>
+        <li><a href="#cdn-links">CDN links</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+        <li><a href="#js-components">JS components</a></li>
+        <li><a href="#important-globals">Important globals</a>
+          <ul>
+            <li><a href="#html5-doctype">HTML5 doctype</a></li>
+            <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+            <li><a href="#box-sizing">Box-sizing</a></li>
+            <li><a href="#reboot">Reboot</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      -->
+    </nav>
+  </div>
+</div>
+    </main>
+
+
+</div>
+
+  <footer class="container">
+  <hr class="mt-5 mb-3">
+  <div class="row align-items-center pb-3">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <p class="mb-0 text-secondary">Copyright 2017~2026 JinyDev. All Rights Reserved.</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+      
+      <a href="https://datas.jiny.dev" class="text-decoration-none text-secondary ms-3">빅데이터</a>
+      
+      <a href="https://mysql.jiny.dev" class="text-decoration-none text-secondary ms-3">MySQL</a>
+      
+      <a href="https://php.jiny.dev" class="text-decoration-none text-secondary ms-3">PHP</a>
+      
+      <a href="https://java.jiny.dev" class="text-decoration-none text-secondary ms-3">자바</a>
+      
+      <a href="https://git.jiny.dev" class="text-decoration-none text-secondary ms-3">깃&깃허브</a>
+      
+      <a href="https://linux.jiny.dev" class="text-decoration-none text-secondary ms-3">리눅스</a>
+      
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    window.addEventListener('load', async function () {
+      mermaid.initialize({ startOnLoad: false });
+
+      const mermaidCodes = document.querySelectorAll('pre code.language-mermaid');
+      const mermaidDivs = [];
+
+      mermaidCodes.forEach(codeBlock => {
+        const mermaidDefinition = codeBlock.textContent.trim();
+        const container = codeBlock.closest('div.highlighter-rouge');
+
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = mermaidDefinition;
+
+        if (container) {
+          container.replaceWith(mermaidDiv);
+        } else {
+          const pre = codeBlock.parentElement;
+          if (pre) pre.replaceWith(mermaidDiv);
+        }
+        mermaidDivs.push(mermaidDiv);
+      });
+
+      if (mermaidDivs.length > 0) {
+        await mermaid.run({ nodes: mermaidDivs });
+      }
+    });
+  </script>
+  <script src="/assets/js/toc.js"></script>
+  <script src="/assets/js/sidebar.js"></script>
+
+</body>
+
+</html>

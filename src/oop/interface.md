@@ -1,13 +1,14 @@
 ---
 layout: php
-title: "PHP"
-keyword: "jinyphp, php"
+title: "인터페이스 (Interface)"
+keyword: "php interface, implements, abstract, contract, oop interface"
+description: "클래스가 반드시 구현해야 하는 규약과 명세를 정의하는 인터페이스(Interface)의 개념, 다중 구현(implements) 기법을 학습합니다."
 breadcrumb:
-- "oop"
-- "interface"
+- oop
+- interface
 ---
 
-# 인터페이스
+# 인터페이스 (Interface)
 ---
 클래스가 상속될 때 부모의 메서드나 프로퍼티는 자식 클래스에 전달됩니다. 또한 메서드가 변경된 경우 오버라이딩되어 다시 재정의 사용할 수 있었습니다.
 
@@ -17,6 +18,12 @@ breadcrumb:
 
 ### 15.3.1 인터페이스 개념
 ---
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/interface-vs-class.svg" alt="PHP Interface Multiple Implementation" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 하나의 클래스가 여러 인터페이스(Flyable, Soundable)를 상속받아 다중 구현하는 예시</p>
+</div>
+
 인터페이스는 다수의 사람들의 클래스를 설계할 때 서로 약속한 규약과 같습니다. 자신이 만든 클래스를 다른 사람들과 협업하여 개발을 할 때 클래스의 규칙을 정의하는 것입니다. 인터페이스는 이 클래스는 어떻게 만들어야 한다는 지시와 같습니다.
 
 이러한 클래스의 규칙들은 인터페이스 기능을 이용하여 매우 유용하게 사용할 수 있습니다. 
@@ -399,6 +406,31 @@ method is bar
 interface a const
 Class c constant
 ```
+
+<br>
+
+#### 1) 인터페이스 상수 오버라이딩 (Constant Overriding) — [PHP 8.1+]
+---
+PHP 8.0 이하 버전까지는 인터페이스를 구현(implements)하거나 상속받은 자식 클래스에서 인터페이스 내부에 정의된 상수를 재정의(Overriding, 오버라이딩)하는 것이 문법적으로 차단되어 있었습니다. 만약 구현체에서 동일한 이름의 상수를 선언하려 하면 즉각 치명적인 에러(Fatal Error)가 발생했습니다.
+
+하지만 **PHP 8.1부터는** 이 제약이 전면 해제되어, 인터페이스를 구현하는 클래스나 상속받는 하위 인터페이스에서 부모 상수를 자유롭게 재정의하여 사용할 수 있게 되었습니다.
+
+```php
+interface VersionInfo {
+    const APP_VERSION = '1.0.0';
+}
+
+// PHP 8.1 이상부터 정상 컴파일되어 실행됩니다.
+class WebApp implements VersionInfo {
+    const APP_VERSION = '2.3.5'; // 상수를 2.3.5로 오버라이딩(재정의) 허용
+}
+
+echo WebApp::APP_VERSION; // 결과: 2.3.5 (PHP 8.0 이하에서는 컴파일 에러 발생)
+```
+
+인터페이스 상수 오버라이딩 규칙:
+1. **가시성 제어**: 부모 인터페이스에서 상수 앞에 접근 제어자(`public` 등)를 부착해 가시성을 좁혀놓은 경우, 자식 클래스에서는 부모와 같거나 더 넓은 범위의 접근 속성으로만 오버라이딩할 수 있습니다.
+2. **상수 타입 호환**: 부모 상수가 타입 지정(PHP 8.3+)되어 있는 경우, 자식 클래스에서도 해당 타입을 그대로 준수하여 재정의해야 합니다.
 
 ## 15.4 추상화
 ---

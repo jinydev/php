@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="constGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+    <linearGradient id="defineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #334155; }
+    .code-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; fill: #0f172a; }
+    
+    .panel-const { fill: url(#constGrad); stroke: #93c5fd; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .panel-define { fill: url(#defineGrad); stroke: #6ee7b7; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .box-white { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="350" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="45" class="title">PHP 상수 정의 메커니즘 비교 (const vs define)</text>
+  <text x="35" y="63" class="subtitle">컴파일 타임에 평가되는 const 키워드와 런타임에 동적으로 처리되는 define() 함수의 특성 대조</text>
+
+  <!-- Left: const Keyword -->
+  <rect x="35" y="85" width="350" height="260" class="panel-const" />
+  <text x="210" y="112" class="panel-title" fill="#1e3a8a">const 키워드 (Compile-time Static)</text>
+
+  <rect x="50" y="130" width="320" height="80" class="box-white" />
+  <text x="65" y="152" class="code-text" fill="#1d4ed8">const LIMIT = 100; // 전역/네임스페이스 레벨</text>
+  <text x="65" y="174" class="code-text" fill="#1d4ed8">class Member {</text>
+  <text x="65" y="196" class="code-text" fill="#1d4ed8">    const ROLE_ADMIN = "Admin"; // 클래스 내 가능</text>
+  <text x="65" y="202" class="code-text" fill="#1d4ed8">}</text>
+
+  <text x="55" y="235" class="text-normal">✔ <b>컴파일 단계</b>에서 즉시 평가되어 동작 속도가 매우 빠름</text>
+  <text x="55" y="255" class="text-normal">✔ <b>클래스 상수</b>(Class Constant)를 정의할 때 필수적으로 사용</text>
+  <text x="55" y="275" class="text-normal">✔ 컴파일 시점이므로 <b>제어구조(if, switch, try) 내부 선언 불가</b></text>
+  <text x="55" y="295" class="text-normal">✔ 상수명은 반드시 스칼라(Scalar) 값 및 상수 표현식만 가능</text>
+
+  <!-- Right: define() Function -->
+  <rect x="415" y="85" width="350" height="260" class="panel-define" />
+  <text x="590" y="112" class="panel-title" fill="#065f46">define() 내장 함수 (Runtime Dynamic)</text>
+
+  <rect x="430" y="130" width="320" height="80" class="box-white" />
+  <text x="445" y="152" class="code-text" fill="#047857">if ($isDev) {</text>
+  <text x="445" y="174" class="code-text" fill="#047857">    define("API_URL", "http://dev.api");</text>
+  <text x="445" y="196" class="code-text" fill="#047857">} // 조건문 내부 동적 선언 가능</text>
+
+  <text x="435" y="235" class="text-normal">✔ 스크립트 실행 중(<b>런타임 단계</b>)에 동적으로 평가 및 선언</text>
+  <text x="435" y="255" class="text-normal">✔ <b>조건문(if) 및 함수 내부</b>에서 상황에 따라 조건부 정의 가능</text>
+  <text x="435" y="275" class="text-normal">✔ <b>클래스 정의 블록 내부</b>에서는 상수로 선언할 수 없음</text>
+  <text x="435" y="295" class="text-normal">✔ PHP 7 이상부터는 배열을 상수의 값으로 지정하는 것을 지원</text>
+</svg>

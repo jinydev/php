@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc3545" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">예외 처리(Try-Catch-Finally) 실행 제어 흐름</text>
+
+  <!-- Try Block -->
+  <g transform="translate(60, 120)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+    <rect width="180" height="30" rx="12" fill="#3b82f6" />
+    <rect y="22" width="180" height="8" fill="#3b82f6" />
+    <text x="90" y="19" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">try 블록 (코드 실행)</text>
+    
+    <text x="20" y="60" fill="#1e40af" font-family="monospace" font-size="11">비즈니스 로직 실행</text>
+    <text x="20" y="85" fill="#b91c1c" font-family="monospace" font-size="11" font-weight="bold">throw new Exception()</text>
+    <text x="20" y="102" fill="#64748b" font-family="'Inter', sans-serif" font-size="9">(문제 감지 시 예외 발생)</text>
+  </g>
+
+  <!-- Catch Block -->
+  <g transform="translate(310, 120)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5" />
+    <rect width="180" height="30" rx="12" fill="#dc3545" />
+    <rect y="22" width="180" height="8" fill="#dc3545" />
+    <text x="90" y="19" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">catch 블록 (예외 수습)</text>
+    
+    <text x="20" y="60" fill="#991b1b" font-family="monospace" font-size="11">예외 분석 ($e->msg)</text>
+    <text x="20" y="85" fill="#991b1b" font-family="monospace" font-size="11">로깅 및 사용자 안내</text>
+    <text x="20" y="102" fill="#64748b" font-family="'Inter', sans-serif" font-size="9">(정상 흐름 복구 시도)</text>
+  </g>
+
+  <!-- Finally Block -->
+  <g transform="translate(560, 120)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5" />
+    <rect width="180" height="30" rx="12" fill="#166534" />
+    <rect y="22" width="180" height="8" fill="#166534" />
+    <text x="90" y="19" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">finally 블록 (마무리)</text>
+    
+    <text x="20" y="60" fill="#14532d" font-family="monospace" font-size="11">리소스 해제 (DB 닫기)</text>
+    <text x="20" y="85" fill="#14532d" font-family="monospace" font-size="11">항상 실행되는 보장 코드</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Throw Exception arrow -->
+  <path d="M 240,180 L 300,180" fill="none" stroke="#dc3545" stroke-width="3" marker-end="url(#arrow-red)" />
+  <text x="270" y="165" fill="#dc3545" font-family="'Inter', sans-serif" font-weight="700" font-size="10" text-anchor="middle">예외 발생 시</text>
+
+  <!-- Try/Catch to Finally arrow -->
+  <path d="M 490,180 L 550,180" fill="none" stroke="#166534" stroke-width="3" marker-end="url(#arrow)" />
+  
+  <!-- Direct bypass try to finally if no exception -->
+  <path d="M 150,240 Q 360,330 650,240" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)" />
+  <text x="400" y="300" fill="#3b82f6" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">정상 동작 완료 시 (Catch 우회)</text>
+</svg>

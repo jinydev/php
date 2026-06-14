@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #64748b; }
+    .node-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .label-left { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #475569; }
+    .ver-badge { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    
+    .box-center { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2.5; rx: 16px; }
+    .box-branch-blue { fill: #f0f7ff; stroke: #3b82f6; stroke-width: 1.5; rx: 10px; }
+    .box-branch-amber { fill: #fef3c7; stroke: #f59e0b; stroke-width: 1.5; rx: 10px; }
+    .box-branch-purple { fill: #faf5ff; stroke: #a855f7; stroke-width: 1.5; rx: 10px; }
+    .box-branch-cyan { fill: #ecfeff; stroke: #06b6d4; stroke-width: 1.5; rx: 10px; }
+
+    .badge-v80 { fill: #3b82f6; rx: 4px; }
+    .badge-v81 { fill: #a855f7; rx: 4px; }
+    .badge-v82 { fill: #f59e0b; rx: 4px; }
+    .badge-v83 { fill: #10b981; rx: 4px; }
+    .badge-v84 { fill: #ec4899; rx: 4px; }
+
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-dash { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title Section -->
+  <text x="30" y="45" class="title">PHP 8.0 ~ 8.5 메이저 혁신 및 로드맵</text>
+  <text x="30" y="65" class="subtitle">엔진 고속화, 정적 타입 고도화, 불변성 보장 및 최신 구문 단축 문법</text>
+
+  <!-- Connectors from Center to Branches -->
+  <line x1="400" y1="235" x2="190" y2="155" class="line" />
+  <line x1="400" y1="235" x2="610" y2="155" class="line" />
+  <line x1="400" y1="235" x2="190" y2="315" class="line" />
+  <line x1="400" y1="235" x2="610" y2="315" class="line" />
+
+  <!-- Center Hub: PHP 8.x Core -->
+  <rect x="310" y="185" width="180" height="100" class="box-center" />
+  <text x="400" y="230" class="node-title" font-size="18" fill="#1e3a8a">PHP 8.0 ~ 8.5</text>
+  <text x="400" y="255" class="label" fill="#2563eb" font-weight="bold">Modern Ecosystem</text>
+
+
+  <!-- Branch 1: Engine & Performance (Top-Left) -->
+  <rect x="40" y="90" width="260" height="110" class="box-branch-blue" />
+  <text x="170" y="115" class="node-title" fill="#1d4ed8">1. 엔진 성능 및 가속</text>
+  
+  <rect x="55" y="130" width="45" height="18" class="badge-v80" />
+  <text x="775" y="0" class="ver-badge"><!-- dummy --></text>
+  <text x="775" y="0" class="ver-badge"><!-- dummy --></text>
+  <text x="77" y="143" class="ver-badge">PHP 8.0</text>
+  <text x="110" y="144" class="label-left">JIT (Just-In-Time) 컴파일러</text>
+  
+  <rect x="55" y="155" width="45" height="18" class="badge-v81" />
+  <text x="77" y="168" class="ver-badge">PHP 8.1</text>
+  <text x="110" y="169" class="label-left">Fibers (경량 코루틴 동시성)</text>
+
+
+  <!-- Branch 2: Immutability & OOP (Top-Right) -->
+  <rect x="500" y="90" width="260" height="110" class="box-branch-purple" />
+  <text x="630" y="115" class="node-title" fill="#6b21a8">2. 불변성 (Immutability)</text>
+  
+  <rect x="515" y="130" width="45" height="18" class="badge-v81" />
+  <text x="537" y="143" class="ver-badge">PHP 8.1</text>
+  <text x="570" y="144" class="label-left">Readonly 프로퍼티</text>
+  
+  <rect x="515" y="155" width="45" height="18" class="badge-v82" />
+  <text x="537" y="168" class="ver-badge">PHP 8.2</text>
+  <text x="570" y="169" class="label-left">Readonly 클래스 선언</text>
+
+
+  <!-- Branch 3: Type System (Bottom-Left) -->
+  <rect x="40" y="270" width="260" height="130" class="box-branch-amber" />
+  <text x="170" y="295" class="node-title" fill="#b45309">3. 정적 타입 고도화</text>
+  
+  <rect x="55" y="310" width="45" height="18" class="badge-v80" />
+  <text x="77" y="323" class="ver-badge">PHP 8.0</text>
+  <text x="110" y="324" class="label-left">Union 타입 선언 (A|B)</text>
+  
+  <rect x="55" y="335" width="45" height="18" class="badge-v81" />
+  <text x="77" y="348" class="ver-badge">PHP 8.1</text>
+  <text x="110" y="349" class="label-left">Enums 내장 지원 (열거형)</text>
+  
+  <rect x="55" y="360" width="45" height="18" class="badge-v83" />
+  <text x="77" y="373" class="ver-badge">PHP 8.3</text>
+  <text x="110" y="374" class="label-left">클래스 상수 타입 지정</text>
+
+
+  <!-- Branch 4: Modern Syntax (Bottom-Right) -->
+  <rect x="500" y="270" width="260" height="130" class="box-branch-cyan" />
+  <text x="630" y="295" class="node-title" fill="#0e7490">4. 모던 구문 및 훅</text>
+  
+  <rect x="515" y="310" width="45" height="18" class="badge-v80" />
+  <text x="537" y="323" class="ver-badge">PHP 8.0</text>
+  <text x="570" y="324" class="label-left">Match 표현식 / Nullsafe (?->)</text>
+  
+  <rect x="515" y="335" width="45" height="18" class="badge-v84" />
+  <text x="537" y="348" class="ver-badge">PHP 8.4</text>
+  <text x="570" y="349" class="label-left">Property Hooks (Get/Set 훅)</text>
+
+  <rect x="515" y="360" width="45" height="18" class="badge-v84" />
+  <text x="537" y="373" class="ver-badge">PHP 8.4</text>
+  <text x="570" y="374" class="label-left">비대칭 가시성 (Asymmetric Visibility)</text>
+
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <style>
+    .bg { fill: #f8fafc; }
+    .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #334155; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #0f172a; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #1e293b; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    
+    .box-compare { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+    .box-return { stroke: #ef4444; stroke-width: 2; fill: #fef2f2; rx: 8px; }
+    .box-yield { stroke: #3b82f6; stroke-width: 2; fill: #eff6ff; rx: 8px; }
+    
+    .line-flow { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+    .line-jump { stroke: #3b82f6; stroke-width: 2; fill: none; stroke-dasharray: 4 2; }
+    .line-success { stroke: #10b981; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg" rx="16" />
+  <rect x="10" y="10" width="780" height="460" class="card" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">일반 Return vs 제너레이터 Yield 비교 (Return vs Yield Mechanism)</text>
+
+  <!-- Left Side: Normal Return -->
+  <rect x="40" y="80" width="330" height="360" class="box-compare" />
+  <text x="205" y="110" class="subtitle" fill="#b91c1c" text-anchor="middle">일반 함수 (Return)</text>
+  <text x="205" y="130" class="label" fill="#475569" text-anchor="middle">일회성 반환 및 즉각 소멸</text>
+
+  <!-- Return flowchart -->
+  <rect x="60" y="160" width="290" height="80" class="box-return" />
+  <text x="75" y="185" class="code" fill="#991b1b">function standard() {</text>
+  <text x="95" y="210" class="code" fill="#b91c1c">return "Value"; <tspan fill="#7f1d1d">◀ 함수 영구 종료</tspan></text>
+  <text x="75" y="230" class="code" fill="#991b1b">}</text>
+
+  <!-- Action representation -->
+  <rect x="60" y="280" width="290" height="120" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+  <text x="205" y="315" class="label-bold" fill="#b91c1c" text-anchor="middle">호출 스택 (Call Stack) 상태</text>
+  <circle cx="205" cy="355" r="18" fill="#ef4444" />
+  <path d="M 195 355 L 215 355 M 205 345 L 205 365" transform="rotate(45, 205, 355)" stroke="#ffffff" stroke-width="4" />
+  <text x="205" y="390" class="label" fill="#ef4444" text-anchor="middle">스택 프레임 완전 소멸 (Destroyed)</text>
+
+
+  <!-- Right Side: Generator Yield -->
+  <rect x="430" y="80" width="330" height="360" class="box-compare" />
+  <text x="595" y="110" class="subtitle" fill="#1d4ed8" text-anchor="middle">제너레이터 함수 (Yield)</text>
+  <text x="595" y="130" class="label" fill="#475569" text-anchor="middle">다중 일시 중지 및 상태 유지(Frozen)</text>
+
+  <!-- Yield flowchart -->
+  <rect x="450" y="160" width="290" height="110" class="box-yield" />
+  <text x="465" y="185" class="code" fill="#1e40af">function myGen() {</text>
+  <text x="485" y="210" class="code" fill="#2563eb">yield "Val 1"; <tspan fill="#1e3a8a">◀ 1차 일시정지</tspan></text>
+  <text x="485" y="235" class="code" fill="#2563eb">yield "Val 2"; <tspan fill="#1e3a8a">◀ 2차 일시정지</tspan></text>
+  <text x="465" y="255" class="code" fill="#1e40af">}</text>
+
+  <!-- Action representation -->
+  <rect x="450" y="295" width="290" height="125" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+  <text x="595" y="320" class="label-bold" fill="#2563eb" text-anchor="middle">상태 유지 (State Preservation)</text>
+  
+  <rect x="480" y="335" width="230" height="40" fill="#e0f2fe" stroke="#0284c7" rx="4" />
+  <text x="595" y="358" class="code" fill="#0369a1" text-anchor="middle">Frozen Pointer &amp; Variable State</text>
+  
+  <text x="595" y="405" class="label" fill="#0369a1" text-anchor="middle">재호출 시 정지 지점부터 이어서 실행</text>
+
+  <!-- Middle Connector Arrow -->
+  <path d="M 380 200 L 420 200" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+  <path d="M 420 230 L 380 230" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow-gray)" />
+</svg>

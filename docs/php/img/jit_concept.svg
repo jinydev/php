@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="aotGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+    <linearGradient id="interpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fafafa" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="jitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f97316" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; fill: #1e293b; }
+    .node-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+
+    .line-blue { stroke: #3b82f6; stroke-width: 1.5; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+    .line-green { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-orange { stroke: #f97316; stroke-width: 2; fill: none; }
+
+    .badge-aot { fill: url(#aotGrad); stroke: #3b82f6; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-interp { fill: url(#interpGrad); stroke: #cbd5e1; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-jit { fill: url(#jitGrad); stroke: #10b981; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+    .badge-orange { fill: url(#orangeGrad); stroke: #f97316; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+    .badge-cpu { fill: #1e293b; stroke: #0f172a; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="420" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="48" class="title">AOT vs 인터프리터 vs JIT 하이브리드 컴파일러 대조</text>
+  <text x="35" y="70" class="subtitle">소스 코드를 읽어 하드웨어(CPU) 수준에서 명령이 가동되기까지의 가속 흐름 차이</text>
+
+  <!-- 1. AOT Compiler Flow (Top Row, Y = 130) -->
+  <text x="35" y="115" class="section-title" fill="#2563eb">1) AOT (Ahead-Of-Time) 컴파일러 (C, C++, Go, Rust 등)</text>
+  
+  <rect x="40" y="130" width="120" height="35" class="badge-interp" />
+  <text x="100" y="152" class="node-text" fill="#475569">소스 코드</text>
+
+  <path d="M 160 148 L 220 148" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="190" y="140" class="arrow-text" fill="#2563eb">배포 전 빌드</text>
+
+  <rect x="230" y="130" width="140" height="35" class="badge-aot" />
+  <text x="300" y="152" class="node-text" fill="#1e40af">AOT static 컴파일러</text>
+
+  <path d="M 370 148 L 440 148" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="405" y="140" class="arrow-text" fill="#2563eb">독립 바이너리</text>
+
+  <rect x="450" y="130" width="140" height="35" class="badge-aot" />
+  <text x="520" y="152" class="node-text" fill="#1e40af">네이티브 기계어 파일</text>
+
+  <path d="M 590 148 L 650 148" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="620" y="140" class="arrow-text" fill="#2563eb">즉시 로드</text>
+
+  <rect x="660" y="130" width="100" height="35" class="badge-cpu" />
+  <text x="710" y="152" class="node-text" fill="#ffffff">CPU 실행 (빠름)</text>
+
+
+  <!-- 2. Interpreter Flow (Middle Row, Y = 230) -->
+  <text x="35" y="215" class="section-title" fill="#475569">2) 전통적인 인터프리터 (기존 PHP, Python, JS 등)</text>
+  
+  <rect x="40" y="230" width="120" height="35" class="badge-interp" />
+  <text x="100" y="252" class="node-text" fill="#475569">소스 코드</text>
+
+  <path d="M 160 248 L 220 248" class="line-gray" marker-end="url(#arrow-gray)" />
+  <text x="190" y="240" class="arrow-text">웹 요청 / 호출</text>
+
+  <rect x="230" y="230" width="140" height="35" class="badge-interp" />
+  <text x="300" y="252" class="node-text" fill="#475569">가상머신 인터프리터</text>
+
+  <path d="M 370 248 L 650 248" class="line-gray" marker-end="url(#arrow-gray)" />
+  <text x="510" y="240" class="arrow-text">런타임에 소스코드를 매번 한 줄씩 기계어로 번역하며 실행 (오버헤드 발생)</text>
+
+  <rect x="660" y="230" width="100" height="35" class="badge-cpu" />
+  <text x="710" y="252" class="node-text" fill="#ffffff">CPU 실행 (느림)</text>
+
+
+  <!-- 3. JIT Compiler Flow (Bottom Row, Y = 330) -->
+  <text x="35" y="315" class="section-title" fill="#059669">3) JIT (Just-In-Time) 하이브리드 컴파일러 (Java VM, V8 JS, PHP JIT 등)</text>
+  
+  <rect x="40" y="330" width="120" height="35" class="badge-interp" />
+  <text x="100" y="352" class="node-text" fill="#475569">소스 코드</text>
+
+  <path d="M 160 348 L 220 348" class="line-green" marker-end="url(#arrow-green)" />
+  
+  <!-- VM / Interpreter & Profiler -->
+  <rect x="230" y="330" width="140" height="35" class="badge-jit" />
+  <text x="300" y="352" class="node-text" fill="#047857">인터프리터 &amp; 프로파일러</text>
+
+  <!-- Profiler branch down to JIT -->
+  <path d="M 300 365 L 300 395 L 440 395" class="line-orange" marker-end="url(#arrow-orange)" />
+  <text x="370" y="390" class="arrow-text" fill="#ea580c">자주 실행되는 코드 감지 (Hotspot)</text>
+
+  <rect x="450" y="377" width="140" height="35" class="badge-orange" />
+  <text x="520" y="399" class="node-text" fill="#c2410c">JIT 컴파일러</text>
+
+  <!-- Arrow from JIT Compiler to Native Machine Code -->
+  <path d="M 590 395 L 615 395 L 615 358 L 650 358" class="line-orange" marker-end="url(#arrow-orange)" />
+  <text x="625" y="385" class="arrow-text" fill="#ea580c" transform="rotate(-90 625 385)">컴파일</text>
+
+  <!-- Straight path for cold code -->
+  <path d="M 370 348 L 440 348" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="405" y="340" class="arrow-text" fill="#059669">일반 실행</text>
+
+  <!-- VM / Opcode Cache -->
+  <rect x="450" y="330" width="140" height="35" class="badge-jit" />
+  <text x="520" y="352" class="node-text" fill="#047857">바이트코드 캐시 (메모리)</text>
+
+  <path d="M 590 348 L 650 348" class="line-green" marker-end="url(#arrow-green)" />
+
+  <!-- Native Code Buffer inside Memory -->
+  <rect x="660" y="330" width="100" height="35" class="badge-cpu" />
+  <text x="710" y="352" class="node-text" fill="#ffffff">CPU 실행 (네이티브)</text>
+
+</svg>

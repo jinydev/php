@@ -1,0 +1,18 @@
+main:
+- title: 응용실습 개요
+  url: /practice
+  subitems:
+  - title: 응용실습 소개
+    url: /practice
+- title: 콘솔 & 파일
+  url: /practice/console/
+  subitems:
+  - title: 콘솔 프로그래밍
+    url: /practice/console/
+  - title: 파일 입출력 & JSON
+    url: /practice/file/
+- title: 네트워크 연동
+  url: /practice/curl/
+  subitems:
+  - title: cURL 및 크롤링
+    url: /practice/curl/

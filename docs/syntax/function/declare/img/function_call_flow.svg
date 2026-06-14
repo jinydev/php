@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <style>
+    .bg { fill: #f8fafc; }
+    .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #334155; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; }
+    .code-comment { fill: #64748b; font-style: italic; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; fill: #334155; text-anchor: middle; }
+    
+    .box-main { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 8px; }
+    .box-func { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-stack { fill: #faf5ff; stroke: #a855f7; stroke-width: 1.5; rx: 6px; }
+    
+    .line-call { stroke: #3b82f6; stroke-width: 2.5; fill: none; stroke-dasharray: 4 2; }
+    .line-return { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-seq { stroke: #94a3b8; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg" rx="16" />
+  <rect x="10" y="10" width="780" height="460" class="card" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">함수 호출 및 제어권 흐름 (Function Call &amp; Return Flow)</text>
+
+  <!-- Main Execution Stream -->
+  <rect x="40" y="80" width="280" height="360" class="box-main" />
+  <text x="180" y="110" class="subtitle" fill="#065f46" text-anchor="middle">메인 프로그램 실행 흐름 (Main Thread)</text>
+  
+  <rect x="55" y="130" width="250" height="290" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="6" />
+  
+  <!-- Line indicators -->
+  <circle cx="75" cy="160" r="10" fill="#10b981" />
+  <text x="75" y="164" class="label-bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="95" y="164" class="code">echo "시작";</text>
+  
+  <!-- Step 2: Function Call -->
+  <circle cx="75" cy="220" r="10" fill="#3b82f6" />
+  <text x="75" y="224" class="label-bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="95" y="224" class="code" fill="#2563eb">helloMsg(); <tspan class="code-comment">// ◀ 함수 호출</tspan></text>
+  
+  <!-- Step 5: Resume Execution -->
+  <circle cx="75" cy="340" r="10" fill="#10b981" />
+  <text x="75" y="344" class="label-bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="95" y="344" class="code">echo "종료";</text>
+
+  <path d="M 180 178 L 180 202" class="line-seq" marker-end="url(#arrow-gray)" />
+  <path d="M 180 238 L 180 322" class="line-seq" marker-end="url(#arrow-gray)" stroke-dasharray="2 2" />
+
+  <!-- Function Definition Block -->
+  <rect x="480" y="80" width="280" height="220" class="box-func" />
+  <text x="620" y="110" class="subtitle" fill="#1e40af" text-anchor="middle">사용자 정의 함수 (Function Definition)</text>
+  
+  <rect x="495" y="130" width="250" height="150" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="6" />
+  
+  <text x="510" y="164" class="code" fill="#7e22ce">function helloMsg() {</text>
+  
+  <!-- Step 3: Run Function -->
+  <circle cx="530" cy="200" r="10" fill="#2563eb" />
+  <text x="530" y="204" class="label-bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="550" y="204" class="code">echo "Hello World!";</text>
+  
+  <!-- Step 4: Return control -->
+  <circle cx="530" cy="245" r="10" fill="#10b981" />
+  <text x="530" y="249" class="label-bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="550" y="249" class="code" fill="#059669">return; <tspan class="code-comment">// ◀ 제어권 반환</tspan></text>
+  
+  <text x="510" y="270" class="code" fill="#7e22ce">}</text>
+
+  <path d="M 620 215 L 620 228" class="line-seq" marker-end="url(#arrow-gray)" />
+
+  <!-- Call Flow Lines -->
+  <!-- Call Jump (Blue) -->
+  <path d="M 310 220 C 390 220, 400 150, 485 150" class="line-call" marker-end="url(#arrow-blue)" />
+  <rect x="345" y="145" width="110" height="22" fill="#eff6ff" stroke="#3b82f6" stroke-width="1" rx="4" />
+  <text x="400" y="160" class="arrow-text" fill="#2563eb">호출: 제어권 이전</text>
+
+  <!-- Return Jump (Green) -->
+  <path d="M 485 245 C 400 245, 390 340, 310 340" class="line-return" marker-end="url(#arrow-green)" />
+  <rect x="345" y="305" width="110" height="22" fill="#f0fdf4" stroke="#10b981" stroke-width="1" rx="4" />
+  <text x="400" y="320" class="arrow-text" fill="#047857">반환: 제어권 복귀</text>
+
+  <!-- Bottom Instruction Box -->
+  <rect x="340" y="360" width="120" height="80" class="box-stack" />
+  <text x="400" y="380" class="subtitle" font-size="12" fill="#6b21a8" text-anchor="middle">메모리 (Call Stack)</text>
+  <rect x="350" y="392" width="100" height="40" fill="#ffffff" stroke="#d8b4fe" rx="3" />
+  <text x="400" y="408" class="label" fill="#7e22ce" text-anchor="middle">복귀 주소 저장</text>
+  <text x="400" y="424" class="code" font-size="10" fill="#7e22ce">Line 32 (main)</text>
+
+  <!-- Connect Call Stack -->
+  <path d="M 280 230 L 330 375" stroke="#a855f7" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+</svg>

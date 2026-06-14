@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f46e5" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">클래스 상속(Inheritance) 구조와 확장</text>
+
+  <!-- Parent Class Box -->
+  <g transform="translate(300, 70)" filter="url(#shadow)">
+    <rect width="200" height="110" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="200" height="32" rx="12" fill="#4f46e5" />
+    <rect y="24" width="200" height="8" fill="#4f46e5" />
+    <text x="100" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">부모 클래스 (Parent Class)</text>
+    
+    <text x="100" y="55" fill="#0f172a" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">class Animal</text>
+    <text x="20" y="78" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">Properties: +$name</text>
+    <text x="20" y="94" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">Methods: +eat()</text>
+  </g>
+
+  <!-- Child Class Box -->
+  <g transform="translate(300, 240)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="200" height="32" rx="12" fill="#0d9488" />
+    <rect y="24" width="200" height="8" fill="#0d9488" />
+    <text x="100" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">자식 클래스 (Child Class)</text>
+    
+    <text x="100" y="55" fill="#0f172a" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">class Dog extends Animal</text>
+    <text x="20" y="78" fill="#0f172a" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Inherited: +$name, +eat()</text>
+    <text x="20" y="96" fill="#ea580c" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Extended: +bark()</text>
+    <text x="20" y="114" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10">부모의 기능 상속 + 새로운 기능 정의</text>
+  </g>
+
+  <!-- Inheritance Arrow -->
+  <path d="M 400,240 L 400,192" fill="none" stroke="#4f46e5" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="415" y="215" fill="#4f46e5" font-family="'Inter', sans-serif" font-weight="700" font-size="10">extends (상속)</text>
+</svg>

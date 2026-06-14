@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">Trait을 이용한 수평적 코드 재사용 (Horizontal Reuse)</text>
+
+  <!-- Trait 1 -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <rect width="200" height="110" rx="12" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5" />
+    <rect width="200" height="30" rx="12" fill="#7c3aed" />
+    <rect y="22" width="200" height="8" fill="#7c3aed" />
+    <text x="100" y="19" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">trait Logger</text>
+    <text x="20" y="65" fill="#7c3aed" font-family="monospace" font-size="11" font-weight="bold">public function log();</text>
+  </g>
+
+  <!-- Trait 2 -->
+  <g transform="translate(500, 80)" filter="url(#shadow)">
+    <rect width="200" height="110" rx="12" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5" />
+    <rect width="200" height="30" rx="12" fill="#7c3aed" />
+    <rect y="22" width="200" height="8" fill="#7c3aed" />
+    <text x="100" y="19" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">trait Authorizable</text>
+    <text x="20" y="65" fill="#7c3aed" font-family="monospace" font-size="11" font-weight="bold">public function check();</text>
+  </g>
+
+  <!-- Class using both traits -->
+  <g transform="translate(250, 240)" filter="url(#shadow)">
+    <rect width="300" height="120" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="300" height="32" rx="12" fill="#0d9488" />
+    <rect y="24" width="300" height="8" fill="#0d9488" />
+    <text x="150" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12" text-anchor="middle">클래스에 Traits 수평 결합</text>
+    
+    <text x="150" y="55" fill="#0f172a" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">class UserController</text>
+    <text x="20" y="78" fill="#7c3aed" font-family="monospace" font-size="11" font-weight="bold">use Logger, Authorizable;</text>
+    <text x="20" y="98" fill="#475569" font-family="'Inter', sans-serif" font-size="10">→ 다중 상속과 유사하게 두 Trait의 메서드를 직접 상속받음</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M 290,240 L 220,192" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 510,240 L 580,192" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

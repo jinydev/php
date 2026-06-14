@@ -1,0 +1,30 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for doc in site.documents %}
+    {% if doc.url %}
+      <url>
+        <loc>{{ site.url | append: site.baseurl | append: doc.url }}</loc>
+        {% if doc.last_modified_at %}
+          <lastmod>{{ doc.last_modified_at | date_to_xmlschema }}</lastmod>
+        {% elsif doc.date %}
+          <lastmod>{{ doc.date | date_to_xmlschema }}</lastmod>
+        {% endif %}
+      </url>
+    {% endif %}
+  {% endfor %}
+  {% for page in site.pages %}
+    {% if page.url and page.url != '/sitemap.xml' %}
+      <url>
+        <loc>{{ site.url | append: site.baseurl | append: page.url }}</loc>
+        {% if page.last_modified_at %}
+          <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+        {% elsif page.date %}
+          <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+        {% endif %}
+      </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

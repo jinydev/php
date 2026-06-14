@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #475569; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .label-left { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #0f172a; }
+    .code-bold { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 700; fill: #1e3a8a; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+    
+    .box-blueprint { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 12px; }
+    .box-heap-border { fill: #fafafa; stroke: #cbd5e1; stroke-width: 1.5; rx: 12px; stroke-dasharray: 4 4; }
+    .box-instance-1 { fill: #faf5ff; stroke: #a855f7; stroke-width: 2; rx: 8px; }
+    .box-instance-2 { fill: #ecfeff; stroke: #06b6d4; stroke-width: 2; rx: 8px; }
+    .box-inner-member { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; rx: 6px; }
+
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    .line-purple { stroke: #a855f7; stroke-width: 2; fill: none; }
+    .line-cyan { stroke: #06b6d4; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a855f7" />
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#06b6d4" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">클래스(설계도)와 인스턴스(객체 실체화) 관계</text>
+
+  <!-- Left: Class Blueprint -->
+  <rect x="35" y="80" width="280" height="320" class="box-blueprint" />
+  <text x="50" y="110" class="subtitle" fill="#1d4ed8">클래스 설계도 (Class Blueprint)</text>
+  <text x="50" y="130" class="code-bold">class User { ... }</text>
+
+  <!-- Properties inside Blueprint -->
+  <rect x="50" y="150" width="250" height="90" class="box-inner-member" />
+  <text x="60" y="170" class="subtitle" font-size="11" fill="#2563eb">프로퍼티 (상태 설계)</text>
+  <text x="60" y="195" class="code" fill="#475569">public string $name;</text>
+  <text x="60" y="218" class="code" fill="#475569">private int $age;</text>
+
+  <!-- Methods inside Blueprint -->
+  <rect x="50" y="255" width="250" height="125" class="box-inner-member" />
+  <text x="60" y="275" class="subtitle" font-size="11" fill="#2563eb">메서드 (행동 정의)</text>
+  <text x="60" y="300" class="code" fill="#0f172a">public function getName()</text>
+  <text x="60" y="325" class="code" fill="#0f172a">public function run()</text>
+  <text x="60" y="350" class="code" fill="#64748b">// 로직 코드는 메모리 상 공유</text>
+
+
+  <!-- Middle: Instantiation arrow (new Operator) -->
+  <!-- Upper arrow for Instance 1 -->
+  <path d="M 325 180 C 390 180, 390 150, 440 150" class="line-purple" marker-end="url(#arrow-purple)" />
+  <text x="385" y="140" class="arrow-text" fill="#7e22ce" font-weight="bold">new User('Alice', 20)</text>
+
+  <!-- Lower arrow for Instance 2 -->
+  <path d="M 325 300 C 390 300, 390 310, 440 310" class="line-cyan" marker-end="url(#arrow-cyan)" />
+  <text x="385" y="335" class="arrow-text" fill="#0e7490" font-weight="bold">new User('Bob', 25)</text>
+
+
+  <!-- Right: Memory Heap -->
+  <rect x="450" y="80" width="315" height="320" class="box-heap-border" />
+  <text x="465" y="105" class="subtitle" fill="#475569">메모리 힙 영역 (Heap Memory)</text>
+
+  <!-- Instance 1 -->
+  <rect x="465" y="120" width="285" height="110" class="box-instance-1" />
+  <text x="480" y="145" class="subtitle" font-size="12" fill="#7e22ce">Instance #1 (User 객체)</text>
+  <text x="480" y="175" class="code" fill="#0f172a">$alice-&gt;name = 'Alice';</text>
+  <text x="480" y="198" class="code" fill="#475569">$alice-&gt;age  = 20;</text>
+
+  <!-- Instance 2 -->
+  <rect x="465" y="260" width="285" height="110" class="box-instance-2" />
+  <text x="480" y="285" class="subtitle" font-size="12" fill="#0e7490">Instance #2 (User 객체)</text>
+  <text x="480" y="315" class="code" fill="#0f172a">$bob-&gt;name   = 'Bob';</text>
+  <text x="480" y="338" class="code" fill="#475569">$bob-&gt;age    = 25;</text>
+
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="macGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="brewOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+    <linearGradient id="badgeSlate" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="badgeAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d97706" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#macGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 16px; }
+    .box-brew { fill: url(#brewOrange); stroke: #fde047; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-slate { fill: url(#badgeSlate); stroke: #475569; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    .badge-amber { fill: url(#badgeAmber); stroke: #d97706; stroke-width: 1; rx: 8px; filter: url(#shadow); }
+    
+    .line-slate { stroke: #475569; stroke-width: 1.5; fill: none; }
+    .line-amber { stroke: #d97706; stroke-width: 1.5; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">macOS Homebrew 기반 PHP 설치 및 실행 메커니즘</text>
+  <text x="35" y="72" class="subtitle">Homebrew 패키지 관리자를 사용한 PHP 다운로드, 파일 링크 구조 및 Launchd 데몬 관리 흐름</text>
+
+  <!-- Left Side: Homebrew Installer -->
+  <rect x="40" y="100" width="340" height="330" class="box-brew" />
+  <text x="210" y="130" class="section-title" fill="#b45309">Homebrew 패키지 관리</text>
+
+  <!-- CLI Command -->
+  <rect x="60" y="150" width="135" height="50" class="badge-amber" />
+  <text x="127" y="172" class="heading" fill="#0f172a">1. brew install php</text>
+  <text x="127" y="188" class="arrow-text" font-size="9" fill="#d97706">인터넷 저장소 패키지 검색</text>
+
+  <!-- Dependency -->
+  <rect x="225" y="150" width="135" height="50" class="badge-amber" />
+  <text x="292" y="172" class="heading" fill="#0f172a">2. 의존성 패키지 설치</text>
+  <text x="292" y="188" class="arrow-text" font-size="9" fill="#92400e">openssl, libxml2 등 자동 빌드</text>
+
+  <path d="M 195 175 L 225 175" class="line-amber" marker-end="url(#arrow-amber)" />
+
+  <!-- Apple Silicon vs Intel Path Mapping -->
+  <rect x="60" y="240" width="300" height="70" class="badge-amber" />
+  <text x="210" y="258" class="heading" fill="#78350f">3. 실물 설치 경로 할당</text>
+  <text x="210" y="278" class="arrow-text" font-size="9" fill="#b45309">Apple Silicon (M1/M2/M3): /opt/homebrew/Cellar/php</text>
+  <text x="210" y="294" class="arrow-text" font-size="9" fill="#b45309">Intel x86 Mac: /usr/local/Cellar/php</text>
+
+  <path d="M 292 200 L 292 240" class="line-amber" marker-end="url(#arrow-amber)" />
+
+  <!-- Symlink Binaries -->
+  <rect x="60" y="345" width="300" height="65" class="badge-amber" />
+  <text x="210" y="365" class="heading" fill="#78350f">4. 심볼릭 링크 생성 (PATH)</text>
+  <text x="210" y="382" class="arrow-text" font-size="9" fill="#4b5563">/opt/homebrew/bin/php ➡️ Cellar 실행파일</text>
+  <text x="210" y="396" class="arrow-text" font-size="9" fill="#4b5563">/opt/homebrew/etc/php/8.x/php.ini (설정 폴더)</text>
+
+  <path d="M 210 310 L 210 345" class="line-amber" marker-end="url(#arrow-amber)" />
+
+
+  <!-- Bridge Link -->
+  <path d="M 380 265 L 420 265" class="line-gray" marker-end="url(#arrow-slate)" />
+  <text x="400" y="255" class="arrow-text">서비스 등록</text>
+
+
+  <!-- Right Side: macOS System Daemon -->
+  <rect x="420" y="100" width="340" height="330" class="box-container" />
+  <text x="590" y="130" class="section-title" fill="#334155">macOS Launchd 시스템 관리</text>
+
+  <!-- brew services start php -->
+  <rect x="440" y="150" width="300" height="50" class="badge-slate" />
+  <text x="590" y="172" class="heading" fill="#0f172a">brew services start php</text>
+  <text x="590" y="188" class="arrow-text" font-size="9" fill="#475569">macOS 백그라운드 서비스(Daemon) 가동 명령어</text>
+
+  <path d="M 590 200 L 590 240" class="line-slate" marker-end="url(#arrow-slate)" />
+
+  <!-- macOS launchd -->
+  <rect x="440" y="240" width="300" height="55" class="badge-slate" />
+  <text x="590" y="262" class="heading" fill="#0f172a">macOS launchd 프로세스 로드</text>
+  <text x="590" y="278" class="arrow-text" font-size="9" fill="#475569">~/Library/LaunchAgents/homebrew.mxcl.php.plist 로드</text>
+
+  <path d="M 590 295 L 590 335" class="line-slate" marker-end="url(#arrow-slate)" />
+
+  <!-- PHP-FPM Service -->
+  <rect x="440" y="335" width="300" height="75" class="badge-slate" />
+  <text x="590" y="355" class="heading" fill="#1e293b">PHP-FPM 가동 (127.0.0.1:9000)</text>
+  <text x="590" y="375" class="arrow-text" font-size="9" fill="#334155">Nginx/Apache 연동 준비 완료</text>
+  <text x="590" y="390" class="arrow-text" font-size="9" fill="#94a3b8">(/opt/homebrew/sbin/php-fpm 실행 상태)</text>
+
+</svg>

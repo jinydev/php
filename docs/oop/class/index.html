@@ -5,25 +5,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
-  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/oop/class/">
+  <!-- 기본 메타데이터 --><meta name="description" content="Jiny linux"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
+  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="Jiny linux"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/oop/class/">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/oop/class/">
+  <link rel="canonical" href="https://php.jiny.dev/oop/class/">
 
   <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="PHP" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/oop/class/" />
-<meta property="og:url" content="http://localhost:4000/oop/class/" />
+<link rel="canonical" href="https://php.jiny.dev/oop/class/" />
+<meta property="og:url" content="https://php.jiny.dev/oop/class/" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PHP" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"http://localhost:4000/oop/class/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"https://php.jiny.dev/oop/class/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +248,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +256,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -336,7 +340,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-1"
             aria-expanded="false">
-            객체지향 기초
+            객체지향 프로그래밍
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -353,12 +357,79 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            클래스 및 객체 생성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/class"
                   class="bd-links-link d-inline-block rounded ">
-                  클래스
+                  클래스 개요
                 </a>
               </li>
+              
+              <li>
+                <a href="/oop/class/constructor-promotion"
+                  class="bd-links-link d-inline-block rounded ">
+                  생성자 프로퍼티 프로모션
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/nullsafe"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nullsafe 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/anno"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명 클래스
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            상속
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/extend"
@@ -378,16 +449,16 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
             aria-expanded="false">
-            객체지향 고급
+            인터페이스
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-2">
+          <div class="collapse " id="collapse-4">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -397,12 +468,58 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            추상화
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/abstract"
                   class="bd-links-link d-inline-block rounded ">
                   추상화 (Abstract)
                 </a>
               </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            객체지향 고급
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/trait"
@@ -425,10 +542,93 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            예외처리
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/exception"
                   class="bd-links-link d-inline-block rounded ">
                   예외처리
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            디자인 패턴
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/pattern"
+                  class="bd-links-link d-inline-block rounded ">
+                  디자인 패턴 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            열거형 (Enum)
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/enum"
+                  class="bd-links-link d-inline-block rounded ">
+                  열거형 (Enum)
                 </a>
               </li>
               
@@ -475,113 +675,68 @@
         <div class="bd-content ps-lg-2">
             <h1 id="클래스">클래스</h1>
 <hr />
-<p>클래스는 기존 함수형 프로그램 코딩 개발 방법보다 향상된 객체지향형 프로그램 개발 방법론 및 환경을 지원합니다. PHP도 다양한 객체지향 방법론을 도입하여 최신 트렌드에 맞는 클래스 및 코딩 방법을 제공합니다.</p>
+<p>클래스(Class)는 기존 절차지향이나 단순 함수형 개발의 한계를 극복하고, 프로그램의 구성 요소를 유기적인 객체(Object) 단위로 설계하고 관리할 수 있도록 돕는 객체지향 프로그래밍(OOP)의 핵심 기법입니다.</p>
+
+<p>PHP는 다양한 버전 업을 거쳐 견고하고 강력한 객체지향 개발 환경을 완벽하게 제공하고 있습니다.</p>
 
 <p><br /></p>
 
-<h2 id="클래스--인스턴스">클래스 &amp; 인스턴스</h2>
+<h2 id="1-클래스와-인스턴스의-관계">1. 클래스와 인스턴스의 관계</h2>
 <hr />
-<p>클래스는 계층적으로 분류한 기능과 특성의 모음이라 생각하시면 됩니다. 클래스는 객체(object)와 실체화(instance)를 통하여 만들 수 있습니다.</p>
-
-<p>PHP 에서는 클래스 선언을 다음과 같이 할 수 있습니다.</p>
-
-<p>|문법|</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">jiny</span> <span class="p">{</span>
-	<span class="n">클래스</span> <span class="n">내용</span> <span class="mf">...</span>
-
-	<span class="k">public</span> <span class="nv">$username</span><span class="p">;</span>
-
-	<span class="k">public</span> <span class="k">function</span> <span class="n">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">){</span>
-		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">class</code>라는 키워드를 사용하고 다음에 클래스 이름을 사용자가 지정할 수 있습니다.</p>
-
-<p>클래스명은 영문 또는 언더바(_)로 시작합니다. 클래스의 내용은 중괄호 { } 안에 내용을 작성하면 됩니다.</p>
-
-<p><br /></p>
-
-<p><br /></p>
-
-<h2 id="class-선언"><a href="declear">class 선언</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="프로퍼티"><a href="property">프로퍼티</a></h2>
-<hr />
-<p>프로퍼티는 클래스에서 변수를 부르는 또 다른 이름 중 하나입니다.</p>
-
-<h3 id="접근-권한-속성">접근 권한 속성</h3>
-<hr />
-<p>클래스와 같이 객체지향 프로그램에서 속성이라는 추가적인 접근 권한 개념이 도입됩니다. 접근 권한 속성은 각각의 클래스의 독립성과 보호를 위해서 프로퍼티(변수)나 메서드(함수) 등에 권한을 설정하는 것입니다.</p>
-
-<p>PHP 클래스에서는 세 가지의 속성을 가지고 있습니다. public, protected, private를 제공합니다.
-속성은 클래스 외부에서의 접근을 제한하고자 할 때 사용할 수 있습니다.</p>
-
-<p>접근 속성의 종류
-PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타입을 지원합니다.</p>
-
 <ul>
-  <li>
-    <p>public:  public으로 설정된 프로퍼티 변수는 외부에서 접근이 가능합니다. 즉, 값을 읽거나 새로운 값으로 설정이 가능합니다.</p>
-  </li>
-  <li>
-    <p>protected: 정의한 클래스와 상속한 클래스에서만 사용이 가능합니다. 이 속성은 클래스 내의 메서드와 서브 클래스에서만 접근하여 사용할 수 있습니다. 외부에서 접근할 수는 없지만 상속을 받은 경우에는 접근이 가능합니다.</p>
-  </li>
-  <li>
-    <p>private: 정의한 클래스 내에서만 사용 가능합니다. 이 속성은 같은 클래스 내에서만 참조가 가능합니다. protectd와 달리 서브 클래스에서는 사용할 수 없습니다</p>
-  </li>
+  <li><strong>클래스 (Class)</strong>: 붕어빵 틀이나 건축 설계도에 비유할 수 있습니다. 객체가 가져야 할 데이터 속성(프로퍼티)과 동작(메서드)을 정의해 둔 텍스트 기반의 형틀입니다.</li>
+  <li><strong>인스턴스 (Instance)</strong>: 붕어빵 틀에서 구워져 나온 실제 붕어빵이나 설계도를 바탕으로 땅 위에 지어진 실제 빌딩입니다. <code class="language-plaintext highlighter-rouge">new</code> 키워드를 사용해 클래스를 실행하면 컴퓨터 메모리(Heap) 영역에 독립된 실체로 할당됩니다.</li>
 </ul>
 
+<p><img src="./img/class_summary.svg" alt="클래스 설계도와 인스턴스 관계" /></p>
+
 <p><br /></p>
 
-<h2 id="메서드"><a href="method">메서드</a></h2>
+<h2 id="2-기본적인-클래스-선언-예시">2. 기본적인 클래스 선언 예시</h2>
 <hr />
+<p>PHP에서는 다음과 같이 클래스를 정의하고 사용합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="c1">// 1. 프로퍼티 (상태 저장 변수)</span>
+    <span class="k">public</span> <span class="nv">$username</span><span class="p">;</span>
+
+    <span class="c1">// 2. 메서드 (동작 처리 함수)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span> <span class="c1">// $this는 현재 인스턴스 객체를 가리킵니다.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 3. 인스턴스 생성</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">User</span><span class="p">();</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">setName</span><span class="p">(</span><span class="s2">"jiny"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span> <span class="c1">// "jiny" 출력</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">class</code> 키워드 뒤에 원하는 이름을 기재하고 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code> 내부에 속성과 행위를 정의합니다. 클래스명은 관례적으로 대문자로 시작하는 영문 단어로 표기합니다.</p>
 
 <p><br /></p>
 
-<h2 id="클래스-상수"><a href="const">클래스 상수</a></h2>
+<h2 id="3-상세-학습-내용-요약">3. 상세 학습 내용 요약</h2>
 <hr />
+<p>본 단원에서는 클래스를 다루기 위해 필수적으로 숙지해야 할 다양한 언어 명세와 고급 기법을 단계적으로 학습합니다.</p>
 
-<p><br /></p>
+<ul>
+  <li><strong><a href="declear">class 선언</a></strong>: 클래스의 기본 명명 규칙과 코드 상에서의 정의 및 파일 매핑 방법을 설명합니다.</li>
+  <li><strong><a href="property">프로퍼티</a></strong>: 클래스에 포함되는 변수인 프로퍼티를 관리하고, 캡슐화의 핵심인 <code class="language-plaintext highlighter-rouge">public</code>/<code class="language-plaintext highlighter-rouge">protected</code>/<code class="language-plaintext highlighter-rouge">private</code> 접근 제어 지시자를 활용하는 법을 배웁니다.</li>
+  <li><strong><a href="method">메서드</a></strong>: 클래스 전용의 함수인 메서드를 구현하고 매개변수 전달과 처리 결과를 조율하는 기법을 학습합니다.</li>
+  <li><strong><a href="const">클래스 상수</a></strong>: 한 번 정의하면 수정되지 않고 인스턴스화 없이도 참조 가능한 <code class="language-plaintext highlighter-rouge">const</code> 상수의 정의와 참조 범위 연산자(<code class="language-plaintext highlighter-rouge">self::</code>, <code class="language-plaintext highlighter-rouge">parent::</code>)의 사용법을 배웁니다.</li>
+  <li><strong><a href="new">인스턴스 생성</a></strong>: <code class="language-plaintext highlighter-rouge">new</code> 연산자를 활용하여 텍스트로 된 클래스를 메모리에 실제 물리적인 힙(Heap) 객체 인스턴스로 동적 할당하는 문법을 배웁니다.</li>
+  <li><strong><a href="clone">객체 복사</a></strong>: 대입 연산자(<code class="language-plaintext highlighter-rouge">=</code>)에 의한 참조 주소 공유 방식과 물리적인 새 메모리를 생성하는 <code class="language-plaintext highlighter-rouge">clone</code> 복제 방식의 개념 차이점을 비교합니다.</li>
+  <li><strong><a href="access">객체 접근</a></strong>: 화살표 연산자(<code class="language-plaintext highlighter-rouge">-&gt;</code>)를 활용하여 인스턴스의 멤버들에 안전하게 접근하고 다루는 방법을 알아봅니다.</li>
+  <li><strong><a href="this">$this</a></strong>: 인스턴스 메서드가 실행될 때, 호출 주체가 된 실제 자기 자신 객체를 나타내는 내부 내장 참조 지시자 <code class="language-plaintext highlighter-rouge">$this</code> 사용 규칙을 이해합니다.</li>
+  <li><strong><a href="static">정적 클래스</a></strong>: 인스턴스 생성(new) 과정 없이도 즉각 동작하며, 모든 인스턴스들이 데이터를 공유할 수 있는 <code class="language-plaintext highlighter-rouge">static</code> 프로퍼티와 메서드를 학습합니다.</li>
+  <li><strong><a href="anno">익명 클래스</a></strong>: 일회용으로 잠깐 사용하고 폐기할 간단한 객체를 클래스 이름 선언 없이 임시 인스턴스화하는 <code class="language-plaintext highlighter-rouge">new class</code> 기법을 소개합니다.</li>
+  <li><strong><a href="magic">매직 메서드</a></strong>: 생성자(<code class="language-plaintext highlighter-rouge">__construct</code>), 소멸자(<code class="language-plaintext highlighter-rouge">__destruct</code>)처럼 특정 상황이 오면 PHP가 자동으로 내부 호출해 주는 특수 용도의 <code class="language-plaintext highlighter-rouge">__</code>로 시작하는 메서드들을 학습합니다.</li>
+  <li><strong><a href="constructor-promotion">생성자 프로퍼티 프로모션</a></strong>: PHP 8.0 이상에서 멤버 변수 선언과 생성자 초기화 주입 과정을 단 한 줄로 축소시키는 모던한 속성 승진 문법을 학습합니다.</li>
+  <li><strong><a href="nullsafe">Nullsafe 연산자</a></strong>: PHP 8.0 이상부터 적용되는 체이닝 안전 장치로, 복잡한 인스턴스 경로 조회 시 null 에러로 사이트가 멈추는 현상을 <code class="language-plaintext highlighter-rouge">?-&gt;</code> 연산자로 차단하는 기법을 배웁니다.</li>
+</ul>
 
-<h2 id="인스턴스-생성"><a href="new">인스턴스 생성</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="객체-복사"><a href="clone">객체 복사</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="객체-접근"><a href="access">객체 접근</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="this"><a href="this">$this</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="정적-클래스"><a href="static">정적 클래스</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="익명-클래스"><a href="anno">익명 클래스</a></h2>
-<hr />
-
-<p><br /></p>
-
-<h2 id="매직-메서드"><a href="magic">매직 메서드</a></h2>
-<hr />
-
-<p><br /></p>
+<p><br /><br /></p>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -633,8 +788,8 @@ PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타
   <div class="text-end">
     
       <span class="text-muted small me-2">다음 학습</span>
-      <a href="/oop/extend" class="text-decoration-none fw-semibold">
-        상속 (Extend) &raquo;
+      <a href="/oop/class/constructor-promotion" class="text-decoration-none fw-semibold">
+        생성자 프로퍼티 프로모션 &raquo;
       </a>
     
   </div>

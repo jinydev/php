@@ -14,6 +14,11 @@ breadcrumb:
 
 ## 15.1 클래스 상속
 
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/inheritance-structure.svg" alt="OOP Class Inheritance Structure" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 부모 클래스의 프로퍼티/메서드를 이어받고 새로운 기능을 추가(bark)하는 자식 클래스의 확장</p>
+</div>
+
 예를 들어 기존의 생성한 클래스가 하나 있습니다. 그리고 기존과 기능이 비슷하지만 몇 개의 기능이 추가된 또 다른 클래스 하나 더 만들려고 합니다.
 
 이렇게 기존에 만들어 놓은 클래스 소스를 같이 사용을 하면서, 새로운 추가 클래스를 만들 수 있는 방법은 없을까? 개발자라면 이런 고민을 해본 적이 있을 것입니다. 기존 클래스 코드를 유지하면서 새로운 클래스를 적용할 수 있는 방법이 상속입니다.
@@ -342,4 +347,51 @@ final class users
 ```
 
 참고로, 만일 class 키워드 앞에 final 키워드를 입력하면 클래스 전체가 final로 설정됩니다.
+
+<br>
+
+### 15.2.3 #[Override] 속성 (PHP 8.3+)
+---
+자식 클래스에서 부모 클래스의 메서드를 재정의(Overriding)할 때, 오타(Spelling Error)를 내거나 나중에 부모 클래스의 메서드명이 변경되는 경우 오버라이딩이 정상적으로 이루어지지 않고 자식 클래스만의 새로운 메서드로 인식되어 찾아내기 힘든 버그를 유발합니다.
+
+**PHP 8.3부터는 이러한 실수를 컴파일 시점에 즉시 감지할 수 있도록 `#[Override]` 속성(Attribute)이 제공**됩니다. 자식 클래스 메서드 선언 위에 `#[Override]`를 표시하면, PHP 엔진은 해당 메서드가 부모 클래스나 구현 중인 인터페이스에 실재하는지 검사합니다. 만약 일치하는 메서드가 없다면 컴파일 단계에서 치명적인 오류(`Compile Error`)를 즉시 발생시킵니다.
+
+예제 파일 override-attribute-01.php
+{% raw %}
+```php
+<?php
+    class ParentController {
+        public function executeAction() {
+            echo "부모 로직 실행<br>";
+        }
+    }
+
+    class ChildController extends ParentController {
+        // 부모의 executeAction을 명시적으로 재정의합니다.
+        #[Override]
+        public function executeAction() {
+            echo "자식에서 재정의된 로직 실행<br>";
+        }
+
+        // ❌ 에러 발생 예시! 부모 클래스에 'excuteAction' (오타)이라는 메서드가 존재하지 않습니다.
+        // #[Override]
+        // public function excuteAction() { 
+        //     echo "오타가 난 메서드<br>";
+        // }
+    }
+
+    $controller = new ChildController();
+    $controller->executeAction();
+?>
+```
+{% endraw %}
+
+오타가 있거나 부모 메서드가 삭제된 채 `#[Override]`를 붙이면 다음과 같은 컴파일 에러 메시지가 표시됩니다:
+```text
+Fatal error: ChildController::excuteAction() has #[Override] attribute, but no matching parent method exists
+```
+
+`#[Override]` 속성은 특히 여러 개발자가 대규모 프레임워크나 협업 코드를 안전하게 유지보수할 때 필수적인 도구입니다.
+
+<br>
 

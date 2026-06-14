@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <style>
+    .bg { fill: #f8fafc; }
+    .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #334155; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #64748b; }
+    .label-bold { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; fill: #0f172a; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #1e293b; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    
+    .stack-box { stroke-width: 2; rx: 6px; }
+    .stack-call { fill: #eff6ff; stroke: #3b82f6; }
+    .stack-base { fill: #fef2f2; stroke: #ef4444; }
+    
+    .line-push { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    .line-pop { stroke: #10b981; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg" rx="16" />
+  <rect x="10" y="10" width="780" height="460" class="card" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">재귀 호출 실행과 콜 스택 흐름 (Recursive Call Stack Flow)</text>
+
+  <!-- Left: Stack Accumulation (Push Phase) -->
+  <text x="210" y="90" class="subtitle" fill="#2563eb" text-anchor="middle">1단계: 재귀 호출 진입 (Push / Stack Accumulation)</text>
+  
+  <!-- Stack boxes (Push) -->
+  <!-- Level 4 -->
+  <g transform="translate(60, 120)">
+    <rect width="300" height="50" class="stack-box stack-call" />
+    <text x="15" y="30" class="code">recursion(4) <tspan fill="#64748b">- $a=4 &lt; 5 (True)</tspan></text>
+  </g>
+  <!-- Level 3 -->
+  <g transform="translate(60, 180)">
+    <rect width="300" height="50" class="stack-box stack-call" />
+    <text x="15" y="30" class="code">recursion(3) <tspan fill="#64748b">- $a=3 &lt; 5 (True)</tspan></text>
+  </g>
+  <!-- Level 2 -->
+  <g transform="translate(60, 240)">
+    <rect width="300" height="50" class="stack-box stack-call" />
+    <text x="15" y="30" class="code">recursion(2) <tspan fill="#64748b">- $a=2 &lt; 5 (True)</tspan></text>
+  </g>
+  <!-- Level 1 -->
+  <g transform="translate(60, 300)">
+    <rect width="300" height="50" class="stack-box stack-call" />
+    <text x="15" y="30" class="code">recursion(1) <tspan fill="#64748b">- $a=1 &lt; 5 (True)</tspan></text>
+  </g>
+
+  <!-- Bottom: Call trigger -->
+  <text x="210" y="385" class="label-bold" text-anchor="middle">최초 호출: recursion(1)</text>
+
+  <!-- Push Arrows -->
+  <path d="M 380 325 C 400 325, 400 265, 380 265" class="line-push" marker-end="url(#arrow-blue)" />
+  <path d="M 380 265 C 400 265, 400 205, 380 205" class="line-push" marker-end="url(#arrow-blue)" />
+  <path d="M 380 205 C 400 205, 400 145, 380 145" class="line-push" marker-end="url(#arrow-blue)" />
+  <text x="410" y="240" class="arrow-text" fill="#2563eb">재귀 호출 (a+1)</text>
+
+  <!-- Right: Stack Unwinding (Pop Phase) -->
+  <text x="590" y="90" class="subtitle" fill="#059669" text-anchor="middle">2단계: 탈출 및 역순 복귀 (Pop / Unwinding)</text>
+
+  <!-- Base Case (Top of stack) -->
+  <g transform="translate(440, 120)">
+    <rect width="300" height="50" class="stack-box stack-base" />
+    <text x="15" y="30" class="code" fill="#991b1b">recursion(5) <tspan fill="#ef4444">◀ 탈출 조건 부합 ($a &lt; 5 False)</tspan></text>
+  </g>
+
+  <!-- Stack boxes (Pop) -->
+  <!-- Level 4 -->
+  <g transform="translate(440, 180)">
+    <rect width="300" height="50" class="stack-box stack-call" style="opacity: 0.7;" />
+    <text x="15" y="30" class="code">recursion(4) <tspan fill="#059669">◀ 탈출 출력 (4)</tspan></text>
+  </g>
+  <!-- Level 3 -->
+  <g transform="translate(440, 240)">
+    <rect width="300" height="50" class="stack-box stack-call" style="opacity: 0.7;" />
+    <text x="15" y="30" class="code">recursion(3) <tspan fill="#059669">◀ 탈출 출력 (3)</tspan></text>
+  </g>
+  <!-- Level 2 -->
+  <g transform="translate(440, 300)">
+    <rect width="300" height="50" class="stack-box stack-call" style="opacity: 0.7;" />
+    <text x="15" y="30" class="code">recursion(2) <tspan fill="#059669">◀ 탈출 출력 (2)</tspan></text>
+  </g>
+  <!-- Level 1 -->
+  <g transform="translate(440, 360)">
+    <rect width="300" height="50" class="stack-box stack-call" style="opacity: 0.7;" />
+    <text x="15" y="30" class="code">recursion(1) <tspan fill="#059669">◀ 탈출 출력 (1)</tspan></text>
+  </g>
+
+  <!-- Pop Arrows -->
+  <path d="M 440 145 C 420 145, 420 205, 440 205" class="line-pop" marker-end="url(#arrow-green)" />
+  <path d="M 440 205 C 420 205, 420 265, 440 265" class="line-pop" marker-end="url(#arrow-green)" />
+  <path d="M 440 265 C 420 265, 420 325, 440 325" class="line-pop" marker-end="url(#arrow-green)" />
+  <path d="M 440 325 C 420 325, 420 385, 440 385" class="line-pop" marker-end="url(#arrow-green)" />
+  <text x="390" y="290" class="arrow-text" fill="#059669">역순 종료</text>
+
+  <!-- Stack Limit Note -->
+  <rect x="60" y="415" width="680" height="40" fill="#f8fafc" stroke="#e2e8f0" rx="4" />
+  <text x="400" y="439" class="label" font-size="12" fill="#475569" text-anchor="middle">
+    ⚠️ <tspan fill="#991b1b" font-weight="700">주의:</tspan> 무한 재귀 호출 시 메모리가 지속적으로 누적되어 <tspan font-weight="600" fill="#ef4444">Stack Overflow</tspan> 에러가 발생합니다. 반드시 탈출 조건이 필요합니다.
+  </text>
+</svg>

@@ -1,8 +1,15 @@
 ---
-layout: home
+layout: php
+title: "클로저 (Closure)"
+keyword: "closure, anonymous function, bindTo, call, psr-2 closure, php closure"
+description: "PHP에서의 익명 함수 및 클로저(Closure)의 객체지향 작동 방식, 외부 변수 캡처(use), bindTo 및 call 메서드를 통한 동적 스코핑을 학습합니다."
+breadcrumb:
+- oop
+- closure
 ---
 
-16. 클로저
+# 16. 클로저 (Closure)
+---
 
 클로저를 이야기할 때 항상 같이 설명하는 부분이 익명 함수입니다. 클로저는 익명 함수와 같이 PHP 5.3으로 업그레이드되면서 적용된 기능입니다. 
 
@@ -74,6 +81,11 @@ $변수명();
 
 클로저를 사용하는 목적은 호출하는 익명 함수의 상태를 감지하기 위해서입니다. 
 클로저로 상태를 감지하기 위해서는 use 키워드를 이용하여 수동으로 감지하고자 하는 상태를 등록해야 합니다.
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/closure-scope.svg" alt="PHP Closure Scope Binding" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 부모 스코프의 변수를 use 키워드로 캡처하여 클로저 내부에 바인딩하는 구조</p>
+</div>
 
 예제파일 : closure-02.php
 <?php

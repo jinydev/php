@@ -1,0 +1,113 @@
+main:
+- title: 코드 작성
+  url: /syntax
+  subitems:
+  - title: 기본문법 개요
+    url: /syntax
+- title: 상수
+  url: /syntax/const
+  subitems:
+  - title: 상수 개요
+    url: /syntax/const
+  - title: 상수의 타입
+    url: /syntax/const/type
+  - title: define() 함수
+    url: /syntax/const/define
+  - title: const 키워드
+    url: /syntax/const/const
+  - title: 상수 존재 확인
+    url: /syntax/const/defined
+  - title: 예약된 상수
+    url: /syntax/const/reserved
+- title: 변수
+  url: /syntax/variable
+  subitems:
+  - title: 변수 개요
+    url: /syntax/variable
+  - title: 변수명 작성 규칙
+    url: /syntax/variable/name
+  - title: 변수와 메모리
+    url: /syntax/variable/memory
+  - title: 변수 선언
+    url: /syntax/variable/declare
+  - title: 데이터 형식(타입)
+    url: /syntax/variable/type
+  - title: 스칼라 타입
+    url: /syntax/variable/scalar
+  - title: 가변 변수
+    url: /syntax/variable/ref
+  - title: 변수 삭제
+    url: /syntax/variable/unset
+  - title: 전역 변수
+    url: /syntax/variable/global
+- title: 연산자
+  url: /syntax/operator
+  subitems:
+  - title: 연산자 개요
+    url: /syntax/operator
+  - title: 우주선 연산자 (<=>)
+    url: /syntax/operator/spaceship
+  - title: Null 병합 연산자 (??)
+    url: /syntax/operator/coalescing
+- title: 조건문
+  url: /syntax/condition
+  subitems:
+  - title: 조건제어문
+    url: /syntax/condition
+  - title: 3항 연산자
+    url: /syntax/condition/ternary
+  - title: Match 표현식
+    url: /syntax/condition/match
+- title: 반복문
+  url: /syntax/loop
+  subitems:
+  - title: 반복문 개요
+    url: /syntax/loop
+- title: 전처리기
+  url: /syntax/preprocess
+  subitems:
+  - title: 전처리기 개요
+    url: /syntax/preprocess
+- title: 유효범위
+  url: /syntax/scope
+  subitems:
+  - title: 유효범위 개요
+    url: /syntax/scope
+- title: 오류
+  url: /syntax/error
+  subitems:
+  - title: 에러 처리 개요
+    url: /syntax/error
+- title: 함수 기초
+  url: /syntax/function
+  subitems:
+  - title: 함수란 무엇인가
+    url: /syntax/function
+  - title: 함수의 개념과 구조
+    url: /syntax/function/func
+  - title: 함수구조
+    url: /syntax/function/function
+- title: 함수 요소
+  url: /syntax/function/param
+  subitems:
+  - title: 매개변수 (Param)
+    url: /syntax/function/param
+  - title: 타입 선언 (Types)
+    url: /syntax/function/param/types
+  - title: 네임드 인자 (Named)
+    url: /syntax/function/param/named
+  - title: 반환값 (Return)
+    url: /syntax/function/return
+  - title: 함수 선언 (Declare)
+    url: /syntax/function/declare
+- title: 고급 함수
+  url: /syntax/function/generator
+  subitems:
+  - title: 제너레이터
+    url: /syntax/function/generator
+  - title: 익명함수 (Annonymous)
+    url: /syntax/function/annon
+  - title: 가변함수 (Variable)
+    url: /syntax/function/variable
+  - title: 내부함수 (Built-in)
+    url: /syntax/function/builtin

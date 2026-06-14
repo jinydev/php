@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="limitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="memoryGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="postGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+    <linearGradient id="fileGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fecdd3" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#limitGrad); stroke: #a7f3d0; stroke-width: 1.5; rx: 16px; }
+    
+    .nested-memory { fill: url(#memoryGrad); stroke: #0284c7; stroke-width: 2; rx: 12px; filter: url(#shadow); }
+    .nested-post { fill: url(#postGrad); stroke: #d97706; stroke-width: 2; rx: 10px; filter: url(#shadow); }
+    .nested-file { fill: url(#fileGrad); stroke: #e11d48; stroke-width: 2; rx: 8px; filter: url(#shadow); }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP 대용량 파일 업로드 3대 설정 크기 서열도</text>
+  <text x="35" y="72" class="subtitle">업로드 에러 방지를 위해 준수해야 할 메모리 상한, 전체 요청 바디, 단일 파일 한도 크기 관계도</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#065f46">PHP File Upload Limits Size Constraint Hierarchy</text>
+
+  <!-- Level 1: memory_limit (Outer box) -->
+  <rect x="80" y="150" width="640" height="250" class="nested-memory" />
+  <text x="400" y="175" class="heading" fill="#0369a1" font-size="14">Level 1. memory_limit (예: 256M)</text>
+  <text x="400" y="192" class="arrow-text" font-size="9" fill="#0284c7">스크립트가 점유할 수 있는 최대 RAM 용량 (가장 큰 한도)</text>
+
+  <!-- Level 2: post_max_size (Middle box) -->
+  <rect x="140" y="210" width="520" height="170" class="nested-post" />
+  <text x="400" y="235" class="heading" fill="#b45309" font-size="13">Level 2. post_max_size (예: 120M)</text>
+  <text x="400" y="250" class="arrow-text" font-size="9" fill="#d97706">한 번에 업로드 전송 가능한 전체 HTTP POST Body 총량</text>
+
+  <!-- Level 3: upload_max_filesize (Inner box) -->
+  <rect x="200" y="270" width="400" height="90" class="nested-file" />
+  <text x="400" y="295" class="heading" fill="#be123c" font-size="12">Level 3. upload_max_filesize (예: 100M)</text>
+  <text x="400" y="312" class="arrow-text" font-size="9" fill="#e11d48">단일 업로드 파일 하나당 매핑될 수 있는 순수 용량 한계선</text>
+  <text x="400" y="328" class="arrow-text" font-size="8" fill="#4b5563">(form 태그로 보내는 순수 바이너리 크기 제한)</text>
+
+  <!-- Notice Arrow (Math relationship) -->
+  <text x="400" y="420" class="heading" fill="#065f46" font-size="13">올바른 서열 공식: memory_limit (최대) &gt; post_max_size &gt;= upload_max_filesize (최소)</text>
+
+</svg>

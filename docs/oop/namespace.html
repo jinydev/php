@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP</title>
-  <meta name="title" content="PHP" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/oop/namespace.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>네임스페이스 (Namespace)</title>
+  <meta name="title" content="네임스페이스 (Namespace)" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="네임스페이스 (Namespace)"><meta property="og:description" content="클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/oop/namespace.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/oop/namespace.html">
+  <link rel="canonical" href="https://php.jiny.dev/oop/namespace.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="네임스페이스 (Namespace)"><meta property="twitter:description" content="클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="PHP" />
+<meta property="og:title" content="네임스페이스 (Namespace)" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/oop/namespace.html" />
-<meta property="og:url" content="http://localhost:4000/oop/namespace.html" />
+<meta name="description" content="클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다." />
+<meta property="og:description" content="클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다." />
+<link rel="canonical" href="https://php.jiny.dev/oop/namespace.html" />
+<meta property="og:url" content="https://php.jiny.dev/oop/namespace.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PHP" />
+<meta property="twitter:title" content="네임스페이스 (Namespace)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"PHP","url":"http://localhost:4000/oop/namespace.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"클래스 이름 충돌을 방지하고 코드의 패키지화를 지원하는 가상 디렉토리 시스템인 네임스페이스(Namespace)와 PSR-4 기반 자동 로드 개념을 마스터합니다.","headline":"네임스페이스 (Namespace)","url":"https://php.jiny.dev/oop/namespace.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -336,7 +342,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-1"
             aria-expanded="false">
-            객체지향 기초
+            객체지향 프로그래밍
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -353,12 +359,79 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            aria-expanded="false">
+            클래스 및 객체 생성
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-2">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/class"
                   class="bd-links-link d-inline-block rounded ">
-                  클래스
+                  클래스 개요
                 </a>
               </li>
+              
+              <li>
+                <a href="/oop/class/constructor-promotion"
+                  class="bd-links-link d-inline-block rounded ">
+                  생성자 프로퍼티 프로모션
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/nullsafe"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nullsafe 연산자
+                </a>
+              </li>
+              
+              <li>
+                <a href="/oop/class/anno"
+                  class="bd-links-link d-inline-block rounded ">
+                  익명 클래스
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            상속
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/extend"
@@ -378,16 +451,16 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-2"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
             aria-expanded="false">
-            객체지향 고급
+            인터페이스
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-2">
+          <div class="collapse " id="collapse-4">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -397,12 +470,58 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            추상화
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/abstract"
                   class="bd-links-link d-inline-block rounded ">
                   추상화 (Abstract)
                 </a>
               </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            객체지향 고급
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
                 <a href="/oop/trait"
@@ -425,10 +544,93 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
+            aria-expanded="false">
+            예외처리
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-7">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/oop/exception"
                   class="bd-links-link d-inline-block rounded ">
                   예외처리
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
+            aria-expanded="false">
+            디자인 패턴
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-8">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/pattern"
+                  class="bd-links-link d-inline-block rounded ">
+                  디자인 패턴 개요
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            열거형 (Enum)
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/oop/enum"
+                  class="bd-links-link d-inline-block rounded ">
+                  열거형 (Enum)
                 </a>
               </li>
               
@@ -465,7 +667,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page">PHP</li>
+        <li class="breadcrumb-item active" aria-current="page">네임스페이스 (Namespace)</li>
         
         
         
@@ -473,7 +675,7 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="네임스페이스">네임스페이스</h1>
+            <h1 id="네임스페이스-namespace">네임스페이스 (Namespace)</h1>
 <hr />
 <p>네임스페이스는 같은 유형의 클래스들을 그룹으로 묶어 관리할 수 있는 가상의 폴더와 같습니다. 다른 고급 언어에서는 네임스페이스 기능을 도입하여 클래스 패키지 방법을 제공했지만 PHP는 약간 늦게 지원된 감이 있습니다. 네임스페이스 기능은 PHP의 다양한 오픈소스 프로젝트를 통해 인기를 얻고 있는 기능입니다. 또한 PHP 패키지들을 만들 때 매우 중요하게 사용되는 개념이기도 합니다.</p>
 
@@ -483,6 +685,12 @@
 
 <h3 id="1561-네임스페이스의-개념">15.6.1 네임스페이스의 개념</h3>
 <hr />
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/namespace-structure.svg" alt="PHP Namespace and PSR-4 Autoloading Map" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 가상 논리 구조(Namespace)와 물리 디스크 상의 파일 경로 간 PSR-4 표준 매핑 관계</p>
+</div>
+
 <p>PHP를 포함한 프로그램 언어는 동일한 이름의 클래스명의 중복을 허용하지 않습니다. 즉, 실행 스크립트 안에 클래스명은 유일한 한 개의 이름만 사용 가능합니다. 중복해서 사용할 수 없습니다.</p>
 
 <p>개발자에게 이름을 정의하는 것이란 쉽지 않습니다. 각각의 의미를 부여함과 동시에 실행 스크립트 안에서 동일한 이름이 중복되지 않아야 합니다. 이러한 이름의 규칙은 개발자 한 명일 때는 큰 영향이 없습니다. 만일 다수의 개발자들이 공동으로 대형 프로젝트를 제작할 때 클래스의 이름은 중복될 여지가 있습니다. 하지만 여러 개발자들이 함께 협업하여 만들거나, 공개된 소스들과 결합하기 위해서는 클래스 이름의 중복 문제가 자주 발생하곤 했습니다.</p>
@@ -547,7 +755,7 @@
 
 <p><br /></p>
 
-<h2 id="네임스페이스-1">네임스페이스</h2>
+<h2 id="네임스페이스">네임스페이스</h2>
 <hr />
 <p>다음 소스는 위의 예제 앞에 네임스페이스 키워드를 추가했습니다.</p>
 
@@ -915,6 +1123,27 @@ bbb 회원ID = 2
 
 
 
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
 
   
   

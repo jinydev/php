@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="varGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" />
+      <stop offset="100%" stop-color="#e9d5ff" />
+    </linearGradient>
+    <linearGradient id="constGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #334155; }
+    .code-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; fill: #0f172a; }
+    
+    .panel-var { fill: url(#varGrad); stroke: #d8b4fe; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .panel-const { fill: url(#constGrad); stroke: #fdba74; stroke-width: 1.2; rx: 10px; filter: url(#shadow); }
+    .box-white { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="290" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="45" class="title">PHP 자료 식별자 특성 비교 (변수 vs 상수)</text>
+  <text x="35" y="63" class="subtitle">메모리 상에서 값의 가변 여부와 컴파일러 동작 방식에 따른 보관 구조적 대조</text>
+
+  <!-- Left: Variables -->
+  <rect x="35" y="85" width="350" height="200" class="panel-var" />
+  <text x="210" y="112" class="panel-title" fill="#6b21a8">변수 (Variables - 가변 데이터)</text>
+
+  <rect x="50" y="130" width="320" height="65" class="box-white" />
+  <text x="65" y="150" class="code-text" fill="#7c3aed">$score = 100;      // 최초 선언 및 할당</text>
+  <text x="65" y="172" class="code-text" fill="#b91c1c">$score = 90;       // 동일 스코프 내 값 덮어쓰기 허용</text>
+
+  <text x="50" y="215" class="text-normal">✔ 이름 앞에 반드시 달러 기호(`$`)를 접두사로 표기</text>
+  <text x="50" y="231" class="text-normal">✔ 런타임 실행 중 언제든지 다른 타입의 데이터로 재할당 가능</text>
+  <text x="50" y="247" class="text-normal">✔ 유효 범위(함수 내부/외부, static 등)에 따른 수명 주기 관리</text>
+
+  <!-- Right: Constants -->
+  <rect x="415" y="85" width="350" height="200" class="panel-const" />
+  <text x="590" y="112" class="panel-title" fill="#c2410c">상수 (Constants - 불변 고정값)</text>
+
+  <rect x="430" y="130" width="320" height="65" class="box-white" />
+  <text x="445" y="150" class="code-text" fill="#ea580c">const VERSION = "1.0";    // 컴파일 시점 결정</text>
+  <text x="445" y="172" class="code-text" fill="#ea580c">define("LIMIT", 500);     // 런타임 실행 시점 결정</text>
+
+  <text x="430" y="215" class="text-normal">✔ 달러 기호(`$`)를 붙이지 않고 대문자로 작성하는 것이 표준 컨벤션</text>
+  <text x="430" y="231" class="text-normal">✔ 한 번 선언되면 스크립트 실행이 종료될 때까지 값 변경/삭제 불가능</text>
+  <text x="430" y="247" class="text-normal">✔ 전역적인 사용 범위(Global Scope)를 가지며 어디서나 호출 가능</text>
+</svg>

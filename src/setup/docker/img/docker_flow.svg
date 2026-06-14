@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="dockerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="badgeHost" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="badgeNginx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+    <linearGradient id="badgePhp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f5f3ff" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#dockerGrad); stroke: #bae6fd; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-host { fill: url(#badgeHost); stroke: #475569; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    .badge-nginx { fill: url(#badgeNginx); stroke: #16a34a; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    .badge-php { fill: url(#badgePhp); stroke: #a855f7; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    
+    .line-blue { stroke: #0284c7; stroke-width: 1.8; fill: none; }
+    .line-green { stroke: #16a34a; stroke-width: 1.8; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">Docker 가상 컨테이너 기반 PHP 구동 아키텍처</text>
+  <text x="35" y="72" class="subtitle">호스트의 소스 코드를 마운트하여 독립된 Nginx 및 PHP-FPM 컨테이너를 브릿지 네트워크로 연동 가동하는 구조</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#0369a1">Containerized Nginx &amp; PHP-FPM Multi-Service Stack</text>
+
+  <!-- 1. Host OS Directory & Browser (Left Column) -->
+  <rect x="60" y="160" width="200" height="230" class="badge-host" />
+  <text x="160" y="185" class="heading" fill="#0f172a">호스트 컴퓨터 (Host OS)</text>
+
+  <rect x="75" y="210" width="170" height="60" fill="#f8fafc" stroke="#cbd5e1" rx="5" />
+  <text x="160" y="230" class="heading" font-size="10" fill="#475569">로컬 소스코드 폴더</text>
+  <text x="160" y="248" class="arrow-text" font-size="9" fill="#0f172a">./src/index.php</text>
+
+  <rect x="75" y="295" width="170" height="65" fill="#f8fafc" stroke="#cbd5e1" rx="5" />
+  <text x="160" y="315" class="heading" font-size="10" fill="#475569">웹 브라우저 요청</text>
+  <text x="160" y="335" class="heading" font-size="10" fill="#0284c7">http://localhost:8080</text>
+
+  <!-- Mount Connection (Volume Sharing) -->
+  <path d="M 260 240 L 440 240 A 10 10 0 0 1 450 250 L 450 340 A 10 10 0 0 0 460 350 L 480 350" class="line-green" stroke-dasharray="3 3" />
+  <text x="365" y="230" class="arrow-text" fill="#16a34a">볼륨 마운트 (-v)</text>
+
+  <!-- Port Mapping Connection -->
+  <path d="M 260 330 L 440 330" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="350" y="320" class="arrow-text" fill="#0284c7">포트 포워딩 8080:80</text>
+
+  <!-- 2. Isolated Container Network (Right Column) -->
+  <!-- Nginx Container -->
+  <rect x="440" y="150" width="280" height="110" class="badge-nginx" />
+  <text x="580" y="172" class="heading" fill="#14532d">Nginx 컨테이너 (Web Server)</text>
+  <text x="580" y="188" class="arrow-text" font-size="9" fill="#16a34a">Port: 80 | 볼륨: /var/www/html</text>
+  <text x="580" y="202" class="arrow-text" font-size="8" fill="#4b5563">정적 컨텐츠 직접 서빙</text>
+  <!-- Proxy connection within bridge network -->
+  <rect x="455" y="215" width="250" height="30" rx="4" fill="#faf5ff" stroke="#c084fc" />
+  <text x="580" y="234" class="heading" font-size="10" fill="#6b21a8">FastCGI 프록시 ➡️ php:9000</text>
+
+  <!-- FastCGI Proxy Connection Arrow -->
+  <path d="M 580 260 L 580 300" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="635" y="285" class="arrow-text" fill="#0284c7">Docker Bridge 망</text>
+
+  <!-- PHP-FPM Container -->
+  <rect x="440" y="300" width="280" height="100" class="badge-php" />
+  <text x="580" y="322" class="heading" fill="#581c87">PHP-FPM 컨테이너 (WAS)</text>
+  <text x="580" y="338" class="arrow-text" font-size="9" fill="#7e22ce">Port: 9000 | 볼륨: /var/www/html</text>
+  <text x="580" y="352" class="arrow-text" font-size="8" fill="#4b5563">동적 스크립트 실행 연산 완료</text>
+  <text x="580" y="366" class="arrow-text" font-size="8" fill="#9333ea">(php:8.3-fpm-alpine 이미지)</text>
+
+</svg>

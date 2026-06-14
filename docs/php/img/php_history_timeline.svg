@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #64748b; }
+    .year { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .version-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; text-anchor: middle; }
+    .desc { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #475569; text-anchor: middle; }
+    .timeline-line { stroke: #cbd5e1; stroke-width: 4; fill: none; }
+    .timeline-line-active { stroke: #3b82f6; stroke-width: 4; fill: none; }
+    .connector { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 3 3; }
+    
+    .bubble-blue { fill: #f0f7ff; stroke: #3b82f6; stroke-width: 1.5; rx: 8px; }
+    .bubble-amber { fill: #fef3c7; stroke: #f59e0b; stroke-width: 1.5; rx: 8px; }
+    .bubble-purple { fill: #faf5ff; stroke: #a855f7; stroke-width: 1.5; rx: 8px; }
+    
+    .circle-year-blue { fill: #3b82f6; stroke: #ffffff; stroke-width: 2.5; }
+    .circle-year-amber { fill: #f59e0b; stroke: #ffffff; stroke-width: 2.5; }
+    .circle-year-purple { fill: #a855f7; stroke: #ffffff; stroke-width: 2.5; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title Section -->
+  <text x="30" y="45" class="title">PHP 역사 및 주요 릴리즈 연표 (History Timeline)</text>
+  <text x="30" y="65" class="subtitle">1995년 최초 개인 프로젝트에서 시작하여 웹 백엔드 표준으로 진화한 이정표</text>
+
+  <!-- Timeline horizontal track line -->
+  <path d="M 50 225 L 750 225" class="timeline-line" />
+  <path d="M 50 225 L 500 225" class="timeline-line-active" /> <!-- Highlight history up to PHP 5 -->
+
+  <!-- Connectors from line to bubbles -->
+  <line x1="70" y1="225" x2="70" y2="155" class="connector" />
+  <line x1="175" y1="225" x2="175" y2="295" class="connector" />
+  <line x1="280" y1="225" x2="280" y2="155" class="connector" />
+  <line x1="385" y1="225" x2="385" y2="295" class="connector" />
+  <line x1="490" y1="225" x2="490" y2="155" class="connector" />
+  <line x1="595" y1="225" x2="595" y2="295" class="connector" />
+  <line x1="700" y1="225" x2="700" y2="155" class="connector" />
+
+  <!-- Milestones circles on the timeline track -->
+  <circle cx="70" cy="225" r="14" class="circle-year-blue" />
+  <circle cx="175" cy="225" r="14" class="circle-year-amber" />
+  <circle cx="280" cy="225" r="14" class="circle-year-purple" />
+  <circle cx="385" cy="225" r="14" class="circle-year-blue" />
+  <circle cx="490" cy="225" r="14" class="circle-year-amber" />
+  <circle cx="595" cy="225" r="14" class="circle-year-purple" />
+  <circle cx="700" cy="225" r="14" class="circle-year-blue" />
+
+  <!-- Year texts inside circle -->
+  <text x="70" y="229" class="year" font-size="10">95</text>
+  <text x="175" y="229" class="year" font-size="10">97</text>
+  <text x="280" y="229" class="year" font-size="10">98</text>
+  <text x="385" y="229" class="year" font-size="10">00</text>
+  <text x="490" y="229" class="year" font-size="10">04</text>
+  <text x="595" y="229" class="year" font-size="10">15</text>
+  <text x="700" y="229" class="year" font-size="10">20</text>
+
+
+  <!-- UPWARD BUBBLES -->
+  <!-- 1. PHP/FI (1995) -->
+  <rect x="20" y="90" width="100" height="65" class="bubble-blue" />
+  <text x="70" y="110" class="version-title" fill="#1d4ed8">PHP/FI</text>
+  <text x="70" y="128" class="desc">개인 홈페이지용</text>
+  <text x="70" y="142" class="desc">탄생 (라스무스)</text>
+
+  <!-- 3. PHP 3.0 (1998) -->
+  <rect x="230" y="90" width="100" height="65" class="bubble-purple" />
+  <text x="280" y="110" class="version-title" fill="#6b21a8">PHP 3.0</text>
+  <text x="280" y="128" class="desc">앤디/지브 합류</text>
+  <text x="280" y="142" class="desc">완전한 재작성</text>
+
+  <!-- 5. PHP 5.0 (2004) -->
+  <rect x="440" y="90" width="100" height="65" class="bubble-amber" />
+  <text x="490" y="110" class="version-title" fill="#b45309">PHP 5.0</text>
+  <text x="490" y="128" class="desc">Zend Engine 2</text>
+  <text x="490" y="142" class="desc">객체지향 고도화</text>
+
+  <!-- 7. PHP 8.0 (2020) -->
+  <rect x="650" y="90" width="100" height="65" class="bubble-blue" />
+  <text x="700" y="110" class="version-title" fill="#1d4ed8">PHP 8.0</text>
+  <text x="700" y="128" class="desc">JIT 컴파일러</text>
+  <text x="700" y="142" class="desc">네임드 인자 추가</text>
+
+
+  <!-- DOWNWARD BUBBLES -->
+  <!-- 2. PHP 2.0 (1997) -->
+  <rect x="125" y="295" width="100" height="65" class="bubble-amber" />
+  <text x="175" y="315" class="version-title" fill="#b45309">PHP 2.0</text>
+  <text x="175" y="333" class="desc">C언어로 구현</text>
+  <text x="175" y="347" class="desc">인기 확대 기틀</text>
+
+  <!-- 4. PHP 4.0 (2000) -->
+  <rect x="335" y="295" width="100" height="65" class="bubble-blue" />
+  <text x="385" y="315" class="version-title" fill="#1d4ed8">PHP 4.0</text>
+  <text x="385" y="333" class="desc">Zend Engine</text>
+  <text x="385" y="347" class="desc">세션/버퍼 도입</text>
+
+  <!-- 6. PHP 7.0 (2015) -->
+  <rect x="545" y="295" width="100" height="65" class="bubble-purple" />
+  <text x="595" y="315" class="version-title" fill="#6b21a8">PHP 7.0</text>
+  <text x="595" y="333" class="desc">2배 성능 향상</text>
+  <text x="595" y="347" class="desc">타입 힌팅 강화</text>
+
+</svg>

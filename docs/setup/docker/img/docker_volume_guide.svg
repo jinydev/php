@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="bindGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="volGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" />
+      <stop offset="100%" stop-color="#e9d5ff" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #334155; }
+    .text-center { text-anchor: middle; }
+    .desc-box { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #475569; }
+    
+    .panel-host { fill: url(#hostGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 12px; }
+    .panel-bind { fill: url(#bindGrad); stroke: #a7f3d0; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    .panel-vol { fill: url(#volGrad); stroke: #d8b4fe; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    
+    .badge-label { rx: 4px; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 800; fill: #ffffff; text-anchor: middle; }
+    
+    .line-solid { stroke: #0f172a; stroke-width: 1.8; fill: none; }
+    .line-green { stroke: #10b981; stroke-width: 2; fill: none; }
+    .line-purple { stroke: #8b5cf6; stroke-width: 2; fill: none; }
+    .line-dashed { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="410" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="48" class="title">도커 마운트 메커니즘 비교 (Bind Mount vs Named Volume)</text>
+  <text x="35" y="68" class="subtitle">개발용 소스 공유에는 실시간 동기화되는 바인드 마운트를, DB 유실 방지에는 독자 저장되는 볼륨 마운트를 사용합니다.</text>
+
+  <!-- 1. Left Side: Bind Mount (개발 환경) -->
+  <rect x="35" y="95" width="350" height="310" class="panel-bind" />
+  <text x="210" y="125" class="panel-title" fill="#065f46">1. 바인드 마운트 (Bind Mount)</text>
+  <text x="210" y="142" class="text-normal text-center" fill="#047857">호스트 경로의 특정 폴더를 컨테이너 내부로 1:1 직접 연결</text>
+
+  <!-- Bind Mount: Host Folder Box -->
+  <rect x="55" y="170" width="130" height="70" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="120" y="192" class="heading" fill="#334155">호스트 실물 디렉터리</text>
+  <text x="120" y="212" class="desc-box text-center" font-weight="bold">./src (소스코드)</text>
+  <text x="120" y="228" class="desc-box text-center">IDE(VSCode)로 직접 수정</text>
+
+  <!-- Bind Mount: Container Box -->
+  <rect x="235" y="170" width="130" height="70" rx="8" fill="#ffffff" stroke="#a7f3d0" />
+  <text x="300" y="192" class="heading" fill="#047857">Nginx/PHP 컨테이너</text>
+  <text x="300" y="212" class="desc-box text-center" font-weight="bold">/var/www/html</text>
+  <text x="300" y="228" class="desc-box text-center">컨테이너가 코드 읽기</text>
+
+  <!-- Connection Line (Green) -->
+  <path d="M 185 205 L 235 205" class="line-green" />
+  <text x="210" y="195" class="desc-box text-center" fill="#059669" font-weight="bold">실시간 동기화</text>
+
+  <!-- Summary of Bind Mount -->
+  <rect x="55" y="260" width="310" height="120" rx="6" fill="#ffffff" stroke="#bae6fd" />
+  <text x="70" y="282" class="heading" fill="#0284c7">💡 주요 특징</text>
+  <text x="70" y="305" class="desc-box">✔ 호스트와 컨테이너가 파일의 변경사항을 실시간으로 상호 반영</text>
+  <text x="70" y="325" class="desc-box">✔ 개발자가 외부 편집 도구(IDE)로 즉시 웹 화면 테스트 가능</text>
+  <text x="70" y="345" class="desc-box">✔ 단점: 파일이 많을 때 호스트 OS 파일 시스템 성능 부담</text>
+  <text x="70" y="365" class="desc-box">✔ 표기법: -v ./src:/var/www/html</text>
+
+  <!-- 2. Right Side: Named Volume (운영/DB 보존 환경) -->
+  <rect x="415" y="95" width="350" height="310" class="panel-vol" />
+  <text x="590" y="125" class="panel-title" fill="#5b21b6">2. 네임드 볼륨 (Named Volume)</text>
+  <text x="590" y="142" class="text-normal text-center" fill="#6d28d9">Docker Engine이 관리하는 영구 보존 디렉터리에 데이터 저장</text>
+
+  <!-- Named Volume: Host Docker Managed Box -->
+  <rect x="435" y="170" width="130" height="70" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="500" y="192" class="heading" fill="#334155">Docker 관리 공간 (Host)</text>
+  <text x="500" y="212" class="desc-box text-center" font-weight="bold">dbdata (볼륨 명칭)</text>
+  <text x="500" y="228" class="desc-box text-center">Docker 디바이스 경로에 생성</text>
+
+  <!-- Named Volume: Container Box -->
+  <rect x="615" y="170" width="130" height="70" rx="8" fill="#ffffff" stroke="#d8b4fe" />
+  <text x="680" y="192" class="heading" fill="#5b21b6">MySQL 컨테이너</text>
+  <text x="680" y="212" class="desc-box text-center" font-weight="bold">/var/lib/mysql</text>
+  <text x="680" y="228" class="desc-box text-center">데이터베이스 레코드 보존</text>
+
+  <!-- Connection Line (Purple) -->
+  <path d="M 565 205 L 615 205" class="line-purple" />
+  <text x="590" y="195" class="desc-box text-center" fill="#7c3aed" font-weight="bold">안전 격리 보존</text>
+
+  <!-- Summary of Named Volume -->
+  <rect x="435" y="260" width="310" height="120" rx="6" fill="#ffffff" stroke="#bae6fd" />
+  <text x="450" y="282" class="heading" fill="#0284c7">💡 주요 특징</text>
+  <text x="450" y="305" class="desc-box">✔ 컨테이너가 삭제(down)되어도 Named Volume 내 데이터 영구 보존</text>
+  <text x="450" y="325" class="desc-box">✔ Docker 엔진이 디렉터리 권한 및 입출력을 최적화 (가장 빠른 쓰기 성능)</text>
+  <text x="450" y="345" class="desc-box">✔ 개발자가 파일에 수동 접근 및 변경할 필요가 없는 DB에 사용</text>
+  <text x="450" y="365" class="desc-box">✔ 표기법: -v dbdata:/var/lib/mysql</text>
+
+  <!-- Vertical Divider Line -->
+  <line x1="400" y1="105" x2="400" y2="395" class="line-dashed" />
+</svg>

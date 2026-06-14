@@ -8,14 +8,16 @@
         {% assign part_data = site.data.navigation.main %}
         {% if page.url contains '/setup/' or page.url contains '/php/' %}
         {% assign part_data = site.data.setup.main %}
-        {% elsif page.url contains '/basic/' %}
-        {% assign part_data = site.data.basic.main %}
-        {% elsif page.url contains '/function/' %}
-        {% assign part_data = site.data.function.main %}
+        {% elsif page.url contains '/syntax/' %}
+        {% assign part_data = site.data.syntax.main %}
         {% elsif page.url contains '/oop/' %}
         {% assign part_data = site.data.oop.main %}
-        {% elsif page.url contains '/composer/' or page.url contains '/autoload/' or page.url contains '/jinyphp/' %}
-        {% assign part_data = site.data.composer.main %}
+        {% elsif page.url contains '/packages/' %}
+        {% assign part_data = site.data.packages.main %}
+        {% elsif page.url contains '/practice/' %}
+        {% assign part_data = site.data.practice.main %}
+        {% elsif page.url contains '/web/' %}
+        {% assign part_data = site.data.web.main %}
         {% endif %}
 
         {% for item in part_data %}

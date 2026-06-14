@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/console/background.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>PHP 백그라운드 및 비동기 데몬 실행 가이드</title>
+  <meta name="title" content="PHP 백그라운드 및 비동기 데몬 실행 가이드" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="PHP 백그라운드 및 비동기 데몬 실행 가이드"><meta property="og:description" content="리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/console/background.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/console/background.html">
+  <link rel="canonical" href="https://php.jiny.dev/setup/console/background.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="PHP 백그라운드 및 비동기 데몬 실행 가이드"><meta property="twitter:description" content="리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="PHP 백그라운드 및 비동기 데몬 실행 가이드" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/console/background.html" />
-<meta property="og:url" content="http://localhost:4000/setup/console/background.html" />
+<meta name="description" content="리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&amp;)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다." />
+<meta property="og:description" content="리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&amp;)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/console/background.html" />
+<meta property="og:url" content="https://php.jiny.dev/setup/console/background.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="PHP 백그라운드 및 비동기 데몬 실행 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/console/background.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"리눅스 환경에서 오랜 시간이 걸리는 PHP 프로세스를 백그라운드(&amp;)로 구동하고, 터미널 로그아웃 시에도 프로세스를 살려두는 nohup 사용법과 프로세스 제어 명령어를 정리합니다.","headline":"PHP 백그라운드 및 비동기 데몬 실행 가이드","url":"https://php.jiny.dev/setup/console/background.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -640,7 +968,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">PHP 백그라운드 및 비동기 데몬 실행 가이드</li>
         
         
         
@@ -648,12 +976,86 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="백그라운드-실행">백그라운드 실행</h1>
+            <h1 id="php-백그라운드-및-비동기-데몬-실행">PHP 백그라운드 및 비동기 데몬 실행</h1>
 <hr />
-<p>PHP 스크립트는 리눅스와 같은 시스템에서 백그라운드로 실행시킬 수 있습니다. 리눅스의 명령어 &amp; 는 명령 동작을 백드라운드로 실행합니다.</p>
+<p>데이터 분석 수집 스크립트, 대량 이메일 발송, API 메시지 큐 리스너 등 무거운 연산을 처리하는 PHP 스크립트는 실행 시간이 수 시간 혹은 무기한으로 길어질 수 있습니다. 이러한 긴 작업을 터미널 창을 켠 채로 기다리거나 터미널 접속을 끊었을 때 강제 종료되도록 방치할 수는 없습니다.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="o">]</span> php test.php &amp;  
+<p>이 장에서는 스크립트를 리눅스 운영체제 백서에 등록하여 <strong>백그라운드 프로세스(Background Process)</strong>로 가동하고 프로세스를 제어하는 법을 알아봅니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-백그라운드--nohup-구동-아키텍처">1. 백그라운드 &amp; nohup 구동 아키텍처</h3>
+<hr />
+<p>아래 다이어그램은 리눅스 환경에서 백그라운드로 실행 위임된 PHP 프로세스가 어떻게 터미널 세션(<code class="language-plaintext highlighter-rouge">SIGHUP</code> 신호)으로부터 독립하여 동작을 유지하고, 명령어 인자에 따라 표준 입출력 스트림을 한데 묶어 로그 파일로 리다이렉트 처리하는지 보여줍니다.</p>
+
+<p><img src="/setup/console/img/background_redirection.svg" alt="PHP 백그라운드 구동 아키텍처" /></p>
+
+<p><br /></p>
+
+<h3 id="2-단순-백그라운드-가동-">2. 단순 백그라운드 가동 (<code class="language-plaintext highlighter-rouge">&amp;</code>)</h3>
+<hr />
+<p>명령어 맨 뒤에 앰퍼샌드 기호인 <strong><code class="language-plaintext highlighter-rouge">&amp;</code></strong>를 붙여 실행하면, 터미널의 입력 주도권을 사용자에게 즉시 반환하며 프로세스를 뒷단으로 보냅니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>php heavy-task.php &amp;
+<span class="go">[1] 43810
+</span></code></pre></div></div>
+<ul>
+  <li>터미널에 대괄호로 표시된 수치 <code class="language-plaintext highlighter-rouge">[1]</code>은 백그라운드 작업 번호(Job ID)이며, <code class="language-plaintext highlighter-rouge">43810</code>은 운영체제가 할당한 고유한 <strong>프로세스 ID(PID)</strong>입니다.</li>
+  <li><strong>치명적 한계</strong>: 이 방식으로 구동하면 사용자가 터미널 SSH 접속 세션을 종료하거나 로그아웃하는 순간, 리눅스는 부모 프로세스가 종료된 것으로 판단하여 자식인 PHP 프로세스에도 <strong><code class="language-plaintext highlighter-rouge">SIGHUP</code> (Hangup - 연결 끊김 시그널)</strong>을 전송해 강제로 죽여 버립니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="3-세션-종료-후에도-상시-가동-유지-nohup-연동">3. 세션 종료 후에도 상시 가동 유지 (<code class="language-plaintext highlighter-rouge">nohup</code> 연동)</h3>
+<hr />
+<p>터미널을 닫아 세션 연결이 중단되어도 프로세스가 <code class="language-plaintext highlighter-rouge">SIGHUP</code> 시그널을 무시(No Hang Up)하도록 하여, 백그라운드에서 동작 완료 시점까지 무중단 구동하게 만드는 표준 명령어는 <strong><code class="language-plaintext highlighter-rouge">nohup</code></strong>입니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. nohup 기본 구동 (로그 출력을 자동으로 nohup.out에 수집)</span>
+<span class="nb">nohup </span>php heavy-task.php &amp;
+
+<span class="c"># 2. 실무 추천: 사용자 정의 로그 파일 지정 및 표준 에러까지 일괄 리다이렉션</span>
+<span class="nb">nohup </span>php heavy-task.php <span class="o">&gt;</span> my_task.log 2&gt;&amp;1 &amp;
+
+<span class="c"># 3. 디스크 용량 관리를 위해 모든 출력 및 에러 메시지 버리기 (로그 생략)</span>
+<span class="nb">nohup </span>php heavy-task.php <span class="o">&gt;</span> /dev/null 2&gt;&amp;1 &amp;
 </code></pre></div></div>
+<blockquote>
+  <p><strong><code class="language-plaintext highlighter-rouge">&gt; /dev/null 2&gt;&amp;1</code></strong>: <code class="language-plaintext highlighter-rouge">&gt; /dev/null</code>은 표준 출력을 리눅스의 가상 휴지통 디바이스로 버린다는 의미이며, <code class="language-plaintext highlighter-rouge">2&gt;&amp;1</code>은 표준 에러(2) 출력 역시 표준 출력(1)이 향하는 경로(휴지통)와 동일하게 처리하여 일체 로그를 기록하지 않는다는 의미입니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="4-백그라운드-프로세스-제어-및-종료-기법">4. 백그라운드 프로세스 제어 및 종료 기법</h3>
+<hr />
+<p>백그라운드에서 돌아가고 있는 PHP 프로세스를 확인하고 통제하려면 다음 리눅스 명령어들을 조합해 사용합니다.</p>
+
+<h4 id="1-프로세스-추적-및-조회-ps">1) 프로세스 추적 및 조회 (<code class="language-plaintext highlighter-rouge">ps</code>)</h4>
+<p>현재 시스템 메모리에 적재되어 도는 모든 프로세스 중 ‘php’가 포함된 라인만 필터링합니다.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ps aux | <span class="nb">grep </span>php
+<span class="go">root     43810  1.2  0.8 123456 32420 pts/0    S    10:15   0:05 php heavy-task.php
+root     43912  0.0  0.0  12100   980 pts/0    S+   10:17   0:00 grep --color=auto php
+</span></code></pre></div></div>
+<p>두 번째 컬럼의 <code class="language-plaintext highlighter-rouge">43810</code>이 해당 프로세스의 PID 정보입니다.</p>
+
+<h4 id="2-프로세스-종료-kill">2) 프로세스 종료 (<code class="language-plaintext highlighter-rouge">kill</code>)</h4>
+<p>동작 중인 백그라운드 루프 프로세스를 중단하고 싶을 때는 <code class="language-plaintext highlighter-rouge">kill</code> 명령을 사용합니다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 안전하게 프로그램 종료 요청 (권장)</span>
+<span class="nb">kill </span>43810
+
+<span class="c"># 프로세스가 먹통이 되어 안전 종료에 응답하지 않을 때 강제 소멸 시그널 전송 (비상용)</span>
+<span class="nb">kill</span> <span class="nt">-9</span> 43810
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="5-고도화-프로세스-감시-도구-supervisor-권장">5. 고도화: 프로세스 감시 도구 (Supervisor) 권장</h3>
+<hr />
+<p>단순히 <code class="language-plaintext highlighter-rouge">nohup &amp;</code>로 띄워둔 백그라운드 프로세스는 예기치 못한 PHP 코드 오류나 DB 커넥션 끊김 등으로 중간에 멈출 경우 자동으로 되살아나지 못합니다.</p>
+
+<p>실제 상용 서비스 배치 연산(예: Laravel 큐 리스너)을 가동할 때는 리눅스 프로세스 감시 관리자인 <strong><code class="language-plaintext highlighter-rouge">Supervisor</code></strong> 패키지를 설치해 구성하는 것이 모던 인프라의 정석입니다.</p>
+<ul>
+  <li><strong>역할</strong>: PHP 스크립트 프로세스가 죽을 경우 백그라운드에서 자동 재가동(Autostart, Autorestart)시키고, 여러 개의 프로세스 복제본(Process Count)을 한꺼번에 띄워 병렬 처리하는 작업을 대시보드로 자동화해 줍니다.</li>
+</ul>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -874,13 +1276,139 @@
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

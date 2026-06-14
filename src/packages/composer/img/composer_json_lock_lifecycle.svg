@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc" text-anchor="middle">composer install 명령어 실행 시 버전 결정 로직</text>
+
+  <!-- Start Node -->
+  <g transform="translate(310, 70)" filter="url(#shadow)">
+    <rect width="180" height="50" rx="25" fill="url(#blueGrad)" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="90" y="30" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">composer install 실행</text>
+  </g>
+
+  <!-- Decision Node -->
+  <g transform="translate(300, 160)" filter="url(#shadow)">
+    <!-- Diamond representation using polygon -->
+    <polygon points="100,0 200,50 100,100 0,50" fill="url(#yellowGrad)" stroke="#d97706" stroke-width="1.5"/>
+    <text x="100" y="45" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">composer.lock</text>
+    <text x="100" y="63" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">존재 여부?</text>
+  </g>
+
+  <!-- Left Branch: Yes (Has lockfile) -->
+  <g transform="translate(60, 290)" filter="url(#shadow)">
+    <rect width="260" height="90" rx="8" fill="url(#purpleGrad)" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="130" y="25" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">A. lock 파일 기준 신속 복구</text>
+    <text x="130" y="48" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">composer.json 무시,</text>
+    <text x="130" y="63" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">lock에 명시된 고정 버전을</text>
+    <text x="130" y="78" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">정확히 1:1로 일치하여 vendor/에 복사</text>
+  </g>
+
+  <!-- Right Branch: No (No lockfile) -->
+  <g transform="translate(480, 290)" filter="url(#shadow)">
+    <rect width="260" height="90" rx="8" fill="url(#greenGrad)" stroke="#059669" stroke-width="1.5"/>
+    <text x="130" y="25" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">B. json 파일 기준 의존성 해석</text>
+    <text x="130" y="48" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#a7f3d0" text-anchor="middle">json 버전 제약조건 범위 내에서</text>
+    <text x="130" y="63" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#a7f3d0" text-anchor="middle">최신 버전을 확인해 내려받은 후,</text>
+    <text x="130" y="78" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#a7f3d0" text-anchor="middle">새로운 composer.lock 파일을 생성 및 캐싱</text>
+  </g>
+
+  <!-- Connection lines -->
+  <!-- Start to Decision -->
+  <path d="M 400,120 L 400,155" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Decision to Left (Yes) -->
+  <path d="M 300,210 L 190,210 L 190,280" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="230" y="200" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">Yes (있음)</text>
+
+  <!-- Decision to Right (No) -->
+  <path d="M 500,210 L 610,210 L 610,280" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="560" y="200" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ef4444">No (없음)</text>
+</svg>

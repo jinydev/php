@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #475569; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .label-left { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; }
+    .code-center { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+    
+    .box-input { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 10px; }
+    .box-body { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 12px; }
+    .box-output { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 10px; }
+    .box-inner { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">함수 블랙박스 모델 (Function Mechanism)</text>
+
+  <!-- Left: Input parameters -->
+  <rect x="40" y="120" width="180" height="230" class="box-input" />
+  <text x="130" y="150" class="subtitle" fill="#1d4ed8" text-anchor="middle">1. 입력값 (Arguments)</text>
+  <text x="130" y="170" class="arrow-text" fill="#2563eb" text-anchor="middle">매개변수를 통한 데이터 전달</text>
+  
+  <rect x="55" y="190" width="150" height="140" class="box-inner" />
+  <text x="70" y="220" class="code" fill="#2563eb">int $a = 10</text>
+  <text x="70" y="245" class="code" fill="#2563eb">int $b = 20</text>
+  <text x="70" y="280" class="arrow-text" fill="#64748b">- 값 전달 (Value)</text>
+  <text x="70" y="300" class="arrow-text" fill="#64748b">- 참조 전달 (Reference)</text>
+  <text x="70" y="318" class="arrow-text" fill="#64748b">- 가변 인자 (Variadic)</text>
+
+
+  <!-- Middle: Function Body (Process) -->
+  <rect x="290" y="100" width="220" height="260" class="box-body" />
+  <text x="400" y="130" class="subtitle" fill="#b45309" text-anchor="middle">2. 로직 처리 (Process)</text>
+  <text x="400" y="150" class="arrow-text" fill="#b45309" text-anchor="middle">독립된 지역 스코프 내 처리</text>
+
+  <rect x="305" y="170" width="190" height="170" class="box-inner" />
+  <text x="320" y="200" class="code" fill="#7e22ce">function sum(</text>
+  <text x="340" y="225" class="code" fill="#2563eb">int $a, int $b</text>
+  <text x="320" y="250" class="code" fill="#7e22ce">): int {</text>
+  <text x="340" y="280" class="code" fill="#0f172a">$res = $a + $b;</text>
+  <text x="340" y="310" class="code" fill="#059669">return $res;</text>
+  <text x="320" y="330" class="code" fill="#7e22ce">}</text>
+
+
+  <!-- Right: Return output -->
+  <rect x="580" y="120" width="180" height="230" class="box-output" />
+  <text x="670" y="150" class="subtitle" fill="#047857" text-anchor="middle">3. 결과 반환 (Output)</text>
+  <text x="670" y="170" class="arrow-text" fill="#059669" text-anchor="middle">호출처로 결과 데이터 반환</text>
+
+  <rect x="595" y="190" width="150" height="140" class="box-inner" />
+  <text x="670" y="235" class="subtitle" font-size="12" fill="#047857" text-anchor="middle">반환 데이터 타입</text>
+  <text x="670" y="265" class="code-center" fill="#047857">int(30)</text>
+  <text x="670" y="295" class="arrow-text" fill="#64748b">- 단일값 / 배열 / 객체</text>
+  <text x="670" y="312" class="arrow-text" fill="#64748b">- void (반환값 없음)</text>
+
+
+  <!-- Connectors -->
+  <!-- Input to Process -->
+  <path d="M 220 235 L 280 235" class="line-active" marker-end="url(#arrow-blue)" />
+  <text x="250" y="220" class="arrow-text" fill="#2563eb" font-weight="bold">호출/전달</text>
+
+  <!-- Process to Output -->
+  <path d="M 510 235 L 570 235" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="540" y="220" class="arrow-text" fill="#047857" font-weight="bold">결과 리턴</text>
+
+</svg>

@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #475569; }
+    
+    .editor-bg { fill: #0f172a; rx: 8px; filter: url(#shadow); }
+    .editor-header { fill: #1e293b; rx: 8px 8px 0 0; }
+    .dot-red { fill: #ef4444; }
+    .dot-yellow { fill: #f59e0b; }
+    .dot-green { fill: #10b981; }
+    .editor-tab { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #94a3b8; font-weight: 600; }
+    
+    /* Code styling */
+    .code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; }
+    .keyword { fill: #f43f5e; font-weight: bold; }
+    .class-name { fill: #6ee7b7; font-weight: bold; }
+    .string { fill: #38bdf8; }
+    .comment { fill: #64748b; font-style: italic; }
+    .type { fill: #a855f7; font-weight: bold; }
+    .normal { fill: #e2e8f0; }
+    .symbol { fill: #f59e0b; }
+    
+    /* Callout & Guide styling */
+    .guide-title { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 800; fill: #0f172a; }
+    .guide-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #475569; }
+    .line-pointer { stroke: #ef4444; stroke-width: 1.2; fill: none; }
+    .dot-pointer { fill: #ef4444; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="45" class="title">PHP 표준 소스 구조 및 PSR-12 코딩 컨벤션 규칙</text>
+  <text x="35" y="63" class="subtitle">시작 태그, 파일 레이아웃, 공백/들여쓰기 및 클래스/메소드 중괄호 배치 표준 수칙</text>
+
+  <!-- Editor Section (Left) -->
+  <g transform="translate(35, 85)">
+    <!-- Window Frame -->
+    <rect width="420" height="355" class="editor-bg" />
+    <path d="M 0 30 L 420 30 L 420 0 L 0 0 Z" class="editor-header" />
+    
+    <!-- Window Control Dots -->
+    <circle cx="20" cy="15" r="5" class="dot-red" />
+    <circle cx="35" cy="15" r="5" class="dot-yellow" />
+    <circle cx="50" cy="15" r="5" class="dot-green" />
+    <text x="75" y="18" class="editor-tab">src/MyApp/User.php</text>
+
+    <!-- Code Content -->
+    <!-- Line 1 -->
+    <text x="25" y="60" class="code">
+      <tspan class="keyword">&lt;?php</tspan> <tspan class="comment">// 1. 표준 시작 태그</tspan>
+    </text>
+    
+    <!-- Line 3 -->
+    <text x="25" y="85" class="code">
+      <tspan class="keyword">namespace</tspan> <tspan class="normal">MyApp\Utils</tspan><tspan class="symbol">;</tspan> <tspan class="comment">// namespace 뒤 빈줄 1개</tspan>
+    </text>
+    
+    <!-- Line 5 -->
+    <text x="25" y="110" class="code">
+      <tspan class="keyword">use</tspan> <tspan class="normal">Library\Database</tspan><tspan class="symbol">;</tspan> <tspan class="comment">// use 선언블록 뒤 빈줄 1개</tspan>
+    </text>
+    
+    <!-- Line 7 -->
+    <text x="25" y="135" class="code">
+      <tspan class="keyword">class</tspan> <tspan class="class-name">User</tspan> <tspan class="comment">// PascalCase 클래스명</tspan>
+    </text>
+    <text x="25" y="150" class="code">
+      <tspan class="symbol">{</tspan> <tspan class="comment">// 클래스 중괄호는 다음줄 행갈이 (Next Line)</tspan>
+    </text>
+    
+    <!-- Line 8 (Indented 4 spaces = 15px) -->
+    <text x="45" y="175" class="code">
+      <tspan class="keyword">private</tspan> <tspan class="type">string</tspan> <tspan class="normal">$userName</tspan><tspan class="symbol">;</tspan> <tspan class="comment">// 속성/메소드는 camelCase</tspan>
+    </text>
+    
+    <!-- Line 10 -->
+    <text x="45" y="200" class="code">
+      <tspan class="keyword">public</tspan> <tspan class="keyword">function</tspan> <tspan class="normal">getName</tspan><tspan class="symbol">(</span><tspan class="type">int</tspan> <tspan class="normal">$id</tspan><tspan class="symbol">):</tspan> <tspan class="type">string</tspan>
+    </text>
+    <text x="45" y="215" class="code">
+      <tspan class="symbol">{</tspan> <tspan class="comment">// 메소드 중괄호는 다음줄 행갈이 (Next Line)</tspan>
+    </text>
+    
+    <!-- Line 11 (Indented 8 spaces = 30px) -->
+    <text x="65" y="240" class="code">
+      <tspan class="keyword">if</tspan> <tspan class="symbol">(</tspan><tspan class="normal">$id</tspan> <tspan class="symbol">&gt;</tspan> <tspan class="normal">0</tspan><tspan class="symbol">) {</tspan> <tspan class="comment">// 제어문 중괄호는 같은행 (Same Line)</tspan>
+    </text>
+    <text x="85" y="265" class="code">
+      <tspan class="keyword">return</tspan> <tspan class="normal">$this</tspan><tspan class="symbol">-&gt;</tspan><tspan class="normal">userName</tspan><tspan class="symbol">;</tspan>
+    </text>
+    <text x="65" y="290" class="code">
+      <tspan class="symbol">}</tspan>
+    </text>
+    
+    <!-- Line 14 -->
+    <text x="45" y="315" class="code">
+      <tspan class="keyword">return</tspan> <tspan class="string">"Guest"</tspan><tspan class="symbol">;</tspan>
+    </text>
+    
+    <!-- Line 15 -->
+    <text x="45" y="335" class="code">
+      <tspan class="symbol">}</tspan>
+    </text>
+    <text x="25" y="350" class="code">
+      <tspan class="symbol">}</tspan> <tspan class="comment">// (순수 PHP 파일은 종료 태그 ?&gt; 생략)</tspan>
+    </text>
+  </g>
+
+  <!-- Right Guide Panel (Annotation) -->
+  <g transform="translate(480, 85)">
+    <!-- Guideline 1 -->
+    <rect x="0" y="0" width="285" height="65" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <circle cx="15" cy="18" r="4" class="dot-pointer" />
+    <text x="28" y="22" class="guide-title" fill="#0f172a">1. 표준 PHP 시작 태그 (&lt;?php)</text>
+    <text x="28" y="38" class="guide-text">✔ 단축 태그(&lt;?) 사용금지. 순수 PHP 파일은</text>
+    <text x="28" y="52" class="guide-text">종료 태그(?&gt;)를 완전히 생략하여 응답 에러 방지.</text>
+    <path d="M -10 60 C -40 60, -70 60, -100 60" class="line-pointer" />
+    
+    <!-- Guideline 2 -->
+    <rect x="0" y="80" width="285" height="65" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <circle cx="15" cy="98" r="4" class="dot-pointer" />
+    <text x="28" y="102" class="guide-title" fill="#0f172a">2. 클래스 &amp; 메소드 중괄호 위치</text>
+    <text x="28" y="118" class="guide-text">✔ class 및 function 선언문 끝의 중괄호는</text>
+    <text x="28" y="132" class="guide-text">반드시 줄바꿈 후 다음 줄에 단독 표기 (Next Line).</text>
+    <path d="M -10 150 C -40 150, -50 150, -60 150" class="line-pointer" />
+
+    <!-- Guideline 3 -->
+    <rect x="0" y="160" width="285" height="65" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <circle cx="15" cy="178" r="4" class="dot-pointer" />
+    <text x="28" y="182" class="guide-title" fill="#0f172a">3. 제어 구조 중괄호 위치</text>
+    <text x="28" y="198" class="guide-text">✔ if, foreach, while 등 제어 구조문 중괄호는</text>
+    <text x="28" y="212" class="guide-text">조건 소괄호 뒤 한 칸 띄우고 같은 행 표기 (Same Line).</text>
+    <path d="M -10 240 C -40 240, -50 240, -60 240" class="line-pointer" />
+
+    <!-- Guideline 4 -->
+    <rect x="0" y="240" width="285" height="100" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <circle cx="15" cy="258" r="4" class="dot-pointer" />
+    <text x="28" y="262" class="guide-title" fill="#0f172a">4. 들여쓰기 및 네이밍 (Indent &amp; Naming)</text>
+    <text x="28" y="278" class="guide-text">✔ 탭(Tab) 사용 금지: 오직 스페이스 4칸 공백 사용.</text>
+    <text x="28" y="292" class="guide-text">✔ 클래스명: CamelCase (PascalCase) 표기.</text>
+    <text x="28" y="306" class="guide-text">✔ 메소드 &amp; 변수명: camelCase 표기.</text>
+    <text x="28" y="320" class="guide-text">✔ 클래스 상수명: 대문자와 언더스코어(LIMIT_MAX).</text>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc" text-anchor="middle">PSR-4 네임스페이스 ➡️ 물리 경로 매핑 공식</text>
+
+  <!-- FQCN visual breakdown -->
+  <g transform="translate(50, 70)" filter="url(#shadow)">
+    <rect width="700" height="100" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="350" y="35" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">호출할 클래스 명세 (FQCN)</text>
+    
+    <!-- App\ -->
+    <rect x="50" y="50" width="160" height="36" rx="4" fill="url(#blueGrad)"/>
+    <text x="130" y="73" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">\App\</text>
+    
+    <!-- Controllers\ -->
+    <rect x="230" y="50" width="220" height="36" rx="4" fill="url(#indigoGrad)"/>
+    <text x="340" y="73" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Controllers\</text>
+    
+    <!-- UserController -->
+    <rect x="470" y="50" width="180" height="36" rx="4" fill="url(#emeraldGrad)"/>
+    <text x="560" y="73" font-family="Courier New, monospace" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">UserController</text>
+  </g>
+
+  <!-- Connecting logic lines -->
+  <g stroke="#475569" stroke-width="2" stroke-dasharray="4 4" fill="none">
+    <path d="M 130,170 L 130,230"/>
+    <path d="M 340,170 L 340,230"/>
+    <path d="M 560,170 L 560,230"/>
+  </g>
+
+  <!-- Rule annotations -->
+  <!-- App\ mapped to src/ -->
+  <g transform="translate(50, 240)" filter="url(#shadow)">
+    <rect width="180" height="110" rx="8" fill="#334155" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="90" y="30" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">네임스페이스 접두사</text>
+    <text x="90" y="55" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">"App\\" : "src/" 설정</text>
+    <rect x="15" y="65" width="150" height="30" rx="4" fill="#0f172a"/>
+    <text x="90" y="84" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#38bdf8" text-anchor="middle">src/</text>
+  </g>
+
+  <!-- Controllers\ mapped to Controllers/ -->
+  <g transform="translate(270, 240)" filter="url(#shadow)">
+    <rect width="260" height="110" rx="8" fill="#334155" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="130" y="30" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#818cf8" text-anchor="middle">하위 네임스페이스</text>
+    <text x="130" y="55" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">하위 디렉터리 경로와 매치</text>
+    <rect x="15" y="65" width="230" height="30" rx="4" fill="#0f172a"/>
+    <text x="130" y="84" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#818cf8" text-anchor="middle">Controllers/</text>
+  </g>
+
+  <!-- UserController mapped to UserController.php -->
+  <g transform="translate(570, 240)" filter="url(#shadow)">
+    <rect width="180" height="110" rx="8" fill="#334155" stroke="#059669" stroke-width="1.5"/>
+    <text x="90" y="30" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#34d399" text-anchor="middle">클래스 파일명</text>
+    <text x="90" y="55" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">파일명 + .php 결합</text>
+    <rect x="15" y="65" width="150" height="30" rx="4" fill="#0f172a"/>
+    <text x="90" y="84" font-family="Courier New, monospace" font-size="12" font-weight="bold" fill="#34d399" text-anchor="middle">UserController.php</text>
+  </g>
+
+  <!-- Equal sign and resulting path at the bottom border -->
+  <text x="400" y="380" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#a7f3d0" text-anchor="middle">결과 경로: src/Controllers/UserController.php</text>
+</svg>

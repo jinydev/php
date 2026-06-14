@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/windows/">
+  <!-- 기본 메타데이터 --><meta name="description" content="Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>Windows 환경의 PHP 설치 및 개발 환경 개요</title>
+  <meta name="title" content="Windows 환경의 PHP 설치 및 개발 환경 개요" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="Windows 환경의 PHP 설치 및 개발 환경 개요"><meta property="og:description" content="Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/windows/">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/windows/">
+  <link rel="canonical" href="https://php.jiny.dev/setup/windows/">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="Windows 환경의 PHP 설치 및 개발 환경 개요"><meta property="twitter:description" content="Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="Windows 환경의 PHP 설치 및 개발 환경 개요" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/windows/" />
-<meta property="og:url" content="http://localhost:4000/setup/windows/" />
+<meta name="description" content="Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다." />
+<meta property="og:description" content="Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/windows/" />
+<meta property="og:url" content="https://php.jiny.dev/setup/windows/" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="Windows 환경의 PHP 설치 및 개발 환경 개요" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/windows/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Windows 운영체제에서 PHP를 실행하기 위해 필요한 수동 설치, 원클릭 패키지 설치 선택 요령 및 환경 변수(Path) 설정과 Git Bash 셸 연동 방식을 정리합니다.","headline":"Windows 환경의 PHP 설치 및 개발 환경 개요","url":"https://php.jiny.dev/setup/windows/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -630,7 +958,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">Windows 환경의 PHP 설치 및 개발 환경 개요</li>
         
         
         
@@ -638,44 +966,103 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="windows-php-설치">Windows PHP 설치</h1>
-<p>PHP는 윈도우 운영체제에서도 쉽게 설치를 하여 사용할 수 있습니다.</p>
-
-<p>과거에는 PHP가 서버용 스크립트 언어적인 특성 때문에 윈도우에서 설치가 까다로운 점이 있었습니다. 
-하지만 최근에는 다양한 일체형 설치 패키지들이 많이 있어 초보자도 쉽게 설치가 가능합니다.</p>
-
-<h2 id="다운로드">다운로드</h2>
-<p>PHP 공식 사이트에서 컴파일된 윈도우용 실행 파일을 다운로드 받아 설치할 수 있습니다. 별도의 wizard 프로그램을 사용하지 않고, 간단하게 압축파일을 해제함으로써 PHP 프로그램을 손쉽게 설치할 수 있습니다. <a href="download">설치 방법 학습하기</a></p>
-
-<h2 id="패키지-설치"><a href="bitnami">패키지 설치</a></h2>
+            <h1 id="windows-php-설치-및-개발-환경-개요">Windows PHP 설치 및 개발 환경 개요</h1>
 <hr />
-<p>공식사이트에서 간단하게 실행파일을 내려받아 PHP를 사용하였습니다. 하지만, PHP는 아파치 웹서버와 Mysql 데이터베이스와 같이 연동하여 웹사이트를 개발하는 것이 일반적입니다. 따라서, 별도로 아파치 웹서버와 Mysql 데이터베이스를 각각 설치해 주어야 합니다.</p>
+<p>과거에는 PHP가 리눅스 서버 중심의 특성을 지녀 Windows 환경에서의 직접 설치가 복잡하게 느껴지는 경우가 많았습니다. 그러나 최근에는 사전 빌드된 압축 바이너리 배포와 원클릭 통합 설치 도구(APM 패키지)들이 다양하게 성숙하여 초보 개발자도 몇 분 내에 완전한 PHP 구동 환경을 가동할 수 있습니다.</p>
 
-<p>하지만, 전용 패키지를 이용하면 보다 쉽게 PHP + Apache + Mysql을 설치할 수 있습니다. 이를 <code class="language-plaintext highlighter-rouge">APM</code> 페키지라고 합니다. 가장 인기있는 APM 패키지는 비트나미의 <code class="language-plaintext highlighter-rouge">wapm</code> 입니다. 비트나미 사이트에 접속하여 전용 패키지를 다운로드 받아 설치합니다.</p>
+<p>Windows 환경에서 PHP 환경을 구축하는 방법은 크게 두 가지로 분류할 수 있습니다.</p>
 
+<p><br /></p>
+
+<h3 id="1-windows-php-설치-방식-비교">1. Windows PHP 설치 방식 비교</h3>
+<hr />
+
+<h4 id="1-수동-다운로드-및-실행-파일-구성">1) 수동 다운로드 및 실행 파일 구성</h4>
 <ul>
-  <li><a href="bitnami">비트나미</a></li>
+  <li><strong>특징</strong>: 인스톨러 프로그램 없이 컴파일된 파일들을 다운로드해 지정 폴더에 압축을 풀고 경로(Path)를 직접 등록하는 방식입니다.</li>
+  <li><strong>장점</strong>: 시스템 리소스가 매우 가볍고, 여러 PHP 엔진 버전을 직접 제어하는 등 세부 구조와 확장 모듈을 이해하는 데 큰 도움이 됩니다.</li>
+  <li><strong>적합 대상</strong>: PHP CLI 스크립트 실행, 빠른 문법 학습, Docker 또는 WSL2를 주로 쓰면서 가볍게 윈도우 로컬에서도 구동하려는 경우.</li>
+  <li><strong><a href="download">수동 설치 및 설정 배우기</a></strong></li>
+</ul>
+
+<h4 id="2-원클릭-통합-패키지-설치-wamp--apm">2) 원클릭 통합 패키지 설치 (WAMP / APM)</h4>
+<ul>
+  <li><strong>특징</strong>: 웹 서버(Apache/Nginx), 데이터베이스(MySQL/MariaDB), 그리고 PHP 컴파일러를 하나의 응용프로그램 패키지로 묶어 마법사 형태로 한 번에 설치해 주는 APM 도구입니다.</li>
+  <li><strong>장점</strong>: 복잡한 포트 매핑이나 가상 호스트(VirtualHost), 데이터베이스 계정 생성을 통합 UI를 통해 마우스 조작만으로 완벽 처리할 수 있습니다.</li>
+  <li><strong>적합 대상</strong>: Windows 상에서 실제 동작하는 웹 포털 및 데이터베이스 연동형 모던 웹 개발을 풀스택으로 시작하려는 경우.</li>
+  <li><strong><a href="xampp">XAMPP 통합 패키지 설치 학습하기</a></strong></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="경로설정">경로설정</h2>
+<h3 id="2-전역-명령-실행을-위한-경로-설정과-주의사항">2. 전역 명령 실행을 위한 경로 설정과 주의사항</h3>
 <hr />
-<p>PHP를 다른 폴더위치에서도 실행을 하기 위해서는 경로 설정을 해주어야 합니다.</p>
+<p>어떤 설치 방식을 택하든, 윈도우 명령 프롬프트(CMD)나 파워셸(PowerShell) 등에서 PHP를 수월하게 부르려면 운영체제가 실행 파일의 위치를 바로 파악할 수 있도록 경로를 알려주어야 합니다. 이를 <strong>환경 변수(Environment Variables) 설정</strong>이라고 부릅니다.</p>
 
-<ul>
-  <li>
-    <p>windows 설정</p>
+<p>경로가 지정되지 않으면 파일이 설치된 폴더 밖에서는 <code class="language-plaintext highlighter-rouge">php</code>라는 명령어를 사용할 수 없습니다.</p>
+
+<blockquote>
+  <p>[!WARNING]
+<strong>환경 변수 변경 후 터미널 창 재실행 필수</strong>
+윈도우에서 시스템 환경 변수 <code class="language-plaintext highlighter-rouge">Path</code>를 추가한 후, 기존에 켜져 있던 명령 프롬프트나 VS Code 터미널 창에서 바로 <code class="language-plaintext highlighter-rouge">php -v</code>를 입력하면 환경 변수가 반영되지 않아 오류가 납니다. Windows는 터미널 프로세스가 구동될 때 부모 프로세스(Explorer)로부터 환경 변수를 복사해 오기 때문입니다. <strong>반드시 기존 터미널 창을 완전히 닫고 새 창을 열어 명령을 실행</strong>해야 합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="3-git-bash-쉘-연동-및-대화형-모드winpty-설정-팁">3. Git Bash 쉘 연동 및 대화형 모드(<code class="language-plaintext highlighter-rouge">winpty</code>) 설정 팁</h3>
+<hr />
+<p>윈도우 환경에서 Git을 설치하면 리눅스 터미널 명령어를 다룰 수 있는 <strong>Git Bash</strong> 터미널을 주로 쓰게 됩니다. 환경 설정을 제어했음에도 Git Bash에서 php 명령어가 정상 인식되지 않거나 엉뚱한 이전 버전을 실행하는 경우에는 홈 경로에 에일리어스(Alias)를 추가해 지정합니다.</p>
+
+<ol>
+  <li>Git Bash를 엽니다.</li>
+  <li>사용자 홈 경로의 설정을 엽니다. (파일명: <code class="language-plaintext highlighter-rouge">~/.bashrc</code> 또는 <code class="language-plaintext highlighter-rouge">~/.bash_profile</code>)</li>
+  <li>파일 끝에 아래와 같이 설치된 PHP의 실행 파일 전체 물리 주소를 별칭으로 입력해 줍니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 예시: C드라이브 아래 php8.3 폴더 내의 php.exe로 고정 매핑</span>
+<span class="nb">alias </span><span class="nv">php</span><span class="o">=</span><span class="s1">'/c/php8.3/php.exe'</span>
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p>깃베시 설정
-윈도우에서 환경설정을 한 후에, 깃베시에서 php가 정상적으로 실행이 되지 않는 경우가 있습니다.<br />
-깃베시 또한 경로 환경 설정을 해주어야 합니다.</p>
+  <li>저장 후 <code class="language-plaintext highlighter-rouge">source ~/.bashrc</code>를 가동해 변경 내역을 터미널에 반영합니다.</li>
+</ol>
+
+<blockquote>
+  <p>[!TIP]
+<strong>Git Bash에서 대화형 쉘(<code class="language-plaintext highlighter-rouge">php -a</code>) 실행 시 먹통 현상 해결법</strong>
+Git Bash(MinTTY 윈도우) 내부 버그로 인해 그냥 <code class="language-plaintext highlighter-rouge">php -a</code>를 입력하면 Interactive shell 프롬프트가 뜨지 않고 화면이 멈추거나 키 입력이 먹지 않는 현상이 자주 발생합니다. 
+이 경우 <strong>가상 TTY 제어용 프리픽스</strong>인 <strong><code class="language-plaintext highlighter-rouge">winpty</code></strong>를 붙여 실행해야 합니다.</p>
+  <ul>
+    <li><strong>임시 실행</strong>: <code class="language-plaintext highlighter-rouge">winpty php -a</code></li>
+    <li><strong>영구 단축어 설정</strong>: <code class="language-plaintext highlighter-rouge">~/.bashrc</code> 파일에 아래 별칭을 추가해두면 평소처럼 <code class="language-plaintext highlighter-rouge">php -a</code> 입력 시에도 정상 동작합니다.
+<code class="language-plaintext highlighter-rouge">alias php="winpty php"</code></li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="4-windows-php-설치-시-3대-빈번-오류-해결-방안-troubleshooting">4. Windows PHP 설치 시 3대 빈번 오류 해결 방안 (Troubleshooting)</h3>
+<hr />
+
+<h4 id="1-vcruntime140dll-또는-msvcr120dll-누락-에러">1) <code class="language-plaintext highlighter-rouge">VCRUNTIME140.dll</code> (또는 <code class="language-plaintext highlighter-rouge">MSVCR120.dll</code>) 누락 에러</h4>
+<ul>
+  <li><strong>원인</strong>: 수동 다운로드한 PHP.exe가 작동하는 데 필요한 C++ 런타임 공유 라이브러리가 윈도우 OS에 깔려있지 않아서 발생합니다.</li>
+  <li><strong>해결책</strong>: Microsoft 공식 지원 페이지에서 <strong>Visual Studio 2015-2022용 Visual C++ 재배포 가능 패키지(VC++ Redistributable)</strong>를 다운로드하여 설치합니다. (반드시 PHP 아키텍처와 일치하는 <strong><code class="language-plaintext highlighter-rouge">vc_redist.x64.exe</code></strong> 다운로드 권장)</li>
+</ul>
+
+<h4 id="2-apm-통합-서버-구동-시-포트-80-충돌-오류-apache-서비스-실행-불가">2) APM 통합 서버 구동 시 포트 80 충돌 오류 (Apache 서비스 실행 불가)</h4>
+<ul>
+  <li><strong>원인</strong>: 윈도우 웹 IIS 서비스나 Skype, 혹은 Windows 기본 HTTP 드라이버 서비스(<code class="language-plaintext highlighter-rouge">http.sys</code>)가 80번 포트를 미리 선점하고 있어 아파치 웹서버의 실행이 거부된 상태입니다.</li>
+  <li><strong>해결책</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Windows 기능 켜기/끄기</code>에서 <strong>인터넷 정보 서비스 (IIS)</strong> 항목을 체크 해제하여 끕니다.</li>
+      <li>관리자 권한 명령 프롬프트에서 <code class="language-plaintext highlighter-rouge">net stop http</code> 명령을 수행하여 윈도우 내장 HTTP 드라이버 가동을 중지시키거나, 비트나미 설정에서 웹 포트를 8080이나 81로 변경하여 실행합니다.</li>
+    </ul>
   </li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias php='/c/php7.4.10/php'
-</code></pre></div></div>
+<h4 id="3-확장-프로그램-dll-로드-실패-경고-php-warning-php-startup-unable-to-load-dynamic-library">3) 확장 프로그램 DLL 로드 실패 경고 (<code class="language-plaintext highlighter-rouge">PHP Warning: PHP Startup: Unable to load dynamic library...</code>)</h4>
+<ul>
+  <li><strong>원인</strong>: <code class="language-plaintext highlighter-rouge">php.ini</code> 내부 설정 중 모듈이 들어있는 디렉터리 경로 지시어(<code class="language-plaintext highlighter-rouge">extension_dir</code>)가 비활성화되어 있거나 오타가 난 경우입니다.</li>
+  <li><strong>해결책</strong>: <code class="language-plaintext highlighter-rouge">php.ini</code> 파일을 열고 <code class="language-plaintext highlighter-rouge">extension_dir = "ext"</code> 라인 맨 앞의 주석 세미콜론(<code class="language-plaintext highlighter-rouge">;</code>)이 완전히 지워졌는지 확인하고 저장한 후 서버 프로세스를 다시 시작하십시오.</li>
+</ul>
 
 
 
@@ -897,13 +1284,139 @@
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

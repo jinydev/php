@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">PHP 8.1+ 열거형(Enum) 구조 및 작동 방식</text>
+
+  <!-- Pure Enum -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <rect width="260" height="260" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+    <rect width="260" height="45" rx="16" fill="#eff6ff" />
+    <rect y="35" width="260" height="10" fill="#eff6ff" />
+    <text x="130" y="28" fill="#1e40af" font-family="'Inter', sans-serif" font-weight="800" font-size="14" text-anchor="middle">단순 열거형 (Pure Enum)</text>
+    
+    <text x="30" y="75" fill="#1e40af" font-family="monospace" font-size="12" font-weight="bold">enum Status {</text>
+    <text x="50" y="105" fill="#475569" font-family="monospace" font-size="12">case Draft;</text>
+    <text x="50" y="130" fill="#475569" font-family="monospace" font-size="12">case Published;</text>
+    <text x="50" y="155" fill="#475569" font-family="monospace" font-size="12">case Archived;</text>
+    <text x="30" y="185" fill="#1e40af" font-family="monospace" font-size="12">}</text>
+
+    <rect x="20" y="200" width="220" height="45" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="30" y="218" fill="#475569" font-family="'Inter', sans-serif" font-size="10" font-weight="600">특징: 값(Value)이 내포되지 않은</text>
+    <text x="30" y="234" fill="#475569" font-family="'Inter', sans-serif" font-size="10" font-weight="600">순수 식별용 상태값 정의에 사용</text>
+  </g>
+
+  <!-- Backed Enum -->
+  <g transform="translate(440, 80)" filter="url(#shadow)">
+    <rect width="260" height="260" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+    <rect width="260" height="45" rx="16" fill="#f5f3ff" />
+    <rect y="35" width="260" height="10" fill="#f5f3ff" />
+    <text x="130" y="28" fill="#5b21b6" font-family="'Inter', sans-serif" font-weight="800" font-size="14" text-anchor="middle">자료형 내포 열거형 (Backed Enum)</text>
+    
+    <text x="30" y="75" fill="#5b21b6" font-family="monospace" font-size="12" font-weight="bold">enum Role: string {</text>
+    <text x="50" y="105" fill="#475569" font-family="monospace" font-size="12">case Admin = 'admin';</text>
+    <text x="50" y="130" fill="#475569" font-family="monospace" font-size="12">case User = 'user';</text>
+    <text x="30" y="160" fill="#5b21b6" font-family="monospace" font-size="12">}</text>
+
+    <!-- Properties access demonstration -->
+    <rect x="20" y="180" width="220" height="65" rx="6" fill="#faf5ff" stroke="#e9d5ff" />
+    <text x="30" y="198" fill="#6b21a8" font-family="monospace" font-size="10" font-weight="bold">Role::Admin->name // 'Admin'</text>
+    <text x="30" y="215" fill="#6b21a8" font-family="monospace" font-size="10" font-weight="bold">Role::Admin->value // 'admin'</text>
+    <text x="30" y="232" fill="#475569" font-family="'Inter', sans-serif" font-size="9">→ DB 저장 및 전송에 특화</text>
+  </g>
+</svg>

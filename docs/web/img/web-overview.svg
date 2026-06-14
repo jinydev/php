@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad-client" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="grad-server" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+    <linearGradient id="grad-db" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.1" />
+    </filter>
+    <!-- Marker for Arrows -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f46e5" />
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0d9488" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <!-- Grid Pattern -->
+  <g stroke="#f1f5f9" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="500" y1="0" x2="500" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="700" y1="0" x2="700" y2="400" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+  </g>
+
+  <!-- Client Box -->
+  <g transform="translate(60, 110)" filter="url(#shadow)">
+    <rect width="180" height="180" rx="16" fill="url(#grad-client)" />
+    <rect x="15" y="15" width="150" height="25" rx="6" fill="#ffffff" fill-opacity="0.2" />
+    <circle cx="28" cy="27" r="4" fill="#ffffff" />
+    <circle cx="40" cy="27" r="4" fill="#ffffff" />
+    <circle cx="52" cy="27" r="4" fill="#ffffff" />
+    <rect x="65" y="22" width="90" height="10" rx="3" fill="#ffffff" fill-opacity="0.3" />
+    
+    <text x="90" y="95" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">클라이언트</text>
+    <text x="90" y="120" fill="#e0e7ff" font-family="'Inter', sans-serif" font-weight="500" font-size="13" text-anchor="middle">웹 브라우저 (Chrome, Safari)</text>
+    <text x="90" y="140" fill="#e0e7ff" font-family="'Inter', sans-serif" font-weight="400" font-size="11" text-anchor="middle">HTML/CSS/JS 렌더링</text>
+  </g>
+
+  <!-- Server Box (PHP Application) -->
+  <g transform="translate(310, 110)" filter="url(#shadow)">
+    <rect width="180" height="180" rx="16" fill="url(#grad-server)" />
+    <rect x="15" y="15" width="150" height="25" rx="6" fill="#ffffff" fill-opacity="0.2" />
+    <text x="90" y="32" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">Apache / Nginx + PHP Engine</text>
+    
+    <text x="90" y="95" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">웹 서버 &amp; PHP</text>
+    <text x="90" y="120" fill="#ccfbf1" font-family="'Inter', sans-serif" font-weight="500" font-size="13" text-anchor="middle">백엔드 로직 실행</text>
+    <text x="90" y="140" fill="#ccfbf1" font-family="'Inter', sans-serif" font-weight="400" font-size="11" text-anchor="middle">동적 페이지 생성 (HTML)</text>
+  </g>
+
+  <!-- Database Box -->
+  <g transform="translate(560, 110)" filter="url(#shadow)">
+    <rect width="180" height="180" rx="16" fill="url(#grad-db)" />
+    <path d="M90,20 C130,20 150,27 150,35 C150,43 130,50 90,50 C50,50 30,43 30,35 C30,27 50,20 90,20 Z" fill="#ffffff" fill-opacity="0.2" />
+    <path d="M150,35 L150,55 C150,63 130,70 90,70 C50,70 30,63 30,55 L30,35" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.4" />
+    <path d="M150,55 L150,75 C150,83 130,90 90,90 C50,90 30,83 30,75 L30,55" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.4" />
+    
+    <text x="90" y="120" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">데이터베이스</text>
+    <text x="90" y="142" fill="#ffedd5" font-family="'Inter', sans-serif" font-weight="500" font-size="13" text-anchor="middle">MySQL / MariaDB</text>
+    <text x="90" y="160" fill="#ffedd5" font-family="'Inter', sans-serif" font-weight="400" font-size="11" text-anchor="middle">데이터 영속성 관리</text>
+  </g>
+
+  <!-- Connectors (Arrows) -->
+  <path d="M 240,170 L 300,170" fill="none" stroke="#4f46e5" stroke-width="3" marker-end="url(#arrow-indigo)" />
+  <text x="270" y="155" fill="#4f46e5" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">HTTP 요청</text>
+
+  <path d="M 300,230 L 242,230" fill="none" stroke="#0d9488" stroke-width="3" marker-end="url(#arrow-teal)" />
+  <text x="270" y="250" fill="#0d9488" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">HTTP 응답</text>
+
+  <path d="M 490,170 L 550,170" fill="none" stroke="#0d9488" stroke-width="3" marker-end="url(#arrow-teal)" />
+  <text x="520" y="155" fill="#0d9488" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">SQL 질의</text>
+
+  <path d="M 550,230 L 492,230" fill="none" stroke="#ea580c" stroke-width="3" marker-end="url(#arrow)" />
+  <text x="520" y="250" fill="#ea580c" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">결과 반환</text>
+</svg>

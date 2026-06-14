@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    
+    .box-input { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-cond { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 8px; }
+    .box-action { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 8px; }
+    .box-default { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 8px; }
+    .box-error { fill: #fef2f2; stroke: #ef4444; stroke-width: 2; rx: 8px; }
+    
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+    .line-error { stroke: #ef4444; stroke-width: 2; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="700" height="340" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="30" y="45" class="title">타입 선언 (Type Declaration) 유효성 검사 흐름도</text>
+
+  <!-- Input -->
+  <rect x="290" y="70" width="140" height="40" class="box-input" />
+  <text x="360" y="95" class="label">함수 호출 (인수 전달)</text>
+  
+  <path d="M 360 110 L 360 145" class="line-active" marker-end="url(#arrow-blue)" />
+
+  <!-- Strict Mode Cond -->
+  <rect x="270" y="150" width="180" height="50" class="box-cond" />
+  <text x="360" y="180" class="label">strict_types == 1 ?</text>
+
+  <!-- Strict Mode YES -->
+  <path d="M 270 175 L 140 175 L 140 225" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="190" y="165" class="arrow-text" fill="#10b981">YES (엄격 검사)</text>
+
+  <rect x="50" y="230" width="180" height="40" class="box-cond" style="fill: #f0fdf4; stroke: #10b981;" />
+  <text x="140" y="255" class="label" fill="#15803d">타입이 완전 일치하는가?</text>
+
+  <path d="M 140 270 L 140 300" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="160" y="290" class="arrow-text" fill="#10b981">YES</text>
+
+  <path d="M 50 250 L 20 250 L 20 310 L 180 310" class="line-error" marker-end="url(#arrow-red)" />
+  <text x="25" y="240" class="arrow-text" fill="#ef4444">NO</text>
+
+  <!-- Strict Mode NO (Coercive Mode) -->
+  <path d="M 450 175 L 580 175 L 580 225" class="line" marker-end="url(#arrow)" />
+  <text x="520" y="165" class="arrow-text">NO (느슨한 검사)</text>
+
+  <rect x="490" y="230" width="180" height="40" class="box-input" style="fill: #faf5ff; stroke: #a855f7;" />
+  <text x="580" y="255" class="label" fill="#701a75">자동 형변환(Casting) 가능한가?</text>
+
+  <path d="M 580 270 L 580 300" class="line" marker-end="url(#arrow)" />
+  <text x="600" y="290" class="arrow-text">YES</text>
+
+  <path d="M 670 250 L 700 250 L 700 310 L 500 310" class="line-error" marker-end="url(#arrow-red)" />
+  <text x="690" y="240" class="arrow-text" fill="#ef4444">NO</text>
+
+  <!-- Final Actions -->
+  <rect x="270" y="290" width="180" height="40" class="box-error" />
+  <text x="360" y="315" class="label" fill="#b91c1c" font-weight="700">TypeError 예외 발생</text>
+
+  <!-- Success Terminal -->
+  <circle cx="140" cy="310" r="5" fill="#10b981" />
+  <circle cx="580" cy="310" r="5" fill="#3b82f6" />
+</svg>

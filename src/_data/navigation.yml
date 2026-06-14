@@ -9,39 +9,43 @@ main:
         url: /setup/console
       - title: "환경설정"
         url: /setup/env
+      - title: "서버구축"
+        url: /setup/server
+      - title: "배포가이드"
+        url: /setup/deploy
+      - title: "응용프로그램"
+        url: /setup/apps
   - title: "Part 02. 기본문법"
     subitems:
       - title: "코드작성"
-        url: /basic
+        url: /syntax
       - title: "상수"
-        url: /basic/const
+        url: /syntax/const
       - title: "변수"
-        url: /basic/variable
+        url: /syntax/variable
       - title: "연산자"
-        url: /basic/operator
+        url: /syntax/operator
       - title: "조건문"
-        url: /basic/condition
+        url: /syntax/condition
       - title: "반복문"
-        url: /basic/loop
+        url: /syntax/loop
       - title: "전처리기"
-        url: /basic/preprocess
+        url: /syntax/preprocess
       - title: "유효범위"
-        url: /basic/scope
+        url: /syntax/scope
       - title: "오류"
-        url: /basic/error
-  - title: "Part 03. 함수"
-    subitems:
+        url: /syntax/error
       - title: "함수구조"
-        url: /function/function
+        url: /syntax/function/function
       - title: "제너레이터"
-        url: /function/generator
+        url: /syntax/function/generator
       - title: "익명함수"
-        url: /function/annon
+        url: /syntax/function/annon
       - title: "가변함수"
-        url: /function/variable
+        url: /syntax/function/variable
       - title: "내부함수"
-        url: /function/builtin
-  - title: "Part 04. 객체지향"
+        url: /syntax/function/builtin
+  - title: "Part 03. 객체지향"
     subitems:
       - title: "클래스"
         url: /oop/class
@@ -59,11 +63,48 @@ main:
         url: /oop/closure
       - title: "예외처리"
         url: /oop/exception
+      - title: "디자인 패턴"
+        url: /oop/pattern
+      - title: "열거형 (Enum)"
+        url: /oop/enum
+  - title: "Part 04. 응용실습"
+    subitems:
+      - title: "응용실습 개요"
+        url: /practice
+      - title: "콘솔 프로그래밍"
+        url: /practice/console
+      - title: "파일 입출력 & JSON"
+        url: /practice/file
+      - title: "cURL 및 크롤링"
+        url: /practice/curl
   - title: "Part 05. 패키지"
     subitems:
+      - title: "패키지 개요"
+        url: /packages
       - title: "오토로딩"
-        url: /autoload
+        url: /packages/autoload
       - title: "컴포저"
-        url: /composer
+        url: /packages/composer
+      - title: "프레임워크"
+        url: /packages/framework
       - title: "지니PHP"
-        url: /jinyphp
+        url: /packages/jinyphp
+  - title: "Part 06. 웹프로젝트"
+    subitems:
+      - title: "웹프로젝트 개요"
+        url: /web
+      - title: "웹 개발이란"
+        url: /web/about
+      - title: "HTTP의 이해"
+        url: /web/http
+      - title: "쿠키와 세션"
+        url: /web/cookie-session
+      - title: "템플릿 및 MVC"
+        url: /web/template
+      - title: "PDO 데이터베이스 연동"
+        url: /web/pdo
+      - title: "게시판 만들기"
+        url: /web/board
+
+
+

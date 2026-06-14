@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <!-- Definitions for gradients and shadows -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="pearGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="compGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc" text-anchor="middle">PEAR vs Composer 패키지 설치 범위 비교</text>
+
+  <!-- Left Side: PEAR (Global Server-Wide) -->
+  <g transform="translate(60, 70)" filter="url(#shadow)">
+    <!-- Main Card -->
+    <rect width="320" height="290" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5"/>
+    <!-- Banner -->
+    <path d="M 0,12 Q 0,0 12,0 L 308,0 Q 320,0 320,12 L 320,50 L 0,50 Z" fill="url(#pearGrad)"/>
+    <text x="160" y="31" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">PEAR (글로벌 전역 설치)</text>
+    
+    <!-- Server outline representing the OS -->
+    <rect x="20" y="70" width="280" height="200" rx="8" fill="none" stroke="#f87171" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <text x="30" y="90" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#f87171">웹 서버 (Web Server OS)</text>
+
+    <!-- Global shared directory -->
+    <rect x="40" y="110" width="240" height="60" rx="6" fill="#1e293b" stroke="#f87171" stroke-width="1"/>
+    <text x="160" y="132" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">전역 공유 디렉터리</text>
+    <text x="160" y="152" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="bold" fill="#fca5a5" text-anchor="middle">Net_SMTP v1.0 (고정)</text>
+
+    <!-- Project A & B linking to the same directory -->
+    <rect x="40" y="190" width="100" height="60" rx="6" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <text x="90" y="215" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">프로젝트 A</text>
+    <text x="90" y="235" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">(v1.0 필요: OK)</text>
+
+    <rect x="180" y="190" width="100" height="60" rx="6" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <text x="230" y="215" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">프로젝트 B</text>
+    <text x="230" y="235" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#f87171" text-anchor="middle">(v2.0 필요: 충돌!)</text>
+
+    <!-- Arrows connecting projects to shared library -->
+    <path d="M 90,190 L 90,175 L 140,175" fill="none" stroke="#f87171" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M 230,190 L 230,175 L 180,175" fill="none" stroke="#f87171" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Right Side: Composer (Local Project-Specific) -->
+  <g transform="translate(420, 70)" filter="url(#shadow)">
+    <!-- Main Card -->
+    <rect width="320" height="290" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5"/>
+    <!-- Banner -->
+    <path d="M 0,12 Q 0,0 12,0 L 308,0 Q 320,0 320,12 L 320,50 L 0,50 Z" fill="url(#compGrad)"/>
+    <text x="160" y="31" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Composer (로컬 프로젝트별 설치)</text>
+
+    <!-- Server outline representing the OS -->
+    <rect x="20" y="70" width="280" height="200" rx="8" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <text x="30" y="90" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">웹 서버 (Web Server OS)</text>
+
+    <!-- Project A with vendor -->
+    <rect x="35" y="110" width="250" height="65" rx="6" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+    <text x="45" y="128" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">프로젝트 A 디렉터리</text>
+    <rect x="45" y="138" width="230" height="30" rx="4" fill="#334155" stroke="#38bdf8" stroke-width="1"/>
+    <text x="160" y="157" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#7dd3fc" text-anchor="middle">vendor/Net_SMTP v1.0 (격리)</text>
+
+    <!-- Project B with vendor -->
+    <rect x="35" y="195" width="250" height="65" rx="6" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+    <text x="45" y="213" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">프로젝트 B 디렉터리</text>
+    <rect x="45" y="223" width="230" height="30" rx="4" fill="#334155" stroke="#38bdf8" stroke-width="1"/>
+    <text x="160" y="242" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="bold" fill="#7dd3fc" text-anchor="middle">vendor/Net_SMTP v2.0 (격리, 독립)</text>
+  </g>
+
+  <!-- Markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#f87171"/>
+    </marker>
+  </defs>
+</svg>

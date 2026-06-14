@@ -1,11 +1,15 @@
 ---
-layout: home
+layout: php
+title: "오류 및 예외 처리 (Exception Handling)"
+keyword: "php exception, try catch finally, throw new exception, set_exception_handler"
+description: "PHP 프로그램 실행 중 발생하는 예기치 못한 오류와 예외(Exception) 객체의 핸들링 규칙, try-catch-finally 실행 흐름 제어를 학습합니다."
 breadcrumb:
-- "oop"
-- "exception"
+- oop
+- exception
 ---
 
-17 오류 및 예외 처리
+# 17. 오류 및 예외 처리 (Exception Handling)
+---
 
 프로그램을 개발하다 보면 수많은 오류와 예외가 발생합니다. 보통 오류는 크게 코드상의 문법 오류와 소스상의 논리적인 오류로 구분할 수 있습니다. 문법적 오류는 PHP가 시작하기 전에 체크하여 알려주기 때문에 쉽게 문법적 오류를 해결할 수 있습니다. 하지만 논리적인 오류는 쉽게 찾을 수 있는 오류가 아닙니다. 또한 이러한 문제로 인해 프로그램은 정상적인 동작을 수행하지 못하고 중간에 중단되기도 합니다.
 
@@ -281,6 +285,11 @@ Exception을 상속합니다.
 
 17.2.4 예외 포착
 개발자는 예외 처리에 대해서 수동적인 방어 보다는 능동적인 방어가 필요합니다. 적극적으로 예외가 발생될 것을 예측하여 프로그램 코드를 작성해야 합니다.
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/exception-handling.svg" alt="PHP Exception Handling (Try-Catch-Finally) Flow" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 예외 던지기(throw) 시 catch 블록으로의 분기 및 finally 블록의 무조건적 실행 흐름</p>
+</div>
 
 PHP 언어는 예외를 포착할 수 있는 try ~ catch 명령 키워드를 제공합니다. try~catch는 C++이나 Java 등에서 일찌감치 예외 처리를 위해 사용하던 문법입니다. PHP 5.x 이후부터는 이와 비슷한 스타일로 예외 처리 문장을 만들 수 있습니다.
 

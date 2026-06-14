@@ -8,71 +8,85 @@ breadcrumb:
 - "const"
 ---
 
-# 클래스 상수
+# 클래스 상수 (Class Constants)
 ---
-객체 클래스만의 상수를 선언할 수 있습니다. 객체 클래스 내에 상수를 선언하는 것은 프로그램 소스 전체에서 사용이 가능한 공용 상수가 아닙니다. 이 상수는 객체 클래스 안에서만 사용할 수 있는 상수 코드로 독립적인 효과가 있습니다.  
-  
-PHP 언어는 두 가지의 방식으로 상수를 설정할 수 있습니다. 하지만 이 두 가지 중에서 객체 클래스 안에서 상수 설정 가능한 방법은 const 명령만 사용 가능합니다. 즉, define() 함수는 사용하지 않습니다.  
+**클래스 상수(Class Constant)**는 객체 인스턴스마다 할당되지 않고, 클래스 범위 자체에 단 하나만 정의되어 변하지 않는 고정 값을 보관하는 용도로 사용됩니다. 
 
-클래스 상수
+PHP 버전이 진화하면서 상수의 접근 제어(가시성) 및 타입 안전성을 강제할 수 있는 강력한 기능들이 차례로 내장되었습니다. 각 상세 규칙과 지원 버전을 배웁니다.
+
+<br>
+
+## 1. 클래스 상수 정의와 참조 방식
+---
+클래스 내부에 `const` 키워드를 사용하여 상수를 정의합니다. 일반 변수와 달리 앞에 `$` 기호가 없으며 관례상 대문자로 명명합니다. 
+
+인스턴스 생성(`new`) 없이도 클래스 이름 뒤에 범위 정의 연산자(이중 콜론, `::`)를 붙여 직접 접근 가능합니다.
+
 ```php
-class language {
-	const ENGLISH = "en";
-	const KOREAN = "ko";
+class Language {
+    const ENGLISH = "en";
+    const KOREAN = "ko";
+}
+
+// 1. 클래스 외부에서 호출 (인스턴스 생성 없이 직접 참조)
+echo Language::KOREAN; // "ko" 출력
+
+// 2. 클래스 내부 메서드 안에서 호출 (self 키워드 사용)
+class LanguageHelper {
+    const DEFAULT_LANG = 'ko';
+
+    public function getDefault(): string {
+        return self::DEFAULT_LANG;
+    }
 }
 ```
 
-객체 클래스 본문 중괄호 `{ }` 안에 `const`를 사용하여 상수를 선언하면 됩니다.  
-상수를 선언하는 문법과 방식은 기존 PHP 상수 설정과 같지만 클래스 본문 안에 작성한다는 것이 차이점입니다.  
+<br>
 
-클래스 안에 상수를 쓸 때는 PSR-2 코딩 스타일 방식으로 들여쓰기를 하여 작성합니다.  
-PSR-1 코딩 스타일에 따라서 상수는 대문자로 작성합니다. 상수명이 길어질 때는 밑줄(`_`)을 통해 구분하여 상수명을 작성할 수도 있습니다.
+## 2. 클래스 상수 접근 제어 (Constant Visibility) — [PHP 7.1+]
+---
+PHP 7.0 이전의 클래스 상수는 무조건 `public` 지시어로 선언된 것으로 간주하여 외부에서 제한 없이 누구나 읽을 수 있었습니다.
 
-클래스 상수를 사용할 때는 객체변수 뒤에 이중콜론(`::`) 기호로 사용할 수 있습니다.  
+**PHP 7.1부터는** 상수의 선언부 앞에 `public`, `protected`, `private` 접근 제어자를 부착하여 상수의 참조 유효 범위를 엄격히 차단할 수 있게 되었습니다.
 
-|문법|
 ```php
-$객체변수::상수명
+class Database {
+    // 외부 전체 오픈
+    public const PORT = 3306;
+    
+    // 이 클래스 본인 및 상속(자식) 클래스 메서드 내부에서만 사용
+    protected const DRIVER = 'mysql';
+    
+    // 이 클래스 본인의 메서드 내부에서만 비밀스럽게 사용
+    private const PASSWORD = 'super-secret-password';
+}
+
+echo Database::PORT; // 3306 (허용)
+// echo Database::PASSWORD; // ❌ 에러! Fatal error: Cannot access private const Database::PASSWORD
 ```
 
-클래스 내부적으로 사용을 할 때는 다음과 같은 형태로 사용 가능합니다.
+<br>
 
-|문법|
+## 3. 타입이 정의된 클래스 상수 (Typed Class Constants) — [PHP 8.3+]
+---
+상수의 값이 상속 관계나 코드 갱신 과정에서 엉뚱한 성격의 데이터 타입으로 변경되어 예기치 못한 타입 에러를 일으키는 현상을 방어하기 위해 **PHP 8.3부터는 클래스 상수의 데이터 타입을 명시적으로 지정(Typed Constants)**할 수 있습니다.
+
 ```php
-self::상수명
+class Application {
+    // 상수 이름 앞에 데이터 타입을 명시합니다.
+    public const string VERSION = "2.1.0";
+    protected const int MAX_CONNECTIONS = 50;
+    private const float PI = 3.14159;
+}
+
+class CustomApp extends Application {
+    // ❌ 에러! 부모 클래스 Application에서 int로 정의한 상수를 자식 클래스에서 string으로 오버라이딩 시도함
+    // public const string MAX_CONNECTIONS = "unlimited"; 
+}
 ```
 
-예제 파일 class-01.php
-```php
-<?php
-	class language {
-		const ENGLISH = "en";
-		const KOREAN = "ko";
+상수 타입의 특징:
+1. 부모 클래스에서 지정한 상수의 타입을 자식 클래스가 맘대로 변경할 수 없어 타입 일관성이 보장됩니다.
+2. 지정된 타입과 런타임에 대입된 실제 값의 타입이 불일치하는 경우 컴파일 오류(`TypeError`)가 즉각 발생하여 코드 신뢰성을 크게 제고합니다.
 
-		public function getEnglish()
-		{
-			return self::ENGLISH;
-		}
-	}
-
-	$obj = new language();
-
-	echo "클래스 상수 출력<br>";
-	echo "KOREAN = " . $obj::KOREAN . "<br>";
-
-	echo "메서드를 이용한 상수 출력<br>";
-	echo "ENGLISH = " . $obj->getEnglish() . "<br>";
-?>
-```
-
-결과
-```
-클래스 상수 출력
-KOREAN = ko
-메서드를 이용한 상수 출력
-ENGLISH = en
-```
-
-위의 예제는 클래스 내부에 독립 상수를 설정하고, 이를 접근 출력하는 예입니다.  
-language 클래스는 두 개의 상수를 가지고 있습니다. 첫 번째 출력에서는 직접 객체에 접근하여 사용했습니다.  
-두 번째 출력에서는 매서드를 이용하여 내부 접근을 한 후에 상수값을 출력합니다.
+<br><br>

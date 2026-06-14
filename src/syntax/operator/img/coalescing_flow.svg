@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 13px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    
+    .box-input { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-cond { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 8px; }
+    .box-action { fill: #faf5ff; stroke: #a855f7; stroke-width: 2; rx: 8px; }
+    .box-default { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 8px; }
+    
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="580" height="300" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="30" y="45" class="title">Null 병합 연산자 ($a ?? $b) 작동 흐름도</text>
+
+  <!-- Input -->
+  <rect x="230" y="70" width="140" height="40" class="box-input" />
+  <text x="300" y="95" class="label">피연산자 ($a)</text>
+  
+  <path d="M 300 110 L 300 145" class="line-active" marker-end="url(#arrow-blue)" />
+
+  <!-- Condition -->
+  <rect x="200" y="150" width="200" height="50" class="box-cond" />
+  <text x="300" y="180" class="label">isset($a) &amp;&amp; $a !== null ?</text>
+
+  <!-- True Line (Yes) -->
+  <path d="M 200 175 L 120 175 L 120 225" class="line-success" marker-end="url(#arrow-green)" />
+  <text x="160" y="165" class="arrow-text" fill="#10b981">YES (참)</text>
+
+  <rect x="60" y="230" width="120" height="40" class="box-action" />
+  <text x="120" y="255" class="label">반환값: $a</text>
+
+  <!-- False Line (No) -->
+  <path d="M 400 175 L 480 175 L 480 225" class="line" marker-end="url(#arrow)" />
+  <text x="440" y="165" class="arrow-text">NO (거짓)</text>
+
+  <rect x="420" y="230" width="120" height="40" class="box-default" />
+  <text x="480" y="255" class="label">반환값: $b</text>
+</svg>

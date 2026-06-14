@@ -1,0 +1,65 @@
+main:
+- title: 패키지 관리
+  url: /packages/
+  subitems:
+  - title: 패키지 개요
+    url: /packages/
+  - title: 오토로딩 (Autoload)
+    url: /packages/autoload/
+- title: 컴포저 (Composer)
+  url: /packages/composer/
+  subitems:
+  - title: 컴포저 개요
+    url: /packages/composer/
+  - title: 컴포저 소개
+    url: /packages/composer/about/
+  - title: PEAR와 컴포저
+    url: /packages/composer/about/pear.html
+  - title: 설치 및 환경설정
+    url: /packages/composer/setup/
+  - title: 패키지 검색
+    url: /packages/composer/package/
+  - title: 패키지 설치 & 갱신
+    url: /packages/composer/install/
+  - title: 프로젝트 폴더구조
+    url: /packages/composer/folder.html
+  - title: 오토로드 매커니즘
+    url: /packages/composer/autoload.html
+  - title: PSR-4 규약
+    url: /packages/composer/psr4.html
+  - title: composer.json 스키마
+    url: /packages/composer/json.html
+  - title: 코드 적용 실습
+    url: /packages/composer/code.html
+  - title: 커스텀 패키지 제작
+    url: /packages/composer/make.html
+  - title: 패키지 배포 (Packagist)
+    url: /packages/composer/deploy.html
+  - title: 커스텀 저장소 (VCS/Path)
+    url: /packages/composer/repository.html
+- title: 웹 프레임워크
+  url: /packages/framework/
+  subitems:
+  - title: 프레임워크 개요
+    url: /packages/framework/
+  - title: 프레임워크란?
+    url: /packages/framework/about.html
+  - title: MVC 디자인 패턴
+    url: /packages/framework/mvc.html
+  - title: PHP 프레임워크 종류
+    url: /packages/framework/types.html
+  - title: 라라벨 (Laravel) 상세
+    url: /packages/framework/laravel.html
+- title: 지니PHP (jinyPHP)
+  url: /packages/jinyphp/
+  subitems:
+  - title: 지니PHP 개요
+    url: /packages/jinyphp/
+  - title: 프론트매터 (Frontmatter)
+    url: /packages/jinyphp/frontmatter/
+  - title: 리퀴드 (Liquid)
+    url: /packages/jinyphp/liquid/
+  - title: 뷰 (View) 개요
+    url: /packages/jinyphp/view/
+  - title: 뷰 헬퍼 (View Helper)
+    url: /packages/jinyphp/view/helper.html

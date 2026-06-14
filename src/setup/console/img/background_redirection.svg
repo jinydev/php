@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="badgeTerminal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="badgeProcess" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f5f3ff" />
+    </linearGradient>
+    <linearGradient id="badgeLog" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7e22ce" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .section-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; text-anchor: middle; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .box-container { fill: url(#bgGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 16px; }
+    
+    .badge-terminal { fill: url(#badgeTerminal); stroke: #0f172a; stroke-width: 1.5; rx: 8px; filter: url(#shadow); }
+    .badge-process { fill: url(#badgeProcess); stroke: #7e22ce; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    .badge-log { fill: url(#badgeLog); stroke: #16a34a; stroke-width: 1.2; rx: 8px; filter: url(#shadow); }
+    
+    .line-purple { stroke: #7e22ce; stroke-width: 1.8; fill: none; }
+    .line-green { stroke: #16a34a; stroke-width: 1.8; fill: none; }
+    .line-red { stroke: #dc2626; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="450" class="bg-inner" rx="12" />
+
+  <!-- Title Section -->
+  <text x="35" y="50" class="title">PHP 백그라운드 구동(nohup) 및 입출력 스트림 리다이렉션 구조</text>
+  <text x="35" y="72" class="subtitle">세션 단절(SIGHUP) 차단 방식과 표준 출력(stdout) 및 표준 에러(stderr)의 병합 파일 쓰기 연산도</text>
+
+  <!-- Container Box -->
+  <rect x="40" y="100" width="720" height="330" class="box-container" />
+  <text x="400" y="125" class="section-title" fill="#1e293b">nohup Background Process &amp; Standard Stream Redirection</text>
+
+  <!-- 1. User Terminal Session (Active Terminal) -->
+  <rect x="60" y="150" width="220" height="90" class="badge-terminal" />
+  <text x="170" y="175" class="heading" fill="#ffffff">사용자 셸 세션 (Active SSH)</text>
+  <text x="170" y="195" class="arrow-text" font-size="9" fill="#94a3b8">명령어 기입 및 연결 세션</text>
+  <text x="170" y="215" class="heading" font-size="10" fill="#38bdf8">nohup php test.php &gt; log 2&gt;&amp;1 &amp;</text>
+
+  <!-- SIGHUP signal block flow -->
+  <path d="M 170 240 L 170 300" class="line-red" marker-end="url(#arrow-red)" />
+  <text x="210" y="270" class="arrow-text" fill="#dc2626">세션 강제 종료 (SIGHUP)</text>
+
+  <!-- Block barrier -->
+  <rect x="110" y="300" width="120" height="25" rx="4" fill="#fee2e2" stroke="#ef4444" />
+  <text x="170" y="316" class="heading" font-size="10" fill="#b91c1c">🛡️ nohup 이 신호 차단</text>
+
+  <!-- 2. Background Isolated PHP Process -->
+  <rect x="420" y="150" width="280" height="110" class="badge-process" />
+  <text x="560" y="175" class="heading" fill="#581c87">백그라운드 PHP 프로세스 (PID)</text>
+  <text x="560" y="192" class="arrow-text" font-size="9" fill="#7e22ce">터미널이 꺼져도 독자적으로 계속 실행</text>
+
+  <rect x="435" y="210" width="120" height="40" fill="#faf5ff" stroke="#d8b4fe" rx="4" />
+  <text x="495" y="226" class="heading" font-size="9" fill="#6b21a8">표준 출력 stdout (1)</text>
+  <text x="495" y="238" class="arrow-text" font-size="7" fill="#7e22ce">일반 echo, print</text>
+
+  <rect x="565" y="210" width="120" height="40" fill="#faf5ff" stroke="#d8b4fe" rx="4" />
+  <text x="625" y="226" class="heading" font-size="9" fill="#6b21a8">표준 에러 stderr (2)</text>
+  <text x="625" y="238" class="arrow-text" font-size="7" fill="#7e22ce">오류 메시지, 경고</text>
+
+  <!-- Connection from Terminal to Process -->
+  <path d="M 280 195 L 410 195" class="line-purple" marker-end="url(#arrow-purple)" />
+  <text x="345" y="185" class="arrow-text" fill="#7e22ce">백그라운드 위임</text>
+
+  <!-- Redirect flows -->
+  <!-- 2>&1 merge flow -->
+  <path d="M 625 250 L 625 285 A 10 10 0 0 1 615 295 L 495 295 L 495 250" class="line-purple" stroke-dasharray="2 2" />
+  <text x="560" y="310" class="arrow-text" fill="#7e22ce">2&gt;&amp;1 (에러를 출력으로 병합)</text>
+
+  <!-- Output to log file -->
+  <path d="M 495 250 L 495 330" class="line-green" marker-end="url(#arrow-green)" />
+  <text x="460" y="300" class="arrow-text" fill="#16a34a">출력 스트림</text>
+
+  <!-- 3. Target Log File -->
+  <rect x="375" y="335" width="240" height="60" class="badge-log" />
+  <text x="495" y="358" class="heading" fill="#14532d">통합 출력 로그 파일 (daemon.log)</text>
+  <text x="495" y="375" class="arrow-text" font-size="9" fill="#16a34a">일반 메시지와 에러 메시지가 병합되어 순차 기록</text>
+
+</svg>

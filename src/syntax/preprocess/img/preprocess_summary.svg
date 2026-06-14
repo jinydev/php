@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto">
+  <style>
+    .bg { fill: #fcfdfe; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; fill: #475569; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; text-anchor: middle; }
+    .label-left { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #334155; }
+    .code { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #0f172a; }
+    .code-center { font-family: 'Courier New', Courier, monospace; font-size: 12px; font-weight: 600; fill: #0f172a; text-anchor: middle; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #64748b; text-anchor: middle; }
+    
+    .box-file-main { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8px; }
+    .box-file-sub { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.5; rx: 8px; stroke-dasharray: 4 2; }
+    .box-engine { fill: #fef3c7; stroke: #f59e0b; stroke-width: 2; rx: 8px; }
+    .box-combined-border { fill: #f0fdf4; stroke: #10b981; stroke-width: 2; rx: 12px; }
+    
+    .box-header-block { fill: #faf5ff; stroke: #a855f7; stroke-width: 1.5; rx: 6px; }
+    .box-main-block { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5; rx: 6px; }
+    .box-footer-block { fill: #ecfeff; stroke: #06b6d4; stroke-width: 1.5; rx: 6px; }
+
+    .line { stroke: #94a3b8; stroke-width: 2; fill: none; }
+    .line-active { stroke: #3b82f6; stroke-width: 2.5; fill: none; }
+    .line-purple { stroke: #a855f7; stroke-width: 2; fill: none; }
+    .line-cyan { stroke: #06b6d4; stroke-width: 2; fill: none; }
+    .line-success { stroke: #10b981; stroke-width: 2.5; fill: none; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a855f7" />
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#06b6d4" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16" />
+  <rect x="10" y="10" width="780" height="430" fill="#ffffff" rx="12" stroke="#e2e8f0" stroke-width="1" />
+
+  <!-- Title -->
+  <text x="30" y="45" class="title">전처리기(Preprocessor) 파일 물리 결합 메커니즘</text>
+
+  <!-- Left: Splitted Files -->
+  <text x="35" y="80" class="subtitle">1. 분할된 소스 파일들</text>
+
+  <!-- header.php -->
+  <rect x="35" y="95" width="160" height="70" class="box-file-sub" />
+  <text x="45" y="115" class="subtitle" font-size="12">header.php</text>
+  <text x="45" y="135" class="code" fill="#a855f7">&lt;html&gt;&lt;header&gt;</text>
+  <text x="45" y="152" class="code" fill="#a855f7">&lt;h1&gt;Jiny Site&lt;/h1&gt;</text>
+
+  <!-- index.php (Main) -->
+  <rect x="35" y="180" width="160" height="120" class="box-file-main" />
+  <text x="45" y="200" class="subtitle" font-size="12" fill="#2563eb">index.php (본문)</text>
+  <text x="45" y="222" class="code" fill="#2563eb">include "header.php";</text>
+  <text x="45" y="247" class="code" font-weight="bold">// 본문 내용 실행</text>
+  <text x="45" y="262" class="code">echo "Hello World";</text>
+  <text x="45" y="287" class="code" fill="#0891b2">include "footer.php";</text>
+
+  <!-- footer.php -->
+  <rect x="35" y="315" width="160" height="70" class="box-file-sub" />
+  <text x="45" y="335" class="subtitle" font-size="12">footer.php</text>
+  <text x="45" y="355" class="code" fill="#0891b2">&lt;footer&gt;Copyright</text>
+  <text x="45" y="372" class="code" fill="#0891b2">&lt;/html&gt;</text>
+
+
+  <!-- Middle: Inclusion flow -->
+  <!-- Arrow from header.php to index.php's include header -->
+  <path d="M 195 130 C 235 130, 235 215, 205 215" class="line-purple" marker-end="url(#arrow-purple)" />
+  <text x="245" y="170" class="arrow-text" fill="#a855f7">include 결합</text>
+
+  <!-- Arrow from footer.php to index.php's include footer -->
+  <path d="M 195 350 C 235 350, 235 280, 205 280" class="line-cyan" marker-end="url(#arrow-cyan)" />
+  <text x="245" y="320" class="arrow-text" fill="#0891b2">include 결합</text>
+
+
+  <!-- Preprocessor Engine Box -->
+  <path d="M 195 240 L 285 240" class="line-active" marker-end="url(#arrow-blue)" />
+  
+  <rect x="295" y="200" width="120" height="80" class="box-engine" />
+  <text x="355" y="235" class="label" font-weight="bold" fill="#b45309">PHP 전처리기</text>
+  <text x="355" y="255" class="label" fill="#b45309">(코드 분석/결합)</text>
+
+  <path d="M 415 240 L 465 240" class="line-success" marker-end="url(#arrow-green)" />
+
+
+  <!-- Right: Combined continuous script memory/output -->
+  <text x="480" y="80" class="subtitle">2. 최종 해석되어 컴파일되는 코드 스트림</text>
+
+  <!-- Big combined Box -->
+  <rect x="480" y="95" width="280" height="290" class="box-combined-border" />
+
+  <!-- Combined Header Block -->
+  <rect x="495" y="115" width="250" height="70" class="box-header-block" />
+  <text x="505" y="133" class="subtitle" font-size="11" fill="#7e22ce">header.php 영역</text>
+  <text x="505" y="152" class="code" fill="#7e22ce">&lt;html&gt;&lt;header&gt;</text>
+  <text x="505" y="169" class="code" fill="#7e22ce">&lt;h1&gt;Jiny Site&lt;/h1&gt;</text>
+
+  <!-- Combined Main Block -->
+  <rect x="495" y="200" width="250" height="80" class="box-main-block" />
+  <text x="505" y="218" class="subtitle" font-size="11" fill="#1d4ed8">index.php 본문 영역</text>
+  <text x="505" y="238" class="code" font-weight="bold">// PHP 코드 연속 실행</text>
+  <text x="505" y="255" class="code">echo "Hello World";</text>
+
+  <!-- Combined Footer Block -->
+  <rect x="495" y="295" width="250" height="70" class="box-footer-block" />
+  <text x="505" y="313" class="subtitle" font-size="11" fill="#0e7490">footer.php 영역</text>
+  <text x="505" y="332" class="code" fill="#0e7490">&lt;footer&gt;Copyright</text>
+  <text x="505" y="349" class="code" fill="#0e7490">&lt;/html&gt;</text>
+
+</svg>

@@ -5,25 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 기본 메타데이터 --><meta name="description" content="JinyPHP"><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>모던 PHP 프로그래밍</title>
-  <meta name="title" content="모던 PHP 프로그래밍" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="모던 PHP 프로그래밍"><meta property="og:description" content="JinyPHP"><meta property="og:type" content="website"><meta property="og:locale" content="ko">
-  <meta property="og:site_name" content="php">
-  <meta property="og:url" content="http://localhost:4000/setup/mac.html">
+  <!-- 기본 메타데이터 --><meta name="description" content="macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다."><meta name="author" content="HojinLee"><!-- 제목 설정 --><title>macOS PHP 설치 및 개발 환경 구축 가이드</title>
+  <meta name="title" content="macOS PHP 설치 및 개발 환경 구축 가이드" /><!-- 키워드 설정 --><!-- Open Graph 메타데이터 --><meta property="og:title" content="macOS PHP 설치 및 개발 환경 구축 가이드"><meta property="og:description" content="macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다."><meta property="og:type" content="website"><meta property="og:locale" content="ko">
+  <meta property="og:site_name" content="linux">
+  <meta property="og:url" content="https://php.jiny.dev/setup/mac.html">
   <!-- 대표 URL (캐노니컬) -->
-  <link rel="canonical" href="http://localhost:4000/setup/mac.html">
+  <link rel="canonical" href="https://php.jiny.dev/setup/mac.html">
 
-  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="모던 PHP 프로그래밍"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Twitter 카드 메타데이터 --><meta name="twitter:card" content="summary"><meta property="twitter:title" content="macOS PHP 설치 및 개발 환경 구축 가이드"><meta property="twitter:description" content="macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다."><!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="JinyPHP" />
+<meta property="og:title" content="macOS PHP 설치 및 개발 환경 구축 가이드" />
 <meta property="og:locale" content="ko" />
-<link rel="canonical" href="http://localhost:4000/setup/mac.html" />
-<meta property="og:url" content="http://localhost:4000/setup/mac.html" />
+<meta name="description" content="macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다." />
+<meta property="og:description" content="macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다." />
+<link rel="canonical" href="https://php.jiny.dev/setup/mac.html" />
+<meta property="og:url" content="https://php.jiny.dev/setup/mac.html" />
 <meta property="og:site_name" content="JinyPHP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="JinyPHP" />
+<meta property="twitter:title" content="macOS PHP 설치 및 개발 환경 구축 가이드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"JinyPHP","url":"http://localhost:4000/setup/mac.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"macOS에서 패키지 매니저인 Homebrew를 사용하여 PHP를 설치하고, brew services를 통한 백그라운드 구동, 버전 전환 및 php.ini 상세 설정 경로를 확인합니다.","headline":"macOS PHP 설치 및 개발 환경 구축 가이드","url":"https://php.jiny.dev/setup/mac.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,11 +250,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/basic">기본문법</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/function">함수</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/syntax">기본문법</a>
             </li>
             
             <li class="nav-item">
@@ -260,7 +258,15 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link py-2 px-0 px-lg-2" href="/composer">패키지</a>
+              <a class="nav-link py-2 px-0 px-lg-2" href="/practice">응용실습</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/packages">패키지</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link py-2 px-0 px-lg-2" href="/web">웹프로젝트</a>
             </li>
             
           </ul>
@@ -375,6 +381,20 @@
               </li>
               
               <li>
+                <a href="/php/php7"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 7.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
+                <a href="/php/php8"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 8.x 신규 문법
+                </a>
+              </li>
+              
+              <li>
                 <a href="/php/interpreter"
                   class="bd-links-link d-inline-block rounded ">
                   PHP 인터프리터
@@ -395,6 +415,13 @@
                 </a>
               </li>
               
+              <li>
+                <a href="/php/jit"
+                  class="bd-links-link d-inline-block rounded ">
+                  JIT 컴파일러
+                </a>
+              </li>
+              
             </ul>
           </div>
           
@@ -408,7 +435,7 @@
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
             data-bs-toggle="collapse" data-bs-target="#collapse-2"
             aria-expanded="false">
-            설치
+            기본 설치
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -432,17 +459,40 @@
                 </a>
               </li>
               
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            aria-expanded="false">
+            Windows 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-3">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
               <li>
                 <a href="/setup/windows"
                   class="bd-links-link d-inline-block rounded ">
-                  Windows 설치
+                  Windows 설치 개요
                 </a>
               </li>
               
               <li>
-                <a href="/setup/windows/bitnami"
+                <a href="/setup/windows/xampp"
                   class="bd-links-link d-inline-block rounded ">
-                  Bitnami 사용하기
+                  XAMPP 사용하기
                 </a>
               </li>
               
@@ -450,27 +500,6 @@
                 <a href="/setup/windows/download"
                   class="bd-links-link d-inline-block rounded ">
                   Windows 직접 다운로드
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/mac"
-                  class="bd-links-link d-inline-block rounded ">
-                  Mac 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux"
-                  class="bd-links-link d-inline-block rounded ">
-                  Linux 설치
-                </a>
-              </li>
-              
-              <li>
-                <a href="/setup/linux/lapm"
-                  class="bd-links-link d-inline-block rounded ">
-                  LAPM 구축
                 </a>
               </li>
               
@@ -485,7 +514,132 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-3"
+            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            aria-expanded="false">
+            Mac 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-4">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/mac"
+                  class="bd-links-link d-inline-block rounded ">
+                  Mac 설치하기
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-5"
+            aria-expanded="false">
+            Linux 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-5">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/linux"
+                  class="bd-links-link d-inline-block rounded ">
+                  Linux 설치 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/ubuntu"
+                  class="bd-links-link d-inline-block rounded ">
+                  Ubuntu 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/linux/rocky"
+                  class="bd-links-link d-inline-block rounded ">
+                  Rocky Linux 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-6"
+            aria-expanded="false">
+            Docker 설치
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-6">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 환경 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/compose"
+                  class="bd-links-link d-inline-block rounded ">
+                  Compose 웹 서버 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/volume"
+                  class="bd-links-link d-inline-block rounded ">
+                  볼륨과 데이터 보존
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/docker/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  컨테이너 포트 및 보안
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-7"
             aria-expanded="false">
             콘솔(CLI)
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -494,7 +648,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-3">
+          <div class="collapse " id="collapse-7">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -557,7 +711,7 @@
           
           <button
             class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
-            data-bs-toggle="collapse" data-bs-target="#collapse-4"
+            data-bs-toggle="collapse" data-bs-target="#collapse-8"
             aria-expanded="false">
             환경설정
             <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -566,7 +720,7 @@
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg>
           </button>
-          <div class="collapse " id="collapse-4">
+          <div class="collapse " id="collapse-8">
             <ul class="list-unstyled fw-normal pb-1 small ms-3">
               
               <li>
@@ -594,6 +748,180 @@
                 <a href="/setup/env/error"
                   class="bd-links-link d-inline-block rounded ">
                   에러 출력 설정
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/env/security"
+                  class="bd-links-link d-inline-block rounded ">
+                  PHP 보안 설정
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-9"
+            aria-expanded="false">
+            서버 구축
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-9">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/server"
+                  class="bd-links-link d-inline-block rounded ">
+                  서버 구축 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/lapm"
+                  class="bd-links-link d-inline-block rounded ">
+                  LAPM 구축
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/apache"
+                  class="bd-links-link d-inline-block rounded ">
+                  Apache 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/nginx"
+                  class="bd-links-link d-inline-block rounded ">
+                  Nginx 연동 가이드
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/aws"
+                  class="bd-links-link d-inline-block rounded ">
+                  AWS 클라우드 설치
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/server/vultr"
+                  class="bd-links-link d-inline-block rounded ">
+                  Vultr VPS 설치
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-10"
+            aria-expanded="false">
+            배포 가이드
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-10">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/deploy"
+                  class="bd-links-link d-inline-block rounded ">
+                  배포 개요 및 FTP
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/git"
+                  class="bd-links-link d-inline-block rounded ">
+                  Git 배포 및 롤백
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/deploy/docker"
+                  class="bd-links-link d-inline-block rounded ">
+                  Docker 컨테이너 배포
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+        </li>
+        
+        <li>
+          
+          
+          
+          <button
+            class="bd-links-link bd-links-btn btn d-inline-flex align-items-center rounded border-0 collapsed w-100"
+            data-bs-toggle="collapse" data-bs-target="#collapse-11"
+            aria-expanded="false">
+            응용프로그램
+            <svg class="bi ms-auto" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </button>
+          <div class="collapse " id="collapse-11">
+            <ul class="list-unstyled fw-normal pb-1 small ms-3">
+              
+              <li>
+                <a href="/setup/apps"
+                  class="bd-links-link d-inline-block rounded ">
+                  애플리케이션 개요
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/wordpress"
+                  class="bd-links-link d-inline-block rounded ">
+                  워드프레스 (WordPress)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/moodle"
+                  class="bd-links-link d-inline-block rounded ">
+                  무들 (Moodle)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/nextcloud"
+                  class="bd-links-link d-inline-block rounded ">
+                  넥스트클라우드 (Nextcloud)
+                </a>
+              </li>
+              
+              <li>
+                <a href="/setup/apps/prestashop"
+                  class="bd-links-link d-inline-block rounded ">
+                  프레스타숍 (PrestaShop)
                 </a>
               </li>
               
@@ -630,7 +958,7 @@
         
         
         
-        <li class="breadcrumb-item active" aria-current="page"></li>
+        <li class="breadcrumb-item active" aria-current="page">macOS PHP 설치 및 개발 환경 구축 가이드</li>
         
         
         
@@ -638,11 +966,144 @@
 </nav>
 
         <div class="bd-content ps-lg-2">
-            <h1 id="mac-설치">Mac 설치</h1>
+            <h1 id="macos-php-설치-및-개발-환경-구축">macOS PHP 설치 및 개발 환경 구축</h1>
 <hr />
-<p>Apple의 Mac 운영체제는 리눅스와 호환된 환경을 가지고 있어, 많은 프로그래머들이 개발환경으로 사용하고 있습니다.
-맥에서 PHP설치하기</p>
+<p>Apple macOS 환경은 Unix 기반의 호환성 높은 파일 시스템과 터미널 환경을 제공하므로, 수많은 개발자가 웹 애플리케이션 개발 머신으로 선호하고 있습니다. macOS에서 PHP 환경을 구축하는 가장 현대적이고 편리한 표준 방식은 패키지 매니저인 <strong>Homebrew</strong>를 사용하는 것입니다.</p>
 
+<p>이 가이드에서는 Homebrew를 통한 최신 PHP 설치부터 환경 변수 맵, 데몬 제어 및 다중 버전 관리 방법까지 체계적으로 알아봅니다.</p>
+
+<p><br /></p>
+
+<h3 id="1-macos-homebrew-기반-가동-아키텍처">1. macOS Homebrew 기반 가동 아키텍처</h3>
+<hr />
+<p>아래 다이어그램은 Homebrew가 인터넷 저장소로부터 PHP 패키지를 가져와 로컬 맥 컴퓨터의 적절한 셀러(Cellar) 경로에 적재하고, macOS 시스템 데몬 관리자인 launchd(또는 <code class="language-plaintext highlighter-rouge">brew services</code>)와 연계하여 백그라운드에서 PHP-FPM 서비스를 가동하는 흐름을 보여줍니다.</p>
+
+<p><img src="/setup/img/mac_brew_flow.svg" alt="macOS Homebrew 가동 구조도" /></p>
+
+<p><br /></p>
+
+<h3 id="2-패키지-매니저homebrew-설치">2. 패키지 매니저(Homebrew) 설치</h3>
+<hr />
+<p>맥에 Homebrew가 설치되어 있지 않다면, 먼저 macOS 터미널을 열고 다음 스크립트를 입력하여 Homebrew를 설치합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+<p>설치가 끝난 후 화면의 안내에 따라 셸 환경설정 파일(Apple Silicon 맥의 경우 <code class="language-plaintext highlighter-rouge">~/.zprofile</code> 또는 <code class="language-plaintext highlighter-rouge">~/.zshrc</code>)에 Homebrew 실행 경로를 영구 등록하고 셸을 다시 시작합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설치 완료 후 정상 구동 확인</span>
+brew <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="3-php-설치하기">3. PHP 설치하기</h3>
+<hr />
+<p>Homebrew 저장소 정보를 최신으로 갱신한 후, PHP 패키지를 설치합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 패키지 리스트 최신화</span>
+brew update
+
+<span class="c"># 2. PHP 최신 안정 버전 설치</span>
+brew <span class="nb">install </span>php
+</code></pre></div></div>
+
+<p>이 명령어 한 줄로 PHP 실행용 CLI 엔진뿐만 아니라 웹서버 연동을 위한 PHP-FPM, 데이터베이스 처리를 위한 주요 확장 모듈들이 일체형으로 빌드 및 적재됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 3. 설치 버전 확인</span>
+php <span class="nt">-v</span>
+</code></pre></div></div>
+<p>출력 메시지에 아래와 같이 CLI 모드(cli) 및 Zend Engine 버전이 정상 표시되면 기본 설치가 정상 완료된 것입니다.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">PHP 8.3.x (cli) (built: ...) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.3.x, Copyright (c) Zend Technologies
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="4-cpu-아키텍처별-설치-및-설정-파일-경로">4. CPU 아키텍처별 설치 및 설정 파일 경로</h3>
+<hr />
+<p>Homebrew는 맥 컴퓨터의 CPU 종류(Apple Silicon M시열 vs Intel x86)에 따라 핵심 파일들이 적재되는 루트 디렉터리가 다릅니다. 이 점을 정확히 인지해야 수동 경로 설정 시 꼬이지 않습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">항목</th>
+      <th style="text-align: left">Apple Silicon (M1, M2, M3 등)</th>
+      <th style="text-align: left">Intel CPU Mac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Homebrew 루트</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/opt/homebrew</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/usr/local</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>PHP 실행 바이너리</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/opt/homebrew/bin/php</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/usr/local/bin/php</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>PHP-FPM 실행 바이너리</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/opt/homebrew/sbin/php-fpm</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/usr/local/sbin/php-fpm</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>설정 파일 (<code class="language-plaintext highlighter-rouge">php.ini</code>)</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/opt/homebrew/etc/php/8.3/php.ini</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/usr/local/etc/php/8.3/php.ini</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>PHP-FPM 설정 (<code class="language-plaintext highlighter-rouge">php-fpm.conf</code>)</strong></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/opt/homebrew/etc/php/8.3/php-fpm.conf</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">/usr/local/etc/php/8.3/php-fpm.conf</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="5-php-백그라운드-서비스-관리-brew-services">5. PHP 백그라운드 서비스 관리 (<code class="language-plaintext highlighter-rouge">brew services</code>)</h3>
+<hr />
+<p>Nginx나 Apache 등의 웹 서버와 실시간으로 연동하여 로컬 웹 서비스 테스트를 하고 싶다면, 터미널 세션이 종료되어도 상시 대기하며 작동하도록 PHP를 macOS 시스템 데몬으로 가동해 두는 것이 편리합니다.</p>
+
+<p>Homebrew는 macOS 내장 프로세스 관리 도구인 <strong>launchd</strong>를 쉽게 제어할 수 있는 <code class="language-plaintext highlighter-rouge">brew services</code> 명령을 제공합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 맥 부팅 시 PHP 자동 실행 등록 및 즉시 시작</span>
+brew services start php
+
+<span class="c"># 2. PHP 서비스 즉시 중단 (데몬 제거)</span>
+brew services stop php
+
+<span class="c"># 3. php.ini 설정 파일 변경 적용을 위해 재시작</span>
+brew services restart php
+
+<span class="c"># 4. 현재 실행 중인 모든 Homebrew 서비스 상태 확인</span>
+brew services list
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">brew services start php</code>를 실행하면, PHP-FPM(FastCGI Process Manager)이 로컬 주소의 기본 9000번 포트(<code class="language-plaintext highlighter-rouge">127.0.0.1:9000</code>)로 가동을 개시하여 웹 서버의 연결 요청을 수신할 준비를 마칩니다.</p>
+
+<p><br /></p>
+
+<h3 id="6-다중-php-버전-관리-및-스위칭-방법">6. 다중 PHP 버전 관리 및 스위칭 방법</h3>
+<hr />
+<p>동시에 여러 프로젝트를 진행하다 보면 레거시 프로젝트는 PHP 8.1로, 신규 프로젝트는 PHP 8.3으로 전환해야 하는 상황이 발생합니다. Homebrew 환경에서는 다음과 같이 다중 버전을 설치하고 쉽게 활성 링크를 바꿔가며 사용할 수 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 필요한 버전 설치</span>
+brew <span class="nb">install </span>php@8.1
+brew <span class="nb">install </span>php@8.3
+
+<span class="c"># 2. 현재 활성화된 PHP 실행 경로 연결 해제 (unlink)</span>
+brew <span class="nb">unlink </span>php
+
+<span class="c"># 3. 원하는 특정 버전으로 실행 경로 강제 심볼릭 링크 (link)</span>
+brew <span class="nb">link</span> <span class="nt">--overwrite</span> <span class="nt">--force</span> php@8.1
+
+<span class="c"># 4. 변경된 실제 환경 확인</span>
+php <span class="nt">-v</span>
+</code></pre></div></div>
+<p>이후 백그라운드 FPM 데몬도 동일하게 <code class="language-plaintext highlighter-rouge">brew services restart php@8.1</code> 형태로 버전 이름을 지정하여 개별적으로 구동 및 관리해주시면 됩니다.</p>
 
 
             <!-- 다음/이전 학습 페이지네이션 -->
@@ -863,13 +1324,139 @@
 
   
 
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
 
 <div class="d-flex justify-content-between align-items-center mt-5 mb-4 py-3 border-top border-bottom">
   <div>
     
       <span class="text-muted small me-2">이전 학습</span>
-      <a href="/jinyphp" class="text-decoration-none fw-semibold">
-        &laquo; 지니PHP
+      <a href="/web/board" class="text-decoration-none fw-semibold">
+        &laquo; 게시판 만들기
       </a>
     
   </div>

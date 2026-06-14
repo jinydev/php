@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#6d28d9" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">PHP 클로저(Closure)와 외부 스코프 바인딩</text>
+
+  <!-- Parent Scope Box -->
+  <g transform="translate(100, 80)" filter="url(#shadow)">
+    <rect width="240" height="260" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+    <rect width="240" height="45" rx="16" fill="#cbd5e1" />
+    <rect y="35" width="240" height="10" fill="#cbd5e1" />
+    <text x="120" y="28" fill="#334155" font-family="'Inter', sans-serif" font-weight="800" font-size="13" text-anchor="middle">부모 실행 컨텍스트 (Scope)</text>
+    
+    <text x="25" y="80" fill="#475569" font-family="monospace" font-size="12" font-weight="bold">$message = "Hello";</text>
+    <text x="25" y="110" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">클로저가 호출되기 직전에 존재하는</text>
+    <text x="25" y="128" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">부모 스코프의 지역 변수입니다.</text>
+  </g>
+
+  <!-- Closure Box -->
+  <g transform="translate(460, 80)" filter="url(#shadow)">
+    <rect width="240" height="260" rx="16" fill="#ffffff" stroke="#ddd6fe" stroke-width="2" />
+    <rect width="240" height="45" rx="16" fill="#f5f3ff" />
+    <rect y="35" width="240" height="10" fill="#f5f3ff" />
+    <text x="120" y="28" fill="#6d28d9" font-family="'Inter', sans-serif" font-weight="800" font-size="13" text-anchor="middle">클로저 (Closure Object)</text>
+    
+    <!-- Captured Value -->
+    <rect x="20" y="130" width="200" height="100" rx="8" fill="#faf5ff" stroke="#e9d5ff" />
+    <text x="120" y="152" fill="#7c3aed" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">캡처된 바인딩 변수 스토리지</text>
+    <text x="35" y="190" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold">use ($message) {</text>
+    <text x="50" y="210" fill="#7c3aed" font-family="monospace" font-size="12">echo $message;</text>
+    <text x="35" y="225" fill="#7c3aed" font-family="monospace" font-size="12">}</text>
+  </g>
+
+  <!-- Connection Arrow -->
+  <path d="M 340,180 L 448,180" fill="none" stroke="#6d28d9" stroke-width="3" stroke-dasharray="5,3" marker-end="url(#arrow)" />
+  <text x="394" y="165" fill="#6d28d9" font-family="'Inter', sans-serif" font-weight="700" font-size="11" text-anchor="middle">use 바인딩</text>
+</svg>

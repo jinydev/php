@@ -1,13 +1,15 @@
 ---
 layout: php
-title: "PHP"
-keyword: "jinyphp, php"
+title: "트레이트 (Trait)"
+keyword: "php trait, code reuse, horizontal reuse, multiple inheritance, php oop"
+description: "단일 상속 제약을 보완하고 수평적으로 코드를 자유롭게 재사용하여 클래스들을 독립적으로 조합하는 트레이트(Trait)의 원리와 사용법을 배웁니다."
 breadcrumb:
-- "oop"
-- "trait"
+- oop
+- trait
 ---
 
-# 트레이트
+# 트레이트 (Trait)
+---
 ```
 클래스의 상속 기능은 기존의 코드들을 재사용하면서 새로운 클래스를 생성하기 위한 코딩 방법론이었습니다. 하지만 상속이라는 개념은 클래스의 계층화로 항상 부모가 존재합니다. 
 
@@ -35,6 +37,12 @@ class c extend b {
 
 ### 15.5.1 트레이트 선언
 ---
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="img/trait-composition.svg" alt="PHP Trait Code Reuse" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);" />
+  <p style="font-size: 13px; color: #64748b; margin-top: 8px;">그림: 다중 상속을 피하고 수평적으로 여러 트레이트를 클래스 내부로 조합(use)하는 오프젝트 재사용 구조</p>
+</div>
+
 트레이트를 선언하는 방법은 클래스 선언 문법과 비슷합니다. class 키워드 대신에 trait 키워드를 사용해주면 됩니다.
 
 트레이트 문법

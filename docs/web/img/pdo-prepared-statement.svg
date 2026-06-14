@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fafafa" rx="12" />
+
+  <text x="400" y="35" fill="#1e293b" font-family="'Inter', sans-serif" font-weight="800" font-size="18" text-anchor="middle">PDO Prepared Statement (준비된 선언) 작동 메커니즘</text>
+
+  <!-- Step 1 Block -->
+  <g transform="translate(50, 70)" filter="url(#shadow)">
+    <rect width="320" height="130" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="320" height="32" rx="12" fill="#4f46e5" />
+    <rect y="24" width="320" height="8" fill="#4f46e5" />
+    <text x="15" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12">1단계: SQL 뼈대 컴파일 (Prepare)</text>
+    
+    <text x="15" y="55" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">플레이스홀더(:placeholder)가 담긴 SQL 전송</text>
+    <rect x="15" y="70" width="290" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="25" y="94" fill="#0f172a" font-family="monospace" font-size="11" font-weight="bold">SELECT * FROM posts WHERE id = :id</text>
+  </g>
+
+  <!-- DB Engine Plan -->
+  <g transform="translate(470, 70)" filter="url(#shadow)">
+    <rect width="280" height="130" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="280" height="32" rx="12" fill="#0d9488" />
+    <rect y="24" width="280" height="8" fill="#0d9488" />
+    <text x="15" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12">데이터베이스 엔진</text>
+    
+    <text x="15" y="58" fill="#0f172a" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">SQL 구조 분석 및 계획 컴파일</text>
+    <text x="15" y="78" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">* 쿼리 형태를 고정하여 캐싱합니다.</text>
+    <text x="15" y="96" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">* 이후 입력은 오직 데이터로만 해석합니다.</text>
+  </g>
+
+  <!-- Step 2 Block -->
+  <g transform="translate(50, 240)" filter="url(#shadow)">
+    <rect width="320" height="140" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="320" height="32" rx="12" fill="#ea580c" />
+    <rect y="24" width="320" height="8" fill="#ea580c" />
+    <text x="15" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12">2단계: 값 바인딩 및 실행 (Execute)</text>
+    
+    <text x="15" y="55" fill="#64748b" font-family="'Inter', sans-serif" font-size="11">바인딩할 실제 값 파라미터 전달</text>
+    <rect x="15" y="70" width="290" height="50" rx="6" fill="#fef2f2" stroke="#fecaca" />
+    <text x="25" y="88" fill="#991b1b" font-family="monospace" font-size="10" font-weight="bold">:id = "5 OR 1=1" (공격 값 주입 시도)</text>
+    <text x="25" y="106" fill="#475569" font-family="'Inter', sans-serif" font-size="9" font-weight="bold">→ DB는 이를 조건식이 아닌 단순 문자열 "5 OR 1=1"로 취급</text>
+  </g>
+
+  <!-- Safe Result -->
+  <g transform="translate(470, 240)" filter="url(#shadow)">
+    <rect width="280" height="140" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect width="280" height="32" rx="12" fill="#059669" />
+    <rect y="24" width="280" height="8" fill="#059669" />
+    <text x="15" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="800" font-size="12">보안 결과 (Safe Execute)</text>
+    
+    <text x="15" y="58" fill="#15803d" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">SQL Injection 완벽 차단!</text>
+    <text x="15" y="80" fill="#475569" font-family="'Inter', sans-serif" font-size="11">* 데이터베이스가 값을 실행부와 엄격히</text>
+    <text x="15" y="98" fill="#475569" font-family="'Inter', sans-serif" font-size="11">  구분하여 해석하므로 변조가 불가능합니다.</text>
+    <text x="15" y="116" fill="#059669" font-family="'Inter', sans-serif" font-weight="700" font-size="11">안전성: 100% (SQL Injection 방어 완료)</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 370,135 L 458,135" fill="none" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="414" y="125" fill="#4f46e5" font-family="'Inter', sans-serif" font-weight="700" font-size="9" text-anchor="middle">쿼리 준비</text>
+
+  <path d="M 370,310 L 458,310" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="414" y="300" fill="#ea580c" font-family="'Inter', sans-serif" font-weight="700" font-size="9" text-anchor="middle">실행 요청</text>
+
+  <path d="M 610,200 L 610,228" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

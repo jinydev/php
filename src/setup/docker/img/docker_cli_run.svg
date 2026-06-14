@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="dockerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="phaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <style>
+    .bg-main { fill: #f8fafc; }
+    .bg-inner { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #475569; }
+    
+    .panel-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 800; }
+    .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 700; }
+    .text-normal { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; fill: #334155; }
+    .code-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; fill: #0f172a; }
+    .arrow-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #64748b; text-anchor: middle; }
+    
+    .panel-host { fill: url(#hostGrad); stroke: #cbd5e1; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    .panel-docker { fill: url(#dockerGrad); stroke: #bae6fd; stroke-width: 1.5; rx: 12px; filter: url(#shadow); }
+    
+    .step-box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+    .badge { rx: 4px; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 9px; font-weight: 800; fill: #ffffff; text-anchor: middle; }
+    
+    .line-blue { stroke: #0284c7; stroke-width: 1.8; fill: none; }
+    .line-red { stroke: #ef4444; stroke-width: 1.8; fill: none; }
+    .line-gray { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 4 2; }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg-main" rx="16" />
+  <rect x="15" y="15" width="770" height="390" class="bg-inner" rx="12" />
+
+  <!-- Header -->
+  <text x="35" y="48" class="title">Docker PHP CLI 실행 흐름 (docker run)</text>
+  <text x="35" y="68" class="subtitle">호스트의 소스 폴더를 격리된 단발성 컨테이너에 마운트하여 실시간 실행하고, 종료 즉시 컨테이너를 파기하는 구조</text>
+
+  <!-- 1. Host OS Panel (Left) -->
+  <rect x="35" y="95" width="310" height="290" class="panel-host" />
+  <rect x="50" y="105" width="280" height="26" rx="5" fill="#475569" />
+  <text x="65" y="122" class="panel-title" fill="#ffffff">호스트 운영체제 (Host OS)</text>
+
+  <!-- Host File -->
+  <rect x="50" y="145" width="280" height="60" class="step-box" />
+  <rect x="65" y="155" width="60" height="16" fill="#64748b" class="badge" />
+  <text x="95" y="167" class="badge-text">실물 파일</text>
+  <text x="65" y="188" class="code-text" font-weight="bold">./src/index.php (로컬 소스)</text>
+
+  <!-- Host Terminal -->
+  <rect x="50" y="220" width="280" height="150" fill="#0f172a" rx="6" />
+  <rect x="60" y="230" width="8" height="8" rx="4" fill="#ef4444" />
+  <rect x="73" y="230" width="8" height="8" rx="4" fill="#f59e0b" />
+  <rect x="86" y="230" width="8" height="8" rx="4" fill="#10b981" />
+  
+  <text x="60" y="260" class="code-text" fill="#38bdf8">$ docker run -it --rm \</text>
+  <text x="60" y="275" class="code-text" fill="#38bdf8">  -v "$PWD":/usr/src/myapp \</text>
+  <text x="60" y="290" class="code-text" fill="#38bdf8">  -w /usr/src/myapp \</text>
+  <text x="60" y="305" class="code-text" fill="#e2e8f0">  php:8.3-cli php index.php</text>
+  
+  <text x="60" y="335" class="code-text" fill="#a7f3d0">[출력 결과 수신] Hello, Docker CLI!</text>
+  <text x="60" y="352" class="code-text" fill="#94a3b8">_</text>
+
+  <!-- Arrow: Volume Mount -->
+  <path d="M 330 175 L 435 175" class="line-blue" stroke-dasharray="3 3" />
+  <text x="382" y="165" class="arrow-text" fill="#0284c7">실시간 연동 (-v)</text>
+
+  <!-- Arrow: Command Request -->
+  <path d="M 330 280 L 435 280" class="line-blue" marker-end="url(#arrow-blue)" />
+  <text x="382" y="270" class="arrow-text" fill="#0284c7">1. 컨테이너 기동</text>
+
+  <!-- Arrow: Output Return -->
+  <path d="M 435 320 L 330 320" class="line-red" marker-end="url(#arrow-red)" />
+  <text x="382" y="340" class="arrow-text" fill="#ef4444">3. TTY 출력 전달</text>
+
+  <!-- 2. Docker Container Panel (Right) -->
+  <rect x="435" y="95" width="330" height="290" class="panel-docker" />
+  <rect x="450" y="105" width="300" height="26" rx="5" fill="#0284c7" />
+  <text x="465" y="122" class="panel-title" fill="#ffffff">도커 가상 컨테이너 (php:8.3-cli)</text>
+
+  <!-- Container Volume -->
+  <rect x="450" y="145" width="300" height="60" class="step-box" />
+  <rect x="465" y="155" width="80" height="16" fill="#0284c7" class="badge" />
+  <text x="505" y="167" class="badge-text">컨테이너 작업 경로</text>
+  <text x="465" y="188" class="code-text">/usr/src/myapp/index.php</text>
+
+  <!-- Container Runtime Process -->
+  <rect x="450" y="220" width="300" height="90" fill="#ffffff" stroke="#bae6fd" stroke-width="1" rx="6" />
+  <rect x="465" y="230" width="100" height="16" fill="#10b981" class="badge" />
+  <text x="515" y="242" class="badge-text">PHP 엔진 인터프리터</text>
+  <text x="465" y="265" class="heading" fill="#0f172a">php index.php 명령어 해석 연산</text>
+  <text x="465" y="282" class="text-normal">내부 격리 디스크 공간에서 기동</text>
+
+  <!-- Destruct Box -->
+  <rect x="450" y="325" width="300" height="45" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" rx="6" />
+  <rect x="465" y="332" width="70" height="14" fill="#ef4444" class="badge" />
+  <text x="500" y="342" class="badge-text">자동 파기 (--rm)</text>
+  <text x="545" y="343" class="text-normal" font-size="10" fill="#991b1b">종료 즉시 컨테이너 찌꺼기 즉각 소멸</text>
+
+  <!-- Process inner connection -->
+  <path d="M 600 205 L 600 220" class="line-gray" />
+  <path d="M 600 310 L 600 325" class="line-gray" />
+
+</svg>
